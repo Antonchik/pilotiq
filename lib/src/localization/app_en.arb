@@ -1,0 +1,143 @@
+{
+  "appTitle": "ulc_exam_simulator",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "topicsTitle": "Topics",
+  "@topicsTitle": {
+    "description": "The title of the topics screen"
+  },
+  "aboutTitle": "About",
+  "@aboutTitle": {
+    "description": "The title of the about screen"
+  },
+  "airLawTopicTitle": "Air law",
+  "@airLawTopicTitle": {
+    "description": "The title of the Air law topic"
+  },
+  "communicationsTopicTitle": "Communications",
+  "@communicationsTopicTitle": {
+    "description": "The title of the Communications topic"
+  },
+  "meteorologyTopicTitle": "Meteorology",
+  "@meteorologyTopicTitle": {
+    "description": "The title of the Meteorology topic"
+  },
+  "navigationTopicTitle": "Navigation",
+  "@navigationTopicTitle": {
+    "description": "The title of the Navigation topic"
+  },
+  "performanceTopicTitle": "Performance and flight planning",
+  "@performanceTopicTitle": {
+    "description": "The title of the Performance topic"
+  },
+  "generalKnowledgeTopicTitle": "Aircraft general knowledge",
+  "@generalKnowledgeTopicTitle": {
+    "description": "The title of the Aircraft general knowledge topic"
+  },
+  "humanPerformanceTopicTitle": "Human performance and limitations",
+  "@humanPerformanceTopicTitle": {
+    "description": "The title of the Human performance and limitations topic"
+  },
+  "operationalProcedureTopicTitle": "Operational procedures",
+  "@operationalProcedureTopicTitle": {
+    "description": "The title of the Operational procedures topic"
+  },
+  "principlesOfFlightTopicTitle": "Principles of flight",
+  "@principlesOfFlightTopicTitle": {
+    "description": "The title of the Principles of flight topic"
+  },
+  "airLawTopicTooltip": "Air law",
+  "@airLawTopicTooltip": {
+    "description": "The title of the Air law topic"
+  },
+  "communicationsTopicTooltip": "Communications",
+  "@communicationsTopicTooltip": {
+    "description": "The title of the Communications topic"
+  },
+  "meteorologyTopicTooltip": "Meteorology",
+  "@meteorologyTopicTooltip": {
+    "description": "The title of the Meteorology topic"
+  },
+  "navigationTopicTooltip": "Navigation",
+  "@navigationTopicTooltip": {
+    "description": "The title of the Navigation topic"
+  },
+  "performanceTopicTooltip": "Performance and flight planning",
+  "@performanceTopicTooltip": {
+    "description": "The title of the Performance topic"
+  },
+  "generalKnowledgeTopicTooltip": "Aircraft general knowledge",
+  "@generalKnowledgeTopicTooltip": {
+    "description": "The title of the Aircraft general knowledge topic"
+  },
+  "humanPerformanceTopicTooltip": "Human performance and limitations",
+  "@humanPerformanceTopicTooltip": {
+    "description": "The title of the Human performance and limitations topic"
+  },
+  "operationalProcedureTopicTooltip": "Operational procedures",
+  "@operationalProcedureTopicTooltip": {
+    "description": "The title of the Operational procedures topic"
+  },
+  "principlesOfFlightTopicTooltip": "Principles of flight",
+  "@principlesOfFlightTopicTooltip": {
+    "description": "The title of the Principles of flight topic"
+  },
+  "startQuizTitle": "Start test!",
+  "@startQuizTitle": {
+    "description": "The title of the start quiz button"
+  },
+  "returnToTopicTitle": "Return to topics",
+  "@returnToTopicTitle": {
+    "description": "The title of the return to topics button"
+  },
+  "congratsMessage": "Congrats! You completed the {quizTitle} test",
+  "@congratsMessage": {
+    "description": "Message for the test completion",
+    "placeholders": {
+      "quizTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "rightAnswer": "Good Job!",
+  "@rightAnswer": {
+    "description": "The message for the right answer"
+  },
+  "wrongAnswer": "Wrong answer!",
+  "@wrongAnswer": {
+    "description": "The message for the wrong answer"
+  },
+  "nextQuestion": "Next question!",
+  "@nextQuestion": {
+    "description": "The label for the next question button"
+  },
+  "tryAgain": "Try again!",
+  "@tryAgain": {
+    "description": "The label for the Try again button"
+  },
+  "demoQuizTitle": "DEMO",
+  "@demoQuizTitle": {
+    "description": "The label for the Demo Quiz"
+  },
+  "fullQuizTitle": "ALL QUESTIONS",
+  "@fullQuizTitle": {
+    "description": "The label for the Full Quiz"
+  },
+  "examQuizTitle": "EXAM SIMULATOR",
+  "@examQuizTitle": {
+    "description": "The label for the Exam Quiz"
+  },
+  "demoModeDescription": "The demo mode of the test is a version of the actual test, designed to give test takers a preview of the types of questions they may encounter.",
+  "@demoModeDescription": {
+    "description": "Description for the Demo mode Quiz"
+  },
+  "fullModeDescription": "This mode is a training and learning tool that includes all the questions available in the question bank. It allows test takers to practice and review a large number of questions, and to learn from their mistakes.",
+  "@fullModeDescription": {
+    "description": "Description for the All questions mode Quiz"
+  },
+  "examModeDescription": "The exam simulator mode of the test is a practice mode that simulates the actual test experience. This mode is designed to help test takers become familiar with the format, timing, and difficulty level of the actual test.",
+  "@examModeDescription": {
+    "description": "Description for the Exam mode Quiz"
+  }
+}
