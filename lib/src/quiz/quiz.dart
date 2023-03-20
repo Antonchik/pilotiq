@@ -9,8 +9,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class CountDownTimerController {
   VoidCallback? start;
   VoidCallback? reset;
+  VoidCallback? pause;
 
-  CountDownTimerController({this.start, this.reset});
+  CountDownTimerController({this.start, this.reset, this.pause});
 }
 
 class CountDownTimer extends StatefulWidget {
@@ -27,6 +28,7 @@ class CountDownTimer extends StatefulWidget {
 class _CountDownTimerState extends State<CountDownTimer> {
   Timer? _timer;
   int _durationInSeconds = 0;
+  bool _isPaused = false;
 
   @override
   void initState() {
@@ -35,6 +37,7 @@ class _CountDownTimerState extends State<CountDownTimer> {
     if (widget.controller != null) {
       widget.controller!.start = _startTimer;
       widget.controller!.reset = _resetTimer;
+      widget.controller!.pause = _pauseTimer;
     }
   }
 
@@ -61,14 +64,23 @@ class _CountDownTimerState extends State<CountDownTimer> {
       _timer!.cancel();
     }
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        if (_durationInSeconds > 0) {
-          _durationInSeconds--;
-        } else {
-          _timer!.cancel();
-        }
-      });
+      if (!_isPaused) {
+        setState(() {
+          if (_durationInSeconds > 0) {
+            _durationInSeconds--;
+          } else {
+            _timer!.cancel();
+          }
+        });
+      }
     });
+  }
+
+  void _pauseTimer() {
+    if (_timer != null) {
+      _timer!.cancel();
+      _isPaused = true;
+    }
   }
 
   void _resetTimer() {
@@ -88,18 +100,26 @@ class _CountDownTimerState extends State<CountDownTimer> {
 }
 
 class QuizScreen extends ConsumerWidget {
-  const QuizScreen({super.key, required this.quizId, required this.quiz});
+  QuizScreen({super.key, required this.quizId, required this.quiz});
 
   final String quizId;
   final Quiz quiz;
 
+  final timerController = CountDownTimerController();
+
+  void _stopTimer() {
+    if (timerController.pause != null) {
+      timerController.pause!();
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final quizState = ref.watch(quizStateProvider);
+    quizState.isExam = quizId == 'exam';
     final questionQty = quiz.questions.length;
     final currentQuestion =
         (quizState.progress * questionQty).toStringAsFixed(0);
-    final timerController = CountDownTimerController();
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -138,7 +158,17 @@ class QuizScreen extends ConsumerWidget {
           if (idx == 0) {
             return StartPage(quiz: quiz, timerController: timerController);
           } else if (idx == quiz.questions.length + 1) {
-            return CongratsPage(quiz: quiz);
+            if (quizId != 'exam') {
+              quizState.reset();
+              return CongratsPage(quiz: quiz, quizState: quizState);
+            } else {
+              _stopTimer();
+              if (quizState.result) {
+                return CongratsPage(quiz: quiz, quizState: quizState);
+              } else {
+                return FailPage(quiz: quiz, quizState: quizState);
+              }
+            }
           } else {
             return QuestionPage(question: quiz.questions[idx - 1]);
           }
@@ -177,9 +207,7 @@ class StartPage extends ConsumerWidget {
               ElevatedButton.icon(
                 onPressed: () {
                   state.nextPage();
-                  if (timerController != null) {
-                    timerController!.start!();
-                  }
+                  timerController?.start?.call();
                 },
                 label: Text(
                   local.startQuizTitle,
@@ -197,8 +225,9 @@ class StartPage extends ConsumerWidget {
 
 class CongratsPage extends StatelessWidget {
   final Quiz quiz;
+  final QuizState quizState;
 
-  const CongratsPage({super.key, required this.quiz});
+  const CongratsPage({super.key, required this.quiz, required this.quizState});
 
   @override
   Widget build(BuildContext context) {
@@ -217,9 +246,51 @@ class CongratsPage extends StatelessWidget {
             style: TextButton.styleFrom(
               backgroundColor: Colors.green,
             ),
-            icon: const Icon(FontAwesomeIcons.check),
+            icon: const Icon(FontAwesomeIcons.faceSmile),
             label: Text(local.returnToTopicTitle),
             onPressed: () {
+              quizState.reset();
+
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                '/',
+                (route) => false,
+              );
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class FailPage extends StatelessWidget {
+  final Quiz quiz;
+  final QuizState quizState;
+
+  const FailPage({super.key, required this.quiz, required this.quizState});
+
+  @override
+  Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            local.failMessage(quiz.title),
+            textAlign: TextAlign.center,
+          ),
+          const Divider(),
+          ElevatedButton.icon(
+            style: TextButton.styleFrom(
+              backgroundColor: Colors.red,
+            ),
+            icon: const Icon(FontAwesomeIcons.faceFrown),
+            label: Text(local.returnToTopicTitle),
+            onPressed: () {
+              quizState.reset();
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 '/',
@@ -248,10 +319,8 @@ class QuestionPage extends ConsumerWidget {
           child: Container(
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
-            child: Text(
-              question.question,
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
+            child: Text(question.question,
+                style: Theme.of(context).textTheme.bodyLarge),
           ),
         ),
         Container(
@@ -266,7 +335,12 @@ class QuestionPage extends ConsumerWidget {
                 child: InkWell(
                   onTap: () {
                     state.selected = answer;
-                    _bottomSheet(context, answer, state);
+                    if (state.isExam) {
+                      state.answer = answer.isCorrect;
+                      state.nextPage();
+                    } else {
+                      _bottomSheet(context, answer, state);
+                    }
                   },
                   child: Container(
                     padding:
@@ -330,6 +404,7 @@ class QuestionPage extends ConsumerWidget {
                   if (correct) {
                     state.nextPage();
                   }
+                  state.answer = correct;
                   Navigator.pop(context);
                 },
               ),
@@ -346,12 +421,27 @@ final quizStateProvider = ChangeNotifierProvider((ref) => QuizState());
 class QuizState with ChangeNotifier {
   double _progress = 0;
   Answer? _selected;
+  final List<bool> _answers = [];
+  bool isExam = false;
 
   final PageController controller = PageController();
 
   double get progress => _progress;
 
   Answer? get selected => _selected;
+
+  bool get result {
+    var right = 0;
+    var wrong = 0;
+    for (final answer in _answers) {
+      if (answer) {
+        right += 1;
+      } else {
+        wrong += 1;
+      }
+    }
+    return !(right / (right + wrong) < 0.75);
+  }
 
   set progress(double newValue) {
     _progress = newValue;
@@ -363,9 +453,16 @@ class QuizState with ChangeNotifier {
     notifyListeners();
   }
 
+  set answer(bool newValue) {
+    _answers.add(newValue);
+    notifyListeners();
+  }
+
   void reset() {
     _progress = 0;
     _selected = null;
+    _answers.clear();
+    isExam = false;
     notifyListeners();
   }
 

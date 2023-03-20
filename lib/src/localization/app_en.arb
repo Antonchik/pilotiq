@@ -91,9 +91,18 @@
   "@returnToTopicTitle": {
     "description": "The title of the return to topics button"
   },
-  "congratsMessage": "Congrats! You completed the {quizTitle} test",
+  "congratsMessage": "Congrats!\nYou completed the\n{quizTitle} test",
   "@congratsMessage": {
     "description": "Message for the test completion",
+    "placeholders": {
+      "quizTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "failMessage": "Oh no!\nYou failed completion of the\n{quizTitle} test",
+  "@failMessage": {
+    "description": "Message for the test fail",
     "placeholders": {
       "quizTitle": {
         "type": "String"
@@ -108,7 +117,7 @@
   "@wrongAnswer": {
     "description": "The message for the wrong answer"
   },
-  "nextQuestion": "Next question!",
+  "nextQuestion": "Next question",
   "@nextQuestion": {
     "description": "The label for the next question button"
   },
@@ -124,7 +133,7 @@
   "@fullQuizTitle": {
     "description": "The label for the Full Quiz"
   },
-  "examQuizTitle": "EXAM SIMULATOR",
+  "examQuizTitle": "EXAM SIMULATION",
   "@examQuizTitle": {
     "description": "The label for the Exam Quiz"
   },
