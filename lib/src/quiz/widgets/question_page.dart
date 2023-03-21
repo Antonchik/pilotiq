@@ -13,6 +13,8 @@ class QuestionPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var state = ref.watch(quizStateProvider);
+    final isEnglish = Localizations.localeOf(context).languageCode == 'en';
+    final curQuestion = question.question.split('\n');
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
@@ -20,7 +22,7 @@ class QuestionPage extends ConsumerWidget {
           child: Container(
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
-            child: Text(question.question,
+            child: Text(isEnglish ? curQuestion.last : curQuestion.first,
                 style: Theme.of(context).textTheme.bodyLarge),
           ),
         ),
@@ -29,6 +31,7 @@ class QuestionPage extends ConsumerWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: question.answers.map((answer) {
+              final curAnswer = answer.value.split('\n');
               return Container(
                 height: 90,
                 margin: const EdgeInsets.only(bottom: 10),
@@ -57,7 +60,7 @@ class QuestionPage extends ConsumerWidget {
                           child: Container(
                             margin: const EdgeInsets.only(left: 12),
                             child: Text(
-                              answer.value,
+                              isEnglish ? curAnswer.last : curAnswer.first,
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
                           ),

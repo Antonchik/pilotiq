@@ -19002,8 +19002,8 @@
   {
     "L.p.": "1901.",
     "PPL(A)": "X",
-    "NUMER": "PL190-0004",
-    "PYTANIE": "Częstotliwość 121,500 jest przeznaczona do:",
+    "NUMER": "PL099-0004",
+    "PYTANIE": "Częstotliwość 121.500 jest przeznaczona do:",
     "ODP1": "lotniczej łączności radiotelefonicznej w niebezpieczeństwie",
     "ODP2": "łączności w niebezpieczeństwie dla telegrafii do odbioru słuchowego",
     "ODP3": "łączności z lądem w akcjach poszukiwawczo - ratowniczych (SAR)",
@@ -19012,10 +19012,10 @@
   {
     "L.p.": "1902.",
     "PPL(A)": "X",
-    "NUMER": "PL190-0005",
+    "NUMER": "PL099-0005",
     "PYTANIE": "Częstotliwość pomocnicza dla kanału 121.5 MHz to:",
     "ODP1": "123.1 MHz",
-    "ODP2": "101,5 MHz",
+    "ODP2": "101.5 MHz",
     "ODP3": "500 kHz",
     "ODP4": "2128 kHz"
   },
@@ -19082,12 +19082,12 @@
   {
     "L.p.": "1909.",
     "PPL(A)": "X",
-    "NUMER": "PL190-0012",
+    "NUMER": "PL099-0012",
     "PYTANIE": "Do łączności między statkami morskimi a statkami powietrznymi, uczestniczącymi w akcjach poszukiwawczo - ratowniczych (SAR), przeznaczona jest częstotliwość:",
-    "ODP1": "156,3 MHz",
-    "ODP2": "121,5 MHz",
-    "ODP3": "128,825 MHz",
-    "ODP4": "123,450 MHz"
+    "ODP1": "156.3 MHz",
+    "ODP2": "121.5 MHz",
+    "ODP3": "128.825 MHz",
+    "ODP4": "123.450 MHz"
   },
   {
     "L.p.": "1910.",
@@ -19202,9 +19202,9 @@
   {
     "L.p.": "1921.",
     "PPL(A)": "X",
-    "NUMER": "PL190-0025",
+    "NUMER": "PL099-0025",
     "PYTANIE": "Kontrola ruchu lotniczego obowiązana jest prowadzić nasłuch korespondencji radiowej w niebezpieczeństwie na częstotliwości:",
-    "ODP1": "121,5 MHz",
+    "ODP1": "121.5 MHz",
     "ODP2": "500 kHz",
     "ODP3": "156.3 MHz",
     "ODP4": "2182 kHz"
@@ -19502,12 +19502,12 @@
   {
     "L.p.": "1951.",
     "PPL(A)": "X",
-    "NUMER": "PL190-0055",
+    "NUMER": "PL099-0055",
     "PYTANIE": "Podstawową międzynarodową częstotliwością do łączności telegraficznej ręcznej w niebezpieczeństwie jest:",
     "ODP1": "500 kHz",
-    "ODP2": "121,5 MHz",
+    "ODP2": "121.5 MHz",
     "ODP3": "2182 kHz",
-    "ODP4": "122,7 MHz"
+    "ODP4": "122.7 MHz"
   },
   {
     "L.p.": "1952.",
@@ -19582,7 +19582,7 @@
   {
     "L.p.": "1959.",
     "PPL(A)": "X",
-    "NUMER": "PL190-0063",
+    "NUMER": "PL099-0063",
     "PYTANIE": "Przekazanie (retranslacja) wywołania MAYDAY winna być poprzedzona zwrotem:",
     "ODP1": "MAYDAY RELAY",
     "ODP2": "SOS",
@@ -19958,16 +19958,6 @@
     "ODP2": "tylko w niebezpieczeństwie",
     "ODP3": "uzyskania pisemnej zgody władz terenowych",
     "ODP4": "uzyskania zgody władz lotniczych"
-  },
-  {
-    "L.p.": "1997.",
-    "PPL(A)": "X",
-    "NUMER": "PL090-0044",
-    "PYTANIE": "Znak wywoławczy „Gdańsk Zbliżanie” oznacza:",
-    "ODP1": "Organ kontroli zbliżania Gdańsk",
-    "ODP2": "System podejścia do lądowania w Gdańsku",
-    "ODP3": "służbę zbliżania statków powietrznych w Gdańsku",
-    "ODP4": "Kontrolę podejścia w Gdańsku"
   },
   {
     "L.p.": "1998.",

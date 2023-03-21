@@ -20,7 +20,8 @@ class QuestionRepository {
 
   Future<void> parseQuestions() async {
     final String jsonString =
-        await rootBundle.loadString('assets/data/ppla-pl.json');
+        // await rootBundle.loadString('assets/data/ppla-pl.json');
+        await rootBundle.loadString('assets/data/ppla-en.json');
     final data = jsonDecode(jsonString);
     for (final entry in data) {
       final question = Question.fromJson(entry);
