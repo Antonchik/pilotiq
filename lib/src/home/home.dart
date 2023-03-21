@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pilotiq/src/shared/bottom_nav.dart';
-import 'package:pilotiq/src/topics/topic_model.dart';
+import 'package:pilotiq/src/home/bottom_nav.dart';
+import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/repo/repo.dart';
 import 'package:pilotiq/src/topics/topic_item_widget.dart';
 
@@ -22,77 +22,70 @@ class HomeScreen extends ConsumerWidget {
             AsyncSnapshot<Map<String, List<Question>>> snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             final questions = snapshot.data!;
-            final airLawQuestions = questions['airLaw']!;
-            final communicationsQuestions = questions['communications']!;
-            final meteorologyQuestions = questions['meteorology']!;
-            final navigationQuestions = questions['navigation']!;
-            final performanceQuestions = questions['flightPerformance']!;
-            final generalKnowledgeQuestions = questions['generalKnowledge']!;
-            final humanQuestions = questions['humanPerformance']!;
-            final opsProceduresQuestions = questions['operationalProcedures']!;
-            final flightPrinciplesQuestions = questions['principlesOfFlight']!;
             final topics = [
               Topic(
-                  id: '1',
+                  id: 'air_law',
                   title: local.airLawTopicTitle,
                   description: local.airLawTopicTooltip,
                   img: 'air_law.png',
-                  questions: airLawQuestions),
+                  questions: questions['airLaw']!),
               Topic(
-                id: '2',
+                id: 'communications',
                 title: local.communicationsTopicTitle,
                 description: local.communicationsTopicTooltip,
                 img: 'communications.png',
-                questions: communicationsQuestions,
+                questions: questions['communications']!,
               ),
               Topic(
-                id: '3',
+                id: 'meteorology',
                 title: local.meteorologyTopicTitle,
                 description: local.meteorologyTopicTooltip,
                 img: 'meteorology.png',
-                questions: meteorologyQuestions,
+                questions: questions['meteorology']!,
               ),
               Topic(
-                id: '4',
+                id: 'navigation',
                 title: local.navigationTopicTitle,
                 description: local.navigationTopicTooltip,
                 img: 'navigation.png',
-                questions: navigationQuestions,
+                questions: questions['navigation']!,
               ),
               Topic(
-                id: '5',
+                id: 'performance_and_planning',
                 title: local.performanceTopicTitle,
                 description: local.performanceTopicTooltip,
-                img: 'flight_planning.png',
-                questions: performanceQuestions,
+                img: 'performance_and_planning.png',
+                questions: questions['flightPerformance']!,
               ),
               Topic(
-                id: '6',
+                id: 'aircraft_general_knowledge',
                 title: local.generalKnowledgeTopicTitle,
                 description: local.generalKnowledgeTopicTooltip,
-                img: 'aircraft_knowledge.png',
-                questions: generalKnowledgeQuestions,
+                img: 'aircraft_general_knowledge.png',
+                questions: questions['generalKnowledge']!,
               ),
               Topic(
-                id: '7',
+                id: 'human_performance',
                 title: local.humanPerformanceTopicTitle,
                 description: local.humanPerformanceTopicTooltip,
                 img: 'human_performance.png',
-                questions: humanQuestions,
+                quizLength: 28,
+                quizTime: 45,
+                questions: questions['humanPerformance']!,
               ),
               Topic(
-                id: '8',
+                id: 'principles_of_flight',
                 title: local.principlesOfFlightTopicTitle,
                 description: local.principlesOfFlightTopicTooltip,
-                img: 'flight_principles.png',
-                questions: flightPrinciplesQuestions,
+                img: 'principles_of_flight.png',
+                questions: questions['principlesOfFlight']!,
               ),
               Topic(
-                id: '9',
+                id: 'operational_procedures',
                 title: local.operationalProcedureTopicTitle,
                 description: local.operationalProcedureTopicTooltip,
                 img: 'operational_procedures.png',
-                questions: opsProceduresQuestions,
+                questions: questions['operationalProcedures']!,
               ),
             ];
             return GridView.count(

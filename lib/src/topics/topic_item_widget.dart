@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pilotiq/src/topics/topic_model.dart';
+import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/topics/topic_screen.dart';
 
 class TopicItem extends StatelessWidget {

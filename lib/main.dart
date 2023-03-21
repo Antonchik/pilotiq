@@ -9,5 +9,9 @@ void main() async {
   final settingsController = SettingsController(SettingsService());
   await settingsController.loadSettings();
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(ProviderScope(child: MyApp(settingsController: settingsController)));
+  runApp(
+    ProviderScope(
+      child: MyApp(settingsController: settingsController),
+    ),
+  );
 }

@@ -6,6 +6,8 @@ class Topic {
   final String title;
   final String description;
   final String img;
+  final int quizTime;
+  final int quizLength;
   final List<Question> questions;
 
   Topic({
@@ -13,6 +15,8 @@ class Topic {
     this.title = '',
     this.description = '',
     this.img = 'default-cover.png',
+    this.quizTime = 30,
+    this.quizLength = 12,
     this.questions = const [],
   });
 }
