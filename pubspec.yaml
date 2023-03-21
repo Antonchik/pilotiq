@@ -1,4 +1,4 @@
-name: ulc_exam_simulator
+name: pilotiq
 description: Application for preparation to theoretical exam on PPL at Polish ULC.
 
 publish_to: 'none'
