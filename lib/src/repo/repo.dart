@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ulc_exam_simulator/src/topics/topic_model.dart';
+import 'package:pilotiq/src/topics/topic_model.dart';
 
 final questionRepositoryProvider = Provider<QuestionRepository>((ref) {
   return QuestionRepository();

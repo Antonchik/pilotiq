@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ulc_exam_simulator/src/topics/topic_model.dart';
-import 'package:ulc_exam_simulator/src/topics/topic_screen.dart';
+import 'package:pilotiq/src/topics/topic_model.dart';
+import 'package:pilotiq/src/topics/topic_screen.dart';
 
 class TopicItem extends StatelessWidget {
   final Topic topic;

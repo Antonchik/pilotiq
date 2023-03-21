@@ -1,5 +1,5 @@
-import 'package:ulc_exam_simulator/src/about/about.dart';
-import 'package:ulc_exam_simulator/src/home/home.dart';
+import 'package:pilotiq/src/about/about.dart';
+import 'package:pilotiq/src/home/home.dart';
 
 var appRoutes = {
   '/': (context) => const HomeScreen(),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ulc_exam_simulator/src/quiz/quiz.dart';
-import 'package:ulc_exam_simulator/src/topics/topic_model.dart';
+import 'package:pilotiq/src/quiz/quiz.dart';
+import 'package:pilotiq/src/topics/topic_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TopicScreen extends StatelessWidget {

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ulc_exam_simulator/src/topics/topic_model.dart';
+import 'package:pilotiq/src/topics/topic_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CountDownTimerController {

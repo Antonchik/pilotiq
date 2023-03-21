@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ulc_exam_simulator/src/routes.dart';
-import 'package:ulc_exam_simulator/src/theme.dart';
+import 'package:pilotiq/src/routes.dart';
+import 'package:pilotiq/src/theme.dart';
 import 'settings/settings_controller.dart';
 
 class MyApp extends ConsumerWidget {
