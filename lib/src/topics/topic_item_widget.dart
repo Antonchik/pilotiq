@@ -42,6 +42,7 @@ class TopicItem extends StatelessWidget {
                     style: const TextStyle(
                       height: 1.5,
                       fontWeight: FontWeight.bold,
+                      fontSize: 17,
                     ),
                     overflow: TextOverflow.fade,
                     softWrap: true,

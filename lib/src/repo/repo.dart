@@ -11,17 +11,14 @@ final questionRepositoryProvider = Provider<QuestionRepository>((ref) {
 class QuestionRepository {
   final Map<String, List<Question>> _questions = {};
 
-  Future<Map<String, List<Question>>> getQuestions() async {
-    if (_questions.isEmpty) {
-      await parseQuestions();
-    }
+  Future<Map<String, List<Question>>> getPPLAQuestions() async {
+    await parseQuestions('ppla-en.json');
     return _questions;
   }
 
-  Future<void> parseQuestions() async {
+  Future<void> parseQuestions(String jsonFile) async {
     final String jsonString =
-        // await rootBundle.loadString('assets/data/ppla-pl.json');
-        await rootBundle.loadString('assets/data/ppla-en.json');
+        await rootBundle.loadString('assets/data/$jsonFile');
     final data = jsonDecode(jsonString);
     for (final entry in data) {
       final question = Question.fromJson(entry);
@@ -70,10 +67,6 @@ class QuestionRepository {
         case 'PL100':
           _questions['airLaw'] ??= [];
           _questions['airLaw']!.add(question);
-          break;
-        case 'PL190':
-          _questions['communications'] ??= [];
-          _questions['communications']!.add(question);
           break;
       }
     }
