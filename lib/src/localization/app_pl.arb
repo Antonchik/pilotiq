@@ -36,5 +36,6 @@
   "examQuizTitle": "SYMULATOR EGZAMINU",
   "demoModeDescription": "Tryb demonstracyjny testu jest wersją rzeczywistego testu, zaprojektowaną tak, aby dać uczestnikom testu podgląd typów pytań, z którymi mogą się spotkać.",
   "fullModeDescription": "Tryb ten jest narzędziem do szkolenia i nauki, które zawiera wszystkie pytania dostępne w banku pytań. Umożliwia on uczestnikom testu przećwiczenie i przejrzenie dużej liczby pytań oraz uczenie się na własnych błędach.",
-  "examModeDescription": "Tryb symulatora egzaminacyjnego jest trybem ćwiczeniowym, który symuluje rzeczywiste doświadczenie egzaminacyjne. Tryb ten ma na celu pomóc osobom zdającym zapoznać się z formatem, czasem i poziomem trudności rzeczywistego testu."
+  "examModeDescription": "Tryb symulatora egzaminacyjnego jest trybem ćwiczeniowym, który symuluje rzeczywiste doświadczenie egzaminacyjne. Tryb ten ma na celu pomóc osobom zdającym zapoznać się z formatem, czasem i poziomem trudności rzeczywistego testu.",
+  "languageButtonTooltip": "Zmień język"
 }

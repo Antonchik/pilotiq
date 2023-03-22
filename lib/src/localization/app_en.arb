@@ -148,5 +148,9 @@
   "examModeDescription": "The exam simulator mode of the test is a practice mode that simulates the actual test experience. This mode is designed to help test takers become familiar with the format, timing, and difficulty level of the actual test.",
   "@examModeDescription": {
     "description": "Description for the Exam mode Quiz"
+  },
+  "languageButtonTooltip": "Language",
+  "@languageButtonTooltip": {
+    "description": "Label for the 'Language' button"
   }
 }

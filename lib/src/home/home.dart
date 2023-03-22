@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/home/bottom_nav.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/repo/repo.dart';
+import 'package:pilotiq/src/settings/language_button.dart';
 import 'package:pilotiq/src/topics/topic_item_widget.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -15,6 +16,9 @@ class HomeScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(local.topicsTitle),
+        actions: const [
+          LanguageButton(),
+        ],
       ),
       body: FutureBuilder(
         future: ref.read(questionRepositoryProvider).getQuestions(),
