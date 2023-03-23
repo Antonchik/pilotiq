@@ -22,6 +22,7 @@ class QuestionPage extends ConsumerWidget {
             padding: const EdgeInsets.all(16),
             alignment: Alignment.center,
             child: Text(curQuestion.last,
+                textAlign: TextAlign.justify,
                 style: Theme.of(context).textTheme.bodyLarge),
           ),
         ),
@@ -34,7 +35,11 @@ class QuestionPage extends ConsumerWidget {
               return Container(
                 constraints: const BoxConstraints(minHeight: 60),
                 margin: const EdgeInsets.only(bottom: 10),
-                color: Colors.black26,
+                decoration: BoxDecoration(
+                    color: Theme.of(context).hoverColor,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                        color: Theme.of(context).highlightColor, width: 2)),
                 child: InkWell(
                   onTap: () {
                     state.selected = answer;

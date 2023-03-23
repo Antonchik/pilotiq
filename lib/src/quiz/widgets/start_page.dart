@@ -38,7 +38,7 @@ class StartPage extends ConsumerWidget {
                 },
                 label: Text(
                   local.startQuizTitle,
-                  style: Theme.of(context).textTheme.titleLarge,
+                  // style: Theme.of(context).textTheme.titleLarge,
                 ),
                 icon: const Icon(Icons.checklist),
               )

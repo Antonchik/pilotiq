@@ -15858,5 +15858,325 @@
     "ODP2": "Tylko w niebezpieczeństwie.\nOnly in danger.",
     "ODP3": "Uzyskania pisemnej zgody władz terenowych.\nWith written permission from local authorities.",
     "ODP4": "Uzyskania zgody władz lotniczych.\nWith written permission from Aviation Authorities."
+  },
+  {
+    "L.p.": "1998.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0045",
+    "PYTANIE": "Rodzaj emisji stosowany w lotniczej łączności VHF to:\nThe type of emission used in aeronautical VHF communications is:",
+    "ODP1": "A3E",
+    "ODP2": "J3F",
+    "ODP3": "A1N",
+    "ODP4": "A2A"
+  },
+  {
+    "L.p.": "1999.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0046",
+    "PYTANIE": "Jeśli stacja pokładowa utraciła łączność ze stacją naziemną właściwą dla obszaru, w którym się znajduje to:\nIf the on-board station has lost communication with the ground station appropriate to the area in which it is located then:",
+    "ODP1": "Powinna nadawać „na ślepo” na częstotliwości pracy stacji naziemnej\nIt should transmit \"blind\" on the working frequency of the ground station",
+    "ODP2": "powinna przerwać nadawanie ze względu na możliwość zakłócania innych stacji\nshould cease transmission because of the potential for interference with other stations",
+    "ODP3": "włączyć odbiornik\nswitch the receiver on",
+    "ODP4": "Powinna nadawać na innej dowolnej częstotliwości\nIt should broadcast on any other frequency"
+  },
+  {
+    "L.p.": "2000.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0047",
+    "PYTANIE": "Międzynarodową lotniczą częstotliwością w niebezpieczeństwie dla radiotelefonii jest:\nThe international aviation distress frequency for radiotelephony is:",
+    "ODP1": "121.500 MHz",
+    "ODP2": "124.500 MHz",
+    "ODP3": "123.450 MHz",
+    "ODP4": "120.100 MHz"
+  },
+  {
+    "L.p.": "2001.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0048",
+    "PYTANIE": "W języku polskim liczbę 1 w lotniczej łączności radiotelefonicznej wymawia się jako:\nIn Polish, the number 1 in aeronautical radio communications is pronounced as:",
+    "ODP1": "Jedynka",
+    "ODP2": "Pierwszy",
+    "ODP3": "RAZ",
+    "ODP4": "Jeden"
+  },
+  {
+    "L.p.": "2002.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0049",
+    "PYTANIE": "Sygnałem radiotelefonicznym w lotnictwie informującym o niebezpieczeństwie jest:\nThe aviation distress radio signal is:",
+    "ODP1": "MAYDAY",
+    "ODP2": "PANPAN",
+    "ODP3": "BREAK",
+    "ODP4": "REPORT"
+  },
+  {
+    "L.p.": "2003.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0050",
+    "PYTANIE": "W łączności radiotelefonicznej stosowanie skróconych znaków wywoławczych przez stację pokładową jest:\nIn radiotelephony communications, the use of abbreviated call signs by the on-board station is:",
+    "ODP1": "Dozwolone po wywołaniu jej przez stacją naziemną\nAllowed when called by a ground station",
+    "ODP2": "Zabronione\nProhibited",
+    "ODP3": "Obowiązakowe\nMandatory",
+    "ODP4": "Zawsze dozwolone\nAlways allowed"
+  },
+  {
+    "L.p.": "2004.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0051",
+    "PYTANIE": "Główna częstotliwość radiowa to:\nThe main radio frequency is:",
+    "ODP1": "Podstawowa częstotliwość statku powietrznego do łączności\nPrimary aircraft frequency for communications",
+    "ODP2": "123.450 MHz",
+    "ODP3": "118.000 MHz",
+    "ODP4": "Częstotliwość w niebezpieczeństwie\nFrequency in distress"
+  },
+  {
+    "L.p.": "2005.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0052",
+    "PYTANIE": "Transmisja stacji naziemnej do statku powietrznego wykonującego operację startu lub końcowej części podejścia:\nGround station transmission to aircraft performing take-off or final approach operations:",
+    "ODP1": "Może być kierowana tylko ze względów bezpieczeństwa\nCan only be directed for safety reasons",
+    "ODP2": "Nie istnieją regulacje w tym zakresie\nThere are no regulations in this area",
+    "ODP3": "Nie może być kierowana nigdy\nIt can never be directed",
+    "ODP4": "Może być kierowana zawsze\nIt can always be directed"
+  },
+  {
+    "L.p.": "2006.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0053",
+    "PYTANIE": "Do łączności typu powietrze-powietrze przeznaczona jest częstotliwość:\nA frequency is dedicated for air-to-air communications:",
+    "ODP1": "123.450 MHz",
+    "ODP2": "118.000 MHz",
+    "ODP3": "136.000 MHz",
+    "ODP4": "243.000 MHz"
+  },
+  {
+    "L.p.": "2007.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0054",
+    "PYTANIE": "Przyrostek znaku wywoławczego „KONTROLA” oznacza:\nThe call sign suffix \"CONTROL\" means:",
+    "ODP1": "Kontrolę obszaru Area\nArea control",
+    "ODP2": "Kontrolę zbliżania\nApproach control",
+    "ODP3": "Kontrolę ruchu naziemnego\nGround traffic control",
+    "ODP4": "Kontrolę lotniska\nAirport control"
+  },
+  {
+    "L.p.": "2008.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0055",
+    "PYTANIE": "W polskiej przestrzeni powietrznej dopuszczalna separacja miedzy kanałami radiowymi w łączności radiotelefonicznej VHF to:\nIn Polish airspace, the permissible separation between radio channels in VHF radiotelephony communications is:",
+    "ODP1": "8.33 kHz",
+    "ODP2": "25/50 kHz",
+    "ODP3": "50/100 kHz",
+    "ODP4": "25/83.3 kHz"
+  },
+  {
+    "L.p.": "2009.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0057",
+    "PYTANIE": "Zmiana znaku wywoławczego przez statek powietrzny:\nChange of call sign by aircraft:",
+    "ODP1": "Jest dozwolona na polecenie organu kontroli ruchu lotniczego\nIs allowed on the order of the air traffic control authority",
+    "ODP2": "Jest bezwzględnie zakazana\nIt is absolutely prohibited",
+    "ODP3": "Jest dozwolona na prośbę pilota statkupowietrznego\nIs allowed at the request of the pilot of the aircraft",
+    "ODP4": "Jest zawsze dozwolona\nIt is always allowed"
+  },
+  {
+    "L.p.": "2010.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0058",
+    "PYTANIE": "Służba ruchoma lotnicza wykorzystuje do łączności głosowej zakres częstotliwości radiowych:\nThe air traffic service uses the radio frequency range for voice communications:",
+    "ODP1": "118-136.975 MHz",
+    "ODP2": "108-117.975 kHz",
+    "ODP3": "108-117.975 MHz",
+    "ODP4": "118-136.975 kHz"
+  },
+  {
+    "L.p.": "2011.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0059",
+    "PYTANIE": "Przykładem wiadomości rozsyłanej przez lotniczą służbę rozgłaszania jest nadawanie komunikatu:\nAn example of a message sent out by an airborne broadcasting service is the broadcasting of a message:",
+    "ODP1": "ATIS",
+    "ODP2": "NOTAM",
+    "ODP3": "AIP",
+    "ODP4": "AFTN"
+  },
+  {
+    "L.p.": "2012.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0061",
+    "PYTANIE": "Wymiana korespondencji w sytuacjach naglących może odbywać się:\nThe exchange of correspondence in urgent situations can take place:",
+    "ODP1": "Na częstotliwości, na której została rozpoczęta\nOn the frequency on which it was started",
+    "ODP2": "Tylko na częstotliwości niebezpieczeństwa\nOnly at the emergency frequency",
+    "ODP3": "Tylko na częstotliwości, na której została rozpoczęta bez możliwości jej zmiany\nOnly on the frequency on which it was started without the possibility of changing it",
+    "ODP4": "Na dowolnie wybranej częstotliwości\nAt any chosen frequency"
+  },
+  {
+    "L.p.": "2013.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0062",
+    "PYTANIE": "Podczas kontroli stacji radiowej stosuje się skalę słyszalności:\nAn audibility scale is used when testing a radio station:",
+    "ODP1": "5 stopniową\n5 grades",
+    "ODP2": "3 stopniową\n3 grades",
+    "ODP3": "4 stopniową\n4 grades",
+    "ODP4": "10 stopniową\n10 grades"
+  },
+  {
+    "L.p.": "2014.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0063",
+    "PYTANIE": "Urządzenie łączności radiowej na lotnisku, które nie zapewnia służb ruchu lotniczego, stosuje znakwywoławczy zawierający przyrostek:\nA radio communication facility at an aerodrome that does not provide air traffic services shall use a call sign containing a suffix:",
+    "ODP1": "RADIO\nRADIO",
+    "ODP2": "WIEŻA\nTOWER",
+    "ODP3": "KONTROLA\nCONTROL",
+    "ODP4": "INFORMACJA\nINFORMATION"
+  },
+  {
+    "L.p.": "2015.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0064",
+    "PYTANIE": "Korespondencja radiotelefoniczna pomiędzy stacją naziemną a stacją pokładową odbywa się w języku:\nRadio-telephone correspondence between the ground station and the on-board station is in the language:",
+    "ODP1": "Zwykle stosowanym przez stację naziemną lub angielskim\nUsually used by a ground station or English",
+    "ODP2": "Tylko angielskim\nEnglish only",
+    "ODP3": "Dowolnym, w zależności od preferencji stacji pokładowej\nAny, depending on the preference of the on-board station",
+    "ODP4": "Tylko zwykle stosowanym przez stację naziemną\nOnly normally used by a ground station"
+  },
+  {
+    "L.p.": "2016.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0065",
+    "PYTANIE": "Jeśli operator radiostacji popełni błąd podczas nadawania, to będzie wypowiadać wyrażenie:\nIf the radio operator makes a mistake while transmitting, he will utter the phrase:",
+    "ODP1": "POPRAWIAM\nAMEND",
+    "ODP2": "POWTARZAM\nREPEAT",
+    "ODP3": "NIEPRAWIDŁOWO\nWRONG",
+    "ODP4": "POMIŃ\nSKIP"
+  },
+  {
+    "L.p.": "2017.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0066",
+    "PYTANIE": "We frazeologii lotniczej wyrażenie „WYKONAM” oznacza:\nIn aeronautical phraseology, the expression 'WILCO' means:",
+    "ODP1": "Zrozumiałem twoją depeszę i będę stosować się do niej\nI have understood your message and will comply with it",
+    "ODP2": "Zezwala się na kontynuowanie lotu w określonych warunkach\nIt is permitted to continue the flight under certain conditions",
+    "ODP3": "Tak\nYes",
+    "ODP4": "Skończyłem nadawanie i oczekuję odpowiedzi\nI have finished transmitting and am awaiting a response"
+  },
+  {
+    "L.p.": "2018.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0067",
+    "PYTANIE": "Jeśli wykorzystywane są częstotliwości VHF z separacją 8,33 kHz to do identyfikacji kanału należystosować:\nIf VHF frequencies with 8.33 kHz separation are used, the channel identification should be used:",
+    "ODP1": "6 cyfr\n6 digits",
+    "ODP2": "5 cyfr\n5 digits",
+    "ODP3": "4 cyfry\n4 digits",
+    "ODP4": "3 cyfry\n3 digits"
+  },
+  {
+    "L.p.": "2019.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0068",
+    "PYTANIE": "Fale radiowe o częstotliwościach powyżej 30 MHz:\nRadio waves with frequencies above 30 MHz:",
+    "ODP1": "Rozchodzą sięprostoliniowo i ulegają rozpraszaniu i tłumieniu w troposferze\nPropagate in a straight line and undergo scattering and attenuation in the troposphere",
+    "ODP2": "Ulegają dużej dyfrakcji i odbiciu od jonosfery\nSubject to high diffraction and reflection from the ionosphere",
+    "ODP3": "Ulegają dyfrakcji i tlumieniu w jonosferze\nSubject to diffraction and smothering in the ionosphere",
+    "ODP4": "Ulegają odbiciu od jonosfery i ttumieniuprzez powierzchnię ziemi\nReflected from the ionosphere and thunders through the earth's surface"
+  },
+  {
+    "L.p.": "2020.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0069",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej stosowane są najczęściej anteny o charakterystyce:\nIn aeronautical radiotelephony communications, antennas with characteristics are most commonly used:",
+    "ODP1": "Dookólnej\nOmnidirectional",
+    "ODP2": "Obrotowej\nRotating",
+    "ODP3": "Kierunkowej\nDirectional",
+    "ODP4": "Fazowej\nPhased"
+  },
+  {
+    "L.p.": "2021.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0070",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej stosowana jest modulacja:\nModulation is used in aeronautical radiotelephony communications:",
+    "ODP1": "Amplitudy\nAmplitude",
+    "ODP2": "Fazy\nPhase",
+    "ODP3": "Impulsowo-kodowa\nImpulse-code",
+    "ODP4": "Częstotliwości\nFrequency"
+  },
+  {
+    "L.p.": "2022.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0071",
+    "PYTANIE": "Informację o poziomie lotu FL 240 należy nadać w następujący sposób:\nFL240 flight level information should be transmitted as follows:",
+    "ODP1": "POZIOM LOTU DWA CZTERY ZERO\nFLIGHT LEVEL TWO FOUR ZERO",
+    "ODP2": "FL DWA CZTERY ZERO\nFL TWO FOUR ZERO",
+    "ODP3": "POZIOM LOTU DWADZIEŚCIA CZTERY ZERO\nFLIGHT LEVEL TWENTY-FOUR ZERO",
+    "ODP4": "POZIOM LOTU DWIEŚCIE CZTERDZIEŚCI\nFLIGHT LEVEL TWO HUNDRED AND FORTY"
+  },
+  {
+    "L.p.": "2023.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0072",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej literę Q wymawia się jako:\nIn aeronautical radio communications, the letter Q is pronounced as:",
+    "ODP1": "Kebek\nQUEBEC",
+    "ODP2": "Kłejker\nQUAKER",
+    "ODP3": "Kłoter\nQUARTER",
+    "ODP4": "Kju\nQ"
+  },
+  {
+    "L.p.": "2024.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0073",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej stosowane są anteny o polaryzacji:\nThe antennas used in aeronautical radiotelephony communications have polarisation:",
+    "ODP1": "Pionowej\nVertical",
+    "ODP2": "Biegunowej\nPolar",
+    "ODP3": "Poziomej\nHorizontal",
+    "ODP4": "Kołowej\nCircular"
+  },
+  {
+    "L.p.": "2025.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0074",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej literę B wymawia się jako:\nIn aeronautical radio communications, the letter B is pronounced as:",
+    "ODP1": "BRAVO",
+    "ODP2": "BARBARA",
+    "ODP3": "BETA",
+    "ODP4": "BROWN"
+  },
+  {
+    "L.p.": "2025.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0075",
+    "PYTANIE": "Wymianę korespondencji radiotelefonicznej stacja odbiorcza zakańcza przez:\nThe exchange of radiotelephony correspondence shall be terminated by the receiving station by:",
+    "ODP1": "Nadanie swojego sygnału Wywoławczego\nTransmitting own call sign",
+    "ODP2": "Nadanie sygnału wywoławczego stacji Nadawczej\nTransmitting station call sign",
+    "ODP3": "Potwierdzenie odbioru Transmisji\nConfirmation of receipt of transmission",
+    "ODP4": "Nadanie sygnału ODBIÓR\nTransmitting signal RECEIVE"
+  },
+  {
+    "L.p.": "2026.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0076",
+    "PYTANIE": "Nadawanie wiadomości dotyczących żeglugi powietrznej, które nie są adresowane do określonej stacji to:\nBroadcasting air navigation messages that are not addressed to a specific station is:",
+    "ODP1": "Rozgłaszanie\nBroadcasting",
+    "ODP2": "Łączność powietrze-ziemia\nAir-to-ground communications",
+    "ODP3": "Łączność powietrze-powietrze\nAir-to-air communications",
+    "ODP4": "Łączność w kierunku Powietrza\nCommunication towards the Air"
+  },
+  {
+    "L.p.": "2027.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0077",
+    "PYTANIE": "Do identyfikacji stacji lotniczej w ruchomej służbie lotniczej są używane:\nThe following are used to identify the air station in the air traffic control service:",
+    "ODP1": "Nazwa lokalizacji i nazwa właściwego organu lub służby\nName of location and name of competent body or service",
+    "ODP2": "Wskaźnik lokalizacji\nLocation indicator",
+    "ODP3": "Oznacznik telefoniczny\nCall sign",
+    "ODP4": "Adres AFTN\nAFTN address"
+  },
+  {
+    "L.p.": "2028.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0078",
+    "PYTANIE": "Spośród poniższych depesz najniższą kategorię pierwszeństwa posiada:\nOf the following depositions, the lowest priority category is:",
+    "ODP1": "Depesza meteorologiczna\nMeteorological message",
+    "ODP2": "Depesza pilna\nUrgent message",
+    "ODP3": "Depesza o niebezpieczeństwie\nDistress message",
+    "ODP4": "Depesza dotycząca bezpieczeństwa lotów\nFlight safety message"
   }
 ]

@@ -15978,5 +15978,325 @@
     "ODP2": "tylko w niebezpieczeństwie",
     "ODP3": "uzyskania pisemnej zgody władz terenowych",
     "ODP4": "uzyskania zgody władz lotniczych"
+  },
+  {
+    "L.p.": "1998.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0045",
+    "PYTANIE": "Rodzaj emisji stosowany w lotniczej łączności VHF to:",
+    "ODP1": "A3E",
+    "ODP2": "J3F",
+    "ODP3": "A1N",
+    "ODP4": "A2A"
+  },
+  {
+    "L.p.": "1999.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0046",
+    "PYTANIE": "Jeśli stacja pokładowa utraciła łączność ze stacją naziemną właściwą dla obszaru, w którym się znajduje to:",
+    "ODP1": "Powinna nadawać „na ślepo” na częstotliwości pracy stacji naziemnej",
+    "ODP2": "powinna przerwać nadawanie ze względu na możliwość zakłócania innych stacji",
+    "ODP3": "włączyć odbiornik",
+    "ODP4": "Powinna nadawać na innej dowolnej częstotliwości"
+  },
+  {
+    "L.p.": "2000.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0047",
+    "PYTANIE": "Międzynarodową lotniczą częstotliwością w niebezpieczeństwie dla radiotelefonii jest:",
+    "ODP1": "121.500 MHz",
+    "ODP2": "124.500 MHz",
+    "ODP3": "123,450 MHz",
+    "ODP4": "120,100 MHz"
+  },
+  {
+    "L.p.": "2001.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0048",
+    "PYTANIE": "W języku polskim liczbę 1 w lotniczej łączności radiotelefonicznej wymawia się jako:",
+    "ODP1": "Jedynka",
+    "ODP2": "Pierwszy",
+    "ODP3": "RAZ",
+    "ODP4": "Jeden"
+  },
+  {
+    "L.p.": "2002.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0049",
+    "PYTANIE": "Sygnałem radiotelefonicznym w lotnictwie informującym o niebezpieczeństwie jest:",
+    "ODP1": "MAYDAY",
+    "ODP2": "PANPAN",
+    "ODP3": "BREAK",
+    "ODP4": "REPORT"
+  },
+  {
+    "L.p.": "2003.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0050",
+    "PYTANIE": "W łączności radiotelefonicznej stosowanie skróconych znaków wywoławczych przez stację pokładową jest:",
+    "ODP1": "Dozwolone po wywołaniu jej przez stacją naziemną",
+    "ODP2": "Zabronione",
+    "ODP3": "Obowiązakowe",
+    "ODP4": "Zawsze dozwolone"
+  },
+  {
+    "L.p.": "2004.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0051",
+    "PYTANIE": "Główna częstotliwość radiowa to:",
+    "ODP1": "Podstawowa częstotliwość statku powietrznego do łączności",
+    "ODP2": "123.450 MHz",
+    "ODP3": "118.000 MHz",
+    "ODP4": "Częstotliwość w niebezpieczeństwie"
+  },
+  {
+    "L.p.": "2005.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0052",
+    "PYTANIE": "Transmisja stacji naziemnej do statku powietrznego wykonującego operację startu lub końcowej części podejścia:",
+    "ODP1": "Może być kierowana tylko ze względów bezpieczeństwa",
+    "ODP2": "Nie istnieją regulacje w tym zakresie",
+    "ODP3": "Nie może być kierowana nigdy",
+    "ODP4": "Może być kierowana zawsze"
+  },
+  {
+    "L.p.": "2006.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0053",
+    "PYTANIE": "Do łączności typu powietrze-powietrze przeznaczona jest częstotliwość:",
+    "ODP1": "123.450 MHz",
+    "ODP2": "118.000 MHz",
+    "ODP3": "136.000 MHz",
+    "ODP4": "243.000 MHz"
+  },
+  {
+    "L.p.": "2007.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0054",
+    "PYTANIE": "Przyrostek znaku wywoławczego „KONTROLA” oznacza:",
+    "ODP1": "Kontrolę obszaru Area",
+    "ODP2": "Kontrolę zbliżania",
+    "ODP3": "Kontrolę ruchu naziemnego",
+    "ODP4": "Kontrolę lotniska"
+  },
+  {
+    "L.p.": "2008.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0055",
+    "PYTANIE": "W polskiej przestrzeni powietrznej dopuszczalna separacja miedzy kanałami radiowymi w łączności radiotelefonicznej VHF to:",
+    "ODP1": "8.33 kHz",
+    "ODP2": "25/50 kHz",
+    "ODP3": "50/100 kHz",
+    "ODP4": "25/83.3 kHz"
+  },
+  {
+    "L.p.": "2009.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0057",
+    "PYTANIE": "Zmiana znaku wywoławczego przez statek powietrzny:",
+    "ODP1": "Jest dozwolona na polecenie organu kontroli ruchu lotniczego",
+    "ODP2": "Jest bezwzględnie zakazana",
+    "ODP3": "Jest dozwolona na prośbę pilota statkupowietrznego",
+    "ODP4": "Jest zawsze dozwolona"
+  },
+  {
+    "L.p.": "2010.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0058",
+    "PYTANIE": "Służba ruchoma lotnicza wykorzystuje do łączności głosowej zakres częstotliwości radiowych:",
+    "ODP1": "118-136.975 MHz",
+    "ODP2": "108-117.975 kHz",
+    "ODP3": "108-117.975 MHz",
+    "ODP4": "118-136.975 kHz"
+  },
+  {
+    "L.p.": "2011.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0059",
+    "PYTANIE": "Przykładem wiadomości rozsyłanej przez lotniczą służbę rozgłaszania jest nadawanie komunikatu:",
+    "ODP1": "ATIS",
+    "ODP2": "NOTAM",
+    "ODP3": "AIP",
+    "ODP4": "AFTN"
+  },
+  {
+    "L.p.": "2012.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0061",
+    "PYTANIE": "Wymiana korespondencji w sytuacjach naglących może odbywać się:",
+    "ODP1": "Na częstotliwości, na której została rozpoczęta",
+    "ODP2": "Tylko na częstotliwości niebezpieczeństwa",
+    "ODP3": "Tylko na częstotliwości, na której została rozpoczęta bez możliwości jej zmiany",
+    "ODP4": "Na dowolnie wybranej częstotliwości"
+  },
+  {
+    "L.p.": "2013.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0062",
+    "PYTANIE": "Podczas kontroli stacji radiowej stosuje się skalę słyszalności:",
+    "ODP1": "5 stopniową",
+    "ODP2": "3 stopniową",
+    "ODP3": "4 stopniową",
+    "ODP4": "10 stopniową"
+  },
+  {
+    "L.p.": "2014.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0063",
+    "PYTANIE": "Urządzenie łączności radiowej na lotnisku, które nie zapewnia służb ruchu lotniczego, stosuje znakwywoławczy zawierający przyrostek:",
+    "ODP1": "RADIO",
+    "ODP2": "WIEŻA",
+    "ODP3": "KONTROLA",
+    "ODP4": "INFORMACJA"
+  },
+  {
+    "L.p.": "2015.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0064",
+    "PYTANIE": "Korespondencja radiotelefoniczna pomiędzy stacją naziemną a stacją pokładową odbywa się w języku:",
+    "ODP1": "Zwykle stosowanym przez stację naziemną lub angielskim",
+    "ODP2": "Tylko angielskim",
+    "ODP3": "Dowolnym, w zależności od preferencji stacji pokładowej",
+    "ODP4": "Tylko zwykle stosowanym przez stację naziemną"
+  },
+  {
+    "L.p.": "2016.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0065",
+    "PYTANIE": "Jeśli operator radiostacji popełni błąd podczas nadawania, to będzie wypowiadać wyrażenie:",
+    "ODP1": "POPRAWIAM",
+    "ODP2": "POWTARZAM",
+    "ODP3": "NIEPRAWIDŁOWO",
+    "ODP4": "POMIŃ"
+  },
+  {
+    "L.p.": "2017.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0066",
+    "PYTANIE": "We frazeologii lotniczej wyrażenie „WYKONAM” oznacza:",
+    "ODP1": "Zrozumiałem twoją depeszę i będę stosować się do niej",
+    "ODP2": "Zezwala się na kontynuowanie lotu w określonych warunkach",
+    "ODP3": "Tak",
+    "ODP4": "Skończyłem nadawanie i oczekuję odpowiedzi"
+  },
+  {
+    "L.p.": "2018.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0067",
+    "PYTANIE": "Jeśli wykorzystywane są częstotliwości VHF z separacją 8,33 kHz to do identyfikacji kanału należystosować:",
+    "ODP1": "6 cyfr",
+    "ODP2": "5 cyfr",
+    "ODP3": "4 cyfry",
+    "ODP4": "3 cyfry"
+  },
+  {
+    "L.p.": "2019.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0068",
+    "PYTANIE": "Fale radiowe o częstotliwościach powyżej 30 MHz:",
+    "ODP1": "Rozchodzą sięprostoliniowo i ulegają rozpraszaniu i tłumieniu w troposferze",
+    "ODP2": "Ulegają dużej dyfrakcji i odbiciu od jonosfery",
+    "ODP3": "Ulegają dyfrakcji i ttumieniu w jonosferze",
+    "ODP4": "Ulegają odbiciu od jonosfery i ttumieniuprzez powierzchnię ziemi"
+  },
+  {
+    "L.p.": "2020.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0069",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej stosowane są najczęściej anteny o charakterystyce:",
+    "ODP1": "Dookólnej",
+    "ODP2": "Obrotowej",
+    "ODP3": "Kierunkowej",
+    "ODP4": "Fazowej"
+  },
+  {
+    "L.p.": "2021.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0070",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej stosowana jest modulacja:",
+    "ODP1": "Amplitudy",
+    "ODP2": "Fazy",
+    "ODP3": "Impulsowo-kodowa",
+    "ODP4": "Częstotliwości"
+  },
+  {
+    "L.p.": "2022.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0071",
+    "PYTANIE": "Informację o poziomie lotu FL 240 należy nadać w następujący sposób:",
+    "ODP1": "POZIOM LOTU DWA CZTERY ZERO",
+    "ODP2": "FL DWA CZTERY ZERO",
+    "ODP3": "POZIOM LOTU DWADZIEŚCIA CZTERY ZERO",
+    "ODP4": "POZIOM LOTU DWIEŚCIE CZTERDZIEŚCI"
+  },
+  {
+    "L.p.": "2023.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0072",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej literę Q wymawia się jako:",
+    "ODP1": "Kebek",
+    "ODP2": "Kłejker",
+    "ODP3": "Kłoter",
+    "ODP4": "Kju"
+  },
+  {
+    "L.p.": "2024.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0073",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej stosowane są anteny o polaryzacji:",
+    "ODP1": "Pionowej",
+    "ODP2": "Biegunowej",
+    "ODP3": "Poziomej",
+    "ODP4": "Kołowej"
+  },
+  {
+    "L.p.": "2025.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0074",
+    "PYTANIE": "W lotniczej łączności radiotelefonicznej literę B wymawia się jako:",
+    "ODP1": "BRAVO",
+    "ODP2": "BARBARA",
+    "ODP3": "BETA",
+    "ODP4": "BROWN"
+  },
+  {
+    "L.p.": "2025.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0075",
+    "PYTANIE": "Wymianę korespondencji radiotelefonicznej stacja odbiorcza zakańcza przez:",
+    "ODP1": "Nadanie swojego sygnału Wywoławczego",
+    "ODP2": "Nadanie sygnału wywoławczego stacji Nadawczej",
+    "ODP3": "Potwierdzenie odbioru Transmisji",
+    "ODP4": "Nadanie sygnału ODBIÓR"
+  },
+  {
+    "L.p.": "2026.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0076",
+    "PYTANIE": "Nadawanie wiadomości dotyczących żeglugi powietrznej, które nie są adresowane do określonej stacji to:",
+    "ODP1": "Rozgłaszanie",
+    "ODP2": "Łączność powietrze-ziemia",
+    "ODP3": "Łączność powietrze-powietrze",
+    "ODP4": "Łączność w kierunku Powietrza"
+  },
+  {
+    "L.p.": "2027.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0077",
+    "PYTANIE": "Do identyfikacji stacji lotniczej w ruchomej służbie lotniczej są używane:",
+    "ODP1": "Nazwa lokalizacji i nazwa właściwego organu lub służby",
+    "ODP2": "Wskaźnik lokalizacji",
+    "ODP3": "Oznacznik telefoniczny",
+    "ODP4": "Adres AFTN"
+  },
+  {
+    "L.p.": "2028.",
+    "PPL(H)": "X",
+    "NUMER": "PL090-0078",
+    "PYTANIE": "Spośród poniższych depesz najniższą kategorię pierwszeństwa posiada:",
+    "ODP1": "Depesza meteorologiczna",
+    "ODP2": "Depesza pilna",
+    "ODP3": "Depesza o niebezpieczeństwie",
+    "ODP4": "Depesza dotycząca bezpieczeństwa lotów"
   }
 ]

@@ -18,7 +18,7 @@ class AnimatedProgressbar extends StatelessWidget {
               Container(
                 height: height,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.all(
                     Radius.circular(height),
                   ),
@@ -50,6 +50,6 @@ class AnimatedProgressbar extends StatelessWidget {
 
   _colorGen(double value) {
     int rbg = (value * 255).toInt();
-    return Colors.deepOrange.withGreen(rbg).withRed(255 - rbg);
+    return Colors.green.withRed(rbg).withRed(255 - rbg);
   }
 }
