@@ -1,4 +1,20 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:pilotiq/src/home/home.dart';
+
+@JsonSerializable()
+class Exam {
+  final ExamType type;
+  final String title;
+  final String description;
+  final String img;
+
+  Exam({
+    required this.type,
+    this.title = '',
+    this.description = '',
+    this.img = 'default-cover.png',
+  });
+}
 
 @JsonSerializable()
 class Topic {

@@ -3,6 +3,10 @@
   "@appTitle": {
     "description": "The title of the application"
   },
+  "examsTitle": "Exams",
+  "@examsTitle": {
+    "description": "The title of the exams screen"
+  },
   "topicsTitle": "Topics",
   "@topicsTitle": {
     "description": "The title of the topics screen"
@@ -10,6 +14,30 @@
   "aboutTitle": "About",
   "@aboutTitle": {
     "description": "The title of the about screen"
+  },
+  "pplaExamTitle": "PPL(A)",
+  "@pplaExamTitle": {
+    "description": "The title of the PPL(A) exam"
+  },
+  "pplaEngExamTitle": "PPL(A) eng",
+  "@pplaEngExamTitle": {
+    "description": "The title of the PPL(A) ENG exam"
+  },
+  "pplhExamTitle": "PPL(H)",
+  "@pplhExamTitle": {
+    "description": "The title of the PPL(H) exam"
+  },
+  "pplhEngExamTitle": "PPL(H) eng",
+  "@pplhEngExamTitle": {
+    "description": "The title of the PPL(H) ENG exam"
+  },
+  "plgExamTitle": "PL(G)",
+  "@plgExamTitle": {
+    "description": "The title of the PL(G) exam"
+  },
+  "plfbExamTitle": "PL(FB)",
+  "@plfbExamTitle": {
+    "description": "The title of the PL(FB) exam"
   },
   "airLawTopicTitle": "Air law",
   "@airLawTopicTitle": {

@@ -1,10 +1,14 @@
 {
   "appTitle": "pilotiq",
-  "@appTitle": {
-    "description": "The title of the application"
-  },
+  "examsTitle": "Exams",
   "topicsTitle": "Tematy",
   "aboutTitle": "O aplikacji",
+  "pplaExamTitle": "PPL(A)",
+  "pplaEngExamTitle": "PPL(A) eng",
+  "pplhExamTitle": "PPL(H)",
+  "pplhEngExamTitle": "PPL(H) eng",
+  "plgExamTitle": "SPL",
+  "plfbExamTitle": "BPL",
   "airLawTopicTitle": "Prawo lotnicze",
   "communicationsTopicTitle": "Łączność",
   "meteorologyTopicTitle": "Meteorologia",

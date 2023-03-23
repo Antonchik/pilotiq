@@ -13,6 +13,11 @@ class TopicItem extends StatelessWidget {
       tag: topic.id,
       child: Card(
         clipBehavior: Clip.antiAlias,
+        elevation: 2.0,
+        shadowColor: Theme.of(context).primaryColorLight,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: InkWell(
           onTap: () {
             Navigator.of(context).push(
@@ -21,31 +26,34 @@ class TopicItem extends StatelessWidget {
               ),
             );
           },
-          child: Column(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(
-                flex: 2,
                 child: SizedBox(
                   child: Image.asset(
                     'assets/covers/${topic.img}',
-                    fit: BoxFit.contain,
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
               ),
               Flexible(
+                flex: 3,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Text(
-                    topic.title,
-                    style: const TextStyle(
-                      height: 1.5,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      topic.title,
+                      style: const TextStyle(
+                        height: 1.2,
+                        letterSpacing: 1.2,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22,
+                      ),
+                      overflow: TextOverflow.fade,
+                      softWrap: true,
                     ),
-                    overflow: TextOverflow.fade,
-                    softWrap: true,
                   ),
                 ),
               ),

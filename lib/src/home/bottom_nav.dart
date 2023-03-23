@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
@@ -9,6 +9,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
     return BottomNavigationBar(
+      backgroundColor: Theme.of(context).primaryColor,
       items: [
         BottomNavigationBarItem(
           icon: const Icon(
@@ -25,7 +26,6 @@ class BottomNavBar extends StatelessWidget {
           label: local.aboutTitle,
         ),
       ],
-      fixedColor: Colors.deepPurple[200],
       onTap: (int idx) {
         switch (idx) {
           case 0:

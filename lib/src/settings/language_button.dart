@@ -24,7 +24,7 @@ class LanguageButton extends ConsumerWidget {
       // icon: const Icon(Icons.translate, size: 20),
       icon: Text(
         isEnglish ? 'EN' : 'PL',
-        style: Theme.of(context).textTheme.titleMedium,
+        // style: Theme.of(context).textTheme.titleMedium,
       ),
     );
   }

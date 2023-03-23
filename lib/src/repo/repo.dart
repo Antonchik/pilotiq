@@ -11,8 +11,22 @@ final questionRepositoryProvider = Provider<QuestionRepository>((ref) {
 class QuestionRepository {
   final Map<String, List<Question>> _questions = {};
 
-  Future<Map<String, List<Question>>> getPPLAQuestions() async {
-    await parseQuestions('ppla-en.json');
+  Future<Map<String, List<Question>>> getPPLQuestions({
+    bool isHelicopter = false,
+    bool isEnglish = false,
+    bool isGlider = false,
+    bool isBalloon = false,
+  }) async {
+    _questions.clear();
+    if (isGlider) {
+      await parseQuestions('plg-pl.json');
+    } else if (isBalloon) {
+      await parseQuestions('plfb-pl.json');
+    } else {
+      final aircraftType = isHelicopter ? 'h' : 'a';
+      final language = isEnglish ? 'en' : 'pl';
+      await parseQuestions('ppl$aircraftType-$language.json');
+    }
     return _questions;
   }
 
@@ -29,6 +43,14 @@ class QuestionRepository {
           _questions['airLaw']!.add(question);
           break;
         case 'PL020':
+          _questions['generalKnowledge'] ??= [];
+          _questions['generalKnowledge']!.add(question);
+          break;
+        case 'PL024':
+          _questions['generalKnowledge'] ??= [];
+          _questions['generalKnowledge']!.add(question);
+          break;
+        case 'PL025':
           _questions['generalKnowledge'] ??= [];
           _questions['generalKnowledge']!.add(question);
           break;
@@ -65,6 +87,10 @@ class QuestionRepository {
           _questions['airLaw']!.add(question);
           break;
         case 'PL100':
+          _questions['airLaw'] ??= [];
+          _questions['airLaw']!.add(question);
+          break;
+        case 'PL102':
           _questions['airLaw'] ??= [];
           _questions['airLaw']!.add(question);
           break;
