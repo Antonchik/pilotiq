@@ -38,7 +38,7 @@ class TopicItem extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex: 3,
+                flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: Align(
@@ -49,7 +49,7 @@ class TopicItem extends StatelessWidget {
                         height: 1.2,
                         letterSpacing: 1.2,
                         fontWeight: FontWeight.bold,
-                        fontSize: 22,
+                        fontSize: 20,
                       ),
                       overflow: TextOverflow.fade,
                       softWrap: true,

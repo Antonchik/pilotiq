@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pilotiq/src/exams/exam_item.dart';
 import 'package:pilotiq/src/models.dart';
-import 'package:pilotiq/src/settings/language_button.dart';
 
 enum ExamType { ppla, pplaEng, pplh, pplhEng, plg, plfb }
 
@@ -53,17 +52,23 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
-        actions: const [
-          LanguageButton(),
-        ],
+        centerTitle: true,
+        // actions: const [
+        //   LanguageButton(),
+        // ],
       ),
       // backgroundColor: Theme.of(context).canvasColor,
-      body: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(20.0),
-        crossAxisSpacing: 10.0,
-        crossAxisCount: 2,
-        children: exams.map((exam) => ExamItem(exam: exam)).toList(),
+      // body: GridView.count(
+      //   primary: false,
+      //   padding: const EdgeInsets.all(20.0),
+      //   crossAxisSpacing: 10.0,
+      //   crossAxisCount: 2,
+      //   children: exams.map((exam) => ExamItem(exam: exam)).toList(),
+      // ),
+      body: ListView.builder(
+        itemCount: exams.length,
+        itemBuilder: (context, index) =>
+            SizedBox(height: 90, child: ExamItem(exam: exams[index])),
       ),
     );
   }

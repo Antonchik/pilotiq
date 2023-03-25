@@ -13,68 +13,73 @@ class QuestionPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     var state = ref.watch(quizStateProvider);
-    final curQuestion = question.question.split('\n');
     return Column(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Expanded(
-          child: Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: Text(curQuestion.last,
+        Container(
+          padding: const EdgeInsets.all(16),
+          // alignment: Alignment.center,
+          child: SingleChildScrollView(
+            child: Text(question.question.split('\n').last,
                 textAlign: TextAlign.justify,
-                style: Theme.of(context).textTheme.bodyLarge),
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(fontWeight: FontWeight.bold)),
           ),
         ),
-        Container(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: question.answers.map((answer) {
-              final curAnswer = answer.value.split('\n');
-              return Container(
-                constraints: const BoxConstraints(minHeight: 60),
-                margin: const EdgeInsets.only(bottom: 10),
-                decoration: BoxDecoration(
-                    color: Theme.of(context).hoverColor,
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                        color: Theme.of(context).highlightColor, width: 2)),
-                child: InkWell(
-                  onTap: () {
-                    state.selected = answer;
-                    if (state.isExam) {
-                      state.answer = answer.isCorrect;
-                      state.nextPage();
-                    } else {
-                      _bottomSheet(context, answer, state);
-                    }
-                  },
-                  child: Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                    child: Row(
-                      children: [
-                        Icon(
-                            state.selected == answer
-                                ? FontAwesomeIcons.circleCheck
-                                : FontAwesomeIcons.circle,
-                            size: 20),
-                        Expanded(
-                          child: Container(
-                            margin: const EdgeInsets.only(left: 12),
-                            child: Text(
-                              curAnswer.last,
-                              style: Theme.of(context).textTheme.bodyMedium,
-                            ),
-                          ),
-                        )
-                      ],
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: question.answers.map((answer) {
+                  return Container(
+                    constraints: const BoxConstraints(minHeight: 60),
+                    margin: const EdgeInsets.only(bottom: 10),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).hoverColor,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(
+                            color: Theme.of(context).highlightColor, width: 2)),
+                    child: InkWell(
+                      onTap: () {
+                        state.selected = answer;
+                        if (state.isExam) {
+                          state.answer = answer.isCorrect;
+                          state.nextPage();
+                        } else {
+                          _bottomSheet(context, answer, state);
+                        }
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 4),
+                        child: Row(
+                          children: [
+                            Icon(
+                                state.selected == answer
+                                    ? FontAwesomeIcons.circleCheck
+                                    : FontAwesomeIcons.circle,
+                                size: 20),
+                            Expanded(
+                              child: Container(
+                                margin: const EdgeInsets.only(left: 12),
+                                child: Text(
+                                  answer.value.split('\n').last,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-              );
-            }).toList(),
+                  );
+                }).toList(),
+              ),
+            ),
           ),
         )
       ],

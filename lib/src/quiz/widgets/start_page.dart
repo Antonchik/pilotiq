@@ -21,6 +21,36 @@ class StartPage extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(quiz.title, style: Theme.of(context).textTheme.headlineMedium),
+          if (quiz.id == 'exam')
+            Column(
+              children: [
+                const Divider(),
+                Row(
+                  children: [
+                    const Icon(Icons.list),
+                    const SizedBox(width: 10),
+                    Text(
+                      quiz.questions.length.toString(),
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.timer_outlined),
+                    const SizedBox(width: 10),
+                    Text(
+                      '${quiz.time.toString()} min',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    const Spacer(),
+                    const Icon(Icons.check_circle_outline),
+                    const SizedBox(width: 10),
+                    Text(
+                      '75%',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                  ],
+                ),
+              ],
+            ),
           const Divider(),
           Expanded(
               child: Text(
@@ -31,16 +61,16 @@ class StartPage extends ConsumerWidget {
           ButtonBar(
             alignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton.icon(
+              ElevatedButton(
+                // icon: const Icon(Icons.start),
+                child: Text(
+                  local.startQuizTitle,
+                  // style: Theme.of(context).textTheme.titleLarge,
+                ),
                 onPressed: () {
                   state.nextPage();
                   timerController?.start?.call();
                 },
-                label: Text(
-                  local.startQuizTitle,
-                  // style: Theme.of(context).textTheme.titleLarge,
-                ),
-                icon: const Icon(Icons.checklist),
               )
             ],
           )

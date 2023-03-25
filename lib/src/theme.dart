@@ -20,7 +20,7 @@ MaterialColor colorCustom = MaterialColor(primary.value, color);
 
 var appTheme = ThemeData(
   primarySwatch: colorCustom,
-  fontFamily: GoogleFonts.inconsolata().fontFamily,
+  fontFamily: GoogleFonts.openSans().fontFamily,
   bottomAppBarTheme: const BottomAppBarTheme(
     color: Colors.black87,
   ),

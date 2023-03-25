@@ -22,7 +22,7 @@ class Topic {
   final String title;
   final String description;
   final String img;
-  final int quizTime;
+  final int examTime;
   final int quizLength;
   final List<Question> questions;
 
@@ -31,7 +31,7 @@ class Topic {
     this.title = '',
     this.description = '',
     this.img = 'default-cover.png',
-    this.quizTime = 30,
+    this.examTime = 30,
     this.quizLength = 12,
     this.questions = const [],
   });
@@ -43,6 +43,7 @@ class Quiz {
   String title;
   String description;
   String topic;
+  int time;
   List<Question> questions;
 
   Quiz(
@@ -50,6 +51,7 @@ class Quiz {
       this.description = '',
       this.id = '',
       this.topic = '',
+      this.time = 30,
       this.questions = const []});
 }
 

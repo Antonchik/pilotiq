@@ -7,7 +7,7 @@ final quizStateProvider = ChangeNotifierProvider((ref) => QuizState());
 class QuizState with ChangeNotifier {
   double _progress = 0;
   Answer? _selected;
-  final List<bool> _answers = [];
+  final List<bool> answers = [];
   bool isExam = false;
 
   final PageController controller = PageController();
@@ -19,7 +19,7 @@ class QuizState with ChangeNotifier {
   bool get result {
     var right = 0;
     var wrong = 0;
-    for (final answer in _answers) {
+    for (final answer in answers) {
       if (answer) {
         right += 1;
       } else {
@@ -40,14 +40,14 @@ class QuizState with ChangeNotifier {
   }
 
   set answer(bool newValue) {
-    _answers.add(newValue);
+    answers.add(newValue);
     notifyListeners();
   }
 
   void reset() {
     _progress = 0;
     _selected = null;
-    _answers.clear();
+    answers.clear();
     isExam = false;
     notifyListeners();
   }

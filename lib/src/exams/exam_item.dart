@@ -11,8 +11,11 @@ class ExamItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       clipBehavior: Clip.antiAlias,
-      elevation: 2.0,
+      elevation: 5.0,
       shadowColor: Theme.of(context).primaryColorLight,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(
@@ -21,31 +24,35 @@ class ExamItem extends StatelessWidget {
             ),
           );
         },
-        child: Column(
+        child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
-              flex: 2,
+              // flex: 2,
               child: SizedBox(
                 child: Image.asset(
                   'assets/covers/${exam.img}',
-                  fit: BoxFit.contain,
+                  fit: BoxFit.fitHeight,
                 ),
               ),
             ),
             Flexible(
+              flex: 2,
               child: Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10),
-                child: Text(
-                  exam.title,
-                  style: const TextStyle(
-                    height: 1.5,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 26,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    exam.title,
+                    style: const TextStyle(
+                      height: 1.5,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),
+                    overflow: TextOverflow.fade,
+                    softWrap: true,
                   ),
-                  overflow: TextOverflow.fade,
-                  softWrap: true,
                 ),
               ),
             ),

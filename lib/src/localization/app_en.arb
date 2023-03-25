@@ -3,6 +3,14 @@
   "@appTitle": {
     "description": "The title of the application"
   },
+  "yes": "Yes",
+  "@yes": {
+    "description": "The label for Yes option"
+  },
+  "no": "No",
+  "@no": {
+    "description": "The label for No option"
+  },
   "examsTitle": "Exams",
   "@examsTitle": {
     "description": "The title of the exams screen"
@@ -19,7 +27,7 @@
   "@pplaExamTitle": {
     "description": "The title of the PPL(A) exam"
   },
-  "pplaEngExamTitle": "PPL(A) eng",
+  "pplaEngExamTitle": "PPL(A)",
   "@pplaEngExamTitle": {
     "description": "The title of the PPL(A) ENG exam"
   },
@@ -27,7 +35,7 @@
   "@pplhExamTitle": {
     "description": "The title of the PPL(H) exam"
   },
-  "pplhEngExamTitle": "PPL(H) eng",
+  "pplhEngExamTitle": "PPL(H)",
   "@pplhEngExamTitle": {
     "description": "The title of the PPL(H) ENG exam"
   },
@@ -115,11 +123,11 @@
   "@startQuizTitle": {
     "description": "The title of the start quiz button"
   },
-  "returnToTopicTitle": "Return to topics",
+  "returnToTopicTitle": "Return to topic",
   "@returnToTopicTitle": {
     "description": "The title of the return to topics button"
   },
-  "congratsMessage": "Congrats!\nYou completed the\n{quizTitle} test",
+  "congratsMessage": "Congrats!\nYou have completed the\n{quizTitle} test",
   "@congratsMessage": {
     "description": "Message for the test completion",
     "placeholders": {
@@ -128,7 +136,7 @@
       }
     }
   },
-  "failMessage": "Oh no!\nYou failed completion of the\n{quizTitle} test",
+  "failMessage": "Oh no!\nYou have failed completion of the\n{quizTitle} test",
   "@failMessage": {
     "description": "Message for the test fail",
     "placeholders": {
@@ -169,16 +177,28 @@
   "@demoModeDescription": {
     "description": "Description for the Demo mode Quiz"
   },
-  "fullModeDescription": "This mode is a training and learning tool that includes all the questions available in the question bank. It allows test takers to practice and review a large number of questions, and to learn from their mistakes.",
+  "fullModeDescription": "This mode allows test takers to practice and review a large number of questions, and to learn from their mistakes.",
   "@fullModeDescription": {
     "description": "Description for the All questions mode Quiz"
   },
-  "examModeDescription": "The exam simulator mode of the test is a practice mode that simulates the actual test experience. This mode is designed to help test takers become familiar with the format, timing, and difficulty level of the actual test.",
+  "examModeDescription": "The exam simulator mode of the test is a practice mode that simulates the actual test experience.",
   "@examModeDescription": {
     "description": "Description for the Exam mode Quiz"
   },
   "languageButtonTooltip": "Language",
   "@languageButtonTooltip": {
     "description": "Label for the 'Language' button"
+  },
+  "exitQuizTitle": "Do you want to abort test?",
+  "@exitQuizTitle": {
+    "description": "Label for the 'Exit test' button"
+  },
+  "timeIsUpTitle": "Time is up!",
+  "@timeIsUpTitle": {
+    "description": "Title for the 'Time is up' dialog"
+  },
+  "timeIsUpMessage": "You have run out of time.\nYour test is over.",
+  "@timeIsUpMessage": {
+    "description": "Message for the 'Time is up' dialog"
   }
 }

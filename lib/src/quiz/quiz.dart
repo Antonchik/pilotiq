@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pilotiq/src/contdown_timer/countdown_timer.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
-import 'package:pilotiq/src/quiz/widgets/animated_progress_bar.dart';
 import 'package:pilotiq/src/quiz/widgets/congrats_page.dart';
 import 'package:pilotiq/src/quiz/widgets/fail_page.dart';
 import 'package:pilotiq/src/quiz/widgets/question_page.dart';
 import 'package:pilotiq/src/quiz/widgets/start_page.dart';
 
 class QuizScreen extends ConsumerWidget {
-  QuizScreen({super.key, required this.quizId, required this.quiz});
+  QuizScreen({
+    super.key,
+    required this.quizId,
+    required this.quiz,
+  });
 
   final String quizId;
   final Quiz quiz;
@@ -31,33 +36,77 @@ class QuizScreen extends ConsumerWidget {
     final questionQty = quiz.questions.length;
     final currentQuestion =
         (quizState.progress * questionQty).toStringAsFixed(0);
+    final local = AppLocalizations.of(context)!;
     return Scaffold(
       appBar: AppBar(
         title: Column(
           children: [
-            AnimatedProgressbar(value: quizState.progress),
+            // AnimatedProgressbar(value: quizState.progress),
+            LinearPercentIndicator(
+              lineHeight: 5,
+              barRadius: const Radius.circular(10),
+              percent: quizState.progress,
+              animation: true,
+              animationDuration: 750,
+              animateFromLastPercent: true,
+              backgroundColor: Colors.red.shade200,
+              progressColor: Theme.of(context).colorScheme.surface,
+              leading: SizedBox(
+                width: 45,
+                child: Text('$currentQuestion/$questionQty',
+                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: Theme.of(context).colorScheme.onSecondary)),
+              ),
+              trailing: quizId == 'exam'
+                  ? CountDownTimer(
+                      controller: timerController, durationInMinutes: quiz.time)
+                  : null,
+            ),
           ],
         ),
-        flexibleSpace: quiz.id == 'exam'
-            ? CountDownTimer(controller: timerController, durationInMinutes: 20)
-            : null,
+        // flexibleSpace: quizId == 'exam'
+        //     ? CountDownTimer(
+        //         controller: timerController, durationInMinutes: quiz.time)
+        //     : null,
         leading: IconButton(
           icon: const Icon(FontAwesomeIcons.xmark),
-          onPressed: () {
-            quizState.reset();
-            if (timerController.reset != null) {
-              timerController.reset!();
+          onPressed: () async {
+            final proceed = await showDialog<bool>(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text(local.exitQuizTitle),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, false),
+                        child: Text(local.no),
+                      ),
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, true),
+                        child: Text(local.yes),
+                      ),
+                    ],
+                  );
+                });
+            if (proceed!) {
+              quizState.reset();
+              if (timerController.reset != null) {
+                timerController.reset!();
+              }
+              if (context.mounted) {
+                Navigator.pop(context);
+              }
             }
-            Navigator.pop(context);
           },
         ),
-        actions: [
-          Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.only(right: 10),
-            child: Text('$currentQuestion/$questionQty'),
-          )
-        ],
+        // actions: [
+        //   Container(
+        //     width: 60,
+        //     alignment: Alignment.center,
+        //     padding: const EdgeInsets.only(right: 10),
+        //     child: Text('$currentQuestion/$questionQty'),
+        //   )
+        // ],
       ),
       body: PageView.builder(
         physics: const NeverScrollableScrollPhysics(),
