@@ -16,7 +16,7 @@ class BottomNavBar extends StatelessWidget {
             FontAwesomeIcons.graduationCap,
             size: 20,
           ),
-          label: local.topicsTitle,
+          label: local.subjectsTitle,
         ),
         BottomNavigationBarItem(
           icon: const Icon(

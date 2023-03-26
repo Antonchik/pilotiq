@@ -19979,7 +19979,7 @@
     "ODP3": "włączyć odbiornik",
     "ODP4": "Powinna nadawać na innej dowolnej częstotliwości"
   },
-   {
+  {
     "L.p.": "2000.",
     "PPL(A)": "X",
     "NUMER": "PL090-0047",
@@ -20174,7 +20174,7 @@
     "PPL(A)": "X",
     "NUMER": "PL090-0068",
     "PYTANIE": "Fale radiowe o częstotliwościach powyżej 30 MHz:",
-    "ODP1": "Rozchodzą sięprostoliniowo i ulegają rozpraszaniu i tłumieniu w troposferze",
+    "ODP1": "Rozchodzą się prostoliniowo i ulegają rozpraszaniu i tłumieniu w troposferze",
     "ODP2": "Ulegają dużej dyfrakcji i odbiciu od jonosfery",
     "ODP3": "Ulegają dyfrakcji i ttumieniu w jonosferze",
     "ODP4": "Ulegają odbiciu od jonosfery i ttumieniuprzez powierzchnię ziemi"

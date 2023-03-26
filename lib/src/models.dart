@@ -17,7 +17,7 @@ class Exam {
 }
 
 @JsonSerializable()
-class Topic {
+class Subject {
   late final String id;
   final String title;
   final String description;
@@ -26,7 +26,7 @@ class Topic {
   final int quizLength;
   final List<Question> questions;
 
-  Topic({
+  Subject({
     this.id = '',
     this.title = '',
     this.description = '',
@@ -42,7 +42,7 @@ class Quiz {
   String id;
   String title;
   String description;
-  String topic;
+  String subject;
   int time;
   List<Question> questions;
 
@@ -50,7 +50,7 @@ class Quiz {
       {this.title = '',
       this.description = '',
       this.id = '',
-      this.topic = '',
+      this.subject = '',
       this.time = 30,
       this.questions = const []});
 }

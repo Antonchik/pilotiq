@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:pilotiq/src/exams/exam_builder.dart';
 import 'package:pilotiq/src/home/home.dart';
 import 'package:pilotiq/src/models.dart';
+import 'package:pilotiq/src/subjects/subject_list_builder.dart';
 
-class TopicListScreen extends StatelessWidget {
-  const TopicListScreen({super.key, required this.exam});
+class SubjectListScreen extends StatelessWidget {
+  const SubjectListScreen({super.key, required this.exam});
 
   final Exam exam;
 
@@ -15,31 +15,31 @@ class TopicListScreen extends StatelessWidget {
     Widget body;
     switch (exam.type) {
       case ExamType.ppla:
-        body = const ExamBuilder();
+        body = const SubjectListBuilder();
         break;
       case ExamType.pplaEng:
-        body = const ExamBuilder(
+        body = const SubjectListBuilder(
           isEnglish: true,
         );
         break;
       case ExamType.pplh:
-        body = const ExamBuilder(
+        body = const SubjectListBuilder(
           isHelicopter: true,
         );
         break;
       case ExamType.pplhEng:
-        body = const ExamBuilder(
+        body = const SubjectListBuilder(
           isHelicopter: true,
           isEnglish: true,
         );
         break;
       case ExamType.plg:
-        body = const ExamBuilder(
+        body = const SubjectListBuilder(
           isGlider: true,
         );
         break;
       case ExamType.plfb:
-        body = const ExamBuilder(
+        body = const SubjectListBuilder(
           isBalloon: true,
         );
         break;
@@ -50,11 +50,8 @@ class TopicListScreen extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text(local.topicsTitle),
+        title: Text(local.subjectsTitle),
         centerTitle: true,
-        // actions: const [
-        //   LanguageButton(),
-        // ],
       ),
       body: body,
       // bottomNavigationBar: const BottomNavBar(),

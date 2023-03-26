@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
+import 'package:pilotiq/src/quiz/widgets/result_scale_bar.dart';
 
 class FailPage extends StatelessWidget {
   final Quiz quiz;
@@ -16,29 +16,15 @@ class FailPage extends StatelessWidget {
     final local = AppLocalizations.of(context)!;
     final rightAnswers = quizState.answers.where((e) => e).length;
     final percent = rightAnswers / quiz.questions.length;
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
+    final isPortrait = MediaQuery.of(context).orientation.name == 'portrait';
+    final children = [
+      ResultScaleBar(
+        percent: percent,
+        header: '$rightAnswers/${quiz.questions.length}',
+      ),
+      Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircularPercentIndicator(
-              radius: 100.0,
-              lineWidth: 15.0,
-              percent: percent,
-              center: Text('${(percent * 100).round()}%',
-                  style: Theme.of(context).textTheme.headlineMedium),
-              progressColor: Colors.green,
-              arcBackgroundColor: Theme.of(context).primaryColor,
-              arcType: ArcType.HALF,
-              circularStrokeCap: CircularStrokeCap.butt,
-              animation: true,
-              animationDuration: 3000,
-              rotateLinearGradient: true,
-              footer: Text(
-                '$rightAnswers/${quiz.questions.length}',
-                style: Theme.of(context).textTheme.headlineSmall,
-              )),
-          const SizedBox(height: 50),
           Text(
             local.failMessage(quiz.title),
             textAlign: TextAlign.center,
@@ -50,19 +36,26 @@ class FailPage extends StatelessWidget {
               backgroundColor: Theme.of(context).primaryColor,
             ),
             icon: const Icon(FontAwesomeIcons.faceFrown),
-            label: Text(local.returnToTopicTitle),
+            label: Text(local.returnToSubjectTitle),
             onPressed: () {
               quizState.reset();
               Navigator.pop(context);
-              // Navigator.pushNamedAndRemoveUntil(
-              //   context,
-              //   '/',
-              //   (route) => false,
-              // );
             },
           )
         ],
       ),
+    ];
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: isPortrait
+          ? Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: children,
+            )
+          : Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: children,
+            ),
     );
   }
 }

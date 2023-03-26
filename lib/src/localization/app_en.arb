@@ -15,9 +15,9 @@
   "@examsTitle": {
     "description": "The title of the exams screen"
   },
-  "topicsTitle": "Topics",
-  "@topicsTitle": {
-    "description": "The title of the topics screen"
+  "subjectsTitle": "Subjects",
+  "@subjectsTitle": {
+    "description": "The title of the subjects screen"
   },
   "aboutTitle": "About",
   "@aboutTitle": {
@@ -47,85 +47,85 @@
   "@plfbExamTitle": {
     "description": "The title of the PL(FB) exam"
   },
-  "airLawTopicTitle": "Air law",
-  "@airLawTopicTitle": {
-    "description": "The title of the Air law topic"
+  "airLawSubjectTitle": "Air law",
+  "@airLawSubjectTitle": {
+    "description": "The title of the Air law subject"
   },
-  "communicationsTopicTitle": "Communications",
-  "@communicationsTopicTitle": {
-    "description": "The title of the Communications topic"
+  "communicationsSubjectTitle": "Communications",
+  "@communicationsSubjectTitle": {
+    "description": "The title of the Communications subject"
   },
-  "meteorologyTopicTitle": "Meteorology",
-  "@meteorologyTopicTitle": {
-    "description": "The title of the Meteorology topic"
+  "meteorologySubjectTitle": "Meteorology",
+  "@meteorologySubjectTitle": {
+    "description": "The title of the Meteorology subject"
   },
-  "navigationTopicTitle": "Navigation",
-  "@navigationTopicTitle": {
-    "description": "The title of the Navigation topic"
+  "navigationSubjectTitle": "Navigation",
+  "@navigationSubjectTitle": {
+    "description": "The title of the Navigation subject"
   },
-  "performanceTopicTitle": "Performance and flight planning",
-  "@performanceTopicTitle": {
-    "description": "The title of the Performance topic"
+  "performanceSubjectTitle": "Performance and flight planning",
+  "@performanceSubjectTitle": {
+    "description": "The title of the Performance subject"
   },
-  "generalKnowledgeTopicTitle": "Aircraft general knowledge",
-  "@generalKnowledgeTopicTitle": {
-    "description": "The title of the Aircraft general knowledge topic"
+  "generalKnowledgeSubjectTitle": "Aircraft general knowledge",
+  "@generalKnowledgeSubjectTitle": {
+    "description": "The title of the Aircraft general knowledge subject"
   },
-  "humanPerformanceTopicTitle": "Human performance and limitations",
-  "@humanPerformanceTopicTitle": {
-    "description": "The title of the Human performance and limitations topic"
+  "humanPerformanceSubjectTitle": "Human performance and limitations",
+  "@humanPerformanceSubjectTitle": {
+    "description": "The title of the Human performance and limitations subject"
   },
-  "operationalProcedureTopicTitle": "Operational procedures",
-  "@operationalProcedureTopicTitle": {
-    "description": "The title of the Operational procedures topic"
+  "operationalProcedureSubjectTitle": "Operational procedures",
+  "@operationalProcedureSubjectTitle": {
+    "description": "The title of the Operational procedures subject"
   },
-  "principlesOfFlightTopicTitle": "Principles of flight",
-  "@principlesOfFlightTopicTitle": {
-    "description": "The title of the Principles of flight topic"
+  "principlesOfFlightSubjectTitle": "Principles of flight",
+  "@principlesOfFlightSubjectTitle": {
+    "description": "The title of the Principles of flight subject"
   },
-  "airLawTopicTooltip": "Air law",
-  "@airLawTopicTooltip": {
-    "description": "The title of the Air law topic"
+  "airLawSubjectTooltip": "Air law",
+  "@airLawSubjectTooltip": {
+    "description": "The title of the Air law subject"
   },
-  "communicationsTopicTooltip": "Communications",
-  "@communicationsTopicTooltip": {
-    "description": "The title of the Communications topic"
+  "communicationsSubjectTooltip": "Communications",
+  "@communicationsSubjectTooltip": {
+    "description": "The title of the Communications subject"
   },
-  "meteorologyTopicTooltip": "Meteorology",
-  "@meteorologyTopicTooltip": {
-    "description": "The title of the Meteorology topic"
+  "meteorologySubjectTooltip": "Meteorology",
+  "@meteorologySubjectTooltip": {
+    "description": "The title of the Meteorology subject"
   },
-  "navigationTopicTooltip": "Navigation",
-  "@navigationTopicTooltip": {
-    "description": "The title of the Navigation topic"
+  "navigationSubjectTooltip": "Navigation",
+  "@navigationSubjectTooltip": {
+    "description": "The title of the Navigation subject"
   },
-  "performanceTopicTooltip": "Performance and flight planning",
-  "@performanceTopicTooltip": {
-    "description": "The title of the Performance topic"
+  "performanceSubjectTooltip": "Performance and flight planning",
+  "@performanceSubjectTooltip": {
+    "description": "The title of the Performance subject"
   },
-  "generalKnowledgeTopicTooltip": "Aircraft general knowledge",
-  "@generalKnowledgeTopicTooltip": {
-    "description": "The title of the Aircraft general knowledge topic"
+  "generalKnowledgeSubjectTooltip": "Aircraft general knowledge",
+  "@generalKnowledgeSubjectTooltip": {
+    "description": "The title of the Aircraft general knowledge subject"
   },
-  "humanPerformanceTopicTooltip": "Human performance and limitations",
-  "@humanPerformanceTopicTooltip": {
-    "description": "The title of the Human performance and limitations topic"
+  "humanPerformanceSubjectTooltip": "Human performance and limitations",
+  "@humanPerformanceSubjectTooltip": {
+    "description": "The title of the Human performance and limitations subject"
   },
-  "operationalProcedureTopicTooltip": "Operational procedures",
-  "@operationalProcedureTopicTooltip": {
-    "description": "The title of the Operational procedures topic"
+  "operationalProcedureSubjectTooltip": "Operational procedures",
+  "@operationalProcedureSubjectTooltip": {
+    "description": "The title of the Operational procedures subject"
   },
-  "principlesOfFlightTopicTooltip": "Principles of flight",
-  "@principlesOfFlightTopicTooltip": {
-    "description": "The title of the Principles of flight topic"
+  "principlesOfFlightSubjectTooltip": "Principles of flight",
+  "@principlesOfFlightSubjectTooltip": {
+    "description": "The title of the Principles of flight subject"
   },
   "startQuizTitle": "Start test!",
   "@startQuizTitle": {
     "description": "The title of the start quiz button"
   },
-  "returnToTopicTitle": "Return to topic",
-  "@returnToTopicTitle": {
-    "description": "The title of the return to topics button"
+  "returnToSubjectTitle": "Return to subject",
+  "@returnToSubjectTitle": {
+    "description": "The title of the return to subjects button"
   },
   "congratsMessage": "Congrats!\nYou have completed the\n{quizTitle} test",
   "@congratsMessage": {
@@ -189,7 +189,7 @@
   "@languageButtonTooltip": {
     "description": "Label for the 'Language' button"
   },
-  "exitQuizTitle": "Do you want to abort test?",
+  "exitQuizTitle": "Do you want to exit test?",
   "@exitQuizTitle": {
     "description": "Label for the 'Exit test' button"
   },

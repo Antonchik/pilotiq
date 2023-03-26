@@ -20144,7 +20144,7 @@
     "PPL(A)": "X",
     "NUMER": "PL090-0068",
     "PYTANIE": "Fale radiowe o częstotliwościach powyżej 30 MHz:\nRadio waves with frequencies above 30 MHz:",
-    "ODP1": "Rozchodzą sięprostoliniowo i ulegają rozpraszaniu i tłumieniu w troposferze\nPropagate in a straight line and undergo scattering and attenuation in the troposphere",
+    "ODP1": "Rozchodzą się prostoliniowo i ulegają rozpraszaniu i tłumieniu w troposferze\nPropagate in a straight line and undergo scattering and attenuation in the troposphere",
     "ODP2": "Ulegają dużej dyfrakcji i odbiciu od jonosfery\nSubject to high diffraction and reflection from the ionosphere",
     "ODP3": "Ulegają dyfrakcji i tlumieniu w jonosferze\nSubject to diffraction and smothering in the ionosphere",
     "ODP4": "Ulegają odbiciu od jonosfery i ttumieniuprzez powierzchnię ziemi\nReflected from the ionosphere and thunders through the earth's surface"

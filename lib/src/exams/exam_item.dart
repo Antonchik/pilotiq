@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pilotiq/src/models.dart';
-import 'package:pilotiq/src/topics/topic_list_screen.dart';
+import 'package:pilotiq/src/subjects/subject_list_screen.dart';
 
 class ExamItem extends StatelessWidget {
   final Exam exam;
@@ -20,7 +20,7 @@ class ExamItem extends StatelessWidget {
         onTap: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (BuildContext context) => TopicListScreen(exam: exam),
+              builder: (BuildContext context) => SubjectListScreen(exam: exam),
             ),
           );
         },

@@ -69,37 +69,40 @@ class QuizScreen extends ConsumerWidget {
           ],
         ),
         leading: quizState.progress > 0
-            ? IconButton(
-                icon: const Icon(FontAwesomeIcons.xmark),
-                onPressed: () async {
-                  final proceed = await showDialog<bool>(
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          title: Text(local.exitQuizTitle),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, false),
-                              child: Text(local.no),
-                            ),
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, true),
-                              child: Text(local.yes),
-                            ),
-                          ],
-                        );
-                      });
-                  if (proceed!) {
-                    quizState.reset();
-                    if (timerController.reset != null) {
-                      timerController.reset!();
-                    }
-                    if (context.mounted) {
-                      Navigator.pop(context);
-                    }
-                  }
-                },
-              )
+            ? quizState.progress < 1
+                ? IconButton(
+                    icon: const Icon(FontAwesomeIcons.xmark),
+                    onPressed: () async {
+                      final proceed = await showDialog<bool>(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              title: Text(local.exitQuizTitle),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(context, false),
+                                  child: Text(local.no),
+                                ),
+                                TextButton(
+                                  onPressed: () => Navigator.pop(context, true),
+                                  child: Text(local.yes),
+                                ),
+                              ],
+                            );
+                          });
+                      if (proceed!) {
+                        quizState.reset();
+                        if (timerController.reset != null) {
+                          timerController.reset!();
+                        }
+                        if (context.mounted) {
+                          Navigator.pop(context);
+                        }
+                      }
+                    },
+                  )
+                : const SizedBox.shrink()
             : null,
       ),
       body: PageView.builder(

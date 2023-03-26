@@ -15,61 +15,66 @@ class HomeScreen extends StatelessWidget {
       Exam(
         type: ExamType.ppla,
         title: local.pplaExamTitle,
-        // description: local.airLawTopicTooltip,
         img: 'ppla.png',
       ),
       Exam(
         type: ExamType.pplaEng,
         title: local.pplaEngExamTitle,
-        // description: local.airLawTopicTooltip,
         img: 'ppla-en.png',
       ),
       Exam(
         type: ExamType.pplh,
         title: local.pplhExamTitle,
-        // description: local.airLawTopicTooltip,
         img: 'pplh.png',
       ),
       Exam(
         type: ExamType.pplh,
         title: local.pplhEngExamTitle,
-        // description: local.airLawTopicTooltip,
         img: 'pplh-en.png',
       ),
       Exam(
         type: ExamType.plg,
         title: local.plgExamTitle,
-        // description: local.airLawTopicTooltip,
         img: 'plg.png',
       ),
       Exam(
         type: ExamType.plfb,
         title: local.plfbExamTitle,
-        // description: local.airLawTopicTooltip,
         img: 'plfb.png',
       )
     ];
+    final isPortrait = MediaQuery.of(context).orientation.name == 'portrait';
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
         centerTitle: true,
-        // actions: const [
-        //   LanguageButton(),
-        // ],
       ),
-      // backgroundColor: Theme.of(context).canvasColor,
-      // body: GridView.count(
-      //   primary: false,
-      //   padding: const EdgeInsets.all(20.0),
-      //   crossAxisSpacing: 10.0,
-      //   crossAxisCount: 2,
-      //   children: exams.map((exam) => ExamItem(exam: exam)).toList(),
-      // ),
-      body: ListView.builder(
-        itemCount: exams.length,
-        itemBuilder: (context, index) =>
-            SizedBox(height: 90, child: ExamItem(exam: exams[index])),
-      ),
+      body: isPortrait
+          ? ListView.builder(
+              shrinkWrap: true,
+              itemCount: exams.length,
+              itemBuilder: (context, index) =>
+                  SizedBox(height: 90, child: ExamItem(exam: exams[index])),
+            )
+          : ListView.builder(
+              shrinkWrap: true,
+              itemCount: (exams.length * 0.5).ceil(),
+              itemBuilder: (context, index) => Row(
+                children: [
+                  Flexible(
+                    child: SizedBox(
+                        height: 90, child: ExamItem(exam: exams[index * 2])),
+                  ),
+                  Flexible(
+                    child: SizedBox(
+                        height: 90,
+                        child: index * 2 + 1 < exams.length
+                            ? ExamItem(exam: exams[index * 2 + 1])
+                            : const SizedBox.expand()),
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }
