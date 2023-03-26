@@ -3,7 +3,7 @@ description: Application for preparation to theoretical exam on PPL at Polish UL
 
 publish_to: 'none'
 
-version: 0.0.2+1
+version: 0.0.3+1
 
 environment:
   sdk: '>=2.19.4 <3.0.0'

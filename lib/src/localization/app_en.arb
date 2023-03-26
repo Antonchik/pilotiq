@@ -169,7 +169,7 @@
   "@fullQuizTitle": {
     "description": "The label for the Full Quiz"
   },
-  "examQuizTitle": "EXAM SIMULATION",
+  "examQuizTitle": "EXAM SIMULATOR",
   "@examQuizTitle": {
     "description": "The label for the Exam Quiz"
   },

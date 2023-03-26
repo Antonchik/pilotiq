@@ -22,21 +22,21 @@ class FailPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircularPercentIndicator(
-              radius: 60.0,
-              lineWidth: 10.0,
+              radius: 100.0,
+              lineWidth: 15.0,
               percent: percent,
               center: Text('${(percent * 100).round()}%',
-                  style: Theme.of(context).textTheme.bodyLarge),
+                  style: Theme.of(context).textTheme.headlineMedium),
               progressColor: Colors.green,
-              arcBackgroundColor: Colors.red,
+              arcBackgroundColor: Theme.of(context).primaryColor,
               arcType: ArcType.HALF,
-              circularStrokeCap: CircularStrokeCap.round,
+              circularStrokeCap: CircularStrokeCap.butt,
               animation: true,
-              animationDuration: 1000,
+              animationDuration: 3000,
               rotateLinearGradient: true,
               footer: Text(
                 '$rightAnswers/${quiz.questions.length}',
-                style: Theme.of(context).textTheme.titleLarge,
+                style: Theme.of(context).textTheme.headlineSmall,
               )),
           const SizedBox(height: 50),
           Text(
@@ -44,7 +44,6 @@ class FailPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          const SizedBox(height: 50),
           const Divider(),
           ElevatedButton.icon(
             style: TextButton.styleFrom(
@@ -55,7 +54,6 @@ class FailPage extends StatelessWidget {
             onPressed: () {
               quizState.reset();
               Navigator.pop(context);
-
               // Navigator.pushNamedAndRemoveUntil(
               //   context,
               //   '/',

@@ -49,7 +49,7 @@ class QuizScreen extends ConsumerWidget {
               animation: true,
               animationDuration: 750,
               animateFromLastPercent: true,
-              backgroundColor: Colors.red.shade200,
+              backgroundColor: Colors.red.shade300,
               progressColor: Theme.of(context).colorScheme.surface,
               leading: SizedBox(
                 width: 45,
@@ -57,56 +57,50 @@ class QuizScreen extends ConsumerWidget {
                     style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Theme.of(context).colorScheme.onSecondary)),
               ),
-              trailing: quizId == 'exam'
-                  ? CountDownTimer(
-                      controller: timerController, durationInMinutes: quiz.time)
-                  : null,
+              trailing: SizedBox(
+                width: 65,
+                child: quizId == 'exam'
+                    ? CountDownTimer(
+                        controller: timerController,
+                        durationInMinutes: quiz.time)
+                    : null,
+              ),
             ),
           ],
         ),
-        // flexibleSpace: quizId == 'exam'
-        //     ? CountDownTimer(
-        //         controller: timerController, durationInMinutes: quiz.time)
-        //     : null,
-        leading: IconButton(
-          icon: const Icon(FontAwesomeIcons.xmark),
-          onPressed: () async {
-            final proceed = await showDialog<bool>(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text(local.exitQuizTitle),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(context, false),
-                        child: Text(local.no),
-                      ),
-                      TextButton(
-                        onPressed: () => Navigator.pop(context, true),
-                        child: Text(local.yes),
-                      ),
-                    ],
-                  );
-                });
-            if (proceed!) {
-              quizState.reset();
-              if (timerController.reset != null) {
-                timerController.reset!();
-              }
-              if (context.mounted) {
-                Navigator.pop(context);
-              }
-            }
-          },
-        ),
-        // actions: [
-        //   Container(
-        //     width: 60,
-        //     alignment: Alignment.center,
-        //     padding: const EdgeInsets.only(right: 10),
-        //     child: Text('$currentQuestion/$questionQty'),
-        //   )
-        // ],
+        leading: quizState.progress > 0
+            ? IconButton(
+                icon: const Icon(FontAwesomeIcons.xmark),
+                onPressed: () async {
+                  final proceed = await showDialog<bool>(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: Text(local.exitQuizTitle),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, false),
+                              child: Text(local.no),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, true),
+                              child: Text(local.yes),
+                            ),
+                          ],
+                        );
+                      });
+                  if (proceed!) {
+                    quizState.reset();
+                    if (timerController.reset != null) {
+                      timerController.reset!();
+                    }
+                    if (context.mounted) {
+                      Navigator.pop(context);
+                    }
+                  }
+                },
+              )
+            : null,
       ),
       body: PageView.builder(
         physics: const NeverScrollableScrollPhysics(),

@@ -91,16 +91,32 @@ class QuestionPage extends ConsumerWidget {
 
     showModalBottomSheet(
       context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+      ),
+      // barrierColor: correct
+      //     ? Colors.green.withOpacity(0.3)
+      //     : Theme.of(context).primaryColor.withOpacity(0.3),
       builder: (BuildContext context) {
         final local = AppLocalizations.of(context)!;
         return Container(
-          height: 250,
+          height: 200,
           padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(correct ? local.rightAnswer : local.wrongAnswer),
+              // Icon(
+              //   correct
+              //       ? FontAwesomeIcons.faceSmile
+              //       : FontAwesomeIcons.faceFrown,
+              //   size: 50,
+              //   color: correct ? Colors.green : Colors.red,
+              // ),
+              Text(
+                correct ? local.rightAnswer : local.wrongAnswer,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     backgroundColor: correct ? Colors.green : Colors.red),
