@@ -14,7 +14,7 @@ Map<int, Color> color = {
   900: const Color.fromRGBO(220, 20, 60, 1),
 };
 
-const primary = Color.fromARGB(255, 220, 20, 60);
+const primary = Color.fromRGBO(220, 20, 60, 1);
 
 MaterialColor colorCustom = MaterialColor(primary.value, color);
 
