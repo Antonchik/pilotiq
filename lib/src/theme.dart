@@ -18,25 +18,24 @@ const primary = Color.fromRGBO(220, 20, 60, 1);
 
 MaterialColor colorCustom = MaterialColor(primary.value, color);
 
+final fontFamily = GoogleFonts.openSans().fontFamily;
+
 var appTheme = ThemeData(
   useMaterial3: true,
   colorSchemeSeed: primary,
   fontFamily: GoogleFonts.openSans().fontFamily,
-  appBarTheme: const AppBarTheme(
+  appBarTheme: AppBarTheme(
     color: primary,
     elevation: 5,
     centerTitle: true,
-    iconTheme: IconThemeData(color: Colors.white),
-    titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+    iconTheme: const IconThemeData(color: Colors.white),
+    titleTextStyle:
+        TextStyle(fontFamily: fontFamily, color: Colors.white, fontSize: 22),
   ),
   dialogTheme: const DialogTheme(
-    // backgroundColor: Colors.white,
     surfaceTintColor: Colors.white,
   ),
   cardTheme: const CardTheme(
-    // shape: RoundedRectangleBorder(
-    //   borderRadius: BorderRadius.all(Radius.circular(10)),
-    // ),
     surfaceTintColor: Colors.white,
     elevation: 5,
   ),

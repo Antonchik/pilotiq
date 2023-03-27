@@ -53,7 +53,9 @@ class SubjectListScreen extends StatelessWidget {
     final children = [
       SizedBox(
         height: isPortrait ? 150 : double.infinity,
-        width: isPortrait ? double.infinity : 150,
+        width: isPortrait
+            ? double.infinity
+            : MediaQuery.of(context).size.width * 0.2,
         child: Hero(
           tag: exam.img,
           child: Image.asset(
