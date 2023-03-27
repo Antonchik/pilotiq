@@ -2,7 +2,8 @@
     package="com.example.pilotiq">
 
     <uses-permission android:name="android.permission.VIBRATE" />
-    
+    <uses-permission android:name="com.android.vending.BILLING" />
+
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
