@@ -78,6 +78,11 @@ class AnswerCard extends StatelessWidget {
             HapticFeedback.lightImpact();
             state.nextPage();
           } else {
+            if (option.isCorrect) {
+              HapticFeedback.mediumImpact();
+            } else {
+              HapticFeedback.heavyImpact();
+            }
             _bottomSheet(context, option, state);
           }
         },
