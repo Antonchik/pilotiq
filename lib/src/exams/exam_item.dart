@@ -10,9 +10,6 @@ class ExamItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      clipBehavior: Clip.antiAlias,
-      elevation: 5.0,
-      shadowColor: Theme.of(context).primaryColorLight,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
@@ -26,14 +23,16 @@ class ExamItem extends StatelessWidget {
         },
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Flexible(
               // flex: 2,
               child: SizedBox(
-                child: Image.asset(
-                  'assets/covers/${exam.img}',
-                  fit: BoxFit.fitHeight,
+                child: Hero(
+                  tag: exam.img,
+                  child: Image.asset(
+                    'assets/covers/${exam.img}',
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
             ),

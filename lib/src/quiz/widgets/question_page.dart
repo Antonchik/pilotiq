@@ -17,7 +17,6 @@ class QuestionPage extends ConsumerWidget {
       children: [
         Container(
           padding: const EdgeInsets.all(16),
-          // alignment: Alignment.center,
           child: SingleChildScrollView(
             child: Text(question.question.split('\n').last,
                 textAlign: TextAlign.justify,

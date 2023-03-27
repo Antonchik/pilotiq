@@ -10,8 +10,7 @@ class QuizCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-      elevation: 4,
+      // shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
       margin: const EdgeInsets.all(4),
       child: InkWell(
         onTap: () {
@@ -26,6 +25,7 @@ class QuizCard extends StatelessWidget {
           );
         },
         child: Container(
+          color: Theme.of(context).colorScheme.surface,
           padding: const EdgeInsets.all(8),
           child: ListTile(
             title: Text(

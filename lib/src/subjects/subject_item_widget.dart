@@ -10,9 +10,6 @@ class SubjectItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      clipBehavior: Clip.antiAlias,
-      elevation: 2.0,
-      shadowColor: Theme.of(context).primaryColorLight,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),

@@ -9,36 +9,33 @@ class SubjectScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait = MediaQuery.of(context).orientation.name == 'portrait';
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+    final imageBlock = Container(
+      color: Theme.of(context).colorScheme.surface,
+      child: Hero(
+        tag: subject.id,
+        child: Image.asset(
+          'assets/covers/${subject.img}',
+          height: isPortrait ? 150 : null,
+          width: MediaQuery.of(context).size.width * (isPortrait ? 1 : 0.25),
+        ),
+      ),
+    );
     return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.surface,
         appBar: AppBar(
           title: Text(subject.title),
           centerTitle: true,
         ),
         body: isPortrait
             ? ListView(children: [
-                Hero(
-                  tag: subject.id,
-                  child: Image.asset(
-                    'assets/covers/${subject.img}',
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                  ),
-                ),
+                imageBlock,
                 QuizList(subject: subject),
               ])
             : Row(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Hero(
-                    tag: subject.id,
-                    child: Image.asset(
-                      'assets/covers/${subject.img}',
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width * 0.3,
-                    ),
-                  ),
+                  imageBlock,
                   Expanded(child: QuizList(subject: subject)),
                 ],
               ));

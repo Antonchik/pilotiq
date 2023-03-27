@@ -19,31 +19,25 @@ const primary = Color.fromRGBO(220, 20, 60, 1);
 MaterialColor colorCustom = MaterialColor(primary.value, color);
 
 var appTheme = ThemeData(
-  primarySwatch: colorCustom,
+  useMaterial3: true,
+  colorSchemeSeed: primary,
   fontFamily: GoogleFonts.openSans().fontFamily,
-  bottomAppBarTheme: const BottomAppBarTheme(
-    color: Colors.black87,
+  appBarTheme: const AppBarTheme(
+    color: primary,
+    elevation: 5,
+    centerTitle: true,
+    iconTheme: IconThemeData(color: Colors.white),
+    titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
   ),
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    elevation: 2.0,
-    backgroundColor: Colors.black87,
-    selectedItemColor: Colors.white,
-    unselectedItemColor: Colors.white70,
+  dialogTheme: const DialogTheme(
+    // backgroundColor: Colors.white,
+    surfaceTintColor: Colors.white,
   ),
-  brightness: Brightness.light,
-  textTheme: const TextTheme(
-    bodyLarge: TextStyle(fontSize: 18),
-    bodyMedium: TextStyle(fontSize: 16),
-    labelLarge: TextStyle(
-      letterSpacing: 1.5,
-      fontWeight: FontWeight.bold,
-    ),
-    displayLarge: TextStyle(
-      fontWeight: FontWeight.bold,
-    ),
-    titleMedium: TextStyle(
-      color: Colors.grey,
-    ),
+  cardTheme: const CardTheme(
+    // shape: RoundedRectangleBorder(
+    //   borderRadius: BorderRadius.all(Radius.circular(10)),
+    // ),
+    surfaceTintColor: Colors.white,
+    elevation: 5,
   ),
-  buttonTheme: const ButtonThemeData(),
 );

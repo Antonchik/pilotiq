@@ -117,7 +117,7 @@ class SubjectListBuilder extends ConsumerWidget {
             ),
           ];
           final isPortrait =
-              MediaQuery.of(context).orientation.name == 'portrait';
+              MediaQuery.of(context).orientation == Orientation.portrait;
           return isPortrait
               ? ListView.builder(
                   shrinkWrap: true,

@@ -45,12 +45,13 @@ class _CountDownTimerState extends State<CountDownTimer> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.alarm, size: 16, color: Theme.of(context).canvasColor),
+          Icon(Icons.alarm,
+              size: 16, color: Theme.of(context).colorScheme.onPrimary),
           const SizedBox(width: 3),
           Text(
             '${_durationInSeconds ~/ 60}:${(_durationInSeconds % 60).toString().padLeft(2, '0')}',
-            style:
-                TextStyle(fontSize: 16.0, color: Theme.of(context).canvasColor),
+            style: TextStyle(
+                fontSize: 16.0, color: Theme.of(context).colorScheme.onPrimary),
           ),
         ],
       ),

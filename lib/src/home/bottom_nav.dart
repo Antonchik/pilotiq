@@ -9,7 +9,7 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
     return BottomNavigationBar(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       items: [
         BottomNavigationBarItem(
           icon: const Icon(

@@ -62,10 +62,8 @@ class StartPage extends ConsumerWidget {
             alignment: MainAxisAlignment.center,
             children: <Widget>[
               ElevatedButton(
-                // icon: const Icon(Icons.start),
                 child: Text(
                   local.startQuizTitle,
-                  // style: Theme.of(context).textTheme.titleLarge,
                 ),
                 onPressed: () {
                   state.nextPage();

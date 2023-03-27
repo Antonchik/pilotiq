@@ -43,11 +43,11 @@ class HomeScreen extends StatelessWidget {
         img: 'plfb.png',
       )
     ];
-    final isPortrait = MediaQuery.of(context).orientation.name == 'portrait';
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
-        centerTitle: true,
       ),
       body: isPortrait
           ? ListView.builder(

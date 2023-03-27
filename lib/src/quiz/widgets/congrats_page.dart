@@ -16,7 +16,8 @@ class CongratsPage extends StatelessWidget {
     final local = AppLocalizations.of(context)!;
     final rightAnswers = quizState.answers.where((e) => e).length;
     final percent = rightAnswers / quiz.questions.length;
-    final isPortrait = MediaQuery.of(context).orientation.name == 'portrait';
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     final children = [
       ResultScaleBar(
         percent: percent,
@@ -31,12 +32,8 @@ class CongratsPage extends StatelessWidget {
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const Divider(),
-          ElevatedButton.icon(
-            style: TextButton.styleFrom(
-              backgroundColor: Colors.green,
-            ),
-            icon: const Icon(FontAwesomeIcons.faceSmile),
-            label: Text(local.returnToSubjectTitle),
+          ElevatedButton(
+            child: Text(local.returnToSubjectTitle),
             onPressed: () {
               quizState.reset();
               Navigator.pop(context);

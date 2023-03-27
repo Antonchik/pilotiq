@@ -48,12 +48,33 @@ class SubjectListScreen extends StatelessWidget {
           child: Text('No exam selected'),
         );
     }
+    final isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
+    final children = [
+      SizedBox(
+        height: isPortrait ? 150 : double.infinity,
+        width: isPortrait ? double.infinity : 150,
+        child: Hero(
+          tag: exam.img,
+          child: Image.asset(
+            'assets/covers/${exam.img}',
+            fit: BoxFit.scaleDown,
+          ),
+        ),
+      ),
+      Expanded(child: body),
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text(local.subjectsTitle),
-        centerTitle: true,
       ),
-      body: body,
+      body: isPortrait
+          ? Column(
+              children: children,
+            )
+          : Row(
+              children: children,
+            ),
       // bottomNavigationBar: const BottomNavBar(),
     );
   }

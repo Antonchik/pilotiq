@@ -20,9 +20,6 @@ class AnswerCard extends StatelessWidget {
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
       ),
-      // barrierColor: correct
-      //     ? Colors.green.withOpacity(0.3)
-      //     : Theme.of(context).primaryColor.withOpacity(0.3),
       builder: (BuildContext context) {
         final local = AppLocalizations.of(context)!;
         return Container(
@@ -32,13 +29,6 @@ class AnswerCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              // Icon(
-              //   correct
-              //       ? FontAwesomeIcons.faceSmile
-              //       : FontAwesomeIcons.faceFrown,
-              //   size: 50,
-              //   color: correct ? Colors.green : Colors.red,
-              // ),
               Text(
                 correct ? local.rightAnswer : local.wrongAnswer,
                 style: Theme.of(context).textTheme.titleLarge,
@@ -76,10 +66,10 @@ class AnswerCard extends StatelessWidget {
       constraints: const BoxConstraints(minHeight: 60),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-          color: Theme.of(context).hoverColor,
+          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(10),
-          border:
-              Border.all(color: Theme.of(context).highlightColor, width: 2)),
+          border: Border.all(
+              color: Theme.of(context).colorScheme.outlineVariant, width: 1)),
       child: InkWell(
         onTap: () {
           state.selected = option;

@@ -18,7 +18,7 @@ class ResultScaleBar extends StatelessWidget {
       lineWidth: 15.0,
       percent: percent,
       progressColor: Colors.green,
-      arcBackgroundColor: Theme.of(context).primaryColor,
+      arcBackgroundColor: Theme.of(context).colorScheme.primary,
       arcType: ArcType.HALF,
       circularStrokeCap: CircularStrokeCap.butt,
       animation: true,
@@ -29,7 +29,7 @@ class ResultScaleBar extends StatelessWidget {
         style: Theme.of(context).textTheme.headlineSmall,
       ),
       center: Text('${(percent * 100).round()}%',
-          style: Theme.of(context).textTheme.headlineMedium),
+          style: Theme.of(context).textTheme.headlineSmall),
     );
   }
 }
