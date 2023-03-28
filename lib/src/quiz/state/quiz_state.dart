@@ -50,7 +50,7 @@ class QuizState with ChangeNotifier {
     _selected = null;
     answers.clear();
     isExam = false;
-    notifyListeners();
+    // notifyListeners();
   }
 
   void nextPage() async {

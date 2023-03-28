@@ -48,13 +48,13 @@ class AnswerCard extends ConsumerWidget {
                   ),
                 ),
                 onPressed: () {
-                  if (correct) {
-                    ref
-                        .read(hiveBoxProvider)
-                        .put(state.subject, state.controller.page!.toInt() + 1);
-                    state.nextPage();
-                  }
-                  state.answer = correct;
+                  // if (correct) {
+                  //   ref
+                  //       .read(hiveBoxProvider)
+                  //       .put(state.subject, state.controller.page!.toInt() + 1);
+                  //   state.nextPage();
+                  // }
+                  // state.answer = correct;
                   Navigator.pop(context);
                 },
               ),
@@ -67,6 +67,8 @@ class AnswerCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final selectedColor = option.isCorrect ? Colors.green : Colors.red;
+    final rightSelected = !state.isExam && state.selected == option;
     return Container(
       constraints: const BoxConstraints(minHeight: 60),
       margin: const EdgeInsets.only(bottom: 10),
@@ -74,7 +76,10 @@ class AnswerCard extends ConsumerWidget {
           color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-              color: Theme.of(context).colorScheme.outlineVariant, width: 1)),
+              color: rightSelected
+                  ? selectedColor
+                  : Theme.of(context).colorScheme.outlineVariant,
+              width: rightSelected ? 2 : 1)),
       child: InkWell(
         onTap: () {
           state.selected = option;
@@ -84,11 +89,18 @@ class AnswerCard extends ConsumerWidget {
             state.nextPage();
           } else {
             if (option.isCorrect) {
-              HapticFeedback.mediumImpact();
-            } else {
+              // HapticFeedback.mediumImpact();
               HapticFeedback.heavyImpact();
+              ref
+                  .read(hiveBoxProvider)
+                  .put(state.subject, state.controller.page!.toInt() + 1);
+              Future.delayed(const Duration(milliseconds: 500))
+                  .then((value) => state.nextPage());
+            } else {
+              // HapticFeedback.heavyImpact();
+              HapticFeedback.vibrate();
+              _bottomSheet(context, ref, option, state);
             }
-            _bottomSheet(context, ref, option, state);
           }
         },
         child: Container(

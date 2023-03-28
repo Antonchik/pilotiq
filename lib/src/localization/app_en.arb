@@ -135,6 +135,10 @@
   "@returnToSubjectTitle": {
     "description": "The title of the return to subjects button"
   },
+  "reviewAnswersTitle": "Review answers",
+  "@reviewAnswersTitle": {
+    "description": "The title of the review results button"
+  },
   "restartMessage": "Already started this test, would you like to continue or start a new one?",
   "@restartMessage": {
     "description": "Message for the test restart options"

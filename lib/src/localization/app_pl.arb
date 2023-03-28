@@ -33,6 +33,7 @@
   "continueQuizTitle": "Kontynuuj",
   "startNewQuizTitle": "Restart",
   "returnToSubjectTitle": "Powrót do przedmiotu",
+  "reviewAnswersTitle": "Przeglądaj odpowiedzi",
   "restartMessage": "Już zacząłeś ten test, chcesz kontynuować czy zacząć nowy?",
   "congratsMessage": "Gratulacje!\nTest został zakończony pomyślnie!",
   "failMessage": "Niestety, nie udało Ci się ukończyć testu.",

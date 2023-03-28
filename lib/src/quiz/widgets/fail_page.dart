@@ -32,11 +32,20 @@ class FailPage extends ConsumerWidget {
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const Divider(),
-          ElevatedButton(
-            child: Text(local.returnToSubjectTitle),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.arrow_back),
+            label: Text(local.returnToSubjectTitle),
             onPressed: () {
               quizState.reset();
               Navigator.pop(context);
+            },
+          ),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.checklist),
+            label: Text(local.reviewAnswersTitle),
+            onPressed: () {
+              // quizState.reset();
+              // Navigator.pop(context);
             },
           )
         ],
