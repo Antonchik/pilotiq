@@ -8,6 +8,7 @@ class QuizState with ChangeNotifier {
   double _progress = 0;
   Answer? _selected;
   final List<bool> answers = [];
+  String subject = '';
   bool isExam = false;
 
   final PageController controller = PageController();
@@ -57,5 +58,17 @@ class QuizState with ChangeNotifier {
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeOut,
     );
+  }
+
+  void continueFromPage(int index, {isAnimated = false}) async {
+    if (isAnimated) {
+      await controller.animateToPage(
+        index,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeOut,
+      );
+    } else {
+      controller.jumpToPage(index);
+    }
   }
 }

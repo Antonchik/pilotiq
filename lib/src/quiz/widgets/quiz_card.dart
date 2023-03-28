@@ -10,11 +10,12 @@ class QuizCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      // shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
       margin: const EdgeInsets.all(4),
       child: InkWell(
         onTap: () {
-          quiz.questions.shuffle();
+          if (quiz.id == 'exam') {
+            quiz.questions.shuffle();
+          }
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (BuildContext context) => QuizScreen(

@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pilotiq/src/hive_box_provider.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 
-class AnswerCard extends StatelessWidget {
+class AnswerCard extends ConsumerWidget {
   const AnswerCard({Key? key, required this.option, required this.state})
       : super(key: key);
 
   final Answer option;
   final QuizState state;
 
-  _bottomSheet(BuildContext context, Answer opt, QuizState state) {
+  void _bottomSheet(
+      BuildContext context, WidgetRef ref, Answer opt, QuizState state) {
     bool correct = opt.isCorrect;
 
     showModalBottomSheet(
@@ -46,7 +49,9 @@ class AnswerCard extends StatelessWidget {
                 ),
                 onPressed: () {
                   if (correct) {
-                    HapticFeedback.mediumImpact();
+                    ref
+                        .read(hiveBoxProvider)
+                        .put(state.subject, state.controller.page!.toInt() + 1);
                     state.nextPage();
                   }
                   state.answer = correct;
@@ -61,7 +66,7 @@ class AnswerCard extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       constraints: const BoxConstraints(minHeight: 60),
       margin: const EdgeInsets.only(bottom: 10),
@@ -83,7 +88,7 @@ class AnswerCard extends StatelessWidget {
             } else {
               HapticFeedback.heavyImpact();
             }
-            _bottomSheet(context, option, state);
+            _bottomSheet(context, ref, option, state);
           }
         },
         child: Container(

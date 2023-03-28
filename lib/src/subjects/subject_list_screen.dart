@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:pilotiq/src/hive_box_provider.dart';
 import 'package:pilotiq/src/home/home.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/subjects/subject_list_builder.dart';
 
-class SubjectListScreen extends StatelessWidget {
+class SubjectListScreen extends ConsumerWidget {
   const SubjectListScreen({super.key, required this.exam});
 
   final Exam exam;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
     Widget body;
+    Hive.openBox<dynamic>(exam.type.name)
+        .then((value) => ref.read(hiveBoxProvider.notifier).state = value);
     switch (exam.type) {
       case ExamType.ppla:
         body = const SubjectListBuilder();

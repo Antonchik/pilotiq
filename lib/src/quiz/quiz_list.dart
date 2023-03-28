@@ -34,12 +34,14 @@ List<Quiz> composeQuizes(Subject subject, {required AppLocalizations local}) {
     Quiz(
       id: 'test',
       title: local.fullQuizTitle,
+      subject: subject.id,
       questions: questions.toList(),
       description: local.fullModeDescription,
     ),
     Quiz(
       id: 'exam',
       title: local.examQuizTitle,
+      subject: subject.id,
       questions: (questions.toList()..shuffle()).sublist(0, subject.quizLength),
       time: subject.examTime,
       description: local.examModeDescription,
