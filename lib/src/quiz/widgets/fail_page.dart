@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 import 'package:pilotiq/src/quiz/widgets/result_scale_bar.dart';
+import 'package:pilotiq/src/quiz/widgets/review_answers_page.dart';
 
 class FailPage extends ConsumerWidget {
   final Quiz quiz;
@@ -14,7 +15,7 @@ class FailPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
-    final rightAnswers = quizState.answers.where((e) => e).length;
+    final rightAnswers = quizState.answers.where((e) => e.isCorrect).length;
     final percent = rightAnswers / quiz.questions.length;
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
@@ -44,10 +45,14 @@ class FailPage extends ConsumerWidget {
             icon: const Icon(Icons.checklist),
             label: Text(local.reviewAnswersTitle),
             onPressed: () {
-              // quizState.reset();
-              // Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        ReviewAnswersPage(quizState: quizState)),
+              );
             },
-          )
+          ),
         ],
       ),
     ];

@@ -35,6 +35,7 @@ class QuizScreen extends ConsumerWidget {
     final quizState = ref.read(quizStateProvider);
     quizState.subject = quiz.subject;
     quizState.isExam = quizId == 'exam';
+    quizState.questions.addAll(quiz.questions);
     final questionQty = quiz.questions.length;
     final box = ref.read(hiveBoxProvider);
     return Scaffold(

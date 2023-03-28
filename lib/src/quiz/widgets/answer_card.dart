@@ -84,7 +84,7 @@ class AnswerCard extends ConsumerWidget {
         onTap: () {
           state.selected = option;
           if (state.isExam) {
-            state.answer = option.isCorrect;
+            state.answer = option;
             HapticFeedback.lightImpact();
             state.nextPage();
           } else {
