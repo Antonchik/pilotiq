@@ -2,58 +2,47 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 import 'package:pilotiq/src/quiz/widgets/result_scale_bar.dart';
 import 'package:pilotiq/src/quiz/widgets/review_answers_page.dart';
 
-class CongratsPage extends ConsumerWidget {
-  final Quiz quiz;
-  final QuizState quizState;
+class ResultsPage extends ConsumerWidget {
+  const ResultsPage({
+    super.key,
+    required this.message,
+    required this.quizState,
+  });
 
-  const CongratsPage({super.key, required this.quiz, required this.quizState});
+  final QuizState quizState;
+  final String message;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
     final rightAnswers = quizState.answers.where((e) => e.isCorrect).length;
-    final percent = rightAnswers / quiz.questions.length;
+    final percent = rightAnswers / quizState.questions.length;
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
-
     final children = [
       if (quizState.isExam)
         ResultScaleBar(
           percent: percent,
-          header: '$rightAnswers/${quiz.questions.length}',
+          header: '$rightAnswers/${quizState.questions.length}',
         )
       else
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Center(
-              child: Icon(
-                FontAwesomeIcons.circleCheck,
-                size: 100,
-                color: Colors.green,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-          ],
-        ),
+        const AllQuestionsCompleteWidget(),
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            local.congratsMessage,
+            message,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           const Divider(),
-          ElevatedButton(
-            child: Text(local.returnToSubjectTitle),
+          ElevatedButton.icon(
+            icon: const Icon(Icons.arrow_back),
+            label: Text(local.returnToSubjectTitle),
             onPressed: () {
               quizState.reset();
               Navigator.pop(context);
@@ -85,6 +74,29 @@ class CongratsPage extends ConsumerWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: children,
             ),
+    );
+  }
+}
+
+class AllQuestionsCompleteWidget extends StatelessWidget {
+  const AllQuestionsCompleteWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        Center(
+          child: Icon(
+            FontAwesomeIcons.circleCheck,
+            size: 100,
+            color: Colors.green,
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+      ],
     );
   }
 }

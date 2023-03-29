@@ -139,7 +139,7 @@
   "@reviewAnswersTitle": {
     "description": "The title of the review results button"
   },
-  "restartMessage": "Already started this test, would you like to continue or start a new one?",
+  "restartMessage": "Would you like to continue the test you started before or start over?",
   "@restartMessage": {
     "description": "Message for the test restart options"
   },
@@ -187,7 +187,7 @@
   "@fullModeDescription": {
     "description": "Description for the All questions mode Quiz"
   },
-  "examModeDescription": "The exam simulator mode of the test is a practice mode that simulates the actual test experience.",
+  "examModeDescription": "The exam simulator mode simulates the actual exam experience.",
   "@examModeDescription": {
     "description": "Description for the Exam mode Quiz"
   },
@@ -195,7 +195,7 @@
   "@languageButtonTooltip": {
     "description": "Label for the 'Language' button"
   },
-  "exitQuizTitle": "Do you want to exit test?",
+  "exitQuizTitle": "Exit the test?",
   "@exitQuizTitle": {
     "description": "Label for the 'Exit test' button"
   },

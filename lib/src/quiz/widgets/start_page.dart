@@ -44,21 +44,17 @@ class StartPage extends ConsumerWidget {
             ),
           ButtonBar(
             alignment: MainAxisAlignment.center,
-            children: <Widget>[
-              ElevatedButton(
-                child: Row(
-                  children: [
-                    if (isRestartable) const Icon(Icons.start),
-                    Container(
-                      width: 100,
-                      alignment: Alignment.center,
-                      child: Text(
-                        isRestartable
-                            ? local.startNewQuizTitle
-                            : local.startQuizTitle,
-                      ),
-                    ),
-                  ],
+            children: <ElevatedButton>[
+              ElevatedButton.icon(
+                icon: const Icon(Icons.start),
+                label: SizedBox(
+                  width: 80,
+                  child: Text(
+                    isRestartable
+                        ? local.startNewQuizTitle
+                        : local.startQuizTitle,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 onPressed: () {
                   if (!state.isExam) {
@@ -69,18 +65,14 @@ class StartPage extends ConsumerWidget {
                 },
               ),
               if (isRestartable)
-                ElevatedButton(
-                  child: Row(
-                    children: [
-                      const Icon(Icons.navigate_next),
-                      Container(
-                        width: 100,
-                        alignment: Alignment.center,
-                        child: Text(
-                          local.continueQuizTitle,
-                        ),
-                      ),
-                    ],
+                ElevatedButton.icon(
+                  icon: const Icon(Icons.navigate_next),
+                  label: SizedBox(
+                    width: 80,
+                    child: Text(
+                      local.continueQuizTitle,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                   onPressed: () {
                     state.continueFromPage(firstQuestionIndex);

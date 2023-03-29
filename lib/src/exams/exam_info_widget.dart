@@ -16,7 +16,7 @@ class ExamInfoWidget extends StatelessWidget {
             const Icon(Icons.list),
             const SizedBox(width: 10),
             Text(
-              quiz.questions.length.toString(),
+              quiz.length.toString(),
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const Spacer(),

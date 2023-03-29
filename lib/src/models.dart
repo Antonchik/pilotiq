@@ -44,6 +44,7 @@ class Quiz {
   String description;
   String subject;
   int time;
+  int length;
   List<Question> questions;
 
   Quiz(
@@ -52,6 +53,7 @@ class Quiz {
       this.id = '',
       this.subject = '',
       this.time = 30,
+      this.length = 12,
       this.questions = const []});
 }
 

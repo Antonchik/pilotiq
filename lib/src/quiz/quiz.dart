@@ -7,9 +7,8 @@ import 'package:pilotiq/src/contdown_timer/countdown_timer.dart';
 import 'package:pilotiq/src/hive_box_provider.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
-import 'package:pilotiq/src/quiz/widgets/congrats_page.dart';
-import 'package:pilotiq/src/quiz/widgets/fail_page.dart';
 import 'package:pilotiq/src/quiz/widgets/question_page.dart';
+import 'package:pilotiq/src/quiz/widgets/results_page.dart';
 import 'package:pilotiq/src/quiz/widgets/start_page.dart';
 
 class QuizScreen extends ConsumerWidget {
@@ -32,11 +31,16 @@ class QuizScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final local = AppLocalizations.of(context)!;
     final quizState = ref.read(quizStateProvider);
     quizState.subject = quiz.subject;
     quizState.isExam = quizId == 'exam';
-    quizState.questions.addAll(quiz.questions);
-    final questionQty = quiz.questions.length;
+    if (quizState.isExam) {
+      quizState.questions.addAll(quiz.questions.sublist(0, quiz.length));
+    } else {
+      quizState.questions.addAll(quiz.questions);
+    }
+    final questionQty = quizState.questions.length;
     final box = ref.read(hiveBoxProvider);
     return Scaffold(
       appBar: AppBar(
@@ -49,7 +53,7 @@ class QuizScreen extends ConsumerWidget {
               final currentQuestion =
                   !quizState.isExam && quizState.progress == 0
                       ? ref.read(hiveBoxProvider).get(
-                            quiz.subject,
+                            quizState.subject,
                             defaultValue: 0,
                           )
                       : (quizState.progress * questionQty).ceil();
@@ -97,11 +101,11 @@ class QuizScreen extends ConsumerWidget {
         scrollDirection: Axis.vertical,
         controller: quizState.controller,
         onPageChanged: (int idx) =>
-            quizState.progress = (idx / (quiz.questions.length + 1)),
+            quizState.progress = (idx / (questionQty + 1)),
         itemBuilder: (BuildContext context, int index) {
           if (index == 0) {
             return StartPage(quiz: quiz, timerController: timerController);
-          } else if (index == quiz.questions.length + 1) {
+          } else if (index == questionQty + 1) {
             if (quizId == 'exam') {
               _stopTimer();
               if (quizState.result) {
@@ -109,20 +113,23 @@ class QuizScreen extends ConsumerWidget {
                 final positiveValue =
                     box.get(subjectPositiveKey, defaultValue: 0) as int;
                 box.put(subjectPositiveKey, positiveValue + 1);
-                return CongratsPage(quiz: quiz, quizState: quizState);
+                return ResultsPage(
+                    message: local.congratsMessage, quizState: quizState);
               } else {
                 final subjectNegativeKey = '${quizState.subject}_negative';
                 final negativeValue =
                     box.get(subjectNegativeKey, defaultValue: 0) as int;
                 box.put(subjectNegativeKey, negativeValue + 1);
-                return FailPage(quiz: quiz, quizState: quizState);
+                return ResultsPage(
+                    message: local.failMessage, quizState: quizState);
               }
             } else {
               box.put(quizState.subject, 0);
-              return CongratsPage(quiz: quiz, quizState: quizState);
+              return ResultsPage(
+                  message: local.congratsMessage, quizState: quizState);
             }
           } else {
-            return QuestionPage(question: quiz.questions[index - 1]);
+            return QuestionPage(question: quizState.questions[index - 1]);
           }
         },
       ),
