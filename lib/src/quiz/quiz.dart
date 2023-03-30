@@ -14,11 +14,11 @@ import 'package:pilotiq/src/quiz/widgets/start_page.dart';
 class QuizScreen extends ConsumerWidget {
   QuizScreen({
     super.key,
-    required this.quizId,
+    required this.quizType,
     required this.quiz,
   });
 
-  final String quizId;
+  final QuizType quizType;
   final Quiz quiz;
 
   final timerController = CountDownTimerController();
@@ -34,7 +34,7 @@ class QuizScreen extends ConsumerWidget {
     final local = AppLocalizations.of(context)!;
     final quizState = ref.read(quizStateProvider);
     quizState.subject = quiz.subject;
-    quizState.isExam = quizId == 'exam';
+    quizState.isExam = quizType == QuizType.exam;
     if (quizState.isExam) {
       quizState.questions.addAll(quiz.questions.sublist(0, quiz.length));
     } else {
@@ -75,7 +75,7 @@ class QuizScreen extends ConsumerWidget {
                 ),
                 trailing: SizedBox(
                   width: 65,
-                  child: quizId == 'exam'
+                  child: quizType == QuizType.exam
                       ? CountDownTimer(
                           controller: timerController,
                           durationInMinutes: quiz.time)
@@ -106,7 +106,7 @@ class QuizScreen extends ConsumerWidget {
           if (index == 0) {
             return StartPage(quiz: quiz, timerController: timerController);
           } else if (index == questionQty + 1) {
-            if (quizId == 'exam') {
+            if (quizType == QuizType.exam) {
               _stopTimer();
               if (quizState.result) {
                 final subjectPositiveKey = '${quizState.subject}_positive';

@@ -37,9 +37,11 @@ class Subject {
   });
 }
 
+enum QuizType { demo, all, exam }
+
 @JsonSerializable()
 class Quiz {
-  String id;
+  QuizType type;
   String title;
   String description;
   String subject;
@@ -50,7 +52,7 @@ class Quiz {
   Quiz(
       {this.title = '',
       this.description = '',
-      this.id = '',
+      this.type = QuizType.demo,
       this.subject = '',
       this.time = 30,
       this.length = 12,

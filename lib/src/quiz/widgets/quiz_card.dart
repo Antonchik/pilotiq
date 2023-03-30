@@ -13,13 +13,13 @@ class QuizCard extends StatelessWidget {
       margin: const EdgeInsets.all(4),
       child: InkWell(
         onTap: () {
-          if (quiz.id == 'exam') {
+          if (quiz.type == QuizType.exam) {
             quiz.questions.shuffle();
           }
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (BuildContext context) => QuizScreen(
-                quizId: quiz.id,
+                quizType: quiz.type,
                 quiz: quiz,
               ),
             ),

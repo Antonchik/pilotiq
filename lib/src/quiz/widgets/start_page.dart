@@ -28,7 +28,7 @@ class StartPage extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(quiz.title, style: Theme.of(context).textTheme.headlineMedium),
-          if (quiz.id == 'exam') ExamInfoWidget(quiz: quiz),
+          if (quiz.type == QuizType.exam) ExamInfoWidget(quiz: quiz),
           const Divider(),
           Expanded(
               child: Text(

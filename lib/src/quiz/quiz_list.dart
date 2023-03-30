@@ -25,20 +25,20 @@ class QuizList extends StatelessWidget {
 List<Quiz> composeQuizes(Subject subject, {required AppLocalizations local}) {
   return [
     // Quiz(
-    //   id: 'demo',
+    //   type: QuizType.demo,
     //   title: local.demoQuizTitle,
-    //   questions: questions.sublist(0, subject.quizLength),
+    //   questions: subject.questions.sublist(0, subject.quizLength),
     //   description: local.demoModeDescription,
     // ),
     Quiz(
-      id: 'test',
+      type: QuizType.all,
       title: local.fullQuizTitle,
       subject: subject.id,
       questions: subject.questions.toList(),
       description: local.fullModeDescription,
     ),
     Quiz(
-      id: 'exam',
+      type: QuizType.exam,
       title: local.examQuizTitle,
       subject: subject.id,
       questions: subject.questions.toList(),

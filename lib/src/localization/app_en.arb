@@ -179,7 +179,7 @@
   "@examQuizTitle": {
     "description": "The label for the Exam Quiz"
   },
-  "demoModeDescription": "The demo mode of the test is a version of the actual test, designed to give test takers a preview of the types of questions they may encounter.",
+  "demoModeDescription": "The demo mode of the test is a version with a limited set of questions.",
   "@demoModeDescription": {
     "description": "Description for the Demo mode Quiz"
   },
