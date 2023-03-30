@@ -92,7 +92,7 @@ class AnswerCard extends ConsumerWidget {
               // HapticFeedback.mediumImpact();
               HapticFeedback.heavyImpact();
               ref
-                  .read(hiveBoxProvider)
+                  .read(examBoxProvider)
                   .put(state.subject, state.controller.page!.toInt() + 1);
               Future.delayed(const Duration(milliseconds: 500))
                   .then((value) => state.nextPage());

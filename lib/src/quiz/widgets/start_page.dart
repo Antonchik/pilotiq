@@ -17,7 +17,7 @@ class StartPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var state = ref.watch(quizStateProvider);
     final local = AppLocalizations.of(context)!;
-    final firstQuestionIndex = ref.read(hiveBoxProvider).get(
+    final firstQuestionIndex = ref.read(examBoxProvider).get(
           quiz.subject,
           defaultValue: 0,
         );
@@ -58,7 +58,7 @@ class StartPage extends ConsumerWidget {
                 ),
                 onPressed: () {
                   if (!state.isExam) {
-                    ref.read(hiveBoxProvider).put(state.subject, 0);
+                    ref.read(examBoxProvider).put(state.subject, 0);
                   }
                   state.nextPage();
                   timerController?.start?.call();

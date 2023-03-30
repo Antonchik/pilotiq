@@ -1,7 +1,11 @@
 {
-  "appTitle": "pilotiq",
+  "appTitle": "Pilotiq",
   "@appTitle": {
     "description": "The title of the application"
+  },
+  "copyright": "© 2023 Anton Antonchik.\nAll rights reserved.",
+  "@copyright": {
+    "description": "Copyright message"
   },
   "yes": "Yes",
   "@yes": {

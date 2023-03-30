@@ -41,7 +41,7 @@ class QuizScreen extends ConsumerWidget {
       quizState.questions.addAll(quiz.questions);
     }
     final questionQty = quizState.questions.length;
-    final box = ref.read(hiveBoxProvider);
+    final box = ref.read(examBoxProvider);
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -52,7 +52,7 @@ class QuizScreen extends ConsumerWidget {
               final quizState = ref.watch(quizStateProvider);
               final currentQuestion =
                   !quizState.isExam && quizState.progress == 0
-                      ? ref.read(hiveBoxProvider).get(
+                      ? ref.read(examBoxProvider).get(
                             quizState.subject,
                             defaultValue: 0,
                           )

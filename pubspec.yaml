@@ -21,6 +21,7 @@ dependencies:
   intl: 0.17.0
   json_annotation: 4.8.0
   percent_indicator: 4.2.3
+  package_info_plus: ^3.0.2
 
 
 dev_dependencies:
