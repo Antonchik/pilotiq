@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pilotiq/src/about/about.dart';
+import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';
 import 'package:pilotiq/src/exams/exam_item.dart';
 import 'package:pilotiq/src/models.dart';
 
@@ -49,7 +50,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
-        actions: const [ApplicationVersionWidget()],
+        actions: const [
+          ThemeModeButton(),
+          ApplicationVersionWidget(),
+        ],
       ),
       body: isPortrait
           ? ListView.builder(

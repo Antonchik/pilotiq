@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pilotiq/src/about/about.dart';
+import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';
 import 'package:pilotiq/src/home/home.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/subjects/subject_list_builder.dart';
@@ -70,6 +72,10 @@ class SubjectListScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(local.subjectsTitle),
+        actions: const [
+          ThemeModeButton(),
+          ApplicationVersionWidget(),
+        ],
       ),
       body: isPortrait
           ? Column(

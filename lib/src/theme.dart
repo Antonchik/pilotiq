@@ -20,7 +20,7 @@ MaterialColor colorCustom = MaterialColor(primary.value, color);
 
 final fontFamily = GoogleFonts.openSans().fontFamily;
 
-var appTheme = ThemeData(
+var lightAppTheme = ThemeData(
   useMaterial3: true,
   colorSchemeSeed: primary,
   fontFamily: GoogleFonts.openSans().fontFamily,
@@ -37,6 +37,20 @@ var appTheme = ThemeData(
   ),
   cardTheme: const CardTheme(
     surfaceTintColor: Colors.white,
+    elevation: 5,
+  ),
+);
+
+var darkAppTheme = ThemeData(
+  useMaterial3: true,
+  brightness: Brightness.dark,
+  fontFamily: GoogleFonts.openSans().fontFamily,
+  appBarTheme: AppBarTheme(
+    elevation: 5,
+    centerTitle: true,
+    titleTextStyle: TextStyle(fontFamily: fontFamily, fontSize: 22),
+  ),
+  cardTheme: const CardTheme(
     elevation: 5,
   ),
 );

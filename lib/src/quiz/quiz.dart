@@ -66,13 +66,13 @@ class QuizScreen extends ConsumerWidget {
                 animationDuration: 750,
                 animateFromLastPercent: true,
                 backgroundColor: Theme.of(context).colorScheme.primary,
-                progressColor: Theme.of(context).colorScheme.background,
+                progressColor: Theme.of(context).colorScheme.onPrimary,
                 leading: SizedBox(
                   width: 45,
                   child: Text('$currentQuestion/$questionQty',
                       style: TextStyle(
                           fontSize: 16.0,
-                          color: Theme.of(context).colorScheme.onPrimary)),
+                          color: Theme.of(context).colorScheme.inversePrimary)),
                 ),
                 trailing: SizedBox(
                   width: 65,

@@ -11,6 +11,7 @@ void main() async {
   await settingsController.loadSettings();
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
+  await Hive.openBox('config');
   runApp(
     ProviderScope(
       child: MyApp(settingsController: settingsController),

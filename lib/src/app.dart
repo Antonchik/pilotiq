@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pilotiq/src/dark_theme/theme_mode_provider.dart';
 import 'package:pilotiq/src/routes.dart';
 import 'package:pilotiq/src/settings/language_provider.dart';
 import 'package:pilotiq/src/theme.dart';
@@ -20,6 +21,8 @@ class MyApp extends ConsumerWidget {
     return AnimatedBuilder(
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
+        final themeMode = ref.watch(themeModeProvider);
+        print(themeMode);
         return MaterialApp(
           restorationScopeId: 'app',
           debugShowCheckedModeBanner: false,
@@ -28,9 +31,9 @@ class MyApp extends ConsumerWidget {
           locale: ref.watch(languageProvider),
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
-          theme: appTheme,
-          // darkTheme: ThemeData.dark(),
-          themeMode: settingsController.themeMode,
+          theme: lightAppTheme,
+          darkTheme: darkAppTheme,
+          themeMode: themeMode,
           routes: appRoutes,
         );
       },

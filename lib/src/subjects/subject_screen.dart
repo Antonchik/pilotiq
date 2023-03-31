@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pilotiq/src/about/about.dart';
+import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/quiz_list.dart';
 
@@ -25,7 +27,10 @@ class SubjectScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(subject.title),
-          centerTitle: true,
+          actions: const [
+            ThemeModeButton(),
+            ApplicationVersionWidget(),
+          ],
         ),
         body: isPortrait
             ? ListView(children: [
