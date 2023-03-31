@@ -10,19 +10,14 @@ class ThemeModeButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(themeModeProvider);
     final isDark = themeMode == ThemeMode.dark;
-    final purchased = false;
-    if (purchased) {
-      return IconButton(
-          onPressed: () {
-            final settingsBox = Hive.box('config');
-            ref
-                .read(themeModeProvider.notifier)
-                .update((mode) => isDark ? ThemeMode.light : ThemeMode.dark);
-            settingsBox.put(ThemeMode.dark.name, !isDark);
-          },
-          icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode_outlined));
-    } else {
-      return const SizedBox.shrink();
-    }
+    return IconButton(
+        onPressed: () {
+          final settingsBox = Hive.box('config');
+          ref
+              .read(themeModeProvider.notifier)
+              .update((mode) => isDark ? ThemeMode.light : ThemeMode.dark);
+          settingsBox.put(ThemeMode.dark.name, !isDark);
+        },
+        icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode_outlined));
   }
 }
