@@ -18,9 +18,8 @@ class ExamItem extends ConsumerWidget {
       ),
       child: InkWell(
         onTap: () {
-          Hive.close();
-          Hive.openBox<dynamic>(exam.type.name)
-              .then((box) => ref.read(examBoxProvider.notifier).state = box);
+          ref.read(curExamNameProvider.notifier).state = exam.type.name;
+          Hive.openBox<dynamic>(exam.type.name);
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (BuildContext context) => SubjectListScreen(exam: exam),

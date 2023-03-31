@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:pilotiq/src/contdown_timer/countdown_timer.dart';
 import 'package:pilotiq/src/exams/exam_info_widget.dart';
 import 'package:pilotiq/src/hive_box_provider.dart';
@@ -17,10 +18,10 @@ class StartPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var state = ref.watch(quizStateProvider);
     final local = AppLocalizations.of(context)!;
-    final firstQuestionIndex = ref.read(examBoxProvider).get(
-          quiz.subject,
-          defaultValue: 0,
-        );
+    final firstQuestionIndex = Hive.box(ref.read(curExamNameProvider)).get(
+      quiz.subject,
+      defaultValue: 0,
+    );
     final isRestartable = !state.isExam && firstQuestionIndex > 0;
     return Container(
       padding: const EdgeInsets.all(20),
@@ -58,7 +59,8 @@ class StartPage extends ConsumerWidget {
                 ),
                 onPressed: () {
                   if (!state.isExam) {
-                    ref.read(examBoxProvider).put(state.subject, 0);
+                    Hive.box(ref.read(curExamNameProvider))
+                        .put(state.subject, 0);
                   }
                   state.nextPage();
                   timerController?.start?.call();

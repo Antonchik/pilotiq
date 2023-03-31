@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pilotiq/src/contdown_timer/countdown_timer.dart';
 import 'package:pilotiq/src/hive_box_provider.dart';
@@ -41,7 +42,7 @@ class QuizScreen extends ConsumerWidget {
       quizState.questions.addAll(quiz.questions);
     }
     final questionQty = quizState.questions.length;
-    final box = ref.read(examBoxProvider);
+    final box = Hive.box(ref.read(curExamNameProvider));
     return Scaffold(
       appBar: AppBar(
         title: Column(
@@ -52,10 +53,10 @@ class QuizScreen extends ConsumerWidget {
               final quizState = ref.watch(quizStateProvider);
               final currentQuestion =
                   !quizState.isExam && quizState.progress == 0
-                      ? ref.read(examBoxProvider).get(
-                            quizState.subject,
-                            defaultValue: 0,
-                          )
+                      ? box.get(
+                          quizState.subject,
+                          defaultValue: 0,
+                        )
                       : (quizState.progress * questionQty).ceil();
               return LinearPercentIndicator(
                 lineHeight: 5,
@@ -153,6 +154,7 @@ class CloseTestButton extends StatelessWidget {
       onPressed: () async {
         final proceed = await showDialog<bool>(
             context: context,
+            barrierDismissible: false,
             builder: (context) {
               return AlertDialog(
                 title: Text(local.exitQuizTitle),
