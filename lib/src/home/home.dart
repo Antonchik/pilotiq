@@ -53,11 +53,11 @@ class HomeScreen extends StatelessWidget {
         title: Text(local.examsTitle),
         actions: [
           const ThemeModeButton(),
+          // IconButton(
+          //     onPressed: () => Navigator.of(context).push(
+          //         MaterialPageRoute(builder: (context) => const Paywall())),
+          //     icon: const Icon(Icons.store)),
           const ApplicationVersionWidget(),
-          IconButton(
-              onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const Paywall())),
-              icon: const Icon(Icons.store))
         ],
       ),
       body: isPortrait

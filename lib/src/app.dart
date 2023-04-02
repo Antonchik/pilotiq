@@ -19,11 +19,12 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.read(linkFiveProvider);
+    final isPremium = ref.watch(linkFiveProvider).hasActiveProduct;
     return AnimatedBuilder(
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
-        final themeMode = ref.watch(themeModeProvider);
+        final themeMode =
+            isPremium ? ref.watch(themeModeProvider) : ThemeMode.light;
         return MaterialApp(
           restorationScopeId: 'app',
           debugShowCheckedModeBanner: false,
