@@ -4,6 +4,7 @@ import 'package:pilotiq/src/about/about.dart';
 import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';
 import 'package:pilotiq/src/exams/exam_item.dart';
 import 'package:pilotiq/src/models.dart';
+import 'package:pilotiq/src/purchases/paywall.dart';
 
 enum ExamType { ppla, pplaEng, pplh, pplhEng, plg, plfb }
 
@@ -50,13 +51,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
-        actions: const [
-          ThemeModeButton(),
-          ApplicationVersionWidget(),
-          // IconButton(
-          //     onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-          //         builder: (context) => const PurchasePage())),
-          //     icon: const Icon(Icons.store))
+        actions: [
+          const ThemeModeButton(),
+          const ApplicationVersionWidget(),
+          IconButton(
+              onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const Paywall())),
+              icon: const Icon(Icons.store))
         ],
       ),
       body: isPortrait
