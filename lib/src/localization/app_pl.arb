@@ -56,7 +56,10 @@
   "featuresDescriptionTitle": "Wszystkie cechy w skrócie",
   "allExamsAccessLabel": "Dostęp do wszystkich egzaminów",
   "darkModeAccessLabel": "Tryb ciemny odblokowany",
-  "allSubjectsAccessLabel": "Dostęp do wszystkich przedmiotów",
+  "allSubjectsAccessLabel": "Dostęp do wszystkich pytań",
   "specialPriceLabel": "Specjalna cena dla Ciebie",
-  "privacyPolicyLabel": "Polityka Prywatności"
+  "privacyPolicyLabel": "Polityka Prywatności",
+  "premiumUserGreeting": "Jesteś użytkownikiem Premium!",
+  "thankYouMessage": "Dziękujemy za wsparcie!",
+  "letsGoMessage": "Lecimy!"
 }

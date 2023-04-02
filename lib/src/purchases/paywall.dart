@@ -20,6 +20,16 @@ class Paywall extends ConsumerWidget {
       child: SimplePaywall(
         callbackInterface: data.callbackInterface,
         subscriptionListData: data.paywallUIHelperData(context),
+        headerContainer: Card(
+          elevation: 3,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              'assets/icon/paywall_banner.png',
+              fit: BoxFit.fitHeight,
+            ),
+          ),
+        ),
         title: local.goPremiumLabel,
         // SubTitle
         subTitle: local.featuresDescriptionTitle,
@@ -30,15 +40,15 @@ class Paywall extends ConsumerWidget {
           IconAndText(Icons.dark_mode_outlined, local.darkModeAccessLabel)
         ],
         // Shown if isPurchaseSuccess == true
-        successTitle: "You're a Premium User!",
+        successTitle: local.premiumUserGreeting,
         // Shown if isPurchaseSuccess == true
-        successSubTitle: "Thanks for your Support!",
+        successSubTitle: local.thankYouMessage,
         // Widget can be anything. Shown if isPurchaseSuccess == true
         successWidget: Container(
             padding: const EdgeInsets.only(top: 16, bottom: 16),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               ElevatedButton(
-                child: Text("Let's go!"),
+                child: Text(local.letsGoMessage),
                 onPressed: () {
                   Navigator.pop(context);
                 },

@@ -50,13 +50,9 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
-        actions: [
-          const ThemeModeButton(),
-          // IconButton(
-          //     onPressed: () => Navigator.of(context).push(
-          //         MaterialPageRoute(builder: (context) => const Paywall())),
-          //     icon: const Icon(Icons.store)),
-          const ApplicationVersionWidget(),
+        actions: const [
+          ThemeModeButton(),
+          ApplicationVersionWidget(),
         ],
       ),
       body: isPortrait

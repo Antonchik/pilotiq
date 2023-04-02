@@ -227,7 +227,7 @@
   "@darkModeAccessLabel": {
     "description": "Dark mode unlocked label"
   },
-  "allSubjectsAccessLabel": "Access to all subjects",
+  "allSubjectsAccessLabel": "Access to all questions",
   "@allSubjectsAccessLabel": {
     "description": "All subjects access label"
   },
@@ -238,5 +238,17 @@
   "privacyPolicyLabel": "Privacy Policy",
   "@privacyPolicyLabel": {
     "description": "Privacy policy label"
+  },
+  "premiumUserGreeting": "You're a Premium User!",
+  "@premiumUserGreeting": {
+    "description": "Premium user greeting"
+  },
+  "thankYouMessage": "Thanks for your Support!",
+  "@thankYouMessage": {
+    "description": "Thanks for supporting"
+  },
+  "letsGoMessage": "Let's go!",
+  "@letsGoMessage": {
+    "description": "Let's go!"
   }
 }

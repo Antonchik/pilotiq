@@ -48,18 +48,19 @@ class ResultsPage extends ConsumerWidget {
               Navigator.pop(context);
             },
           ),
-          ElevatedButton.icon(
-            icon: const Icon(Icons.checklist),
-            label: Text(local.reviewAnswersTitle),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        ReviewAnswersPage(quizState: quizState)),
-              );
-            },
-          ),
+          if (quizState.isExam)
+            ElevatedButton.icon(
+              icon: const Icon(Icons.checklist),
+              label: Text(local.reviewAnswersTitle),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ReviewAnswersPage(quizState: quizState)),
+                );
+              },
+            ),
         ],
       ),
     ];
