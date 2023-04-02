@@ -210,5 +210,33 @@
   "timeIsUpMessage": "You have run out of time.\nYour test is over.",
   "@timeIsUpMessage": {
     "description": "Message for the 'Time is up' dialog"
+  },
+    "goPremiumLabel": "Go Premium!",
+    "@goPremiumLabel": {
+      "description": "Label for Go Premium"
+    },
+  "featuresDescriptionTitle": "All features at a glance",
+  "@featuresDescriptionTitle": {
+    "description": "Features description title"
+  },
+  "allExamsAccessLabel": "Access to all exams",
+  "@allExamsAccessLabel": {
+    "description": "All exams access label"
+  },
+  "darkModeAccessLabel": "Dark mode unlocked",
+  "@darkModeAccessLabel": {
+    "description": "Dark mode unlocked label"
+  },
+  "allSubjectsAccessLabel": "Access to all subjects",
+  "@allSubjectsAccessLabel": {
+    "description": "All subjects access label"
+  },
+  "specialPriceLabel": "Special price for you",
+  "@specialPriceLabel": {
+    "description": "Special price label"
+  },
+  "privacyPolicyLabel": "Privacy Policy",
+  "@privacyPolicyLabel": {
+    "description": "Privacy policy label"
   }
 }

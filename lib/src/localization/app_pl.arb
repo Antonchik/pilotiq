@@ -51,5 +51,12 @@
   "languageButtonTooltip": "Zmień język",
   "exitQuizTitle": "Wyjść z testu?",
   "timeIsUpTitle": "Czas minął!",
-  "timeIsUpMessage": "Nie udało Ci się ukończyć testu."
+  "timeIsUpMessage": "Nie udało Ci się ukończyć testu.",
+  "goPremiumLabel": "Go Premium!",
+  "featuresDescriptionTitle": "Wszystkie cechy w skrócie",
+  "allExamsAccessLabel": "Dostęp do wszystkich egzaminów",
+  "darkModeAccessLabel": "Tryb ciemny odblokowany",
+  "allSubjectsAccessLabel": "Dostęp do wszystkich przedmiotów",
+  "specialPriceLabel": "Specjalna cena dla Ciebie",
+  "privacyPolicyLabel": "Polityka Prywatności"
 }

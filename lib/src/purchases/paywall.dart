@@ -6,6 +6,7 @@ import 'package:in_app_purchases_paywall_ui/paywall/simple/simple_paywall.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/widgets/campaign_banner.dart';
 import 'package:in_app_purchases_paywall_ui/paywall/wrapper/paywall_scaffold.dart';
 import 'package:pilotiq/src/purchases/linkfive_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Paywall extends ConsumerWidget {
   const Paywall({Key? key}) : super(key: key);
@@ -13,19 +14,20 @@ class Paywall extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final data = ref.watch(linkFiveProvider);
+    final local = AppLocalizations.of(context)!;
     return PaywallScaffold(
       appBarTitle: "Premium",
       child: SimplePaywall(
         callbackInterface: data.callbackInterface,
         subscriptionListData: data.paywallUIHelperData(context),
-        title: "Go Premium",
+        title: local.goPremiumLabel,
         // SubTitle
-        subTitle: "All features at a glance",
+        subTitle: local.featuresDescriptionTitle,
         // Add as many bullet points as you like
         bulletPoints: [
-          IconAndText(Icons.new_releases_outlined, "Access to all exams"),
-          IconAndText(Icons.subject, "Access to all subjects"),
-          IconAndText(Icons.dark_mode_outlined, "Dark mode")
+          IconAndText(Icons.new_releases_outlined, local.allExamsAccessLabel),
+          IconAndText(Icons.subject, local.allSubjectsAccessLabel),
+          IconAndText(Icons.dark_mode_outlined, local.darkModeAccessLabel)
         ],
         // Shown if isPurchaseSuccess == true
         successTitle: "You're a Premium User!",
@@ -44,11 +46,11 @@ class Paywall extends ConsumerWidget {
             ])),
         // tosData: TextAndUrl("Terms of Service", "https://www.linkfive.io/tos"),
         // provide your PP
-        ppData: TextAndUrl("Privacy Policy",
+        ppData: TextAndUrl(local.privacyPolicyLabel,
             "https://www.termsfeed.com/live/da031152-c5f9-4dd0-a4e6-42d78de414ae"),
         // add a custom campaign widget
         campaignWidget: CampaignBanner(
-          headline: "🥳 Summer Special Sale",
+          headline: local.specialPriceLabel,
         ),
       ),
     );
