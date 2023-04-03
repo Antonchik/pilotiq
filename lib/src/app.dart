@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:linkfive_purchases/logic/linkfive_purchases.dart';
 import 'package:pilotiq/src/dark_theme/theme_mode_provider.dart';
-import 'package:pilotiq/src/purchases/linkfive_provider.dart';
 import 'package:pilotiq/src/routes.dart';
+import 'package:pilotiq/src/settings/settings_controller.dart';
 import 'package:pilotiq/src/theme.dart';
-
-import 'settings/settings_controller.dart';
 
 class MyApp extends ConsumerWidget {
   const MyApp({
@@ -19,12 +16,9 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isPremium = ref.watch(linkFiveProvider).hasActiveProduct;
     return AnimatedBuilder(
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
-        final themeMode =
-            isPremium ? ref.watch(themeModeProvider) : ThemeMode.light;
         return MaterialApp(
           restorationScopeId: 'app',
           debugShowCheckedModeBanner: false,
@@ -34,7 +28,7 @@ class MyApp extends ConsumerWidget {
               AppLocalizations.of(context)!.appTitle,
           theme: lightAppTheme,
           darkTheme: darkAppTheme,
-          themeMode: themeMode,
+          themeMode: ref.watch(themeModeProvider),
           routes: appRoutes,
         );
       },

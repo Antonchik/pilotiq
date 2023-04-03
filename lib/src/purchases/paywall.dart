@@ -35,7 +35,7 @@ class Paywall extends ConsumerWidget {
         bulletPoints: [
           IconAndText(Icons.new_releases_outlined, local.allExamsAccessLabel),
           IconAndText(Icons.subject, local.allSubjectsAccessLabel),
-          IconAndText(Icons.dark_mode_outlined, local.darkModeAccessLabel)
+          // IconAndText(Icons.dark_mode_outlined, local.darkModeAccessLabel)
         ],
         // Shown if isPurchaseSuccess == true
         successTitle: local.premiumUserGreeting,
