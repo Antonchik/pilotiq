@@ -11,7 +11,8 @@ class ThemeModeButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isPremium = ref.watch(linkFiveProvider).hasActiveProduct;
-    final isDark = ref.watch(themeModeProvider) == ThemeMode.dark;
+    final isDark =
+        isPremium ? ref.watch(themeModeProvider) == ThemeMode.dark : false;
     final settingsBox = Hive.box('config');
     return IconButton(
       icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode_outlined),
