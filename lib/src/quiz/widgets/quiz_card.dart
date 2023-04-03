@@ -1,17 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/models.dart';
+import 'package:pilotiq/src/purchases/linkfive_provider.dart';
 import 'package:pilotiq/src/quiz/quiz.dart';
 
-class QuizCard extends StatelessWidget {
+class QuizCard extends ConsumerWidget {
   const QuizCard({Key? key, required this.quiz}) : super(key: key);
 
   final Quiz quiz;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isPremium = ref.watch(linkFiveProvider).hasActiveProduct;
+    final unlocked = isPremium || quiz.type == QuizType.demo;
     return Card(
       margin: const EdgeInsets.all(4),
-      child: InkWell(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: ListTile(
+        enabled: unlocked,
+        trailing: unlocked ? null : const Icon(Icons.lock_outline),
+        title: Text(quiz.title),
+        subtitle: Text(
+          quiz.description,
+          textAlign: TextAlign.justify,
+        ),
         onTap: () {
           if (quiz.type == QuizType.exam) {
             quiz.questions.shuffle();
@@ -25,22 +37,6 @@ class QuizCard extends StatelessWidget {
             ),
           );
         },
-        child: Container(
-          color: Theme.of(context).colorScheme.surface,
-          padding: const EdgeInsets.all(8),
-          child: ListTile(
-            title: Text(
-              quiz.title,
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            subtitle: Text(
-              quiz.description,
-              overflow: TextOverflow.fade,
-              style: Theme.of(context).textTheme.titleSmall,
-              textAlign: TextAlign.justify,
-            ),
-          ),
-        ),
       ),
     );
   }

@@ -14,20 +14,16 @@ class ThemeModeButton extends ConsumerWidget {
     final isDark =
         isPremium ? ref.watch(themeModeProvider) == ThemeMode.dark : false;
     final settingsBox = Hive.box('config');
-    return IconButton(
-      icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode_outlined),
-      onPressed: isPremium
-          ? () {
+    return isPremium
+        ? IconButton(
+            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode_outlined),
+            onPressed: () {
               ref
                   .read(themeModeProvider.notifier)
                   .update((mode) => isDark ? ThemeMode.light : ThemeMode.dark);
               settingsBox.put(ThemeMode.dark.name, !isDark);
-            }
-          : () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const Paywall(),
-                ),
-              ),
-    );
+            },
+          )
+        : const SizedBox.shrink();
   }
 }

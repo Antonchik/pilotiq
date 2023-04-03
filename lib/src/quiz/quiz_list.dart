@@ -52,23 +52,21 @@ List<Quiz> composeQuizes(Subject subject, bool isPremium,
         questions: subject.questions.sublist(0, subject.quizLength),
         description: local.demoModeDescription,
       ),
-    if (isPremium) ...[
-      Quiz(
-        type: QuizType.all,
-        title: local.fullQuizTitle,
-        subject: subject.id,
-        questions: subject.questions.toList(),
-        description: local.fullModeDescription,
-      ),
-      Quiz(
-        type: QuizType.exam,
-        title: local.examQuizTitle,
-        subject: subject.id,
-        questions: subject.questions.toList(),
-        time: subject.examTime,
-        length: subject.quizLength,
-        description: local.examModeDescription,
-      ),
-    ]
+    Quiz(
+      type: QuizType.all,
+      title: local.fullQuizTitle,
+      subject: subject.id,
+      questions: subject.questions.toList(),
+      description: local.fullModeDescription,
+    ),
+    Quiz(
+      type: QuizType.exam,
+      title: local.examQuizTitle,
+      subject: subject.id,
+      questions: subject.questions.toList(),
+      time: subject.examTime,
+      length: subject.quizLength,
+      description: local.examModeDescription,
+    ),
   ];
 }

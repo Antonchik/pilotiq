@@ -9,21 +9,20 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
     return BottomNavigationBar(
-      backgroundColor: Theme.of(context).colorScheme.primary,
       items: [
         BottomNavigationBarItem(
           icon: const Icon(
             FontAwesomeIcons.graduationCap,
             size: 20,
           ),
-          label: local.subjectsTitle,
+          label: local.examsTitle,
         ),
         BottomNavigationBarItem(
           icon: const Icon(
-            FontAwesomeIcons.bolt,
+            FontAwesomeIcons.star,
             size: 20,
           ),
-          label: local.aboutTitle,
+          label: local.premiumLabel,
         ),
       ],
       onTap: (int idx) {
@@ -32,7 +31,7 @@ class BottomNavBar extends StatelessWidget {
             // do nothing
             break;
           case 1:
-            Navigator.pushNamed(context, '/about');
+            Navigator.pushNamed(context, '/paywall');
             break;
         }
       },

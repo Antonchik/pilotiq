@@ -250,5 +250,9 @@
   "letsGoMessage": "Let's go!",
   "@letsGoMessage": {
     "description": "Let's go!"
+  },
+  "premiumLabel": "Go Premium!",
+  "@premiumLabel": {
+    "description": "Premium paywall"
   }
 }

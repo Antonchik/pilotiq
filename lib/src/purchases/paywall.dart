@@ -1,10 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:in_app_purchases_paywall_ui/paywall/model/icon_and_text.dart';
-import 'package:in_app_purchases_paywall_ui/paywall/model/text_and_url.dart';
-import 'package:in_app_purchases_paywall_ui/paywall/simple/simple_paywall.dart';
-import 'package:in_app_purchases_paywall_ui/paywall/widgets/campaign_banner.dart';
-import 'package:in_app_purchases_paywall_ui/paywall/wrapper/paywall_scaffold.dart';
+import 'package:in_app_purchases_paywall_ui/in_app_purchases_paywall_ui.dart';
 import 'package:pilotiq/src/purchases/linkfive_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -54,6 +52,12 @@ class Paywall extends ConsumerWidget {
                 },
               )
             ])),
+        activePlanList: [
+          if (Platform.isAndroid)
+            GooglePlayGeneralActivePlan()
+          else
+            AppleAppStoreActivePlan(),
+        ],
         // tosData: TextAndUrl("Terms of Service", "https://www.linkfive.io/tos"),
         // provide your PP
         ppData: TextAndUrl(local.privacyPolicyLabel,

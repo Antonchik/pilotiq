@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pilotiq/src/about/about.dart';
 import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';
 import 'package:pilotiq/src/exams/exam_item.dart';
+import 'package:pilotiq/src/home/bottom_nav.dart';
 import 'package:pilotiq/src/models.dart';
 
 enum ExamType { ppla, pplaEng, pplh, pplhEng, plg, plfb }
@@ -81,6 +82,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }
