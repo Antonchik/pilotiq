@@ -211,10 +211,10 @@
   "@timeIsUpMessage": {
     "description": "Message for the 'Time is up' dialog"
   },
-    "goPremiumLabel": "Go Premium!",
-    "@goPremiumLabel": {
-      "description": "Label for Go Premium"
-    },
+  "goPremiumLabel": "Go Premium!",
+  "@goPremiumLabel": {
+    "description": "Label for Go Premium"
+  },
   "featuresDescriptionTitle": "All features at a glance",
   "@featuresDescriptionTitle": {
     "description": "Features description title"
@@ -231,7 +231,7 @@
   "@allSubjectsAccessLabel": {
     "description": "All subjects access label"
   },
-  "specialPriceLabel": "Special price for you",
+  "specialPriceLabel": "Get it now!",
   "@specialPriceLabel": {
     "description": "Special price label"
   },

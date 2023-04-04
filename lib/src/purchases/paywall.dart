@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:in_app_purchases_paywall_ui/in_app_purchases_paywall_ui.dart';
 import 'package:pilotiq/src/purchases/linkfive_provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Paywall extends ConsumerWidget {
   const Paywall({Key? key}) : super(key: key);
@@ -35,7 +35,6 @@ class Paywall extends ConsumerWidget {
         bulletPoints: [
           IconAndText(Icons.new_releases_outlined, local.allExamsAccessLabel),
           IconAndText(Icons.subject, local.allSubjectsAccessLabel),
-          // IconAndText(Icons.dark_mode_outlined, local.darkModeAccessLabel)
         ],
         // Shown if isPurchaseSuccess == true
         successTitle: local.premiumUserGreeting,
@@ -58,13 +57,17 @@ class Paywall extends ConsumerWidget {
           else
             AppleAppStoreActivePlan(),
         ],
-        // tosData: TextAndUrl("Terms of Service", "https://www.linkfive.io/tos"),
+        // provide your TOS
+        tosData: TextAndUrl(
+            "Terms of Service", "https://antonchik.github.io/pilotiq_tos/"),
         // provide your PP
         ppData: TextAndUrl(local.privacyPolicyLabel,
             "https://www.termsfeed.com/live/da031152-c5f9-4dd0-a4e6-42d78de414ae"),
         // add a custom campaign widget
         campaignWidget: CampaignBanner(
           headline: local.specialPriceLabel,
+          // subTitle: 'Subtitle',
+          // subContent: Text('Sub Content'),
         ),
       ),
     );

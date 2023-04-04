@@ -74,7 +74,6 @@ class AnswerCard extends ConsumerWidget {
       constraints: const BoxConstraints(minHeight: 60),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.surface,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
               color: rightSelected

@@ -24,6 +24,7 @@ var lightAppTheme = ThemeData(
   useMaterial3: true,
   colorSchemeSeed: primary,
   fontFamily: GoogleFonts.openSans().fontFamily,
+  scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
     color: primary,
     elevation: 5,
@@ -37,6 +38,7 @@ var lightAppTheme = ThemeData(
   ),
   cardTheme: const CardTheme(
     surfaceTintColor: Colors.white,
+    color: Colors.white,
     elevation: 5,
   ),
 );
