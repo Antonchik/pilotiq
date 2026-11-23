@@ -177,8 +177,14 @@ def _cell_text(page, bbox, fallback):
     # by an exact crop; the neighbouring cell starts >5pt after the border, so +3.5pt is safe.
     x0, top, x1, bottom = bbox
     area = (x0, top, min(x1 + 3.5, float(page.width)), bottom)
-    lines = page.crop(area).extract_text_lines(strip=False, return_chars=False)
-    text = "\n".join(ln["text"] for ln in lines)
+    from pdfplumber.utils import cluster_objects
+
+    chars = page.crop(area).chars
+    lines = []
+    for cluster in cluster_objects(chars, "doctop", 3):
+        cluster = sorted(cluster, key=lambda ch: ch["x0"])
+        lines.append("".join(ch["text"] for ch in cluster))
+    text = "\n".join(lines)
     if re.sub(r"\s+", "", text) != re.sub(r"\s+", "", fallback):
         return fallback  # safety net: never trust own reconstruction over pdfplumber's
     return text
