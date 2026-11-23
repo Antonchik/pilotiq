@@ -24,7 +24,8 @@ void main() {
   late ProgressRepository repository;
 
   setUp(() async {
-    await openMemoryBox('config');
+    final config = await openMemoryBox('config');
+    await config.put('onboardingDone', true);
     repository = memoryProgressRepository();
     PackageInfo.setMockInitialValues(
       appName: 'Pilotiq',
@@ -66,7 +67,7 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await tester.tap(find.text('PPL(A)'));
+      await tester.tap(find.byKey(const Key('tab_subjects')));
       await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('subject_air_law')));
       await tester.pumpAndSettle();

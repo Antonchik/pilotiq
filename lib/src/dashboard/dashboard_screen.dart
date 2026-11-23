@@ -395,7 +395,7 @@ class _ReadinessCard extends StatelessWidget {
 class _ReadinessRow extends StatelessWidget {
   const _ReadinessRow({super.key, required this.stats});
 
-  final SubjectStats stats;
+  final SubjectOverview stats;
 
   @override
   Widget build(BuildContext context) {

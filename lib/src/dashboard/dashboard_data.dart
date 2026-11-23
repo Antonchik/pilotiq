@@ -37,8 +37,8 @@ enum ReadinessLevel {
 }
 
 /// Statistics of one subject of the selected licence.
-class SubjectStats {
-  const SubjectStats({
+class SubjectOverview {
+  const SubjectOverview({
     required this.subject,
     required this.total,
     required this.covered,
@@ -92,8 +92,8 @@ class DashboardData {
 
   /// Questions of the bank that are due until the end of today.
   final int dueToday;
-  final List<SubjectStats> subjects;
-  final List<SubjectStats> weakSubjects;
+  final List<SubjectOverview> subjects;
+  final List<SubjectOverview> weakSubjects;
 
   /// Newest real simulation (migrated 1.x attempts are not included).
   final ExamAttempt? lastAttempt;
@@ -132,7 +132,7 @@ class DashboardData {
     required Iterable<ExamAttempt> attempts,
     required Iterable<String> dueQids,
   }) {
-    final stats = <SubjectStats>[];
+    final stats = <SubjectOverview>[];
     final inBank = <String>{};
     for (final subject in SubjectId.values) {
       final qids = bankQids[subject];
@@ -152,7 +152,7 @@ class DashboardData {
       }
       final spec = ExamSpec.forSubject(subject, licence: licence);
       stats.add(
-        SubjectStats(
+        SubjectOverview(
           subject: subject,
           total: qids.length,
           covered: covered,
