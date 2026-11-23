@@ -19,6 +19,7 @@ import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/quiz/practice/practice_controller.dart';
 import 'package:pilotiq/src/quiz/practice/practice_screen.dart';
 import 'package:pilotiq/src/quiz/practice/practice_session.dart';
+import 'package:pilotiq/src/quiz/practice/question_view.dart';
 import 'package:pilotiq/src/quiz/quiz_list.dart';
 import 'package:pilotiq/src/subjects/subject_info.dart';
 
@@ -459,16 +460,35 @@ void main() {
             );
             await openPracticeScreen(tester);
 
-            await tester.tap(find.byKey(const Key('answer_0')));
+            final scrollable = find
+                .descendant(
+                  of: find.byType(QuestionView),
+                  matching: find.byType(Scrollable),
+                )
+                .first;
+            final first = find.byKey(const Key('answer_0'));
+            await tester.scrollUntilVisible(
+              first,
+              300,
+              scrollable: scrollable,
+              maxScrolls: 300,
+            );
+            await tester.ensureVisible(first);
+            await tester.pumpAndSettle();
+            // The tile of a long answer is taller than the screen: tap its top.
+            await tester.tapAt(tester.getTopLeft(first) + const Offset(20, 20));
             await tester.pumpAndSettle();
             expect(tester.takeException(), isNull);
 
             final retry = find.byKey(const Key('practice_save_retry'));
             await tester.scrollUntilVisible(
               retry,
-              200,
-              scrollable: find.byType(Scrollable).first,
+              300,
+              scrollable: scrollable,
+              maxScrolls: 300,
             );
+            await tester.ensureVisible(retry);
+            await tester.pumpAndSettle();
             await tester.tap(retry);
             await tester.pumpAndSettle();
 
