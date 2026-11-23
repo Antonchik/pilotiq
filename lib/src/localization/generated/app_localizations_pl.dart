@@ -470,9 +470,6 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get dashboardBeforeV2 => 'Przed wersją 2.0';
-
-  @override
   String get settingsTitle => 'Profil i ustawienia';
 
   @override

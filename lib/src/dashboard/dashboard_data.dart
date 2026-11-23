@@ -12,9 +12,11 @@ import 'package:pilotiq/src/progress/question_progress.dart';
 /// 23 or 25 hour day (daylight saving) is handled.
 DateTime endOfLocalDay(DateTime now) {
   final l = now.isUtc ? now.toLocal() : now;
-  return DateTime(l.year, l.month, l.day + 1).subtract(const Duration(
-    milliseconds: 1,
-  ));
+  return DateTime(
+    l.year,
+    l.month,
+    l.day + 1,
+  ).subtract(const Duration(milliseconds: 1));
 }
 
 /// Colour class of a readiness value.

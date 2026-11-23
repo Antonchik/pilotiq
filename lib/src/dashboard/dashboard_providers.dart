@@ -45,9 +45,9 @@ final legacyLicenceHintProvider = FutureProvider<Licence?>((ref) async {
   Licence? best;
   var bestCount = 0;
   for (final licence in Licence.values) {
-    final count = (await repository.attempts(
-      licence,
-    )).where((a) => a.isLegacy).length;
+    final count = (await repository.attempts(licence))
+        .where((a) => a.isLegacy)
+        .length;
     if (count > bestCount) {
       best = licence;
       bestCount = count;

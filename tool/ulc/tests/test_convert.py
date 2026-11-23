@@ -80,7 +80,7 @@ class RecordsTest(unittest.TestCase):
         self.assertEqual(qs[0]["id"], "PL100-0126")
         self.assertEqual(qs[0]["number"], "PL100-0126")
         self.assertEqual(qs[0]["topic"], "PL100")
-        self.assertEqual(qs[0]["subject"], "air_law")
+        self.assertEqual(qs[0]["subject"], "operational_procedures")
 
     def test_pl021_is_aircraft_general_knowledge(self):
         qs, _ = convert_rows([HEADER, row(1, "1", "PL021-0001", "Pytanie?")])

@@ -1,38 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:pilotiq/src/about/about.dart';
-import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';
-import 'package:pilotiq/src/domain/catalog.dart';
-import 'package:pilotiq/src/exams/licence_item.dart';
-import 'package:pilotiq/src/exams/question_language_selector.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pilotiq/src/bank/licence_provider.dart';
+import 'package:pilotiq/src/dashboard/dashboard_providers.dart';
+import 'package:pilotiq/src/dashboard/dashboard_screen.dart';
 import 'package:pilotiq/src/home/bottom_nav.dart';
-import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/settings/settings_screen.dart';
+import 'package:pilotiq/src/subjects/subject_list_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+/// Main screen after the onboarding: the three tabs behind a bottom bar. Only
+/// the visible tab is built, so "Today" recomputes whenever it is shown.
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final local = AppLocalizations.of(context)!;
-    const licences = Licence.values;
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(local.examsTitle),
-        actions: const [ThemeModeButton(), ApplicationVersionWidget()],
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tab = ref.watch(homeTabProvider);
+    final licence = ref.watch(selectedLicenceProvider);
+    return PopScope(
+      canPop: tab == 0,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) ref.read(homeTabProvider.notifier).state = 0;
+      },
+      child: Scaffold(
+        body: switch (tab) {
+          0 => const DashboardScreen(),
+          1 => SubjectListScreen(key: ValueKey(licence), licence: licence),
+          _ => const SettingsScreen(),
+        },
+        bottomNavigationBar: const AppBottomNav(),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const QuestionLanguageSelector(),
-          Expanded(
-            child: ListView.builder(
-              itemCount: licences.length,
-              itemBuilder: (context, index) =>
-                  LicenceItem(licence: licences[index]),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

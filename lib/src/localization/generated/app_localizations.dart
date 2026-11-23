@@ -830,12 +830,6 @@ abstract class AppLocalizations {
   /// **'{count, plural, one{1 attempt before version 2.0} other{{count} attempts before version 2.0}}'**
   String dashboardLegacyAttempts(int count);
 
-  /// Label of a migrated attempt that has no date
-  ///
-  /// In en, this message translates to:
-  /// **'Before version 2.0'**
-  String get dashboardBeforeV2;
-
   /// Settings screen title
   ///
   /// In en, this message translates to:

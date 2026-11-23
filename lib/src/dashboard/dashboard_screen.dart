@@ -157,10 +157,7 @@ class _ExamCountdownCard extends ConsumerWidget {
             const Icon(Icons.event_available, size: 32),
             const SizedBox(width: 12),
             Expanded(
-              child: Text(
-                text,
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
+              child: Text(text, style: Theme.of(context).textTheme.titleMedium),
             ),
             if (showAction)
               TextButton(
@@ -371,7 +368,8 @@ class _ReadinessCard extends StatelessWidget {
     final detail = AccessPolicy.canUseReadinessDetail(isPremium);
     return _CardShell(
       key: const Key('dashboard_readiness'),
-      title: '${local.dashboardReadinessTitle} (${local.dashboardReadinessApprox})',
+      title:
+          '${local.dashboardReadinessTitle} (${local.dashboardReadinessApprox})',
       trailing: detail ? null : const Icon(Icons.lock_outline, size: 20),
       onTap: detail
           ? null
@@ -409,7 +407,8 @@ class _ReadinessRow extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Semantics(
-        label: '$title ${local.dashboardPercentValue(percent)} '
+        label:
+            '$title ${local.dashboardPercentValue(percent)} '
             '${local.dashboardReadinessApprox}',
         excludeSemantics: true,
         child: Column(
@@ -480,12 +479,9 @@ class _LastExamCard extends StatelessWidget {
     final last = data.lastAttempt;
     final Widget body;
     if (last != null) {
-      final percent = last.total == 0
-          ? 0
-          : _percent(last.correct / last.total);
-      final date = MaterialLocalizations.of(
-        context,
-      ).formatMediumDate(last.finishedAt.toLocal());
+      final percent = last.total == 0 ? 0 : _percent(last.correct / last.total);
+      final date = MaterialLocalizations.of(context)
+          .formatMediumDate(last.finishedAt.toLocal());
       body = ListTile(
         contentPadding: EdgeInsets.zero,
         title: Text(subjectTitle(local, last.subject)),

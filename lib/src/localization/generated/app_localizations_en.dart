@@ -455,9 +455,6 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get dashboardBeforeV2 => 'Before version 2.0';
-
-  @override
   String get settingsTitle => 'Profile and settings';
 
   @override

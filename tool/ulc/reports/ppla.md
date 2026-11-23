@@ -41,7 +41,7 @@
 
 | предмет | вопросов | quizLength |
 |---|---|---|
-| air_law | 867 | 28 |
+| air_law | 860 | 28 |
 | communications | 53 | 12 |
 | meteorology | 144 | 12 |
 | navigation | 278 | 24 |
@@ -49,7 +49,7 @@
 | aircraft_general_knowledge | 231 | 16 |
 | human_performance | 304 | 12 |
 | principles_of_flight | 364 | 16 |
-| operational_procedures | 74 | 12 |
+| operational_procedures | 81 | 12 |
 
 Темы (префикс NUMER): PL010=761, PL020=231, PL030=54, PL040=304, PL050=144, PL060=278, PL070=74, PL080=364, PL090=53, PL099=99, PL100=7
 

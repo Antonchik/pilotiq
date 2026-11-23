@@ -45,7 +45,8 @@ class OnboardingDraft {
 class OnboardingDraftNotifier extends Notifier<OnboardingDraft> {
   @override
   OnboardingDraft build() {
-    final settings = ref.read(userSettingsProvider).value ?? const UserSettings();
+    final settings =
+        ref.read(userSettingsProvider).value ?? const UserSettings();
     final hint = ref.read(legacyLicenceHintProvider).value;
     return OnboardingDraft(
       licence: hint ?? settings.licence,
@@ -84,19 +85,13 @@ class OnboardingStep {
 /// The pages of the onboarding, in order.
 final onboardingStepsProvider = Provider<List<OnboardingStep>>(
   (ref) => [
-    OnboardingStep(
-      id: 'licence',
-      builder: (context) => const _LicenceStep(),
-    ),
+    OnboardingStep(id: 'licence', builder: (context) => const _LicenceStep()),
     OnboardingStep(
       id: 'examDate',
       skippable: true,
       builder: (context) => const _ExamDateStep(),
     ),
-    OnboardingStep(
-      id: 'goal',
-      builder: (context) => const _GoalStep(),
-    ),
+    OnboardingStep(id: 'goal', builder: (context) => const _GoalStep()),
   ],
 );
 

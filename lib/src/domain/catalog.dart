@@ -56,7 +56,8 @@ enum SubjectId {
 const Map<String, SubjectId> topicPrefixToSubject = {
   'PL010': SubjectId.airLaw,
   'PL099': SubjectId.airLaw,
-  'PL100': SubjectId.airLaw,
+  // PL100 (in-flight procedures) belongs to operational procedures (owner decision).
+  'PL100': SubjectId.operationalProcedures,
   'PL102': SubjectId.airLaw,
   'PL020': SubjectId.aircraftGeneralKnowledge,
   'PL021': SubjectId.aircraftGeneralKnowledge,

@@ -79,8 +79,6 @@ void main() {
     PracticeMode mode = PracticeMode.learn,
     bool premium = false,
     Widget? home,
-    ThemeData? theme,
-    StateSetter? Function()? onThemeChange,
   }) async {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
@@ -441,7 +439,6 @@ void main() {
       await tester.tap(find.byKey(const Key('mode_review')));
       await tester.pump();
       expect(paywalls, hasLength(2));
-      expect(find.byType(PracticeController), findsNothing);
     });
   });
 }

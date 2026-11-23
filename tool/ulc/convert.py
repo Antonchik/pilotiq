@@ -47,7 +47,7 @@ SUBJECTS = tuple(QUIZ_LENGTH)
 TOPIC_TO_SUBJECT = {
     "PL010": "air_law",
     "PL099": "air_law",
-    "PL100": "air_law",
+    "PL100": "operational_procedures",
     "PL102": "air_law",
     "PL020": "aircraft_general_knowledge",
     "PL021": "aircraft_general_knowledge",

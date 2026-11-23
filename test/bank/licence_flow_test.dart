@@ -34,12 +34,20 @@ void main() {
     await Hive.close();
   });
 
-  Future<void> start(WidgetTester tester, {String? language}) async {
+  Future<void> start(
+    WidgetTester tester, {
+    String? language,
+    String licence = 'ppla',
+  }) async {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
+    final config = Hive.box<dynamic>('config');
+    // The home screen shows the selected licence; the onboarding is done.
+    await config.put('onboardingDone', true);
+    await config.put('licence', licence);
     if (language != null) {
-      await Hive.box<dynamic>('config').put('questionLanguage', language);
+      await config.put('questionLanguage', language);
     }
     await tester.pumpWidget(
       ProviderScope(
@@ -63,8 +71,8 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  Future<void> openLearnMode(WidgetTester tester, String licenceTitle) async {
-    await tester.tap(find.text(licenceTitle));
+  Future<void> openLearnMode(WidgetTester tester) async {
+    await tester.tap(find.byKey(const Key('tab_subjects')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('subject_air_law')));
     await tester.pumpAndSettle();
@@ -75,8 +83,8 @@ void main() {
   testWidgets('PPL(H) with English shows the English question and answers', (
     tester,
   ) async {
-    await start(tester, language: 'en');
-    await openLearnMode(tester, 'PPL(H)');
+    await start(tester, language: 'en', licence: 'pplh');
+    await openLearnMode(tester);
 
     expect(find.text('Height above ground is'), findsOneWidget);
     expect(find.text('Wysokość nad ziemią to'), findsNothing);
@@ -84,8 +92,8 @@ void main() {
   });
 
   testWidgets('PPL(H) with Polish shows the Polish question', (tester) async {
-    await start(tester);
-    await openLearnMode(tester, 'PPL(H)');
+    await start(tester, licence: 'pplh');
+    await openLearnMode(tester);
 
     expect(find.text('Wysokość nad ziemią to'), findsOneWidget);
     expect(find.text('Height above ground is'), findsNothing);
@@ -94,8 +102,8 @@ void main() {
   testWidgets('SPL ignores the English setting (no English bank)', (
     tester,
   ) async {
-    await start(tester, language: 'en');
-    await openLearnMode(tester, 'SPL');
+    await start(tester, language: 'en', licence: 'spl');
+    await openLearnMode(tester);
 
     expect(find.text('Wysokość nad ziemią to'), findsOneWidget);
   });
@@ -104,8 +112,8 @@ void main() {
     'English with a missing answer translation shows the whole question in '
     'Polish',
     (tester) async {
-      await start(tester, language: 'en');
-      await openLearnMode(tester, 'PPL(H)');
+      await start(tester, language: 'en', licence: 'pplh');
+      await openLearnMode(tester);
       // Answer the first question (position 0) and go on to the second.
       await tester.tap(find.text('AGL'));
       await tester.pumpAndSettle();
@@ -130,8 +138,8 @@ void main() {
   testWidgets('sub, sup and the "/n" tail are not shown as source tags', (
     tester,
   ) async {
-    await start(tester, language: 'en');
-    await openLearnMode(tester, 'PPL(H)');
+    await start(tester, language: 'en', licence: 'pplh');
+    await openLearnMode(tester);
     // Answer questions 1..3 (the correct one is shown first, the second
     // question is shown in Polish) to reach question 4 with markup.
     for (final answer in ['AGL', 'Odpowiedź pierwsza', 'A']) {
@@ -154,7 +162,7 @@ void main() {
   testWidgets('"Go Premium" on the subject screen opens the locked-feature '
       'paywall', (tester) async {
     await start(tester);
-    await tester.tap(find.text('PPL(A)'));
+    await tester.tap(find.byKey(const Key('tab_subjects')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('subject_air_law')));
     await tester.pumpAndSettle();

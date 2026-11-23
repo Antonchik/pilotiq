@@ -27,7 +27,9 @@ class SettingsScreen extends ConsumerWidget {
               ),
               title: Text(local.premiumTitle),
               subtitle: Text(
-                isPremium ? local.settingsPremiumActive : local.settingsPremiumGet,
+                isPremium
+                    ? local.settingsPremiumActive
+                    : local.settingsPremiumGet,
               ),
               trailing: isPremium ? null : const Icon(Icons.chevron_right),
               onTap: isPremium
