@@ -35,7 +35,9 @@ class ExamAttempt {
   final bool passed;
   final List<String> questionIds;
 
-  /// qid to chosen index in the order shown, null = unanswered.
+  /// qid to the chosen answer as an index in the **canonical** order of the
+  /// bank (`Question.answers`; the correct one is `correctIndex`), never in the
+  /// shuffled display order. null = unanswered.
   final Map<String, int?> answers;
   final List<String> flagged;
   final Map<String, TopicScore> topicBreakdown;
@@ -64,51 +66,51 @@ class ExamAttempt {
     'reason': reason.name,
   };
 
-  /// Returns null if the record is damaged (unknown licence or subject).
+  /// Returns null if the record is damaged (unknown licence or subject, wrong
+  /// types of required fields).
   static ExamAttempt? tryFromMap(Map<dynamic, dynamic> m) {
-    final licence = Licence.fromId(m['licence'] as String?);
-    final subject = SubjectId.fromId(m['subject'] as String?);
-    final started = DateTime.tryParse('${m['startedAt']}');
-    final finished = DateTime.tryParse('${m['finishedAt']}');
-    final id = m['id'];
-    if (licence == null ||
-        subject == null ||
-        started == null ||
-        finished == null ||
-        id is! String) {
+    try {
+      final licence = Licence.fromId(_str(m['licence']));
+      final subject = SubjectId.fromId(_str(m['subject']));
+      final started = _date(m['startedAt']);
+      final finished = _date(m['finishedAt']);
+      final id = _str(m['id']);
+      if (licence == null ||
+          subject == null ||
+          started == null ||
+          finished == null ||
+          id == null) {
+        return null;
+      }
+      final rawTopics = m['topicBreakdown'];
+      return ExamAttempt(
+        id: id,
+        licence: licence,
+        subject: subject,
+        startedAt: started,
+        finishedAt: finished,
+        durationSec: _int(m['durationSec']) ?? 0,
+        total: _int(m['total']) ?? 0,
+        correct: _int(m['correct']) ?? 0,
+        passed: m['passed'] == true,
+        questionIds: _strings(m['questionIds']),
+        answers: _answers(m['answers']),
+        flagged: _strings(m['flagged']),
+        topicBreakdown: rawTopics is Map
+            ? {
+                for (final e in rawTopics.entries)
+                  if (e.value is Map)
+                    '${e.key}': TopicScore.fromMap(e.value as Map),
+              }
+            : const {},
+        reason: AttemptReason.values.firstWhere(
+          (r) => r.name == m['reason'],
+          orElse: () => AttemptReason.finished,
+        ),
+      );
+    } on Object {
       return null;
     }
-    final rawAnswers = m['answers'];
-    final rawTopics = m['topicBreakdown'];
-    return ExamAttempt(
-      id: id,
-      licence: licence,
-      subject: subject,
-      startedAt: started,
-      finishedAt: finished,
-      durationSec: (m['durationSec'] as num?)?.toInt() ?? 0,
-      total: (m['total'] as num?)?.toInt() ?? 0,
-      correct: (m['correct'] as num?)?.toInt() ?? 0,
-      passed: m['passed'] == true,
-      questionIds: _strings(m['questionIds']),
-      answers: rawAnswers is Map
-          ? {
-              for (final e in rawAnswers.entries)
-                '${e.key}': (e.value as num?)?.toInt(),
-            }
-          : const {},
-      flagged: _strings(m['flagged']),
-      topicBreakdown: rawTopics is Map
-          ? {
-              for (final e in rawTopics.entries)
-                '${e.key}': TopicScore.fromMap(e.value as Map),
-            }
-          : const {},
-      reason: AttemptReason.values.firstWhere(
-        (r) => r.name == m['reason'],
-        orElse: () => AttemptReason.finished,
-      ),
-    );
   }
 }
 
@@ -124,6 +126,7 @@ class InProgressAttempt {
     required this.questionIds,
     this.answers = const {},
     this.flagged = const [],
+    this.answerOrders = const {},
   });
 
   final String id;
@@ -132,8 +135,16 @@ class InProgressAttempt {
   final DateTime startedAt;
   final int durationSec;
   final List<String> questionIds;
+
+  /// qid to the chosen answer in the canonical bank order (see
+  /// [ExamAttempt.answers]); null = unanswered.
   final Map<String, int?> answers;
   final List<String> flagged;
+
+  /// How the answers were laid out on screen: qid to a permutation where
+  /// position `i` shows the canonical answer `answerOrders[qid][i]`. Saved so
+  /// that a restored attempt looks exactly as before. Missing qid = canonical.
+  final Map<String, List<int>> answerOrders;
 
   DateTime get deadline => startedAt.add(Duration(seconds: durationSec));
 
@@ -147,6 +158,7 @@ class InProgressAttempt {
   InProgressAttempt copyWith({
     Map<String, int?>? answers,
     List<String>? flagged,
+    Map<String, List<int>>? answerOrders,
   }) => InProgressAttempt(
     id: id,
     licence: licence,
@@ -170,34 +182,52 @@ class InProgressAttempt {
   };
 
   static InProgressAttempt? tryFromMap(Map<dynamic, dynamic> m) {
-    final licence = Licence.fromId(m['licence'] as String?);
-    final subject = SubjectId.fromId(m['subject'] as String?);
-    final started = DateTime.tryParse('${m['startedAt']}');
-    final id = m['id'];
-    if (licence == null ||
-        subject == null ||
-        started == null ||
-        id is! String) {
+    try {
+      final licence = Licence.fromId(_str(m['licence']));
+      final subject = SubjectId.fromId(_str(m['subject']));
+      final started = _date(m['startedAt']);
+      final id = _str(m['id']);
+      if (licence == null || subject == null || started == null || id == null) {
+        return null;
+      }
+      final rawOrders = m['answerOrders'];
+      return InProgressAttempt(
+        id: id,
+        licence: licence,
+        subject: subject,
+        startedAt: started,
+        durationSec: _int(m['durationSec']) ?? 0,
+        questionIds: _strings(m['questionIds']),
+        answers: _answers(m['answers']),
+        flagged: _strings(m['flagged']),
+        answerOrders: rawOrders is Map
+            ? {
+                for (final e in rawOrders.entries)
+                  if (e.value is List)
+                    '${e.key}': [
+                      for (final v in e.value as List)
+                        if (v is num) v.toInt(),
+                    ],
+              }
+            : const {},
+      );
+    } on Object {
       return null;
     }
-    final rawAnswers = m['answers'];
-    return InProgressAttempt(
-      id: id,
-      licence: licence,
-      subject: subject,
-      startedAt: started,
-      durationSec: (m['durationSec'] as num?)?.toInt() ?? 0,
-      questionIds: _strings(m['questionIds']),
-      answers: rawAnswers is Map
-          ? {
-              for (final e in rawAnswers.entries)
-                '${e.key}': (e.value as num?)?.toInt(),
-            }
-          : const {},
-      flagged: _strings(m['flagged']),
-    );
   }
 }
 
 List<String> _strings(Object? v) =>
     v is List ? [for (final e in v) '$e'] : const [];
+
+String? _str(Object? v) => v is String ? v : null;
+
+int? _int(Object? v) => v is num ? v.toInt() : null;
+
+DateTime? _date(Object? v) => v is String ? DateTime.tryParse(v) : null;
+
+Map<String, int?> _answers(Object? v) => v is Map
+    ? {
+        for (final e in v.entries) '${e.key}': _int(e.value),
+      }
+    : const {};

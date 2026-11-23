@@ -1,5 +1,5 @@
-/// A question of an attempt as the scorer sees it. [correctIndex] is in the
-/// same ordering as the attempt's answers.
+/// A question of an attempt as the scorer sees it. [correctIndex] and the
+/// attempt's answers both use the canonical bank order of the answers.
 class ScoredQuestion {
   const ScoredQuestion({
     required this.qid,

@@ -47,7 +47,9 @@ class ProgressRepository {
 
   final BoxOpener _openBox;
   final Map<String, Future<Box<dynamic>>> _boxes = {};
-  Future<void> _tail = Future<void>.value();
+  /// Shared by all instances: two repositories over the same Hive boxes must
+  /// not interleave their read-modify-write sequences.
+  static Future<void> _tail = Future<void>.value();
   final LeitnerScheduler _leitner = const LeitnerScheduler();
 
   Future<Box<dynamic>> _box(String name) =>
@@ -205,7 +207,12 @@ class ProgressRepository {
     final list = <ExamAttempt>[];
     for (final v in box.values) {
       if (v is! Map) continue;
-      final a = ExamAttempt.tryFromMap(v);
+      ExamAttempt? a;
+      try {
+        a = ExamAttempt.tryFromMap(v);
+      } on Object {
+        a = null;
+      }
       if (a == null || a.licence != licence) continue;
       if (subject != null && a.subject != subject) continue;
       list.add(a);
@@ -228,7 +235,12 @@ class ProgressRepository {
     SubjectId subject,
   ) async {
     final v = (await _box(configBox)).get(_inProgressKey(licence, subject));
-    return v is Map ? InProgressAttempt.tryFromMap(v) : null;
+    if (v is! Map) return null;
+    try {
+      return InProgressAttempt.tryFromMap(v);
+    } on Object {
+      return null;
+    }
   }
 
   Future<void> clearInProgressAttempt(Licence licence, SubjectId subject) =>
