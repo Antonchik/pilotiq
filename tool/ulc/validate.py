@@ -14,8 +14,8 @@ from pathlib import Path
 from convert import LICENCES, NUMBER_RE, QUIZ_LENGTH, SCHEMA, SUBJECTS, TOPIC_TO_SUBJECT
 
 ENTITY_RE = re.compile(r"&#?\w+;")
-# three or more single lower-case letters separated by single spaces ("od s t r o m ego")
-SPLIT_WORD_RE = re.compile(r"(?<![\w])(?:[^\W\d_A-Z] ){2,}[^\W\d_A-Z](?![\w])")
+# four or more single lower-case letters separated by single spaces ("od s t r o m ego")
+SPLIT_WORD_RE = re.compile(r"(?<![\w])(?:[^\W\d_A-Z] ){3,}[^\W\d_A-Z](?![\w])")
 ID_RE = re.compile(r"^PL\d{3}-\d{4}(~[0-9a-f]{6})?$")
 
 
