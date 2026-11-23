@@ -70,8 +70,6 @@ void main() {
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('mode_learn')));
     await tester.pumpAndSettle();
-    await tester.tap(find.byIcon(Icons.start));
-    await tester.pumpAndSettle();
   }
 
   testWidgets('PPL(H) with English shows the English question and answers', (
@@ -108,9 +106,11 @@ void main() {
     (tester) async {
       await start(tester, language: 'en');
       await openLearnMode(tester, 'PPL(H)');
-      // Answer the first question correctly (position 0) to reach the second.
+      // Answer the first question (position 0) and go on to the second.
       await tester.tap(find.text('AGL'));
-      await tester.pumpAndSettle(const Duration(seconds: 1));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('practice_next')));
+      await tester.pumpAndSettle();
 
       expect(find.text('Pytanie z brakiem'), findsOneWidget);
       expect(find.text('Missing question'), findsNothing);
@@ -132,11 +132,13 @@ void main() {
   ) async {
     await start(tester, language: 'en');
     await openLearnMode(tester, 'PPL(H)');
-    // Answer questions 1..3 correctly (the correct one is shown first, the
-    // second question is shown in Polish) to reach question 4 with markup.
+    // Answer questions 1..3 (the correct one is shown first, the second
+    // question is shown in Polish) to reach question 4 with markup.
     for (final answer in ['AGL', 'Odpowiedź pierwsza', 'A']) {
       await tester.tap(find.text(answer));
-      await tester.pumpAndSettle(const Duration(seconds: 1));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byKey(const Key('practice_next')));
+      await tester.pumpAndSettle();
     }
 
     expect(

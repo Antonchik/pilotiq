@@ -124,10 +124,14 @@ class PracticeController extends AsyncNotifier<PracticeState> {
       retryIds: args.retryIds,
     );
     final random = ref.read(randomProvider);
+    final settings = await ref.read(userSettingsProvider.future);
     return PracticeState(
       queue: queue,
       shuffles: {for (final q in queue) q.id: shuffledAnswers(q, random)},
-      language: ref.read(effectiveQuestionLanguageProvider(args.licence)),
+      language: effectiveQuestionLanguage(
+        args.licence,
+        settings.questionLanguage,
+      ),
       bookmarked: {
         for (final q in queue)
           if (progress[q.id]?.bookmarked ?? false) q.id,
@@ -151,7 +155,9 @@ class PracticeController extends AsyncNotifier<PracticeState> {
         final today = await repository.dailyStat(now);
         if (!ref.mounted) return;
         if (!AccessPolicy.canAnswer(false, today.answered)) {
-          state = AsyncData((state.value ?? start).copyWith(limitReached: true));
+          state = AsyncData(
+            (state.value ?? start).copyWith(limitReached: true),
+          );
           return;
         }
       }

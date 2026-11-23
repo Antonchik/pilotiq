@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/legacy.dart';
-import 'package:hive_ce_flutter/hive_ce_flutter.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pilotiq/src/progress/providers.dart';
+import 'package:pilotiq/src/progress/user_settings.dart';
 
-final themeModeProvider = StateProvider<ThemeMode>(
-  (ref) =>
-      Hive.box<dynamic>('config').get(ThemeMode.dark.name, defaultValue: false)
-          as bool
-      ? ThemeMode.dark
-      : ThemeMode.light,
+/// Theme mode of the app, derived from the stored settings (system by
+/// default; the legacy `dark` flag is carried over by the migration).
+final themeModeProvider = Provider<ThemeMode>(
+  (ref) => switch (ref.watch(userSettingsProvider).value?.themeMode) {
+    AppThemeMode.light => ThemeMode.light,
+    AppThemeMode.dark => ThemeMode.dark,
+    _ => ThemeMode.system,
+  },
 );

@@ -191,10 +191,6 @@
       }
     }
   },
-  "dashboardBeforeV2": "Before version 2.0",
-  "@dashboardBeforeV2": {
-    "description": "Label of a migrated attempt that has no date"
-  },
   "settingsTitle": "Profile and settings",
   "@settingsTitle": {
     "description": "Settings screen title"

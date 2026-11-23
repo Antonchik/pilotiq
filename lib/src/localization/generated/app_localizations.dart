@@ -626,6 +626,444 @@ abstract class AppLocalizations {
   /// **'Premium purchases will be available here soon.'**
   String get paywallStubMessage;
 
+  /// Bottom navigation: dashboard tab
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get navToday;
+
+  /// Bottom navigation: subjects tab
+  ///
+  /// In en, this message translates to:
+  /// **'Subjects'**
+  String get navSubjects;
+
+  /// Bottom navigation: profile and settings tab
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get navProfile;
+
+  /// Dashboard title
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get dashboardTitle;
+
+  /// Days left until the exam
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, =0{The exam is today} one{1 day to the exam} other{{days} days to the exam}}'**
+  String dashboardExamCountdown(int days);
+
+  /// Exam date is in the past
+  ///
+  /// In en, this message translates to:
+  /// **'The exam date has passed'**
+  String get dashboardExamPassed;
+
+  /// Hint when no exam date is set
+  ///
+  /// In en, this message translates to:
+  /// **'Set your exam date to see the countdown'**
+  String get dashboardExamNotSet;
+
+  /// Button that opens the exam date picker
+  ///
+  /// In en, this message translates to:
+  /// **'Set date'**
+  String get dashboardExamSetDate;
+
+  /// Daily goal card title
+  ///
+  /// In en, this message translates to:
+  /// **'Daily goal'**
+  String get dashboardGoalTitle;
+
+  /// Answers given today out of the daily goal
+  ///
+  /// In en, this message translates to:
+  /// **'{answered}/{goal}'**
+  String dashboardGoalValue(int answered, int goal);
+
+  /// Shown when the daily goal is met
+  ///
+  /// In en, this message translates to:
+  /// **'Goal reached, well done!'**
+  String get dashboardGoalReached;
+
+  /// Answers left to reach the daily goal
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{1 more answer to reach the goal} other{{count} more answers to reach the goal}}'**
+  String dashboardGoalRemaining(int count);
+
+  /// Streak card title
+  ///
+  /// In en, this message translates to:
+  /// **'Streak'**
+  String get dashboardStreakTitle;
+
+  /// Current streak in days
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No streak yet} one{1 day in a row} other{{count} days in a row}}'**
+  String dashboardStreak(int count);
+
+  /// Streak rule
+  ///
+  /// In en, this message translates to:
+  /// **'Answer at least one question every day.'**
+  String get dashboardStreakHint;
+
+  /// Spaced repetition card title
+  ///
+  /// In en, this message translates to:
+  /// **'To review today'**
+  String get dashboardDueTitle;
+
+  /// Questions due for repetition today
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing to review today} one{1 question to review today} other{{count} questions to review today}}'**
+  String dashboardDue(int count);
+
+  /// Where to start the review
+  ///
+  /// In en, this message translates to:
+  /// **'Open a subject and choose Review.'**
+  String get dashboardDueHint;
+
+  /// Teaser for free users
+  ///
+  /// In en, this message translates to:
+  /// **'Spaced repetition is part of Premium.'**
+  String get dashboardDueLocked;
+
+  /// Basic statistics card title
+  ///
+  /// In en, this message translates to:
+  /// **'Your progress'**
+  String get dashboardOverviewTitle;
+
+  /// Share of the bank answered at least once
+  ///
+  /// In en, this message translates to:
+  /// **'Coverage {percent}%'**
+  String dashboardCoverage(int percent);
+
+  /// Share of correct answers
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy {percent}%'**
+  String dashboardAccuracy(int percent);
+
+  /// Readiness card title
+  ///
+  /// In en, this message translates to:
+  /// **'Exam readiness'**
+  String get dashboardReadinessTitle;
+
+  /// Label next to the readiness values
+  ///
+  /// In en, this message translates to:
+  /// **'approximate'**
+  String get dashboardReadinessApprox;
+
+  /// Teaser for free users
+  ///
+  /// In en, this message translates to:
+  /// **'Readiness by subject is part of Premium.'**
+  String get dashboardReadinessLocked;
+
+  /// A percentage
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}%'**
+  String dashboardPercentValue(int percent);
+
+  /// Weak subjects card title
+  ///
+  /// In en, this message translates to:
+  /// **'Weak subjects'**
+  String get dashboardWeakTitle;
+
+  /// Hint when no subject has enough answers
+  ///
+  /// In en, this message translates to:
+  /// **'Answer at least 10 questions in a subject to see it here.'**
+  String get dashboardWeakNone;
+
+  /// Last exam simulation card title
+  ///
+  /// In en, this message translates to:
+  /// **'Last simulation'**
+  String get dashboardLastExamTitle;
+
+  /// Hint when there is no simulation
+  ///
+  /// In en, this message translates to:
+  /// **'No exam simulations yet.'**
+  String get dashboardLastExamNone;
+
+  /// Exam passed badge
+  ///
+  /// In en, this message translates to:
+  /// **'Passed'**
+  String get dashboardPassed;
+
+  /// Exam failed badge
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get dashboardFailed;
+
+  /// Result and date of an attempt
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% · {date}'**
+  String dashboardAttemptResult(int percent, String date);
+
+  /// Attempts migrated from version 1.x
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{1 attempt before version 2.0} other{{count} attempts before version 2.0}}'**
+  String dashboardLegacyAttempts(int count);
+
+  /// Label of a migrated attempt that has no date
+  ///
+  /// In en, this message translates to:
+  /// **'Before version 2.0'**
+  String get dashboardBeforeV2;
+
+  /// Settings screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Profile and settings'**
+  String get settingsTitle;
+
+  /// Shown to premium users
+  ///
+  /// In en, this message translates to:
+  /// **'Premium is active'**
+  String get settingsPremiumActive;
+
+  /// Subtitle of the premium card for free users
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock all features'**
+  String get settingsPremiumGet;
+
+  /// Settings section
+  ///
+  /// In en, this message translates to:
+  /// **'Learning'**
+  String get settingsSectionLearning;
+
+  /// Settings section
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsSectionAppearance;
+
+  /// Licence setting
+  ///
+  /// In en, this message translates to:
+  /// **'Licence'**
+  String get settingsLicenceTitle;
+
+  /// Exam date setting
+  ///
+  /// In en, this message translates to:
+  /// **'Exam date'**
+  String get settingsExamDateTitle;
+
+  /// Exam date is empty
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get settingsExamDateNotSet;
+
+  /// Button that clears the exam date
+  ///
+  /// In en, this message translates to:
+  /// **'Remove date'**
+  String get settingsExamDateClear;
+
+  /// Help text of the date picker
+  ///
+  /// In en, this message translates to:
+  /// **'Exam date'**
+  String get settingsExamDateHelp;
+
+  /// Daily goal value
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{1 question per day} other{{count} questions per day}}'**
+  String settingsDailyGoalValue(int count);
+
+  /// Daily goal setting
+  ///
+  /// In en, this message translates to:
+  /// **'Daily goal'**
+  String get settingsDailyGoalTitle;
+
+  /// Theme setting
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get settingsThemeTitle;
+
+  /// Follow the system theme
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get settingsThemeSystem;
+
+  /// Light theme
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get settingsThemeLight;
+
+  /// Dark theme
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get settingsThemeDark;
+
+  /// Shown when saving fails
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save the setting.'**
+  String get settingsSaveError;
+
+  /// Retry action of a failed save
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get settingsRetry;
+
+  /// Subtitle of the About tile
+  ///
+  /// In en, this message translates to:
+  /// **'Version, sources and legal information'**
+  String get settingsAboutSubtitle;
+
+  /// Shown when the settings cannot be opened
+  ///
+  /// In en, this message translates to:
+  /// **'The app could not read its data.'**
+  String get settingsStartupError;
+
+  /// Title of the start-up error screen
+  ///
+  /// In en, this message translates to:
+  /// **'Pilotiq could not start'**
+  String get startupErrorTitle;
+
+  /// Onboarding first step title
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to Pilotiq'**
+  String get onboardingWelcomeTitle;
+
+  /// Onboarding first step text
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the licence you are preparing for and the language of the questions.'**
+  String get onboardingWelcomeBody;
+
+  /// Shown to users who upgrade from version 1.x
+  ///
+  /// In en, this message translates to:
+  /// **'We found your results from the previous version and kept them. Check that the licence is right.'**
+  String get onboardingLegacyBanner;
+
+  /// Onboarding exam date step title
+  ///
+  /// In en, this message translates to:
+  /// **'When is your exam?'**
+  String get onboardingExamDateTitle;
+
+  /// Onboarding exam date step text
+  ///
+  /// In en, this message translates to:
+  /// **'We count the days and adapt the repetitions to it. You can skip this.'**
+  String get onboardingExamDateBody;
+
+  /// Onboarding goal step title
+  ///
+  /// In en, this message translates to:
+  /// **'How many questions a day?'**
+  String get onboardingGoalTitle;
+
+  /// Onboarding goal step text
+  ///
+  /// In en, this message translates to:
+  /// **'A small daily goal builds a streak. You can change it any time.'**
+  String get onboardingGoalBody;
+
+  /// Onboarding: next step
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get onboardingNext;
+
+  /// Onboarding: previous step
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get onboardingBack;
+
+  /// Onboarding: skip a step
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get onboardingSkip;
+
+  /// Onboarding: finish
+  ///
+  /// In en, this message translates to:
+  /// **'Start learning'**
+  String get onboardingFinish;
+
+  /// Onboarding progress
+  ///
+  /// In en, this message translates to:
+  /// **'Step {current} of {total}'**
+  String onboardingStepOf(int current, int total);
+
+  /// App version
+  ///
+  /// In en, this message translates to:
+  /// **'Version {version} ({build})'**
+  String aboutVersion(String version, String build);
+
+  /// Legal disclaimer
+  ///
+  /// In en, this message translates to:
+  /// **'Pilotiq is not affiliated with ULC or EASA and is not their product.'**
+  String get aboutDisclaimer;
+
+  /// About: section title
+  ///
+  /// In en, this message translates to:
+  /// **'Question database'**
+  String get aboutBankTitle;
+
+  /// Source and date of the question database of one licence
+  ///
+  /// In en, this message translates to:
+  /// **'{licence}: {source}, {date}'**
+  String aboutBankSourceLine(String licence, String source, String date);
+
+  /// Questions are not reworded
+  ///
+  /// In en, this message translates to:
+  /// **'Question texts are given as published by ULC.'**
+  String get aboutQuestionsNote;
+
   /// Position in the session
   ///
   /// In en, this message translates to:

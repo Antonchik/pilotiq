@@ -298,6 +298,300 @@ class AppLocalizationsEn extends AppLocalizations {
       'Premium purchases will be available here soon.';
 
   @override
+  String get navToday => 'Today';
+
+  @override
+  String get navSubjects => 'Subjects';
+
+  @override
+  String get navProfile => 'Profile';
+
+  @override
+  String get dashboardTitle => 'Today';
+
+  @override
+  String dashboardExamCountdown(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days to the exam',
+      one: '1 day to the exam',
+      zero: 'The exam is today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardExamPassed => 'The exam date has passed';
+
+  @override
+  String get dashboardExamNotSet => 'Set your exam date to see the countdown';
+
+  @override
+  String get dashboardExamSetDate => 'Set date';
+
+  @override
+  String get dashboardGoalTitle => 'Daily goal';
+
+  @override
+  String dashboardGoalValue(int answered, int goal) {
+    return '$answered/$goal';
+  }
+
+  @override
+  String get dashboardGoalReached => 'Goal reached, well done!';
+
+  @override
+  String dashboardGoalRemaining(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count more answers to reach the goal',
+      one: '1 more answer to reach the goal',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardStreakTitle => 'Streak';
+
+  @override
+  String dashboardStreak(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days in a row',
+      one: '1 day in a row',
+      zero: 'No streak yet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardStreakHint => 'Answer at least one question every day.';
+
+  @override
+  String get dashboardDueTitle => 'To review today';
+
+  @override
+  String dashboardDue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions to review today',
+      one: '1 question to review today',
+      zero: 'Nothing to review today',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardDueHint => 'Open a subject and choose Review.';
+
+  @override
+  String get dashboardDueLocked => 'Spaced repetition is part of Premium.';
+
+  @override
+  String get dashboardOverviewTitle => 'Your progress';
+
+  @override
+  String dashboardCoverage(int percent) {
+    return 'Coverage $percent%';
+  }
+
+  @override
+  String dashboardAccuracy(int percent) {
+    return 'Accuracy $percent%';
+  }
+
+  @override
+  String get dashboardReadinessTitle => 'Exam readiness';
+
+  @override
+  String get dashboardReadinessApprox => 'approximate';
+
+  @override
+  String get dashboardReadinessLocked =>
+      'Readiness by subject is part of Premium.';
+
+  @override
+  String dashboardPercentValue(int percent) {
+    return '$percent%';
+  }
+
+  @override
+  String get dashboardWeakTitle => 'Weak subjects';
+
+  @override
+  String get dashboardWeakNone =>
+      'Answer at least 10 questions in a subject to see it here.';
+
+  @override
+  String get dashboardLastExamTitle => 'Last simulation';
+
+  @override
+  String get dashboardLastExamNone => 'No exam simulations yet.';
+
+  @override
+  String get dashboardPassed => 'Passed';
+
+  @override
+  String get dashboardFailed => 'Failed';
+
+  @override
+  String dashboardAttemptResult(int percent, String date) {
+    return '$percent% · $date';
+  }
+
+  @override
+  String dashboardLegacyAttempts(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count attempts before version 2.0',
+      one: '1 attempt before version 2.0',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dashboardBeforeV2 => 'Before version 2.0';
+
+  @override
+  String get settingsTitle => 'Profile and settings';
+
+  @override
+  String get settingsPremiumActive => 'Premium is active';
+
+  @override
+  String get settingsPremiumGet => 'Unlock all features';
+
+  @override
+  String get settingsSectionLearning => 'Learning';
+
+  @override
+  String get settingsSectionAppearance => 'Appearance';
+
+  @override
+  String get settingsLicenceTitle => 'Licence';
+
+  @override
+  String get settingsExamDateTitle => 'Exam date';
+
+  @override
+  String get settingsExamDateNotSet => 'Not set';
+
+  @override
+  String get settingsExamDateClear => 'Remove date';
+
+  @override
+  String get settingsExamDateHelp => 'Exam date';
+
+  @override
+  String settingsDailyGoalValue(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions per day',
+      one: '1 question per day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get settingsDailyGoalTitle => 'Daily goal';
+
+  @override
+  String get settingsThemeTitle => 'Theme';
+
+  @override
+  String get settingsThemeSystem => 'System';
+
+  @override
+  String get settingsThemeLight => 'Light';
+
+  @override
+  String get settingsThemeDark => 'Dark';
+
+  @override
+  String get settingsSaveError => 'Could not save the setting.';
+
+  @override
+  String get settingsRetry => 'Retry';
+
+  @override
+  String get settingsAboutSubtitle => 'Version, sources and legal information';
+
+  @override
+  String get settingsStartupError => 'The app could not read its data.';
+
+  @override
+  String get startupErrorTitle => 'Pilotiq could not start';
+
+  @override
+  String get onboardingWelcomeTitle => 'Welcome to Pilotiq';
+
+  @override
+  String get onboardingWelcomeBody =>
+      'Choose the licence you are preparing for and the language of the questions.';
+
+  @override
+  String get onboardingLegacyBanner =>
+      'We found your results from the previous version and kept them. Check that the licence is right.';
+
+  @override
+  String get onboardingExamDateTitle => 'When is your exam?';
+
+  @override
+  String get onboardingExamDateBody =>
+      'We count the days and adapt the repetitions to it. You can skip this.';
+
+  @override
+  String get onboardingGoalTitle => 'How many questions a day?';
+
+  @override
+  String get onboardingGoalBody =>
+      'A small daily goal builds a streak. You can change it any time.';
+
+  @override
+  String get onboardingNext => 'Next';
+
+  @override
+  String get onboardingBack => 'Back';
+
+  @override
+  String get onboardingSkip => 'Skip';
+
+  @override
+  String get onboardingFinish => 'Start learning';
+
+  @override
+  String onboardingStepOf(int current, int total) {
+    return 'Step $current of $total';
+  }
+
+  @override
+  String aboutVersion(String version, String build) {
+    return 'Version $version ($build)';
+  }
+
+  @override
+  String get aboutDisclaimer =>
+      'Pilotiq is not affiliated with ULC or EASA and is not their product.';
+
+  @override
+  String get aboutBankTitle => 'Question database';
+
+  @override
+  String aboutBankSourceLine(String licence, String source, String date) {
+    return '$licence: $source, $date';
+  }
+
+  @override
+  String get aboutQuestionsNote =>
+      'Question texts are given as published by ULC.';
+
+  @override
   String practiceProgress(int current, int total) {
     return '$current / $total';
   }
