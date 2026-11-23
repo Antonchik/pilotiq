@@ -10,6 +10,8 @@ import 'package:pilotiq/src/progress/user_settings.dart';
 import 'helpers.dart';
 
 void main() {
+  group('recordAnswer is all-or-nothing', atomicityTests);
+
   late Directory dir;
   late ProgressRepository repo;
   final now = DateTime(2026, 5, 1, 12);
@@ -360,4 +362,129 @@ void main() {
     await ProgressRepository().loadSettings();
     expect(backup.readAsBytesSync(), damaged);
   });
+}
+
+/// Box wrapper that fails selected write calls (1-based, puts and deletes).
+class _FlakyBox implements Box<dynamic> {
+  _FlakyBox(this.inner, this.failOn);
+  final Box<dynamic> inner;
+  final Set<int> failOn;
+  int _writes = 0;
+
+  Future<void> _write(Future<void> Function() op) {
+    if (failOn.contains(++_writes)) return Future.error(StateError('io'));
+    return op();
+  }
+
+  @override
+  dynamic get(dynamic key, {dynamic defaultValue}) =>
+      inner.get(key, defaultValue: defaultValue);
+  @override
+  Future<void> put(dynamic key, dynamic value) =>
+      _write(() => inner.put(key, value));
+  @override
+  Future<void> putAll(Map<dynamic, dynamic> entries) =>
+      _write(() => inner.putAll(entries));
+  @override
+  Future<void> delete(dynamic key) => _write(() => inner.delete(key));
+  @override
+  Iterable<dynamic> get values => inner.values;
+  @override
+  Map<dynamic, dynamic> toMap() => inner.toMap();
+  @override
+  dynamic noSuchMethod(Invocation invocation) =>
+      throw UnimplementedError('${invocation.memberName}');
+}
+
+void atomicityTests() {
+  late Directory dir;
+  final now = DateTime(2026, 5, 1, 12);
+
+  setUp(() async => dir = await initTempHive());
+  tearDown(() => disposeTempHive(dir));
+
+  ProgressRepository flaky({
+    Set<int> progress = const {},
+    Set<int> daily = const {},
+  }) => ProgressRepository(
+    openBox: (name) async {
+      final box = await Hive.openBox<dynamic>(name);
+      if (name == 'progress_ppla') return _FlakyBox(box, progress);
+      if (name == 'daily') return _FlakyBox(box, daily);
+      return box;
+    },
+  );
+
+  Future<void> expectCounted(ProgressRepository repo, int n) async {
+    final p = (await repo.progressOf(Licence.ppla, 'q'));
+    expect(p?.seen ?? 0, n);
+    expect(p?.correct ?? 0, n);
+    expect(p?.box ?? 1, n + 1 > 5 ? 5 : n + 1);
+    expect((await repo.dailyStat(now)).answered, n);
+  }
+
+  test('second write fails: rolled back, retry counts exactly once', () async {
+    final repo = flaky(daily: {1});
+    await expectLater(
+      repo.recordAnswer(Licence.ppla, 'q', true, now),
+      throwsA(isA<StateError>()),
+    );
+    await expectCounted(repo, 0);
+    expect(await repo.progressOf(Licence.ppla, 'q'), isNull);
+    await repo.recordAnswer(Licence.ppla, 'q', true, now);
+    await expectCounted(repo, 1);
+  });
+
+  test('first write fails: nothing changes', () async {
+    final repo = flaky(progress: {1});
+    await expectLater(
+      repo.recordAnswer(Licence.ppla, 'q', true, now),
+      throwsA(isA<StateError>()),
+    );
+    await expectCounted(repo, 0);
+    await repo.recordAnswer(Licence.ppla, 'q', true, now);
+    await expectCounted(repo, 1);
+  });
+
+  test('fail, fail, success counts one answer', () async {
+    // call 1: progress put #1 fails; call 2: daily put #2 fails (#1 is the
+    // rollback delete of call 1)
+    final repo = flaky(progress: {1}, daily: {2});
+    for (var i = 0; i < 2; i++) {
+      await expectLater(
+        repo.recordAnswer(Licence.ppla, 'q', true, now),
+        throwsA(isA<StateError>()),
+      );
+    }
+    await repo.recordAnswer(Licence.ppla, 'q', true, now);
+    await expectCounted(repo, 1);
+  });
+
+  test('previous progress is restored when the daily write fails', () async {
+    final repo = flaky(daily: {2});
+    await repo.recordAnswer(Licence.ppla, 'q', true, now);
+    await expectLater(
+      repo.recordAnswer(Licence.ppla, 'q', true, now),
+      throwsA(isA<StateError>()),
+    );
+    await expectCounted(repo, 1);
+    await repo.recordAnswer(Licence.ppla, 'q', true, now);
+    await expectCounted(repo, 2);
+  });
+
+  test(
+    'even when the rollback fails, the retry is not double-counted',
+    () async {
+      // progress: write #1 ok, rollback delete #2 fails; daily write #1 fails
+      final repo = flaky(progress: {2}, daily: {1});
+      await expectLater(
+        repo.recordAnswer(Licence.ppla, 'q', true, now),
+        throwsA(isA<StateError>()),
+      );
+      // the question record is still half-applied here, but the next call
+      // restores it from the journal before doing anything else
+      await repo.recordAnswer(Licence.ppla, 'q', true, now);
+      await expectCounted(repo, 1);
+    },
+  );
 }

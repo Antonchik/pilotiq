@@ -101,6 +101,22 @@ SubjectStats computeSubjectStats(
 /// The questions of a session of [mode], in the order they are asked.
 /// [questions] are the questions of the subject (in the order of the bank);
 /// questions without stored progress are treated as not seen.
+///
+/// Rule of the queue. First the questions get a priority order:
+/// * `learn`: (1) not seen questions whose NUMER has no seen variant yet,
+///   first variants of every NUMER before the second ones; (2) not seen
+///   variants of NUMERs that were already touched; (3) seen questions by
+///   ascending accuracy (older answer first, then bank order). The other
+///   modes keep their own order (review: due date; mistakes: oldest answer;
+///   bookmarks and retry: bank / given order).
+///
+/// Then [spreadVariants] is applied to the **whole** queue: two variants of
+/// one NUMER never stand next to each other whenever such an order exists
+/// (the highlighted answer of one variant would give the other away). A
+/// question is moved behind a later one only when it would repeat the NUMER
+/// of the previous question or when placing it would make a spread
+/// impossible; so the priority order holds except for these shifts.
+/// The result is deterministic.
 List<Question> buildPracticeQueue({
   required PracticeMode mode,
   required List<Question> questions,
@@ -108,62 +124,128 @@ List<Question> buildPracticeQueue({
   required DateTime now,
   List<String> retryIds = const [],
 }) {
-  final base = _baseQueue(
-    mode: mode,
-    questions: questions,
-    progress: progress,
-    now: now,
-    retryIds: retryIds,
-  );
-  if (mode == PracticeMode.learn) {
-    // Not seen questions first, the other variants of a NUMER after the first
-    // variants; then the questions that were answered before.
-    final unseen = [
-      for (final q in base)
-        if (!_isSeen(progress[q.id])) q,
-    ];
-    final seen = [
-      for (final q in base)
-        if (_isSeen(progress[q.id])) q,
-    ];
-    return [
-      ...spreadVariants(unseen, firstVariantsFirst: true),
-      ...spreadVariants(seen),
-    ];
-  }
+  final base = mode == PracticeMode.learn
+      ? learnPriorityOrder(questions, progress)
+      : _baseQueue(
+          mode: mode,
+          questions: questions,
+          progress: progress,
+          now: now,
+          retryIds: retryIds,
+        );
   return spreadVariants(base);
 }
 
+/// Priority order of the `learn` mode before variants are spread, see
+/// [buildPracticeQueue].
+List<Question> learnPriorityOrder(
+  List<Question> questions,
+  Map<String, QuestionProgress> progress,
+) {
+  final order = {for (var i = 0; i < questions.length; i++) questions[i].id: i};
+  final rank = <String, int>{};
+  final variantRank = <String, int>{};
+  final touched = <String>{};
+  for (final q in questions) {
+    variantRank[q.id] = rank[q.number] = (rank[q.number] ?? -1) + 1;
+    if (_isSeen(progress[q.id])) touched.add(q.number);
+  }
+  int byRank(Question a, Question b) {
+    final c = variantRank[a.id]!.compareTo(variantRank[b.id]!);
+    return c != 0 ? c : order[a.id]!.compareTo(order[b.id]!);
+  }
+
+  final fresh = <Question>[];
+  final variantsOfTouched = <Question>[];
+  final seen = <Question>[];
+  for (final q in questions) {
+    if (_isSeen(progress[q.id])) {
+      seen.add(q);
+    } else if (touched.contains(q.number)) {
+      variantsOfTouched.add(q);
+    } else {
+      fresh.add(q);
+    }
+  }
+  fresh.sort(byRank);
+  variantsOfTouched.sort(byRank);
+  double accuracy(Question q) {
+    final p = progress[q.id]!;
+    return p.correct / p.seen;
+  }
+
+  seen.sort((a, b) {
+    final byAccuracy = accuracy(a).compareTo(accuracy(b));
+    if (byAccuracy != 0) return byAccuracy;
+    final pa = progress[a.id]!.lastAnsweredAt;
+    final pb = progress[b.id]!.lastAnsweredAt;
+    if (pa != null && pb != null && pa != pb) return pa.compareTo(pb);
+    return order[a.id]!.compareTo(order[b.id]!);
+  });
+  return [...fresh, ...variantsOfTouched, ...seen];
+}
+
+/// Whether numbers with the given [counts] (total [n]) can be put in a row
+/// with no two equal neighbours, the first one differing from [last].
+bool _canSpread(Map<String, int> counts, int n, String? last) {
+  for (final e in counts.entries) {
+    if (e.value == 0) continue;
+    final limit = e.key == last ? n ~/ 2 : (n + 1) ~/ 2;
+    if (e.value > limit) return false;
+  }
+  return true;
+}
+
+/// Whether [numbers] can be arranged so that no two equal ones are adjacent
+/// (and the first one differs from [last]).
+bool canSpreadNumbers(Iterable<String> numbers, {String? last}) {
+  final counts = <String, int>{};
+  var n = 0;
+  for (final x in numbers) {
+    counts[x] = (counts[x] ?? 0) + 1;
+    n++;
+  }
+  return _canSpread(counts, n, last);
+}
+
 /// Reorders [questions] so that two variants of the same NUMER are not asked
-/// one after another (the highlighted answer of the first variant would give
-/// the second one away), unless nothing else is left. With
-/// [firstVariantsFirst] the first variant of every NUMER goes before any
-/// second variant. The relative order is otherwise kept.
-List<Question> spreadVariants(
-  List<Question> questions, {
-  bool firstVariantsFirst = false,
-}) {
-  var rest = <Question>[...questions];
-  if (firstVariantsFirst) {
-    final rank = <String, int>{};
-    final ranked = [
-      for (final q in questions)
-        (q, rank[q.number] = (rank[q.number] ?? -1) + 1),
-    ];
-    // Stable sort by variant rank.
-    final maxRank = ranked.fold<int>(0, (m, e) => e.$2 > m ? e.$2 : m);
-    rest = [
-      for (var r = 0; r <= maxRank; r++)
-        for (final e in ranked)
-          if (e.$2 == r) e.$1,
-    ];
+/// one after another, whenever such an order exists. At every step the
+/// earliest remaining question is taken that (a) does not repeat the NUMER of
+/// the previous one and (b) leaves a remainder that can still be spread. If
+/// no spread exists, the earliest question with another NUMER is taken (and
+/// the order is kept as it is when even that is impossible).
+List<Question> spreadVariants(List<Question> questions) {
+  final rest = <Question>[...questions];
+  final counts = <String, int>{};
+  for (final q in rest) {
+    counts[q.number] = (counts[q.number] ?? 0) + 1;
   }
   final result = <Question>[];
+  var possible = _canSpread(counts, rest.length, null);
   while (rest.isNotEmpty) {
     final last = result.isEmpty ? null : result.last.number;
-    var index = rest.indexWhere((q) => q.number != last);
-    if (index < 0) index = 0;
-    result.add(rest.removeAt(index));
+    var pick = -1;
+    var firstOther = -1;
+    for (var i = 0; i < rest.length; i++) {
+      final number = rest[i].number;
+      if (number == last) continue;
+      if (firstOther < 0) firstOther = i;
+      if (!possible) break;
+      counts[number] = counts[number]! - 1;
+      final ok = _canSpread(counts, rest.length - 1, number);
+      counts[number] = counts[number]! + 1;
+      if (ok) {
+        pick = i;
+        break;
+      }
+    }
+    if (pick < 0) {
+      pick = firstOther >= 0 ? firstOther : 0;
+      possible = false;
+    }
+    final q = rest.removeAt(pick);
+    counts[q.number] = counts[q.number]! - 1;
+    result.add(q);
   }
   return result;
 }
@@ -179,28 +261,7 @@ List<Question> _baseQueue({
   int byBank(Question a, Question b) => order[a.id]!.compareTo(order[b.id]!);
   switch (mode) {
     case PracticeMode.learn:
-      final unseen = [
-        for (final q in questions)
-          if (!_isSeen(progress[q.id])) q,
-      ];
-      final seen = [
-        for (final q in questions)
-          if (_isSeen(progress[q.id])) q,
-      ];
-      double accuracy(Question q) {
-        final p = progress[q.id]!;
-        return p.correct / p.seen;
-      }
-
-      seen.sort((a, b) {
-        final byAccuracy = accuracy(a).compareTo(accuracy(b));
-        if (byAccuracy != 0) return byAccuracy;
-        final pa = progress[a.id]!.lastAnsweredAt;
-        final pb = progress[b.id]!.lastAnsweredAt;
-        if (pa != null && pb != null && pa != pb) return pa.compareTo(pb);
-        return byBank(a, b);
-      });
-      return [...unseen, ...seen];
+      return learnPriorityOrder(questions, progress);
     case PracticeMode.review:
       final due = [
         for (final q in questions)

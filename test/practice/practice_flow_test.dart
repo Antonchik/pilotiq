@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:clock/clock.dart';
@@ -44,6 +45,13 @@ class _FlakyRepository extends ProgressRepository {
 
   int failures;
   int writes = 0;
+  bool failBookmarks = false;
+
+  @override
+  Future<bool> toggleBookmark(Licence licence, String qid) {
+    if (failBookmarks) throw StateError('disk full');
+    return super.toggleBookmark(licence, qid);
+  }
 
   @override
   Future<QuestionProgress> recordAnswer(
@@ -107,6 +115,7 @@ void main() {
     bool premium = false,
     Widget? home,
     double textScale = 1,
+    Locale locale = const Locale('en'),
     Size size = const Size(1080, 2400),
   }) async {
     tester.view.physicalSize = size;
@@ -128,7 +137,13 @@ void main() {
             paywalls.add(trigger);
           }),
         ],
-        child: _Host(mode: mode, args: args, home: home, textScale: textScale),
+        child: _Host(
+          mode: mode,
+          args: args,
+          home: home,
+          textScale: textScale,
+          locale: locale,
+        ),
       ),
     );
     await tester.pumpAndSettle();
@@ -412,6 +427,74 @@ void main() {
     });
   });
 
+  group('save error panel', () {
+    for (final scale in [1.3, 1.5, 2.0, 3.0]) {
+      for (final size in [const Size(320, 640), const Size(360, 740)]) {
+        for (final lang in ['en', 'pl']) {
+          testWidgets('retry is reachable at x$scale ${size.width.toInt()}x'
+              '${size.height.toInt()} $lang', (tester) async {
+            final real = parseBank(
+              File('assets/data/bank_ppla.json').readAsStringSync(),
+              licence: Licence.ppla,
+            ).questionsOf(SubjectId.airLaw);
+            final long = [...real]
+              ..sort(
+                (a, b) =>
+                    (b.text.pl.length +
+                            b.answers.fold(0, (n, x) => n + x.pl.length))
+                        .compareTo(
+                          a.text.pl.length +
+                              a.answers.fold(0, (n, x) => n + x.pl.length),
+                        ),
+              );
+            questions = long.take(5).toList();
+            final flaky = _FlakyRepository(1);
+            repo = flaky;
+            await Hive.box<dynamic>('config').put('questionLanguage', lang);
+            await pumpApp(
+              tester,
+              textScale: scale,
+              size: size,
+              locale: Locale(lang),
+            );
+            await openPracticeScreen(tester);
+
+            await tester.tap(find.byKey(const Key('answer_0')));
+            await tester.pumpAndSettle();
+            expect(tester.takeException(), isNull);
+
+            final retry = find.byKey(const Key('practice_save_retry'));
+            await tester.scrollUntilVisible(
+              retry,
+              200,
+              scrollable: find.byType(Scrollable).first,
+            );
+            await tester.tap(retry);
+            await tester.pumpAndSettle();
+
+            expect(tester.takeException(), isNull);
+            expect(find.byKey(const Key('practice_save_error')), findsNothing);
+            expect(find.byKey(const Key('practice_next')), findsOneWidget);
+            expect(flaky.writes, 1);
+          });
+        }
+      }
+    }
+
+    testWidgets('a failed bookmark is reported to the user', (tester) async {
+      final flaky = _FlakyRepository(0)..failBookmarks = true;
+      repo = flaky;
+      await pumpApp(tester);
+      await openPracticeScreen(tester);
+
+      await tester.tap(find.byKey(const Key('practice_bookmark')));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Could not save the bookmark.'), findsOneWidget);
+      expect(find.byIcon(Icons.bookmark_border), findsOneWidget);
+    });
+  });
+
   group('large fonts', () {
     for (final scale in [2.0, 3.0]) {
       testWidgets('practice and locked screens do not overflow at $scale', (
@@ -602,10 +685,16 @@ Future<void> pumpMode(WidgetTester tester, PracticeMode mode) async {
 final _hostKey = GlobalKey<_HostState>();
 
 class _Host extends StatefulWidget {
-  _Host({required this.mode, required this.args, this.home, this.textScale = 1})
-    : super(key: _hostKey);
+  _Host({
+    required this.mode,
+    required this.args,
+    this.home,
+    this.textScale = 1,
+    this.locale = const Locale('en'),
+  }) : super(key: _hostKey);
 
   final double textScale;
+  final Locale locale;
 
   final PracticeMode mode;
   final PracticeArgs Function(PracticeMode) args;
@@ -629,7 +718,7 @@ class _HostState extends State<_Host> {
       theme: dark ? ThemeData.dark() : ThemeData.light(),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: const Locale('en'),
+      locale: widget.locale,
       builder: (context, child) => MediaQuery(
         data: MediaQuery.of(context)
             .copyWith(textScaler: TextScaler.linear(widget.textScale)),

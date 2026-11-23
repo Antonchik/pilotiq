@@ -52,6 +52,7 @@ class PracticeState {
     this.bookmarked = const {},
     this.limitReached = false,
     this.finished = false,
+    this.bookmarkErrors = 0,
   });
 
   final List<Question> queue;
@@ -70,6 +71,9 @@ class PracticeState {
   final Set<String> bookmarked;
   final bool limitReached;
   final bool finished;
+
+  /// How many times saving a bookmark failed (the screen tells the user).
+  final int bookmarkErrors;
 
   Question? get current => index < queue.length ? queue[index] : null;
   bool get currentAnswered =>
@@ -101,6 +105,7 @@ class PracticeState {
     Set<String>? bookmarked,
     bool? limitReached,
     bool? finished,
+    int? bookmarkErrors,
   }) => PracticeState(
     queue: queue,
     shuffles: shuffles,
@@ -111,6 +116,7 @@ class PracticeState {
     bookmarked: bookmarked ?? this.bookmarked,
     limitReached: limitReached ?? this.limitReached,
     finished: finished ?? this.finished,
+    bookmarkErrors: bookmarkErrors ?? this.bookmarkErrors,
   );
 }
 
@@ -298,6 +304,12 @@ class PracticeController extends AsyncNotifier<PracticeState> {
       );
     } on Object catch (e) {
       debugPrint('Could not save the bookmark: $e');
+      final latest = state.value;
+      if (ref.mounted && latest != null) {
+        state = AsyncData(
+          latest.copyWith(bookmarkErrors: latest.bookmarkErrors + 1),
+        );
+      }
     } finally {
       _bookmarking = false;
     }

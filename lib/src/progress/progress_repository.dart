@@ -110,6 +110,7 @@ class ProgressRepository {
     queue.tail = done.future;
     try {
       await previous;
+      await _recoverPending();
       return await action();
     } finally {
       done.complete();
@@ -167,10 +168,54 @@ class ProgressRepository {
     final key = DailyStat.keyFor(now);
     final stat = _readDaily(daily.get(key)) ?? DailyStat(date: key);
 
-    await progress.put(qid, after.toMap());
-    await daily.put(key, stat.recorded(correct: correct).toMap());
+    // Journal of the two writes: if anything fails, the previous values are
+    // restored (right away, or by the next locked call if even that fails),
+    // so a retry by the caller is never counted twice.
+    await config.put(_pendingKey, {
+      'licence': licence.id,
+      'qid': qid,
+      'dailyKey': key,
+      'prevProgress': _copyMap(progress.get(qid)),
+      'prevDaily': _copyMap(daily.get(key)),
+    });
+    try {
+      await progress.put(qid, after.toMap());
+      await daily.put(key, stat.recorded(correct: correct).toMap());
+      await config.delete(_pendingKey);
+    } on Object {
+      try {
+        await _recoverPending();
+      } on Object {
+        // The journal stays; the next locked call restores it first.
+      }
+      rethrow;
+    }
     return after;
   });
+
+  static const String _pendingKey = 'pending_answer';
+
+  static Map<dynamic, dynamic>? _copyMap(Object? v) =>
+      v is Map ? Map<dynamic, dynamic>.of(v) : null;
+
+  /// Rolls back an unfinished [recordAnswer] left in the journal, if any.
+  Future<void> _recoverPending() async {
+    final config = await _box(configBox);
+    final j = config.get(_pendingKey);
+    if (j is! Map) return;
+    final licence = Licence.fromId(j['licence'] as String?);
+    final qid = j['qid'];
+    final dailyKey = j['dailyKey'];
+    if (licence != null && qid is String && dailyKey is String) {
+      final progress = await _box(progressBoxName(licence));
+      final daily = await _box(dailyBox);
+      Future<void> restore(Box<dynamic> box, String key, Object? prev) =>
+          prev is Map ? box.put(key, prev) : box.delete(key);
+      await restore(progress, qid, j['prevProgress']);
+      await restore(daily, dailyKey, j['prevDaily']);
+    }
+    await config.delete(_pendingKey);
+  }
 
   /// Flips the bookmark of [qid]; returns the new value.
   Future<bool> toggleBookmark(Licence licence, String qid) => _locked(() async {

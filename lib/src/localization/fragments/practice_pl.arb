@@ -34,5 +34,6 @@
   "practiceLoadError": "Nie udało się wczytać pytań.",
   "practiceSaveError": "Nie udało się zapisać odpowiedzi. Na razie nie jest liczona.",
   "practiceSaveRetry": "Ponów",
-  "practiceLimitRecheck": "Sprawdź ponownie"
+  "practiceLimitRecheck": "Sprawdź ponownie",
+  "practiceBookmarkError": "Nie udało się zapisać zakładki."
 }

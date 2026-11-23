@@ -15,6 +15,7 @@ class QuestionView extends StatelessWidget {
     required this.requestedLanguage,
     required this.selectedCanonical,
     required this.onAnswer,
+    this.footer,
   });
 
   final Question question;
@@ -26,6 +27,9 @@ class QuestionView extends StatelessWidget {
 
   /// Called with the position of the tapped answer on the screen.
   final ValueChanged<int> onAnswer;
+
+  /// Shown below the answers inside the scrolling area.
+  final Widget? footer;
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +91,7 @@ class QuestionView extends StatelessWidget {
               ),
             ),
           ),
+        ?footer,
       ],
     );
   }

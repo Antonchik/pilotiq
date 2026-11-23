@@ -119,6 +119,16 @@ class _PracticeBody extends ConsumerWidget {
         }
       },
     );
+    ref.listen(
+      practiceControllerProvider.select((a) => a.value?.bookmarkErrors ?? 0),
+      (previous, count) {
+        if (count > (previous ?? 0)) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(local.practiceBookmarkError)));
+        }
+      },
+    );
     final state = async.value;
     final inQuestion =
         state != null &&
@@ -214,11 +224,12 @@ class _PracticeBody extends ConsumerWidget {
             requestedLanguage: state.language,
             selectedCanonical: state.selected[question.id],
             onAnswer: controller.answer,
+            footer: state.currentUnsaved
+                ? _SaveError(onRetry: controller.retrySave)
+                : null,
           ),
         ),
-        if (state.currentUnsaved)
-          _SaveError(onRetry: controller.retrySave)
-        else if (state.currentAnswered)
+        if (state.currentAnswered && !state.currentUnsaved)
           SafeArea(
             top: false,
             child: Padding(
@@ -377,12 +388,17 @@ class _SaveError extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    return SafeArea(
-      top: false,
+    return Semantics(
+      liveRegion: true,
+      container: true,
       child: Container(
         key: const Key('practice_save_error'),
         width: double.infinity,
-        color: scheme.errorContainer,
+        margin: const EdgeInsets.only(top: 8),
+        decoration: BoxDecoration(
+          color: scheme.errorContainer,
+          borderRadius: BorderRadius.circular(10),
+        ),
         padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
         child: Wrap(
           alignment: WrapAlignment.spaceBetween,

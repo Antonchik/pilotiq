@@ -950,5 +950,9 @@
   "practiceLimitRecheck": "Check again",
   "@practiceLimitRecheck": {
     "description": "Re-check the daily limit"
+  },
+  "practiceBookmarkError": "Could not save the bookmark.",
+  "@practiceBookmarkError": {
+    "description": "Shown when a bookmark could not be stored"
   }
 }
