@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});
@@ -12,14 +12,14 @@ class BottomNavBar extends StatelessWidget {
       items: [
         BottomNavigationBarItem(
           icon: const Icon(
-            FontAwesomeIcons.graduationCap,
+            Icons.school,
             size: 20,
           ),
           label: local.examsTitle,
         ),
         BottomNavigationBarItem(
           icon: const Icon(
-            FontAwesomeIcons.star,
+            Icons.star,
             size: 20,
           ),
           label: local.premiumLabel,
@@ -31,7 +31,7 @@ class BottomNavBar extends StatelessWidget {
             // do nothing
             break;
           case 1:
-            Navigator.pushNamed(context, '/paywall');
+            openPaywall(context, trigger: PaywallTrigger.profile);
             break;
         }
       },

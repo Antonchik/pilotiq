@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/models.dart';
-import 'package:pilotiq/src/purchases/linkfive_provider.dart';
-import 'package:pilotiq/src/purchases/paywall.dart';
+import 'package:pilotiq/src/purchases/paywall_launcher.dart';
+import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/quiz/widgets/quiz_card.dart';
 
 class QuizList extends ConsumerWidget {
@@ -14,7 +14,7 @@ class QuizList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
-    final isPremium = ref.watch(linkFiveProvider).hasActiveProduct;
+    final isPremium = ref.watch(isPremiumProvider);
     final quizzes = composeQuizes(subject, isPremium, local: local);
     return Column(
       children: [
@@ -29,11 +29,8 @@ class QuizList extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ElevatedButton(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const Paywall(),
-                ),
-              ),
+              onPressed: () =>
+                  openPaywall(context, trigger: PaywallTrigger.profile),
               child: Text(local.goPremiumLabel),
             ),
           ),

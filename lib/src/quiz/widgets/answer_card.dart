@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:pilotiq/src/hive_box_provider.dart';
 import 'package:pilotiq/src/models.dart';
@@ -108,8 +107,8 @@ class AnswerCard extends ConsumerWidget {
             children: [
               Icon(
                   state.selected == option
-                      ? FontAwesomeIcons.circleCheck
-                      : FontAwesomeIcons.circle,
+                      ? Icons.check_circle
+                      : Icons.circle_outlined,
                   size: 20),
               Expanded(
                 child: Container(

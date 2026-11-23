@@ -173,7 +173,11 @@ def _cell_text(page, bbox, fallback):
     """Cell text with line breaks; every line keeps its trailing space (see join_lines)."""
     if bbox is None:
         return fallback
-    lines = page.crop(bbox).extract_text_lines(strip=False, return_chars=False)
+    # The trailing space of a wrapped line may stick out of the cell by ~2.5pt and would be cut off
+    # by an exact crop; the neighbouring cell starts >5pt after the border, so +3.5pt is safe.
+    x0, top, x1, bottom = bbox
+    area = (x0, top, min(x1 + 3.5, float(page.width)), bottom)
+    lines = page.crop(area).extract_text_lines(strip=False, return_chars=False)
     text = "\n".join(ln["text"] for ln in lines)
     if re.sub(r"\s+", "", text) != re.sub(r"\s+", "", fallback):
         return fallback  # safety net: never trust own reconstruction over pdfplumber's
@@ -185,7 +189,7 @@ def extract_rows(pdf_path, sha, cache_dir):
 
     Cached in cache_dir (keyed by the SHA-256 of the PDF, the pdfplumber version and the format).
     """
-    cache = Path(cache_dir) / f"{sha}.pdfplumber-{PDFPLUMBER_VERSION}.v2.json"
+    cache = Path(cache_dir) / f"{sha}.pdfplumber-{PDFPLUMBER_VERSION}.v3.json"
     if cache.is_file():
         with open(cache, encoding="utf-8") as f:
             return json.load(f)

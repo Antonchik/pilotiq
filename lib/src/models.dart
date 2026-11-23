@@ -1,7 +1,5 @@
-import 'package:json_annotation/json_annotation.dart';
 import 'package:pilotiq/src/home/home.dart';
 
-@JsonSerializable()
 class Exam {
   final ExamType type;
   final String title;
@@ -16,7 +14,6 @@ class Exam {
   });
 }
 
-@JsonSerializable()
 class Subject {
   late final String id;
   final String title;
@@ -39,7 +36,6 @@ class Subject {
 
 enum QuizType { demo, all, exam }
 
-@JsonSerializable()
 class Quiz {
   QuizType type;
   String title;
@@ -59,7 +55,6 @@ class Quiz {
       this.questions = const []});
 }
 
-@JsonSerializable()
 class Question {
   String seq;
   String number;
@@ -88,7 +83,6 @@ class Question {
   }
 }
 
-@JsonSerializable()
 class Answer {
   String value;
   bool isCorrect;

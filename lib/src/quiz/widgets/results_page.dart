@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 import 'package:pilotiq/src/quiz/widgets/result_scale_bar.dart';
 import 'package:pilotiq/src/quiz/widgets/review_answers_page.dart';
@@ -89,7 +88,7 @@ class AllQuestionsCompleteWidget extends StatelessWidget {
       children: const [
         Center(
           child: Icon(
-            FontAwesomeIcons.circleCheck,
+            Icons.check_circle,
             size: 100,
             color: Colors.green,
           ),

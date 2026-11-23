@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 
 class ReviewAnswersPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class ReviewAnswersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Review Answers'),
+          title: Text(AppLocalizations.of(context)!.reviewAnswersTitle),
         ),
         body: ListView.builder(
           itemCount: quizState.answers.length,

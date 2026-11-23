@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:pilotiq/src/contdown_timer/countdown_timer.dart';
@@ -150,7 +149,7 @@ class CloseTestButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
     return IconButton(
-      icon: const Icon(FontAwesomeIcons.xmark),
+      icon: const Icon(Icons.close),
       onPressed: () async {
         final proceed = await showDialog<bool>(
             context: context,

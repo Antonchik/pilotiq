@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
         img: 'pplh.png',
       ),
       Exam(
-        type: ExamType.pplh,
+        type: ExamType.pplhEng,
         title: local.pplhEngExamTitle,
         img: 'pplh-en.png',
       ),

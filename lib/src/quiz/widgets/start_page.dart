@@ -43,9 +43,10 @@ class StartPage extends ConsumerWidget {
               style: Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
-          ButtonBar(
+          OverflowBar(
             alignment: MainAxisAlignment.center,
-            children: <ElevatedButton>[
+            spacing: 8,
+            children: <Widget>[
               ElevatedButton.icon(
                 icon: const Icon(Icons.start),
                 label: SizedBox(

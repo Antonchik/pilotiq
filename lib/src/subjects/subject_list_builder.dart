@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/repo/repo.dart';
 import 'package:pilotiq/src/subjects/subject_item_widget.dart';
@@ -35,86 +36,9 @@ class SubjectListBuilder extends ConsumerWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           final questions = snapshot.data!;
           final subjects = [
-            Subject(
-                id: 'air_law',
-                title: local.airLawSubjectTitle,
-                description: local.airLawSubjectTooltip,
-                img: 'air_law.png',
-                quizLength: 28,
-                examTime: 45,
-                questions: questions['airLaw']!),
-            Subject(
-              id: 'communications',
-              title: local.communicationsSubjectTitle,
-              description: local.communicationsSubjectTooltip,
-              img: 'communications.png',
-              quizLength: 12,
-              examTime: 30,
-              questions: questions['communications']!,
-            ),
-            Subject(
-              id: 'meteorology',
-              title: local.meteorologySubjectTitle,
-              description: local.meteorologySubjectTooltip,
-              img: 'meteorology.png',
-              quizLength: 12,
-              examTime: 30,
-              questions: questions['meteorology']!,
-            ),
-            Subject(
-              id: 'navigation',
-              title: local.navigationSubjectTitle,
-              description: local.navigationSubjectTooltip,
-              img: 'navigation.png',
-              quizLength: 24,
-              examTime: 60,
-              questions: questions['navigation']!,
-            ),
-            Subject(
-              id: 'performance_and_planning',
-              title: local.performanceSubjectTitle,
-              description: local.performanceSubjectTooltip,
-              img: 'performance_and_planning.png',
-              quizLength: 20,
-              examTime: 60,
-              questions: questions['flightPerformance']!,
-            ),
-            Subject(
-              id: 'aircraft_general_knowledge',
-              title: local.generalKnowledgeSubjectTitle,
-              description: local.generalKnowledgeSubjectTooltip,
-              img: 'aircraft_general_knowledge.png',
-              quizLength: 16,
-              examTime: 30,
-              questions: questions['generalKnowledge']!,
-            ),
-            Subject(
-              id: 'human_performance',
-              title: local.humanPerformanceSubjectTitle,
-              description: local.humanPerformanceSubjectTooltip,
-              img: 'human_performance.png',
-              quizLength: 12,
-              examTime: 30,
-              questions: questions['humanPerformance']!,
-            ),
-            Subject(
-              id: 'principles_of_flight',
-              title: local.principlesOfFlightSubjectTitle,
-              description: local.principlesOfFlightSubjectTooltip,
-              img: 'principles_of_flight.png',
-              quizLength: 16,
-              examTime: 45,
-              questions: questions['principlesOfFlight']!,
-            ),
-            Subject(
-              id: 'operational_procedures',
-              title: local.operationalProcedureSubjectTitle,
-              description: local.operationalProcedureSubjectTooltip,
-              img: 'operational_procedures.png',
-              quizLength: 12,
-              examTime: 30,
-              questions: questions['operationalProcedures']!,
-            ),
+            for (final id in SubjectId.values)
+              if (questions[_repoKeys[id]]?.isNotEmpty ?? false)
+                _buildSubject(id, local, questions[_repoKeys[id]]!),
           ];
           final isPortrait =
               MediaQuery.of(context).orientation == Orientation.portrait;
@@ -155,4 +79,69 @@ class SubjectListBuilder extends ConsumerWidget {
       },
     );
   }
+}
+
+/// Keys under which [QuestionRepository] groups the questions of a subject.
+const _repoKeys = {
+  SubjectId.airLaw: 'airLaw',
+  SubjectId.communications: 'communications',
+  SubjectId.meteorology: 'meteorology',
+  SubjectId.navigation: 'navigation',
+  SubjectId.performanceAndPlanning: 'flightPerformance',
+  SubjectId.aircraftGeneralKnowledge: 'generalKnowledge',
+  SubjectId.humanPerformance: 'humanPerformance',
+  SubjectId.principlesOfFlight: 'principlesOfFlight',
+  SubjectId.operationalProcedures: 'operationalProcedures',
+};
+
+Subject _buildSubject(
+  SubjectId id,
+  AppLocalizations local,
+  List<Question> questions,
+) {
+  final (title, description) = switch (id) {
+    SubjectId.airLaw => (local.airLawSubjectTitle, local.airLawSubjectTooltip),
+    SubjectId.communications => (
+        local.communicationsSubjectTitle,
+        local.communicationsSubjectTooltip
+      ),
+    SubjectId.meteorology => (
+        local.meteorologySubjectTitle,
+        local.meteorologySubjectTooltip
+      ),
+    SubjectId.navigation => (
+        local.navigationSubjectTitle,
+        local.navigationSubjectTooltip
+      ),
+    SubjectId.performanceAndPlanning => (
+        local.performanceSubjectTitle,
+        local.performanceSubjectTooltip
+      ),
+    SubjectId.aircraftGeneralKnowledge => (
+        local.generalKnowledgeSubjectTitle,
+        local.generalKnowledgeSubjectTooltip
+      ),
+    SubjectId.humanPerformance => (
+        local.humanPerformanceSubjectTitle,
+        local.humanPerformanceSubjectTooltip
+      ),
+    SubjectId.principlesOfFlight => (
+        local.principlesOfFlightSubjectTitle,
+        local.principlesOfFlightSubjectTooltip
+      ),
+    SubjectId.operationalProcedures => (
+        local.operationalProcedureSubjectTitle,
+        local.operationalProcedureSubjectTooltip
+      ),
+  };
+  final spec = ExamSpec.forSubject(id);
+  return Subject(
+    id: id.id,
+    title: title,
+    description: description,
+    img: '${id.id}.png',
+    quizLength: spec.quizLength,
+    examTime: spec.minutes,
+    questions: questions,
+  );
 }

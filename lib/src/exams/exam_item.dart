@@ -13,14 +13,16 @@ class ExamItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Card(
+      key: Key('exam_${exam.type.name}'),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
       child: InkWell(
-        onTap: () {
+        onTap: () async {
+          final navigator = Navigator.of(context);
           ref.read(curExamNameProvider.notifier).state = exam.type.name;
-          Hive.openBox<dynamic>(exam.type.name);
-          Navigator.of(context).push(
+          await Hive.openBox<dynamic>(exam.type.name);
+          navigator.push(
             MaterialPageRoute(
               builder: (BuildContext context) => SubjectListScreen(exam: exam),
             ),

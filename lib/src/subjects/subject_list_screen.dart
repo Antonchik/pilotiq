@@ -46,10 +46,6 @@ class SubjectListScreen extends ConsumerWidget {
           isBalloon: true,
         );
         break;
-      default:
-        return const Center(
-          child: Text('No exam selected'),
-        );
     }
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;

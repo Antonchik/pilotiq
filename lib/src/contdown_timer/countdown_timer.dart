@@ -83,7 +83,7 @@ class _CountDownTimerState extends State<CountDownTimer> {
                       ),
                       actions: [
                         TextButton(
-                          child: const Text('OK'),
+                          child: Text(local.okLabel),
                           onPressed: () {
                             Navigator.of(context).pop();
                             Navigator.of(context).pop();
