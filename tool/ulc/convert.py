@@ -11,6 +11,7 @@ The output is deterministic (no timestamps, sorted by id).
 """
 
 import argparse
+import difflib
 import hashlib
 import html
 import json
@@ -169,6 +170,22 @@ def check_pdf(licence, spec, sources_dir):
 # --------------------------------------------------------------------------- PDF -> raw rows
 
 
+def _without_stray_spaces(line_chars):
+    """Drop invisible space glyphs that lie on top of a letter of the same line.
+
+    Some cells contain overlapping zero-width spaces ("od s t r o m ego"); a real inter-word
+    space only touches its neighbours (overlap < 0.5pt).
+    """
+    glyphs = [ch for ch in line_chars if not ch["text"].isspace()]
+    kept = []
+    for ch in line_chars:
+        if ch["text"].isspace() and any(
+                g["x0"] < ch["x1"] - 0.5 and g["x1"] > ch["x0"] + 0.5 for g in glyphs):
+            continue
+        kept.append(ch)
+    return kept
+
+
 def _cell_text(page, bbox, fallback):
     """Cell text with line breaks; every line keeps its trailing space (see join_lines)."""
     if bbox is None:
@@ -183,7 +200,7 @@ def _cell_text(page, bbox, fallback):
     lines = []
     for cluster in cluster_objects(chars, "doctop", 3):
         cluster = sorted(cluster, key=lambda ch: ch["x0"])
-        lines.append("".join(ch["text"] for ch in cluster))
+        lines.append("".join(ch["text"] for ch in _without_stray_spaces(cluster)))
     text = "\n".join(lines)
     if re.sub(r"\s+", "", text) != re.sub(r"\s+", "", fallback):
         return fallback  # safety net: never trust own reconstruction over pdfplumber's
@@ -195,7 +212,7 @@ def extract_rows(pdf_path, sha, cache_dir):
 
     Cached in cache_dir (keyed by the SHA-256 of the PDF, the pdfplumber version and the format).
     """
-    cache = Path(cache_dir) / f"{sha}.pdfplumber-{PDFPLUMBER_VERSION}.v3.json"
+    cache = Path(cache_dir) / f"{sha}.pdfplumber-{PDFPLUMBER_VERSION}.v4.json"
     if cache.is_file():
         with open(cache, encoding="utf-8") as f:
             return json.load(f)
@@ -235,7 +252,7 @@ class Stats:
         self.data_rows = 0
         self.merged_rows = 0
         self.discarded = []  # (page, number, reason)
-        self.exact_duplicates = []  # (page, number)
+        self.exact_duplicates = []  # (page, number, "exact"|"near", page of the kept variant)
         self.notes = []
 
     def discard(self, page, number, reason):
@@ -496,11 +513,11 @@ def _starts_with_repeat(en):
 
 def split_cell(text, lex, params=None):
     """-> (pl, en, flag); flag in {"ok", "neutral", "no-en", "ambiguous"}."""
-    if not has_letters(text):
-        return text, text, "neutral"
     twin = _identical_halves(text)
     if twin:
         return twin[0], twin[1], "ok"
+    if not has_letters(text):
+        return text, text, "neutral"
     pl, en, margin = split_pl_en(text, lex, params)
     if en is None:
         return text, None, "no-en"
@@ -512,6 +529,16 @@ def split_cell(text, lex, params=None):
 
 
 # --------------------------------------------------------------------------- records -> questions
+
+
+def en_defects(c):
+    """Quality of the English side of a candidate (smaller is better) - used to choose between
+    duplicates: fewer cells without EN, then fewer EN texts starting in lower case ("wwith ..."),
+    then fewer unsplit/ambiguous cells. Ties keep the first occurrence."""
+    missing = sum(1 for x, f in zip(c["cells"], c["flags"]) if x["en"] is None and f != "neutral")
+    lower = sum(1 for x in c["cells"] if x["en"] and x["en"][:1].islower())
+    ambiguous = sum(1 for f in c["flags"] if f == "ambiguous")
+    return (missing, lower, ambiguous)
 
 
 def build_questions(records, spec, lex, stats):
@@ -548,24 +575,26 @@ def build_questions(records, spec, lex, stats):
                 pl, en, flag = t, None, "mono"
             cells.append({"pl": pl, "en": en})
             flags.append(flag)
-        candidates.append({"page": page, "number": number, "topic": prefix, "subject": subject,
+        candidates.append({"order": len(candidates), "page": page, "number": number, "topic": prefix, "subject": subject,
                            "cells": cells, "flags": flags, "joined": texts})
 
-    # exact duplicates: same NUMER and same Polish text of the question and of all answers
-    seen = {}
-    unique = []
+    # duplicates: same NUMER and the same Polish text of the question and of all answers,
+    # ignoring case and whitespace ("200 m." == "200m.", "lotu ?" == "lotu?")
+    groups = {}
     for c in candidates:
-        key = (c["number"], tuple(x["pl"] for x in c["cells"]))
-        if key in seen:
-            stats.exact_duplicates.append((c["page"], c["number"]))
-            prev = seen[key]
-            if bilingual and prev["cells"][0]["en"] is None and c["cells"][0]["en"] is not None:
-                # keep the variant that has English text
-                unique[unique.index(prev)] = c
-                seen[key] = c
-            continue
-        seen[key] = c
-        unique.append(c)
+        key = (c["number"], tuple(re.sub(r"\s+", "", x["pl"]).casefold() for x in c["cells"]))
+        groups.setdefault(key, []).append(c)
+    unique = []
+    for group in groups.values():
+        chosen = min(group, key=en_defects) if bilingual else group[0]  # min() keeps the first on ties
+        chosen["id_source"] = group[0]["joined"]  # id does not depend on the PL/EN splitter
+        unique.append(chosen)
+        for c in group:
+            if c is not chosen:
+                same = [x["pl"] for x in c["cells"]] == [x["pl"] for x in chosen["cells"]]
+                stats.exact_duplicates.append((c["page"], c["number"], "exact" if same else "near",
+                                               chosen["page"]))
+    unique.sort(key=lambda c: c["order"])
 
     by_number = defaultdict(list)
     for c in unique:
@@ -577,19 +606,16 @@ def build_questions(records, spec, lex, stats):
         if len(group) == 1:
             ids[id(group[0])] = number
         else:
-            used = Counter()
+            short_hash = {id(c): hash_text(c["id_source"][0], [c["id_source"][1]]) for c in group}
+            used = Counter(short_hash.values())
             for c in group:
-                h = hash_text(c["cells"][0]["pl"], [c["cells"][1]["pl"]])
-                used[h] += 1
-            for c in group:
-                h = hash_text(c["cells"][0]["pl"], [c["cells"][1]["pl"]])
+                h = short_hash[id(c)]
                 if used[h] > 1:  # same question and correct answer, different distractors
-                    h = hash_text(c["cells"][0]["pl"], [x["pl"] for x in c["cells"][1:]])
+                    h = hash_text(c["id_source"][0], c["id_source"][1:])
                 ids[id(c)] = f"{number}~{h}"
         for c in group:
-            qid = ids[id(c)]
             questions.append({
-                "id": qid,
+                "id": ids[id(c)],
                 "number": number,
                 "topic": c["topic"],
                 "subject": c["subject"],
@@ -662,7 +688,9 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append(f"- записей (строк с NUMER или L.p.): {stats.data_rows}")
     L.append(f"  - принято вопросов: {accepted}")
     L.append(f"  - отброшено как мусор: {len(discarded)}")
-    L.append(f"  - отброшено как точные дубли (тот же NUMER и тот же текст): {len(dup)}")
+    L.append(f"  - схлопнуто как дубли (тот же NUMER и тот же польский текст без учёта пробелов и регистра): {len(dup)}"
+             f" (дословных {sum(1 for d in dup if d[2] == 'exact')}, различающихся пробелами/регистром "
+             f"{sum(1 for d in dup if d[2] == 'near')})")
     check = stats.header_rows + stats.merged_rows + accepted + len(discarded) + len(dup)
     L.append(f"- проверка: {stats.header_rows} + {stats.merged_rows} + {accepted} + {len(discarded)} + {len(dup)} "
              f"= {check}, строк в PDF = {stats.table_rows} -> {'сходится' if check == stats.table_rows else 'НЕ СХОДИТСЯ'}")
@@ -677,12 +705,18 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     else:
         L.append("нет")
     L.append("")
-    L.append("### Точные дубли (оставлена первая запись)")
+    L.append("### Схлопнутые дубли")
     L.append("")
-    if dup:
-        L.append(", ".join(f"{n} (стр. {p})" for p, n in dup))
-    else:
-        L.append("нет")
+    L.append("Из группы дублей оставляется запись с лучшим английским текстом (меньше ячеек без EN, затем меньше EN-текстов "
+             "со строчной буквы в начале, затем меньше неразделённых ячеек; при равенстве — первая по порядку). "
+             "Остальные схлопываются.")
+    L.append("")
+    exact = [d for d in dup if d[2] == "exact"]
+    near = [d for d in dup if d[2] == "near"]
+    L.append(f"Дословные дубли ({len(exact)}): " + (", ".join(f"{n} (стр. {p})" for p, n, _, _ in exact) or "нет"))
+    L.append("")
+    L.append(f"Различаются пробелами/регистром ({len(near)}), формат «NUMER: удалена стр. → оставлена стр.»: "
+             + (", ".join(f"{n}: {p} → {k}" for p, n, _, k in near) or "нет"))
     L.append("")
 
     by_number = Counter(q["number"] for q in questions)
@@ -764,26 +798,40 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
         by_num_q = defaultdict(list)
         for q in questions:
             by_num_q[q["number"]].append(q)
-        changed_correct, changed_text = [], []
+        cats = defaultdict(list)  # category -> [ids or numbers]
+        total_legacy = 0
         for n in sorted(legacy_numbers & new_numbers):
             for lq, lc in idx[n]:
-                lqf = fold(lq)
+                total_legacy += 1
+                lqf, lcf = fold(lq), fold(lc)
                 same_q = [q for q in by_num_q[n] if fold(q["q"]["pl"]) == lqf]
                 if not same_q:
-                    if not any(fold(q["a"][0]["pl"]) == fold(lc) for q in by_num_q[n]):
-                        changed_text.append(n)
+                    if any(fold(q["a"][0]["pl"]) == lcf for q in by_num_q[n]):
+                        cats["reworded_same_answer"].append(n)
+                    else:
+                        cats["rewritten"].append(n)
                     continue
-                if not any(fold(q["a"][0]["pl"]) == fold(lc) for q in same_q):
-                    changed_correct.extend(q["id"] for q in same_q)
+                if any(fold(q["a"][0]["pl"]) == lcf for q in same_q):
+                    cats["unchanged"].append(n)
+                    continue
+                ratio = max(difflib.SequenceMatcher(None, lcf, fold(q["a"][0]["pl"])).ratio() for q in same_q)
+                if ratio >= 0.9:
+                    cats["typo"].append(same_q[0]["id"])
+                else:
+                    cats["real"].extend(q["id"] for q in same_q)
         L.append(f"- вопросов в прежних данных: {sum(len(v) for v in idx.values())} "
                  f"(уникальных NUMER: {len(legacy_numbers)}), в новом банке: {len(questions)} "
                  f"(уникальных NUMER: {len(new_numbers)})")
         L.append(f"- новых NUMER: {len(added)}")
         L.append(f"- исчезнувших NUMER: {len(gone)}")
-        L.append(f"- NUMER, у которых прежний вопрос найден дословно, но **верный ответ изменился**: "
-                 f"{len(set(changed_correct))}")
-        L.append(f"- NUMER, у которых ни прежний вопрос, ни прежний верный ответ не найдены среди вариантов "
-                 f"(текст переписан): {len(set(changed_text))}")
+        L.append(f"- прежних записей с NUMER, который есть и в новом банке: {total_legacy}; из них:")
+        L.append(f"  - вопрос найден дословно, верный ответ тот же: {len(cats['unchanged'])}")
+        L.append(f"  - вопрос найден дословно, верный ответ изменён только опечаткой/пунктуацией "
+                 f"(сходство текста ≥ 90 %): {len(cats['typo'])}")
+        L.append(f"  - вопрос найден дословно, **верный ответ реально другой** (id вариантов): {len(cats['real'])}")
+        L.append(f"  - вопрос переформулирован, но прежний верный ответ есть среди ответов нового варианта: "
+                 f"{len(cats['reworded_same_answer'])}")
+        L.append(f"  - вопрос и верный ответ переписаны (сопоставить нельзя): {len(cats['rewritten'])}")
         L.append("")
         L.append("### Новые NUMER")
         L.append("")
@@ -793,13 +841,17 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
         L.append("")
         L.append(", ".join(gone) if gone else "нет")
         L.append("")
-        L.append("### Изменённый верный ответ (id)")
+        L.append("### Верный ответ реально другой (id)")
         L.append("")
-        L.append(", ".join(sorted(set(changed_correct))) if changed_correct else "нет")
+        L.append(", ".join(sorted(set(cats["real"]))) if cats["real"] else "нет")
         L.append("")
-        L.append("### Текст вопроса переписан (NUMER)")
+        L.append("### Верный ответ изменён опечаткой/пунктуацией (id)")
         L.append("")
-        L.append(", ".join(sorted(set(changed_text))) if changed_text else "нет")
+        L.append(", ".join(sorted(set(cats["typo"]))) if cats["typo"] else "нет")
+        L.append("")
+        L.append("### Вопрос и верный ответ переписаны (NUMER)")
+        L.append("")
+        L.append(", ".join(sorted(set(cats["rewritten"]))) if cats["rewritten"] else "нет")
     L.append("")
     return "\n".join(L)
 

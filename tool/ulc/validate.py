@@ -13,7 +13,18 @@ from pathlib import Path
 
 from convert import LICENCES, NUMBER_RE, QUIZ_LENGTH, SCHEMA, SUBJECTS, TOPIC_TO_SUBJECT
 
+ENTITY_RE = re.compile(r"&#?\w+;")
+# three or more single lower-case letters separated by single spaces ("od s t r o m ego")
+SPLIT_WORD_RE = re.compile(r"(?<![\w])(?:[^\W\d_A-Z] ){2,}[^\W\d_A-Z](?![\w])")
 ID_RE = re.compile(r"^PL\d{3}-\d{4}(~[0-9a-f]{6})?$")
+
+
+def _all_texts(q):
+    texts = []
+    for cell in [q.get("q")] + list(q.get("a") or []):
+        if isinstance(cell, dict):
+            texts.extend(t for t in (cell.get("pl"), cell.get("en")) if isinstance(t, str))
+    return texts
 
 
 def validate_bank(path):
@@ -86,9 +97,15 @@ def validate_bank(path):
             if "~" in qid:
                 multi[number] = multi.get(number, 0) + 1
             per_subject[q.get("subject")] = per_subject.get(q.get("subject"), 0) + 1
-        if isinstance(qt, dict) and isinstance(qt.get("pl"), str) and "&lt;" in qt["pl"] + "".join(
-                a.get("pl", "") for a in (answers or []) if isinstance(a, dict)):
-            errors.append(f"{where}: HTML entity left in text")
+        for text in _all_texts(q):
+            if ENTITY_RE.search(text):
+                errors.append(f"{where}: HTML entity left in text: {ENTITY_RE.search(text).group()!r}")
+                break
+        for text in _all_texts(q):
+            m = SPLIT_WORD_RE.search(text)
+            if m:
+                errors.append(f"{where}: letters separated by spaces inside a word: {m.group()!r}")
+                break
     for number, c in multi.items():
         if c < 2:
             errors.append(f"{number}: id has a hash suffix but the NUMER is unique")

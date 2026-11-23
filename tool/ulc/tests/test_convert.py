@@ -42,6 +42,24 @@ class JoinLinesTest(unittest.TestCase):
         self.assertEqual(c.clean_text("H&lt;sub&gt;2&lt;/sub&gt;O    test"), "H<sub>2</sub>O test")
 
 
+class StraySpaceTest(unittest.TestCase):
+    @staticmethod
+    def ch(text, x0, x1):
+        return {"text": text, "x0": x0, "x1": x1}
+
+    def test_overlapping_invisible_spaces_are_dropped(self):
+        # "w" (318.7-326.6) with two spaces lying on top of it, then a real space after "go"
+        line = [self.ch(" ", 313.2, 314.7), self.ch("w", 318.7, 326.6), self.ch(" ", 319.7, 322.2),
+                self.ch(" ", 322.2, 324.7), self.ch("ł", 326.6, 329.4), self.ch("a", 329.4, 334.7),
+                self.ch(" ", 334.7, 337.2), self.ch("x", 337.2, 342.0)]
+        text = "".join(k["text"] for k in c._without_stray_spaces(line))
+        self.assertEqual(" włą".replace("ą", "a") + " x", text)
+
+    def test_touching_spaces_are_kept(self):
+        line = [self.ch("a", 0.0, 5.0), self.ch(" ", 4.9, 7.4), self.ch("b", 7.3, 12.0)]
+        self.assertEqual("a b", "".join(k["text"] for k in c._without_stray_spaces(line)))
+
+
 class RecordsTest(unittest.TestCase):
     def test_continuation_across_pages_is_merged(self):
         rows = [
@@ -120,7 +138,46 @@ class IdsTest(unittest.TestCase):
         qs, stats = convert_rows(rows)
         self.assertEqual(len(qs), 1)
         self.assertEqual(qs[0]["id"], "PL010-0100")
-        self.assertEqual(stats.exact_duplicates, [(3, "PL010-0100")])
+        self.assertEqual(stats.exact_duplicates, [(3, "PL010-0100", "exact", 1)])
+
+    def test_near_duplicate_differing_in_spaces_and_case_is_collapsed(self):
+        rows = [HEADER,
+                row(1, "1", "PL010-0100", "Do 200 m. lotu ?", "Dozwolone", "a", "b", "c"),
+                row(2, "2", "PL010-0100", "Do 200m. lotu?", "dozwolone", "a", "b", "c")]
+        qs, stats = convert_rows(rows)
+        self.assertEqual(len(qs), 1)
+        self.assertEqual(qs[0]["id"], "PL010-0100")
+        self.assertEqual(stats.exact_duplicates, [(2, "PL010-0100", "near", 1)])
+
+    def test_different_sign_is_not_a_duplicate(self):
+        rows = [HEADER,
+                row(1, "1", "PL060-0100", "Dewiacja?", "-3", "a", "b", "c"),
+                row(2, "2", "PL060-0100", "Dewiacja?", "3", "a", "b", "c")]
+        qs, _ = convert_rows(rows)
+        self.assertEqual(len(qs), 2)
+
+    def test_duplicate_keeps_the_better_english_text(self):
+        spec = dict(SPEC_PL, bilingual=True)
+        lex = c.build_lexicon(str(LEGACY_DIR))
+        def r(page, tail):
+            return row(page, str(page), "PL010-0143", "Lot VFR jest dozwolony: Day VFR flight is allowed:",
+                       "Przy zmniejszeniu widzialności do 1500 m. " + tail, "Nie. No.", "Tak. Yes.", "Może. Maybe.")
+        rows = [HEADER, r(1, "wwith flight visibility decreased to 1500 m."), r(2, "With flight visibility decreased to 1500 m.")]
+        qs, stats = convert_rows(rows, spec, lex)
+        self.assertEqual(len(qs), 1)
+        self.assertTrue(qs[0]["a"][0]["en"].startswith("With"))
+        self.assertEqual(stats.exact_duplicates[0][3], 2)
+
+    def test_ids_do_not_depend_on_the_splitter(self):
+        spec = dict(SPEC_PL, bilingual=True)
+        rows = [HEADER,
+                row(1, "1", "PL010-0100", "Pytanie A? Question A?", "Dobra. Good.", "x. x.", "y. y.", "z. z."),
+                row(1, "2", "PL010-0100", "Pytanie B? Question B?", "Dobra. Good.", "x. x.", "y. y.", "z. z.")]
+        full = c.build_lexicon(str(LEGACY_DIR))
+        empty = c.Lexicon({}, {})
+        ids_a = sorted(q["id"] for q in convert_rows(rows, spec, full)[0])
+        ids_b = sorted(q["id"] for q in convert_rows(rows, spec, empty)[0])
+        self.assertEqual(ids_a, ids_b)
 
     def test_same_question_and_correct_answer_but_different_distractors(self):
         rows = [HEADER,
@@ -152,6 +209,10 @@ class SplitTest(unittest.TestCase):
         for ex in self.examples:
             pl, en, flag = c.split_cell(ex["mixed"], self.lex)
             self.assertEqual((pl, en, flag), (ex["pl"], ex["en"], "ok"), ex["mixed"])
+
+    def test_repeated_digits_cell_is_collapsed(self):
+        self.assertEqual(c.split_cell("225°; 225°;", self.lex), ("225°;", "225°;", "ok"))
+        self.assertEqual(c.split_cell("1000 m 1000 m", self.lex), ("1000 m", "1000 m", "ok"))
 
     def test_digits_only_cell_is_neutral(self):
         self.assertEqual(c.split_cell("1500", self.lex), ("1500", "1500", "neutral"))
@@ -189,6 +250,16 @@ class ValidateTest(unittest.TestCase):
         return {"id": number, "number": number, "topic": number.split("-")[0], "subject": subject,
                 "q": {"pl": "Q?", "en": None},
                 "a": [{"pl": f"a{i}", "en": None} for i in range(4)], "correct": 0}
+
+    def test_detects_entities_and_split_words(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            q = self.question("PL040-0003")
+            q["a"][0]["pl"] = "od s t r o m ego"
+            q["q"]["en"] = "Q &amp; A"
+            errors, _, _ = v.validate_bank(self.write([q], tmp))
+            self.assertTrue(any("inside a word" in e for e in errors))
+            self.assertTrue(any("HTML entity" in e for e in errors))
 
     def test_detects_violations(self):
         import tempfile
