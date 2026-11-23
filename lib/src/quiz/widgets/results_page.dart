@@ -79,7 +79,7 @@ class ResultsPage extends ConsumerWidget {
 }
 
 class AllQuestionsCompleteWidget extends StatelessWidget {
-  const AllQuestionsCompleteWidget({Key? key}) : super(key: key);
+  const AllQuestionsCompleteWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

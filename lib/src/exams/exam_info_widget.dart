@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pilotiq/src/models.dart';
 
 class ExamInfoWidget extends StatelessWidget {
-  const ExamInfoWidget({required this.quiz, Key? key}) : super(key: key);
+  const ExamInfoWidget({required this.quiz, super.key});
 
   final Quiz quiz;
 

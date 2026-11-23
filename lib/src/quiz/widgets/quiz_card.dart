@@ -5,7 +5,7 @@ import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/quiz/quiz.dart';
 
 class QuizCard extends ConsumerWidget {
-  const QuizCard({Key? key, required this.quiz}) : super(key: key);
+  const QuizCard({super.key, required this.quiz});
 
   final Quiz quiz;
 

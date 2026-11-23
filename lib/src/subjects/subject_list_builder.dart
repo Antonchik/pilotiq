@@ -8,12 +8,12 @@ import 'package:pilotiq/src/subjects/subject_item_widget.dart';
 
 class SubjectListBuilder extends ConsumerWidget {
   const SubjectListBuilder({
-    Key? key,
+    super.key,
     this.isHelicopter = false,
     this.isEnglish = false,
     this.isGlider = false,
     this.isBalloon = false,
-  }) : super(key: key);
+  });
 
   final bool isEnglish;
   final bool isHelicopter;

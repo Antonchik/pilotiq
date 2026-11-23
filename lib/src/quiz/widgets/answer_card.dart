@@ -8,8 +8,7 @@ import 'package:pilotiq/src/models.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 
 class AnswerCard extends ConsumerWidget {
-  const AnswerCard({Key? key, required this.option, required this.state})
-      : super(key: key);
+  const AnswerCard({super.key, required this.option, required this.state});
 
   final Answer option;
   final QuizState state;

@@ -3,10 +3,10 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class ResultScaleBar extends StatelessWidget {
   const ResultScaleBar({
-    Key? key,
+    super.key,
     required this.percent,
     this.header,
-  }) : super(key: key);
+  });
 
   final double percent;
   final String? header;

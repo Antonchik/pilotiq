@@ -4,9 +4,9 @@ import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 
 class ReviewAnswersPage extends StatelessWidget {
   const ReviewAnswersPage({
-    Key? key,
+    super.key,
     required this.quizState,
-  }) : super(key: key);
+  });
 
   final QuizState quizState;
 

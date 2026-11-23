@@ -4,7 +4,7 @@ import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:pilotiq/src/dark_theme/theme_mode_provider.dart';
 
 class ThemeModeButton extends ConsumerWidget {
-  const ThemeModeButton({Key? key}) : super(key: key);
+  const ThemeModeButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

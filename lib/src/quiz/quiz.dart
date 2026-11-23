@@ -139,8 +139,7 @@ class QuizScreen extends ConsumerWidget {
 
 class CloseTestButton extends StatelessWidget {
   const CloseTestButton(
-      {Key? key, required this.quizState, required this.timerController})
-      : super(key: key);
+      {super.key, required this.quizState, required this.timerController});
 
   final QuizState quizState;
   final CountDownTimerController timerController;
@@ -184,7 +183,7 @@ class CloseTestButton extends StatelessWidget {
 }
 
 class ExitTestButton extends StatelessWidget {
-  const ExitTestButton({Key? key, required this.quizState}) : super(key: key);
+  const ExitTestButton({super.key, required this.quizState});
 
   final QuizState quizState;
 
