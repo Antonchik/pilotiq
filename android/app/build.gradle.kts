@@ -47,15 +47,18 @@ android {
 
     buildTypes {
         release {
-            // Without key.properties (e.g. a fresh checkout) fall back to the debug key so
-            // `flutter run --release` works; such a build cannot be uploaded to Google Play.
-            signingConfig =
-                if (keystorePropertiesFile.exists()) {
-                    signingConfigs.getByName("release")
-                } else {
-                    signingConfigs.getByName("debug")
-                }
+            signingConfig = signingConfigs.getByName("release")
         }
+    }
+}
+
+// Debug builds work without keys; a release build must not silently fall back to another key.
+gradle.taskGraph.whenReady {
+    val releaseRequested = allTasks.any { it.name.contains("release", ignoreCase = true) }
+    if (releaseRequested && !keystorePropertiesFile.exists()) {
+        throw GradleException(
+            "android/key.properties not found - release build requires the upload keystore",
+        )
     }
 }
 
