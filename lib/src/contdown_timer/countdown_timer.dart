@@ -15,8 +15,11 @@ class CountDownTimer extends StatefulWidget {
   final int durationInMinutes;
   final CountDownTimerController? controller;
 
-  const CountDownTimer(
-      {super.key, required this.durationInMinutes, this.controller});
+  const CountDownTimer({
+    super.key,
+    required this.durationInMinutes,
+    this.controller,
+  });
 
   @override
   State<CountDownTimer> createState() => _CountDownTimerState();
@@ -45,14 +48,18 @@ class _CountDownTimerState extends State<CountDownTimer> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.alarm,
-              size: 16, color: Theme.of(context).colorScheme.inversePrimary),
+          Icon(
+            Icons.alarm,
+            size: 16,
+            color: Theme.of(context).colorScheme.inversePrimary,
+          ),
           const SizedBox(width: 3),
           Text(
             '${_durationInSeconds ~/ 60}:${(_durationInSeconds % 60).toString().padLeft(2, '0')}',
             style: TextStyle(
-                fontSize: 16.0,
-                color: Theme.of(context).colorScheme.inversePrimary),
+              fontSize: 16.0,
+              color: Theme.of(context).colorScheme.inversePrimary,
+            ),
           ),
         ],
       ),
@@ -72,25 +79,26 @@ class _CountDownTimerState extends State<CountDownTimer> {
           } else {
             _timer!.cancel();
             showDialog(
-                context: context,
-                barrierDismissible: false,
-                builder: (context) => AlertDialog(
-                      icon: const Icon(Icons.alarm),
-                      title: Text(local.timeIsUpTitle),
-                      content: Text(
-                        local.timeIsUpMessage,
-                        textAlign: TextAlign.center,
-                      ),
-                      actions: [
-                        TextButton(
-                          child: Text(local.okLabel),
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                            Navigator.of(context).pop();
-                          },
-                        )
-                      ],
-                    ));
+              context: context,
+              barrierDismissible: false,
+              builder: (context) => AlertDialog(
+                icon: const Icon(Icons.alarm),
+                title: Text(local.timeIsUpTitle),
+                content: Text(
+                  local.timeIsUpMessage,
+                  textAlign: TextAlign.center,
+                ),
+                actions: [
+                  TextButton(
+                    child: Text(local.okLabel),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ),
+            );
           }
         });
       }

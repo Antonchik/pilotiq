@@ -14,7 +14,11 @@ class AnswerCard extends ConsumerWidget {
   final QuizState state;
 
   void _bottomSheet(
-      BuildContext context, WidgetRef ref, Answer opt, QuizState state) {
+    BuildContext context,
+    WidgetRef ref,
+    Answer opt,
+    QuizState state,
+  ) {
     bool correct = opt.isCorrect;
 
     showModalBottomSheet(
@@ -37,7 +41,8 @@ class AnswerCard extends ConsumerWidget {
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    backgroundColor: correct ? Colors.green : Colors.red),
+                  backgroundColor: correct ? Colors.green : Colors.red,
+                ),
                 child: Text(
                   correct ? local.nextQuestion : local.tryAgain,
                   style: const TextStyle(
@@ -72,12 +77,14 @@ class AnswerCard extends ConsumerWidget {
       constraints: const BoxConstraints(minHeight: 60),
       margin: const EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-              color: rightSelected
-                  ? selectedColor
-                  : Theme.of(context).colorScheme.outlineVariant,
-              width: rightSelected ? 2 : 1)),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: rightSelected
+              ? selectedColor
+              : Theme.of(context).colorScheme.outlineVariant,
+          width: rightSelected ? 2 : 1,
+        ),
+      ),
       child: InkWell(
         onTap: () {
           state.selected = option;
@@ -105,10 +112,11 @@ class AnswerCard extends ConsumerWidget {
           child: Row(
             children: [
               Icon(
-                  state.selected == option
-                      ? Icons.check_circle
-                      : Icons.circle_outlined,
-                  size: 20),
+                state.selected == option
+                    ? Icons.check_circle
+                    : Icons.circle_outlined,
+                size: 20,
+              ),
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.only(left: 12),
@@ -117,7 +125,7 @@ class AnswerCard extends ConsumerWidget {
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

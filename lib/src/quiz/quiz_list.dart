@@ -39,8 +39,11 @@ class QuizList extends ConsumerWidget {
   }
 }
 
-List<Quiz> composeQuizes(Subject subject, bool isPremium,
-    {required AppLocalizations local}) {
+List<Quiz> composeQuizes(
+  Subject subject,
+  bool isPremium, {
+  required AppLocalizations local,
+}) {
   return [
     if (!isPremium)
       Quiz(

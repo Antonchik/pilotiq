@@ -12,11 +12,7 @@ import 'package:pilotiq/src/quiz/widgets/results_page.dart';
 import 'package:pilotiq/src/quiz/widgets/start_page.dart';
 
 class QuizScreen extends ConsumerWidget {
-  QuizScreen({
-    super.key,
-    required this.quizType,
-    required this.quiz,
-  });
+  QuizScreen({super.key, required this.quizType, required this.quiz});
 
   final QuizType quizType;
   final Quiz quiz;
@@ -48,41 +44,43 @@ class QuizScreen extends ConsumerWidget {
           children: [
             // AnimatedProgressbar(value: quizState.progress),
             Consumer(
-                builder: (BuildContext context, WidgetRef ref, Widget? child) {
-              final quizState = ref.watch(quizStateProvider);
-              final currentQuestion =
-                  !quizState.isExam && quizState.progress == 0
-                      ? box.get(
-                          quizState.subject,
-                          defaultValue: 0,
-                        )
-                      : (quizState.progress * questionQty).ceil();
-              return LinearPercentIndicator(
-                lineHeight: 5,
-                barRadius: const Radius.circular(10),
-                percent: currentQuestion / questionQty,
-                animation: true,
-                animationDuration: 750,
-                animateFromLastPercent: true,
-                backgroundColor: Theme.of(context).colorScheme.primary,
-                progressColor: Theme.of(context).colorScheme.onPrimary,
-                leading: SizedBox(
-                  width: 45,
-                  child: Text('$currentQuestion/$questionQty',
+              builder: (BuildContext context, WidgetRef ref, Widget? child) {
+                final quizState = ref.watch(quizStateProvider);
+                final currentQuestion =
+                    !quizState.isExam && quizState.progress == 0
+                    ? box.get(quizState.subject, defaultValue: 0)
+                    : (quizState.progress * questionQty).ceil();
+                return LinearPercentIndicator(
+                  lineHeight: 5,
+                  barRadius: const Radius.circular(10),
+                  percent: currentQuestion / questionQty,
+                  animation: true,
+                  animationDuration: 750,
+                  animateFromLastPercent: true,
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                  progressColor: Theme.of(context).colorScheme.onPrimary,
+                  leading: SizedBox(
+                    width: 45,
+                    child: Text(
+                      '$currentQuestion/$questionQty',
                       style: TextStyle(
-                          fontSize: 16.0,
-                          color: Theme.of(context).colorScheme.inversePrimary)),
-                ),
-                trailing: SizedBox(
-                  width: 65,
-                  child: quizType == QuizType.exam
-                      ? CountDownTimer(
-                          controller: timerController,
-                          durationInMinutes: quiz.time)
-                      : null,
-                ),
-              );
-            }),
+                        fontSize: 16.0,
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                      ),
+                    ),
+                  ),
+                  trailing: SizedBox(
+                    width: 65,
+                    child: quizType == QuizType.exam
+                        ? CountDownTimer(
+                            controller: timerController,
+                            durationInMinutes: quiz.time,
+                          )
+                        : null,
+                  ),
+                );
+              },
+            ),
           ],
         ),
         leading: Consumer(
@@ -91,7 +89,9 @@ class QuizScreen extends ConsumerWidget {
             if (quizState.progress == 1) return const SizedBox.shrink();
             return quizState.progress > 0
                 ? CloseTestButton(
-                    quizState: quizState, timerController: timerController)
+                    quizState: quizState,
+                    timerController: timerController,
+                  )
                 : ExitTestButton(quizState: quizState);
           },
         ),
@@ -114,19 +114,25 @@ class QuizScreen extends ConsumerWidget {
                     box.get(subjectPositiveKey, defaultValue: 0) as int;
                 box.put(subjectPositiveKey, positiveValue + 1);
                 return ResultsPage(
-                    message: local.congratsMessage, quizState: quizState);
+                  message: local.congratsMessage,
+                  quizState: quizState,
+                );
               } else {
                 final subjectNegativeKey = '${quizState.subject}_negative';
                 final negativeValue =
                     box.get(subjectNegativeKey, defaultValue: 0) as int;
                 box.put(subjectNegativeKey, negativeValue + 1);
                 return ResultsPage(
-                    message: local.failMessage, quizState: quizState);
+                  message: local.failMessage,
+                  quizState: quizState,
+                );
               }
             } else {
               box.put(quizState.subject, 0);
               return ResultsPage(
-                  message: local.congratsMessage, quizState: quizState);
+                message: local.congratsMessage,
+                quizState: quizState,
+              );
             }
           } else {
             return QuestionPage(question: quizState.questions[index - 1]);
@@ -138,8 +144,11 @@ class QuizScreen extends ConsumerWidget {
 }
 
 class CloseTestButton extends StatelessWidget {
-  const CloseTestButton(
-      {super.key, required this.quizState, required this.timerController});
+  const CloseTestButton({
+    super.key,
+    required this.quizState,
+    required this.timerController,
+  });
 
   final QuizState quizState;
   final CountDownTimerController timerController;
@@ -151,23 +160,24 @@ class CloseTestButton extends StatelessWidget {
       icon: const Icon(Icons.close),
       onPressed: () async {
         final proceed = await showDialog<bool>(
-            context: context,
-            barrierDismissible: false,
-            builder: (context) {
-              return AlertDialog(
-                title: Text(local.exitQuizTitle),
-                actions: [
-                  TextButton(
-                    onPressed: () => Navigator.pop(context, false),
-                    child: Text(local.no),
-                  ),
-                  TextButton(
-                    onPressed: () => Navigator.pop(context, true),
-                    child: Text(local.yes),
-                  ),
-                ],
-              );
-            });
+          context: context,
+          barrierDismissible: false,
+          builder: (context) {
+            return AlertDialog(
+              title: Text(local.exitQuizTitle),
+              actions: [
+                TextButton(
+                  onPressed: () => Navigator.pop(context, false),
+                  child: Text(local.no),
+                ),
+                TextButton(
+                  onPressed: () => Navigator.pop(context, true),
+                  child: Text(local.yes),
+                ),
+              ],
+            );
+          },
+        );
         if (proceed!) {
           quizState.reset();
           if (timerController.reset != null) {

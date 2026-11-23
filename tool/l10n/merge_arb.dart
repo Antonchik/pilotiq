@@ -31,12 +31,13 @@ MergeResult mergeArb(Directory root, {bool check = false}) {
   }
   var failed = false;
   for (final lang in _languages) {
-    final files = fragmentsDir
-        .listSync()
-        .whereType<File>()
-        .where((f) => f.path.endsWith('_$lang.arb'))
-        .toList()
-      ..sort((a, b) => a.path.compareTo(b.path));
+    final files =
+        fragmentsDir
+            .listSync()
+            .whereType<File>()
+            .where((f) => f.path.endsWith('_$lang.arb'))
+            .toList()
+          ..sort((a, b) => a.path.compareTo(b.path));
     final merged = <String, Object?>{};
     final origin = <String, String>{};
     for (final file in files) {
@@ -57,7 +58,8 @@ MergeResult mergeArb(Directory root, {bool check = false}) {
       for (final entry in decoded.entries) {
         if (merged.containsKey(entry.key)) {
           messages.add(
-              'Duplicate key "${entry.key}" in $name (already in ${origin[entry.key]})');
+            'Duplicate key "${entry.key}" in $name (already in ${origin[entry.key]})',
+          );
           failed = true;
           continue;
         }
@@ -65,14 +67,15 @@ MergeResult mergeArb(Directory root, {bool check = false}) {
         origin[entry.key] = name;
       }
     }
-    final content =
-        '${const JsonEncoder.withIndent('  ').convert(merged)}\n';
+    final content = '${const JsonEncoder.withIndent('  ').convert(merged)}\n';
     final target = File('${l10nDir.path}/app_$lang.arb');
     if (check) {
       final current = target.existsSync() ? target.readAsStringSync() : null;
       if (current != content) {
-        messages.add('${target.path} is out of date; '
-            'run: dart run tool/l10n/merge_arb.dart');
+        messages.add(
+          '${target.path} is out of date; '
+          'run: dart run tool/l10n/merge_arb.dart',
+        );
         failed = true;
       }
     } else if (!failed) {
@@ -96,6 +99,8 @@ void main(List<String> args) {
   for (final message in result.messages) {
     (result.exitCode == 0 ? stdout : stderr).writeln(message);
   }
-  if (check && result.exitCode == 0) stdout.writeln('ARB files are up to date.');
+  if (check && result.exitCode == 0) {
+    stdout.writeln('ARB files are up to date.');
+  }
   exitCode = result.exitCode;
 }

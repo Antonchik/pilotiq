@@ -15,12 +15,13 @@ final lightAppTheme = ThemeData(
     elevation: 5,
     centerTitle: true,
     iconTheme: IconThemeData(color: Colors.white),
-    titleTextStyle:
-        TextStyle(fontFamily: fontFamily, color: Colors.white, fontSize: 22),
+    titleTextStyle: TextStyle(
+      fontFamily: fontFamily,
+      color: Colors.white,
+      fontSize: 22,
+    ),
   ),
-  dialogTheme: const DialogThemeData(
-    surfaceTintColor: Colors.white,
-  ),
+  dialogTheme: const DialogThemeData(surfaceTintColor: Colors.white),
   cardTheme: const CardThemeData(
     surfaceTintColor: Colors.white,
     color: Colors.white,
@@ -37,7 +38,5 @@ final darkAppTheme = ThemeData(
     centerTitle: true,
     titleTextStyle: TextStyle(fontFamily: fontFamily, fontSize: 22),
   ),
-  cardTheme: const CardThemeData(
-    elevation: 5,
-  ),
+  cardTheme: const CardThemeData(elevation: 5),
 );

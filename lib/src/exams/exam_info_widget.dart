@@ -29,10 +29,7 @@ class ExamInfoWidget extends StatelessWidget {
             const Spacer(),
             const Icon(Icons.check_circle_outline),
             const SizedBox(width: 10),
-            Text(
-              '75%',
-              style: Theme.of(context).textTheme.bodyLarge,
-            ),
+            Text('75%', style: Theme.of(context).textTheme.bodyLarge),
           ],
         ),
       ],

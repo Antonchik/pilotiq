@@ -18,10 +18,8 @@ class StartPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var state = ref.watch(quizStateProvider);
     final local = AppLocalizations.of(context)!;
-    final firstQuestionIndex = Hive.box(ref.read(curExamNameProvider)).get(
-      quiz.subject,
-      defaultValue: 0,
-    );
+    final firstQuestionIndex = Hive.box(ref.read(curExamNameProvider))
+        .get(quiz.subject, defaultValue: 0);
     final isRestartable = !state.isExam && firstQuestionIndex > 0;
     return Container(
       padding: const EdgeInsets.all(20),
@@ -32,11 +30,12 @@ class StartPage extends ConsumerWidget {
           if (quiz.type == QuizType.exam) ExamInfoWidget(quiz: quiz),
           const Divider(),
           Expanded(
-              child: Text(
-            quiz.description,
-            style: Theme.of(context).textTheme.bodyLarge,
-            textAlign: TextAlign.justify,
-          )),
+            child: Text(
+              quiz.description,
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.justify,
+            ),
+          ),
           if (isRestartable)
             Text(
               local.restartMessage,
@@ -83,7 +82,7 @@ class StartPage extends ConsumerWidget {
                   },
                 ),
             ],
-          )
+          ),
         ],
       ),
     );

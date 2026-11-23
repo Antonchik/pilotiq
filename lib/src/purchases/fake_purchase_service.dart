@@ -4,11 +4,9 @@ import 'package:pilotiq/src/purchases/purchase_service.dart';
 
 /// In-memory [PurchaseService] for tests and for builds without billing.
 class FakePurchaseService implements PurchaseService {
-  FakePurchaseService({
-    bool premium = false,
-    List<PaywallPackage>? offering,
-  })  : _current = EntitlementState(isPremium: premium),
-        offering = offering ?? defaultOffering;
+  FakePurchaseService({bool premium = false, List<PaywallPackage>? offering})
+    : _current = EntitlementState(isPremium: premium),
+      offering = offering ?? defaultOffering;
 
   static const defaultOffering = [
     PaywallPackage(
@@ -21,11 +19,7 @@ class FakePurchaseService implements PurchaseService {
       kind: PackageKind.quarterly,
       priceString: '—',
     ),
-    PaywallPackage(
-      id: 'monthly',
-      kind: PackageKind.monthly,
-      priceString: '—',
-    ),
+    PaywallPackage(id: 'monthly', kind: PackageKind.monthly, priceString: '—'),
   ];
 
   final StreamController<EntitlementState> _controller =

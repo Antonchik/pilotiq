@@ -11,17 +11,11 @@ class BottomNavBar extends StatelessWidget {
     return BottomNavigationBar(
       items: [
         BottomNavigationBarItem(
-          icon: const Icon(
-            Icons.school,
-            size: 20,
-          ),
+          icon: const Icon(Icons.school, size: 20),
           label: local.examsTitle,
         ),
         BottomNavigationBarItem(
-          icon: const Icon(
-            Icons.star,
-            size: 20,
-          ),
+          icon: const Icon(Icons.star, size: 20),
           label: local.premiumLabel,
         ),
       ],

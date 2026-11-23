@@ -14,9 +14,7 @@ class ExamItem extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Card(
       key: Key('exam_${exam.type.name}'),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: InkWell(
         onTap: () async {
           final navigator = Navigator.of(context);

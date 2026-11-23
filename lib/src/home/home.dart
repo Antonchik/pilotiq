@@ -15,46 +15,27 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
     final exams = [
-      Exam(
-        type: ExamType.ppla,
-        title: local.pplaExamTitle,
-        img: 'ppla.png',
-      ),
+      Exam(type: ExamType.ppla, title: local.pplaExamTitle, img: 'ppla.png'),
       Exam(
         type: ExamType.pplaEng,
         title: local.pplaEngExamTitle,
         img: 'ppla-en.png',
       ),
-      Exam(
-        type: ExamType.pplh,
-        title: local.pplhExamTitle,
-        img: 'pplh.png',
-      ),
+      Exam(type: ExamType.pplh, title: local.pplhExamTitle, img: 'pplh.png'),
       Exam(
         type: ExamType.pplhEng,
         title: local.pplhEngExamTitle,
         img: 'pplh-en.png',
       ),
-      Exam(
-        type: ExamType.plg,
-        title: local.plgExamTitle,
-        img: 'plg.png',
-      ),
-      Exam(
-        type: ExamType.plfb,
-        title: local.plfbExamTitle,
-        img: 'plfb.png',
-      )
+      Exam(type: ExamType.plg, title: local.plgExamTitle, img: 'plg.png'),
+      Exam(type: ExamType.plfb, title: local.plfbExamTitle, img: 'plfb.png'),
     ];
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
-        actions: const [
-          ThemeModeButton(),
-          ApplicationVersionWidget(),
-        ],
+        actions: const [ThemeModeButton(), ApplicationVersionWidget()],
       ),
       body: isPortrait
           ? ListView.builder(
@@ -70,14 +51,17 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Flexible(
                     child: SizedBox(
-                        height: 90, child: ExamItem(exam: exams[index * 2])),
+                      height: 90,
+                      child: ExamItem(exam: exams[index * 2]),
+                    ),
                   ),
                   Flexible(
                     child: SizedBox(
-                        height: 90,
-                        child: index * 2 + 1 < exams.length
-                            ? ExamItem(exam: exams[index * 2 + 1])
-                            : const SizedBox.expand()),
+                      height: 90,
+                      child: index * 2 + 1 < exams.length
+                          ? ExamItem(exam: exams[index * 2 + 1])
+                          : const SizedBox.expand(),
+                    ),
                   ),
                 ],
               ),

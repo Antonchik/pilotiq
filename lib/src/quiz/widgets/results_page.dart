@@ -55,8 +55,9 @@ class ResultsPage extends ConsumerWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          ReviewAnswersPage(quizState: quizState)),
+                    builder: (context) =>
+                        ReviewAnswersPage(quizState: quizState),
+                  ),
                 );
               },
             ),
@@ -86,16 +87,8 @@ class AllQuestionsCompleteWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: const [
-        Center(
-          child: Icon(
-            Icons.check_circle,
-            size: 100,
-            color: Colors.green,
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
+        Center(child: Icon(Icons.check_circle, size: 100, color: Colors.green)),
+        SizedBox(height: 20),
       ],
     );
   }

@@ -18,12 +18,12 @@ class QuestionPage extends ConsumerWidget {
         Container(
           padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
-            child: Text(question.question.split('\n').last,
-                textAlign: TextAlign.justify,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyLarge!
-                    .copyWith(fontWeight: FontWeight.bold)),
+            child: Text(
+              question.question.split('\n').last,
+              textAlign: TextAlign.justify,
+              style: Theme.of(context).textTheme.bodyLarge!
+                  .copyWith(fontWeight: FontWeight.bold),
+            ),
           ),
         ),
         Expanded(
@@ -37,7 +37,7 @@ class QuestionPage extends ConsumerWidget {
               },
             ),
           ),
-        )
+        ),
       ],
     );
   }

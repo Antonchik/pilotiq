@@ -23,7 +23,9 @@ class SubjectListBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
-    final future = ref.read(questionRepositoryProvider).getPPLQuestions(
+    final future = ref
+        .read(questionRepositoryProvider)
+        .getPPLQuestions(
           isHelicopter: isHelicopter,
           isEnglish: isEnglish,
           isGlider: isGlider,
@@ -31,52 +33,59 @@ class SubjectListBuilder extends ConsumerWidget {
         );
     return FutureBuilder(
       future: future,
-      builder: (BuildContext context,
-          AsyncSnapshot<Map<String, List<Question>>> snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          final questions = snapshot.data!;
-          final subjects = [
-            for (final id in SubjectId.values)
-              if (questions[_repoKeys[id]]?.isNotEmpty ?? false)
-                _buildSubject(id, local, questions[_repoKeys[id]]!),
-          ];
-          final isPortrait =
-              MediaQuery.of(context).orientation == Orientation.portrait;
-          return isPortrait
-              ? ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: subjects.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return SizedBox(
-                      height: 90,
-                      child: SubjectItem(subject: subjects[index]),
+      builder:
+          (
+            BuildContext context,
+            AsyncSnapshot<Map<String, List<Question>>> snapshot,
+          ) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              final questions = snapshot.data!;
+              final subjects = [
+                for (final id in SubjectId.values)
+                  if (questions[_repoKeys[id]]?.isNotEmpty ?? false)
+                    _buildSubject(id, local, questions[_repoKeys[id]]!),
+              ];
+              final isPortrait =
+                  MediaQuery.of(context).orientation == Orientation.portrait;
+              return isPortrait
+                  ? ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: subjects.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return SizedBox(
+                          height: 90,
+                          child: SubjectItem(subject: subjects[index]),
+                        );
+                      },
+                    )
+                  : ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: (subjects.length * 0.5).ceil(),
+                      itemBuilder: (context, index) => Row(
+                        children: [
+                          Flexible(
+                            child: SizedBox(
+                              height: 90,
+                              child: SubjectItem(subject: subjects[index * 2]),
+                            ),
+                          ),
+                          Flexible(
+                            child: SizedBox(
+                              height: 90,
+                              child: index * 2 + 1 < subjects.length
+                                  ? SubjectItem(
+                                      subject: subjects[index * 2 + 1],
+                                    )
+                                  : const SizedBox.expand(),
+                            ),
+                          ),
+                        ],
+                      ),
                     );
-                  },
-                )
-              : ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: (subjects.length * 0.5).ceil(),
-                  itemBuilder: (context, index) => Row(
-                    children: [
-                      Flexible(
-                        child: SizedBox(
-                            height: 90,
-                            child: SubjectItem(subject: subjects[index * 2])),
-                      ),
-                      Flexible(
-                        child: SizedBox(
-                            height: 90,
-                            child: index * 2 + 1 < subjects.length
-                                ? SubjectItem(subject: subjects[index * 2 + 1])
-                                : const SizedBox.expand()),
-                      ),
-                    ],
-                  ),
-                );
-        } else {
-          return const Center(child: CircularProgressIndicator());
-        }
-      },
+            } else {
+              return const Center(child: CircularProgressIndicator());
+            }
+          },
     );
   }
 }
@@ -102,37 +111,37 @@ Subject _buildSubject(
   final (title, description) = switch (id) {
     SubjectId.airLaw => (local.airLawSubjectTitle, local.airLawSubjectTooltip),
     SubjectId.communications => (
-        local.communicationsSubjectTitle,
-        local.communicationsSubjectTooltip
-      ),
+      local.communicationsSubjectTitle,
+      local.communicationsSubjectTooltip,
+    ),
     SubjectId.meteorology => (
-        local.meteorologySubjectTitle,
-        local.meteorologySubjectTooltip
-      ),
+      local.meteorologySubjectTitle,
+      local.meteorologySubjectTooltip,
+    ),
     SubjectId.navigation => (
-        local.navigationSubjectTitle,
-        local.navigationSubjectTooltip
-      ),
+      local.navigationSubjectTitle,
+      local.navigationSubjectTooltip,
+    ),
     SubjectId.performanceAndPlanning => (
-        local.performanceSubjectTitle,
-        local.performanceSubjectTooltip
-      ),
+      local.performanceSubjectTitle,
+      local.performanceSubjectTooltip,
+    ),
     SubjectId.aircraftGeneralKnowledge => (
-        local.generalKnowledgeSubjectTitle,
-        local.generalKnowledgeSubjectTooltip
-      ),
+      local.generalKnowledgeSubjectTitle,
+      local.generalKnowledgeSubjectTooltip,
+    ),
     SubjectId.humanPerformance => (
-        local.humanPerformanceSubjectTitle,
-        local.humanPerformanceSubjectTooltip
-      ),
+      local.humanPerformanceSubjectTitle,
+      local.humanPerformanceSubjectTooltip,
+    ),
     SubjectId.principlesOfFlight => (
-        local.principlesOfFlightSubjectTitle,
-        local.principlesOfFlightSubjectTooltip
-      ),
+      local.principlesOfFlightSubjectTitle,
+      local.principlesOfFlightSubjectTooltip,
+    ),
     SubjectId.operationalProcedures => (
-        local.operationalProcedureSubjectTitle,
-        local.operationalProcedureSubjectTooltip
-      ),
+      local.operationalProcedureSubjectTitle,
+      local.operationalProcedureSubjectTooltip,
+    ),
   };
   final spec = ExamSpec.forSubject(id);
   return Subject(

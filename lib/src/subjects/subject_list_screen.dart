@@ -21,30 +21,19 @@ class SubjectListScreen extends ConsumerWidget {
         body = const SubjectListBuilder();
         break;
       case ExamType.pplaEng:
-        body = const SubjectListBuilder(
-          isEnglish: true,
-        );
+        body = const SubjectListBuilder(isEnglish: true);
         break;
       case ExamType.pplh:
-        body = const SubjectListBuilder(
-          isHelicopter: true,
-        );
+        body = const SubjectListBuilder(isHelicopter: true);
         break;
       case ExamType.pplhEng:
-        body = const SubjectListBuilder(
-          isHelicopter: true,
-          isEnglish: true,
-        );
+        body = const SubjectListBuilder(isHelicopter: true, isEnglish: true);
         break;
       case ExamType.plg:
-        body = const SubjectListBuilder(
-          isGlider: true,
-        );
+        body = const SubjectListBuilder(isGlider: true);
         break;
       case ExamType.plfb:
-        body = const SubjectListBuilder(
-          isBalloon: true,
-        );
+        body = const SubjectListBuilder(isBalloon: true);
         break;
     }
     final isPortrait =
@@ -68,18 +57,9 @@ class SubjectListScreen extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(local.subjectsTitle),
-        actions: const [
-          ThemeModeButton(),
-          ApplicationVersionWidget(),
-        ],
+        actions: const [ThemeModeButton(), ApplicationVersionWidget()],
       ),
-      body: isPortrait
-          ? Column(
-              children: children,
-            )
-          : Row(
-              children: children,
-            ),
+      body: isPortrait ? Column(children: children) : Row(children: children),
       // bottomNavigationBar: const BottomNavBar(),
     );
   }

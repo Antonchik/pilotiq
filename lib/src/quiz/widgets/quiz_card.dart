@@ -20,20 +20,15 @@ class QuizCard extends ConsumerWidget {
         enabled: unlocked,
         trailing: unlocked ? null : const Icon(Icons.lock_outline),
         title: Text(quiz.title),
-        subtitle: Text(
-          quiz.description,
-          textAlign: TextAlign.justify,
-        ),
+        subtitle: Text(quiz.description, textAlign: TextAlign.justify),
         onTap: () {
           if (quiz.type == QuizType.exam) {
             quiz.questions.shuffle();
           }
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (BuildContext context) => QuizScreen(
-                quizType: quiz.type,
-                quiz: quiz,
-              ),
+              builder: (BuildContext context) =>
+                  QuizScreen(quizType: quiz.type, quiz: quiz),
             ),
           );
         },

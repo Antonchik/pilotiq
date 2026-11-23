@@ -14,17 +14,18 @@ enum PaywallTrigger {
 
 /// Function that actually shows the paywall; overridden in tests.
 typedef PaywallOpener = Future<void> Function(
-    BuildContext context, PaywallTrigger trigger);
+  BuildContext context,
+  PaywallTrigger trigger,
+);
 
 const _termsUrl = 'https://antonchik.github.io/pilotiq_tos/';
 const _privacyUrl =
     'https://www.termsfeed.com/live/da031152-c5f9-4dd0-a4e6-42d78de414ae';
 
 final paywallOpenerProvider = Provider<PaywallOpener>(
-  (ref) => (context, trigger) => Navigator.of(context).push<void>(
-        MaterialPageRoute(
-          builder: (_) => PaywallStubScreen(trigger: trigger),
-        ),
+  (ref) =>
+      (context, trigger) => Navigator.of(context).push<void>(
+        MaterialPageRoute(builder: (_) => PaywallStubScreen(trigger: trigger)),
       ),
 );
 

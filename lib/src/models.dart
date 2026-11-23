@@ -45,14 +45,15 @@ class Quiz {
   int length;
   List<Question> questions;
 
-  Quiz(
-      {this.title = '',
-      this.description = '',
-      this.type = QuizType.demo,
-      this.subject = '',
-      this.time = 30,
-      this.length = 12,
-      this.questions = const []});
+  Quiz({
+    this.title = '',
+    this.description = '',
+    this.type = QuizType.demo,
+    this.subject = '',
+    this.time = 30,
+    this.length = 12,
+    this.questions = const [],
+  });
 }
 
 class Question {
@@ -61,11 +62,12 @@ class Question {
   String question;
   List<Answer> answers;
 
-  Question(
-      {this.answers = const [],
-      this.question = '',
-      this.number = '',
-      this.seq = ''});
+  Question({
+    this.answers = const [],
+    this.question = '',
+    this.number = '',
+    this.seq = '',
+  });
 
   factory Question.fromJson(Map<String, dynamic> json) {
     List<Answer> answers = [];

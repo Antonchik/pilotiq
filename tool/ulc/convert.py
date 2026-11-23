@@ -301,6 +301,8 @@ class Lexicon:
         k = token_key(tok)
         if not k:
             return 0.0
+        if len(k) <= 1:
+            return 3.0 if k in _PL_CHARS else 0.0
         s = self.scores.get(k)
         if s is None:
             s = 0.0
@@ -376,17 +378,23 @@ def build_lexicon(legacy_dir, exclude=None):
 
 
 # Parameters of the splitter (tuned on a hold-out of the legacy data, see --eval-split).
-BOUNDARY_BONUS = 2.5  # previous token ends a sentence
-LOWER_PENALTY = 2.0  # English part would start with a lowercase letter
+PARAMS = {
+    "sent_end": 4.0,  # the Polish part ends with . ? ! : ; or a closing bracket/quote
+    "punct_match": 3.0,  # both parts end with the same punctuation mark
+    "lower_start": 2.5,  # English part would start with a lowercase letter
+    "ratio": 3.0,  # penalty per unit of |ln(len_en / len_pl)| beyond RATIO_FREE
+}
+RATIO_FREE = 0.7
 
 
-def split_pl_en(text, lex):
+def split_pl_en(text, lex, params=None):
     """Split a mixed 'PL text EN text' cell.
 
     Returns (pl, en, margin). en is None when no English part was found. margin is the score
     advantage of the chosen split over the best split in which the boundary is moved by 2+ words
     (a small margin = ambiguous).
     """
+    P = params or PARAMS
     toks = text.split(" ")
     n = len(toks)
     if n < 2:
@@ -395,15 +403,26 @@ def split_pl_en(text, lex):
     pre = [0.0]
     for v in s:
         pre.append(pre[-1] + v)
+    clen = [0]
+    for t in toks:
+        clen.append(clen[-1] + len(t) + 1)
+    total = clen[n]
     vals = []
     for k in range(1, n + 1):  # k = number of Polish tokens
         v = pre[k] - (pre[n] - pre[k])
         if k < n:
             if _SENT_END.search(toks[k - 1]):
-                v += BOUNDARY_BONUS
+                v += P["sent_end"]
             first = toks[k][:1]
             if first.isalpha() and first.islower():
-                v -= LOWER_PENALTY
+                v -= P["lower_start"]
+            end_pl, end_en = toks[k - 1][-1:], toks[n - 1][-1:]
+            if end_pl == end_en and not end_pl.isalnum():
+                v += P["punct_match"]
+            lp, le = clen[k], total - clen[k]
+            dev = abs(math.log(le / lp)) - RATIO_FREE
+            if dev > 0:
+                v -= P["ratio"] * dev
         vals.append(v)
     best = max(range(n), key=lambda i: (vals[i], -i))
     others = [vals[i] for i in range(n) if abs(i - best) >= 2]
@@ -421,11 +440,11 @@ def has_letters(text):
 MIN_MARGIN = 2.0  # below this the split is considered unreliable
 
 
-def split_cell(text, lex):
+def split_cell(text, lex, params=None):
     """-> (pl, en, flag); flag in {"ok", "neutral", "no-en", "ambiguous"}."""
     if not has_letters(text):
         return text, text, "neutral"
-    pl, en, margin = split_pl_en(text, lex)
+    pl, en, margin = split_pl_en(text, lex, params)
     if en is None:
         return text, None, "no-en"
     if margin < MIN_MARGIN:

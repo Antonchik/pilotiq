@@ -25,24 +25,24 @@ class SubjectScreen extends StatelessWidget {
       ),
     );
     return Scaffold(
-        appBar: AppBar(
-          title: Text(subject.title),
-          actions: const [
-            ThemeModeButton(),
-            ApplicationVersionWidget(),
-          ],
-        ),
-        body: isPortrait
-            ? ListView(children: [
+      appBar: AppBar(
+        title: Text(subject.title),
+        actions: const [ThemeModeButton(), ApplicationVersionWidget()],
+      ),
+      body: isPortrait
+          ? ListView(
+              children: [
                 imageBlock,
                 QuizList(subject: subject),
-              ])
-            : Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  imageBlock,
-                  Expanded(child: QuizList(subject: subject)),
-                ],
-              ));
+              ],
+            )
+          : Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                imageBlock,
+                Expanded(child: QuizList(subject: subject)),
+              ],
+            ),
+    );
   }
 }
