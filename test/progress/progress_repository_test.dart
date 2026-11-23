@@ -342,6 +342,7 @@ void main() {
   });
 
   test('damaged config is backed up byte-for-byte before recovery', () async {
+    ProgressRepository.clearRecoveryEvents();
     await Hive.close();
     final file = File('${dir.path}/config.hive');
     await File('test/fixtures/legacy_hive/config.hive').copy(file.path);
@@ -351,17 +352,96 @@ void main() {
 
     final settings = await ProgressRepository().loadSettings();
     expect(settings.schemaVersion, 0); // recovered, usable
-    final backup = File('${file.path}.bak-2');
-    expect(backup.existsSync(), isTrue);
+    final backup = File('${file.path}.bak-1');
     expect(backup.readAsBytesSync(), damaged);
-
-    // the backup is made once: a later damage does not overwrite it
-    await Hive.close();
-    file.writeAsBytesSync([1, 2, 3]);
-    Hive.init(dir.path);
-    await ProgressRepository().loadSettings();
-    expect(backup.readAsBytesSync(), damaged);
+    final events = ProgressRepository.recoveryEvents;
+    expect(events.single.box, 'config');
+    expect(events.single.reset, isFalse);
+    expect(events.single.backupPath, backup.path);
   });
+
+  test(
+    'config with a damaged first frame is reset, copy kept, app starts',
+    () async {
+      ProgressRepository.clearRecoveryEvents();
+      await Hive.close();
+      final file = File('${dir.path}/config.hive');
+      // one flipped byte inside the only frame: Hive cannot open it even with
+      // crash recovery
+      final garbage = File('test/fixtures/legacy_hive/config.hive')
+          .readAsBytesSync();
+      garbage[8] ^= 0xff;
+      file.writeAsBytesSync(garbage);
+      Hive.init(dir.path);
+
+      final repo = ProgressRepository();
+      final settings = await repo.loadSettings();
+      expect(settings, const UserSettings());
+      expect(File('${file.path}.bak-1').readAsBytesSync(), garbage);
+      final events = ProgressRepository.recoveryEvents;
+      expect(events.single.box, 'config');
+      expect(events.single.reset, isTrue);
+
+      // the app keeps working, and the next start is clean
+      await repo.saveSettings(settings.copyWith(dailyGoal: 30));
+      await Hive.close();
+      Hive.init(dir.path);
+      ProgressRepository.clearRecoveryEvents();
+      expect((await ProgressRepository().loadSettings()).dailyGoal, 30);
+      expect(ProgressRepository.recoveryEvents, isEmpty);
+    },
+  );
+
+  test(
+    'every recovery makes a new copy; only the last three are kept',
+    () async {
+      ProgressRepository.clearRecoveryEvents();
+      await ProgressRepository().recordAnswer(Licence.ppla, 'q', true, now);
+      final file = File('${dir.path}/progress_ppla.hive');
+      for (var i = 1; i <= 4; i++) {
+        await Hive.close();
+        final bytes = [...file.readAsBytesSync(), i, i, i];
+        file.writeAsBytesSync(bytes);
+        Hive.init(dir.path);
+        final repo = ProgressRepository();
+        expect(await repo.progressOf(Licence.ppla, 'q'), isNotNull);
+        expect(File('${file.path}.bak-$i').readAsBytesSync(), bytes);
+      }
+      final copies =
+          dir
+              .listSync()
+              .map((f) => f.uri.pathSegments.last)
+              .where((n) => n.startsWith('progress_ppla.hive.bak-'))
+              .toList()
+            ..sort();
+      expect(copies, [
+        'progress_ppla.hive.bak-2',
+        'progress_ppla.hive.bak-3',
+        'progress_ppla.hive.bak-4',
+      ]);
+      final events = ProgressRepository.recoveryEvents;
+      expect(events, hasLength(4));
+      expect(events.every((e) => e.box == 'progress_ppla' && !e.reset), isTrue);
+    },
+  );
+
+  test(
+    'default theme is not stored by saveSettings, an explicit one is',
+    () async {
+      final repo = ProgressRepository();
+      final base = await repo.loadSettings();
+      await repo.saveSettings(base.copyWith(onboardingDone: true));
+      expect(
+        (await Hive.openBox<dynamic>('config')).containsKey('themeMode'),
+        isFalse,
+      );
+      await repo.saveSettings(base.copyWith(themeMode: AppThemeMode.dark));
+      expect((await repo.loadSettings()).themeMode, AppThemeMode.dark);
+      // going back to the default after an explicit choice is stored
+      await repo.saveSettings(base.copyWith(themeMode: AppThemeMode.system));
+      expect((await repo.loadSettings()).themeMode, AppThemeMode.system);
+    },
+  );
 }
 
 /// Box wrapper that fails selected write calls (1-based, puts and deletes).

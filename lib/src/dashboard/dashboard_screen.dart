@@ -29,7 +29,7 @@ class DashboardScreen extends ConsumerWidget {
       body: data.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (error, _) => Center(
-          child: Padding(
+          child: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -497,17 +497,26 @@ class _LastExamCard extends StatelessWidget {
       final percent = last.total == 0 ? 0 : _percent(last.correct / last.total);
       final date = MaterialLocalizations.of(context)
           .formatMediumDate(last.finishedAt.toLocal());
-      body = ListTile(
-        contentPadding: EdgeInsets.zero,
-        title: Text(subjectTitle(local, last.subject)),
-        subtitle: Text(local.dashboardAttemptResult(percent, date)),
-        trailing: Chip(
-          label: Text(
-            last.passed ? local.dashboardPassed : local.dashboardFailed,
-          ),
-          backgroundColor: last.passed
-              ? Colors.green.withValues(alpha: 0.2)
-              : Colors.red.withValues(alpha: 0.2),
+      body = Padding(
+        padding: const EdgeInsets.symmetric(vertical: 4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              subjectTitle(local, last.subject),
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            Text(local.dashboardAttemptResult(percent, date)),
+            const SizedBox(height: 4),
+            Chip(
+              label: Text(
+                last.passed ? local.dashboardPassed : local.dashboardFailed,
+              ),
+              backgroundColor: last.passed
+                  ? Colors.green.withValues(alpha: 0.2)
+                  : Colors.red.withValues(alpha: 0.2),
+            ),
+          ],
         ),
       );
     } else {

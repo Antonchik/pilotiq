@@ -66,7 +66,15 @@ class PilotiqRoot extends StatefulWidget {
 }
 
 class _PilotiqRootState extends State<PilotiqRoot> {
-  late Future<ProviderContainer> _start = widget.initialize();
+  late Future<ProviderContainer> _start = _begin();
+
+  /// Starts the initialisation. A failure (also a synchronous one) is
+  /// reported by the screen, never as an unhandled error.
+  Future<ProviderContainer> _begin() {
+    final start = Future<ProviderContainer>.sync(widget.initialize);
+    start.ignore();
+    return start;
+  }
 
   @override
   void dispose() {
@@ -77,7 +85,7 @@ class _PilotiqRootState extends State<PilotiqRoot> {
 
   void _retry() {
     setState(() {
-      _start = widget.initialize();
+      _start = _begin();
     });
   }
 
@@ -119,7 +127,7 @@ class _StartupErrorScreen extends StatelessWidget {
     final local = AppLocalizations.of(context)!;
     return Scaffold(
       body: Center(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisSize: MainAxisSize.min,

@@ -216,4 +216,41 @@ void main() {
       expect(settings.schemaVersion, 2);
     },
   );
+
+  test('failed migration, onboarding without touching the theme, then '
+      'success: legacy dark is carried over', () async {
+    final failing = LegacyMigration(
+      repository: repo,
+      boxExists: (_) async => true,
+      openBox: (name) async {
+        if (name == 'ppla') throw StateError('boom');
+        return Hive.openBox<dynamic>(name);
+      },
+    );
+    expect(await failing.run(), MigrationOutcome.failed);
+    final s = await repo.loadSettings();
+    await repo.saveSettings(s.copyWith(onboardingDone: true, dailyGoal: 40));
+    expect(await migration.run(), MigrationOutcome.migrated);
+    final after = await repo.loadSettings();
+    expect(after.themeMode, AppThemeMode.dark);
+    expect(after.onboardingDone, isTrue);
+    expect(after.dailyGoal, 40);
+  });
+
+  test('failed migration, user explicitly picks light, then success: light '
+      'stays', () async {
+    final failing = LegacyMigration(
+      repository: repo,
+      boxExists: (_) async => true,
+      openBox: (name) async {
+        if (name == 'ppla') throw StateError('boom');
+        return Hive.openBox<dynamic>(name);
+      },
+    );
+    expect(await failing.run(), MigrationOutcome.failed);
+    final s = await repo.loadSettings();
+    await repo.saveSettings(s.copyWith(themeMode: AppThemeMode.light));
+    expect(await migration.run(), MigrationOutcome.migrated);
+    expect((await repo.loadSettings()).themeMode, AppThemeMode.light);
+  });
 }

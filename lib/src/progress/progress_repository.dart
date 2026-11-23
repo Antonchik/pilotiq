@@ -70,32 +70,80 @@ class ProgressRepository {
     return opening;
   }
 
+  static final List<RecoveryEvent> _recoveryEvents = [];
+
+  /// Boxes of this repository that had to be recovered in this process (since
+  /// start or the last [clearRecoveryEvents]). Non-empty means data may have
+  /// been lost; the UI decides how to tell the user.
+  static List<RecoveryEvent> get recoveryEvents =>
+      List.unmodifiable(_recoveryEvents);
+
+  static void clearRecoveryEvents() => _recoveryEvents.clear();
+
+  /// How many backup copies of a damaged box file are kept.
+  static const int keptBackups = 3;
+
   /// Default opener: first without crash recovery. If the file is damaged, a
-  /// copy `<file>.bak-<schema>` is saved once before Hive is allowed to
-  /// truncate it during recovery.
+  /// numbered copy `<file>.bak-<n>` is saved (the last [keptBackups] are kept)
+  /// before Hive may truncate the file during recovery. If the box cannot be
+  /// opened even with recovery (first frame damaged) and a copy exists, the
+  /// file is deleted and an empty box is opened so the app can start. Every
+  /// such case is added to [recoveryEvents].
   static Future<Box<dynamic>> _openWithBackup(String name) async {
     try {
       return await Hive.openBox<dynamic>(name, crashRecovery: false);
     } on Object {
-      await _backupDamagedFile(name);
-      return Hive.openBox<dynamic>(name);
+      final backup = await _backupDamagedFile(name);
+      try {
+        final box = await Hive.openBox<dynamic>(name);
+        _recoveryEvents.add(RecoveryEvent(name, backup, reset: false));
+        return box;
+      } on Object {
+        if (backup == null) rethrow;
+        await Hive.deleteBoxFromDisk(name);
+        final box = await Hive.openBox<dynamic>(name);
+        _recoveryEvents.add(RecoveryEvent(name, backup, reset: true));
+        return box;
+      }
     }
   }
 
-  static Future<void> _backupDamagedFile(String name) async {
+  /// Copies the damaged file to the next free `.bak-<n>`; returns its path, or
+  /// null if no copy could be made.
+  static Future<String?> _backupDamagedFile(String name) async {
     try {
       // `homePath` is not on the public interface; the implementation has it.
       final home = (Hive as dynamic).homePath as String?;
-      if (home == null) return;
+      if (home == null) return null;
       final file = File('$home/${name.toLowerCase()}.hive');
-      final backup = File(
-        '${file.path}.bak-${UserSettings.currentSchemaVersion}',
-      );
-      if (file.existsSync() && !backup.existsSync()) {
-        await file.copy(backup.path);
+      if (!file.existsSync()) return null;
+      final prefix = '${file.uri.pathSegments.last}.bak-';
+      final numbers = <int, File>{};
+      for (final f in Directory(home).listSync().whereType<File>()) {
+        final base = f.uri.pathSegments.last;
+        if (!base.startsWith(prefix)) continue;
+        final n = int.tryParse(base.substring(prefix.length));
+        if (n != null) numbers[n] = f;
       }
+      final next = numbers.isEmpty
+          ? 1
+          : numbers.keys.reduce((a, b) => a > b ? a : b) + 1;
+      final backup = File('${file.path}.bak-$next');
+      await file.copy(backup.path);
+      numbers[next] = backup;
+      final old = numbers.keys.toList()..sort();
+      final surplus = old.length - keptBackups;
+      for (final n in surplus > 0 ? old.take(surplus) : const <int>[]) {
+        try {
+          await numbers[n]!.delete();
+        } on Object {
+          // best effort
+        }
+      }
+      return backup.path;
     } on Object {
       // A failed backup must not prevent the app from starting.
+      return null;
     }
   }
 
@@ -128,7 +176,15 @@ class ProgressRepository {
   /// [completeMigration] does), so a stale object cannot roll it back.
   Future<void> saveSettings(UserSettings settings) => _locked(() async {
     final map = settings.toMap()..remove('schemaVersion');
-    await (await _box(configBox)).putAll(map);
+    final box = await _box(configBox);
+    // The default theme is not stored until the user (or the migration) has
+    // chosen one: otherwise it would hide the 1.2.0 `dark` flag from a
+    // migration that runs later.
+    if (settings.themeMode == AppThemeMode.system &&
+        !box.containsKey('themeMode')) {
+      map.remove('themeMode');
+    }
+    await box.putAll(map);
   });
 
   /// Called by the legacy migration at its end: stores the migrated theme and
@@ -379,6 +435,24 @@ class ProgressRepository {
       return null;
     }
   }
+}
+
+/// A box that was opened by recovering a damaged file.
+class RecoveryEvent {
+  const RecoveryEvent(this.box, this.backupPath, {required this.reset});
+
+  /// Box name, e.g. `config`, `progress_ppla`, `attempts`.
+  final String box;
+
+  /// Copy of the damaged file made before recovery; null if it failed.
+  final String? backupPath;
+
+  /// true: nothing could be read and the box was reset to empty; false: the
+  /// file was truncated at the damaged place and the rest kept.
+  final bool reset;
+
+  @override
+  String toString() => 'RecoveryEvent($box, reset: $reset, $backupPath)';
 }
 
 class _WriteQueue {

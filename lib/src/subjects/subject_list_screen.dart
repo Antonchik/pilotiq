@@ -33,34 +33,37 @@ class SubjectListScreen extends ConsumerWidget {
         ),
       ),
     );
-    final content = Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          QuestionLanguageSelector(licence: licence),
-          Expanded(child: SubjectListBuilder(licence: licence)),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-            child: Text(
-              local.bankSourceNote(
-                bankSourceName,
-                formatBankDate(bankDatabaseDate),
-              ),
-              style: Theme.of(context).textTheme.bodySmall,
-              textAlign: TextAlign.center,
-            ),
+    final items = <Widget>[
+      QuestionLanguageSelector(licence: licence),
+      SubjectListBuilder(licence: licence),
+      Padding(
+        padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+        child: Text(
+          local.bankSourceNote(
+            bankSourceName,
+            formatBankDate(bankDatabaseDate),
           ),
-        ],
+          style: Theme.of(context).textTheme.bodySmall,
+          textAlign: TextAlign.center,
+        ),
       ),
-    );
+    ];
     return Scaffold(
       appBar: AppBar(
         title: Text('${licence.title(local)} · ${local.subjectsTitle}'),
         actions: const [ThemeModeButton(), ApplicationVersionWidget()],
       ),
+      // One scrolling list: the cover, the language switch, the subjects and
+      // the source note scroll together, so nothing is cut off on a small
+      // screen or with a large font.
       body: isPortrait
-          ? Column(children: [cover, content])
-          : Row(children: [cover, content]),
+          ? ListView(children: [cover, ...items])
+          : Row(
+              children: [
+                cover,
+                Expanded(child: ListView(children: items)),
+              ],
+            ),
     );
   }
 }
