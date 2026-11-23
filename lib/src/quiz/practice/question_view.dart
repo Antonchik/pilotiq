@@ -81,7 +81,7 @@ class QuestionView extends StatelessWidget {
                     : local.practiceFeedbackWrong,
                 key: const Key('practice_feedback'),
                 style: theme.textTheme.titleMedium?.copyWith(
-                  color: correct ? Colors.green.shade700 : Colors.red.shade700,
+                  color: feedbackColor(context, correct: correct),
                   fontWeight: FontWeight.bold,
                 ),
               ),

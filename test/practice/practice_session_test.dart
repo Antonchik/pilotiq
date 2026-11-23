@@ -1,12 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:pilotiq/src/bank/question_bank_repository.dart';
 import 'package:pilotiq/src/bank/models.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/progress/question_progress.dart';
 import 'package:pilotiq/src/quiz/practice/practice_session.dart';
 
-Question q(String id) => Question(
+Question q(String id, [String? number]) => Question(
   id: id,
-  number: id,
+  number: number ?? id,
   topic: id.substring(0, 5),
   subject: SubjectId.airLaw,
   text: LocalizedText(pl: id),
@@ -176,4 +179,92 @@ void main() {
     expect(stats.accuracy, 0);
     expect(stats.hasAnswers, isFalse);
   });
+
+  test('variants of one NUMER are not asked one after another', () {
+    final withVariants = [
+      q('PL010-0001~a', 'PL010-0001'),
+      q('PL010-0001~b', 'PL010-0001'),
+      q('PL010-0001~c', 'PL010-0001'),
+      q('PL010-0002'),
+      q('PL010-0003~a', 'PL010-0003'),
+      q('PL010-0003~b', 'PL010-0003'),
+      q('PL010-0004'),
+    ];
+    final queue = buildPracticeQueue(
+      mode: PracticeMode.learn,
+      questions: withVariants,
+      progress: const {},
+      now: now,
+    );
+    expect(queue, hasLength(7));
+    expect(ids(queue).toSet(), ids(withVariants).toSet());
+    for (var i = 1; i < queue.length; i++) {
+      expect(queue[i].number, isNot(queue[i - 1].number));
+    }
+    // First variants come before the other ones.
+    expect(ids(queue).take(4), [
+      'PL010-0001~a',
+      'PL010-0002',
+      'PL010-0003~a',
+      'PL010-0004',
+    ]);
+  });
+
+  test('variants are kept together only when nothing else is left', () {
+    final only = [
+      q('PL010-0090~a', 'PL010-0090'),
+      q('PL010-0090~b', 'PL010-0090'),
+      q('PL010-0091'),
+    ];
+    final queue = spreadVariants(only, firstVariantsFirst: true);
+    expect(ids(queue), ['PL010-0090~a', 'PL010-0091', 'PL010-0090~b']);
+    final same = spreadVariants([
+      q('PL010-0090~a', 'PL010-0090'),
+      q('PL010-0090~b', 'PL010-0090'),
+    ]);
+    expect(same, hasLength(2));
+  });
+
+  test(
+    'real banks: no two variants of a NUMER in a row in any learn queue',
+    () {
+      var checked = 0;
+      for (final licence in Licence.values) {
+        final json = File('assets/data/${licence.bankFileName}')
+            .readAsStringSync();
+        final bank = parseBank(json, licence: licence);
+        for (final subject in bank.subjects) {
+          final all = bank.questionsOf(subject);
+          final queue = buildPracticeQueue(
+            mode: PracticeMode.learn,
+            questions: all,
+            progress: const {},
+            now: now,
+          );
+          expect(queue, hasLength(all.length));
+          expect({for (final x in queue) x.id}, {for (final x in all) x.id});
+          // Adjacent equal numbers are allowed only when the queue cannot avoid
+          // them: one NUMER holds more than half of the subject.
+          final counts = <String, int>{};
+          for (final x in all) {
+            counts[x.number] = (counts[x.number] ?? 0) + 1;
+          }
+          final unavoidable = counts.values.any(
+            (c) => c > (all.length + 1) ~/ 2,
+          );
+          if (!unavoidable) {
+            for (var i = 1; i < queue.length; i++) {
+              expect(
+                queue[i].number,
+                isNot(queue[i - 1].number),
+                reason: '${licence.id}/${subject.id} at $i',
+              );
+            }
+          }
+          checked++;
+        }
+      }
+      expect(checked, greaterThan(0));
+    },
+  );
 }

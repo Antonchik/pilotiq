@@ -7,6 +7,7 @@ import 'package:pilotiq/src/dashboard/dashboard_data.dart';
 import 'package:pilotiq/src/dashboard/dashboard_providers.dart';
 import 'package:pilotiq/src/domain/access_policy.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/settings/settings_tiles.dart';
@@ -33,12 +34,20 @@ class DashboardScreen extends ConsumerWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(local.bankLoadError, textAlign: TextAlign.center),
+                Text(
+                  error is BankLoadFailure
+                      ? local.bankLoadError
+                      : local.dashboardDataError,
+                  textAlign: TextAlign.center,
+                ),
                 const SizedBox(height: 8),
                 OutlinedButton(
                   key: const Key('dashboard_retry'),
                   onPressed: () {
                     final licence = ref.read(selectedLicenceProvider);
+                    // A box that failed to open is remembered by the
+                    // repository, so it is replaced as well.
+                    ref.invalidate(progressRepositoryProvider);
                     ref.invalidate(bankProvider(licence));
                     ref.invalidate(dashboardProvider);
                   },
@@ -153,26 +162,32 @@ class _ExamCountdownCard extends ConsumerWidget {
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Icon(Icons.event_available, size: 32),
             const SizedBox(width: 12),
             Expanded(
-              child: Text(text, style: Theme.of(context).textTheme.titleMedium),
-            ),
-            if (showAction)
-              TextButton(
-                key: const Key('dashboard_exam_set'),
-                onPressed: () async {
-                  final picked = await pickExamDate(context, ref);
-                  if (picked == null || !context.mounted) return;
-                  await changeSettings(
-                    context,
-                    ref,
-                    (s) => s.copyWith(examDate: picked),
-                  );
-                },
-                child: Text(local.dashboardExamSetDate),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(text, style: Theme.of(context).textTheme.titleMedium),
+                  if (showAction)
+                    TextButton(
+                      key: const Key('dashboard_exam_set'),
+                      onPressed: () async {
+                        final picked = await pickExamDate(context, ref);
+                        if (picked == null || !context.mounted) return;
+                        await changeSettings(
+                          context,
+                          ref,
+                          (s) => s.copyWith(examDate: picked),
+                        );
+                      },
+                      child: Text(local.dashboardExamSetDate),
+                    ),
+                ],
               ),
+            ),
           ],
         ),
       ),

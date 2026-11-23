@@ -116,4 +116,23 @@ void main() {
 
     expect(Hive.box<dynamic>('config').get('licence'), 'pplh');
   });
+
+  testWidgets('system back goes to the previous step', (tester) async {
+    final h = AppHarness();
+    await h.pump(tester);
+    await tester.tap(find.byKey(const Key('onboarding_next')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(const Key('onboarding_skip')));
+    await tester.pumpAndSettle();
+    expect(find.text('How many questions a day?'), findsOneWidget);
+
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+    expect(find.text('When is your exam?'), findsOneWidget);
+
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+    expect(find.text('Welcome to Pilotiq'), findsOneWidget);
+    expect(find.byType(OnboardingScreen), findsOneWidget);
+  });
 }

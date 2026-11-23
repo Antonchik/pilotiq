@@ -108,6 +108,10 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
   int _index = 0;
   bool _saving = false;
 
+  void _previous() {
+    if (_index > 0) setState(() => _index--);
+  }
+
   Future<void> _finish() async {
     if (_saving) return;
     setState(() => _saving = true);
@@ -139,72 +143,89 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
     final steps = ref.watch(onboardingStepsProvider);
     final step = steps[_index];
     final isLast = _index == steps.length - 1;
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            LinearProgressIndicator(value: (_index + 1) / steps.length),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  local.onboardingStepOf(_index + 1, steps.length),
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-              ),
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.all(16),
-                child: KeyedSubtree(
-                  key: ValueKey(step.id),
-                  child: step.builder(context),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  if (_index > 0)
-                    TextButton(
-                      key: const Key('onboarding_back'),
-                      onPressed: _saving
-                          ? null
-                          : () => setState(() => _index--),
-                      child: Text(local.onboardingBack),
-                    ),
-                  const Spacer(),
-                  if (step.skippable && !isLast)
-                    TextButton(
-                      key: const Key('onboarding_skip'),
-                      onPressed: () {
-                        if (step.id == 'examDate') {
-                          ref
-                              .read(onboardingDraftProvider.notifier)
-                              .update((d) => d.copyWith(clearExamDate: true));
-                        }
-                        setState(() => _index++);
-                      },
-                      child: Text(local.onboardingSkip),
-                    ),
-                  const SizedBox(width: 8),
-                  FilledButton(
-                    key: Key(isLast ? 'onboarding_finish' : 'onboarding_next'),
-                    onPressed: _saving
-                        ? null
-                        : isLast
-                        ? _finish
-                        : () => setState(() => _index++),
-                    child: Text(
-                      isLast ? local.onboardingFinish : local.onboardingNext,
-                    ),
+    return PopScope(
+      canPop: _index == 0,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _previous();
+      },
+      child: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              LinearProgressIndicator(value: (_index + 1) / steps.length),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    local.onboardingStepOf(_index + 1, steps.length),
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.all(16),
+                  child: KeyedSubtree(
+                    key: ValueKey(step.id),
+                    child: step.builder(context),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                // Wraps to several lines when the font is large or the screen
+                // narrow, so every button stays reachable.
+                child: SizedBox(
+                  width: double.infinity,
+                  child: OverflowBar(
+                    alignment: MainAxisAlignment.end,
+                    overflowAlignment: OverflowBarAlignment.end,
+                    spacing: 8,
+                    overflowSpacing: 8,
+                    children: [
+                      if (_index > 0)
+                        TextButton(
+                          key: const Key('onboarding_back'),
+                          onPressed: _saving ? null : _previous,
+                          child: Text(local.onboardingBack),
+                        ),
+                      if (step.skippable && !isLast)
+                        TextButton(
+                          key: const Key('onboarding_skip'),
+                          onPressed: () {
+                            if (step.id == 'examDate') {
+                              ref
+                                  .read(onboardingDraftProvider.notifier)
+                                  .update(
+                                    (d) => d.copyWith(clearExamDate: true),
+                                  );
+                            }
+                            setState(() => _index++);
+                          },
+                          child: Text(local.onboardingSkip),
+                        ),
+                      FilledButton(
+                        key: Key(
+                          isLast ? 'onboarding_finish' : 'onboarding_next',
+                        ),
+                        onPressed: _saving
+                            ? null
+                            : isLast
+                            ? _finish
+                            : () => setState(() => _index++),
+                        child: Text(
+                          isLast
+                              ? local.onboardingFinish
+                              : local.onboardingNext,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

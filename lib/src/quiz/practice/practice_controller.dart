@@ -48,6 +48,7 @@ class PracticeState {
     required this.language,
     this.index = 0,
     this.selected = const {},
+    this.saved = const {},
     this.bookmarked = const {},
     this.limitReached = false,
     this.finished = false,
@@ -62,6 +63,10 @@ class PracticeState {
 
   /// Canonical index of the answer given to a question in this session.
   final Map<String, int> selected;
+
+  /// Questions whose answer is stored. An answer that could not be stored is
+  /// in [selected] (it is shown) but not here, and does not count anywhere.
+  final Set<String> saved;
   final Set<String> bookmarked;
   final bool limitReached;
   final bool finished;
@@ -69,24 +74,30 @@ class PracticeState {
   Question? get current => index < queue.length ? queue[index] : null;
   bool get currentAnswered =>
       current != null && selected.containsKey(current!.id);
+
+  /// The current question was answered but the answer is not stored yet.
+  bool get currentUnsaved => currentAnswered && !saved.contains(current!.id);
   bool get isLast => index >= queue.length - 1;
-  int get answeredCount => selected.length;
+
+  /// Number of stored answers of this session.
+  int get answeredCount => saved.length;
 
   int get correctCount => [
     for (final q in queue)
-      if (selected[q.id] == q.correctIndex) q,
+      if (saved.contains(q.id) && selected[q.id] == q.correctIndex) q,
   ].length;
   int get wrongCount => answeredCount - correctCount;
 
-  /// Ids of the questions answered wrongly in this session.
+  /// Ids of the questions answered wrongly (and stored) in this session.
   List<String> get wrongIds => [
     for (final q in queue)
-      if (selected.containsKey(q.id) && selected[q.id] != q.correctIndex) q.id,
+      if (saved.contains(q.id) && selected[q.id] != q.correctIndex) q.id,
   ];
 
   PracticeState copyWith({
     int? index,
     Map<String, int>? selected,
+    Set<String>? saved,
     Set<String>? bookmarked,
     bool? limitReached,
     bool? finished,
@@ -96,6 +107,7 @@ class PracticeState {
     language: language,
     index: index ?? this.index,
     selected: selected ?? this.selected,
+    saved: saved ?? this.saved,
     bookmarked: bookmarked ?? this.bookmarked,
     limitReached: limitReached ?? this.limitReached,
     finished: finished ?? this.finished,
@@ -114,6 +126,13 @@ class PracticeController extends AsyncNotifier<PracticeState> {
 
   @override
   Future<PracticeState> build() async {
+    // Premium bought from the paywall lifts the daily limit at once.
+    ref.listen(isPremiumProvider, (previous, premium) {
+      final s = state.value;
+      if (premium && s != null && s.limitReached) {
+        state = AsyncData(s.copyWith(limitReached: false));
+      }
+    });
     final repository = ref.read(progressRepositoryProvider);
     final progress = await repository.allProgress(args.licence);
     final queue = buildPracticeQueue(
@@ -167,14 +186,72 @@ class PracticeController extends AsyncNotifier<PracticeState> {
       state = AsyncData(
         latest.copyWith(selected: {...latest.selected, question.id: canonical}),
       );
-      await repository.recordAnswer(
-        args.licence,
-        question.id,
-        canonical == question.correctIndex,
-        now,
-      );
+      await _store(question.id, canonical == question.correctIndex, now);
+    } finally {
+      _answering = false;
+    }
+  }
+
+  /// Stores the answer of [qid]; the question counts as saved only when the
+  /// write succeeded.
+  Future<void> _store(String qid, bool correct, DateTime now) async {
+    try {
+      await ref
+          .read(progressRepositoryProvider)
+          .recordAnswer(args.licence, qid, correct, now);
     } on Object catch (e) {
       debugPrint('Could not save the answer: $e');
+      return;
+    }
+    if (!ref.mounted) return;
+    ref.invalidate(
+      subjectStatsProvider((licence: args.licence, subject: args.subject)),
+    );
+    final latest = state.value;
+    if (latest == null) return;
+    state = AsyncData(latest.copyWith(saved: {...latest.saved, qid}));
+  }
+
+  /// Stores again the answer that could not be stored. It writes the same
+  /// choice as before; a question that is already stored is never written
+  /// twice.
+  Future<void> retrySave() async {
+    final s = state.value;
+    final question = s?.current;
+    if (_answering || s == null || question == null) return;
+    if (!s.selected.containsKey(question.id) || s.saved.contains(question.id)) {
+      return;
+    }
+    _answering = true;
+    try {
+      await _store(
+        question.id,
+        s.selected[question.id] == question.correctIndex,
+        ref.read(clockProvider).now(),
+      );
+    } finally {
+      _answering = false;
+    }
+  }
+
+  /// Checks the daily limit again (a new day may have started or Premium may
+  /// have been bought) and lets the user continue when it allows.
+  Future<void> recheckLimit() async {
+    final s = state.value;
+    if (_answering || s == null || !s.limitReached) return;
+    _answering = true;
+    try {
+      var allowed = ref.read(isPremiumProvider);
+      if (!allowed) {
+        final today = await ref
+            .read(progressRepositoryProvider)
+            .dailyStat(ref.read(clockProvider).now());
+        allowed = AccessPolicy.canAnswer(false, today.answered);
+      }
+      if (allowed && ref.mounted) {
+        final latest = state.value ?? s;
+        state = AsyncData(latest.copyWith(limitReached: false));
+      }
     } finally {
       _answering = false;
     }
@@ -183,7 +260,7 @@ class PracticeController extends AsyncNotifier<PracticeState> {
   /// Moves to the next question (only after the current one was answered).
   void next() {
     final s = state.value;
-    if (s == null || !s.currentAnswered) return;
+    if (s == null || !s.currentAnswered || s.currentUnsaved) return;
     final index = s.index + 1;
     state = AsyncData(
       s.copyWith(index: index, finished: index >= s.queue.length),
@@ -206,6 +283,9 @@ class PracticeController extends AsyncNotifier<PracticeState> {
           .read(progressRepositoryProvider)
           .toggleBookmark(args.licence, question.id);
       if (!ref.mounted) return;
+      ref.invalidate(
+        subjectStatsProvider((licence: args.licence, subject: args.subject)),
+      );
       final latest = state.value ?? s;
       state = AsyncData(
         latest.copyWith(

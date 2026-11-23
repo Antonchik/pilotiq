@@ -188,5 +188,17 @@
   "practiceLoadError": "Could not load the questions.",
   "@practiceLoadError": {
     "description": "Error while preparing a practice session"
+  },
+  "practiceSaveError": "Could not save your answer. It does not count yet.",
+  "@practiceSaveError": {
+    "description": "Shown when an answer could not be stored"
+  },
+  "practiceSaveRetry": "Retry",
+  "@practiceSaveRetry": {
+    "description": "Retry storing the answer"
+  },
+  "practiceLimitRecheck": "Check again",
+  "@practiceLimitRecheck": {
+    "description": "Re-check the daily limit"
   }
 }

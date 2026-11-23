@@ -31,5 +31,8 @@
   "practiceSubjectCoverage": "{percent}% poznane",
   "practiceSubjectAccuracy": "{percent}% skuteczności",
   "practiceSubjectNotStarted": "Jeszcze nie rozpoczęto",
-  "practiceLoadError": "Nie udało się wczytać pytań."
+  "practiceLoadError": "Nie udało się wczytać pytań.",
+  "practiceSaveError": "Nie udało się zapisać odpowiedzi. Na razie nie jest liczona.",
+  "practiceSaveRetry": "Ponów",
+  "practiceLimitRecheck": "Sprawdź ponownie"
 }

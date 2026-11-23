@@ -203,4 +203,17 @@ void main() {
     expect(now.dailyGoal, 40);
     expect(await migration.run(), MigrationOutcome.alreadyDone);
   });
+
+  test(
+    'a theme chosen in 2.0 is not overwritten by the legacy dark flag',
+    () async {
+      // legacy config has dark: true; the user already picked light in 2.0
+      final cfg = await Hive.openBox<dynamic>('config');
+      await cfg.put('themeMode', 'light');
+      expect(await migration.run(), MigrationOutcome.migrated);
+      final settings = await repo.loadSettings();
+      expect(settings.themeMode, AppThemeMode.light);
+      expect(settings.schemaVersion, 2);
+    },
+  );
 }

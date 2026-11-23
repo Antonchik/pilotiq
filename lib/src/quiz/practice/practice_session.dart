@@ -108,6 +108,73 @@ List<Question> buildPracticeQueue({
   required DateTime now,
   List<String> retryIds = const [],
 }) {
+  final base = _baseQueue(
+    mode: mode,
+    questions: questions,
+    progress: progress,
+    now: now,
+    retryIds: retryIds,
+  );
+  if (mode == PracticeMode.learn) {
+    // Not seen questions first, the other variants of a NUMER after the first
+    // variants; then the questions that were answered before.
+    final unseen = [
+      for (final q in base)
+        if (!_isSeen(progress[q.id])) q,
+    ];
+    final seen = [
+      for (final q in base)
+        if (_isSeen(progress[q.id])) q,
+    ];
+    return [
+      ...spreadVariants(unseen, firstVariantsFirst: true),
+      ...spreadVariants(seen),
+    ];
+  }
+  return spreadVariants(base);
+}
+
+/// Reorders [questions] so that two variants of the same NUMER are not asked
+/// one after another (the highlighted answer of the first variant would give
+/// the second one away), unless nothing else is left. With
+/// [firstVariantsFirst] the first variant of every NUMER goes before any
+/// second variant. The relative order is otherwise kept.
+List<Question> spreadVariants(
+  List<Question> questions, {
+  bool firstVariantsFirst = false,
+}) {
+  var rest = <Question>[...questions];
+  if (firstVariantsFirst) {
+    final rank = <String, int>{};
+    final ranked = [
+      for (final q in questions)
+        (q, rank[q.number] = (rank[q.number] ?? -1) + 1),
+    ];
+    // Stable sort by variant rank.
+    final maxRank = ranked.fold<int>(0, (m, e) => e.$2 > m ? e.$2 : m);
+    rest = [
+      for (var r = 0; r <= maxRank; r++)
+        for (final e in ranked)
+          if (e.$2 == r) e.$1,
+    ];
+  }
+  final result = <Question>[];
+  while (rest.isNotEmpty) {
+    final last = result.isEmpty ? null : result.last.number;
+    var index = rest.indexWhere((q) => q.number != last);
+    if (index < 0) index = 0;
+    result.add(rest.removeAt(index));
+  }
+  return result;
+}
+
+List<Question> _baseQueue({
+  required PracticeMode mode,
+  required List<Question> questions,
+  required Map<String, QuestionProgress> progress,
+  required DateTime now,
+  List<String> retryIds = const [],
+}) {
   final order = {for (var i = 0; i < questions.length; i++) questions[i].id: i};
   int byBank(Question a, Question b) => order[a.id]!.compareTo(order[b.id]!);
   switch (mode) {

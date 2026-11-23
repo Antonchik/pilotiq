@@ -11,6 +11,7 @@ import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/progress/progress_repository.dart';
 import 'package:pilotiq/src/progress/providers.dart';
+import 'package:pilotiq/src/progress/question_progress.dart';
 import 'package:pilotiq/src/purchases/fake_purchase_service.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
@@ -37,15 +38,41 @@ class _NoShuffleRandom implements Random {
 
 final _now = DateTime(2026, 5, 1, 12);
 
+/// A repository whose first [failures] answer writes throw.
+class _FlakyRepository extends ProgressRepository {
+  _FlakyRepository(this.failures) : super(openBox: openMemoryBox);
+
+  int failures;
+  int writes = 0;
+
+  @override
+  Future<QuestionProgress> recordAnswer(
+    Licence licence,
+    String qid,
+    bool correct,
+    DateTime now,
+  ) {
+    if (failures > 0) {
+      failures--;
+      throw StateError('disk full');
+    }
+    writes++;
+    return super.recordAnswer(licence, qid, correct, now);
+  }
+}
+
 void main() {
   late ProgressRepository repo;
   late List<PaywallTrigger> paywalls;
   late List<Question> questions;
+  late FakePurchaseService service;
+  var clockNow = _now;
 
   setUp(() async {
     await openMemoryBox('config');
     repo = memoryProgressRepository();
     paywalls = [];
+    clockNow = _now;
     questions = parseBank(
       fakeBankJson(Licence.ppla),
       licence: Licence.ppla,
@@ -79,27 +106,29 @@ void main() {
     PracticeMode mode = PracticeMode.learn,
     bool premium = false,
     Widget? home,
+    double textScale = 1,
+    Size size = const Size(1080, 2400),
   }) async {
-    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.physicalSize = size;
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
           purchaseServiceProvider.overrideWithValue(
-            FakePurchaseService(premium: premium),
+            service = FakePurchaseService(premium: premium),
           ),
           progressRepositoryProvider.overrideWithValue(repo),
           questionBankRepositoryProvider.overrideWithValue(
             fakeBankRepository(),
           ),
-          clockProvider.overrideWithValue(Clock.fixed(_now)),
+          clockProvider.overrideWithValue(Clock(() => clockNow)),
           randomProvider.overrideWithValue(_NoShuffleRandom()),
           paywallOpenerProvider.overrideWithValue((context, trigger) async {
             paywalls.add(trigger);
           }),
         ],
-        child: _Host(mode: mode, args: args, home: home),
+        child: _Host(mode: mode, args: args, home: home, textScale: textScale),
       ),
     );
     await tester.pumpAndSettle();
@@ -304,6 +333,124 @@ void main() {
     });
   });
 
+  group('failures and limits', () {
+    testWidgets('an answer that could not be stored does not count until a '
+        'retry succeeds', (tester) async {
+      final flaky = _FlakyRepository(1);
+      repo = flaky;
+      await pumpApp(tester);
+      await openPracticeScreen(tester);
+
+      await tester.tap(find.text('AMSL')); // wrong
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(const Key('practice_save_error')), findsOneWidget);
+      expect(find.byKey(const Key('practice_next')), findsNothing);
+      expect(find.byKey(const Key('practice_finish')), findsNothing);
+      expect(await repo.progressOf(Licence.ppla, 'PL010-0001'), isNull);
+
+      await tester.tap(find.byKey(const Key('practice_save_retry')));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(const Key('practice_save_error')), findsNothing);
+      expect(find.byKey(const Key('practice_next')), findsOneWidget);
+      final p = (await repo.progressOf(Licence.ppla, 'PL010-0001'))!;
+      expect(p.seen, 1);
+      expect(p.wrong, 1);
+      expect(flaky.writes, 1);
+      expect((await repo.dailyStat(_now)).answered, 1);
+
+      await tester.tap(find.byKey(const Key('practice_finish')));
+      await tester.pumpAndSettle();
+      expect(find.text('1 wrong answer'), findsOneWidget);
+      expect(find.text('0 correct answers'), findsOneWidget);
+    });
+
+    testWidgets('buying Premium lifts the daily limit', (tester) async {
+      for (var i = 0; i < 20; i++) {
+        await repo.recordAnswer(Licence.ppla, 'old$i', true, _now);
+      }
+      await pumpApp(tester);
+      await openPracticeScreen(tester);
+      await tester.tap(find.text('AGL'));
+      await tester.pumpAndSettle();
+      expect(find.byKey(const Key('practice_limit')), findsOneWidget);
+
+      service.setEntitlement(const EntitlementState(isPremium: true));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(const Key('practice_limit')), findsNothing);
+      await tester.tap(find.text('AGL'));
+      await tester.pumpAndSettle();
+      expect((await repo.progressOf(Licence.ppla, 'PL010-0001'))!.seen, 1);
+    });
+
+    testWidgets('a new day lifts the limit after "check again"', (
+      tester,
+    ) async {
+      for (var i = 0; i < 20; i++) {
+        await repo.recordAnswer(Licence.ppla, 'old$i', true, _now);
+      }
+      await pumpApp(tester);
+      await openPracticeScreen(tester);
+      await tester.tap(find.text('AGL'));
+      await tester.pumpAndSettle();
+
+      // Still the same day: the limit stays.
+      await tester.tap(find.byKey(const Key('practice_limit_recheck')));
+      await tester.pumpAndSettle();
+      expect(find.byKey(const Key('practice_limit')), findsOneWidget);
+
+      clockNow = DateTime(2026, 5, 2, 8);
+      await tester.tap(find.byKey(const Key('practice_limit_recheck')));
+      await tester.pumpAndSettle();
+
+      expect(find.byKey(const Key('practice_limit')), findsNothing);
+      await tester.tap(find.text('AGL'));
+      await tester.pumpAndSettle();
+      expect((await repo.dailyStat(clockNow)).answered, 1);
+    });
+  });
+
+  group('large fonts', () {
+    for (final scale in [2.0, 3.0]) {
+      testWidgets('practice and locked screens do not overflow at $scale', (
+        tester,
+      ) async {
+        await pumpApp(
+          tester,
+          textScale: scale,
+          size: const Size(320, 640),
+          mode: PracticeMode.mistakes,
+        );
+        await openPracticeScreen(tester); // locked for a free user
+        expect(tester.takeException(), isNull);
+        await tester.pageBack();
+        await tester.pumpAndSettle();
+        await pumpMode(tester, PracticeMode.learn);
+        expect(tester.takeException(), isNull);
+        await tester.tap(find.byKey(const Key('answer_0')));
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull);
+      });
+
+      testWidgets('mode tiles do not overflow at $scale', (tester) async {
+        await pumpApp(
+          tester,
+          textScale: scale,
+          size: const Size(320, 640),
+          home: Scaffold(
+            body: SingleChildScrollView(
+              child: QuizList(subject: subjectInfo()),
+            ),
+          ),
+        );
+        expect(tester.takeException(), isNull);
+        expect(find.text('Premium'), findsNWidgets(2));
+      });
+    }
+  });
+
   group('access', () {
     Future<void> seedToday(int count) async {
       for (var i = 0; i < count; i++) {
@@ -455,8 +602,10 @@ Future<void> pumpMode(WidgetTester tester, PracticeMode mode) async {
 final _hostKey = GlobalKey<_HostState>();
 
 class _Host extends StatefulWidget {
-  _Host({required this.mode, required this.args, this.home})
+  _Host({required this.mode, required this.args, this.home, this.textScale = 1})
     : super(key: _hostKey);
+
+  final double textScale;
 
   final PracticeMode mode;
   final PracticeArgs Function(PracticeMode) args;
@@ -481,6 +630,11 @@ class _HostState extends State<_Host> {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: const Locale('en'),
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(context)
+            .copyWith(textScaler: TextScaler.linear(widget.textScale)),
+        child: child!,
+      ),
       home:
           widget.home ??
           Builder(

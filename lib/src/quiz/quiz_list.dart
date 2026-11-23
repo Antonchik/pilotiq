@@ -153,7 +153,9 @@ class _ModeTile extends StatelessWidget {
       button: onTap != null,
       enabled: onTap != null,
       onTap: onTap,
-      label: [title, description, ?stat, ?badge].join('. '),
+      label: [title, description, ?stat, ?badge]
+          .map((part) => part.trim().replaceFirst(RegExp(r'[.\s]+$'), ''))
+          .join('. '),
       excludeSemantics: true,
       child: Card(
         margin: const EdgeInsets.all(4),
@@ -165,6 +167,16 @@ class _ModeTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(description, textAlign: TextAlign.justify),
+              if (badge != null)
+                Padding(
+                  padding: const EdgeInsets.only(top: 4),
+                  child: Chip(
+                    avatar: lockedBadge == null
+                        ? null
+                        : const Icon(Icons.lock_outline, size: 16),
+                    label: Text(badge),
+                  ),
+                ),
               if (stat != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 4),
@@ -175,14 +187,6 @@ class _ModeTile extends StatelessWidget {
                 ),
             ],
           ),
-          trailing: badge == null
-              ? null
-              : Chip(
-                  avatar: lockedBadge == null
-                      ? null
-                      : const Icon(Icons.lock_outline, size: 16),
-                  label: Text(badge),
-                ),
           onTap: onTap,
         ),
       ),

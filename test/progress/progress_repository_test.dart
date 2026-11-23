@@ -324,4 +324,40 @@ void main() {
     expect((await good).seen, 1);
     expect((await failing.dailyStat(now)).answered, 1);
   });
+
+  test('a failed box open is not cached: the next call retries', () async {
+    var calls = 0;
+    final flaky = ProgressRepository(
+      openBox: (name) async {
+        if (calls++ == 0) throw StateError('transient');
+        return Hive.openBox<dynamic>(name);
+      },
+    );
+    await expectLater(flaky.loadSettings(), throwsA(isA<StateError>()));
+    expect((await flaky.loadSettings()).dailyGoal, 20);
+    await flaky.recordAnswer(Licence.ppla, 'q', true, now);
+    expect((await flaky.dailyStat(now)).answered, 1);
+  });
+
+  test('damaged config is backed up byte-for-byte before recovery', () async {
+    await Hive.close();
+    final file = File('${dir.path}/config.hive');
+    await File('test/fixtures/legacy_hive/config.hive').copy(file.path);
+    final damaged = [...file.readAsBytesSync(), 9, 9, 9, 9, 9, 9, 9];
+    file.writeAsBytesSync(damaged);
+    Hive.init(dir.path);
+
+    final settings = await ProgressRepository().loadSettings();
+    expect(settings.schemaVersion, 0); // recovered, usable
+    final backup = File('${file.path}.bak-2');
+    expect(backup.existsSync(), isTrue);
+    expect(backup.readAsBytesSync(), damaged);
+
+    // the backup is made once: a later damage does not overwrite it
+    await Hive.close();
+    file.writeAsBytesSync([1, 2, 3]);
+    Hive.init(dir.path);
+    await ProgressRepository().loadSettings();
+    expect(backup.readAsBytesSync(), damaged);
+  });
 }

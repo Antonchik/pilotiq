@@ -392,6 +392,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dashboardDueLocked => 'Spaced repetition is part of Premium.';
 
   @override
+  String get dashboardDataError => 'Could not open your progress data.';
+
+  @override
   String get dashboardOverviewTitle => 'Your progress';
 
   @override
@@ -758,4 +761,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get practiceLoadError => 'Could not load the questions.';
+
+  @override
+  String get practiceSaveError =>
+      'Could not save your answer. It does not count yet.';
+
+  @override
+  String get practiceSaveRetry => 'Retry';
+
+  @override
+  String get practiceLimitRecheck => 'Check again';
 }

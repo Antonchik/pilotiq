@@ -14,6 +14,15 @@ enum AnswerTileState {
   wrong,
 }
 
+/// Green / red used for right and wrong answers; lighter shades on dark
+/// themes so that they keep their contrast.
+Color feedbackColor(BuildContext context, {required bool correct}) {
+  final dark = Theme.of(context).brightness == Brightness.dark;
+  return correct
+      ? (dark ? Colors.green.shade300 : Colors.green.shade800)
+      : (dark ? Colors.red.shade300 : Colors.red.shade800);
+}
+
 /// One answer option of a practice question. Colour is never the only signal:
 /// the icon and the accessibility label tell the state as well.
 class AnswerTile extends StatelessWidget {
@@ -36,8 +45,14 @@ class AnswerTile extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final (Color? colour, IconData icon) = switch (state) {
       AnswerTileState.idle => (null, Icons.circle_outlined),
-      AnswerTileState.correct => (Colors.green.shade600, Icons.check_circle),
-      AnswerTileState.wrong => (Colors.red.shade600, Icons.cancel),
+      AnswerTileState.correct => (
+        feedbackColor(context, correct: true),
+        Icons.check_circle,
+      ),
+      AnswerTileState.wrong => (
+        feedbackColor(context, correct: false),
+        Icons.cancel,
+      ),
     };
     final stateLabel = switch (state) {
       AnswerTileState.idle => '',

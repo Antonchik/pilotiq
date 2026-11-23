@@ -45,7 +45,8 @@ class LegacyMigration {
 
       var themeMode = settings.themeMode;
       final dark = config.get('dark');
-      if (dark is bool) {
+      // A theme already chosen in 2.0 (a previous run failed later) wins.
+      if (dark is bool && !config.containsKey('themeMode')) {
         themeMode = dark ? AppThemeMode.dark : AppThemeMode.light;
       }
 

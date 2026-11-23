@@ -9,11 +9,38 @@ import 'package:pilotiq/src/subjects/subject_list_screen.dart';
 
 /// Main screen after the onboarding: the three tabs behind a bottom bar. Only
 /// the visible tab is built, so "Today" recomputes whenever it is shown.
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen>
+    with WidgetsBindingObserver {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // Back from the background: the day may have changed, answers may have
+    // been given elsewhere.
+    if (state == AppLifecycleState.resumed) {
+      ref.invalidate(dashboardProvider);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final tab = ref.watch(homeTabProvider);
     final licence = ref.watch(selectedLicenceProvider);
     return PopScope(

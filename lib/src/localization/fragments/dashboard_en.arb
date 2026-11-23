@@ -103,6 +103,10 @@
   "@dashboardDueLocked": {
     "description": "Teaser for free users"
   },
+  "dashboardDataError": "Could not open your progress data.",
+  "@dashboardDataError": {
+    "description": "Shown when the progress storage fails to open"
+  },
   "dashboardOverviewTitle": "Your progress",
   "@dashboardOverviewTitle": {
     "description": "Basic statistics card title"

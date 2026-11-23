@@ -740,6 +740,12 @@ abstract class AppLocalizations {
   /// **'Spaced repetition is part of Premium.'**
   String get dashboardDueLocked;
 
+  /// Shown when the progress storage fails to open
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open your progress data.'**
+  String get dashboardDataError;
+
   /// Basic statistics card title
   ///
   /// In en, this message translates to:
@@ -1255,6 +1261,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not load the questions.'**
   String get practiceLoadError;
+
+  /// Shown when an answer could not be stored
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save your answer. It does not count yet.'**
+  String get practiceSaveError;
+
+  /// Retry storing the answer
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get practiceSaveRetry;
+
+  /// Re-check the daily limit
+  ///
+  /// In en, this message translates to:
+  /// **'Check again'**
+  String get practiceLimitRecheck;
 }
 
 class _AppLocalizationsDelegate

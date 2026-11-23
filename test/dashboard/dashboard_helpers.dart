@@ -27,6 +27,8 @@ class AppHarness {
     ProgressRepository? repository,
     QuestionBankRepository? bank,
     DateTime? now,
+    this.clock,
+    this.repositoryOverride,
   }) : repository = repository ?? memoryProgressRepository(),
        bank = bank ?? fakeBankRepository(),
        now = now ?? testNow,
@@ -37,6 +39,12 @@ class AppHarness {
   final DateTime now;
   final FakePurchaseService purchases;
   final List<PaywallTrigger> paywalls = [];
+
+  /// Replaces the fixed clock (a clock that can be moved).
+  final Clock? clock;
+
+  /// Replaces the repository value override (e.g. to create several).
+  final Override? repositoryOverride;
 
   static void registerSetUp() {
     setUp(() async {
@@ -65,9 +73,10 @@ class AppHarness {
 
   List<Override> get overrides => [
     purchaseServiceProvider.overrideWithValue(purchases),
-    progressRepositoryProvider.overrideWithValue(repository),
+    repositoryOverride ??
+        progressRepositoryProvider.overrideWithValue(repository),
     questionBankRepositoryProvider.overrideWithValue(bank),
-    clockProvider.overrideWithValue(Clock.fixed(now)),
+    clockProvider.overrideWithValue(clock ?? Clock.fixed(now)),
     paywallOpenerProvider.overrideWithValue((context, trigger) async {
       paywalls.add(trigger);
     }),

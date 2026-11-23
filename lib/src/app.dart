@@ -68,6 +68,13 @@ class PilotiqRoot extends StatefulWidget {
 class _PilotiqRootState extends State<PilotiqRoot> {
   late Future<ProviderContainer> _start = widget.initialize();
 
+  @override
+  void dispose() {
+    // The container lives as long as this widget.
+    _start.then((c) => c.dispose(), onError: (Object _) {});
+    super.dispose();
+  }
+
   void _retry() {
     setState(() {
       _start = widget.initialize();

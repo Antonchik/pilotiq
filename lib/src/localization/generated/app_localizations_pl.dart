@@ -405,6 +405,9 @@ class AppLocalizationsPl extends AppLocalizations {
   String get dashboardDueLocked => 'Powtórki w odstępach są częścią Premium.';
 
   @override
+  String get dashboardDataError => 'Nie udało się otworzyć danych o postępach.';
+
+  @override
   String get dashboardOverviewTitle => 'Twój postęp';
 
   @override
@@ -790,4 +793,14 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get practiceLoadError => 'Nie udało się wczytać pytań.';
+
+  @override
+  String get practiceSaveError =>
+      'Nie udało się zapisać odpowiedzi. Na razie nie jest liczona.';
+
+  @override
+  String get practiceSaveRetry => 'Ponów';
+
+  @override
+  String get practiceLimitRecheck => 'Sprawdź ponownie';
 }

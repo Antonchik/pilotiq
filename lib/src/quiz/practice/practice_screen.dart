@@ -74,7 +74,7 @@ class _LockedScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(practiceModeTitle(local, mode))),
       body: Center(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -197,7 +197,7 @@ class _PracticeBody extends ConsumerWidget {
       return _Message(text: _emptyText(local), icon: Icons.inbox_outlined);
     }
     if (state.limitReached) {
-      return const _LimitView();
+      return _LimitView(onRecheck: controller.recheckLimit);
     }
     final question = state.current!;
     return Column(
@@ -216,7 +216,9 @@ class _PracticeBody extends ConsumerWidget {
             onAnswer: controller.answer,
           ),
         ),
-        if (state.currentAnswered)
+        if (state.currentUnsaved)
+          _SaveError(onRetry: controller.retrySave)
+        else if (state.currentAnswered)
           SafeArea(
             top: false,
             child: Padding(
@@ -264,6 +266,7 @@ class _ProgressBar extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
+              flex: 2,
               child: LinearProgressIndicator(
                 value: total == 0 ? 0 : current / total,
                 minHeight: 6,
@@ -271,9 +274,13 @@ class _ProgressBar extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 12),
-            Text(
-              local.practiceProgress(current, total),
-              key: const Key('practice_progress'),
+            Flexible(
+              child: Text(
+                local.practiceProgress(current, total),
+                key: const Key('practice_progress'),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),
@@ -290,7 +297,7 @@ class _Message extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Center(
-    child: Padding(
+    child: SingleChildScrollView(
       padding: const EdgeInsets.all(24),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -309,7 +316,9 @@ class _Message extends StatelessWidget {
 }
 
 class _LimitView extends StatelessWidget {
-  const _LimitView();
+  const _LimitView({required this.onRecheck});
+
+  final VoidCallback onRecheck;
 
   @override
   Widget build(BuildContext context) {
@@ -341,8 +350,53 @@ class _LimitView extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             OutlinedButton(
+              key: const Key('practice_limit_recheck'),
+              onPressed: onRecheck,
+              child: Text(local.practiceLimitRecheck),
+            ),
+            const SizedBox(height: 8),
+            OutlinedButton(
               onPressed: () => Navigator.of(context).pop(),
               child: Text(local.returnToSubjectTitle),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Shown when the answer of the current question could not be stored. The
+/// answer does not count until a retry succeeds.
+class _SaveError extends StatelessWidget {
+  const _SaveError({required this.onRetry});
+
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    return SafeArea(
+      top: false,
+      child: Container(
+        key: const Key('practice_save_error'),
+        width: double.infinity,
+        color: scheme.errorContainer,
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+        child: Wrap(
+          alignment: WrapAlignment.spaceBetween,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: 12,
+          children: [
+            Text(
+              local.practiceSaveError,
+              style: TextStyle(color: scheme.onErrorContainer),
+            ),
+            TextButton(
+              key: const Key('practice_save_retry'),
+              onPressed: onRetry,
+              child: Text(local.practiceSaveRetry),
             ),
           ],
         ),

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:hive_ce/hive.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
@@ -38,7 +39,7 @@ class ProgressAggregate {
 /// `config`. Time is always passed in by the caller.
 class ProgressRepository {
   ProgressRepository({BoxOpener? openBox})
-    : _openBox = openBox ?? ((name) => Hive.openBox<dynamic>(name));
+    : _openBox = openBox ?? _openWithBackup;
 
   static const String configBox = 'config';
   static const String dailyBox = 'daily';
@@ -54,8 +55,49 @@ class ProgressRepository {
   static final Expando<_WriteQueue> _queues = Expando<_WriteQueue>();
   final LeitnerScheduler _leitner = const LeitnerScheduler();
 
-  Future<Box<dynamic>> _box(String name) =>
-      _boxes.putIfAbsent(name, () => _openBox(name));
+  /// Opens a box once; a failed open is not cached, so the next call retries.
+  Future<Box<dynamic>> _box(String name) {
+    final cached = _boxes[name];
+    if (cached != null) return cached;
+    final opening = _openBox(name);
+    _boxes[name] = opening;
+    opening.then<void>(
+      (_) {},
+      onError: (Object _) {
+        if (identical(_boxes[name], opening)) _boxes.remove(name);
+      },
+    );
+    return opening;
+  }
+
+  /// Default opener: first without crash recovery. If the file is damaged, a
+  /// copy `<file>.bak-<schema>` is saved once before Hive is allowed to
+  /// truncate it during recovery.
+  static Future<Box<dynamic>> _openWithBackup(String name) async {
+    try {
+      return await Hive.openBox<dynamic>(name, crashRecovery: false);
+    } on Object {
+      await _backupDamagedFile(name);
+      return Hive.openBox<dynamic>(name);
+    }
+  }
+
+  static Future<void> _backupDamagedFile(String name) async {
+    try {
+      // `homePath` is not on the public interface; the implementation has it.
+      final home = (Hive as dynamic).homePath as String?;
+      if (home == null) return;
+      final file = File('$home/${name.toLowerCase()}.hive');
+      final backup = File(
+        '${file.path}.bak-${UserSettings.currentSchemaVersion}',
+      );
+      if (file.existsSync() && !backup.existsSync()) {
+        await file.copy(backup.path);
+      }
+    } on Object {
+      // A failed backup must not prevent the app from starting.
+    }
+  }
 
   /// Runs [action] after all earlier locked actions on the same boxes, so
   /// that read-modify-write sequences never lose updates. A failing action
