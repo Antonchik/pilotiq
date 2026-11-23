@@ -681,8 +681,20 @@ def en_defects(c):
     variant that needed no fallback (EN numbers agree with PL, reliable split, ...), then fewer EN
     texts starting in lower case ("wwith ..."). Ties keep the first occurrence."""
     lower = sum(1 for x in c["cells"] if x["en"] and x["en"][:1].islower())
-    artefact = sum(1 for x in c["cells"] if x["en"] and x["en"].rstrip().endswith("/n"))
-    return (len(c["reasons"]), lower, artefact)
+    return (len(c["reasons"]), lower)
+
+
+def en_signature(c):
+    """EN texts without spaces and without the source artefact "/n" at the end of a cell."""
+    return tuple(re.sub(r"/n$", "", re.sub(r"\s+", "", x["en"] or "")) for x in c["cells"])
+
+
+def choose_variant(group):
+    """Best candidate of a duplicate group: by en_defects (first one on ties); among candidates with
+    the same EN apart from the "/n" artefact, the one with fewer "/n" tails."""
+    best = min(group, key=en_defects)
+    same = [c for c in group if en_defects(c) == en_defects(best) and en_signature(c) == en_signature(best)]
+    return min(same, key=lambda c: sum(1 for x in c["cells"] if x["en"] and x["en"].rstrip().endswith("/n")))
 
 
 def build_questions(records, spec, lex, stats):
@@ -748,7 +760,7 @@ def build_questions(records, spec, lex, stats):
         groups.setdefault(find(i), []).append(c)
     unique = []
     for group in sorted(groups.values(), key=lambda g: g[0]["order"]):
-        chosen = min(group, key=en_defects) if bilingual else group[0]  # min() keeps the first on ties
+        chosen = choose_variant(group) if bilingual else group[0]  # min() keeps the first on ties
         chosen["id_source"] = group[0]["joined"]  # id does not depend on the PL/EN splitter
         unique.append(chosen)
         for c in group:
@@ -914,7 +926,7 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append("")
     L.append("Дубли: полный текст ячеек до разделения совпадает без учёта пробелов и регистра (хвост `/n` не учитывается), либо совпадает польская часть. "
              "Из группы остаётся запись, у которой (1) не потребовался исходный вид (числа EN согласованы с PL, разделение "
-             "надёжно), затем (2) меньше EN-текстов со строчной буквы в начале, затем (3) меньше EN с артефактом `/n` на конце; при равенстве — первая по порядку. "
+             "надёжно), затем (2) меньше EN-текстов со строчной буквы в начале, при равенстве — первая по порядку; если варианты различаются только хвостом `/n` (EN без пробелов и без этого хвоста совпадает), берётся вариант с меньшим числом `/n`. "
              "Остальные схлопываются.")
     L.append("")
     exact = [d for d in dup if d[2] == "exact"]

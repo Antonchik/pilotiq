@@ -296,4 +296,32 @@ void main() {
       isNull,
     );
   });
+
+  test('a failing locked operation does not block the next ones', () async {
+    final failing = ProgressRepository(
+      openBox: (name) async {
+        final box = await Hive.openBox<dynamic>(name);
+        if (name == 'attempts') await box.close(); // writes to it now throw
+        return box;
+      },
+    );
+    final bad = failing.saveAttempt(
+      ExamAttempt(
+        id: 'x',
+        licence: Licence.ppla,
+        subject: SubjectId.airLaw,
+        startedAt: now,
+        finishedAt: now,
+        durationSec: 1,
+        total: 1,
+        correct: 1,
+        passed: true,
+        reason: AttemptReason.finished,
+      ),
+    );
+    final good = failing.recordAnswer(Licence.ppla, 'q', true, now);
+    await expectLater(bad, throwsA(isA<Object>()));
+    expect((await good).seen, 1);
+    expect((await failing.dailyStat(now)).answered, 1);
+  });
 }

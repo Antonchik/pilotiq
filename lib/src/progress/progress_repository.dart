@@ -48,21 +48,30 @@ class ProgressRepository {
   final BoxOpener _openBox;
   final Map<String, Future<Box<dynamic>>> _boxes = {};
 
-  /// Shared by all instances: two repositories over the same Hive boxes must
-  /// not interleave their read-modify-write sequences.
-  static Future<void> _tail = Future<void>.value();
+  /// One write queue per opened `config` box object: repositories sharing the
+  /// same open boxes share the queue, while freshly opened boxes (a new test,
+  /// a reopened Hive) get a new one. Nothing is tied to the process or zone.
+  static final Expando<_WriteQueue> _queues = Expando<_WriteQueue>();
   final LeitnerScheduler _leitner = const LeitnerScheduler();
 
   Future<Box<dynamic>> _box(String name) =>
       _boxes.putIfAbsent(name, () => _openBox(name));
 
-  /// Runs [action] after all earlier locked actions, so that read-modify-write
-  /// sequences of concurrent calls never lose updates.
-  Future<T> _locked<T>(Future<T> Function() action) {
-    final previous = _tail;
+  /// Runs [action] after all earlier locked actions on the same boxes, so
+  /// that read-modify-write sequences never lose updates. A failing action
+  /// does not block the following ones.
+  Future<T> _locked<T>(Future<T> Function() action) async {
+    final anchor = await _box(configBox);
+    final queue = _queues[anchor] ??= _WriteQueue();
+    final previous = queue.tail;
     final done = Completer<void>();
-    _tail = done.future;
-    return previous.then((_) => action()).whenComplete(done.complete);
+    queue.tail = done.future;
+    try {
+      await previous;
+      return await action();
+    } finally {
+      done.complete();
+    }
   }
 
   // Settings -----------------------------------------------------------------
@@ -283,4 +292,8 @@ class ProgressRepository {
       return null;
     }
   }
+}
+
+class _WriteQueue {
+  Future<void> tail = Future<void>.value();
 }
