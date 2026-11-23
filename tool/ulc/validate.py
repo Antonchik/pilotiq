@@ -27,6 +27,33 @@ def _all_texts(q):
     return texts
 
 
+def _tokens(text):
+    return [t.strip(".,;:!?()\"'„”«»") for t in text.split()]
+
+
+def _split_word_warnings(questions):
+    """Warn about 'w łaściwego': a one-letter token followed by a token that is not a word of its
+    own, while the glued form is a word used at least 3 times elsewhere in the same bank."""
+    counts = {}
+    for q in questions:
+        if isinstance(q, dict):
+            for text in _all_texts(q):
+                for t in _tokens(text):
+                    counts[t] = counts.get(t, 0) + 1
+    out, seen = [], set()
+    for q in questions:
+        if not isinstance(q, dict):
+            continue
+        for text in _all_texts(q):
+            toks = _tokens(text)
+            for a, b in zip(toks, toks[1:]):
+                if len(a) == 1 and a.isalpha() and len(b) >= 3 and counts.get(b, 0) <= 1 and counts.get(a + b, 0) >= 3:
+                    if (a, b) not in seen:
+                        seen.add((a, b))
+                        out.append(f"{q.get('id')}: possibly a word broken by a space: {a!r} + {b!r}")
+    return out
+
+
 def validate_bank(path):
     errors = []
     warnings = []
@@ -106,6 +133,7 @@ def validate_bank(path):
             if m:
                 errors.append(f"{where}: letters separated by spaces inside a word: {m.group()!r}")
                 break
+    warnings.extend(_split_word_warnings(questions))
     for number, c in multi.items():
         if c < 2:
             errors.append(f"{number}: id has a hash suffix but the NUMER is unique")

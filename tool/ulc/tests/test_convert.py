@@ -261,6 +261,18 @@ class ValidateTest(unittest.TestCase):
             self.assertTrue(any("inside a word" in e for e in errors))
             self.assertTrue(any("HTML entity" in e for e in errors))
 
+    def test_warns_about_word_broken_by_a_space(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            qs = []
+            for i in range(1, 15):
+                q = self.question(f"PL040-{i:04d}")
+                q["a"][0]["pl"] = "zezwolenia właściwego organu" if i < 5 else "zezwolenia w łaściwego organu" if i == 14 else "inne"
+                qs.append(q)
+            qs[0]["a"][1]["pl"] = qs[1]["a"][1]["pl"] = qs[2]["a"][1]["pl"] = qs[3]["a"][1]["pl"] = "właściwego"
+            _, warnings, _ = v.validate_bank(self.write(qs, tmp))
+            self.assertTrue(any("'w' + 'łaściwego'" in w for w in warnings), warnings)
+
     def test_detects_violations(self):
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
