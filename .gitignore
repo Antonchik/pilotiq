@@ -42,3 +42,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# flutter gen-l10n untranslated-messages report
+desiredFileName.txt
