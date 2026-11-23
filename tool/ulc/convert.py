@@ -1003,6 +1003,12 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
             L.append("Доля EN ниже 95 %: все вопросы с малейшим сомнением в разделении PL/EN сознательно оставлены без EN "
                      "(лучше меньше EN, чем неверный EN); причины и полный список — выше.")
             L.append("")
+        slash = [f"{q['id']}:{'q' if k == 0 else 'a' + str(k - 1)}" for q in questions
+                 for k, x in enumerate([q["q"]] + q["a"]) if x["en"] and x["en"].rstrip().endswith("/n")]
+        L.append(f"### EN-ячейки с артефактом источника «/n» на конце ({len(slash)}; в тексте оставлен как в PDF)")
+        L.append("")
+        L.append(", ".join(f"`{x}`" for x in slash) or "нет")
+        L.append("")
         L.append("### Примеры разделения (первые вопросы каждого предмета)")
         L.append("")
         shown = defaultdict(int)

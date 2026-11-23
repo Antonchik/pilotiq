@@ -181,6 +181,19 @@ class IdsTest(unittest.TestCase):
         self.assertEqual(qs[0]["id"], "PL060-0093")
         self.assertEqual(qs[0]["a"][0], {"pl": "Duże miasto.", "en": "A large city."})
 
+    def test_slash_n_tiebreak_only_for_variants_that_differ_by_it(self):
+        spec = dict(SPEC_PL, bilingual=True)
+        lex = c.build_lexicon(str(LEGACY_DIR))
+        def r(page, q_en, a0_en):
+            return row(page, str(page), "PL060-0191", "Pytanie? " + q_en, "Odpowiedź. " + a0_en,
+                       "Nie. No.", "Tak. Yes.", "Może. Maybe.")
+        # same EN except for the "/n" tail: the variant without "/n" wins
+        qs, _ = convert_rows([HEADER, r(1, "Question? /n", "Answer."), r(2, "Question?", "Answer.")], spec, lex)
+        self.assertEqual(qs[0]["q"]["en"], "Question?")
+        # different EN content: the first variant stays, "/n" plays no role
+        qs, _ = convert_rows([HEADER, r(1, "Question one? /n", "Answer."), r(2, "Question two?", "Answer.")], spec, lex)
+        self.assertEqual(qs[0]["q"]["en"], "Question one? /n")
+
     def test_duplicate_keeps_the_better_english_text(self):
         spec = dict(SPEC_PL, bilingual=True)
         lex = c.build_lexicon(str(LEGACY_DIR))
