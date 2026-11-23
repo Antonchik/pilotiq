@@ -88,7 +88,10 @@ void main() {
     expect(container.read(selectedLicenceProvider), Licence.ppla);
 
     await tester.tap(find.text('PPL(H)'));
-    await tester.pumpAndSettle();
+    for (var i = 0; i < 30; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+    debugPrint('DBG ${find.byType(SubjectListScreen).evaluate().length} ${find.byType(CircularProgressIndicator).evaluate().length}');
 
     expect(find.byType(SubjectListScreen), findsOneWidget);
     expect(
