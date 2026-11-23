@@ -1,0 +1,382 @@
+{
+  "navToday": "Dziś",
+  "@navToday": {
+    "description": "Bottom navigation: dashboard tab"
+  },
+  "navSubjects": "Przedmioty",
+  "@navSubjects": {
+    "description": "Bottom navigation: subjects tab"
+  },
+  "navProfile": "Profil",
+  "@navProfile": {
+    "description": "Bottom navigation: profile and settings tab"
+  },
+  "dashboardTitle": "Dziś",
+  "@dashboardTitle": {
+    "description": "Dashboard title"
+  },
+  "dashboardExamCountdown": "{days, plural, =0{Egzamin jest dziś} one{1 dzień do egzaminu} few{{days} dni do egzaminu} many{{days} dni do egzaminu} other{{days} dnia do egzaminu}}",
+  "@dashboardExamCountdown": {
+    "description": "Days left until the exam",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardExamPassed": "Termin egzaminu już minął",
+  "@dashboardExamPassed": {
+    "description": "Exam date is in the past"
+  },
+  "dashboardExamNotSet": "Ustaw datę egzaminu, aby zobaczyć odliczanie",
+  "@dashboardExamNotSet": {
+    "description": "Hint when no exam date is set"
+  },
+  "dashboardExamSetDate": "Ustaw datę",
+  "@dashboardExamSetDate": {
+    "description": "Button that opens the exam date picker"
+  },
+  "dashboardGoalTitle": "Cel dnia",
+  "@dashboardGoalTitle": {
+    "description": "Daily goal card title"
+  },
+  "dashboardGoalValue": "{answered}/{goal}",
+  "@dashboardGoalValue": {
+    "description": "Answers given today out of the daily goal",
+    "placeholders": {
+      "answered": {
+        "type": "int"
+      },
+      "goal": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardGoalReached": "Cel osiągnięty, brawo!",
+  "@dashboardGoalReached": {
+    "description": "Shown when the daily goal is met"
+  },
+  "dashboardGoalRemaining": "{count, plural, one{Jeszcze 1 odpowiedź do celu} few{Jeszcze {count} odpowiedzi do celu} many{Jeszcze {count} odpowiedzi do celu} other{Jeszcze {count} odpowiedzi do celu}}",
+  "@dashboardGoalRemaining": {
+    "description": "Answers left to reach the daily goal",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardStreakTitle": "Seria",
+  "@dashboardStreakTitle": {
+    "description": "Streak card title"
+  },
+  "dashboardStreak": "{count, plural, =0{Brak serii} one{1 dzień z rzędu} few{{count} dni z rzędu} many{{count} dni z rzędu} other{{count} dnia z rzędu}}",
+  "@dashboardStreak": {
+    "description": "Current streak in days",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardStreakHint": "Odpowiedz na co najmniej jedno pytanie każdego dnia.",
+  "@dashboardStreakHint": {
+    "description": "Streak rule"
+  },
+  "dashboardDueTitle": "Do powtórzenia dziś",
+  "@dashboardDueTitle": {
+    "description": "Spaced repetition card title"
+  },
+  "dashboardDue": "{count, plural, =0{Dziś nic do powtórzenia} one{1 pytanie do powtórzenia dziś} few{{count} pytania do powtórzenia dziś} many{{count} pytań do powtórzenia dziś} other{{count} pytania do powtórzenia dziś}}",
+  "@dashboardDue": {
+    "description": "Questions due for repetition today",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardDueHint": "Otwórz przedmiot i wybierz Powtórki.",
+  "@dashboardDueHint": {
+    "description": "Where to start the review"
+  },
+  "dashboardDueLocked": "Powtórki w odstępach są częścią Premium.",
+  "@dashboardDueLocked": {
+    "description": "Teaser for free users"
+  },
+  "dashboardOverviewTitle": "Twój postęp",
+  "@dashboardOverviewTitle": {
+    "description": "Basic statistics card title"
+  },
+  "dashboardCoverage": "Pokrycie {percent}%",
+  "@dashboardCoverage": {
+    "description": "Share of the bank answered at least once",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardAccuracy": "Skuteczność {percent}%",
+  "@dashboardAccuracy": {
+    "description": "Share of correct answers",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardReadinessTitle": "Gotowość do egzaminu",
+  "@dashboardReadinessTitle": {
+    "description": "Readiness card title"
+  },
+  "dashboardReadinessApprox": "orientacyjnie",
+  "@dashboardReadinessApprox": {
+    "description": "Label next to the readiness values"
+  },
+  "dashboardReadinessLocked": "Gotowość według przedmiotów jest częścią Premium.",
+  "@dashboardReadinessLocked": {
+    "description": "Teaser for free users"
+  },
+  "dashboardPercentValue": "{percent}%",
+  "@dashboardPercentValue": {
+    "description": "A percentage",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardWeakTitle": "Najsłabsze przedmioty",
+  "@dashboardWeakTitle": {
+    "description": "Weak subjects card title"
+  },
+  "dashboardWeakNone": "Odpowiedz na co najmniej 10 pytań z przedmiotu, aby pojawił się tutaj.",
+  "@dashboardWeakNone": {
+    "description": "Hint when no subject has enough answers"
+  },
+  "dashboardLastExamTitle": "Ostatnia symulacja",
+  "@dashboardLastExamTitle": {
+    "description": "Last exam simulation card title"
+  },
+  "dashboardLastExamNone": "Brak symulacji egzaminu.",
+  "@dashboardLastExamNone": {
+    "description": "Hint when there is no simulation"
+  },
+  "dashboardPassed": "Zdany",
+  "@dashboardPassed": {
+    "description": "Exam passed badge"
+  },
+  "dashboardFailed": "Niezdany",
+  "@dashboardFailed": {
+    "description": "Exam failed badge"
+  },
+  "dashboardAttemptResult": "{percent}% · {date}",
+  "@dashboardAttemptResult": {
+    "description": "Result and date of an attempt",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "dashboardLegacyAttempts": "{count, plural, one{1 podejście sprzed wersji 2.0} few{{count} podejścia sprzed wersji 2.0} many{{count} podejść sprzed wersji 2.0} other{{count} podejścia sprzed wersji 2.0}}",
+  "@dashboardLegacyAttempts": {
+    "description": "Attempts migrated from version 1.x",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dashboardBeforeV2": "Przed wersją 2.0",
+  "@dashboardBeforeV2": {
+    "description": "Label of a migrated attempt that has no date"
+  },
+  "settingsTitle": "Profil i ustawienia",
+  "@settingsTitle": {
+    "description": "Settings screen title"
+  },
+  "settingsPremiumActive": "Premium jest aktywne",
+  "@settingsPremiumActive": {
+    "description": "Shown to premium users"
+  },
+  "settingsPremiumGet": "Odblokuj wszystkie funkcje",
+  "@settingsPremiumGet": {
+    "description": "Subtitle of the premium card for free users"
+  },
+  "settingsSectionLearning": "Nauka",
+  "@settingsSectionLearning": {
+    "description": "Settings section"
+  },
+  "settingsSectionAppearance": "Wygląd",
+  "@settingsSectionAppearance": {
+    "description": "Settings section"
+  },
+  "settingsLicenceTitle": "Licencja",
+  "@settingsLicenceTitle": {
+    "description": "Licence setting"
+  },
+  "settingsExamDateTitle": "Data egzaminu",
+  "@settingsExamDateTitle": {
+    "description": "Exam date setting"
+  },
+  "settingsExamDateNotSet": "Nie ustawiono",
+  "@settingsExamDateNotSet": {
+    "description": "Exam date is empty"
+  },
+  "settingsExamDateClear": "Usuń datę",
+  "@settingsExamDateClear": {
+    "description": "Button that clears the exam date"
+  },
+  "settingsExamDateHelp": "Data egzaminu",
+  "@settingsExamDateHelp": {
+    "description": "Help text of the date picker"
+  },
+  "settingsDailyGoalValue": "{count, plural, one{1 pytanie dziennie} few{{count} pytania dziennie} many{{count} pytań dziennie} other{{count} pytania dziennie}}",
+  "@settingsDailyGoalValue": {
+    "description": "Daily goal value",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsDailyGoalTitle": "Cel dzienny",
+  "@settingsDailyGoalTitle": {
+    "description": "Daily goal setting"
+  },
+  "settingsThemeTitle": "Motyw",
+  "@settingsThemeTitle": {
+    "description": "Theme setting"
+  },
+  "settingsThemeSystem": "Systemowy",
+  "@settingsThemeSystem": {
+    "description": "Follow the system theme"
+  },
+  "settingsThemeLight": "Jasny",
+  "@settingsThemeLight": {
+    "description": "Light theme"
+  },
+  "settingsThemeDark": "Ciemny",
+  "@settingsThemeDark": {
+    "description": "Dark theme"
+  },
+  "settingsSaveError": "Nie udało się zapisać ustawienia.",
+  "@settingsSaveError": {
+    "description": "Shown when saving fails"
+  },
+  "settingsRetry": "Ponów",
+  "@settingsRetry": {
+    "description": "Retry action of a failed save"
+  },
+  "settingsAboutSubtitle": "Wersja, źródła i informacje prawne",
+  "@settingsAboutSubtitle": {
+    "description": "Subtitle of the About tile"
+  },
+  "settingsStartupError": "Aplikacja nie mogła odczytać swoich danych.",
+  "@settingsStartupError": {
+    "description": "Shown when the settings cannot be opened"
+  },
+  "startupErrorTitle": "Nie udało się uruchomić Pilotiq",
+  "@startupErrorTitle": {
+    "description": "Title of the start-up error screen"
+  },
+  "onboardingWelcomeTitle": "Witaj w Pilotiq",
+  "@onboardingWelcomeTitle": {
+    "description": "Onboarding first step title"
+  },
+  "onboardingWelcomeBody": "Wybierz licencję, do której się przygotowujesz, oraz język pytań.",
+  "@onboardingWelcomeBody": {
+    "description": "Onboarding first step text"
+  },
+  "onboardingLegacyBanner": "Znaleźliśmy Twoje wyniki z poprzedniej wersji i je zachowaliśmy. Sprawdź, czy licencja jest właściwa.",
+  "@onboardingLegacyBanner": {
+    "description": "Shown to users who upgrade from version 1.x"
+  },
+  "onboardingExamDateTitle": "Kiedy masz egzamin?",
+  "@onboardingExamDateTitle": {
+    "description": "Onboarding exam date step title"
+  },
+  "onboardingExamDateBody": "Odliczamy dni i dostosowujemy do nich powtórki. Możesz to pominąć.",
+  "@onboardingExamDateBody": {
+    "description": "Onboarding exam date step text"
+  },
+  "onboardingGoalTitle": "Ile pytań dziennie?",
+  "@onboardingGoalTitle": {
+    "description": "Onboarding goal step title"
+  },
+  "onboardingGoalBody": "Mały cel dzienny buduje serię. Możesz go zmienić w każdej chwili.",
+  "@onboardingGoalBody": {
+    "description": "Onboarding goal step text"
+  },
+  "onboardingNext": "Dalej",
+  "@onboardingNext": {
+    "description": "Onboarding: next step"
+  },
+  "onboardingBack": "Wstecz",
+  "@onboardingBack": {
+    "description": "Onboarding: previous step"
+  },
+  "onboardingSkip": "Pomiń",
+  "@onboardingSkip": {
+    "description": "Onboarding: skip a step"
+  },
+  "onboardingFinish": "Zaczynamy naukę",
+  "@onboardingFinish": {
+    "description": "Onboarding: finish"
+  },
+  "onboardingStepOf": "Krok {current} z {total}",
+  "@onboardingStepOf": {
+    "description": "Onboarding progress",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "aboutVersion": "Wersja {version} ({build})",
+  "@aboutVersion": {
+    "description": "App version",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      },
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutDisclaimer": "Pilotiq nie jest powiązane z ULC ani EASA i nie jest ich produktem.",
+  "@aboutDisclaimer": {
+    "description": "Legal disclaimer"
+  },
+  "aboutBankTitle": "Baza pytań",
+  "@aboutBankTitle": {
+    "description": "About: section title"
+  },
+  "aboutBankSourceLine": "{licence}: {source}, {date}",
+  "@aboutBankSourceLine": {
+    "description": "Source and date of the question database of one licence",
+    "placeholders": {
+      "licence": {
+        "type": "String"
+      },
+      "source": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "aboutQuestionsNote": "Treści pytań podano w takiej postaci, w jakiej opublikował je ULC.",
+  "@aboutQuestionsNote": {
+    "description": "Questions are not reworded"
+  }
+}

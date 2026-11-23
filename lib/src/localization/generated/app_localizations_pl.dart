@@ -299,4 +299,189 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get paywallStubMessage => 'Zakupy Premium będą tu wkrótce dostępne.';
+
+  @override
+  String practiceProgress(int current, int total) {
+    return '$current / $total';
+  }
+
+  @override
+  String get practiceFinishSession => 'Zakończ sesję';
+
+  @override
+  String get practiceLastQuestionButton => 'Zakończ';
+
+  @override
+  String get practiceBookmarkAdd => 'Dodaj zakładkę';
+
+  @override
+  String get practiceBookmarkRemove => 'Usuń zakładkę';
+
+  @override
+  String get practiceFeedbackCorrect => 'Dobrze!';
+
+  @override
+  String get practiceFeedbackWrong =>
+      'Źle. Poprawna odpowiedź jest wyróżniona.';
+
+  @override
+  String get practiceAnswerCorrectSemantics => 'poprawna odpowiedź';
+
+  @override
+  String get practiceAnswerWrongSemantics => 'twoja odpowiedź, błędna';
+
+  @override
+  String get practiceRetryTitle => 'POWTÓRZ BŁĘDY';
+
+  @override
+  String get practiceSummaryTitle => 'Podsumowanie sesji';
+
+  @override
+  String practiceSummaryCorrect(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count poprawnej odpowiedzi',
+      many: '$count poprawnych odpowiedzi',
+      few: '$count poprawne odpowiedzi',
+      one: '$count poprawna odpowiedź',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceSummaryWrong(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count błędnej odpowiedzi',
+      many: '$count błędnych odpowiedzi',
+      few: '$count błędne odpowiedzi',
+      one: '$count błędna odpowiedź',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceSummaryAccuracy(int percent) {
+    return 'Skuteczność: $percent%';
+  }
+
+  @override
+  String get practiceSummaryNothing =>
+      'W tej sesji nie odpowiedziano na żadne pytanie.';
+
+  @override
+  String get practiceRepeatMistakes => 'Powtórz błędy z tej sesji';
+
+  @override
+  String get practiceEmptyLearn => 'Brak pytań do przećwiczenia.';
+
+  @override
+  String get practiceEmptyMistakes => 'Brak błędów do poprawienia. Świetnie!';
+
+  @override
+  String get practiceEmptyReview => 'Na dziś nie ma powtórek.';
+
+  @override
+  String get practiceEmptyBookmarks =>
+      'Nie dodano jeszcze zakładek w tym przedmiocie.';
+
+  @override
+  String get practiceLimitTitle => 'Dzienny limit wykorzystany';
+
+  @override
+  String practiceLimitBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Bezpłatny dostęp obejmuje $count odpowiedzi dziennie.',
+      many: 'Bezpłatny dostęp obejmuje $count odpowiedzi dziennie.',
+      few: 'Bezpłatny dostęp obejmuje $count odpowiedzi dziennie.',
+      one: 'Bezpłatny dostęp obejmuje $count odpowiedź dziennie.',
+    );
+    return '$_temp0 Wróć jutro albo przejdź na Premium, aby ćwiczyć bez limitu.';
+  }
+
+  @override
+  String get practiceLockedTitle => 'Funkcja Premium';
+
+  @override
+  String get practiceLockedBody =>
+      'Moje błędy i powtórki są dostępne w wersji Premium.';
+
+  @override
+  String get practiceLockedBadge => 'Premium';
+
+  @override
+  String practiceModeLearnStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania jeszcze nieoglądanego',
+      many: '$count pytań jeszcze nieoglądanych',
+      few: '$count pytania jeszcze nieoglądane',
+      one: '$count pytanie jeszcze nieoglądane',
+      zero: 'Wszystkie pytania poznane',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceModeMistakesStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania do poprawy',
+      many: '$count pytań do poprawy',
+      few: '$count pytania do poprawy',
+      one: '$count pytanie do poprawy',
+      zero: 'Brak błędów',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceModeReviewStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania do powtórki',
+      many: '$count pytań do powtórki',
+      few: '$count pytania do powtórki',
+      one: '$count pytanie do powtórki',
+      zero: 'Brak powtórek',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceModeBookmarksStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania w zakładkach',
+      many: '$count pytań w zakładkach',
+      few: '$count pytania w zakładkach',
+      one: '$count pytanie w zakładkach',
+      zero: 'Brak zakładek',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceSubjectCoverage(int percent) {
+    return '$percent% poznane';
+  }
+
+  @override
+  String practiceSubjectAccuracy(int percent) {
+    return '$percent% skuteczności';
+  }
+
+  @override
+  String get practiceSubjectNotStarted => 'Jeszcze nie rozpoczęto';
+
+  @override
+  String get practiceLoadError => 'Nie udało się wczytać pytań.';
 }

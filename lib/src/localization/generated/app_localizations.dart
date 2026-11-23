@@ -625,6 +625,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Premium purchases will be available here soon.'**
   String get paywallStubMessage;
+
+  /// Position in the session
+  ///
+  /// In en, this message translates to:
+  /// **'{current} / {total}'**
+  String practiceProgress(int current, int total);
+
+  /// Tooltip of the finish button
+  ///
+  /// In en, this message translates to:
+  /// **'Finish session'**
+  String get practiceFinishSession;
+
+  /// Next button on the last question
+  ///
+  /// In en, this message translates to:
+  /// **'Finish'**
+  String get practiceLastQuestionButton;
+
+  /// Tooltip: add a bookmark
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmark question'**
+  String get practiceBookmarkAdd;
+
+  /// Tooltip: remove a bookmark
+  ///
+  /// In en, this message translates to:
+  /// **'Remove bookmark'**
+  String get practiceBookmarkRemove;
+
+  /// Feedback after a correct answer
+  ///
+  /// In en, this message translates to:
+  /// **'Correct!'**
+  String get practiceFeedbackCorrect;
+
+  /// Feedback after a wrong answer
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong. The correct answer is highlighted.'**
+  String get practiceFeedbackWrong;
+
+  /// Accessibility label of the correct answer
+  ///
+  /// In en, this message translates to:
+  /// **'correct answer'**
+  String get practiceAnswerCorrectSemantics;
+
+  /// Accessibility label of a wrong chosen answer
+  ///
+  /// In en, this message translates to:
+  /// **'your answer, wrong'**
+  String get practiceAnswerWrongSemantics;
+
+  /// Title of the session that repeats session mistakes
+  ///
+  /// In en, this message translates to:
+  /// **'REPEAT MISTAKES'**
+  String get practiceRetryTitle;
+
+  /// Title of the summary
+  ///
+  /// In en, this message translates to:
+  /// **'Session summary'**
+  String get practiceSummaryTitle;
+
+  /// Number of correct answers in the session
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} correct answer} other{{count} correct answers}}'**
+  String practiceSummaryCorrect(int count);
+
+  /// Number of wrong answers in the session
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} wrong answer} other{{count} wrong answers}}'**
+  String practiceSummaryWrong(int count);
+
+  /// Accuracy of the session
+  ///
+  /// In en, this message translates to:
+  /// **'Accuracy: {percent}%'**
+  String practiceSummaryAccuracy(int percent);
+
+  /// Summary of an empty session
+  ///
+  /// In en, this message translates to:
+  /// **'You have not answered any question in this session.'**
+  String get practiceSummaryNothing;
+
+  /// Button that starts a session with the wrong answers
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat mistakes of this session'**
+  String get practiceRepeatMistakes;
+
+  /// Empty learn session
+  ///
+  /// In en, this message translates to:
+  /// **'There are no questions to practise here.'**
+  String get practiceEmptyLearn;
+
+  /// Empty mistakes session
+  ///
+  /// In en, this message translates to:
+  /// **'No mistakes to fix. Well done!'**
+  String get practiceEmptyMistakes;
+
+  /// Empty review session
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing is due for review today.'**
+  String get practiceEmptyReview;
+
+  /// Empty bookmarks session
+  ///
+  /// In en, this message translates to:
+  /// **'You have not bookmarked any question in this subject yet.'**
+  String get practiceEmptyBookmarks;
+
+  /// Title when the free daily limit is reached
+  ///
+  /// In en, this message translates to:
+  /// **'Daily limit reached'**
+  String get practiceLimitTitle;
+
+  /// Explanation of the free daily limit
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{Free access includes {count} answer per day.} other{Free access includes {count} answers per day.}} Come back tomorrow or go Premium for unlimited practice.'**
+  String practiceLimitBody(int count);
+
+  /// Title of the locked-mode screen
+  ///
+  /// In en, this message translates to:
+  /// **'Premium feature'**
+  String get practiceLockedTitle;
+
+  /// Body of the locked-mode screen
+  ///
+  /// In en, this message translates to:
+  /// **'My mistakes and spaced review are available in Premium.'**
+  String get practiceLockedBody;
+
+  /// Badge of a locked mode tile
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get practiceLockedBadge;
+
+  /// Counter of the learn tile
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{All questions covered} one{{count} question not seen yet} other{{count} questions not seen yet}}'**
+  String practiceModeLearnStatus(int count);
+
+  /// Counter of the mistakes tile
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No mistakes} one{{count} question to fix} other{{count} questions to fix}}'**
+  String practiceModeMistakesStatus(int count);
+
+  /// Counter of the review tile
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Nothing due} one{{count} question due} other{{count} questions due}}'**
+  String practiceModeReviewStatus(int count);
+
+  /// Counter of the bookmarks tile
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No bookmarks} one{{count} bookmarked question} other{{count} bookmarked questions}}'**
+  String practiceModeBookmarksStatus(int count);
+
+  /// Coverage of a subject
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% covered'**
+  String practiceSubjectCoverage(int percent);
+
+  /// Accuracy of a subject
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% accuracy'**
+  String practiceSubjectAccuracy(int percent);
+
+  /// Subject without any answer
+  ///
+  /// In en, this message translates to:
+  /// **'Not started'**
+  String get practiceSubjectNotStarted;
+
+  /// Error while preparing a practice session
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load the questions.'**
+  String get practiceLoadError;
 }
 
 class _AppLocalizationsDelegate

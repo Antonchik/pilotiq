@@ -296,4 +296,175 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get paywallStubMessage =>
       'Premium purchases will be available here soon.';
+
+  @override
+  String practiceProgress(int current, int total) {
+    return '$current / $total';
+  }
+
+  @override
+  String get practiceFinishSession => 'Finish session';
+
+  @override
+  String get practiceLastQuestionButton => 'Finish';
+
+  @override
+  String get practiceBookmarkAdd => 'Bookmark question';
+
+  @override
+  String get practiceBookmarkRemove => 'Remove bookmark';
+
+  @override
+  String get practiceFeedbackCorrect => 'Correct!';
+
+  @override
+  String get practiceFeedbackWrong =>
+      'Wrong. The correct answer is highlighted.';
+
+  @override
+  String get practiceAnswerCorrectSemantics => 'correct answer';
+
+  @override
+  String get practiceAnswerWrongSemantics => 'your answer, wrong';
+
+  @override
+  String get practiceRetryTitle => 'REPEAT MISTAKES';
+
+  @override
+  String get practiceSummaryTitle => 'Session summary';
+
+  @override
+  String practiceSummaryCorrect(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count correct answers',
+      one: '$count correct answer',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceSummaryWrong(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count wrong answers',
+      one: '$count wrong answer',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceSummaryAccuracy(int percent) {
+    return 'Accuracy: $percent%';
+  }
+
+  @override
+  String get practiceSummaryNothing =>
+      'You have not answered any question in this session.';
+
+  @override
+  String get practiceRepeatMistakes => 'Repeat mistakes of this session';
+
+  @override
+  String get practiceEmptyLearn => 'There are no questions to practise here.';
+
+  @override
+  String get practiceEmptyMistakes => 'No mistakes to fix. Well done!';
+
+  @override
+  String get practiceEmptyReview => 'Nothing is due for review today.';
+
+  @override
+  String get practiceEmptyBookmarks =>
+      'You have not bookmarked any question in this subject yet.';
+
+  @override
+  String get practiceLimitTitle => 'Daily limit reached';
+
+  @override
+  String practiceLimitBody(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Free access includes $count answers per day.',
+      one: 'Free access includes $count answer per day.',
+    );
+    return '$_temp0 Come back tomorrow or go Premium for unlimited practice.';
+  }
+
+  @override
+  String get practiceLockedTitle => 'Premium feature';
+
+  @override
+  String get practiceLockedBody =>
+      'My mistakes and spaced review are available in Premium.';
+
+  @override
+  String get practiceLockedBadge => 'Premium';
+
+  @override
+  String practiceModeLearnStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions not seen yet',
+      one: '$count question not seen yet',
+      zero: 'All questions covered',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceModeMistakesStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions to fix',
+      one: '$count question to fix',
+      zero: 'No mistakes',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceModeReviewStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions due',
+      one: '$count question due',
+      zero: 'Nothing due',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceModeBookmarksStatus(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count bookmarked questions',
+      one: '$count bookmarked question',
+      zero: 'No bookmarks',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String practiceSubjectCoverage(int percent) {
+    return '$percent% covered';
+  }
+
+  @override
+  String practiceSubjectAccuracy(int percent) {
+    return '$percent% accuracy';
+  }
+
+  @override
+  String get practiceSubjectNotStarted => 'Not started';
+
+  @override
+  String get practiceLoadError => 'Could not load the questions.';
 }

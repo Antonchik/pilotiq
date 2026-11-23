@@ -1,0 +1,192 @@
+{
+  "practiceProgress": "{current} / {total}",
+  "@practiceProgress": {
+    "description": "Position in the session",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceFinishSession": "Finish session",
+  "@practiceFinishSession": {
+    "description": "Tooltip of the finish button"
+  },
+  "practiceLastQuestionButton": "Finish",
+  "@practiceLastQuestionButton": {
+    "description": "Next button on the last question"
+  },
+  "practiceBookmarkAdd": "Bookmark question",
+  "@practiceBookmarkAdd": {
+    "description": "Tooltip: add a bookmark"
+  },
+  "practiceBookmarkRemove": "Remove bookmark",
+  "@practiceBookmarkRemove": {
+    "description": "Tooltip: remove a bookmark"
+  },
+  "practiceFeedbackCorrect": "Correct!",
+  "@practiceFeedbackCorrect": {
+    "description": "Feedback after a correct answer"
+  },
+  "practiceFeedbackWrong": "Wrong. The correct answer is highlighted.",
+  "@practiceFeedbackWrong": {
+    "description": "Feedback after a wrong answer"
+  },
+  "practiceAnswerCorrectSemantics": "correct answer",
+  "@practiceAnswerCorrectSemantics": {
+    "description": "Accessibility label of the correct answer"
+  },
+  "practiceAnswerWrongSemantics": "your answer, wrong",
+  "@practiceAnswerWrongSemantics": {
+    "description": "Accessibility label of a wrong chosen answer"
+  },
+  "practiceRetryTitle": "REPEAT MISTAKES",
+  "@practiceRetryTitle": {
+    "description": "Title of the session that repeats session mistakes"
+  },
+  "practiceSummaryTitle": "Session summary",
+  "@practiceSummaryTitle": {
+    "description": "Title of the summary"
+  },
+  "practiceSummaryCorrect": "{count, plural, one{{count} correct answer} other{{count} correct answers}}",
+  "@practiceSummaryCorrect": {
+    "description": "Number of correct answers in the session",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceSummaryWrong": "{count, plural, one{{count} wrong answer} other{{count} wrong answers}}",
+  "@practiceSummaryWrong": {
+    "description": "Number of wrong answers in the session",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceSummaryAccuracy": "Accuracy: {percent}%",
+  "@practiceSummaryAccuracy": {
+    "description": "Accuracy of the session",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceSummaryNothing": "You have not answered any question in this session.",
+  "@practiceSummaryNothing": {
+    "description": "Summary of an empty session"
+  },
+  "practiceRepeatMistakes": "Repeat mistakes of this session",
+  "@practiceRepeatMistakes": {
+    "description": "Button that starts a session with the wrong answers"
+  },
+  "practiceEmptyLearn": "There are no questions to practise here.",
+  "@practiceEmptyLearn": {
+    "description": "Empty learn session"
+  },
+  "practiceEmptyMistakes": "No mistakes to fix. Well done!",
+  "@practiceEmptyMistakes": {
+    "description": "Empty mistakes session"
+  },
+  "practiceEmptyReview": "Nothing is due for review today.",
+  "@practiceEmptyReview": {
+    "description": "Empty review session"
+  },
+  "practiceEmptyBookmarks": "You have not bookmarked any question in this subject yet.",
+  "@practiceEmptyBookmarks": {
+    "description": "Empty bookmarks session"
+  },
+  "practiceLimitTitle": "Daily limit reached",
+  "@practiceLimitTitle": {
+    "description": "Title when the free daily limit is reached"
+  },
+  "practiceLimitBody": "{count, plural, one{Free access includes {count} answer per day.} other{Free access includes {count} answers per day.}} Come back tomorrow or go Premium for unlimited practice.",
+  "@practiceLimitBody": {
+    "description": "Explanation of the free daily limit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceLockedTitle": "Premium feature",
+  "@practiceLockedTitle": {
+    "description": "Title of the locked-mode screen"
+  },
+  "practiceLockedBody": "My mistakes and spaced review are available in Premium.",
+  "@practiceLockedBody": {
+    "description": "Body of the locked-mode screen"
+  },
+  "practiceLockedBadge": "Premium",
+  "@practiceLockedBadge": {
+    "description": "Badge of a locked mode tile"
+  },
+  "practiceModeLearnStatus": "{count, plural, =0{All questions covered} one{{count} question not seen yet} other{{count} questions not seen yet}}",
+  "@practiceModeLearnStatus": {
+    "description": "Counter of the learn tile",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceModeMistakesStatus": "{count, plural, =0{No mistakes} one{{count} question to fix} other{{count} questions to fix}}",
+  "@practiceModeMistakesStatus": {
+    "description": "Counter of the mistakes tile",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceModeReviewStatus": "{count, plural, =0{Nothing due} one{{count} question due} other{{count} questions due}}",
+  "@practiceModeReviewStatus": {
+    "description": "Counter of the review tile",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceModeBookmarksStatus": "{count, plural, =0{No bookmarks} one{{count} bookmarked question} other{{count} bookmarked questions}}",
+  "@practiceModeBookmarksStatus": {
+    "description": "Counter of the bookmarks tile",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceSubjectCoverage": "{percent}% covered",
+  "@practiceSubjectCoverage": {
+    "description": "Coverage of a subject",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceSubjectAccuracy": "{percent}% accuracy",
+  "@practiceSubjectAccuracy": {
+    "description": "Accuracy of a subject",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceSubjectNotStarted": "Not started",
+  "@practiceSubjectNotStarted": {
+    "description": "Subject without any answer"
+  },
+  "practiceLoadError": "Could not load the questions.",
+  "@practiceLoadError": {
+    "description": "Error while preparing a practice session"
+  }
+}
