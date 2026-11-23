@@ -47,6 +47,7 @@ class ProgressRepository {
 
   final BoxOpener _openBox;
   final Map<String, Future<Box<dynamic>>> _boxes = {};
+
   /// Shared by all instances: two repositories over the same Hive boxes must
   /// not interleave their read-modify-write sequences.
   static Future<void> _tail = Future<void>.value();
@@ -71,8 +72,22 @@ class ProgressRepository {
     return UserSettings.fromMap(box.toMap());
   }
 
-  Future<void> saveSettings(UserSettings settings) =>
-      _locked(() async => (await _box(configBox)).putAll(settings.toMap()));
+  /// Saves the settings. `schemaVersion` is never written here (only
+  /// [completeMigration] does), so a stale object cannot roll it back.
+  Future<void> saveSettings(UserSettings settings) => _locked(() async {
+    final map = settings.toMap()..remove('schemaVersion');
+    await (await _box(configBox)).putAll(map);
+  });
+
+  /// Called by the legacy migration at its end: stores the migrated theme and
+  /// the new schema version in one write.
+  Future<void> completeMigration({
+    required AppThemeMode themeMode,
+    required int schemaVersion,
+  }) => _locked(
+    () async => (await _box(configBox))
+        .putAll({'themeMode': themeMode.name, 'schemaVersion': schemaVersion}),
+  );
 
   // Answers ------------------------------------------------------------------
 

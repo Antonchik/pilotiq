@@ -21,7 +21,9 @@ class LegacyMigration {
     required this._repository,
     BoxOpener? openBox,
     Future<bool> Function(String name)? boxExists,
-  }) : _openBox = openBox ?? ((name) => Hive.openBox<dynamic>(name)),
+  }) : _openBox =
+           openBox ??
+           ((name) => Hive.openBox<dynamic>(name, crashRecovery: false)),
        _boxExists = boxExists ?? ((name) => Hive.boxExists(name));
 
   final ProgressRepository _repository;
@@ -32,12 +34,15 @@ class LegacyMigration {
 
   Future<MigrationOutcome> run() async {
     try {
+      // Legacy boxes are opened without crash recovery: a damaged file makes
+      // the run fail instead of being truncated. `config` goes first, so the
+      // repository reuses this strictly opened box.
+      final config = await _openBox(ProgressRepository.configBox);
       final settings = await _repository.loadSettings();
       if (settings.schemaVersion >= UserSettings.currentSchemaVersion) {
         return MigrationOutcome.alreadyDone;
       }
 
-      final config = await _openBox(ProgressRepository.configBox);
       var themeMode = settings.themeMode;
       final dark = config.get('dark');
       if (dark is bool) {
@@ -79,11 +84,9 @@ class LegacyMigration {
         }
       }
 
-      await _repository.saveSettings(
-        settings.copyWith(
-          themeMode: themeMode,
-          schemaVersion: UserSettings.currentSchemaVersion,
-        ),
+      await _repository.completeMigration(
+        themeMode: themeMode,
+        schemaVersion: UserSettings.currentSchemaVersion,
       );
       return MigrationOutcome.migrated;
     } on Object catch (e, st) {

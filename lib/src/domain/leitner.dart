@@ -12,7 +12,9 @@ class LeitnerScheduler {
   static const int maxBox = 5;
 
   /// Interval in days for [box] (1..5), optionally capped by [examDate].
-  /// An exam date in the past does not cap anything.
+  /// An exam date in the past (the exam is over, the user is probably
+  /// retaking it later) deliberately does not cap anything; today's date caps
+  /// the interval to one day.
   int intervalDays(int box, {required DateTime now, DateTime? examDate}) {
     final base = intervalsDays[box.clamp(1, maxBox) - 1];
     if (examDate == null) return base;

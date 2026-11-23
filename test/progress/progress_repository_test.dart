@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hive_ce/hive.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
 import 'package:pilotiq/src/progress/progress_repository.dart';
@@ -189,5 +190,110 @@ void main() {
     final s = await ProgressRepository().loadSettings();
     expect(s.dailyGoal, 40);
     expect(s.themeMode, AppThemeMode.light);
+  });
+
+  test('two repository instances do not lose concurrent updates', () async {
+    final other = ProgressRepository();
+    await Future.wait([
+      for (var i = 0; i < 50; i++)
+        (i.isEven ? repo : other).recordAnswer(Licence.ppla, 'q', true, now),
+    ]);
+    expect((await repo.dailyStat(now)).answered, 50);
+    expect((await repo.progressOf(Licence.ppla, 'q'))!.seen, 50);
+  });
+
+  test('one damaged attempt does not break the history', () async {
+    final box = await Hive.openBox<dynamic>('attempts');
+    await box.put('bad1', {'id': 7, 'licence': 7});
+    await box.put('bad2', {
+      'id': 'x',
+      'licence': 'ppla',
+      'subject': 'air_law',
+      'startedAt': 20260510,
+      'finishedAt': 'nope',
+    });
+    await box.put('bad3', {
+      'id': 'y',
+      'licence': 'ppla',
+      'subject': 'air_law',
+      'startedAt': '2026-01-01T10:00:00',
+      'finishedAt': '2026-01-01T11:00:00',
+      'answers': {'q': 'x'},
+      'topicBreakdown': {'PL010': 'oops'},
+      'total': '12',
+    });
+    await box.put('bad4', 'not a map');
+    await repo.saveAttempt(
+      ExamAttempt(
+        id: 'good',
+        licence: Licence.ppla,
+        subject: SubjectId.airLaw,
+        startedAt: DateTime(2026, 2, 1),
+        finishedAt: DateTime(2026, 2, 1, 1),
+        durationSec: 1,
+        total: 12,
+        correct: 9,
+        passed: true,
+        reason: AttemptReason.finished,
+      ),
+    );
+    final list = await repo.attempts(Licence.ppla);
+    expect(list.map((a) => a.id), containsAll(['good', 'y']));
+    expect(list.map((a) => a.id), isNot(contains('x')));
+  });
+
+  test('damaged settings fall back to defaults instead of throwing', () async {
+    final box = await Hive.openBox<dynamic>('config');
+    await box.putAll({
+      'licence': 7,
+      'examDate': 20260510,
+      'dailyGoal': '20',
+      'themeMode': 3,
+      'reminderTime': 5,
+      'schemaVersion': 'x',
+    });
+    final s = await repo.loadSettings();
+    expect(s.licence, Licence.ppla);
+    expect(s.examDate, isNull);
+    expect(s.dailyGoal, 20);
+    expect(s.themeMode, AppThemeMode.system);
+    expect(s.schemaVersion, 0);
+    // recordAnswer reads the exam date from the same settings
+    await repo.recordAnswer(Licence.ppla, 'q', true, now);
+  });
+
+  test('in-progress attempt keeps the display order of answers', () async {
+    final a = InProgressAttempt(
+      id: 'x',
+      licence: Licence.ppla,
+      subject: SubjectId.airLaw,
+      startedAt: now,
+      durationSec: 600,
+      questionIds: const ['q1'],
+      answers: const {'q1': 2},
+      answerOrders: const {
+        'q1': [3, 0, 2, 1],
+      },
+    );
+    await repo.saveInProgressAttempt(a);
+    await Hive.close();
+    Hive.init(dir.path);
+    final back = await ProgressRepository().loadInProgressAttempt(
+      Licence.ppla,
+      SubjectId.airLaw,
+    );
+    expect(back!.answerOrders, {
+      'q1': [3, 0, 2, 1],
+    });
+    expect(back.answers, {'q1': 2});
+  });
+
+  test('a damaged in-progress record is ignored', () async {
+    final box = await Hive.openBox<dynamic>('config');
+    await box.put('inprogress_ppla_air_law', {'id': 1, 'licence': []});
+    expect(
+      await repo.loadInProgressAttempt(Licence.ppla, SubjectId.airLaw),
+      isNull,
+    );
   });
 }

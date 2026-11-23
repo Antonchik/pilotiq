@@ -108,4 +108,49 @@ void main() {
     expect(ReminderTime.tryParse('25:00'), isNull);
     expect(ReminderTime.tryParse('7:05'), const ReminderTime(7, 5));
   });
+
+  test('InProgressAttempt answerOrders roundtrip and tolerant parsing', () {
+    final a = InProgressAttempt(
+      id: 'a',
+      licence: Licence.ppla,
+      subject: SubjectId.airLaw,
+      startedAt: DateTime(2026, 1, 1),
+      durationSec: 60,
+      questionIds: const ['q'],
+      answerOrders: const {
+        'q': [1, 0, 3, 2],
+      },
+    );
+    expect(
+      InProgressAttempt.tryFromMap(a.toMap())!.answerOrders,
+      a.answerOrders,
+    );
+    expect(a.copyWith(answers: const {'q': 1}).answerOrders, a.answerOrders);
+    expect(InProgressAttempt.tryFromMap({'id': 1}), isNull);
+    expect(
+      InProgressAttempt.tryFromMap({
+        ...a.toMap(),
+        'answers': {'q': 'x'},
+      })!.answers,
+      {'q': null},
+    );
+  });
+
+  test('ExamAttempt.tryFromMap never throws on wrong types', () {
+    expect(ExamAttempt.tryFromMap({'licence': 7}), isNull);
+    expect(
+      ExamAttempt.tryFromMap({'id': 'x', 'licence': 'ppla', 'subject': 7}),
+      isNull,
+    );
+  });
+
+  test('UserSettings.fromMap tolerates wrong types', () {
+    final s = UserSettings.fromMap({
+      'licence': 7,
+      'examDate': 20260510,
+      'dailyGoal': '20',
+      'onboardingDone': 'yes',
+    });
+    expect(s, const UserSettings());
+  });
 }

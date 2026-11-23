@@ -168,6 +168,7 @@ class InProgressAttempt {
     questionIds: questionIds,
     answers: answers ?? this.answers,
     flagged: flagged ?? this.flagged,
+    answerOrders: answerOrders ?? this.answerOrders,
   );
 
   Map<String, dynamic> toMap() => {
@@ -179,6 +180,7 @@ class InProgressAttempt {
     'questionIds': questionIds,
     'answers': answers,
     'flagged': flagged,
+    'answerOrders': answerOrders,
   };
 
   static InProgressAttempt? tryFromMap(Map<dynamic, dynamic> m) {
@@ -227,7 +229,5 @@ int? _int(Object? v) => v is num ? v.toInt() : null;
 DateTime? _date(Object? v) => v is String ? DateTime.tryParse(v) : null;
 
 Map<String, int?> _answers(Object? v) => v is Map
-    ? {
-        for (final e in v.entries) '${e.key}': _int(e.value),
-      }
+    ? {for (final e in v.entries) '${e.key}': _int(e.value)}
     : const {};

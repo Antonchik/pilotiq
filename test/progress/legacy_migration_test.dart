@@ -91,8 +91,8 @@ void main() {
     're-running after a lost schemaVersion still does not duplicate',
     () async {
       await migration.run();
-      final s = await repo.loadSettings();
-      await repo.saveSettings(s.copyWith(schemaVersion: 0));
+      final cfg = await Hive.openBox<dynamic>('config');
+      await cfg.put('schemaVersion', 0);
       expect(await migration.run(), MigrationOutcome.migrated);
       expect(
         await repo.attempts(Licence.ppla, subject: SubjectId.airLaw),
@@ -179,5 +179,28 @@ void main() {
     // a later healthy run completes the migration
     expect(await migration.run(), MigrationOutcome.migrated);
     expect((await repo.loadSettings()).schemaVersion, 2);
+  });
+
+  test(
+    'a legacy file with a garbage tail makes the run fail and stays intact',
+    () async {
+      final file = File('${dir.path}/ppla.hive');
+      final damaged = [...file.readAsBytesSync(), 1, 2, 3, 4, 5, 6, 7];
+      file.writeAsBytesSync(damaged);
+      expect(await migration.run(), MigrationOutcome.failed);
+      expect(file.readAsBytesSync(), damaged);
+      expect((await repo.loadSettings()).schemaVersion, 0);
+    },
+  );
+
+  test('a stale settings object cannot roll schemaVersion back', () async {
+    // object read before the migration (wrong order in the caller)
+    final stale = await repo.loadSettings();
+    await migration.run();
+    await repo.saveSettings(stale.copyWith(dailyGoal: 40));
+    final now = await repo.loadSettings();
+    expect(now.schemaVersion, 2);
+    expect(now.dailyGoal, 40);
+    expect(await migration.run(), MigrationOutcome.alreadyDone);
   });
 }

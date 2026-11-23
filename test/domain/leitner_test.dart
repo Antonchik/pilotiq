@@ -73,6 +73,16 @@ void main() {
     );
   });
 
+  test('answer with an exam date in the past is not capped', () {
+    final p = scheduler.answer(
+      const QuestionProgress(qid: 'q', box: 4),
+      correct: true,
+      now: now,
+      examDate: DateTime(2026, 4, 1),
+    );
+    expect(p.dueAt, DateTime(2026, 5, 17, 12));
+  });
+
   test('answer applies the cap to dueAt', () {
     final p = scheduler.answer(
       const QuestionProgress(qid: 'q', box: 4),
