@@ -168,6 +168,19 @@ class IdsTest(unittest.TestCase):
         self.assertEqual(qs[0]["a"][0]["en"], "Not less than 200m AGL.")
         self.assertEqual(stats.exact_duplicates[0][2], "en")
 
+    def test_duplicate_found_by_full_cell_text_despite_a_bad_split(self):
+        # PL060-0093: "Duże miasto.A large city." vs "Duże miasto. A large city." (+ "/n" artifact in the question)
+        spec = dict(SPEC_PL, bilingual=True)
+        lex = c.build_lexicon(str(LEGACY_DIR))
+        def r(page, a0, q):
+            return row(page, str(page), "PL060-0093", q, a0, "Wieś. Village.", "Brzeg morza. Sea shore.", "Droga. Road.")
+        q1 = "Wybierz obiekt: Select the landmark: /n"
+        q2 = "Wybierz obiekt: Select the landmark:"
+        qs, stats = convert_rows([HEADER, r(1, "Duże miasto. A large city.", q1), r(2, "Duże miasto.A large city.", q2)], spec, lex)
+        self.assertEqual(len(qs), 1)
+        self.assertEqual(qs[0]["id"], "PL060-0093")
+        self.assertEqual(qs[0]["a"][0], {"pl": "Duże miasto.", "en": "A large city."})
+
     def test_duplicate_keeps_the_better_english_text(self):
         spec = dict(SPEC_PL, bilingual=True)
         lex = c.build_lexicon(str(LEGACY_DIR))
@@ -231,7 +244,7 @@ class SplitTest(unittest.TestCase):
                            ("360. 360 .", "360."), ("003°, 359° ; 003°, 359°", "003°, 359°"),
                            ("4,1,2,5,3,6; 4,1,2,5,3,6; ,", "4,1,2,5,3,6"), ("17 US gal . 17 US gal.", "17 US gal")]:
             pl, en, flag = c.split_cell(text, self.lex)
-            self.assertEqual((pl, en, flag), (half, half, "twin") if half != "17 US gal" else (half, "17 US gal.", "twin"), text)
+            self.assertEqual((pl, en, flag), (half, half, "twin") if half != "17 US gal" else ("17 US gal.", "17 US gal.", "twin"), text)
             self.assertFalse(pl[:1] in ";,." or en[:1] in ";,.", text)
 
     def assess(self, texts):
@@ -287,6 +300,50 @@ class SplitTest(unittest.TestCase):
                  "Kontroli. Kontroli.", "Żadnej. Żadnej."]
         _, _, reasons, _ = self.assess(texts)
         self.assertTrue(any("repeats the Polish" in r for r in reasons))
+
+    def round3(self, number):
+        with open(HERE / "fixtures" / "round3_records.json", encoding="utf-8") as f:
+            return json.load(f)[number][0]
+
+    def test_round3_records_with_wrong_boundary_stay_in_source_form(self):
+        # PL090-0045 a0, PL040-0073 a0, PL040-0135 a0: the Polish tail ended up in / next to the English part
+        for number in ("PL090-0045", "PL040-0073", "PL040-0135"):
+            texts = self.round3(number)
+            cells, _, reasons, _ = self.assess(texts)
+            self.assertTrue(reasons, number)
+            self.assertEqual(cells, [{"pl": t, "en": None} for t in texts], number)
+
+    def test_lone_capital_after_a_full_stop_and_glued_english(self):
+        base = ["Wybierz obiekt: Select the landmark:", "Wieś. Village.", "Brzeg morza. Sea shore.", "Droga. Road."]
+        cells, _, reasons, _ = self.assess(base[:1] + ["Duże miasto.A large city."] + base[1:])
+        self.assertTrue(any("lone capital" in r or "lower case" in r for r in reasons), reasons)
+        self.assertTrue(all(x["en"] is None for x in cells))
+        # PL040-0340 style: "...od sercaArteries and veins..."
+        cells, _, reasons, _ = self.assess(base[:1] + ["Tętnice odprowadzają krew od sercaArteries and veins drain blood."] + base[1:])
+        self.assertTrue(reasons)
+        self.assertTrue(all(x["en"] is None for x in cells))
+
+    def test_polish_word_anywhere_in_english_part(self):
+        base = ["Wybierz obiekt: Select the landmark:", "Wieś. Village.", "Brzeg morza. Sea shore.", "Droga. Road."]
+        cells, _, reasons, _ = self.assess(base[:1] + ["Duże miasto. A large city near warunków lotu."] + base[1:])
+        self.assertTrue(any("Polish word inside" in r for r in reasons), reasons)
+        # the proper name "Jelenia Góra" is allowed
+        cells, _, reasons, _ = self.assess(base[:1] + ["Duże miasto. A large city near Jelenia Góra."] + base[1:])
+        self.assertFalse(any("Polish word inside" in r for r in reasons), reasons)
+
+    def test_trailing_separators_of_answers_are_uniform(self):
+        # PL060-0134 / PL060-0185: only the first answer kept its ";" after the split
+        for number in ("PL060-0134", "PL060-0185"):
+            cells, _, reasons, _ = self.assess(self.round3(number))
+            self.assertEqual(reasons, [], number)
+            for x in cells[1:]:
+                self.assertFalse(x["pl"].rstrip().endswith((";", ",")) or x["en"].rstrip().endswith((";", ",")), (number, x))
+        cells, _, _, _ = self.assess(["Jednostki? Units?", "30 stóp; 30 ft", "40 stóp; 40 ft", "10 stóp; 10 ft", "50 stóp; 50 ft"])
+        self.assertEqual([x["pl"] for x in cells[1:]], ["30 stóp", "40 stóp", "10 stóp", "50 stóp"])
+
+    def test_no_cut_at_a_space_before_punctuation(self):
+        # PL060-0166: the full stop must stay with the Polish text
+        self.assertEqual(c.split_cell("17 US gal . 17 US gal.", self.lex), ("17 US gal.", "17 US gal.", "twin"))
 
     def test_digits_only_cell_is_neutral(self):
         self.assertEqual(c.split_cell("1500", self.lex), ("1500", "1500", "neutral"))
@@ -348,6 +405,19 @@ class ValidateTest(unittest.TestCase):
         return {"id": number, "number": number, "topic": number.split("-")[0], "subject": subject,
                 "q": {"pl": "Q?", "en": None},
                 "a": [{"pl": f"a{i}", "en": None} for i in range(4)], "correct": 0}
+
+    def test_audit_flags_new_symptoms(self):
+        lex = c.build_lexicon(str(LEGACY_DIR))
+        def q(a0, a1_en="Village."):
+            return {"id": "PL060-0093", "number": "PL060-0093", "q": {"pl": "Q?", "en": "Q?"},
+                    "a": [a0] + [{"pl": "Wieś.", "en": a1_en}] * 3, "correct": 0}
+        bank = {"questions": [q({"pl": "Duże miasto.A", "en": "large city."}),
+                              q({"pl": "27 Mm;", "en": "27 NM"}),
+                              q({"pl": "Duże miasto.", "en": "A large city near warunków."})]}
+        res = v.audit_bank(bank, lex)
+        self.assertEqual(len(res["e_boundary"]), 1)
+        self.assertEqual(len(res["g_tail"]), 1)
+        self.assertEqual(len(res["f_polish_in_en"]), 1)
 
     def test_detects_separator_at_start_and_doubled_answers(self):
         import tempfile

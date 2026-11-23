@@ -32,13 +32,9 @@ class QuestionBank {
       byId[q.id] = q;
       bySubject.putIfAbsent(q.subject, () => []).add(q);
     }
-    return QuestionBank._(
-      licence,
-      source,
-      List.unmodifiable(questions),
-      {for (final e in bySubject.entries) e.key: List.unmodifiable(e.value)},
-      Map.unmodifiable(byId),
-    );
+    return QuestionBank._(licence, source, List.unmodifiable(questions), {
+      for (final e in bySubject.entries) e.key: List.unmodifiable(e.value),
+    }, Map.unmodifiable(byId));
   }
 
   final Licence licence;

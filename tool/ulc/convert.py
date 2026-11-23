@@ -505,6 +505,8 @@ def _identical_halves(text):
     for i in range(1, len(text)):
         if not (text[i] == " " or text[i - 1] in ";,."):
             continue
+        if text[i:].lstrip()[:1] in (";", ",", "."):
+            continue  # never cut right before a punctuation mark ("17 US gal . 17 US gal.")
         left, right = text[:i], text[i:]
         cl, cr = _core(left), _core(right)
         if cl and cl == cr and any(ch.isalnum() for ch in cl):
@@ -547,6 +549,33 @@ def split_cell(text, lex, params=None):
     if _starts_with_repeat(en):
         return text, None, "ambiguous"
     return pl, en, "ok"
+
+
+_EN_NAMES = {"góra", "górze", "góry", "górą"}  # Polish proper names that may occur in English text
+_GLUED = re.compile(r"[a-ząćęłńóśźż][A-Z][a-z]{3,}")
+_CAP_AFTER_DOT = re.compile(r"[.?!]\s?[A-Z]$")
+
+
+def polish_in_english(en, lex):
+    """A word with Polish diacritics or from the Polish vocabulary anywhere in the English part."""
+    for tok in en.split(" "):
+        key = token_key(tok)
+        if not key or key in _EN_NAMES:
+            continue
+        if any(ch in _PL_CHARS for ch in key) or (key.isalpha() and len(key) >= 4 and key in lex.pl_words):
+            return True
+    return False
+
+
+def boundary_looks_wrong(pl, en):
+    """Typical symptoms of a boundary that cut the Polish text short or glued the languages."""
+    if en[:1].islower() and pl.rstrip()[-1:] not in tuple(".?!:;"):
+        return "EN starts in lower case after an unfinished Polish part"
+    if _CAP_AFTER_DOT.search(pl):
+        return "Polish part ends with a lone capital after a full stop"
+    if _GLUED.search(pl):
+        return "English word glued to the Polish text"
+    return None
 
 
 def digits(text):
@@ -610,8 +639,12 @@ def assess_question(texts, lex):
         if flag == "ok":
             if _identical_halves(pl):
                 reasons.append(f"{name}: the Polish part is itself repeated")
-            if starts_polish(en, lex):
-                reasons.append(f"{name}: EN starts with a Polish word or punctuation")
+            if starts_polish(en, lex) or polish_in_english(en, lex):
+                reasons.append(f"{name}: EN starts with a Polish word or punctuation" if starts_polish(en, lex)
+                               else f"{name}: Polish word inside the English part")
+            bad = boundary_looks_wrong(pl, en)
+            if bad:
+                reasons.append(f"{name}: {bad}")
             if digits(pl) and digits(en) and digits(pl) != digits(en):
                 reasons.append(f"{name}: numbers differ between PL and EN")
             elif digits(pl) and not digits(en) and (en[:1].islower() or len(en.split(" ")) <= 2 and len(pl.split(" ")) > 2):
@@ -628,9 +661,11 @@ def assess_question(texts, lex):
     if reasons:
         return [{"pl": t, "en": None} for t in texts], ["source"] * 5, reasons, results
     cells = []
-    for (pl, en, flag), t in zip(results, texts):
+    for k, ((pl, en, flag), t) in enumerate(zip(results, texts)):
         if flag in ("neutral", "plain"):
             en = pl  # no Polish evidence: the same text in both languages
+        if k > 0:  # answers: a trailing ; or , is list punctuation of the source, dropped everywhere alike
+            pl, en = pl.rstrip(" ;,"), en.rstrip(" ;,")
         cells.append({"pl": pl, "en": en})
     return cells, flags, reasons, results
 
@@ -683,12 +718,32 @@ def build_questions(records, spec, lex, stats):
 
     # duplicates: same NUMER and the same Polish text of the question and of all answers,
     # ignoring case and whitespace ("200 m." == "200m.", "lotu ?" == "lotu?")
+    # Two records are duplicates if the full text of their cells (before any PL/EN splitting) is equal
+    # ignoring spaces and case, or - for translated banks - if their Polish parts are equal.
+    parent = list(range(len(candidates)))
+
+    def find(i):
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    first_by_key = {}
+    for i, c in enumerate(candidates):
+        # comparison only (the output text is not changed): the source artifact "/n" at the end of a cell is ignored
+        keys = [("joined", c["number"],
+                 tuple(re.sub(r"/n$", "", re.sub(r"\s+", "", x).casefold()) for x in c["joined"]))]
+        if bilingual:
+            keys.append(("pl", c["number"], tuple(re.sub(r"\s+", "", x).casefold() for x in c["raw_pl"])))
+        for key in keys:
+            j = first_by_key.setdefault(key, i)
+            if j != i:
+                parent[find(i)] = find(j)
     groups = {}
-    for c in candidates:
-        key = (c["number"], tuple(re.sub(r"\s+", "", x).casefold() for x in c["raw_pl"]))
-        groups.setdefault(key, []).append(c)
+    for i, c in enumerate(candidates):
+        groups.setdefault(find(i), []).append(c)
     unique = []
-    for group in groups.values():
+    for group in sorted(groups.values(), key=lambda g: g[0]["order"]):
         chosen = min(group, key=en_defects) if bilingual else group[0]  # min() keeps the first on ties
         chosen["id_source"] = group[0]["joined"]  # id does not depend on the PL/EN splitter
         unique.append(chosen)
@@ -853,8 +908,9 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append("")
     L.append("### Схлопнутые дубли")
     L.append("")
-    L.append("Из группы дублей оставляется запись с лучшим английским текстом (меньше ячеек без EN, затем меньше EN-текстов "
-             "со строчной буквы в начале, затем меньше неразделённых ячеек; при равенстве — первая по порядку). "
+    L.append("Дубли: полный текст ячеек до разделения совпадает без учёта пробелов и регистра, либо совпадает польская часть. "
+             "Из группы остаётся запись, у которой (1) не потребовался исходный вид (числа EN согласованы с PL, разделение "
+             "надёжно), затем (2) меньше EN-текстов со строчной буквы в начале; при равенстве — первая по порядку. "
              "Остальные схлопываются.")
     L.append("")
     exact = [d for d in dup if d[2] == "exact"]

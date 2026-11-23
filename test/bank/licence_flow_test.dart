@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -14,15 +13,13 @@ import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 
 import 'fake_bank.dart';
+import 'memory_hive.dart';
 
 void main() {
-  late Directory tmp;
   late List<PaywallTrigger> paywalls;
 
   setUp(() async {
-    tmp = await Directory.systemTemp.createTemp('licence_flow_');
-    Hive.init(tmp.path);
-    await Hive.openBox<dynamic>('config');
+    await openMemoryBox('config');
     paywalls = [];
     PackageInfo.setMockInitialValues(
       appName: 'Pilotiq',
@@ -35,24 +32,22 @@ void main() {
 
   tearDown(() async {
     await Hive.close();
-    await tmp.delete(recursive: true);
   });
 
   Future<void> start(WidgetTester tester, {String? language}) async {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
-    // Pending file writes of the app can only finish in real time.
-    addTearDown(() => tester.runAsync(Hive.close));
     if (language != null) {
-      await tester.runAsync(
-        () => Hive.box<dynamic>('config').put('questionLanguage', language),
-      );
+      await Hive.box<dynamic>('config').put('questionLanguage', language);
     }
     await tester.pumpWidget(
       ProviderScope(
         overrides: [
           purchaseServiceProvider.overrideWithValue(FakePurchaseService()),
+          progressRepositoryProvider.overrideWithValue(
+            memoryProgressRepository(),
+          ),
           questionBankRepositoryProvider.overrideWithValue(
             fakeBankRepository(),
           ),

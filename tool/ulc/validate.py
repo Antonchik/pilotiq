@@ -157,7 +157,7 @@ def validate_bank(path):
 
 def audit_bank(bank, lex):
     """Whole-bank sweeps; each returns a list of (id, detail). Used by `validate.py --audit`."""
-    out = {"a_numbers": [], "b_mixed": [], "c_en_start": [], "d_equal_pl": [], "info_spelling": []}
+    out = {"a_numbers": [], "b_mixed": [], "c_en_start": [], "d_equal_pl": [], "e_boundary": [], "f_polish_in_en": [], "g_tail": [], "info_spelling": []}
     for q in bank["questions"]:
         cells = [q["q"]] + q["a"]
         names = ["q"] + [f"a{i}" for i in range(4)]
@@ -168,7 +168,18 @@ def audit_bank(bank, lex):
                     out["a_numbers"].append((q["id"], f"{name}: {c['pl'][:50]!r} | {c['en'][:50]!r}"))
                 if c["en"] != c["pl"] and convert.starts_polish(c["en"], lex):
                     out["c_en_start"].append((q["id"], f"{name}: {c['en'][:60]!r}"))
+                if c["en"] != c["pl"]:
+                    bad = convert.boundary_looks_wrong(c["pl"], c["en"])
+                    all_lower = name != "q" and all((a["en"] or "")[:1].islower() for a in q["a"])
+                    if bad and not (all_lower and bad.startswith("EN starts in lower case")):
+                        out["e_boundary"].append((q["id"], f"{name}: {bad}: {c['pl'][-25:]!r} | {c['en'][:25]!r}"))
+                    if convert.polish_in_english(c["en"], lex):
+                        out["f_polish_in_en"].append((q["id"], f"{name}: {c['en'][:70]!r}"))
         nulls = [a["en"] is None for a in q["a"]]
+        if not all(nulls):  # translated question: list punctuation ; , is dropped from every answer alike
+            for j, a in enumerate(q["a"]):
+                if a["pl"].rstrip()[-1:] in ";," or (a["en"] or "").rstrip()[-1:] in ";,":
+                    out["g_tail"].append((q["id"], f"a{j}: {a['pl'][-20:]!r} | {(a['en'] or '')[-20:]!r}"))
         if any(nulls) and not all(nulls):
             out["b_mixed"].append((q["id"], "some answers have en=null, others not"))
         elif not all(nulls):

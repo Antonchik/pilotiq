@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -11,19 +9,17 @@ import 'package:pilotiq/src/bank/question_bank_repository.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/exams/licence_item.dart';
 import 'package:pilotiq/src/home/home.dart';
+import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/purchases/fake_purchase_service.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/subjects/subject_list_screen.dart';
 
 import 'bank/fake_bank.dart';
+import 'bank/memory_hive.dart';
 
 void main() {
-  late Directory tmp;
-
   setUp(() async {
-    tmp = await Directory.systemTemp.createTemp('smoke_test_');
-    Hive.init(tmp.path);
-    await Hive.openBox<dynamic>('config');
+    await openMemoryBox('config');
     PackageInfo.setMockInitialValues(
       appName: 'Pilotiq',
       packageName: 'antonchik.anton.pilotiq',
@@ -35,39 +31,21 @@ void main() {
 
   tearDown(() async {
     await Hive.close();
-    await tmp.delete(recursive: true);
   });
-
-  /// Closes Hive in real time: pending file writes of the app cannot finish
-  /// inside the fake-async zone of the test.
-  void closeHiveAfterTest(WidgetTester tester) =>
-      addTearDown(() => tester.runAsync(Hive.close));
 
   Widget buildApp() => ProviderScope(
     overrides: [
       purchaseServiceProvider.overrideWithValue(FakePurchaseService()),
+      progressRepositoryProvider.overrideWithValue(memoryProgressRepository()),
       questionBankRepositoryProvider.overrideWithValue(fakeBankRepository()),
     ],
     child: const MyApp(),
   );
 
-  /// Pumps frames, letting real file IO of Hive finish in between, until
-  /// [condition] holds. It waits for the condition, not for a fixed time.
-  Future<void> pumpUntil(WidgetTester tester, bool Function() condition) async {
-    for (var i = 0; i < 500 && !condition(); i++) {
-      await tester.runAsync(
-        () => Future<void>.delayed(const Duration(milliseconds: 10)),
-      );
-      await tester.pump();
-    }
-    expect(condition(), isTrue, reason: 'condition was not reached in time');
-  }
-
   testWidgets('home screen shows the four licences', (tester) async {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
-    closeHiveAfterTest(tester);
 
     await tester.pumpWidget(buildApp());
     await tester.pump();
@@ -85,7 +63,6 @@ void main() {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
-    closeHiveAfterTest(tester);
 
     await tester.pumpWidget(buildApp());
     await tester.pump();
@@ -104,10 +81,8 @@ void main() {
     );
     expect(find.byKey(const Key('subject_air_law')), findsOneWidget);
 
-    // The choice is stored (asynchronously) in the settings.
-    await pumpUntil(
-      tester,
-      () => container.read(selectedLicenceProvider) == Licence.pplh,
-    );
+    // The choice is stored in the settings.
+    await tester.pump();
+    expect(container.read(selectedLicenceProvider), Licence.pplh);
   });
 }

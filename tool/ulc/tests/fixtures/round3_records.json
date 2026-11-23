@@ -1,0 +1,70 @@
+{
+ "PL040-0073": [
+  [
+   "Iluzje /złudzenia/ u osób pilotujących statki powietrzne to: Illusions / delusions / pilots defined as:",
+   "Zniekształcona lub błędna percepcja bodźców i wrażeń wzrokowych niezgodnych z informacjami pochodzącymi z innych źródeł powodująca niewłaściwą interpretację. Distorted or erroneous perception of visual stimuli and sensations inconsistent with information from other sources, resulting in wrong interpretation of the actual flight conditions. rzeczywistych warunków lotu",
+   "Zmiany obserwowanego obrazu związane z niemożnością odpowiedniej akomodacji wzroku. Changes observed image associated with the inability to accommodate the appropriate eye.",
+   "Epizodyczne halucynacje jako reakcja na podprogowe działanie bodźców. Changes observed image associated with the inability to accommodate the appropriate eye.",
+   "Błędy percepcji wzrokowej występujące tylko w lotach nocnych. Errors of visual perception that occur only on night flights."
+  ]
+ ],
+ "PL040-0135": [
+  [
+   "Objawy deficytu snu w zakresie sprawności psychofizycznej to: Symptoms of sleep deficit of fitness are:",
+   "Ogólne pogorszenie sprawności psychicznej, zaburzenia uwagi i logicznegorozumowania, spowolnienie reakcji, upośledzenie procesu przyjmowania i przetwarzania. A general deterioration of mental efficiency, impaired attention and logical reasoning, slow reactions, impaired the process of receiving and processing external stimuli. bodźców zewnętrznych",
+   "Obniżony refleks, uczucie senności, częste zaburzenia w powtarzaniu słów podpostacią parafazji semantycznych. Reduced reflexes, drowsiness, frequent disturbances in the repetition of words in the form of semantic paraphrasing.",
+   "Nadpobudliwość nerwowa, pobudzenie psychomotoryczne, zaburzenia pamięci. Nervous irritability, psychomotor agitation, impaired memory.",
+   "Mała komunikatywność, cechy rozkojarzenia myślenia, pojawiają się zafałszowania urojeniowe pamięci. Little communication, the characteristics of distraction of thought, there are misstatements delusional memory."
+  ]
+ ],
+ "PL040-0340": [
+  [
+   "Znacznie rozszerzone źrenice oraz pobudzenie psychoruchowe MOGĄ być objawem zażycia: Significantly dilated pupils and agitation may be a symptom of prevalence of:",
+   "Amfetaminy. Amphetamine.",
+   "Kannabinoli (marihuana, haszysz). Cannabinol (Marijuana, Hashish).",
+   "Morfiny. Morphine.",
+   "Heroiny. Heroin."
+  ]
+ ],
+ "PL060-0134": [
+  [
+   "Kąt zawarty między osią podłużną samolotu a kierunkiem do radiolatarni NDB to: The angle between the longitudinal axis of the plane and the direction towards the NDB beacon is: /n",
+   "KKR; Relative bearing.",
+   "QDR ; QDR",
+   "QDM; QDM",
+   "QFE; QFE"
+  ],
+  [
+   "Kąt zawarty między osią podłużną samolotu a kierunkiem do radiolatarni NDB to: The angle between the longitudinal axis of the plane and the direction towards the NDB beacon is:",
+   "KKR; Relative bearing.",
+   "QDR ; QDR",
+   "QDM; QDM",
+   "QFE; QFE"
+  ]
+ ],
+ "PL060-0185": [
+  [
+   "Prędkość podróżna statku powietrznego wynosi 90 węzłów. W czasie 18 minut zostanie przebyta odległość. The ground speed of the aircraft is 90 knots. During 18 minutes the aircraft will fly the distance of: /n",
+   "27 Mm; 27 NM",
+   "18 NM; 18 NM",
+   "33 NM; 33 NM",
+   "45 NM; 45 NM"
+  ],
+  [
+   "Prędkość podróżna statku powietrznego wynosi 90 węzłów. W czasie 18 minut zostanie przebyta odległość. The ground speed of the aircraft is 90 knots. In 18 minutes the aircraft will cover the distance of:",
+   "27 NM; 27 NM",
+   "18 NM; 18 NM",
+   "33 NM; 33 NM",
+   "45 NM; 45 NM"
+  ]
+ ],
+ "PL090-0045": [
+  [
+   "Jeśli stacja pokładowa utraciła łączność ze stacją naziemną właściwą dla obszaru, w którym się znajduje to: When an aircraft station has lost contact with the territorially appropriate aeronautical ground station then the a/c station should:",
+   "Powinna nadawać „na ślepo” na częstotliwości pracy stacji naziemnej Transmit „blindly” on frequency of the aeronautical ground station",
+   "Włączyć odbiornik Switch off the receiver",
+   "powinna przerwać nadawanie ze względu na możliwość zakłócania innych stacji stop transmission because of possibility of interference with other stations",
+   "Powinna nadawać na innej dowolnej częstotliwości Transmit on any other frequency"
+  ]
+ ]
+}
