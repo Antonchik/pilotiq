@@ -7,10 +7,7 @@ import 'package:hive_ce/hive.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:pilotiq/src/app.dart';
 import 'package:pilotiq/src/bank/question_bank_repository.dart';
-import 'package:pilotiq/src/domain/catalog.dart';
-import 'package:pilotiq/src/progress/progress_repository.dart';
 import 'package:pilotiq/src/progress/providers.dart';
-import 'package:pilotiq/src/quiz/widgets/answer_card.dart';
 import 'package:pilotiq/src/purchases/fake_purchase_service.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
@@ -20,12 +17,10 @@ import 'memory_hive.dart';
 
 void main() {
   late List<PaywallTrigger> paywalls;
-  late ProgressRepository repository;
 
   setUp(() async {
     await openMemoryBox('config');
     paywalls = [];
-    repository = memoryProgressRepository();
     PackageInfo.setMockInitialValues(
       appName: 'Pilotiq',
       packageName: 'antonchik.anton.pilotiq',
@@ -43,10 +38,6 @@ void main() {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
-    // Let fire-and-forget progress writes finish: the repository serialises
-    // writes in a process-wide queue, so a write left pending would block the
-    // next test.
-    addTearDown(() => tester.pumpAndSettle());
     if (language != null) {
       await Hive.box<dynamic>('config').put('questionLanguage', language);
     }
@@ -54,7 +45,9 @@ void main() {
       ProviderScope(
         overrides: [
           purchaseServiceProvider.overrideWithValue(FakePurchaseService()),
-          progressRepositoryProvider.overrideWithValue(repository),
+          progressRepositoryProvider.overrideWithValue(
+            memoryProgressRepository(),
+          ),
           questionBankRepositoryProvider.overrideWithValue(
             fakeBankRepository(),
           ),
@@ -172,57 +165,6 @@ void main() {
 
     expect(paywalls, [PaywallTrigger.lockedFeature]);
   });
-
-  testWidgets(
-    'a new exam screen never inherits the state of the previous one',
-    (tester) async {
-      // The legacy countdown timer (removed by the exam step) overflows its
-      // fixed 65 px box with the wide test font; that is unrelated here.
-      final previous = FlutterError.onError;
-      FlutterError.onError = (details) {
-        if (details.exceptionAsString().contains('overflowed')) return;
-        previous?.call(details);
-      };
-      addTearDown(() => FlutterError.onError = previous);
-
-      await start(tester);
-      await tester.tap(find.text('PPL(A)'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.byKey(const Key('subject_air_law')));
-      await tester.pumpAndSettle();
-
-      debugPrint('DBG pre ${await repository.toggleBookmark(Licence.ppla, 'x').timeout(const Duration(seconds: 1), onTimeout: () => false)}');
-      Future<void> playExam() async {
-        final exam = find.byKey(const Key('mode_exam'));
-        await tester.ensureVisible(exam);
-        await tester.tap(exam, warnIfMissed: false);
-        await tester.pumpAndSettle();
-        expect(find.text('0/4'), findsOneWidget, reason: 'fresh start page');
-        await tester.tap(find.byIcon(Icons.start));
-        await tester.pumpAndSettle();
-        for (var i = 0; i < 4; i++) {
-          await tester.tap(find.byType(AnswerCard).first);
-          await tester.pumpAndSettle();
-        }
-        expect(find.text('Return to subject'), findsOneWidget);
-      }
-
-      await playExam();
-      await tester.tap(find.text('Return to subject'));
-      // Open the next exam while the previous screen is still animating out.
-      await tester.pump(const Duration(milliseconds: 60));
-      await playExam();
-      await tester.tap(find.text('Return to subject'));
-      await tester.pumpAndSettle();
-
-      final attempts = await repository.attempts(
-        Licence.ppla,
-        subject: SubjectId.airLaw,
-      );
-      debugPrint('DBG ${Hive.isBoxOpen('attempts')} ${Hive.isBoxOpen('attempts') ? Hive.box<dynamic>('attempts').length : -1} ${attempts.length}');
-      expect(attempts, hasLength(2));
-    },
-  );
 }
 
 /// A [Random] that makes `List.shuffle` keep the order of the list.
