@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "page_url": "https://ulc.gov.pl/personel-lotniczy/komisja-egzaminacyjna/egzaminy-teoretyczne/przykladowe-pytania-egzaminacyjne",
+  "page_note": "Strona 'Przykładowe pytania egzaminacyjne' (Aktualizacja 01.08.2024). ulc.gov.pl is protected by anti-bot; download the PDFs manually in a browser.",
+  "sources": {
+    "ppla": {
+      "licence": "PPL(A)",
+      "file": "ppla_eng.pdf",
+      "url": "https://ulc.gov.pl/_download/personel_lotniczy/lke/pytania-licencja_pilota_samolotowego_turystycznego/Licencja_PPLA_ENG.pdf",
+      "page_url": "https://ulc.gov.pl/personel-lotniczy/komisja-egzaminacyjna/egzaminy-teoretyczne/przykladowe-pytania-egzaminacyjne",
+      "sha256": "3b2edeeb1f7c5d2027436c64003093542c5c3d9189250968d6f4da0d56fb4344",
+      "date": "2024-07-26",
+      "kind": "pdf",
+      "bilingual": true
+    },
+    "pplh": {
+      "licence": "PPL(H)",
+      "file": "pplh_eng_2023.pdf",
+      "url": "https://ulc.gov.pl/_download/personel_lotniczy/2023/Licencja_PPLH_ENG.pdf",
+      "page_url": "https://ulc.gov.pl/personel-lotniczy/komisja-egzaminacyjna/egzaminy-teoretyczne/przykladowe-pytania-egzaminacyjne",
+      "sha256": "283c4f4d7cf46bb66516e1e74fe0a52aa07e704b97ccb4e0c6725763b9101869",
+      "date": "2024-07-26",
+      "kind": "pdf",
+      "bilingual": true
+    },
+    "spl": {
+      "licence": "SPL",
+      "file": "spl.pdf",
+      "url": "https://ulc.gov.pl/_download/personel_lotniczy/lke/spl.pdf",
+      "page_url": "https://ulc.gov.pl/personel-lotniczy/komisja-egzaminacyjna/egzaminy-teoretyczne/przykladowe-pytania-egzaminacyjne",
+      "sha256": "dd07a9a0651f0c586488bd01595aab0e041cc28c10b6f39a31f4d6505b2731d7",
+      "date": "2024-07-26",
+      "kind": "pdf",
+      "bilingual": false
+    },
+    "bpl": {
+      "licence": "BPL",
+      "file": "bpl.pdf",
+      "url": null,
+      "page_url": "https://ulc.gov.pl/personel-lotniczy/komisja-egzaminacyjna/egzaminy-teoretyczne/przykladowe-pytania-egzaminacyjne",
+      "sha256": "0b4a9357a19c42889f1577d11a1ae6c0e26056f2fdc39ff7fc4fca7cdbf99827",
+      "date": "2024-07-26",
+      "kind": "pdf",
+      "bilingual": false
+    }
+  }
+}
