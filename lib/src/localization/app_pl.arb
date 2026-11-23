@@ -52,7 +52,7 @@
   "exitQuizTitle": "Wyjść z testu?",
   "timeIsUpTitle": "Czas minął!",
   "timeIsUpMessage": "Nie udało Ci się ukończyć testu.",
-  "goPremiumLabel": "Go Premium!",
+  "goPremiumLabel": "Przejdź na Premium!",
   "featuresDescriptionTitle": "Wszystkie cechy w skrócie",
   "allExamsAccessLabel": "Dostęp do wszystkich egzaminów",
   "darkModeAccessLabel": "Tryb ciemny odblokowany",
@@ -62,5 +62,11 @@
   "premiumUserGreeting": "Jesteś użytkownikiem Premium!",
   "thankYouMessage": "Dziękujemy za wsparcie!",
   "letsGoMessage": "Lecimy!",
-  "premiumLabel": "Go Premium!"
+  "premiumLabel": "Przejdź na Premium!",
+  "premiumTitle": "Premium",
+  "termsOfServiceLabel": "Regulamin",
+  "okLabel": "OK",
+  "aboutScreenBody": "O tej aplikacji...",
+  "noExamSelected": "Nie wybrano egzaminu",
+  "paywallStubMessage": "Zakupy Premium będą tu wkrótce dostępne."
 }

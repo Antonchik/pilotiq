@@ -95,19 +95,23 @@ def clean_text(s):
 
 
 def join_lines(lines):
-    """Join the wrapped lines of one PDF cell into a single string."""
+    """Join the wrapped lines of one PDF cell into a single string.
+
+    ``lines`` keep the trailing space the PDF stores after a word-wrap. A line that does NOT end
+    with a space was broken inside a word (or right after a hyphen) and is joined without one.
+    """
     out = ""
+    glue = ""
     for line in lines:
-        line = line.strip()
-        if not line:
+        text = line.strip()
+        if not text:
+            glue = " " if line else glue
             continue
-        if not out:
-            out = line
-        elif out.endswith("-") and line[:1].islower() and out[-2:-1].isalpha():
-            # wrapped at a hyphen of a compound word ("bio-" "logiczny")
-            out += line
-        else:
-            out += " " + line
+        if out:
+            sep = " " if (glue == " " or line[:1].isspace()) else ""
+            out += sep
+        out += text
+        glue = " " if line[-1:].isspace() else ""
     return out
 
 
@@ -165,12 +169,23 @@ def check_pdf(licence, spec, sources_dir):
 # --------------------------------------------------------------------------- PDF -> raw rows
 
 
+def _cell_text(page, bbox, fallback):
+    """Cell text with line breaks; every line keeps its trailing space (see join_lines)."""
+    if bbox is None:
+        return fallback
+    lines = page.crop(bbox).extract_text_lines(strip=False, return_chars=False)
+    text = "\n".join(ln["text"] for ln in lines)
+    if re.sub(r"\s+", "", text) != re.sub(r"\s+", "", fallback):
+        return fallback  # safety net: never trust own reconstruction over pdfplumber's
+    return text
+
+
 def extract_rows(pdf_path, sha, cache_dir):
     """Table rows of every page: [{"page": n, "cells": [7 str]}], with cell line breaks kept.
 
-    Cached in cache_dir (keyed by the SHA-256 of the PDF and the pdfplumber version).
+    Cached in cache_dir (keyed by the SHA-256 of the PDF, the pdfplumber version and the format).
     """
-    cache = Path(cache_dir) / f"{sha}.pdfplumber-{PDFPLUMBER_VERSION}.json"
+    cache = Path(cache_dir) / f"{sha}.pdfplumber-{PDFPLUMBER_VERSION}.v2.json"
     if cache.is_file():
         with open(cache, encoding="utf-8") as f:
             return json.load(f)
@@ -181,9 +196,16 @@ def extract_rows(pdf_path, sha, cache_dir):
     rows = []
     with pdfplumber.open(str(pdf_path)) as pdf:
         for page_no, page in enumerate(pdf.pages, start=1):
-            for table in page.extract_tables():
-                for r in table:
-                    rows.append({"page": page_no, "cells": [c if c is not None else "" for c in r]})
+            for table in page.find_tables():
+                data = table.extract()
+                for trow, r in zip(table.rows, data):
+                    boxes = list(trow.cells)
+                    cells = []
+                    for i, c in enumerate(r):
+                        c = c if c is not None else ""
+                        box = boxes[i] if i < len(boxes) else None
+                        cells.append(_cell_text(page, box, c))
+                    rows.append({"page": page_no, "cells": cells})
     cache.parent.mkdir(parents=True, exist_ok=True)
     with open(cache, "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False)

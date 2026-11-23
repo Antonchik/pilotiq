@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
-Future<String> loadChangelog() async {
-  return rootBundle.loadString('assets/changelog.md');
-}
+/// Package info is read from the platform once and then cached.
+final packageInfoProvider =
+    FutureProvider<PackageInfo>((ref) => PackageInfo.fromPlatform());
 
-class ApplicationVersionWidget extends StatelessWidget {
+class ApplicationVersionWidget extends ConsumerWidget {
   const ApplicationVersionWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<PackageInfo>(
-      future: PackageInfo.fromPlatform(),
-      builder: (BuildContext context, AsyncSnapshot<PackageInfo> snapShot) {
-        if (snapShot.connectionState == ConnectionState.done) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    return ref.watch(packageInfoProvider).when(
+        data: (info) {
           final local = AppLocalizations.of(context)!;
-          final version = snapShot.data?.version;
-          final title = snapShot.data?.appName;
+          final version = info.version;
+          final title = info.appName;
           final copyright = local.copyright;
           final icon = Image.asset('assets/icon/launcher_icon.png', height: 90);
           final applicationVersion = 'v.$version';
@@ -34,11 +32,9 @@ class ApplicationVersionWidget extends StatelessWidget {
               );
             },
           );
-        } else {
-          return const SizedBox.shrink();
-        }
-      },
-    );
+        },
+        loading: () => const SizedBox.shrink(),
+        error: (_, __) => const SizedBox.shrink());
   }
 }
 
@@ -49,11 +45,10 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('about'),
-        // backgroundColor: Colors.blue,
+        title: Text(AppLocalizations.of(context)!.aboutTitle),
       ),
-      body: const Center(
-        child: Text('About this app...'),
+      body: Center(
+        child: Text(AppLocalizations.of(context)!.aboutScreenBody),
       ),
     );
   }

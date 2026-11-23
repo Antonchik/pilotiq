@@ -1,0 +1,282 @@
+{
+  "appTitle": "Pilotiq",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "copyright": "© 2023 Anton Antonchik.\nAll rights reserved.",
+  "@copyright": {
+    "description": "Copyright message"
+  },
+  "yes": "Yes",
+  "@yes": {
+    "description": "The label for Yes option"
+  },
+  "no": "No",
+  "@no": {
+    "description": "The label for No option"
+  },
+  "examsTitle": "Exams",
+  "@examsTitle": {
+    "description": "The title of the exams screen"
+  },
+  "subjectsTitle": "Subjects",
+  "@subjectsTitle": {
+    "description": "The title of the subjects screen"
+  },
+  "aboutTitle": "About",
+  "@aboutTitle": {
+    "description": "The title of the about screen"
+  },
+  "pplaExamTitle": "PPL(A)",
+  "@pplaExamTitle": {
+    "description": "The title of the PPL(A) exam"
+  },
+  "pplaEngExamTitle": "PPL(A)",
+  "@pplaEngExamTitle": {
+    "description": "The title of the PPL(A) ENG exam"
+  },
+  "pplhExamTitle": "PPL(H)",
+  "@pplhExamTitle": {
+    "description": "The title of the PPL(H) exam"
+  },
+  "pplhEngExamTitle": "PPL(H)",
+  "@pplhEngExamTitle": {
+    "description": "The title of the PPL(H) ENG exam"
+  },
+  "plgExamTitle": "PL(G)",
+  "@plgExamTitle": {
+    "description": "The title of the PL(G) exam"
+  },
+  "plfbExamTitle": "PL(FB)",
+  "@plfbExamTitle": {
+    "description": "The title of the PL(FB) exam"
+  },
+  "airLawSubjectTitle": "Air law",
+  "@airLawSubjectTitle": {
+    "description": "The title of the Air law subject"
+  },
+  "communicationsSubjectTitle": "Communications",
+  "@communicationsSubjectTitle": {
+    "description": "The title of the Communications subject"
+  },
+  "meteorologySubjectTitle": "Meteorology",
+  "@meteorologySubjectTitle": {
+    "description": "The title of the Meteorology subject"
+  },
+  "navigationSubjectTitle": "Navigation",
+  "@navigationSubjectTitle": {
+    "description": "The title of the Navigation subject"
+  },
+  "performanceSubjectTitle": "Performance and flight planning",
+  "@performanceSubjectTitle": {
+    "description": "The title of the Performance subject"
+  },
+  "generalKnowledgeSubjectTitle": "Aircraft general knowledge",
+  "@generalKnowledgeSubjectTitle": {
+    "description": "The title of the Aircraft general knowledge subject"
+  },
+  "humanPerformanceSubjectTitle": "Human performance and limitations",
+  "@humanPerformanceSubjectTitle": {
+    "description": "The title of the Human performance and limitations subject"
+  },
+  "operationalProcedureSubjectTitle": "Operational procedures",
+  "@operationalProcedureSubjectTitle": {
+    "description": "The title of the Operational procedures subject"
+  },
+  "principlesOfFlightSubjectTitle": "Principles of flight",
+  "@principlesOfFlightSubjectTitle": {
+    "description": "The title of the Principles of flight subject"
+  },
+  "airLawSubjectTooltip": "Air law",
+  "@airLawSubjectTooltip": {
+    "description": "The title of the Air law subject"
+  },
+  "communicationsSubjectTooltip": "Communications",
+  "@communicationsSubjectTooltip": {
+    "description": "The title of the Communications subject"
+  },
+  "meteorologySubjectTooltip": "Meteorology",
+  "@meteorologySubjectTooltip": {
+    "description": "The title of the Meteorology subject"
+  },
+  "navigationSubjectTooltip": "Navigation",
+  "@navigationSubjectTooltip": {
+    "description": "The title of the Navigation subject"
+  },
+  "performanceSubjectTooltip": "Performance and flight planning",
+  "@performanceSubjectTooltip": {
+    "description": "The title of the Performance subject"
+  },
+  "generalKnowledgeSubjectTooltip": "Aircraft general knowledge",
+  "@generalKnowledgeSubjectTooltip": {
+    "description": "The title of the Aircraft general knowledge subject"
+  },
+  "humanPerformanceSubjectTooltip": "Human performance and limitations",
+  "@humanPerformanceSubjectTooltip": {
+    "description": "The title of the Human performance and limitations subject"
+  },
+  "operationalProcedureSubjectTooltip": "Operational procedures",
+  "@operationalProcedureSubjectTooltip": {
+    "description": "The title of the Operational procedures subject"
+  },
+  "principlesOfFlightSubjectTooltip": "Principles of flight",
+  "@principlesOfFlightSubjectTooltip": {
+    "description": "The title of the Principles of flight subject"
+  },
+  "startQuizTitle": "Start",
+  "@startQuizTitle": {
+    "description": "The title of the start quiz button"
+  },
+  "continueQuizTitle": "Continue",
+  "@continueQuizTitle": {
+    "description": "The title of the continue quiz button"
+  },
+  "startNewQuizTitle": "Restart",
+  "@startNewQuizTitle": {
+    "description": "The title of the restart quiz button"
+  },
+  "returnToSubjectTitle": "Return to subject",
+  "@returnToSubjectTitle": {
+    "description": "The title of the return to subjects button"
+  },
+  "reviewAnswersTitle": "Review answers",
+  "@reviewAnswersTitle": {
+    "description": "The title of the review results button"
+  },
+  "restartMessage": "Would you like to continue the test you started before or start over?",
+  "@restartMessage": {
+    "description": "Message for the test restart options"
+  },
+  "congratsMessage": "Congrats!\nYou have completed the test",
+  "@congratsMessage": {
+    "description": "Message for the test completion"
+  },
+  "failMessage": "Oh no!\nYou have failed completion of the test",
+  "@failMessage": {
+    "description": "Message for the test fail"
+  },
+  "rightAnswer": "Good Job!",
+  "@rightAnswer": {
+    "description": "The message for the right answer"
+  },
+  "wrongAnswer": "Wrong answer!",
+  "@wrongAnswer": {
+    "description": "The message for the wrong answer"
+  },
+  "nextQuestion": "Next question",
+  "@nextQuestion": {
+    "description": "The label for the next question button"
+  },
+  "tryAgain": "Try again!",
+  "@tryAgain": {
+    "description": "The label for the Try again button"
+  },
+  "demoQuizTitle": "DEMO",
+  "@demoQuizTitle": {
+    "description": "The label for the Demo Quiz"
+  },
+  "fullQuizTitle": "ALL QUESTIONS",
+  "@fullQuizTitle": {
+    "description": "The label for the Full Quiz"
+  },
+  "examQuizTitle": "EXAM SIMULATOR",
+  "@examQuizTitle": {
+    "description": "The label for the Exam Quiz"
+  },
+  "demoModeDescription": "The demo mode of the test is a version with a limited set of questions.",
+  "@demoModeDescription": {
+    "description": "Description for the Demo mode Quiz"
+  },
+  "fullModeDescription": "This mode allows test takers to practice and review a large number of questions, and to learn from their mistakes.",
+  "@fullModeDescription": {
+    "description": "Description for the All questions mode Quiz"
+  },
+  "examModeDescription": "The exam simulator mode simulates the actual exam experience.",
+  "@examModeDescription": {
+    "description": "Description for the Exam mode Quiz"
+  },
+  "languageButtonTooltip": "Language",
+  "@languageButtonTooltip": {
+    "description": "Label for the 'Language' button"
+  },
+  "exitQuizTitle": "Exit the test?",
+  "@exitQuizTitle": {
+    "description": "Label for the 'Exit test' button"
+  },
+  "timeIsUpTitle": "Time is up!",
+  "@timeIsUpTitle": {
+    "description": "Title for the 'Time is up' dialog"
+  },
+  "timeIsUpMessage": "You have run out of time.\nYour test is over.",
+  "@timeIsUpMessage": {
+    "description": "Message for the 'Time is up' dialog"
+  },
+  "goPremiumLabel": "Go Premium!",
+  "@goPremiumLabel": {
+    "description": "Label for Go Premium"
+  },
+  "featuresDescriptionTitle": "All features at a glance",
+  "@featuresDescriptionTitle": {
+    "description": "Features description title"
+  },
+  "allExamsAccessLabel": "Access to all exams",
+  "@allExamsAccessLabel": {
+    "description": "All exams access label"
+  },
+  "darkModeAccessLabel": "Dark mode unlocked",
+  "@darkModeAccessLabel": {
+    "description": "Dark mode unlocked label"
+  },
+  "allSubjectsAccessLabel": "Access to all questions",
+  "@allSubjectsAccessLabel": {
+    "description": "All subjects access label"
+  },
+  "specialPriceLabel": "Get it now!",
+  "@specialPriceLabel": {
+    "description": "Special price label"
+  },
+  "privacyPolicyLabel": "Privacy Policy",
+  "@privacyPolicyLabel": {
+    "description": "Privacy policy label"
+  },
+  "premiumUserGreeting": "You're a Premium User!",
+  "@premiumUserGreeting": {
+    "description": "Premium user greeting"
+  },
+  "thankYouMessage": "Thanks for your Support!",
+  "@thankYouMessage": {
+    "description": "Thanks for supporting"
+  },
+  "letsGoMessage": "Let's go!",
+  "@letsGoMessage": {
+    "description": "Let's go!"
+  },
+  "premiumLabel": "Go Premium!",
+  "@premiumLabel": {
+    "description": "Premium paywall"
+  },
+  "premiumTitle": "Premium",
+  "@premiumTitle": {
+    "description": "The title of the premium (paywall) screen"
+  },
+  "termsOfServiceLabel": "Terms of Service",
+  "@termsOfServiceLabel": {
+    "description": "The label of the Terms of Service link"
+  },
+  "okLabel": "OK",
+  "@okLabel": {
+    "description": "The label of the OK button"
+  },
+  "aboutScreenBody": "About this app...",
+  "@aboutScreenBody": {
+    "description": "Placeholder body of the about screen"
+  },
+  "noExamSelected": "No exam selected",
+  "@noExamSelected": {
+    "description": "Shown when no exam is selected"
+  },
+  "paywallStubMessage": "Premium purchases will be available here soon.",
+  "@paywallStubMessage": {
+    "description": "Message of the temporary paywall screen"
+  }
+}

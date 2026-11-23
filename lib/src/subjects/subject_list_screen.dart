@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/about/about.dart';
 import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';

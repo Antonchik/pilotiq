@@ -254,5 +254,29 @@
   "premiumLabel": "Go Premium!",
   "@premiumLabel": {
     "description": "Premium paywall"
+  },
+  "premiumTitle": "Premium",
+  "@premiumTitle": {
+    "description": "The title of the premium (paywall) screen"
+  },
+  "termsOfServiceLabel": "Terms of Service",
+  "@termsOfServiceLabel": {
+    "description": "The label of the Terms of Service link"
+  },
+  "okLabel": "OK",
+  "@okLabel": {
+    "description": "The label of the OK button"
+  },
+  "aboutScreenBody": "About this app...",
+  "@aboutScreenBody": {
+    "description": "Placeholder body of the about screen"
+  },
+  "noExamSelected": "No exam selected",
+  "@noExamSelected": {
+    "description": "Shown when no exam is selected"
+  },
+  "paywallStubMessage": "Premium purchases will be available here soon.",
+  "@paywallStubMessage": {
+    "description": "Message of the temporary paywall screen"
   }
 }
