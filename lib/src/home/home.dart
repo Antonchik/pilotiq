@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/about/about.dart';
 import 'package:pilotiq/src/dark_theme/theme_mode_button.dart';
-import 'package:pilotiq/src/exams/exam_item.dart';
+import 'package:pilotiq/src/domain/catalog.dart';
+import 'package:pilotiq/src/exams/licence_item.dart';
+import 'package:pilotiq/src/exams/question_language_selector.dart';
 import 'package:pilotiq/src/home/bottom_nav.dart';
-import 'package:pilotiq/src/models.dart';
-
-enum ExamType { ppla, pplaEng, pplh, pplhEng, plg, plfb }
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,58 +13,25 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
-    final exams = [
-      Exam(type: ExamType.ppla, title: local.pplaExamTitle, img: 'ppla.png'),
-      Exam(
-        type: ExamType.pplaEng,
-        title: local.pplaEngExamTitle,
-        img: 'ppla-en.png',
-      ),
-      Exam(type: ExamType.pplh, title: local.pplhExamTitle, img: 'pplh.png'),
-      Exam(
-        type: ExamType.pplhEng,
-        title: local.pplhEngExamTitle,
-        img: 'pplh-en.png',
-      ),
-      Exam(type: ExamType.plg, title: local.plgExamTitle, img: 'plg.png'),
-      Exam(type: ExamType.plfb, title: local.plfbExamTitle, img: 'plfb.png'),
-    ];
-    final isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
+    const licences = Licence.values;
     return Scaffold(
       appBar: AppBar(
         title: Text(local.examsTitle),
         actions: const [ThemeModeButton(), ApplicationVersionWidget()],
       ),
-      body: isPortrait
-          ? ListView.builder(
-              shrinkWrap: true,
-              itemCount: exams.length,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const QuestionLanguageSelector(),
+          Expanded(
+            child: ListView.builder(
+              itemCount: licences.length,
               itemBuilder: (context, index) =>
-                  SizedBox(height: 90, child: ExamItem(exam: exams[index])),
-            )
-          : ListView.builder(
-              shrinkWrap: true,
-              itemCount: (exams.length * 0.5).ceil(),
-              itemBuilder: (context, index) => Row(
-                children: [
-                  Flexible(
-                    child: SizedBox(
-                      height: 90,
-                      child: ExamItem(exam: exams[index * 2]),
-                    ),
-                  ),
-                  Flexible(
-                    child: SizedBox(
-                      height: 90,
-                      child: index * 2 + 1 < exams.length
-                          ? ExamItem(exam: exams[index * 2 + 1])
-                          : const SizedBox.expand(),
-                    ),
-                  ),
-                ],
-              ),
+                  LicenceItem(licence: licences[index]),
             ),
+          ),
+        ],
+      ),
       bottomNavigationBar: const BottomNavBar(),
     );
   }

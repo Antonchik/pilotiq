@@ -11,6 +11,7 @@ import re
 import sys
 from pathlib import Path
 
+import convert
 from convert import LICENCES, NUMBER_RE, QUIZ_LENGTH, SCHEMA, SUBJECTS, TOPIC_TO_SUBJECT
 
 ENTITY_RE = re.compile(r"&#?\w+;")
@@ -129,6 +130,14 @@ def validate_bank(path):
                 errors.append(f"{where}: HTML entity left in text: {ENTITY_RE.search(text).group()!r}")
                 break
         for text in _all_texts(q):
+            if text[:1] in (";", ","):
+                errors.append(f"{where}: text starts with a separator: {text[:20]!r}")
+                break
+        if isinstance(answers, list) and any(isinstance(a, dict) and a.get("en") for a in answers):
+            for j, a in enumerate(answers):
+                if isinstance(a, dict) and isinstance(a.get("pl"), str) and convert._identical_halves(a["pl"]):
+                    errors.append(f"{where}: answer {j} is a doubled text in a translated question: {a['pl'][:40]!r}")
+        for text in _all_texts(q):
             m = SPLIT_WORD_RE.search(text)
             if m:
                 errors.append(f"{where}: letters separated by spaces inside a word: {m.group()!r}")
@@ -146,7 +155,53 @@ def validate_bank(path):
     return errors, warnings, len(questions)
 
 
+def audit_bank(bank, lex):
+    """Whole-bank sweeps; each returns a list of (id, detail). Used by `validate.py --audit`."""
+    out = {"a_numbers": [], "b_mixed": [], "c_en_start": [], "d_equal_pl": [], "info_spelling": []}
+    for q in bank["questions"]:
+        cells = [q["q"]] + q["a"]
+        names = ["q"] + [f"a{i}" for i in range(4)]
+        for name, c in zip(names, cells):
+            if c["en"]:
+                dp, de = convert.digits(c["pl"]), convert.digits(c["en"])
+                if dp and de and dp != de:
+                    out["a_numbers"].append((q["id"], f"{name}: {c['pl'][:50]!r} | {c['en'][:50]!r}"))
+                if c["en"] != c["pl"] and convert.starts_polish(c["en"], lex):
+                    out["c_en_start"].append((q["id"], f"{name}: {c['en'][:60]!r}"))
+        nulls = [a["en"] is None for a in q["a"]]
+        if any(nulls) and not all(nulls):
+            out["b_mixed"].append((q["id"], "some answers have en=null, others not"))
+        elif not all(nulls):
+            # answers whose Polish and English texts are the same apart from punctuation/spacing:
+            # either all of them are identical strings or none (no mixed "0,8;" / "0,8" forms)
+            near = [a for a in q["a"] if convert.fold(a["pl"]) == convert.fold(a["en"])]
+            exact = [a for a in near if a["pl"] == a["en"]]
+            if exact and len(exact) != len(near):
+                out["info_spelling"].append((q["id"], "same text in both languages, but written differently: "
+                                       + "; ".join(f"{a['pl'][:20]!r}|{a['en'][:20]!r}" for a in near if a["pl"] != a["en"])))
+            if any(a["pl"][:1] in ";,." or (a["en"] or "")[:1] in ";,." for a in q["a"]):
+                out["b_mixed"].append((q["id"], "separator at the start of an answer"))
+        seen = {}
+        for j, a in enumerate(q["a"]):
+            key = a["pl"].casefold().replace(" ", "")
+            if key in seen and q["a"][seen[key]]["en"] != a["en"]:
+                out["d_equal_pl"].append((q["id"], f"a{seen[key]}/a{j}: {a['pl'][:50]!r}"))
+            seen.setdefault(key, j)
+    return out
+
+
 def main(argv):
+    if argv and argv[0] == "--audit":
+        lex = convert.build_lexicon(str(Path(convert.HERE) / "legacy"))
+        for arg in argv[1:]:
+            with open(arg, encoding="utf-8") as f:
+                res = audit_bank(json.load(f), lex)
+            print(f"== {arg}")
+            for key, items in res.items():
+                print(f"  {key}: {len(items)}")
+                for qid, detail in items:
+                    print(f"     {qid}  {detail}")
+        return 0
     if not argv:
         print(__doc__)
         return 2

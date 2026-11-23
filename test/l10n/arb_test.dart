@@ -13,11 +13,31 @@ Map<String, String> _messages(Map<String, dynamic> arb) => {
     if (!e.key.startsWith('@')) e.key: e.value as String,
 };
 
+/// Names of the placeholders of a message: `{name}` and the argument of an ICU
+/// form such as `{count, plural, one{{count} item} other{{count} items}}`. A
+/// brace right after a word or `=` opens an ICU branch, not a placeholder.
 Set<String> _placeholders(String message) =>
-    RegExp(r'\{(\w+)\}').allMatches(message).map((m) => m.group(1)!).toSet();
+    RegExp(r'(?<![\w=])\{(\w+)\s*[,}]')
+        .allMatches(message)
+        .map((m) => m.group(1)!)
+        .toSet();
 
 void main() {
   const dir = 'lib/src/localization';
+
+  test('placeholder extraction understands plain and ICU forms', () {
+    expect(_placeholders('Hello {name}, {date}'), {'name', 'date'});
+    expect(
+      _placeholders(
+        '{count, plural, one{{count} item} other{{count} items}} for {user}',
+      ),
+      {'count', 'user'},
+    );
+    expect(_placeholders('{n, plural, =0{none} one{{n} item} other{many}}'), {
+      'n',
+    });
+    expect(_placeholders('no placeholders'), isEmpty);
+  });
 
   test('EN and PL contain the same message keys', () {
     final en = _messages(_readArb('$dir/app_en.arb'));
@@ -108,5 +128,27 @@ void main() {
     final result = mergeArb(tmp);
     expect(result.exitCode, 1);
     expect(result.messages.join('\n'), contains('Duplicate key "dup"'));
+  });
+
+  test('merge_arb writes nothing when one language has an error', () {
+    final tmp = Directory.systemTemp.createTempSync('arb_test_');
+    addTearDown(() => tmp.deleteSync(recursive: true));
+    Directory('${tmp.path}/lib/src/localization/fragments')
+        .createSync(recursive: true);
+    File('${tmp.path}/lib/src/localization/fragments/a_en.arb')
+        .writeAsStringSync('{"hello": "Hello"}');
+    // The Polish side is invalid; the English side alone would be fine.
+    File('${tmp.path}/lib/src/localization/fragments/a_pl.arb')
+        .writeAsStringSync('{"hello": ');
+    final result = mergeArb(tmp);
+    expect(result.exitCode, 1);
+    expect(
+      File('${tmp.path}/lib/src/localization/app_en.arb').existsSync(),
+      isFalse,
+    );
+    expect(
+      File('${tmp.path}/lib/src/localization/app_pl.arb').existsSync(),
+      isFalse,
+    );
   });
 }

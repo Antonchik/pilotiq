@@ -10,6 +10,100 @@ class AppLocalizationsPl extends AppLocalizations {
   AppLocalizationsPl([String locale = 'pl']) : super(locale);
 
   @override
+  String get licencePplaTitle => 'PPL(A)';
+
+  @override
+  String get licencePplhTitle => 'PPL(H)';
+
+  @override
+  String get licenceSplTitle => 'SPL';
+
+  @override
+  String get licenceBplTitle => 'BPL';
+
+  @override
+  String get licencePplaSubtitle => 'Licencja pilota samolotowego';
+
+  @override
+  String get licencePplhSubtitle => 'Licencja pilota śmigłowcowego';
+
+  @override
+  String get licenceSplSubtitle => 'Licencja pilota szybowcowego';
+
+  @override
+  String get licenceBplSubtitle => 'Licencja pilota balonowego';
+
+  @override
+  String get questionLanguageLabel => 'Język pytań';
+
+  @override
+  String get questionLanguagePolish => 'Polski';
+
+  @override
+  String get questionLanguageEnglish => 'English';
+
+  @override
+  String get questionLanguageEnglishHint =>
+      'Pytania po angielsku są dostępne dla PPL(A) i PPL(H).';
+
+  @override
+  String get questionShownInPolishNote =>
+      'Brak angielskiego tłumaczenia tego pytania: wyświetlono po polsku.';
+
+  @override
+  String get bankLoadError => 'Nie udało się wczytać bazy pytań.';
+
+  @override
+  String get bankRetryLabel => 'Ponów';
+
+  @override
+  String bankSourceNote(String source, String date) {
+    return 'Źródło: $source; data bazy $date';
+  }
+
+  @override
+  String subjectQuestionCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania',
+      many: '$count pytań',
+      few: '$count pytania',
+      one: '$count pytanie',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get subjectModeMistakesTitle => 'MOJE BŁĘDY';
+
+  @override
+  String get subjectModeMistakesDescription =>
+      'Pytania, na które odpowiedziałeś błędnie i których jeszcze nie opanowałeś.';
+
+  @override
+  String get subjectModeReviewTitle => 'POWTÓRKI';
+
+  @override
+  String get subjectModeReviewDescription => 'Pytania do powtórzenia.';
+
+  @override
+  String get subjectModeBookmarksTitle => 'ZAKŁADKI';
+
+  @override
+  String get subjectModeBookmarksDescription => 'Pytania zapisane na później.';
+
+  @override
+  String get subjectModeHistoryTitle => 'HISTORIA';
+
+  @override
+  String get subjectModeHistoryDescription =>
+      'Wyniki Twoich symulacji egzaminu.';
+
+  @override
+  String get subjectModeSoonBadge => 'Wkrótce';
+
+  @override
   String get appTitle => 'Pilotiq';
 
   @override
@@ -30,24 +124,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get aboutTitle => 'O aplikacji';
-
-  @override
-  String get pplaExamTitle => 'PPL(A)';
-
-  @override
-  String get pplaEngExamTitle => 'PPL(A)';
-
-  @override
-  String get pplhExamTitle => 'PPL(H)';
-
-  @override
-  String get pplhEngExamTitle => 'PPL(H)';
-
-  @override
-  String get plgExamTitle => 'SPL';
-
-  @override
-  String get plfbExamTitle => 'BPL';
 
   @override
   String get airLawSubjectTitle => 'Prawo lotnicze';
@@ -114,7 +190,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get continueQuizTitle => 'Kontynuuj';
 
   @override
-  String get startNewQuizTitle => 'Restart';
+  String get startNewQuizTitle => 'Zacznij od nowa';
 
   @override
   String get returnToSubjectTitle => 'Powrót do przedmiotu';
@@ -146,17 +222,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get tryAgain => 'Spróbuj ponownie';
 
   @override
-  String get demoQuizTitle => 'DEMO';
-
-  @override
   String get fullQuizTitle => 'WSZYSTKIE PYTANIA';
 
   @override
   String get examQuizTitle => 'SYMULATOR EGZAMINU';
-
-  @override
-  String get demoModeDescription =>
-      'Tryb demonstracyjny testu to wersja z ograniczonym zestawem pytań.';
 
   @override
   String get fullModeDescription =>
@@ -222,9 +291,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get aboutScreenBody => 'O tej aplikacji...';
-
-  @override
-  String get noExamSelected => 'Nie wybrano egzaminu';
 
   @override
   String get paywallStubMessage => 'Zakupy Premium będą tu wkrótce dostępne.';

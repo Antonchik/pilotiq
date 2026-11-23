@@ -1,0 +1,119 @@
+{
+  "licencePplaTitle": "PPL(A)",
+  "@licencePplaTitle": {
+    "description": "Name of the PPL(A) licence"
+  },
+  "licencePplhTitle": "PPL(H)",
+  "@licencePplhTitle": {
+    "description": "Name of the PPL(H) licence"
+  },
+  "licenceSplTitle": "SPL",
+  "@licenceSplTitle": {
+    "description": "Name of the SPL licence"
+  },
+  "licenceBplTitle": "BPL",
+  "@licenceBplTitle": {
+    "description": "Name of the BPL licence"
+  },
+  "licencePplaSubtitle": "Aeroplane pilot licence",
+  "@licencePplaSubtitle": {
+    "description": "Subtitle of the PPL(A) card"
+  },
+  "licencePplhSubtitle": "Helicopter pilot licence",
+  "@licencePplhSubtitle": {
+    "description": "Subtitle of the PPL(H) card"
+  },
+  "licenceSplSubtitle": "Sailplane pilot licence",
+  "@licenceSplSubtitle": {
+    "description": "Subtitle of the SPL card"
+  },
+  "licenceBplSubtitle": "Balloon pilot licence",
+  "@licenceBplSubtitle": {
+    "description": "Subtitle of the BPL card"
+  },
+  "questionLanguageLabel": "Question language",
+  "@questionLanguageLabel": {
+    "description": "Label of the question language selector"
+  },
+  "questionLanguagePolish": "Polish",
+  "@questionLanguagePolish": {
+    "description": "Polish option of the question language selector"
+  },
+  "questionLanguageEnglish": "English",
+  "@questionLanguageEnglish": {
+    "description": "English option of the question language selector"
+  },
+  "questionLanguageEnglishHint": "English questions are available for PPL(A) and PPL(H).",
+  "@questionLanguageEnglishHint": {
+    "description": "Hint under the language selector"
+  },
+  "questionShownInPolishNote": "No English translation for this question: shown in Polish.",
+  "@questionShownInPolishNote": {
+    "description": "Note when a question falls back to Polish"
+  },
+  "bankLoadError": "Could not load the question bank.",
+  "@bankLoadError": {
+    "description": "Shown when the question bank cannot be loaded"
+  },
+  "bankRetryLabel": "Retry",
+  "@bankRetryLabel": {
+    "description": "Retry button after a loading error"
+  },
+  "bankSourceNote": "Source: {source}; database date {date}",
+  "@bankSourceNote": {
+    "description": "Source and date of the question database",
+    "placeholders": {
+      "source": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "subjectQuestionCount": "{count, plural, one{{count} question} other{{count} questions}}",
+  "@subjectQuestionCount": {
+    "description": "Number of questions of a subject",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "subjectModeMistakesTitle": "MY MISTAKES",
+  "@subjectModeMistakesTitle": {
+    "description": "Title of the mistakes mode tile"
+  },
+  "subjectModeMistakesDescription": "Questions you answered wrongly and have not mastered yet.",
+  "@subjectModeMistakesDescription": {
+    "description": "Description of the mistakes mode"
+  },
+  "subjectModeReviewTitle": "REVIEW",
+  "@subjectModeReviewTitle": {
+    "description": "Title of the spaced review mode tile"
+  },
+  "subjectModeReviewDescription": "Questions that are due for repetition.",
+  "@subjectModeReviewDescription": {
+    "description": "Description of the review mode"
+  },
+  "subjectModeBookmarksTitle": "BOOKMARKS",
+  "@subjectModeBookmarksTitle": {
+    "description": "Title of the bookmarks mode tile"
+  },
+  "subjectModeBookmarksDescription": "Questions you saved for later.",
+  "@subjectModeBookmarksDescription": {
+    "description": "Description of the bookmarks mode"
+  },
+  "subjectModeHistoryTitle": "HISTORY",
+  "@subjectModeHistoryTitle": {
+    "description": "Title of the exam history tile"
+  },
+  "subjectModeHistoryDescription": "Results of your exam simulations.",
+  "@subjectModeHistoryDescription": {
+    "description": "Description of the history tile"
+  },
+  "subjectModeSoonBadge": "Soon",
+  "@subjectModeSoonBadge": {
+    "description": "Badge of a mode that is not available yet"
+  }
+}

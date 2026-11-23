@@ -156,6 +156,18 @@ class IdsTest(unittest.TestCase):
         qs, _ = convert_rows(rows)
         self.assertEqual(len(qs), 2)
 
+    def test_duplicate_with_wrong_english_number_loses(self):
+        spec = dict(SPEC_PL, bilingual=True)
+        lex = c.build_lexicon(str(LEGACY_DIR))
+        def r(page, tail):
+            return row(page, str(page), "PL010-0058", "Dolna granica TMA? The lower TMA limit?",
+                       "Nie niżej niż 200 m AGL. " + tail, "Na ziemi. On the ground.", "Nigdy. Never.", "Zawsze. Always.")
+        rows = [HEADER, r(1, "Not less than 20m AGL."), r(2, "Not less than 200m AGL.")]
+        qs, stats = convert_rows(rows, spec, lex)
+        self.assertEqual(len(qs), 1)
+        self.assertEqual(qs[0]["a"][0]["en"], "Not less than 200m AGL.")
+        self.assertEqual(stats.exact_duplicates[0][2], "en")
+
     def test_duplicate_keeps_the_better_english_text(self):
         spec = dict(SPEC_PL, bilingual=True)
         lex = c.build_lexicon(str(LEGACY_DIR))
@@ -211,8 +223,70 @@ class SplitTest(unittest.TestCase):
             self.assertEqual((pl, en, flag), (ex["pl"], ex["en"], "ok"), ex["mixed"])
 
     def test_repeated_digits_cell_is_collapsed(self):
-        self.assertEqual(c.split_cell("225°; 225°;", self.lex), ("225°;", "225°;", "ok"))
-        self.assertEqual(c.split_cell("1000 m 1000 m", self.lex), ("1000 m", "1000 m", "ok"))
+        self.assertEqual(c.split_cell("225°; 225°;", self.lex), ("225°", "225°", "twin"))
+        self.assertEqual(c.split_cell("1000 m 1000 m", self.lex), ("1000 m", "1000 m", "twin"))
+
+    def test_doubled_cells_with_odd_separators(self):
+        for text, half in [("135° ; 135°;", "135°"), ("315°;315°;", "315°"), ("5 ; 5", "5"),
+                           ("360. 360 .", "360."), ("003°, 359° ; 003°, 359°", "003°, 359°"),
+                           ("4,1,2,5,3,6; 4,1,2,5,3,6; ,", "4,1,2,5,3,6"), ("17 US gal . 17 US gal.", "17 US gal")]:
+            pl, en, flag = c.split_cell(text, self.lex)
+            self.assertEqual((pl, en, flag), (half, half, "twin") if half != "17 US gal" else (half, "17 US gal.", "twin"), text)
+            self.assertFalse(pl[:1] in ";,." or en[:1] in ";,.", text)
+
+    def assess(self, texts):
+        return c.assess_question(texts, self.lex)
+
+    def test_mixed_doubled_and_single_answers_are_all_kept_as_in_source(self):
+        texts = ["Który kurs? Which heading?", "135° ; 135°;", "270°", "315°;315°;", "5 ; 5"]
+        cells, flags, reasons, _ = self.assess(texts)
+        self.assertTrue(any("doubled" in r for r in reasons))
+        self.assertEqual(cells, [{"pl": t, "en": None} for t in texts])
+
+    def test_uniformly_doubled_answers_are_collapsed(self):
+        texts = ["Który kurs? Which heading?", "135° ; 135°;", "270°;270°;", "315°;315°;", "5 ; 5"]
+        cells, _, reasons, _ = self.assess(texts)
+        self.assertEqual(reasons, [])
+        self.assertEqual([x["pl"] for x in cells[1:]], ["135°", "270°", "315°", "5"])
+        self.assertTrue(all(x["pl"] == x["en"] for x in cells[1:]))
+
+    def test_polish_word_moved_into_english_means_source_form_for_all_answers(self):
+        # PL080-0226: the last Polish word of every answer ended up in the English part
+        texts = ["W życiu spotykamy się ze stanem równowagi: In everyday life we meet the state of equilibrium:",
+                 "- stałej ; - obojętnej; - chwiejnej -fixed -neutral- unstable",
+                 "- stałej ; - chwiejnej; - ruchomej -fixed -unstable- mobile",
+                 "- stałej ; - obojętnej; - ruchomej -fixed- neutral- mobile",
+                 "- nieobojętnej; - obojętnej; - chwiejnej -indifferent- indifferent- unstable"]
+        cells, _, reasons, _ = self.assess(texts)
+        self.assertEqual(cells, [{"pl": t, "en": None} for t in texts])
+
+    def test_number_in_polish_part_misplaced_into_english(self):
+        # PL040-0311: "4 tys.4" / "thousand."
+        texts = ["Wysokość? Height?", "4 tys. 4 thousand.", "3 tys. 3 thousand.", "5 tys. 5 thousand.", "6 tys. 6 thousand."]
+        cells, _, reasons, _ = self.assess(texts)
+        for x in cells[1:]:
+            self.assertFalse(x["pl"].endswith("tys.4"))
+            self.assertNotEqual(x["en"], "thousand.")
+
+    def test_numbers_must_agree_between_pl_and_en(self):
+        texts = ["Dolna granica? Lower limit?", "Nie niżej niż 200 m AGL. Not less than 20m AGL.",
+                 "Na ziemi. On the ground.", "Nie niżej niż 560 m AMSL. Not lower than 560 m AMSL.", "Nigdy. Never."]
+        cells, _, reasons, _ = self.assess(texts)
+        self.assertTrue(any("numbers differ" in r for r in reasons))
+        self.assertTrue(all(x["en"] is None for x in cells))
+
+    def test_equal_polish_text_from_different_cells_is_not_trusted(self):
+        texts = ["Pytanie? Question?", "Według prawa państwa. According to the court law.",
+                 "Według prawa państwa. According to the law.", "Inaczej. Otherwise.", "Nigdy. Never."]
+        cells, _, reasons, _ = self.assess(texts)
+        self.assertTrue(any("equal Polish text" in r for r in reasons))
+        self.assertTrue(all(x["en"] is None for x in cells))
+
+    def test_english_part_must_not_repeat_polish(self):
+        texts = ["Kto? Who?", "Informacji lotniczej. Informacji lotniczej.", "Alarmowej. Alarmowej.",
+                 "Kontroli. Kontroli.", "Żadnej. Żadnej."]
+        _, _, reasons, _ = self.assess(texts)
+        self.assertTrue(any("repeats the Polish" in r for r in reasons))
 
     def test_digits_only_cell_is_neutral(self):
         self.assertEqual(c.split_cell("1500", self.lex), ("1500", "1500", "neutral"))
@@ -237,6 +311,30 @@ class SplitTest(unittest.TestCase):
         self.assertEqual(q["a"][0]["pl"], "Do startu i do lądowania.")
 
 
+class LegacyCompareTest(unittest.TestCase):
+    @staticmethod
+    def variant(q, a0, vid="PL010-0438"):
+        return {"id": vid, "q": {"pl": q}, "a": [{"pl": a0}]}
+
+    def test_number_change_is_a_real_change(self):
+        cat, ids = c.classify_legacy("Jaka wysokość?", "Wysokości bezwzględnej 800 m.",
+                                     [self.variant("Jaka wysokość?", "Wysokości bezwzględnej 300 m.")])
+        self.assertEqual(cat, "real")
+
+    def test_punctuation_is_a_typo(self):
+        cat, _ = c.classify_legacy("Jaka?", "Wysokość bezwzględna", [self.variant("Jaka?", "Wysokość bezwzględna.")])
+        self.assertEqual(cat, "unchanged")
+        cat, _ = c.classify_legacy("Jaka?", "Wysokość bezwzględnie.", [self.variant("Jaka?", "Wysokość bezwzględna.")])
+        self.assertEqual(cat, "typo")
+
+    def test_empty_legacy_answer_is_its_own_category(self):
+        self.assertEqual(c.classify_legacy("Jaka?", "", [self.variant("Jaka?", "Tak.")])[0], "empty_legacy")
+
+    def test_doubled_legacy_cell_and_source_form_match(self):
+        self.assertEqual(c.classify_legacy("Jaka?", "7700. 7700.", [self.variant("Jaka?", "7700.")])[0], "unchanged")
+        self.assertEqual(c.classify_legacy("Jaka?", "Tak.", [self.variant("Jaka?", "Tak. Yes.")])[0], "unchanged")
+
+
 class ValidateTest(unittest.TestCase):
     def write(self, questions, tmp):
         data = {"schema": 2, "licence": "bpl",
@@ -250,6 +348,17 @@ class ValidateTest(unittest.TestCase):
         return {"id": number, "number": number, "topic": number.split("-")[0], "subject": subject,
                 "q": {"pl": "Q?", "en": None},
                 "a": [{"pl": f"a{i}", "en": None} for i in range(4)], "correct": 0}
+
+    def test_detects_separator_at_start_and_doubled_answers(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            q = self.question("PL040-0004")
+            q["a"][3]["en"] = ";500 ft/min"
+            q["a"][0]["pl"] = "5 ; 5"
+            q["a"][1]["en"] = "x"
+            errors, _, _ = v.validate_bank(self.write([q], tmp))
+            self.assertTrue(any("starts with a separator" in e for e in errors))
+            self.assertTrue(any("doubled text" in e for e in errors))
 
     def test_detects_entities_and_split_words(self):
         import tempfile

@@ -27,30 +27,6 @@
   "@aboutTitle": {
     "description": "The title of the about screen"
   },
-  "pplaExamTitle": "PPL(A)",
-  "@pplaExamTitle": {
-    "description": "The title of the PPL(A) exam"
-  },
-  "pplaEngExamTitle": "PPL(A)",
-  "@pplaEngExamTitle": {
-    "description": "The title of the PPL(A) ENG exam"
-  },
-  "pplhExamTitle": "PPL(H)",
-  "@pplhExamTitle": {
-    "description": "The title of the PPL(H) exam"
-  },
-  "pplhEngExamTitle": "PPL(H)",
-  "@pplhEngExamTitle": {
-    "description": "The title of the PPL(H) ENG exam"
-  },
-  "plgExamTitle": "PL(G)",
-  "@plgExamTitle": {
-    "description": "The title of the PL(G) exam"
-  },
-  "plfbExamTitle": "PL(FB)",
-  "@plfbExamTitle": {
-    "description": "The title of the PL(FB) exam"
-  },
   "airLawSubjectTitle": "Air law",
   "@airLawSubjectTitle": {
     "description": "The title of the Air law subject"
@@ -171,10 +147,6 @@
   "@tryAgain": {
     "description": "The label for the Try again button"
   },
-  "demoQuizTitle": "DEMO",
-  "@demoQuizTitle": {
-    "description": "The label for the Demo Quiz"
-  },
   "fullQuizTitle": "ALL QUESTIONS",
   "@fullQuizTitle": {
     "description": "The label for the Full Quiz"
@@ -182,10 +154,6 @@
   "examQuizTitle": "EXAM SIMULATOR",
   "@examQuizTitle": {
     "description": "The label for the Exam Quiz"
-  },
-  "demoModeDescription": "The demo mode of the test is a version with a limited set of questions.",
-  "@demoModeDescription": {
-    "description": "Description for the Demo mode Quiz"
   },
   "fullModeDescription": "This mode allows test takers to practice and review a large number of questions, and to learn from their mistakes.",
   "@fullModeDescription": {
@@ -270,10 +238,6 @@
   "aboutScreenBody": "About this app...",
   "@aboutScreenBody": {
     "description": "Placeholder body of the about screen"
-  },
-  "noExamSelected": "No exam selected",
-  "@noExamSelected": {
-    "description": "Shown when no exam is selected"
   },
   "paywallStubMessage": "Premium purchases will be available here soon.",
   "@paywallStubMessage": {

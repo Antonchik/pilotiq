@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 import 'package:pilotiq/src/quiz/widgets/result_scale_bar.dart';
 import 'package:pilotiq/src/quiz/widgets/review_answers_page.dart';
 
 class ResultsPage extends ConsumerWidget {
-  const ResultsPage({
-    super.key,
-    required this.message,
-    required this.quizState,
-  });
+  const ResultsPage({super.key, required this.message});
 
-  final QuizState quizState;
   final String message;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
-    final rightAnswers = quizState.answers.where((e) => e.isCorrect).length;
-    final percent = rightAnswers / quizState.questions.length;
+    final quizState = ref.watch(quizStateProvider);
+    final score = quizState.isExam ? quizState.score : null;
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     final children = [
-      if (quizState.isExam)
+      if (score != null)
         ResultScaleBar(
-          percent: percent,
-          header: '$rightAnswers/${quizState.questions.length}',
+          percent: score.ratio,
+          header: '${score.correct}/${score.total}',
         )
       else
         const AllQuestionsCompleteWidget(),
@@ -42,10 +37,7 @@ class ResultsPage extends ConsumerWidget {
           ElevatedButton.icon(
             icon: const Icon(Icons.arrow_back),
             label: Text(local.returnToSubjectTitle),
-            onPressed: () {
-              quizState.reset();
-              Navigator.pop(context);
-            },
+            onPressed: () => Navigator.pop(context),
           ),
           if (quizState.isExam)
             ElevatedButton.icon(
@@ -54,7 +46,7 @@ class ResultsPage extends ConsumerWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
+                  MaterialPageRoute<void>(
                     builder: (context) =>
                         ReviewAnswersPage(quizState: quizState),
                   ),
@@ -84,9 +76,9 @@ class AllQuestionsCompleteWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
+      children: [
         Center(child: Icon(Icons.check_circle, size: 100, color: Colors.green)),
         SizedBox(height: 20),
       ],

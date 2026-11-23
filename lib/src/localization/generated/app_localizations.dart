@@ -98,6 +98,162 @@ abstract class AppLocalizations {
     Locale('pl'),
   ];
 
+  /// Name of the PPL(A) licence
+  ///
+  /// In en, this message translates to:
+  /// **'PPL(A)'**
+  String get licencePplaTitle;
+
+  /// Name of the PPL(H) licence
+  ///
+  /// In en, this message translates to:
+  /// **'PPL(H)'**
+  String get licencePplhTitle;
+
+  /// Name of the SPL licence
+  ///
+  /// In en, this message translates to:
+  /// **'SPL'**
+  String get licenceSplTitle;
+
+  /// Name of the BPL licence
+  ///
+  /// In en, this message translates to:
+  /// **'BPL'**
+  String get licenceBplTitle;
+
+  /// Subtitle of the PPL(A) card
+  ///
+  /// In en, this message translates to:
+  /// **'Aeroplane pilot licence'**
+  String get licencePplaSubtitle;
+
+  /// Subtitle of the PPL(H) card
+  ///
+  /// In en, this message translates to:
+  /// **'Helicopter pilot licence'**
+  String get licencePplhSubtitle;
+
+  /// Subtitle of the SPL card
+  ///
+  /// In en, this message translates to:
+  /// **'Sailplane pilot licence'**
+  String get licenceSplSubtitle;
+
+  /// Subtitle of the BPL card
+  ///
+  /// In en, this message translates to:
+  /// **'Balloon pilot licence'**
+  String get licenceBplSubtitle;
+
+  /// Label of the question language selector
+  ///
+  /// In en, this message translates to:
+  /// **'Question language'**
+  String get questionLanguageLabel;
+
+  /// Polish option of the question language selector
+  ///
+  /// In en, this message translates to:
+  /// **'Polish'**
+  String get questionLanguagePolish;
+
+  /// English option of the question language selector
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get questionLanguageEnglish;
+
+  /// Hint under the language selector
+  ///
+  /// In en, this message translates to:
+  /// **'English questions are available for PPL(A) and PPL(H).'**
+  String get questionLanguageEnglishHint;
+
+  /// Note when a question falls back to Polish
+  ///
+  /// In en, this message translates to:
+  /// **'No English translation for this question: shown in Polish.'**
+  String get questionShownInPolishNote;
+
+  /// Shown when the question bank cannot be loaded
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load the question bank.'**
+  String get bankLoadError;
+
+  /// Retry button after a loading error
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get bankRetryLabel;
+
+  /// Source and date of the question database
+  ///
+  /// In en, this message translates to:
+  /// **'Source: {source}; database date {date}'**
+  String bankSourceNote(String source, String date);
+
+  /// Number of questions of a subject
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} question} other{{count} questions}}'**
+  String subjectQuestionCount(int count);
+
+  /// Title of the mistakes mode tile
+  ///
+  /// In en, this message translates to:
+  /// **'MY MISTAKES'**
+  String get subjectModeMistakesTitle;
+
+  /// Description of the mistakes mode
+  ///
+  /// In en, this message translates to:
+  /// **'Questions you answered wrongly and have not mastered yet.'**
+  String get subjectModeMistakesDescription;
+
+  /// Title of the spaced review mode tile
+  ///
+  /// In en, this message translates to:
+  /// **'REVIEW'**
+  String get subjectModeReviewTitle;
+
+  /// Description of the review mode
+  ///
+  /// In en, this message translates to:
+  /// **'Questions that are due for repetition.'**
+  String get subjectModeReviewDescription;
+
+  /// Title of the bookmarks mode tile
+  ///
+  /// In en, this message translates to:
+  /// **'BOOKMARKS'**
+  String get subjectModeBookmarksTitle;
+
+  /// Description of the bookmarks mode
+  ///
+  /// In en, this message translates to:
+  /// **'Questions you saved for later.'**
+  String get subjectModeBookmarksDescription;
+
+  /// Title of the exam history tile
+  ///
+  /// In en, this message translates to:
+  /// **'HISTORY'**
+  String get subjectModeHistoryTitle;
+
+  /// Description of the history tile
+  ///
+  /// In en, this message translates to:
+  /// **'Results of your exam simulations.'**
+  String get subjectModeHistoryDescription;
+
+  /// Badge of a mode that is not available yet
+  ///
+  /// In en, this message translates to:
+  /// **'Soon'**
+  String get subjectModeSoonBadge;
+
   /// The title of the application
   ///
   /// In en, this message translates to:
@@ -139,42 +295,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About'**
   String get aboutTitle;
-
-  /// The title of the PPL(A) exam
-  ///
-  /// In en, this message translates to:
-  /// **'PPL(A)'**
-  String get pplaExamTitle;
-
-  /// The title of the PPL(A) ENG exam
-  ///
-  /// In en, this message translates to:
-  /// **'PPL(A)'**
-  String get pplaEngExamTitle;
-
-  /// The title of the PPL(H) exam
-  ///
-  /// In en, this message translates to:
-  /// **'PPL(H)'**
-  String get pplhExamTitle;
-
-  /// The title of the PPL(H) ENG exam
-  ///
-  /// In en, this message translates to:
-  /// **'PPL(H)'**
-  String get pplhEngExamTitle;
-
-  /// The title of the PL(G) exam
-  ///
-  /// In en, this message translates to:
-  /// **'PL(G)'**
-  String get plgExamTitle;
-
-  /// The title of the PL(FB) exam
-  ///
-  /// In en, this message translates to:
-  /// **'PL(FB)'**
-  String get plfbExamTitle;
 
   /// The title of the Air law subject
   ///
@@ -356,12 +476,6 @@ abstract class AppLocalizations {
   /// **'Try again!'**
   String get tryAgain;
 
-  /// The label for the Demo Quiz
-  ///
-  /// In en, this message translates to:
-  /// **'DEMO'**
-  String get demoQuizTitle;
-
   /// The label for the Full Quiz
   ///
   /// In en, this message translates to:
@@ -373,12 +487,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'EXAM SIMULATOR'**
   String get examQuizTitle;
-
-  /// Description for the Demo mode Quiz
-  ///
-  /// In en, this message translates to:
-  /// **'The demo mode of the test is a version with a limited set of questions.'**
-  String get demoModeDescription;
 
   /// Description for the All questions mode Quiz
   ///
@@ -505,12 +613,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About this app...'**
   String get aboutScreenBody;
-
-  /// Shown when no exam is selected
-  ///
-  /// In en, this message translates to:
-  /// **'No exam selected'**
-  String get noExamSelected;
 
   /// Message of the temporary paywall screen
   ///

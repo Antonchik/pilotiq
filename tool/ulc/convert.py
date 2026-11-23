@@ -252,7 +252,8 @@ class Stats:
         self.data_rows = 0
         self.merged_rows = 0
         self.discarded = []  # (page, number, reason)
-        self.exact_duplicates = []  # (page, number, "exact"|"near", page of the kept variant)
+        self.exact_duplicates = []  # (page, number, "exact"|"near"|"en", page of the kept variant)
+        self.fallbacks = []  # (page, number, reasons): questions kept in source form (en = null)
         self.notes = []
 
     def discard(self, page, number, reason):
@@ -308,6 +309,9 @@ class Lexicon:
 
     def __init__(self, pl_counts, en_counts):
         self.scores = {}
+        # words that are clearly Polish: frequent in the Polish data, (almost) absent from English text
+        self.pl_words = {w for w, n in pl_counts.items()
+                         if len(w) >= 4 and n >= 3 and en_counts.get(w, 0) * 10 < n}
         npl = sum(pl_counts.values()) or 1
         nen = sum(en_counts.values()) or 1
         for w in set(pl_counts) | set(en_counts):
@@ -483,15 +487,28 @@ MIN_MARGIN = 1.0  # below this the split is considered unreliable
 NO_PUNCT_MIN_MARGIN = 8.0
 
 
+def _core(text):
+    """Comparison form of one half of a doubled cell: no spaces, no case, no edge separators."""
+    return re.sub(r"\s+", "", text).strip(";,.").casefold()
+
+
+def _tidy_half(text):
+    text = re.sub(r"\s+([;,.])", r"\1", text.strip())
+    return text.rstrip(" ;,")
+
+
 def _identical_halves(text):
-    """'1000 m 1000 m' -> ('1000 m', '1000 m'): the same text in Polish and English."""
-    toks = text.split(" ")
-    if len(toks) < 2 or len(toks) % 2:
+    """'1000 m 1000 m', '135° ; 135°;', '5 ; 5', '315°;315°;' -> (half, half): the same text in
+    Polish and English. The halves must be equal ignoring spaces, case and ; , . at their edges."""
+    if len(text) > 120 or len(text) < 3:
         return None
-    h = len(toks) // 2
-    key = lambda ts: [t.strip(_TOKEN_STRIP).casefold() for t in ts]
-    if key(toks[:h]) == key(toks[h:]):
-        return " ".join(toks[:h]), " ".join(toks[h:])
+    for i in range(1, len(text)):
+        if not (text[i] == " " or text[i - 1] in ";,."):
+            continue
+        left, right = text[:i], text[i:]
+        cl, cr = _core(left), _core(right)
+        if cl and cl == cr and any(ch.isalnum() for ch in cl):
+            return _tidy_half(left), _tidy_half(right.lstrip(" ;,."))
     return None
 
 
@@ -512,15 +529,19 @@ def _starts_with_repeat(en):
 
 
 def split_cell(text, lex, params=None):
-    """-> (pl, en, flag); flag in {"ok", "neutral", "no-en", "ambiguous"}."""
+    """-> (pl, en, flag); flag in {"ok", "twin", "neutral", "plain", "ambiguous"}.
+
+    ok = split into Polish and English; twin = the same text repeated; neutral = no letters at all;
+    plain = no English part found; ambiguous = unreliable split (the full text is returned in `pl`).
+    """
     twin = _identical_halves(text)
     if twin:
-        return twin[0], twin[1], "ok"
+        return twin[0], twin[1], "twin"
     if not has_letters(text):
         return text, text, "neutral"
     pl, en, margin = split_pl_en(text, lex, params)
     if en is None:
-        return text, None, "no-en"
+        return text, None, "plain"
     if margin < MIN_MARGIN or (pl[-1:].isalnum() and margin < NO_PUNCT_MIN_MARGIN):
         return text, None, "ambiguous"
     if _starts_with_repeat(en):
@@ -528,17 +549,101 @@ def split_cell(text, lex, params=None):
     return pl, en, "ok"
 
 
+def digits(text):
+    return "".join(ch for ch in text if ch.isdigit())
+
+
+def starts_polish(en, lex):
+    """True if the English part begins with a Polish word or with a punctuation mark."""
+    if not en:
+        return True
+    if en[0] in ";,.:)":
+        return True
+    for tok in en.split(" ")[:2]:
+        key = token_key(tok)
+        if key and (any(ch in _PL_CHARS for ch in key) or key in lex.pl_words):
+            return True
+    return False
+
+
+def plain_is_neutral(text, lex):
+    """A cell without an English part that carries no Polish evidence ('1000 ft', 'VFR')."""
+    for tok in text.split(" "):
+        key = token_key(tok)
+        if key and (any(ch in _PL_CHARS for ch in key) or key in lex.pl_words or lex.score(tok) >= 1.5):
+            return False
+    return True
+
+
+def is_polish_text(text, lex):
+    """Clear evidence of Polish: a diacritic, 'tak'/'nie', or a long word of the Polish vocabulary."""
+    for tok in text.split(" "):
+        key = token_key(tok)
+        if any(ch in _PL_CHARS for ch in key) or key in ("tak", "nie"):
+            return True
+        if key.isalpha() and len(key) >= 5 and key in lex.pl_words:
+            return True
+    return False
+
+
+def assess_question(texts, lex):
+    """Process the five cells (question + 4 answers) of one record as ONE unit.
+
+    Returns (cells, flags, reasons, raw_results). If anything is doubtful, every cell is returned in its source
+    form (`pl` = full cell text, `en` = None) so that all answers look alike, and `reasons` says why.
+    """
+    results = [split_cell(t, lex) for t in texts]
+    flags = [r[2] for r in results]
+    reasons = []
+    if flags[0] in ("plain", "ambiguous"):
+        reasons.append("question: no reliable EN" if flags[0] == "ambiguous" else "question: no EN found")
+    for k in range(1, 5):
+        pl, en, flag = results[k]
+        if flag == "ambiguous":
+            reasons.append(f"a{k - 1}: ambiguous split")
+        elif flag == "plain" and not plain_is_neutral(texts[k], lex):
+            reasons.append(f"a{k - 1}: Polish-only cell")
+    for k, (pl, en, flag) in enumerate(results):
+        name = "question" if k == 0 else f"a{k - 1}"
+        if flag == "twin" and is_polish_text(pl, lex):
+            reasons.append(f"{name}: the 'English' text repeats the Polish text")
+        if flag == "ok":
+            if _identical_halves(pl):
+                reasons.append(f"{name}: the Polish part is itself repeated")
+            if starts_polish(en, lex):
+                reasons.append(f"{name}: EN starts with a Polish word or punctuation")
+            if digits(pl) and digits(en) and digits(pl) != digits(en):
+                reasons.append(f"{name}: numbers differ between PL and EN")
+            elif digits(pl) and not digits(en) and (en[:1].islower() or len(en.split(" ")) <= 2 and len(pl.split(" ")) > 2):
+                reasons.append(f"{name}: number only in PL and EN looks cut off")
+    if "twin" in flags[1:] and any(f in ("neutral", "plain") for f in flags[1:]):
+        reasons.append("answers: some doubled, some single")
+    seen = {}
+    for k in range(1, 5):
+        if flags[k] in ("ok", "twin", "plain"):
+            key = re.sub(r"\s+", "", results[k][0]).casefold()
+            if key in seen and re.sub(r"\s+", "", texts[k]).casefold() != re.sub(r"\s+", "", texts[seen[key]]).casefold():
+                reasons.append(f"a{seen[key] - 1}/a{k - 1}: equal Polish text from different source cells")
+            seen.setdefault(key, k)
+    if reasons:
+        return [{"pl": t, "en": None} for t in texts], ["source"] * 5, reasons, results
+    cells = []
+    for (pl, en, flag), t in zip(results, texts):
+        if flag in ("neutral", "plain"):
+            en = pl  # no Polish evidence: the same text in both languages
+        cells.append({"pl": pl, "en": en})
+    return cells, flags, reasons, results
+
+
 # --------------------------------------------------------------------------- records -> questions
 
 
 def en_defects(c):
-    """Quality of the English side of a candidate (smaller is better) - used to choose between
-    duplicates: fewer cells without EN, then fewer EN texts starting in lower case ("wwith ..."),
-    then fewer unsplit/ambiguous cells. Ties keep the first occurrence."""
-    missing = sum(1 for x, f in zip(c["cells"], c["flags"]) if x["en"] is None and f != "neutral")
+    """Quality of a candidate (smaller is better) - used to choose between duplicates: first a
+    variant that needed no fallback (EN numbers agree with PL, reliable split, ...), then fewer EN
+    texts starting in lower case ("wwith ..."). Ties keep the first occurrence."""
     lower = sum(1 for x in c["cells"] if x["en"] and x["en"][:1].islower())
-    ambiguous = sum(1 for f in c["flags"] if f == "ambiguous")
-    return (missing, lower, ambiguous)
+    return (len(c["reasons"]), lower)
 
 
 def build_questions(records, spec, lex, stats):
@@ -566,23 +671,21 @@ def build_questions(records, spec, lex, stats):
         if subject is None:
             stats.discard(page, number, f"unknown topic prefix {prefix}")
             continue
-        cells = []
-        flags = []
-        for t in texts:
-            if bilingual:
-                pl, en, flag = split_cell(t, lex)
-            else:
-                pl, en, flag = t, None, "mono"
-            cells.append({"pl": pl, "en": en})
-            flags.append(flag)
-        candidates.append({"order": len(candidates), "page": page, "number": number, "topic": prefix, "subject": subject,
-                           "cells": cells, "flags": flags, "joined": texts})
+        if bilingual:
+            cells, flags, reasons, raw = assess_question(texts, lex)
+            raw_pl = [r[0] for r in raw]
+        else:
+            cells = [{"pl": t, "en": None} for t in texts]
+            flags, reasons, raw_pl = ["mono"] * 5, [], texts
+        candidates.append({"order": len(candidates), "page": page, "number": number, "topic": prefix,
+                           "subject": subject, "cells": cells, "flags": flags, "joined": texts,
+                           "reasons": reasons, "raw_pl": raw_pl})
 
     # duplicates: same NUMER and the same Polish text of the question and of all answers,
     # ignoring case and whitespace ("200 m." == "200m.", "lotu ?" == "lotu?")
     groups = {}
     for c in candidates:
-        key = (c["number"], tuple(re.sub(r"\s+", "", x["pl"]).casefold() for x in c["cells"]))
+        key = (c["number"], tuple(re.sub(r"\s+", "", x).casefold() for x in c["raw_pl"]))
         groups.setdefault(key, []).append(c)
     unique = []
     for group in groups.values():
@@ -591,9 +694,17 @@ def build_questions(records, spec, lex, stats):
         unique.append(chosen)
         for c in group:
             if c is not chosen:
-                same = [x["pl"] for x in c["cells"]] == [x["pl"] for x in chosen["cells"]]
-                stats.exact_duplicates.append((c["page"], c["number"], "exact" if same else "near",
-                                               chosen["page"]))
+                same = [re.sub(r"\s+", "", x).casefold() for x in c["joined"]] == \
+                       [re.sub(r"\s+", "", x).casefold() for x in chosen["joined"]]
+                if c["joined"] == chosen["joined"]:
+                    kind = "exact"
+                elif same:
+                    kind = "near"
+                else:
+                    kind = "en"
+                stats.exact_duplicates.append((c["page"], c["number"], kind, chosen["page"]))
+        if chosen["reasons"]:
+            stats.fallbacks.append((chosen["page"], chosen["number"], chosen["reasons"]))
     unique.sort(key=lambda c: c["order"])
 
     by_number = defaultdict(list)
@@ -670,6 +781,40 @@ def legacy_index(legacy_dir, licence):
     return idx
 
 
+def _same_digits(x, y):
+    dx, dy = digits(x), digits(y)
+    return dx == dy or dx == dy + dy or dy == dx + dx
+
+
+def _same_text(x, y):
+    """Prefix comparison: a new cell kept in source form also contains the English part, a previous
+    cell may contain the Polish text twice; any difference in numbers makes the texts different."""
+    fx, fy = fold(x), fold(y)
+    return bool(fx) and bool(fy) and (fx.startswith(fy) or fy.startswith(fx)) and _same_digits(x, y)
+
+
+def classify_legacy(legacy_q, legacy_correct, variants):
+    """Compare one previous record with the new variants of the same NUMER.
+
+    Returns (category, ids): empty_legacy | unchanged | typo | real | reworded_same_answer | rewritten.
+    Any difference in numbers is a real change; a typo needs the same digits and >= 90 % similarity.
+    """
+    if not legacy_correct.strip():
+        return "empty_legacy", []
+    same_q = [q for q in variants if _same_text(q["q"]["pl"], legacy_q)]
+    if not same_q:
+        if any(_same_text(q["a"][0]["pl"], legacy_correct) for q in variants):
+            return "reworded_same_answer", []
+        return "rewritten", []
+    if any(_same_text(q["a"][0]["pl"], legacy_correct) for q in same_q):
+        return "unchanged", []
+    best = max(same_q, key=lambda q: difflib.SequenceMatcher(None, fold(legacy_correct), fold(q["a"][0]["pl"])).ratio())
+    ratio = difflib.SequenceMatcher(None, fold(legacy_correct), fold(best["a"][0]["pl"])).ratio()
+    if ratio >= 0.9 and _same_digits(legacy_correct, best["a"][0]["pl"]):
+        return "typo", [best["id"]]
+    return "real", [q["id"] for q in same_q]
+
+
 def make_report(licence, spec, stats, questions, info, legacy_dir):
     L = []
     L.append(f"# Конвертация банка {licence.upper()}")
@@ -690,7 +835,8 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append(f"  - отброшено как мусор: {len(discarded)}")
     L.append(f"  - схлопнуто как дубли (тот же NUMER и тот же польский текст без учёта пробелов и регистра): {len(dup)}"
              f" (дословных {sum(1 for d in dup if d[2] == 'exact')}, различающихся пробелами/регистром "
-             f"{sum(1 for d in dup if d[2] == 'near')})")
+             f"{sum(1 for d in dup if d[2] == 'near')}, с разным английским текстом "
+             f"{sum(1 for d in dup if d[2] == 'en')})")
     check = stats.header_rows + stats.merged_rows + accepted + len(discarded) + len(dup)
     L.append(f"- проверка: {stats.header_rows} + {stats.merged_rows} + {accepted} + {len(discarded)} + {len(dup)} "
              f"= {check}, строк в PDF = {stats.table_rows} -> {'сходится' if check == stats.table_rows else 'НЕ СХОДИТСЯ'}")
@@ -713,10 +859,16 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append("")
     exact = [d for d in dup if d[2] == "exact"]
     near = [d for d in dup if d[2] == "near"]
-    L.append(f"Дословные дубли ({len(exact)}): " + (", ".join(f"{n} (стр. {p})" for p, n, _, _ in exact) or "нет"))
+    en_diff = [d for d in dup if d[2] == "en"]
+    L.append(f"Дословные дубли (весь текст ячеек совпадает) ({len(exact)}): "
+             + (", ".join(f"{n} (стр. {p})" for p, n, _, _ in exact) or "нет"))
     L.append("")
-    L.append(f"Различаются пробелами/регистром ({len(near)}), формат «NUMER: удалена стр. → оставлена стр.»: "
+    L.append(f"Различаются только пробелами/регистром ({len(near)}), формат «NUMER: удалена стр. → оставлена стр.»: "
              + (", ".join(f"{n}: {p} → {k}" for p, n, _, k in near) or "нет"))
+    L.append("")
+    L.append(f"Польский текст тот же, **английский различается** ({len(en_diff)}); оставлен вариант, у которого EN согласован "
+             f"с PL (числа, надёжное разделение), формат «NUMER: удалена стр. → оставлена стр.»: "
+             + (", ".join(f"{n}: {p} → {k}" for p, n, _, k in en_diff) or "нет"))
     L.append("")
 
     by_number = Counter(q["number"] for q in questions)
@@ -757,19 +909,27 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
         L.append(f"- вопросов, у которых EN есть и у вопроса, и у всех 4 ответов: {full_en} "
                  f"({100.0 * full_en / len(questions):.2f} %)")
         cf = info["cell_flags"]
-        L.append(f"- ячеек: разделено {cf['ok']}, без цифр/букв (одинаковы в PL и EN) {cf['neutral']}, "
-                 f"EN не найден {cf['no-en']}, неоднозначно (оставлен полный текст в `pl`, `en = null`) {cf['ambiguous']}")
+        L.append(f"- ячеек: разделено на PL/EN {cf['ok']}, одинаковый текст в обоих языках (повтор или без букв) "
+                 f"{cf['twin'] + cf['neutral'] + cf['plain']}")
+        L.append(f"- вопросов оставлено в исходном виде (`en = null` у вопроса и у всех ответов, в `pl` полный текст ячеек) "
+                 f"из-за сомнений в разделении: {len(stats.fallbacks)}")
+        reasons = Counter(r.split(": ", 1)[1] if ": " in r else r for _, _, rs in stats.fallbacks for r in rs)
+        for r, n in sorted(reasons.items(), key=lambda kv: (-kv[1], kv[0])):
+            L.append(f"  - {r}: {n}")
+        L.append("")
+        L.append("### Вопросы в исходном виде (NUMER, стр., причины)")
+        L.append("")
+        for page, number, rs in stats.fallbacks:
+            L.append(f"- {number} (стр. {page}): {'; '.join(rs)}")
         L.append("")
         no_en = [q for q in questions if not question_has_en(q)]
         L.append(f"### Вопросы без EN-текста вопроса ({len(no_en)})")
         L.append("")
-        for q in no_en[:40]:
-            L.append(f"- `{q['id']}` (стр. {q['_page']}): {short(q['_joined'][0])}")
-        if len(no_en) > 40:
-            L.append(f"- … и ещё {len(no_en) - 40}")
+        L.append(", ".join(f"`{q['id']}`" for q in no_en) or "нет")
         L.append("")
         if pct < 95.0:
-            L.append("Доля EN ниже 95 %. Примеры (10) приведены выше; причина — см. README (разделение PL/EN эвристическое).")
+            L.append("Доля EN ниже 95 %: все вопросы с малейшим сомнением в разделении PL/EN сознательно оставлены без EN "
+                     "(лучше меньше EN, чем неверный EN); причины и полный список — выше.")
             L.append("")
         L.append("### Примеры разделения (первые вопросы каждого предмета)")
         L.append("")
@@ -803,22 +963,8 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
         for n in sorted(legacy_numbers & new_numbers):
             for lq, lc in idx[n]:
                 total_legacy += 1
-                lqf, lcf = fold(lq), fold(lc)
-                same_q = [q for q in by_num_q[n] if fold(q["q"]["pl"]) == lqf]
-                if not same_q:
-                    if any(fold(q["a"][0]["pl"]) == lcf for q in by_num_q[n]):
-                        cats["reworded_same_answer"].append(n)
-                    else:
-                        cats["rewritten"].append(n)
-                    continue
-                if any(fold(q["a"][0]["pl"]) == lcf for q in same_q):
-                    cats["unchanged"].append(n)
-                    continue
-                ratio = max(difflib.SequenceMatcher(None, lcf, fold(q["a"][0]["pl"])).ratio() for q in same_q)
-                if ratio >= 0.9:
-                    cats["typo"].append(same_q[0]["id"])
-                else:
-                    cats["real"].extend(q["id"] for q in same_q)
+                cat, ids = classify_legacy(lq, lc, by_num_q[n])
+                cats[cat].extend(ids if cat in ("real", "typo") else [n])
         L.append(f"- вопросов в прежних данных: {sum(len(v) for v in idx.values())} "
                  f"(уникальных NUMER: {len(legacy_numbers)}), в новом банке: {len(questions)} "
                  f"(уникальных NUMER: {len(new_numbers)})")
@@ -832,6 +978,7 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
         L.append(f"  - вопрос переформулирован, но прежний верный ответ есть среди ответов нового варианта: "
                  f"{len(cats['reworded_same_answer'])}")
         L.append(f"  - вопрос и верный ответ переписаны (сопоставить нельзя): {len(cats['rewritten'])}")
+        L.append(f"  - прежний верный ответ был пустым (в прежних данных): {len(cats['empty_legacy'])}")
         L.append("")
         L.append("### Новые NUMER")
         L.append("")
@@ -848,6 +995,10 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
         L.append("### Верный ответ изменён опечаткой/пунктуацией (id)")
         L.append("")
         L.append(", ".join(sorted(set(cats["typo"]))) if cats["typo"] else "нет")
+        L.append("")
+        L.append("### Прежний верный ответ пустой (NUMER)")
+        L.append("")
+        L.append(", ".join(sorted(set(cats["empty_legacy"]))) if cats["empty_legacy"] else "нет")
         L.append("")
         L.append("### Вопрос и верный ответ переписаны (NUMER)")
         L.append("")
@@ -905,7 +1056,7 @@ def eval_split(args):
                 if not en_t:
                     continue
                 gpl, gen, flag = split_cell(clean_text(pl + " " + en_t), lex)
-                if flag == "neutral":
+                if flag in ("neutral", "twin"):
                     counts["neutral"] += 1
                 elif flag != "ok":
                     counts["unsplit-fallback"] += 1

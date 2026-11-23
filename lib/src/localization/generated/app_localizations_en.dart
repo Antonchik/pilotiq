@@ -10,6 +10,100 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get licencePplaTitle => 'PPL(A)';
+
+  @override
+  String get licencePplhTitle => 'PPL(H)';
+
+  @override
+  String get licenceSplTitle => 'SPL';
+
+  @override
+  String get licenceBplTitle => 'BPL';
+
+  @override
+  String get licencePplaSubtitle => 'Aeroplane pilot licence';
+
+  @override
+  String get licencePplhSubtitle => 'Helicopter pilot licence';
+
+  @override
+  String get licenceSplSubtitle => 'Sailplane pilot licence';
+
+  @override
+  String get licenceBplSubtitle => 'Balloon pilot licence';
+
+  @override
+  String get questionLanguageLabel => 'Question language';
+
+  @override
+  String get questionLanguagePolish => 'Polish';
+
+  @override
+  String get questionLanguageEnglish => 'English';
+
+  @override
+  String get questionLanguageEnglishHint =>
+      'English questions are available for PPL(A) and PPL(H).';
+
+  @override
+  String get questionShownInPolishNote =>
+      'No English translation for this question: shown in Polish.';
+
+  @override
+  String get bankLoadError => 'Could not load the question bank.';
+
+  @override
+  String get bankRetryLabel => 'Retry';
+
+  @override
+  String bankSourceNote(String source, String date) {
+    return 'Source: $source; database date $date';
+  }
+
+  @override
+  String subjectQuestionCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions',
+      one: '$count question',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get subjectModeMistakesTitle => 'MY MISTAKES';
+
+  @override
+  String get subjectModeMistakesDescription =>
+      'Questions you answered wrongly and have not mastered yet.';
+
+  @override
+  String get subjectModeReviewTitle => 'REVIEW';
+
+  @override
+  String get subjectModeReviewDescription =>
+      'Questions that are due for repetition.';
+
+  @override
+  String get subjectModeBookmarksTitle => 'BOOKMARKS';
+
+  @override
+  String get subjectModeBookmarksDescription =>
+      'Questions you saved for later.';
+
+  @override
+  String get subjectModeHistoryTitle => 'HISTORY';
+
+  @override
+  String get subjectModeHistoryDescription =>
+      'Results of your exam simulations.';
+
+  @override
+  String get subjectModeSoonBadge => 'Soon';
+
+  @override
   String get appTitle => 'Pilotiq';
 
   @override
@@ -29,24 +123,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutTitle => 'About';
-
-  @override
-  String get pplaExamTitle => 'PPL(A)';
-
-  @override
-  String get pplaEngExamTitle => 'PPL(A)';
-
-  @override
-  String get pplhExamTitle => 'PPL(H)';
-
-  @override
-  String get pplhEngExamTitle => 'PPL(H)';
-
-  @override
-  String get plgExamTitle => 'PL(G)';
-
-  @override
-  String get plfbExamTitle => 'PL(FB)';
 
   @override
   String get airLawSubjectTitle => 'Air law';
@@ -142,17 +218,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tryAgain => 'Try again!';
 
   @override
-  String get demoQuizTitle => 'DEMO';
-
-  @override
   String get fullQuizTitle => 'ALL QUESTIONS';
 
   @override
   String get examQuizTitle => 'EXAM SIMULATOR';
-
-  @override
-  String get demoModeDescription =>
-      'The demo mode of the test is a version with a limited set of questions.';
 
   @override
   String get fullModeDescription =>
@@ -218,9 +287,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutScreenBody => 'About this app...';
-
-  @override
-  String get noExamSelected => 'No exam selected';
 
   @override
   String get paywallStubMessage =>

@@ -1,59 +1,103 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:pilotiq/src/bank/licence_provider.dart';
 import 'package:pilotiq/src/contdown_timer/countdown_timer.dart';
-import 'package:pilotiq/src/hive_box_provider.dart';
-import 'package:pilotiq/src/models.dart';
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/progress/exam_attempt.dart';
+import 'package:pilotiq/src/progress/providers.dart';
+import 'package:pilotiq/src/quiz/quiz_config.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 import 'package:pilotiq/src/quiz/widgets/question_page.dart';
 import 'package:pilotiq/src/quiz/widgets/results_page.dart';
 import 'package:pilotiq/src/quiz/widgets/start_page.dart';
 
-class QuizScreen extends ConsumerWidget {
-  QuizScreen({super.key, required this.quizType, required this.quiz});
+class QuizScreen extends ConsumerStatefulWidget {
+  const QuizScreen({super.key, required this.quiz});
 
-  final QuizType quizType;
   final Quiz quiz;
 
+  @override
+  ConsumerState<QuizScreen> createState() => _QuizScreenState();
+}
+
+class _QuizScreenState extends ConsumerState<QuizScreen> {
   final timerController = CountDownTimerController();
 
-  void _stopTimer() {
-    if (timerController.pause != null) {
-      timerController.pause!();
-    }
+  @override
+  void initState() {
+    super.initState();
+    ref
+        .read(quizStateProvider)
+        .configure(
+          widget.quiz,
+          ref.read(effectiveQuestionLanguageProvider(widget.quiz.licence)),
+        );
+  }
+
+  void _stopTimer() => timerController.pause?.call();
+
+  /// Called once when the results page is reached: stops the timer and stores
+  /// the exam attempt.
+  void _finish(QuizState state) {
+    if (state.finished) return;
+    state.finished = true;
+    _stopTimer();
+    if (!state.isExam) return;
+    final quiz = widget.quiz;
+    final score = state.score;
+    final finishedAt = ref.read(clockProvider).now();
+    final startedAt = state.startedAt ?? finishedAt;
+    final attempt = ExamAttempt(
+      id: '${startedAt.microsecondsSinceEpoch}-${quiz.licence.id}-${quiz.subject.id}',
+      licence: quiz.licence,
+      subject: quiz.subject,
+      startedAt: startedAt,
+      finishedAt: finishedAt,
+      durationSec: finishedAt.difference(startedAt).inSeconds,
+      total: score.total,
+      correct: score.correct,
+      passed: score.passed,
+      reason: AttemptReason.finished,
+      questionIds: [for (final q in quiz.questions) q.id],
+      answers: {for (final a in state.answers) a.question.id: a.canonicalIndex},
+      topicBreakdown: score.topicBreakdown,
+    );
+    unawaited(
+      ref
+          .read(progressRepositoryProvider)
+          .saveAttempt(attempt)
+          .then<void>(
+            (_) {},
+            onError: (Object e) => debugPrint('Could not save attempt: $e'),
+          ),
+    );
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
+    final quiz = widget.quiz;
     final quizState = ref.read(quizStateProvider);
-    quizState.subject = quiz.subject;
-    quizState.isExam = quizType == QuizType.exam;
-    if (quizState.isExam) {
-      quizState.questions.addAll(quiz.questions.sublist(0, quiz.length));
-    } else {
-      quizState.questions.addAll(quiz.questions);
-    }
-    final questionQty = quizState.questions.length;
-    final box = Hive.box(ref.read(curExamNameProvider));
+    // Keeps the (auto-disposed) state alive while the screen is shown.
+    ref.listen(quizStateProvider, (_, _) {});
+    final questionQty = quiz.questions.length;
     return Scaffold(
       appBar: AppBar(
         title: Column(
           children: [
-            // AnimatedProgressbar(value: quizState.progress),
             Consumer(
               builder: (BuildContext context, WidgetRef ref, Widget? child) {
                 final quizState = ref.watch(quizStateProvider);
-                final currentQuestion =
-                    !quizState.isExam && quizState.progress == 0
-                    ? box.get(quizState.subject, defaultValue: 0)
-                    : (quizState.progress * questionQty).ceil();
+                final currentQuestion = (quizState.progress * questionQty)
+                    .ceil()
+                    .clamp(0, questionQty);
                 return LinearPercentIndicator(
                   lineHeight: 5,
                   barRadius: const Radius.circular(10),
-                  percent: currentQuestion / questionQty,
+                  percent: questionQty == 0 ? 0 : currentQuestion / questionQty,
                   animation: true,
                   animationDuration: 750,
                   animateFromLastPercent: true,
@@ -71,10 +115,10 @@ class QuizScreen extends ConsumerWidget {
                   ),
                   trailing: SizedBox(
                     width: 65,
-                    child: quizType == QuizType.exam
+                    child: quiz.type == QuizType.exam
                         ? CountDownTimer(
                             controller: timerController,
-                            durationInMinutes: quiz.time,
+                            durationInMinutes: quiz.spec.minutes,
                           )
                         : null,
                   ),
@@ -86,13 +130,10 @@ class QuizScreen extends ConsumerWidget {
         leading: Consumer(
           builder: (BuildContext context, WidgetRef ref, Widget? child) {
             final quizState = ref.watch(quizStateProvider);
-            if (quizState.progress == 1) return const SizedBox.shrink();
+            if (quizState.finished) return const SizedBox.shrink();
             return quizState.progress > 0
-                ? CloseTestButton(
-                    quizState: quizState,
-                    timerController: timerController,
-                  )
-                : ExitTestButton(quizState: quizState);
+                ? CloseTestButton(timerController: timerController)
+                : const ExitTestButton();
           },
         ),
       ),
@@ -100,42 +141,24 @@ class QuizScreen extends ConsumerWidget {
         physics: const NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         controller: quizState.controller,
-        onPageChanged: (int idx) =>
-            quizState.progress = (idx / (questionQty + 1)),
+        itemCount: questionQty + 2,
+        onPageChanged: (int idx) {
+          quizState.progress = idx / (questionQty + 1);
+          if (idx == questionQty + 1) _finish(quizState);
+        },
         itemBuilder: (BuildContext context, int index) {
           if (index == 0) {
-            return StartPage(quiz: quiz, timerController: timerController);
+            return StartPage(timerController: timerController);
           } else if (index == questionQty + 1) {
-            if (quizType == QuizType.exam) {
-              _stopTimer();
-              if (quizState.result) {
-                final subjectPositiveKey = '${quizState.subject}_positive';
-                final positiveValue =
-                    box.get(subjectPositiveKey, defaultValue: 0) as int;
-                box.put(subjectPositiveKey, positiveValue + 1);
-                return ResultsPage(
-                  message: local.congratsMessage,
-                  quizState: quizState,
-                );
-              } else {
-                final subjectNegativeKey = '${quizState.subject}_negative';
-                final negativeValue =
-                    box.get(subjectNegativeKey, defaultValue: 0) as int;
-                box.put(subjectNegativeKey, negativeValue + 1);
-                return ResultsPage(
-                  message: local.failMessage,
-                  quizState: quizState,
-                );
-              }
-            } else {
-              box.put(quizState.subject, 0);
-              return ResultsPage(
-                message: local.congratsMessage,
-                quizState: quizState,
-              );
-            }
+            final message = quiz.type == QuizType.exam && !quizState.result
+                ? local.failMessage
+                : local.congratsMessage;
+            return ResultsPage(message: message);
           } else {
-            return QuestionPage(question: quizState.questions[index - 1]);
+            return QuestionPage(
+              key: ValueKey(quiz.questions[index - 1].id),
+              question: quiz.questions[index - 1],
+            );
           }
         },
       ),
@@ -144,13 +167,8 @@ class QuizScreen extends ConsumerWidget {
 }
 
 class CloseTestButton extends StatelessWidget {
-  const CloseTestButton({
-    super.key,
-    required this.quizState,
-    required this.timerController,
-  });
+  const CloseTestButton({super.key, required this.timerController});
 
-  final QuizState quizState;
   final CountDownTimerController timerController;
 
   @override
@@ -178,11 +196,8 @@ class CloseTestButton extends StatelessWidget {
             );
           },
         );
-        if (proceed!) {
-          quizState.reset();
-          if (timerController.reset != null) {
-            timerController.reset!();
-          }
+        if (proceed ?? false) {
+          timerController.reset?.call();
           if (context.mounted) {
             Navigator.pop(context);
           }
@@ -193,18 +208,13 @@ class CloseTestButton extends StatelessWidget {
 }
 
 class ExitTestButton extends StatelessWidget {
-  const ExitTestButton({super.key, required this.quizState});
-
-  final QuizState quizState;
+  const ExitTestButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: const Icon(Icons.arrow_back),
-      onPressed: () async {
-        quizState.reset();
-        Navigator.pop(context);
-      },
+      onPressed: () => Navigator.pop(context),
     );
   }
 }

@@ -30,6 +30,7 @@ MergeResult mergeArb(Directory root, {bool check = false}) {
     return MergeResult(1, ['Missing directory: ${fragmentsDir.path}']);
   }
   var failed = false;
+  final outputs = <String, Map<String, Object?>>{};
   for (final lang in _languages) {
     final files =
         fragmentsDir
@@ -67,20 +68,27 @@ MergeResult mergeArb(Directory root, {bool check = false}) {
         origin[entry.key] = name;
       }
     }
-    final content = '${const JsonEncoder.withIndent('  ').convert(merged)}\n';
-    final target = File('${l10nDir.path}/app_$lang.arb');
-    if (check) {
-      final current = target.existsSync() ? target.readAsStringSync() : null;
-      if (current != content) {
-        messages.add(
-          '${target.path} is out of date; '
-          'run: dart run tool/l10n/merge_arb.dart',
-        );
-        failed = true;
+    outputs[lang] = merged;
+  }
+  // Both languages are merged first; nothing is written if any of them failed.
+  if (!failed) {
+    for (final lang in _languages) {
+      final merged = outputs[lang]!;
+      final content = '${const JsonEncoder.withIndent('  ').convert(merged)}\n';
+      final target = File('${l10nDir.path}/app_$lang.arb');
+      if (check) {
+        final current = target.existsSync() ? target.readAsStringSync() : null;
+        if (current != content) {
+          messages.add(
+            '${target.path} is out of date; '
+            'run: dart run tool/l10n/merge_arb.dart',
+          );
+          failed = true;
+        }
+      } else {
+        target.writeAsStringSync(content);
+        messages.add('Wrote ${target.path} (${merged.length} entries)');
       }
-    } else if (!failed) {
-      target.writeAsStringSync(content);
-      messages.add('Wrote ${target.path} (${merged.length} entries)');
     }
   }
   return MergeResult(failed ? 1 : 0, messages);

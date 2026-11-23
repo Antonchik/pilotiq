@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pilotiq/src/bank/bank_text.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/quiz/state/quiz_state.dart';
 
@@ -17,7 +18,8 @@ class ReviewAnswersPage extends StatelessWidget {
         itemCount: quizState.answers.length,
         itemBuilder: (context, index) {
           final answer = quizState.answers[index];
-          final question = quizState.questions[index];
+          final question = answer.question;
+          final language = question.displayLanguage(quizState.language);
           return Card(
             child: Container(
               alignment: Alignment.topLeft,
@@ -32,17 +34,27 @@ class ReviewAnswersPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: ListTile(
-                      title: Text(
-                        '${index + 1}. ${question.question}',
-                        textAlign: TextAlign.justify,
-                        style: Theme.of(context).textTheme.bodyMedium,
+                      title: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('${index + 1}. '),
+                          Expanded(
+                            child: BankText(
+                              question.text.resolve(language),
+                              textAlign: TextAlign.justify,
+                              style: Theme.of(context).textTheme.bodyMedium,
+                            ),
+                          ),
+                        ],
                       ),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (!answer.isCorrect)
-                            Text(
-                              answer.value.trim(),
+                            BankText(
+                              question.answers[answer.canonicalIndex].resolve(
+                                language,
+                              ),
                               textAlign: TextAlign.justify,
                               style: Theme.of(context).textTheme.bodySmall!
                                   .copyWith(
@@ -52,19 +64,16 @@ class ReviewAnswersPage extends StatelessWidget {
                                     color: Colors.red,
                                   ),
                             ),
-                          Text(
-                            question.answers
-                                .singleWhere((element) => element.isCorrect)
-                                .value,
+                          BankText(
+                            question.answers[question.correctIndex].resolve(
+                              language,
+                            ),
                             textAlign: TextAlign.justify,
                             style: Theme.of(context).textTheme.bodySmall!
                                 .copyWith(color: Colors.green),
                           ),
                         ],
                       ),
-                      // trailing: answer.isCorrect
-                      //     ? const Icon(Icons.check_circle, color: Colors.green)
-                      //     : const Icon(Icons.cancel, color: Colors.red),
                     ),
                   ),
                 ],

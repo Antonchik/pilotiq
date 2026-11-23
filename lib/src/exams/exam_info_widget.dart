@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pilotiq/src/models.dart';
+import 'package:pilotiq/src/domain/catalog.dart';
 
 class ExamInfoWidget extends StatelessWidget {
-  const ExamInfoWidget({required this.quiz, super.key});
+  const ExamInfoWidget({required this.spec, super.key});
 
-  final Quiz quiz;
+  final ExamSpec spec;
 
   @override
   Widget build(BuildContext context) {
+    final percent = (spec.passRatio * 100).round();
     return Column(
       children: [
         const Divider(),
@@ -16,20 +17,20 @@ class ExamInfoWidget extends StatelessWidget {
             const Icon(Icons.list),
             const SizedBox(width: 10),
             Text(
-              quiz.length.toString(),
+              spec.quizLength.toString(),
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const Spacer(),
             const Icon(Icons.timer_outlined),
             const SizedBox(width: 10),
             Text(
-              '${quiz.time.toString()} min',
+              '${spec.minutes} min',
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const Spacer(),
             const Icon(Icons.check_circle_outline),
             const SizedBox(width: 10),
-            Text('75%', style: Theme.of(context).textTheme.bodyLarge),
+            Text('$percent%', style: Theme.of(context).textTheme.bodyLarge),
           ],
         ),
       ],
