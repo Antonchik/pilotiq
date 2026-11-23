@@ -127,7 +127,7 @@ def fold(s):
 
 
 def hash_text(pl_q, pl_answers):
-    norm = [_WS.sub(" ", unicodedata.normalize("NFC", t)).strip().casefold() for t in ([pl_q] + pl_answers)]
+    norm = [_WS.sub(" ", unicodedata.normalize("NFC", t)).strip() for t in ([pl_q] + pl_answers)]
     return hashlib.sha1("\n".join(norm).encode("utf-8")).hexdigest()[:6]
 
 
@@ -379,12 +379,29 @@ def build_lexicon(legacy_dir, exclude=None):
 
 # Parameters of the splitter (tuned on a hold-out of the legacy data, see --eval-split).
 PARAMS = {
-    "sent_end": 4.0,  # the Polish part ends with . ? ! : ; or a closing bracket/quote
-    "punct_match": 3.0,  # both parts end with the same punctuation mark
-    "lower_start": 2.5,  # English part would start with a lowercase letter
-    "ratio": 3.0,  # penalty per unit of |ln(len_en / len_pl)| beyond RATIO_FREE
+    "sent_end": 8.0,  # the Polish part ends with . ? ! : ; or a closing bracket/quote
+    "punct_match": 5.0,  # both parts end with the same punctuation mark
+    "lower_start": 1.5,  # English part would start with a lowercase letter
+    "ratio": 9.0,  # penalty per unit of |ln(len_en / len_pl)| beyond RATIO_FREE
 }
 RATIO_FREE = 0.7
+
+
+_GLUE = re.compile(r"(?<=\S)[:.?!;](?=[A-Z][a-z])")
+
+
+def _token_spans(text):
+    """Whitespace-separated tokens as (start, end); a token glued across a sentence end
+    ("przeleci:The") is split in two so that the boundary can fall inside it."""
+    spans = []
+    for m in re.finditer(r"\S+", text):
+        start, end = m.span()
+        cut = start
+        for g in _GLUE.finditer(m.group()):
+            spans.append((cut, start + g.end()))
+            cut = start + g.end()
+        spans.append((cut, end))
+    return spans
 
 
 def split_pl_en(text, lex, params=None):
@@ -395,7 +412,8 @@ def split_pl_en(text, lex, params=None):
     (a small margin = ambiguous).
     """
     P = params or PARAMS
-    toks = text.split(" ")
+    spans = _token_spans(text)
+    toks = [text[a:b] for a, b in spans]
     n = len(toks)
     if n < 2:
         return text, None, 99.0
@@ -430,24 +448,62 @@ def split_pl_en(text, lex, params=None):
     k = best + 1
     if k >= n:
         return text, None, margin
-    return " ".join(toks[:k]), " ".join(toks[k:]), margin
+    while k < n - 1 and not any(ch.isalnum() for ch in toks[k]):
+        k += 1  # a detached punctuation mark ("wiatr” .") belongs to the Polish part
+    return text[: spans[k - 1][1]], text[spans[k][0]:], margin
 
 
 def has_letters(text):
     return any(ch.isalpha() for ch in text)
 
 
-MIN_MARGIN = 2.0  # below this the split is considered unreliable
+MIN_MARGIN = 1.0  # below this the split is considered unreliable
+# A Polish part without terminal punctuation is the typical shape of a split that cut the Polish
+# text short (the tail ended up in the English part), so it needs a much larger margin.
+NO_PUNCT_MIN_MARGIN = 8.0
+
+
+def _identical_halves(text):
+    """'1000 m 1000 m' -> ('1000 m', '1000 m'): the same text in Polish and English."""
+    toks = text.split(" ")
+    if len(toks) < 2 or len(toks) % 2:
+        return None
+    h = len(toks) // 2
+    key = lambda ts: [t.strip(_TOKEN_STRIP).casefold() for t in ts]
+    if key(toks[:h]) == key(toks[h:]):
+        return " ".join(toks[:h]), " ".join(toks[h:])
+    return None
+
+
+def _starts_with_repeat(en):
+    """True if the first word of the English part (3+ letters) occurs again with the same case.
+
+    Typical for a boundary placed too early: the tail of the Polish text ("... Area") is
+    repeated by its own translation ("Area control"). Occurrences right after a sentence end do
+    not count.
+    """
+    raw = en.split(" ")
+    toks = [t.strip(_TOKEN_STRIP) for t in raw]
+    first = toks[0]
+    if len(first) < 3 or not first.isalpha():
+        return False
+    # a repeat at the start of a new sentence ("... : Overheating ...") is a legitimate translation
+    return any(toks[i] == first and not _SENT_END.search(raw[i - 1]) for i in range(1, len(toks)))
 
 
 def split_cell(text, lex, params=None):
     """-> (pl, en, flag); flag in {"ok", "neutral", "no-en", "ambiguous"}."""
     if not has_letters(text):
         return text, text, "neutral"
+    twin = _identical_halves(text)
+    if twin:
+        return twin[0], twin[1], "ok"
     pl, en, margin = split_pl_en(text, lex, params)
     if en is None:
         return text, None, "no-en"
-    if margin < MIN_MARGIN:
+    if margin < MIN_MARGIN or (pl[-1:].isalnum() and margin < NO_PUNCT_MIN_MARGIN):
+        return text, None, "ambiguous"
+    if _starts_with_repeat(en):
         return text, None, "ambiguous"
     return pl, en, "ok"
 
@@ -638,6 +694,12 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append(f"- вопросов с id без суффикса: {sum(1 for q in questions if '~' not in q['id'])}")
     L.append("")
 
+    same = [q["id"] for q in questions if len({a["pl"] for a in q["a"]}) < 4]
+    L.append("## Подозрительные записи источника")
+    L.append("")
+    L.append(f"- вопросы с одинаковыми текстами у нескольких ответов (оставлены как в источнике): "
+             f"{', '.join(same) if same else 'нет'}")
+    L.append("")
     L.append("## Предметы")
     L.append("")
     L.append("| предмет | вопросов | quizLength |")
@@ -774,40 +836,40 @@ def convert(licence, sources, args, lex_cache):
 
 
 def eval_split(args):
-    """Accuracy of the splitter on legacy bilingual data with a hold-out lexicon."""
-    import random  # only for the deterministic shuffle of hold-out indices
+    """Accuracy of the splitter on legacy bilingual data with a hold-out lexicon.
 
+    The lexicon is built from the even-numbered legacy records only and tested on the odd ones.
+    The legacy split is itself noisy (it sometimes cut inside the Polish text); a result whose
+    Polish part merely extends the legacy one is therefore counted as "legacy cut short".
+    """
     for licence in ("ppla", "pplh"):
-        data = load_legacy(args.legacy_dir, licence)
-        en = data["en"]
+        en = load_legacy(args.legacy_dir, licence)["en"]
         hold = {i for i in range(len(en)) if i % 2 == 1}
         lex = build_lexicon(args.legacy_dir, exclude=lambda lic, kind, i: kind == "en" and i in hold)
-        total = ok = amb = wrong = 0
-        wrong_samples = []
+        counts = Counter()
+        wrong = []
         for i in sorted(hold):
-            for c in _legacy_cells(en[i]):
-                pl, en_t = split_legacy_en_cell(c)
+            for cell in _legacy_cells(en[i]):
+                pl, en_t = split_legacy_en_cell(cell)
                 if not en_t:
                     continue
-                total += 1
-                mixed = clean_text(pl + " " + en_t)
-                gpl, gen, flag = split_cell(mixed, lex)
+                gpl, gen, flag = split_cell(clean_text(pl + " " + en_t), lex)
                 if flag == "neutral":
-                    ok += 1
+                    counts["neutral"] += 1
                 elif flag != "ok":
-                    amb += 1
-                elif gpl == pl and gen == en_t:
-                    ok += 1
+                    counts["unsplit-fallback"] += 1
+                elif (gpl, gen) == (pl, en_t):
+                    counts["exact"] += 1
+                elif gpl.startswith(pl):
+                    counts["legacy-cut-short"] += 1
                 else:
-                    wrong += 1
-                    if len(wrong_samples) < 8:
-                        wrong_samples.append((pl, en_t, gpl, gen))
-        print(f"{licence}: cells={total} correct={ok} ({100*ok/total:.2f}%) "
-              f"fallback(unsplit)={amb} ({100*amb/total:.2f}%) WRONG-SPLIT={wrong} ({100*wrong/total:.2f}%)")
-        for s in wrong_samples:
-            print("   want:", short(s[0], 60), "|", short(s[1], 60))
-            print("   got :", short(s[2], 60), "|", short(s[3] or "", 60))
-    _ = random
+                    counts["DIFFERENT"] += 1
+                    wrong.append((pl, en_t, gpl, gen))
+        total = sum(counts.values())
+        print(f"{licence}: cells={total} " + " ".join(f"{k}={v} ({100 * v / total:.2f}%)" for k, v in sorted(counts.items())))
+        for w in wrong[:5]:
+            print("   legacy:", short(w[0], 70), "|", short(w[1], 50))
+            print("   ours  :", short(w[2], 70), "|", short(w[3] or "", 50))
 
 
 def main(argv=None):
