@@ -477,8 +477,16 @@ void main() {
           ]) {
             await reach(tester, find.byKey(Key(key)), tap: false);
           }
-          await reach(tester, find.byType(TextButton).first, tap: false);
-          await reach(tester, find.byType(TextButton).last, tap: false);
+          await reach(
+            tester,
+            find.text(lang == 'pl' ? 'Regulamin' : 'Terms of Service'),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.text(lang == 'pl' ? 'Polityka Prywatności' : 'Privacy Policy'),
+            tap: false,
+          );
         });
       }
     }
