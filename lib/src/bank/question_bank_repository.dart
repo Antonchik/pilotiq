@@ -135,8 +135,10 @@ class QuestionBankRepository {
   }
 
   Future<QuestionBank> _read(Licence licence) async {
+    // Not cached by the bundle: the raw JSON is only needed for parsing.
     final json = await _bundle.loadString(
       'assets/data/${licence.bankFileName}',
+      cache: false,
     );
     return _parser(json, licence);
   }

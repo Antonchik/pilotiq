@@ -20,13 +20,13 @@ class BankTextSegment {
   String toString() => 'BankTextSegment($kind, "$text")';
 }
 
-final RegExp _tail = RegExp(r'\s*/n\s*$');
+final RegExp _tail = RegExp(r'(\s*/n)+\s*$');
 final RegExp _markup = RegExp(
-  r'<(sub|sup)>(.*?)</\1>',
+  r'<\s*(sub|sup)\s*>(.*?)<\s*/\s*\1\s*>',
   caseSensitive: false,
   dotAll: true,
 );
-final RegExp _strayTag = RegExp(r'</?su[bp]>', caseSensitive: false);
+final RegExp _strayTag = RegExp(r'<\s*/?\s*su[bp]\s*>', caseSensitive: false);
 
 /// Splits a text of the bank into plain, subscript and superscript pieces and
 /// drops the "/n" tail that some English texts of the source carry. The data

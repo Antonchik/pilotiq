@@ -47,8 +47,8 @@
   "@questionLanguageEnglishHint": {
     "description": "Hint under the language selector"
   },
-  "questionShownInPolishNote": "No English translation for this question: shown in Polish.",
-  "@questionShownInPolishNote": {
+  "questionShownAsPublishedNote": "Question shown as published by ULC.",
+  "@questionShownAsPublishedNote": {
     "description": "Note when a question falls back to Polish"
   },
   "bankLoadError": "Could not load the question bank.",
@@ -115,6 +115,15 @@
   "subjectModeSoonBadge": "Soon",
   "@subjectModeSoonBadge": {
     "description": "Badge of a mode that is not available yet"
+  },
+  "examMinutesShort": "{count} min",
+  "@examMinutesShort": {
+    "description": "Exam time limit in minutes, short form",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
   },
   "appTitle": "Pilotiq",
   "@appTitle": {

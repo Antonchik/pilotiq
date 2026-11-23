@@ -11,7 +11,7 @@
   "questionLanguagePolish": "Polski",
   "questionLanguageEnglish": "English",
   "questionLanguageEnglishHint": "Pytania po angielsku są dostępne dla PPL(A) i PPL(H).",
-  "questionShownInPolishNote": "Brak angielskiego tłumaczenia tego pytania: wyświetlono po polsku.",
+  "questionShownAsPublishedNote": "Pytanie pokazane w oryginalnej postaci ULC.",
   "bankLoadError": "Nie udało się wczytać bazy pytań.",
   "bankRetryLabel": "Ponów",
   "bankSourceNote": "Źródło: {source}; data bazy {date}",
@@ -24,5 +24,6 @@
   "subjectModeBookmarksDescription": "Pytania zapisane na później.",
   "subjectModeHistoryTitle": "HISTORIA",
   "subjectModeHistoryDescription": "Wyniki Twoich symulacji egzaminu.",
-  "subjectModeSoonBadge": "Wkrótce"
+  "subjectModeSoonBadge": "Wkrótce",
+  "examMinutesShort": "{count} min"
 }

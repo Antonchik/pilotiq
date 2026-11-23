@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 
 class ExamInfoWidget extends StatelessWidget {
   const ExamInfoWidget({required this.spec, super.key});
@@ -24,7 +25,7 @@ class ExamInfoWidget extends StatelessWidget {
             const Icon(Icons.timer_outlined),
             const SizedBox(width: 10),
             Text(
-              '${spec.minutes} min',
+              AppLocalizations.of(context)!.examMinutesShort(spec.minutes),
               style: Theme.of(context).textTheme.bodyLarge,
             ),
             const Spacer(),

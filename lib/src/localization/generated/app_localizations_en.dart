@@ -47,8 +47,8 @@ class AppLocalizationsEn extends AppLocalizations {
       'English questions are available for PPL(A) and PPL(H).';
 
   @override
-  String get questionShownInPolishNote =>
-      'No English translation for this question: shown in Polish.';
+  String get questionShownAsPublishedNote =>
+      'Question shown as published by ULC.';
 
   @override
   String get bankLoadError => 'Could not load the question bank.';
@@ -102,6 +102,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get subjectModeSoonBadge => 'Soon';
+
+  @override
+  String examMinutesShort(int count) {
+    return '$count min';
+  }
 
   @override
   String get appTitle => 'Pilotiq';

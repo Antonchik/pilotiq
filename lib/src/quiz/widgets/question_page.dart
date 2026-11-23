@@ -142,7 +142,7 @@ class _QuestionPageState extends ConsumerState<QuestionPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Text(
-              local.questionShownInPolishNote,
+              local.questionShownAsPublishedNote,
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ),

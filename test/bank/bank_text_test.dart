@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pilotiq/src/bank/bank_text.dart';
@@ -35,6 +38,50 @@ void main() {
     test('other angle brackets stay as they are', () {
       expect(bankPlainText('alpha<0 and 5 > 3'), 'alpha<0 and 5 > 3');
     });
+  });
+
+  test('spaces inside tags and double tails are handled', () {
+    expect(bankPlainText('V< sub >NE< /sub > x'), 'VNE x');
+    expect(bankPlainText('t = +15< sup>o< / sup >C'), 't = +15oC');
+    expect(bankPlainText('a<sub >b</sub >'), 'ab');
+    expect(
+      parseBankText('V<sub >NE< /sub >').last.kind,
+      BankTextKind.subscript,
+    );
+    expect(bankPlainText('will be: /n/n'), 'will be:');
+    expect(bankPlainText('respectively: /n /n'), 'respectively:');
+  });
+
+  test('no source tag or "/n" tail survives in any real bank text', () {
+    final leftover = RegExp(r'<\s*/?\s*su[bp]\s*>', caseSensitive: false);
+    var checked = 0;
+    for (final name in ['ppla', 'pplh', 'spl', 'bpl']) {
+      final raw = jsonDecode(
+        File('assets/data/bank_$name.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
+      for (final q in raw['questions'] as List) {
+        final texts = [q['q'], ...(q['a'] as List)];
+        for (final t in texts) {
+          for (final lang in ['pl', 'en']) {
+            final text = (t as Map)[lang] as String?;
+            if (text == null) continue;
+            checked++;
+            final shown = bankPlainText(text);
+            expect(
+              leftover.hasMatch(shown),
+              isFalse,
+              reason: '${q['id']} $lang: $shown',
+            );
+            expect(
+              shown.endsWith('/n'),
+              isFalse,
+              reason: '${q['id']} $lang: $shown',
+            );
+          }
+        }
+      }
+    }
+    expect(checked, greaterThan(0));
   });
 
   group('BankText widget', () {

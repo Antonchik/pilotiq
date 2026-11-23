@@ -173,8 +173,8 @@ abstract class AppLocalizations {
   /// Note when a question falls back to Polish
   ///
   /// In en, this message translates to:
-  /// **'No English translation for this question: shown in Polish.'**
-  String get questionShownInPolishNote;
+  /// **'Question shown as published by ULC.'**
+  String get questionShownAsPublishedNote;
 
   /// Shown when the question bank cannot be loaded
   ///
@@ -253,6 +253,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Soon'**
   String get subjectModeSoonBadge;
+
+  /// Exam time limit in minutes, short form
+  ///
+  /// In en, this message translates to:
+  /// **'{count} min'**
+  String examMinutesShort(int count);
 
   /// The title of the application
   ///

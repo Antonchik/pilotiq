@@ -14,6 +14,9 @@ import 'package:pilotiq/src/quiz/widgets/question_page.dart';
 import 'package:pilotiq/src/quiz/widgets/results_page.dart';
 import 'package:pilotiq/src/quiz/widgets/start_page.dart';
 
+/// The quiz screen. Every screen gets its own [QuizState] (a nested
+/// ProviderScope), so a previous screen that is still animating out can never
+/// leak its state into a new one.
 class QuizScreen extends ConsumerStatefulWidget {
   const QuizScreen({super.key, required this.quiz});
 
@@ -24,18 +27,34 @@ class QuizScreen extends ConsumerStatefulWidget {
 }
 
 class _QuizScreenState extends ConsumerState<QuizScreen> {
-  final timerController = CountDownTimerController();
+  late final language = ref.read(
+    effectiveQuestionLanguageProvider(widget.quiz.licence),
+  );
 
   @override
-  void initState() {
-    super.initState();
-    ref
-        .read(quizStateProvider)
-        .configure(
-          widget.quiz,
-          ref.read(effectiveQuestionLanguageProvider(widget.quiz.licence)),
-        );
+  Widget build(BuildContext context) {
+    return ProviderScope(
+      overrides: [
+        quizStateProvider.overrideWith(
+          (ref) => QuizState()..configure(widget.quiz, language),
+        ),
+      ],
+      child: _QuizBody(quiz: widget.quiz),
+    );
   }
+}
+
+class _QuizBody extends ConsumerStatefulWidget {
+  const _QuizBody({required this.quiz});
+
+  final Quiz quiz;
+
+  @override
+  ConsumerState<_QuizBody> createState() => _QuizBodyState();
+}
+
+class _QuizBodyState extends ConsumerState<_QuizBody> {
+  final timerController = CountDownTimerController();
 
   void _stopTimer() => timerController.pause?.call();
 
@@ -81,8 +100,6 @@ class _QuizScreenState extends ConsumerState<QuizScreen> {
     final local = AppLocalizations.of(context)!;
     final quiz = widget.quiz;
     final quizState = ref.read(quizStateProvider);
-    // Keeps the (auto-disposed) state alive while the screen is shown.
-    ref.listen(quizStateProvider, (_, _) {});
     final questionQty = quiz.questions.length;
     return Scaffold(
       appBar: AppBar(
