@@ -52,7 +52,7 @@ class PracticeState {
     this.bookmarked = const {},
     this.limitReached = false,
     this.finished = false,
-    this.bookmarkErrors = 0,
+    this.bookmarkFailed = false,
   });
 
   final List<Question> queue;
@@ -72,8 +72,9 @@ class PracticeState {
   final bool limitReached;
   final bool finished;
 
-  /// How many times saving a bookmark failed (the screen tells the user).
-  final int bookmarkErrors;
+  /// The last attempt to save a bookmark failed (the screen says so until
+  /// the next attempt or the next question).
+  final bool bookmarkFailed;
 
   Question? get current => index < queue.length ? queue[index] : null;
   bool get currentAnswered =>
@@ -105,7 +106,7 @@ class PracticeState {
     Set<String>? bookmarked,
     bool? limitReached,
     bool? finished,
-    int? bookmarkErrors,
+    bool? bookmarkFailed,
   }) => PracticeState(
     queue: queue,
     shuffles: shuffles,
@@ -116,7 +117,7 @@ class PracticeState {
     bookmarked: bookmarked ?? this.bookmarked,
     limitReached: limitReached ?? this.limitReached,
     finished: finished ?? this.finished,
-    bookmarkErrors: bookmarkErrors ?? this.bookmarkErrors,
+    bookmarkFailed: bookmarkFailed ?? this.bookmarkFailed,
   );
 }
 
@@ -269,7 +270,11 @@ class PracticeController extends AsyncNotifier<PracticeState> {
     if (s == null || !s.currentAnswered || s.currentUnsaved) return;
     final index = s.index + 1;
     state = AsyncData(
-      s.copyWith(index: index, finished: index >= s.queue.length),
+      s.copyWith(
+        index: index,
+        finished: index >= s.queue.length,
+        bookmarkFailed: false,
+      ),
     );
   }
 
@@ -295,6 +300,7 @@ class PracticeController extends AsyncNotifier<PracticeState> {
       final latest = state.value ?? s;
       state = AsyncData(
         latest.copyWith(
+          bookmarkFailed: false,
           bookmarked: {
             for (final id in latest.bookmarked)
               if (id != question.id) id,
@@ -306,9 +312,7 @@ class PracticeController extends AsyncNotifier<PracticeState> {
       debugPrint('Could not save the bookmark: $e');
       final latest = state.value;
       if (ref.mounted && latest != null) {
-        state = AsyncData(
-          latest.copyWith(bookmarkErrors: latest.bookmarkErrors + 1),
-        );
+        state = AsyncData(latest.copyWith(bookmarkFailed: true));
       }
     } finally {
       _bookmarking = false;

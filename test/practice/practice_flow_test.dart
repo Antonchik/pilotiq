@@ -501,18 +501,46 @@ void main() {
       }
     }
 
-    testWidgets('a failed bookmark is reported to the user', (tester) async {
-      final flaky = _FlakyRepository(0)..failBookmarks = true;
-      repo = flaky;
-      await pumpApp(tester);
-      await openPracticeScreen(tester);
+    for (final scale in [1.0, 3.0]) {
+      testWidgets('a failed bookmark is reported without covering "Next" '
+          '(x$scale)', (tester) async {
+        final flaky = _FlakyRepository(0)..failBookmarks = true;
+        repo = flaky;
+        await pumpApp(tester, textScale: scale, size: const Size(320, 640));
+        await openPracticeScreen(tester);
 
-      await tester.tap(find.byKey(const Key('practice_bookmark')));
-      await tester.pumpAndSettle();
+        await tester.tap(find.byKey(const Key('practice_bookmark')));
+        await tester.pumpAndSettle();
 
-      expect(find.text('Could not save the bookmark.'), findsOneWidget);
-      expect(find.byIcon(Icons.bookmark_border), findsOneWidget);
-    });
+        expect(find.text('Could not save the bookmark.'), findsOneWidget);
+        expect(find.byIcon(Icons.bookmark_border), findsOneWidget);
+
+        // The message is on screen; answering and "Next" still work.
+        final first = find.byKey(const Key('answer_0'));
+        await tester.scrollUntilVisible(
+          first,
+          300,
+          maxScrolls: 300,
+          scrollable: find
+              .descendant(
+                of: find.byType(QuestionView),
+                matching: find.byType(Scrollable),
+              )
+              .first,
+        );
+        await tester.ensureVisible(first);
+        await tester.pumpAndSettle();
+        await tester.tapAt(tester.getTopLeft(first) + const Offset(20, 20));
+        await tester.pumpAndSettle();
+        expect(find.text('Could not save the bookmark.'), findsOneWidget);
+        final next = find.byKey(const Key('practice_next'));
+        await tester.tap(next);
+        await tester.pumpAndSettle();
+        expect(tester.takeException(), isNull);
+        expect(find.text('Could not save the bookmark.'), findsNothing);
+        expect(find.text('Pytanie z brakiem'), findsOneWidget);
+      });
+    }
   });
 
   group('large fonts', () {

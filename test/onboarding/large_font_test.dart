@@ -102,9 +102,20 @@ void main() {
     expect(rect.left, greaterThanOrEqualTo(0), reason: '$finder');
     expect(rect.right, lessThanOrEqualTo(screen.width), reason: '$finder');
     expect(rect.top, greaterThanOrEqualTo(0), reason: '$finder');
-    expect(rect.bottom, lessThanOrEqualTo(bottom), reason: '$finder');
+    // A tile taller than the visible area is aligned to the top of the list;
+    // it must show at least as much as a finger needs (48 px) or all of it.
+    final visible = rect.intersect(Rect.fromLTWH(0, 0, screen.width, bottom));
+    expect(
+      visible.height,
+      greaterThanOrEqualTo(rect.height < 48 ? rect.height : 48),
+      reason: 'hidden: $finder',
+    );
     if (!tap) return;
-    await tester.tap(finder);
+    if (rect.bottom <= bottom) {
+      await tester.tap(finder);
+    } else {
+      await tester.tapAt(visible.center);
+    }
     await tester.pumpAndSettle();
   }
 

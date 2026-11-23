@@ -119,16 +119,6 @@ class _PracticeBody extends ConsumerWidget {
         }
       },
     );
-    ref.listen(
-      practiceControllerProvider.select((a) => a.value?.bookmarkErrors ?? 0),
-      (previous, count) {
-        if (count > (previous ?? 0)) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text(local.practiceBookmarkError)));
-        }
-      },
-    );
     final state = async.value;
     final inQuestion =
         state != null &&
@@ -212,6 +202,23 @@ class _PracticeBody extends ConsumerWidget {
     final question = state.current!;
     return Column(
       children: [
+        if (state.bookmarkFailed)
+          Semantics(
+            liveRegion: true,
+            container: true,
+            child: Container(
+              key: const Key('practice_bookmark_error'),
+              width: double.infinity,
+              color: Theme.of(context).colorScheme.errorContainer,
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                local.practiceBookmarkError,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onErrorContainer,
+                ),
+              ),
+            ),
+          ),
         _ProgressBar(
           current: state.index + (state.currentAnswered ? 1 : 0),
           total: state.queue.length,
