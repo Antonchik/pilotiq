@@ -203,6 +203,9 @@ def extract_rows(pdf_path, sha, cache_dir):
         import pdfplumber
     except ImportError as e:  # pragma: no cover
         raise ConvertError("pdfplumber is not installed: pip install -r tool/ulc/requirements.txt") from e
+    if pdfplumber.__version__ != PDFPLUMBER_VERSION:
+        print(f"warning: pdfplumber {pdfplumber.__version__} is installed, "
+              f"{PDFPLUMBER_VERSION} is pinned; output may differ", file=sys.stderr)
     rows = []
     with pdfplumber.open(str(pdf_path)) as pdf:
         for page_no, page in enumerate(pdf.pages, start=1):
@@ -512,9 +515,8 @@ def split_cell(text, lex, params=None):
 
 
 def build_questions(records, spec, lex, stats):
-    """Apply cleaning, PL/EN split, rejection and de-duplication. Returns (questions, info)."""
+    """Apply cleaning, PL/EN split, rejection and de-duplication. Returns the list of questions (sorted by id)."""
     bilingual = bool(spec.get("bilingual"))
-    info = {"cell_flags": Counter(), "ambiguous_examples": [], "q_flags": Counter()}
     candidates = []
     for rec in records:
         page = rec["page"]
@@ -546,7 +548,6 @@ def build_questions(records, spec, lex, stats):
                 pl, en, flag = t, None, "mono"
             cells.append({"pl": pl, "en": en})
             flags.append(flag)
-            info["cell_flags"][flag] += 1
         candidates.append({"page": page, "number": number, "topic": prefix, "subject": subject,
                            "cells": cells, "flags": flags, "joined": texts})
 
@@ -818,9 +819,7 @@ def convert(licence, sources, args, lex_cache):
             lex_cache["lex"] = build_lexicon(args.legacy_dir)
         lex = lex_cache["lex"]
     questions = build_questions(records, spec, lex, stats)
-    # info is reconstructed from the questions to keep build_questions' signature small
     info = {"cell_flags": Counter(f for q in questions for f in q["_flags"])}
-    # flags of dropped exact duplicates are not counted; fine for a report
     source = {"file": spec["file"], "sha256": spec["sha256"], "date": spec["date"], "kind": spec["kind"]}
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
