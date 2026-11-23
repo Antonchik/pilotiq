@@ -64,7 +64,8 @@ class ExamBuilder {
       remainder[t] = exact - exact.floor();
       assigned += quota[t]!;
     }
-    final order = [...topics]..sort((a, b) {
+    final order = [...topics]
+      ..sort((a, b) {
         final c = remainder[b]!.compareTo(remainder[a]!);
         if (c != 0) return c;
         final s = byTopic[b]!.length.compareTo(byTopic[a]!.length);

@@ -47,6 +47,9 @@ class StreakCalculator {
       prev = d;
     }
     return StreakResult(
-        current: current, longest: longest, activeToday: activeToday);
+      current: current,
+      longest: longest,
+      activeToday: activeToday,
+    );
   }
 }

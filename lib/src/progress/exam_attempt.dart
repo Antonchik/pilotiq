@@ -46,23 +46,23 @@ class ExamAttempt {
   double get ratio => total == 0 ? 0 : correct / total;
 
   Map<String, dynamic> toMap() => {
-        'id': id,
-        'licence': licence.id,
-        'subject': subject.id,
-        'startedAt': startedAt.toIso8601String(),
-        'finishedAt': finishedAt.toIso8601String(),
-        'durationSec': durationSec,
-        'total': total,
-        'correct': correct,
-        'passed': passed,
-        'questionIds': questionIds,
-        'answers': answers,
-        'flagged': flagged,
-        'topicBreakdown': {
-          for (final e in topicBreakdown.entries) e.key: e.value.toMap(),
-        },
-        'reason': reason.name,
-      };
+    'id': id,
+    'licence': licence.id,
+    'subject': subject.id,
+    'startedAt': startedAt.toIso8601String(),
+    'finishedAt': finishedAt.toIso8601String(),
+    'durationSec': durationSec,
+    'total': total,
+    'correct': correct,
+    'passed': passed,
+    'questionIds': questionIds,
+    'answers': answers,
+    'flagged': flagged,
+    'topicBreakdown': {
+      for (final e in topicBreakdown.entries) e.key: e.value.toMap(),
+    },
+    'reason': reason.name,
+  };
 
   /// Returns null if the record is damaged (unknown licence or subject).
   static ExamAttempt? tryFromMap(Map<dynamic, dynamic> m) {
@@ -147,35 +147,37 @@ class InProgressAttempt {
   InProgressAttempt copyWith({
     Map<String, int?>? answers,
     List<String>? flagged,
-  }) =>
-      InProgressAttempt(
-        id: id,
-        licence: licence,
-        subject: subject,
-        startedAt: startedAt,
-        durationSec: durationSec,
-        questionIds: questionIds,
-        answers: answers ?? this.answers,
-        flagged: flagged ?? this.flagged,
-      );
+  }) => InProgressAttempt(
+    id: id,
+    licence: licence,
+    subject: subject,
+    startedAt: startedAt,
+    durationSec: durationSec,
+    questionIds: questionIds,
+    answers: answers ?? this.answers,
+    flagged: flagged ?? this.flagged,
+  );
 
   Map<String, dynamic> toMap() => {
-        'id': id,
-        'licence': licence.id,
-        'subject': subject.id,
-        'startedAt': startedAt.toIso8601String(),
-        'durationSec': durationSec,
-        'questionIds': questionIds,
-        'answers': answers,
-        'flagged': flagged,
-      };
+    'id': id,
+    'licence': licence.id,
+    'subject': subject.id,
+    'startedAt': startedAt.toIso8601String(),
+    'durationSec': durationSec,
+    'questionIds': questionIds,
+    'answers': answers,
+    'flagged': flagged,
+  };
 
   static InProgressAttempt? tryFromMap(Map<dynamic, dynamic> m) {
     final licence = Licence.fromId(m['licence'] as String?);
     final subject = SubjectId.fromId(m['subject'] as String?);
     final started = DateTime.tryParse('${m['startedAt']}');
     final id = m['id'];
-    if (licence == null || subject == null || started == null || id is! String) {
+    if (licence == null ||
+        subject == null ||
+        started == null ||
+        id is! String) {
       return null;
     }
     final rawAnswers = m['answers'];

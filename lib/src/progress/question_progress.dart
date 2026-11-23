@@ -43,32 +43,31 @@ class QuestionProgress {
     DateTime? dueAt,
     bool? bookmarked,
     List<bool>? recent,
-  }) =>
-      QuestionProgress(
-        qid: qid,
-        seen: seen ?? this.seen,
-        correct: correct ?? this.correct,
-        wrong: wrong ?? this.wrong,
-        consecutiveCorrect: consecutiveCorrect ?? this.consecutiveCorrect,
-        box: box ?? this.box,
-        lastAnsweredAt: lastAnsweredAt ?? this.lastAnsweredAt,
-        dueAt: dueAt ?? this.dueAt,
-        bookmarked: bookmarked ?? this.bookmarked,
-        recent: recent ?? this.recent,
-      );
+  }) => QuestionProgress(
+    qid: qid,
+    seen: seen ?? this.seen,
+    correct: correct ?? this.correct,
+    wrong: wrong ?? this.wrong,
+    consecutiveCorrect: consecutiveCorrect ?? this.consecutiveCorrect,
+    box: box ?? this.box,
+    lastAnsweredAt: lastAnsweredAt ?? this.lastAnsweredAt,
+    dueAt: dueAt ?? this.dueAt,
+    bookmarked: bookmarked ?? this.bookmarked,
+    recent: recent ?? this.recent,
+  );
 
   Map<String, dynamic> toMap() => {
-        'qid': qid,
-        'seen': seen,
-        'correct': correct,
-        'wrong': wrong,
-        'consecutiveCorrect': consecutiveCorrect,
-        'box': box,
-        'lastAnsweredAt': lastAnsweredAt?.toIso8601String(),
-        'dueAt': dueAt?.toIso8601String(),
-        'bookmarked': bookmarked,
-        'recent': recent,
-      };
+    'qid': qid,
+    'seen': seen,
+    'correct': correct,
+    'wrong': wrong,
+    'consecutiveCorrect': consecutiveCorrect,
+    'box': box,
+    'lastAnsweredAt': lastAnsweredAt?.toIso8601String(),
+    'dueAt': dueAt?.toIso8601String(),
+    'bookmarked': bookmarked,
+    'recent': recent,
+  };
 
   factory QuestionProgress.fromMap(Map<dynamic, dynamic> m) {
     int i(String k, int d) => (m[k] as num?)?.toInt() ?? d;
@@ -113,8 +112,17 @@ class QuestionProgress {
       _listEq(other.recent, recent);
 
   @override
-  int get hashCode => Object.hash(qid, seen, correct, wrong,
-      consecutiveCorrect, box, lastAnsweredAt, dueAt, bookmarked);
+  int get hashCode => Object.hash(
+    qid,
+    seen,
+    correct,
+    wrong,
+    consecutiveCorrect,
+    box,
+    lastAnsweredAt,
+    dueAt,
+    bookmarked,
+  );
 
   @override
   String toString() => 'QuestionProgress(${toMap()})';

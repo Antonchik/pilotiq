@@ -40,6 +40,14 @@ int calendarDaysBetween(DateTime from, DateTime to) =>
 /// [d] shifted by [days] calendar days, keeping the wall-clock time.
 DateTime addCalendarDays(DateTime d, int days) {
   final l = _local(d);
-  return DateTime(l.year, l.month, l.day + days, l.hour, l.minute, l.second,
-      l.millisecond, l.microsecond);
+  return DateTime(
+    l.year,
+    l.month,
+    l.day + days,
+    l.hour,
+    l.minute,
+    l.second,
+    l.millisecond,
+    l.microsecond,
+  );
 }

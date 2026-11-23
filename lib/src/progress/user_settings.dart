@@ -83,30 +83,30 @@ class UserSettings {
     AppThemeMode? themeMode,
     bool? onboardingDone,
     int? schemaVersion,
-  }) =>
-      UserSettings(
-        licence: licence ?? this.licence,
-        questionLanguage: questionLanguage ?? this.questionLanguage,
-        examDate: clearExamDate ? null : (examDate ?? this.examDate),
-        dailyGoal: dailyGoal ?? this.dailyGoal,
-        reminderTime:
-            clearReminderTime ? null : (reminderTime ?? this.reminderTime),
-        themeMode: themeMode ?? this.themeMode,
-        onboardingDone: onboardingDone ?? this.onboardingDone,
-        schemaVersion: schemaVersion ?? this.schemaVersion,
-      );
+  }) => UserSettings(
+    licence: licence ?? this.licence,
+    questionLanguage: questionLanguage ?? this.questionLanguage,
+    examDate: clearExamDate ? null : (examDate ?? this.examDate),
+    dailyGoal: dailyGoal ?? this.dailyGoal,
+    reminderTime: clearReminderTime
+        ? null
+        : (reminderTime ?? this.reminderTime),
+    themeMode: themeMode ?? this.themeMode,
+    onboardingDone: onboardingDone ?? this.onboardingDone,
+    schemaVersion: schemaVersion ?? this.schemaVersion,
+  );
 
   /// Keys written to the `config` box.
   Map<String, dynamic> toMap() => {
-        'licence': licence.id,
-        'questionLanguage': questionLanguage.name,
-        'examDate': examDate == null ? null : dateKey(examDate!),
-        'dailyGoal': dailyGoal,
-        'reminderTime': reminderTime?.encode(),
-        'themeMode': themeMode.name,
-        'onboardingDone': onboardingDone,
-        'schemaVersion': schemaVersion,
-      };
+    'licence': licence.id,
+    'questionLanguage': questionLanguage.name,
+    'examDate': examDate == null ? null : dateKey(examDate!),
+    'dailyGoal': dailyGoal,
+    'reminderTime': reminderTime?.encode(),
+    'themeMode': themeMode.name,
+    'onboardingDone': onboardingDone,
+    'schemaVersion': schemaVersion,
+  };
 
   factory UserSettings.fromMap(Map<dynamic, dynamic> m) {
     final goal = (m['dailyGoal'] as num?)?.toInt();
@@ -138,6 +138,14 @@ class UserSettings {
       other.schemaVersion == schemaVersion;
 
   @override
-  int get hashCode => Object.hash(licence, questionLanguage, examDate,
-      dailyGoal, reminderTime, themeMode, onboardingDone, schemaVersion);
+  int get hashCode => Object.hash(
+    licence,
+    questionLanguage,
+    examDate,
+    dailyGoal,
+    reminderTime,
+    themeMode,
+    onboardingDone,
+    schemaVersion,
+  );
 }

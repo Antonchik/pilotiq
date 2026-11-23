@@ -12,19 +12,22 @@ class DailyStat {
   static String keyFor(DateTime now) => dateKey(now);
 
   DailyStat recorded({required bool correct}) => DailyStat(
-        date: date,
-        answered: answered + 1,
-        correct: this.correct + (correct ? 1 : 0),
-      );
+    date: date,
+    answered: answered + 1,
+    correct: this.correct + (correct ? 1 : 0),
+  );
 
-  Map<String, dynamic> toMap() =>
-      {'date': date, 'answered': answered, 'correct': correct};
+  Map<String, dynamic> toMap() => {
+    'date': date,
+    'answered': answered,
+    'correct': correct,
+  };
 
   factory DailyStat.fromMap(Map<dynamic, dynamic> m) => DailyStat(
-        date: m['date'] as String,
-        answered: (m['answered'] as num?)?.toInt() ?? 0,
-        correct: (m['correct'] as num?)?.toInt() ?? 0,
-      );
+    date: m['date'] as String,
+    answered: (m['answered'] as num?)?.toInt() ?? 0,
+    correct: (m['correct'] as num?)?.toInt() ?? 0,
+  );
 
   @override
   bool operator ==(Object other) =>

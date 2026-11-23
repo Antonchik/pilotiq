@@ -21,9 +21,9 @@ class TopicScore {
   Map<String, dynamic> toMap() => {'total': total, 'correct': correct};
 
   factory TopicScore.fromMap(Map<dynamic, dynamic> m) => TopicScore(
-        total: (m['total'] as num?)?.toInt() ?? 0,
-        correct: (m['correct'] as num?)?.toInt() ?? 0,
-      );
+    total: (m['total'] as num?)?.toInt() ?? 0,
+    correct: (m['correct'] as num?)?.toInt() ?? 0,
+  );
 
   @override
   bool operator ==(Object other) =>

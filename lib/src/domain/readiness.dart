@@ -25,7 +25,9 @@ class ReadinessCalculator {
     if (p >= 1) return 1;
     var sum = 0.0;
     for (var i = k; i <= n; i++) {
-      sum += math.exp(_logChoose(n, i) + i * math.log(p) + (n - i) * math.log(1 - p));
+      sum += math.exp(
+        _logChoose(n, i) + i * math.log(p) + (n - i) * math.log(1 - p),
+      );
     }
     return sum.clamp(0.0, 1.0);
   }
