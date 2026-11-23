@@ -66,5 +66,23 @@
    "powinna przerwać nadawanie ze względu na możliwość zakłócania innych stacji stop transmission because of possibility of interference with other stations",
    "Powinna nadawać na innej dowolnej częstotliwości Transmit on any other frequency"
   ]
+ ],
+ "PL040-0085": [
+  [
+   "Koncentracja uwagi to: The concentration of attention is:",
+   "Stopień intensywności skupienia procesów poznawczych człowieka na określonym zadaniu, jego miarą jest siła bodźca potrzebna do oderwania uwagi od tego zadania. The degree of intensity of human cognitive processes to focus on a specific task, it is a measure of the strength of the stimulus needed to detach attention from the task.",
+   "Zintegrowane rozpoznawanie pojedynczych cech przedmiotów lub zjawisk w celu ich selekcjonowania. Detection of single integrated features of objects or phenomena in order to cull.",
+   "Umiejętność analizy informacji ignorowanych poza polem świadomości. The ability to analyze information ignored outside the field of consciousness.",
+   "Zinterioryzowany, ukierunkowany i kreatywny odbiór wrażeń w spostrzeganiu na bazie informacji powstałych z pobudzeń receptorów zmysłów w stanie wyciszenia. Interior, targeted and creative reception of sensations in perception based on information derived from the sensory receptors in the excitation state of emotional calm. emocjonalnego"
+  ]
+ ],
+ "PL040-0125": [
+  [
+   "Neurotyczność to: Neuroticism is:",
+   "Stała cecha osobowości charakteryzująca się dużą chwiejnością nastroju, drażliwością, pobudliwością, tendencją do intensywnegoi długotrwałego przeżywania. The personality trait characterised by a marked instability of mood, irritability, excitability, tendency to live long term and negative emotions. negatywnych emocji",
+   "Stała cecha osobowości związana z zaniżoną samooceną. Personality trait was associated with low self-esteem.",
+   "Cecha ludzi powolnych, flegmatycznych, działających z rozwagą. Characteristic of human slow, phlegmatic, acting with caution.",
+   "Określenie rodzaju wrodzonego typu temperamentu człowieka. Identify the type of congenital human temperament."
+  ]
  ]
 }

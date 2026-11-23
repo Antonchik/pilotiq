@@ -313,6 +313,14 @@ class SplitTest(unittest.TestCase):
             self.assertTrue(reasons, number)
             self.assertEqual(cells, [{"pl": t, "en": None} for t in texts], number)
 
+    def test_polish_tail_left_at_the_end_of_an_english_answer(self):
+        # PL040-0125 a0 and PL040-0085 a3: "...negative emotions. negatywnych emocji"
+        for number in ("PL040-0125", "PL040-0085"):
+            texts = self.round3(number)
+            cells, _, reasons, _ = self.assess(texts)
+            self.assertTrue(any("lower-case fragment" in r for r in reasons), (number, reasons))
+            self.assertEqual(cells, [{"pl": t, "en": None} for t in texts], number)
+
     def test_lone_capital_after_a_full_stop_and_glued_english(self):
         base = ["Wybierz obiekt: Select the landmark:", "Wieś. Village.", "Brzeg morza. Sea shore.", "Droga. Road."]
         cells, _, reasons, _ = self.assess(base[:1] + ["Duże miasto.A large city."] + base[1:])
@@ -418,6 +426,8 @@ class ValidateTest(unittest.TestCase):
         self.assertEqual(len(res["e_boundary"]), 1)
         self.assertEqual(len(res["g_tail"]), 1)
         self.assertEqual(len(res["f_polish_in_en"]), 1)
+        bank = {"questions": [q({"pl": "Długo.", "en": "Long. negatywnych emocji"})]}
+        self.assertEqual(len(v.audit_bank(bank, lex)["h_en_lower_tail"]), 1)
 
     def test_detects_separator_at_start_and_doubled_answers(self):
         import tempfile

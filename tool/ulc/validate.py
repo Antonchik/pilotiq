@@ -157,7 +157,7 @@ def validate_bank(path):
 
 def audit_bank(bank, lex):
     """Whole-bank sweeps; each returns a list of (id, detail). Used by `validate.py --audit`."""
-    out = {"a_numbers": [], "b_mixed": [], "c_en_start": [], "d_equal_pl": [], "e_boundary": [], "f_polish_in_en": [], "g_tail": [], "info_spelling": []}
+    out = {"a_numbers": [], "b_mixed": [], "c_en_start": [], "d_equal_pl": [], "e_boundary": [], "h_en_lower_tail": [], "f_polish_in_en": [], "g_tail": [], "info_spelling": []}
     for q in bank["questions"]:
         cells = [q["q"]] + q["a"]
         names = ["q"] + [f"a{i}" for i in range(4)]
@@ -192,6 +192,9 @@ def audit_bank(bank, lex):
                                        + "; ".join(f"{a['pl'][:20]!r}|{a['en'][:20]!r}" for a in near if a["pl"] != a["en"])))
             if any(a["pl"][:1] in ";,." or (a["en"] or "")[:1] in ";,." for a in q["a"]):
                 out["b_mixed"].append((q["id"], "separator at the start of an answer"))
+        for j, a in enumerate(q["a"]):
+            if a["en"] and a["en"] != a["pl"] and convert._LOWER_TAIL.search(a["en"]):
+                out["h_en_lower_tail"].append((q["id"], f"a{j}: ...{a['en'][-45:]!r}"))
         seen = {}
         for j, a in enumerate(q["a"]):
             key = a["pl"].casefold().replace(" ", "")

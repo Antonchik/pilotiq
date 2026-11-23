@@ -554,6 +554,7 @@ def split_cell(text, lex, params=None):
 _EN_NAMES = {"góra", "górze", "góry", "górą"}  # Polish proper names that may occur in English text
 _GLUED = re.compile(r"[a-ząćęłńóśźż][A-Z][a-z]{3,}")
 _CAP_AFTER_DOT = re.compile(r"[.?!]\s?[A-Z]$")
+_LOWER_TAIL = re.compile(r"[.?!]\s+[a-ząćęłńóśźż][^.?!]*$")
 
 
 def polish_in_english(en, lex):
@@ -645,6 +646,8 @@ def assess_question(texts, lex):
             bad = boundary_looks_wrong(pl, en)
             if bad:
                 reasons.append(f"{name}: {bad}")
+            if k > 0 and _LOWER_TAIL.search(en):  # answers only: a Polish tail left at the end of the English part
+                reasons.append(f"{name}: English part ends with a lower-case fragment after a full stop")
             if digits(pl) and digits(en) and digits(pl) != digits(en):
                 reasons.append(f"{name}: numbers differ between PL and EN")
             elif digits(pl) and not digits(en) and (en[:1].islower() or len(en.split(" ")) <= 2 and len(pl.split(" ")) > 2):
@@ -678,7 +681,8 @@ def en_defects(c):
     variant that needed no fallback (EN numbers agree with PL, reliable split, ...), then fewer EN
     texts starting in lower case ("wwith ..."). Ties keep the first occurrence."""
     lower = sum(1 for x in c["cells"] if x["en"] and x["en"][:1].islower())
-    return (len(c["reasons"]), lower)
+    artefact = sum(1 for x in c["cells"] if x["en"] and x["en"].rstrip().endswith("/n"))
+    return (len(c["reasons"]), lower, artefact)
 
 
 def build_questions(records, spec, lex, stats):
@@ -888,7 +892,7 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append(f"- записей (строк с NUMER или L.p.): {stats.data_rows}")
     L.append(f"  - принято вопросов: {accepted}")
     L.append(f"  - отброшено как мусор: {len(discarded)}")
-    L.append(f"  - схлопнуто как дубли (тот же NUMER и тот же польский текст без учёта пробелов и регистра): {len(dup)}"
+    L.append(f"  - схлопнуто как дубли (тот же NUMER; полный текст ячеек без учёта пробелов, регистра и хвоста `/n`, либо тот же польский текст): {len(dup)}"
              f" (дословных {sum(1 for d in dup if d[2] == 'exact')}, различающихся пробелами/регистром "
              f"{sum(1 for d in dup if d[2] == 'near')}, с разным английским текстом "
              f"{sum(1 for d in dup if d[2] == 'en')})")
@@ -908,9 +912,9 @@ def make_report(licence, spec, stats, questions, info, legacy_dir):
     L.append("")
     L.append("### Схлопнутые дубли")
     L.append("")
-    L.append("Дубли: полный текст ячеек до разделения совпадает без учёта пробелов и регистра, либо совпадает польская часть. "
+    L.append("Дубли: полный текст ячеек до разделения совпадает без учёта пробелов и регистра (хвост `/n` не учитывается), либо совпадает польская часть. "
              "Из группы остаётся запись, у которой (1) не потребовался исходный вид (числа EN согласованы с PL, разделение "
-             "надёжно), затем (2) меньше EN-текстов со строчной буквы в начале; при равенстве — первая по порядку. "
+             "надёжно), затем (2) меньше EN-текстов со строчной буквы в начале, затем (3) меньше EN с артефактом `/n` на конце; при равенстве — первая по порядку. "
              "Остальные схлопываются.")
     L.append("")
     exact = [d for d in dup if d[2] == "exact"]

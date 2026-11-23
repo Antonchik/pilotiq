@@ -191,6 +191,7 @@ void main() {
       await tester.tap(find.byKey(const Key('subject_air_law')));
       await tester.pumpAndSettle();
 
+      debugPrint('DBG pre ${await repository.toggleBookmark(Licence.ppla, 'x').timeout(const Duration(seconds: 1), onTimeout: () => false)}');
       Future<void> playExam() async {
         final exam = find.byKey(const Key('mode_exam'));
         await tester.ensureVisible(exam);
@@ -218,6 +219,7 @@ void main() {
         Licence.ppla,
         subject: SubjectId.airLaw,
       );
+      debugPrint('DBG ${Hive.isBoxOpen('attempts')} ${Hive.isBoxOpen('attempts') ? Hive.box<dynamic>('attempts').length : -1} ${attempts.length}');
       expect(attempts, hasLength(2));
     },
   );
