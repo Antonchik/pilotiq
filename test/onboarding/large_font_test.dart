@@ -4,7 +4,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:pilotiq/src/app.dart';
 import 'package:pilotiq/src/home/home.dart';
-import 'package:pilotiq/src/onboarding/onboarding_screen.dart';
 
 import '../dashboard/dashboard_helpers.dart';
 
