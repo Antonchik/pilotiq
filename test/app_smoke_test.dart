@@ -38,6 +38,11 @@ void main() {
     await tmp.delete(recursive: true);
   });
 
+  /// Closes Hive in real time: pending file writes of the app cannot finish
+  /// inside the fake-async zone of the test.
+  void closeHiveAfterTest(WidgetTester tester) =>
+      addTearDown(() => tester.runAsync(Hive.close));
+
   Widget buildApp() => ProviderScope(
     overrides: [
       purchaseServiceProvider.overrideWithValue(FakePurchaseService()),
@@ -62,6 +67,7 @@ void main() {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
+    closeHiveAfterTest(tester);
 
     await tester.pumpWidget(buildApp());
     await tester.pump();
@@ -79,6 +85,7 @@ void main() {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
+    closeHiveAfterTest(tester);
 
     await tester.pumpWidget(buildApp());
     await tester.pump();
@@ -88,10 +95,7 @@ void main() {
     expect(container.read(selectedLicenceProvider), Licence.ppla);
 
     await tester.tap(find.text('PPL(H)'));
-    for (var i = 0; i < 30; i++) {
-      await tester.pump(const Duration(milliseconds: 100));
-    }
-    debugPrint('DBG ${find.byType(SubjectListScreen).evaluate().length} ${find.byType(CircularProgressIndicator).evaluate().length}');
+    await tester.pumpAndSettle();
 
     expect(find.byType(SubjectListScreen), findsOneWidget);
     expect(

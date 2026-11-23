@@ -42,6 +42,8 @@ void main() {
     tester.view.physicalSize = const Size(1080, 2400);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
+    // Pending file writes of the app can only finish in real time.
+    addTearDown(() => tester.runAsync(Hive.close));
     if (language != null) {
       await tester.runAsync(
         () => Hive.box<dynamic>('config').put('questionLanguage', language),
