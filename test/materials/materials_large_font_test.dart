@@ -10,7 +10,8 @@ import 'package:pilotiq/src/quiz/practice/practice_screen.dart';
 import '../onboarding/large_font_helpers.dart';
 import 'materials_helpers.dart';
 
-/// The explanation panel (open, locked, disputed, locked and disputed), the study notes and a
+/// The explanation panel (open, locked, disputed, locked and disputed,
+/// outdated for free and premium), the study notes and a
 /// summary with large system fonts on small screens in both languages, with
 /// the matrix and the helpers of `test/onboarding/large_font_test.dart`:
 /// nothing overflows (an exception fails the test) and every action can be
@@ -109,6 +110,30 @@ void main() {
           await reach(tester, key('explanation_unlock'));
           expect(h.paywalls, hasLength(1));
         });
+
+        for (final premium in [false, true]) {
+          screen('outdated question${premium ? ' (premium)' : ''}', (
+            tester,
+          ) async {
+            final h = MaterialsHarness(premium: premium);
+            await pump(
+              tester,
+              h,
+              PracticeScreen(args: learnArgs(Licence.pplh)),
+            );
+            await reach(tester, key('answer_0'));
+            await reach(tester, key('practice_next'));
+            await reach(tester, key('answer_0'));
+            await reach(tester, key('explanation_outdated_body'), tap: false);
+            if (premium) {
+              await reach(tester, key('explanation_outdated_note'), tap: false);
+              await reach(tester, key('explanation_report'), tap: false);
+            } else {
+              await reach(tester, key('explanation_unlock'));
+              expect(h.paywalls, hasLength(1));
+            }
+          });
+        }
 
         screen('study notes', (tester) async {
           final h = MaterialsHarness();

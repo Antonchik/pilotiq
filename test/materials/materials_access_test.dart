@@ -81,6 +81,36 @@ void main() {
     expect(premium.disputeNote, isNotNull);
   });
 
+  test('outdated: everyone gets the mark, only premium the note; it takes '
+      'no place of the free sample', () async {
+    final free = (await container().read(
+      explanationForQuestionProvider((Licence.pplh, 'PL010-0002')).future,
+    ))!;
+    expect(free.outdated, isTrue);
+    expect(free.hasExplanation, isFalse);
+    expect(free.locked, isTrue);
+    expect(free.outdatedNote, isNull);
+
+    final premium = (await container(premium: true).read(
+      explanationForQuestionProvider((Licence.pplh, 'PL010-0002')).future,
+    ))!;
+    expect(premium.locked, isFalse);
+    expect(premium.outdatedNote, contains('§ 31'));
+
+    // PPL(A) links the outdated key too; the free three are unchanged.
+    final c = container();
+    expect(await lockedOf(c, Licence.ppla, ['PL010-0003', 'PL010-0004']), {
+      'PL010-0003': false,
+      'PL010-0004': true,
+    });
+    expect(
+      (await c.read(
+        explanationForQuestionProvider((Licence.ppla, 'PL010-0011')).future,
+      ))!.outdated,
+      isTrue,
+    );
+  });
+
   test('premium sees every explanation', () async {
     final c = container(premium: true);
     final locked = await lockedOf(c, Licence.ppla, [

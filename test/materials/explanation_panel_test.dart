@@ -170,6 +170,129 @@ void main() {
     handle.dispose();
   });
 
+  group('outdated regulations', () {
+    const body =
+        'Pytanie opiera się na nieaktualnych przepisach. Jeśli pojawi się na '
+        'egzaminie, liczy się odpowiedź z klucza ULC.';
+    const note = 'Uchylony § 31 rozporządzenia z 2003 r.; obecnie NCO.GEN.105.';
+
+    testWidgets('free, after an answer in practice: the mark for everyone, '
+        'the note behind the paywall', (tester) async {
+      final h = MaterialsHarness();
+      await h.pump(
+        tester,
+        PracticeScreen(args: learnArgs(Licence.pplh)),
+        locale: const Locale('pl'),
+      );
+      await answerCurrent(tester);
+      await nextQuestion(tester);
+      expect(key('explanation_outdated'), findsNothing);
+      await answerCurrent(tester);
+      expect(key('explanation_outdated'), findsOneWidget);
+      expect(find.text('Nieaktualne przepisy'), findsOneWidget);
+      expect(find.text(body), findsOneWidget);
+      expect(find.text(note), findsNothing);
+      expect(key('explanation_title'), findsNothing);
+      expect(key('explanation_outdated_locked'), findsOneWidget);
+      await tester.tap(key('explanation_unlock'));
+      await tester.pumpAndSettle();
+      expect(h.paywalls, [(PaywallTrigger.materials, true)]);
+    });
+
+    testWidgets('premium sees the note and can report an error', (
+      tester,
+    ) async {
+      final h = MaterialsHarness(premium: true);
+      await h.pump(
+        tester,
+        explanationOf(Licence.pplh, 'PL010-0002'),
+        locale: const Locale('pl'),
+      );
+      expect(find.text(body), findsOneWidget);
+      expect(find.text(note), findsOneWidget);
+      expect(key('explanation_unlock'), findsNothing);
+      expect(key('explanation_report'), findsOneWidget);
+    });
+
+    testWidgets('English UI', (tester) async {
+      final h = MaterialsHarness();
+      await h.pump(tester, explanationOf(Licence.pplh, 'PL010-0002'));
+      expect(find.text('Outdated regulations'), findsOneWidget);
+      expect(
+        find.text(
+          'The question is based on outdated regulations. If it appears in '
+          'the exam, the answer from the ULC key counts.',
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('the header is a header for screen readers', (tester) async {
+      final handle = tester.ensureSemantics();
+      final h = MaterialsHarness();
+      await h.pump(
+        tester,
+        explanationOf(Licence.pplh, 'PL010-0002'),
+        locale: const Locale('pl'),
+      );
+      expect(
+        tester.getSemantics(key('explanation_outdated_title')),
+        isSemantics(label: 'Nieaktualne przepisy', isHeader: true),
+      );
+      handle.dispose();
+    });
+
+    testWidgets('other questions have no mark', (tester) async {
+      final h = MaterialsHarness();
+      await h.pump(tester, explanationOf(Licence.ppla, 'PL010-0002'));
+      expect(find.byType(ExplanationPanel), findsNothing);
+      await h.pump(tester, explanationOf(Licence.ppla, 'PL010-0001'));
+      expect(key('explanation_outdated'), findsNothing);
+    });
+
+    testWidgets('exam review: the mark under the outdated question', (
+      tester,
+    ) async {
+      final h = MaterialsHarness();
+      final attempt = ExamAttempt(
+        id: 'a2',
+        licence: Licence.pplh,
+        subject: SubjectId.airLaw,
+        startedAt: DateTime(2026, 11, 24, 10),
+        finishedAt: DateTime(2026, 11, 24, 10, 20),
+        durationSec: 1200,
+        total: 2,
+        correct: 1,
+        passed: false,
+        reason: AttemptReason.finished,
+        questionIds: const ['PL010-0002', 'PL010-0003'],
+        answers: const {'PL010-0002': 0, 'PL010-0003': 1},
+      );
+      await h.pump(
+        tester,
+        ExamReviewScreen(
+          attempt: attempt,
+          args: ExamArgs.fromSubject(fakeSubject(Licence.pplh)),
+        ),
+      );
+      final mark = key('explanation_outdated');
+      expect(
+        find.descendant(
+          of: find.byKey(const ValueKey('review_0')),
+          matching: mark,
+        ),
+        findsOneWidget,
+      );
+      expect(
+        find.descendant(
+          of: find.byKey(const ValueKey('review_1')),
+          matching: mark,
+        ),
+        findsNothing,
+      );
+    });
+  });
+
   testWidgets('questions in English: the "Polish only" note', (tester) async {
     final h = MaterialsHarness();
     await h.pump(

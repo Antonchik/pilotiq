@@ -263,21 +263,21 @@ class _OutdatedBlock extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Semantics(
-            header: true,
-            child: Row(
-              children: [
-                Icon(Icons.history_edu_outlined, size: 20, color: color),
-                const SizedBox(width: 8),
-                Expanded(
+          Row(
+            children: [
+              Icon(Icons.history_edu_outlined, size: 20, color: color),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Semantics(
+                  header: true,
                   child: Text(
                     local.materialsOutdatedTitle,
                     key: const Key('explanation_outdated_title'),
                     style: theme.textTheme.titleSmall?.copyWith(color: color),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           const SizedBox(height: 4),
           Text(

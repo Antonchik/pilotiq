@@ -46,6 +46,9 @@ const k5 = 'PL010-0005#e5e5e5e5';
 const k6 = 'PL010-0441#0a0a0a0a';
 const k8 = 'PL010-0006#f6f6f6f6';
 
+/// Outdated (based on repealed norms): PPL(H) PL010-0002, PPL(A) PL010-0011.
+const k7 = 'PL010-0007#07070707';
+
 String fixtureJson() =>
     File('test/materials/fixtures/air_law_fixture.json').readAsStringSync();
 

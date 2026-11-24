@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -60,6 +61,21 @@ void main() {
       expect(m.indexInTopic(Licence.bpl, k3), isNull);
     });
 
+    test('outdated keys: parsed, linked, outside the topic orders', () {
+      expect(m.outdated, {
+        k7: 'Uchylony § 31 rozporządzenia z 2003 r.; obecnie NCO.GEN.105.',
+      });
+      expect(m.keyOf(Licence.pplh, 'PL010-0002'), k7);
+      expect(m.explanations.containsKey(k7), isFalse);
+      expect(m.indexInTopic(Licence.ppla, k7), isNull);
+    });
+
+    test('an asset without "outdated" still parses', () {
+      final json = jsonDecode(fixtureJson()) as Map<String, dynamic>
+        ..remove('outdated');
+      expect(parseMaterials(jsonEncode(json)).outdated, isEmpty);
+    });
+
     test('question ids of a key', () {
       expect(m.questionIdsOf(Licence.ppla, k3), ['PL010-0003']);
       expect(m.questionIdsOf(Licence.bpl, k3), isEmpty);
@@ -98,10 +114,21 @@ void main() {
         for (final t in real.topics)
           for (final s in t.sections) ...s.questionKeys,
       };
+      final orderKeys = {for (final t in real.topics) ...t.order};
+      final linked = {for (final l in real.links.values) ...l.values};
+      expect(real.outdated, isNotEmpty);
+      for (final e in real.outdated.entries) {
+        expect(linked, contains(e.key));
+        expect(real.explanations.containsKey(e.key), isFalse, reason: e.key);
+        expect(orderKeys, isNot(contains(e.key)));
+        expect(e.value, isNotEmpty, reason: e.key);
+      }
       for (final links in real.links.values) {
         for (final key in links.values) {
           expect(
-            real.explanations.containsKey(key) || sectionKeys.contains(key),
+            real.explanations.containsKey(key) ||
+                sectionKeys.contains(key) ||
+                real.outdated.containsKey(key),
             isTrue,
             reason: key,
           );
