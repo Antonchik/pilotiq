@@ -852,6 +852,29 @@ class RegulationPartsTest(unittest.TestCase):
         self.assertNotIn("załącznik pkt 3.1", ec.eureg_anchors(text))      # off by default
         self.assertTrue(a["załącznik pkt 3.1"][0] <= a["załącznik pkt 3.1.1"][0])
 
+    def test_skill_test_sections_stay_inside_the_amc_and_get_anchors(self):
+        text = ("AMC1 SFCL.145 Skill test for the SPL\nED Decision 2020/004/R\n(d) CONTENT OF THE SKILL TEST\n"
+                "(1) The following skill test contents and sections should be used for the skill test:\n"
+                "SECTION 1: PRE-FLIGHT OPERATIONS AND DEPARTURE\na Pre-flight inspection and documentation of the sailplane\n"
+                "SECTION 2A: WINCH OR CAR LAUNCH\na Signals before and during launch, including messages\n"
+                "(2) For a TMG the following sections apply:\nSECTION 5: TMG OPERATIONS\na Engine start and warm-up of the motor glider\n"
+                "SERA.4001 Submission of a flight plan\nRegulation (EU) 2023/1\n(a) A flight plan shall be submitted before departure.\n"
+                "SECTION 4 Flight plans\nSERA.4005 Content of a flight plan\nRegulation (EU) 2023/1\n(a) The plan shall contain the aircraft identification.\n")
+        a = ec.rule_anchors(text, "easa")
+        for key in ("AMC1 SFCL.145", "AMC1 SFCL.145 SECTION 1", "AMC1 SFCL.145 SECTION 2A", "AMC1 SFCL.145 SECTION 5", "SERA.4001", "SERA.4005"):
+            self.assertIn(key, a, key)
+        amc = anchor_text(text, a, "AMC1 SFCL.145")
+        self.assertIn("SECTION 5: TMG OPERATIONS", amc)
+        self.assertIn("Engine start and warm-up", amc)
+        self.assertNotIn("SERA.4001", amc)
+        sec1 = anchor_text(text, a, "AMC1 SFCL.145 SECTION 1")
+        self.assertIn("Pre-flight inspection", sec1)
+        self.assertNotIn("WINCH", sec1)
+        self.assertNotIn("SECTION 4 Flight plans", anchor_text(text, a, "SERA.4001"))   # a real division heading still ends the rule
+        import materials as m
+        self.assertTrue(m.loc_valid("easa", "AMC1 SFCL.145 SECTION 2A"))
+        self.assertEqual(m.loc_parents("AMC1 SFCL.145 SECTION 2A"), ["AMC1 SFCL.145"])
+
     def test_annex_definitions_of_eu_regulation(self):
         text = ("Artykuł 1\nPrzedmiot\n1. Ustęp.\nZAŁĄCZNIK I\nDEFINICJE TERMINÓW\n"
                 "2) „prace lotnicze” oznaczają operację statku powietrznego;\n"
