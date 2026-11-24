@@ -1,35 +1,43 @@
 # pilotiq
 
-A new Flutter project.
+Pilotiq is a Flutter app for preparing for the theoretical PPL exam of the
+Polish Civil Aviation Authority (ULC). It covers the PPL(A), PPL(H), SPL and
+BPL licences, practises the official question banks with spaced repetition,
+simulates the exam per subject, and is available in Polish and English.
 
-## Getting Started
+## Requirements
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple)
-.
+- Flutter 3.50.1 (Dart 3.14), release steps are in `docs/release-checklist.md`.
+- Android and iOS toolchains are needed only to build the app.
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Checks
 
-## Assets
+```
+flutter pub get
+flutter analyze
+flutter test
+```
 
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
-
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware)
-.
+`flutter analyze` is expected to report "No issues found!".
 
 ## Localization
 
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
+Strings live in per-feature fragments, `lib/src/localization/fragments/*_en.arb`
+and `*_pl.arb` (Polish needs the plural forms one/few/many/other). After
+changing them, rebuild the merged files and the generated code:
 
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)
+```
+dart run tool/l10n/merge_arb.dart && flutter gen-l10n
+```
+
+`dart run tool/l10n/merge_arb.dart --check` verifies that the merged files are
+up to date.
+
+## More documentation
+
+- [docs/release-checklist.md](docs/release-checklist.md): steps before a release.
+- [docs/monetization.md](docs/monetization.md): plans, free limits and the paywall.
+- [tool/ulc/README.md](tool/ulc/README.md): how the question banks are built from the ULC sources.
 
 ## Сборка и ключи
 
