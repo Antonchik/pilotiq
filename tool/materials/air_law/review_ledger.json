@@ -71,6 +71,46 @@
   "textSha": "f12189a7f6d40e38",
   "verdict": "PASS"
  },
+ "PL010-0048#144c0eb7": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 34 ust. 1 i ust. 1b (wpis decyzją Prezesa Urzędu). Zdanie „Przepis nie powierza wpisu żadnemu ministrowi” wynika wprost z ust. 1/1b.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "c880e67f996c76db",
+  "verdict": "PASS"
+ },
+ "PL010-0048#a54a75b1": {
+  "date": "2026-11-24",
+  "note": "Klucz dosłownie = art. 31 ust. 2. Pułapka (zdatność to odrębny warunek, art. 31 ust. 1 pkt 3) poprawna.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "1bf8ae071c07eed6",
+  "verdict": "PASS"
+ },
+ "PL010-0073#3220cb22": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 31 ust. 1 pkt 1; pozostałe warunki z pkt 2–3. Wyliczenie w art. 31 ust. 1 jest zamknięte („wyłącznie”), więc zdanie o obywatelstwie i malowaniu jest obronne.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "72cbd177c715dbf8",
+  "verdict": "PASS"
+ },
+ "PL010-0074#c64eb7fe": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 31 ust. 1 pkt 2; pozostałe warunki pkt 1 i 3. Jak 0073#3220cb22.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "b018d696c9fd2952",
+  "verdict": "PASS"
+ },
+ "PL010-0075#e5916ce6": {
+  "date": "2026-11-24",
+  "note": "Klucz (w banku literówka „zdolność”) = art. 31 ust. 1 pkt 3 „zdatność do lotów, potwierdzoną odpowiednimi dokumentami”; tekst używa poprawnego terminu z ustawy.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "8cbb212f95a2d968",
+  "verdict": "PASS"
+ },
  "PL010-0083#63e1284c": {
   "date": "2026-11-24",
   "note": "Sporne słusznie: MED.B.070(g)(3) dopuszcza „okulary lub szkła kontaktowe”, więc soczewki kontaktowe nie są obowiązkowe; wymóg „niebarwione” (g)(6) dotyczy ich tylko, gdy są stosowane. Tekst wyjaśnia źródło klucza ((g)(6)), druga uwaga poparta (g)(5). disputeNote poprawny, (g)(3) i (g)(6) w refs. MED.B.070 dotyczy orzeczeń 1. i 2. klasy.",
@@ -117,6 +157,22 @@
   "portion": "P13",
   "round": 1,
   "textSha": "d7a34d99956d0ff7",
+  "verdict": "PASS"
+ },
+ "PL010-0124#8cd3f3ce": {
+  "date": "2026-11-24",
+  "note": "„Wszystkie odpowiedzi są poprawne” = art. 51 ust. 1 (trzy grupy łącznie). Osobny wpis zasadny (inne odpowiedzi niż 0124#caa38600).",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "4a707d6b83b05617",
+  "verdict": "PASS"
+ },
+ "PL010-0124#caa38600": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 51 ust. 1 (użytkownik, dowódca i inni członkowie załogi). Skrót pomijający „pozwoleniu na wykonywanie lotów lub innym równoważnym dokumencie” dopuszczalny, bo pytanie dotyczy świadectwa zdatności.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "bc74eb944141fb76",
   "verdict": "PASS"
  },
  "PL010-0129#446a12c0": {
@@ -207,6 +263,22 @@
   "textSha": "d2d6ca9468ebfb38",
   "verdict": "PASS"
  },
+ "PL010-0253#00a47f5d": {
+  "date": "2026-11-24",
+  "note": "Klucz „Tak” = art. 51 ust. 2; przepis nie zawiera ograniczenia do przewozu/szkolenia – pułapka obronna.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "59ebce1206f2eedd",
+  "verdict": "PASS"
+ },
+ "PL010-0298#5a0017b5": {
+  "date": "2026-11-24",
+  "note": "Adresat zawiadomienia = Prezes Urzędu (art. 51 ust. 2).",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "649227a7101cf5fc",
+  "verdict": "PASS"
+ },
  "PL010-0356#5678e240": {
   "date": "2026-11-24",
   "note": "Klucz 150 m = SERA.5005(f)(2); wyjątki z (f), pułapka 300 m z (f)(1). Zastrzeżenie o lotnictwie państwowym w pytaniu nie wymaga komentarza.",
@@ -214,6 +286,54 @@
   "round": 1,
   "textSha": "60c5f723cce07ad5",
   "verdict": "PASS"
+ },
+ "PL010-0361#917d15cf": {
+  "date": "2026-11-24",
+  "note": "Sporność zasadna: definicja (załącznik I pkt 57 do rozporządzenia 2017/373) wyłącza z lotnictwa ogólnego także prace lotnicze, więc klucz, który wyłącza tylko zarobkowy przewóz, jest szerszy od normy. Lokator „załącznik I” to jedyny dostępny anchor, OK. Tekst przeczy jednak disputeNote: „tylko pierwsza oddaje tę definicję” wobec „klucz oddaje definicję w uproszczeniu”. Zmienić drugie zdanie na: „Spośród odpowiedzi tylko pierwsza jest zbliżona do tej definicji, bo wyłącza zarobkowy transport lotniczy.” Opcjonalnie w pierwszym zdaniu: „(pkt 57)”. Po tej poprawce: DISPUTED.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "d14913716380e837",
+  "verdict": "FIX"
+ },
+ "PL010-0361#bdafd792": {
+  "date": "2026-11-24",
+  "note": "sameAs niepoprawny dla pytania spornego. Zamiast „Lot SAR” jest tu „Żadna z odpowiedzi nie jest prawidłowa”, a przy ścisłym brzmieniu definicji (prace lotnicze też wyłączone) ta odpowiedź staje się obronna. Tego nie obejmuje disputeNote oryginału. Potrzebny osobny wpis: tekst jak w oryginale po poprawce i disputeNote z dopiskiem, że przy ścisłym czytaniu definicji obronna jest też odpowiedź „Żadna z odpowiedzi nie jest prawidłowa”, a na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "681823a927acddf4",
+  "verdict": "FIX"
+ },
+ "PL010-0367#f5f25476": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 155 ust. 1 (inspekcja i sprawdzenie dokumentów przez Prezesa Urzędu). Brak zależności od zgody wynika z ust. 4, a ust. 2 („podlegają inspekcji”) też go wspiera.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "b19abd1d7fff0907",
+  "verdict": "PASS"
+ },
+ "PL010-0376#2a6ddae1": {
+  "date": "2026-11-24",
+  "note": "Sporność obronna. Prawo wynika z art. 27 ust. 3 pkt 3, ale ust. 5 (i ust. 7 przy kontrolach niezapowiedzianych) wymaga oprócz legitymacji także upoważnienia Prezesa Urzędu, więc „tylko po okazaniu legitymacji” jest niepełne. Dystraktor „za zgodą Prezesa” też ma częściowe oparcie w przepisie (upoważnienie wydaje Prezes). disputeNote poprawny, punkty w refs. Pułapka o kopiach zgodna z pkt 3.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "99651b808277e47e",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0377#2db1c1d5": {
+  "date": "2026-11-24",
+  "note": "Jak 0376#2a6ddae1. Prawo wynika z art. 27 ust. 3 pkt 2. Pułapka (brak ograniczenia do portów międzynarodowych) wynika z pkt 2. disputeNote poprawny.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "751b6bc616bbec39",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0378#f7026e20": {
+  "date": "2026-11-24",
+  "note": "Jak 0376#2a6ddae1. Prawo wynika z art. 27 ust. 3 pkt 4. disputeNote poprawny.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "d0a71c7029471145",
+  "verdict": "DISPUTED"
  },
  "PL010-0438#02c3f09c": {
   "date": "2026-11-24",
@@ -455,6 +575,62 @@
   "textSha": "8101173697893a02",
   "verdict": "DISPUTED"
  },
+ "PL010-0484#b123db09": {
+  "date": "2026-11-24",
+  "note": "Klucz dosłownie = art. 2 pkt 3. Pułapka (nie tylko właściciel; wpis do rejestru, nie do świadectwa zdatności) wynika z definicji.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "26433a0539500a83",
+  "verdict": "PASS"
+ },
+ "PL010-0494#14188538": {
+  "date": "2026-11-24",
+  "note": "Tekst nie łączy pytania z przepisem: obecny art. 52 ust. 2 nie wymienia już „potwierdzeń spełnienia wymagań ochrony środowiska”, tylko „certyfikaty”, a art. 53 ust. 1 mówi o badaniu wymagań, nie o uznawaniu. Wniosek jest obronny, ale trzeba go pokazać jawnie i oprzeć na art. 53 ust. 2. Proponuję drugie zdanie: „Przepis nie wymienia już osobno potwierdzeń spełnienia wymagań ochrony środowiska, lecz obejmuje certyfikaty wydane lub potwierdzone przez obcy organ; odpowiadający im polski dokument, świadectwo zdatności w zakresie hałasu, wydaje Prezes Urzędu w drodze decyzji administracyjnej (art. 53 ust. 2).” Dodać ref art. 53 ust. 2 z cytatem „Prezes Urzędu stwierdza spełnienie wymagań, o których mowa w ust. 1, w świadectwie zdatności w zakresie hałasu wydawanym w drodze decyzji administracyjnej.” Ref art. 53 ust. 1 można zostawić albo usunąć. Nie wymieniać EUROCONTROL w tekście, bo korzysta z niego sameAs 0494#32aa5576.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "239a1d8ff0763b74",
+  "verdict": "FIX"
+ },
+ "PL010-0494#32aa5576": {
+  "date": "2026-11-24",
+  "note": "sameAs dopuszczalny według STYLE §5: pytanie identyczne, różni się tylko 4. dystraktor („EUROCONTROL” / meta-odpowiedź „Żadna z odpowiedzi nie jest poprawna”), a tekst oryginału się do niego nie odnosi. Pozostaje ważny po poprawce oryginału, jeśli nowy tekst nie wymieni EUROCONTROL.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "c38e94880c71359e",
+  "verdict": "PASS"
+ },
+ "PL010-0495#4ff3e683": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 52 ust. 2 (wprost: „zezwolenia na lot statku powietrznego bez świadectwa zdatności do lotu”) i ust. 3. Zdanie „a nie ministra” wynika z przepisu.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "a833f3049308610d",
+  "verdict": "PASS"
+ },
+ "PL010-0495#d7cf6636": {
+  "date": "2026-11-24",
+  "note": "sameAs jak 0494#32aa5576: różni się tylko 4. dystraktor (meta-odpowiedź), tekst oryginału go nie dotyczy.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "b757efe2696c6b5b",
+  "verdict": "PASS"
+ },
+ "PL010-0496#41485c35": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 52 ust. 2 (wprost „świadectwa zdatności do lotu”) i ust. 3.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "c4e1d7e949b579f6",
+  "verdict": "PASS"
+ },
+ "PL010-0496#55d1e3aa": {
+  "date": "2026-11-24",
+  "note": "sameAs jak wyżej: 4. dystraktor „EUROCONTROL” zamiast meta-odpowiedzi; tekst oryginału go nie dotyczy.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "136dd7cd80cbdea2",
+  "verdict": "PASS"
+ },
  "PL010-0519#f0f28a1c": {
   "date": "2026-11-24",
   "note": "Klucz 8 km = SERA.5005(c)(5)(ii) i ENR 1.2 pkt 7.",
@@ -527,12 +703,36 @@
   "textSha": "40afecc830f7403a",
   "verdict": "PASS"
  },
+ "PL010-1544#e9b43d62": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 20 ust. 1; art. 21 ust. 1 przytoczony wiernie.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "e71711eac37fdea6",
+  "verdict": "PASS"
+ },
+ "PL010-1550#43edacd4": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 95a ust. 3a; art. 21 ust. 2 pkt 8 wymienia rejestr podmiotów szkolących obok statków, lotnisk i personelu – zgodnie z korpusem.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "3e77ca173b1656f5",
+  "verdict": "PASS"
+ },
  "PL010-1551#3a9afdc8": {
   "date": "2026-11-24",
   "note": "Klucz = art. 105 ust. 1 (członek personelu pokładowego).",
   "portion": "P13",
   "round": 1,
   "textSha": "600da79abf1789fc",
+  "verdict": "PASS"
+ },
+ "PL010-1554#8ed701f5": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 34 ust. 1b (wykreślenie decyzją Prezesa Urzędu), art. 34 ust. 1.",
+  "portion": "P03",
+  "round": 1,
+  "textSha": "b201182a1a35bb0e",
   "verdict": "PASS"
  }
 }
