@@ -290,7 +290,8 @@ def is_published(rec, kind, ledger, id_):
     if rec.get("status") not in PUBLISHED:
         return False
     entry = ledger.get(id_)
-    return bool(entry) and entry.get("textSha") == content_sha(rec, kind)
+    return (bool(entry) and entry.get("textSha") == content_sha(rec, kind)
+            and entry.get("verdict") == VERDICT_STATUS_OK[rec["status"]])
 
 
 # ---------------------------------------------------------------- локаторы и якоря
@@ -366,6 +367,28 @@ class AnchorStore:
             self._corpus[src] = p.read_text(encoding="utf-8") if p.exists() else None
         return self._corpus[src]
 
+    def corpus_in_sync(self, src):
+        """sha256 корпуса совпадает с textSha якорей (None, если проверять нечем)."""
+        a = self.anchors(src)
+        text = self.corpus(src)
+        if a is None or text is None:
+            return None
+        return hashlib.sha256(text.encode("utf-8")).hexdigest() == a.get("textSha")
+
+    def descendant_with_quote(self, src, loc, quote):
+        """Самый узкий дочерний якорь loc, целиком содержащий quote (или None)."""
+        a = self.anchors(src)
+        text = self.corpus(src)
+        if a is None or text is None:
+            return None
+        q = norm_quote(quote)
+        best = None
+        for k, (s, e) in a.get("anchors", {}).items():
+            if k != loc and (k.startswith(loc + " ") or k.startswith(loc + "(")) and (best is None or e - s < best[1]):
+                if q in norm_quote(text[s:e]):
+                    best = (k, e - s)
+        return best[0] if best else None
+
     def anchor_text(self, src, loc):
         """Нормализованный текст якоря или None, если корпуса нет."""
         a = self.anchors(src)
@@ -438,17 +461,27 @@ def check_refs(rep, label, rec, sources, store, status):
                 if par not in anchors:
                     rep.err("%s: у якоря %r нет родительского %r в anchors/%s.json" % (label, loc, par, src))
                     ok = False
+        if published and src in sources and src_quotable(sources[src]) and not quote:
+            rep.err("%s: у источника %s цитаты разрешены, у verified/disputed quote обязателен (%s)" % (label, src, loc))
         if quote and src in sources and not src_quotable(sources[src]):
             rep.err("%s: у источника %s цитаты запрещены (allowQuote=false), quote не хранится" % (label, src))
             continue
         if (published or status == "draft") and quote and ok and store.use_corpus and src in sources \
                 and src_available(sources[src]):
+            if store.corpus_in_sync(src) is False:
+                rep.err("%s: textSha в anchors/%s.json не совпадает с corpus/%s.txt (пересоберите якоря: extract_corpus.py)" % (
+                    label, src, src))
+                continue
             at = store.anchor_text(src, loc)
             if at is None:
                 if published:
                     rep.err("%s: нет корпуса/якоря для проверки quote (%s, %s)" % (label, src, loc))
             elif norm_quote(quote) not in at:
                 rep.err("%s: quote не найден в тексте якоря %s %s" % (label, src, loc))
+            else:
+                child = store.descendant_with_quote(src, loc, quote)
+                if child:
+                    rep.warn("%s: quote целиком лежит в более точном пункте %r, укажите его вместо %r" % (label, child, loc))
 
 
 def validate_all(ctx, no_corpus=False, check_asset=False):
