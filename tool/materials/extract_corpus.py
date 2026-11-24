@@ -1049,6 +1049,8 @@ _EU_ART_RE = re.compile(r"^Artykuł (\d+[a-z]?)$")
 _EU_ANNEX_RE = re.compile(r"^ZAŁĄCZNIK(?: ([IVXLC]+))?$")
 _EU_APP_RE = re.compile(r"^Dodatek (\d+)(?: do załącznika ([IVXLC]+).*)?$")
 _EU_BOUNDARY_RE = re.compile(r"^(?:PODCZĘŚĆ|SEKCJA|DZIAŁ|ROZDZIAŁ|ODDZIAŁ|TYTUŁ|\[CZĘŚĆ) \S")
+_EU_SEKCJA_RE = re.compile(r"^SEKCJA ([IVX]+)$")
+_APP_PARA_RE = re.compile(r"^(?:([a-z])|(\d{1,2})|([ivx]{1,5}))\)\s*\S")   # a) / 1) / ii) as printed in the appendix text
 _EU_PARA_RE = re.compile(r"^(?:\(([ivx]{1,5})\)|([a-z])\)|(\d{1,2})\))\s*\S")
 _EU_UST_RE = re.compile(r"^(\d{1,3})\.\s+\S")
 _DODATEK_UP_RE = re.compile(r"^(?:DODATEK|Dodatek) \d+-?[A-Z]?\d*\b")
@@ -1162,6 +1164,31 @@ def eureg_anchors(text, extras=()):
                 app_rows = set()
                 mode = "app"
                 continue
+            if mode == "app" and app is not None:
+                msk = _EU_SEKCJA_RE.match(line)
+                if msk:
+                    # Annex XI Dodatek 1: SEKCJA I..VI hold the text (a) / 1) / i) of the airspace requirements
+                    close_block(start)
+                    block = add("%s sekcja %s" % (app.key, msk.group(1)), start, 30)
+                    state = _ParaState() if block is not None else None
+                    continue
+                if block is not None and state is not None:
+                    mq = _APP_PARA_RE.match(line)
+                    if mq:
+                        token = mq.group(1) or mq.group(2) or mq.group(3)
+                        level = state.classify(token)
+                        if level is not None:
+                            for lv in [l for l in para if l >= level]:
+                                close(para.pop(lv), start)
+                            state.accept(token, level)
+                            key = block.key + state.key_suffix()
+                            sp = _Span(key, start, 30 + level)
+                            sp.dummy = key in have
+                            if not sp.dummy:
+                                have.add(key)
+                                spans.append(sp)
+                            para[level] = sp
+                    continue
             if _EU_BOUNDARY_RE.match(line):
                 close_block(start)
                 if mode == "app":

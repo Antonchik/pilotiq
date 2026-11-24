@@ -312,7 +312,7 @@ LOC_CONVENTION = re.compile(r"^(art\. %s( ust\. %s)?|załącznik \d+( pkt \d+(\.
 LOC_EUPARA = re.compile(r"^([A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?|\d{2,3})(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
 LOC_EUART = re.compile(r"^art\. %s( ust\. %s)?( pkt %s)?$" % (_N, _N, _N))
 # приложения: załącznik, załącznik I, dodatek 3, załącznik I dodatek 3, любое из них + pkt L
-LOC_EUANNEX = re.compile(r"^(?=załącznik|dodatek)(załącznik( [IVXLC]+)?)?( ?dodatek \d+)?( pkt %s)?$" % _L)
+LOC_EUANNEX = re.compile(r"^(?=załącznik|dodatek)(załącznik( [IVXLC]+)?)?( ?dodatek \d+)?( sekcja [IVX]+(\([a-z0-9]+\))*)?( pkt %s)?$" % _L)
 # AIP Polska: ENR 1.2, ENR 1.2 pkt 3.1, GEN 2.2 CBA (skrót), ENR 5.2.1 TSA (definicja), ENR 1.4 klasa C
 LOC_AIP = re.compile(r"^(GEN|ENR|AD) \d+(\.\d+)*( pkt \d+(\.\d+)*| klasa [A-G]| przypis \*{1,4}| [A-Z0-9][A-Z0-9/&.\-]{0,9}( \d{1,2})?)?$")
 LOC_EASA = re.compile(r"^((AMC|GM|CS)\d* )?[A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*( \(\d\) SECTION \d+[A-Z]?| SECTION \d+[A-Z]?)?$")
@@ -370,7 +370,7 @@ def loc_parents(loc):
         parts = ma.group(2).split(".")
         return ["%s pkt %s" % (ma.group(1), ".".join(parts[:n])) for n in range(len(parts) - 1, 0, -1)] + [ma.group(1)]
     while True:
-        m = re.match(r"^(.*\S)\s+(pkt|ust\.|dodatek|część|tabela)\s+\S+$", cur)
+        m = re.match(r"^(.*\S)\s+(pkt|ust\.|dodatek|część|tabela|sekcja)\s+\S+$", cur)
         if m:
             cur = m.group(1)
         else:
