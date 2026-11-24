@@ -691,6 +691,8 @@ class _ParaState:
         self.keys = [None, None, None]
         self.frozen = False   # a table footnote "(*)" starts: later "(a)" lines are footnote text
 
+    GAP = 2   # repealed / deleted items leave gaps in the printed numbering: (iii) (v), 3) 5)
+
     def classify(self, token):
         if self.frozen:
             return None
@@ -698,16 +700,15 @@ class _ParaState:
             if self.keys[0] is None or token != str(int(token)):
                 return None
             nxt = 1 if self.l2 is None else self.l2 + 1
-            return 2 if int(token) == nxt else None
+            return 2 if nxt <= int(token) <= nxt + self.GAP else None
         if token.islower():
             if self.keys[1] is not None and token in _ROMAN:
-                exp = _ROMAN[0] if self.l3 is None else (_ROMAN[_ROMAN.index(self.l3) + 1]
-                                                         if self.l3 in _ROMAN[:-1] else None)
-                if token == exp:
+                base = 0 if self.l3 is None else (_ROMAN.index(self.l3) + 1 if self.l3 in _ROMAN else None)
+                if base is not None and base <= _ROMAN.index(token) <= base + self.GAP:
                     return 3
             if len(token) == 1:
-                exp1 = "a" if self.l1 is None else chr(ord(self.l1) + 1)
-                if token == exp1:
+                base = 0 if self.l1 is None else ord(self.l1) - ord("a") + 1
+                if ord(token) - ord("a") == base:   # letters: no gaps (a stray "(g)" line must not shift the list)
                     return 1
         return None
 
