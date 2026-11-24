@@ -173,6 +173,7 @@ class ExamFinalizer {
             id,
             a == q.correctIndex,
             now,
+            countsTowardDailyLimit: false,
           );
         } on Object catch (e) {
           debugPrint('Could not add an exam answer to the progress: $e');

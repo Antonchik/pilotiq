@@ -201,13 +201,19 @@ class ProgressRepository {
 
   /// Records one answer: updates the Leitner state of [qid] and today's
   /// [DailyStat] within a single serialised call. The exam date from the
-  /// settings limits the review interval.
+  /// settings limits the review interval. With
+  /// `countsTowardDailyLimit: false` (answers of a finished exam simulation)
+  /// the question progress is updated as usual, but the day's statistics get
+  /// the answer in `examAnswered` / `examCorrect`, so the free daily learning
+  /// limit (based on `answered`) is not used up. Rollback on failure works in
+  /// both modes.
   Future<QuestionProgress> recordAnswer(
     Licence licence,
     String qid,
     bool correct,
-    DateTime now,
-  ) => _locked(() async {
+    DateTime now, {
+    bool countsTowardDailyLimit = true,
+  }) => _locked(() async {
     final progress = await _box(progressBoxName(licence));
     final daily = await _box(dailyBox);
     final config = await _box(configBox);
@@ -236,7 +242,10 @@ class ProgressRepository {
     });
     try {
       await progress.put(qid, after.toMap());
-      await daily.put(key, stat.recorded(correct: correct).toMap());
+      await daily.put(
+        key,
+        stat.recorded(correct: correct, exam: !countsTowardDailyLimit).toMap(),
+      );
       await config.delete(_pendingKey);
     } on Object {
       try {

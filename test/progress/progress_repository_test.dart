@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_ce/hive.dart';
+import 'package:pilotiq/src/domain/access_policy.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
 import 'package:pilotiq/src/progress/progress_repository.dart';
@@ -11,6 +12,7 @@ import 'helpers.dart';
 
 void main() {
   group('recordAnswer is all-or-nothing', atomicityTests);
+  group('recordAnswer in exam mode', examModeTests);
 
   late Directory dir;
   late ProgressRepository repo;
@@ -476,6 +478,72 @@ class _FlakyBox implements Box<dynamic> {
       throw UnimplementedError('${invocation.memberName}');
 }
 
+void examModeTests() {
+  late Directory dir;
+  late ProgressRepository repo;
+  final now = DateTime(2026, 5, 1, 12);
+  setUp(() async {
+    dir = await initTempHive();
+    repo = ProgressRepository();
+  });
+  tearDown(() => disposeTempHive(dir));
+
+  test(
+    'exam answers update the question but not the learning counters',
+    () async {
+      final p = await repo.recordAnswer(
+        Licence.ppla,
+        'q',
+        true,
+        now,
+        countsTowardDailyLimit: false,
+      );
+      expect((p.seen, p.correct, p.box), (1, 1, 2));
+      final day = await repo.dailyStat(now);
+      expect((day.answered, day.correct), (0, 0));
+      expect((day.examAnswered, day.examCorrect), (1, 1));
+      expect(day.activity, 1);
+    },
+  );
+
+  test('both modes in one day add up separately', () async {
+    for (var i = 0; i < 3; i++) {
+      await repo.recordAnswer(Licence.ppla, 'l$i', true, now);
+    }
+    for (var i = 0; i < 12; i++) {
+      await repo.recordAnswer(
+        Licence.ppla,
+        'e$i',
+        i.isEven,
+        now,
+        countsTowardDailyLimit: false,
+      );
+    }
+    final day = await repo.dailyStat(now);
+    expect((day.answered, day.examAnswered, day.examCorrect), (3, 12, 6));
+    // the free limit looks at learning answers only
+    expect(AccessPolicy.canAnswer(false, day.answered), isTrue);
+  });
+
+  test('an old record without exam fields keeps counting', () async {
+    final box = await Hive.openBox<dynamic>('daily');
+    await box.put('2026-05-01', {
+      'date': '2026-05-01',
+      'answered': 4,
+      'correct': 2,
+    });
+    await repo.recordAnswer(
+      Licence.ppla,
+      'q',
+      true,
+      now,
+      countsTowardDailyLimit: false,
+    );
+    final day = await repo.dailyStat(now);
+    expect((day.answered, day.examAnswered), (4, 1));
+  });
+}
+
 void atomicityTests() {
   late Directory dir;
   final now = DateTime(2026, 5, 1, 12);
@@ -514,6 +582,35 @@ void atomicityTests() {
     await repo.recordAnswer(Licence.ppla, 'q', true, now);
     await expectCounted(repo, 1);
   });
+
+  test(
+    'exam mode: second write fails, rolled back, retry counts once',
+    () async {
+      final repo = flaky(daily: {1});
+      await expectLater(
+        repo.recordAnswer(
+          Licence.ppla,
+          'q',
+          true,
+          now,
+          countsTowardDailyLimit: false,
+        ),
+        throwsA(isA<StateError>()),
+      );
+      expect(await repo.progressOf(Licence.ppla, 'q'), isNull);
+      expect((await repo.dailyStat(now)).activity, 0);
+      await repo.recordAnswer(
+        Licence.ppla,
+        'q',
+        true,
+        now,
+        countsTowardDailyLimit: false,
+      );
+      final day = await repo.dailyStat(now);
+      expect((day.answered, day.examAnswered), (0, 1));
+      expect((await repo.progressOf(Licence.ppla, 'q'))!.seen, 1);
+    },
+  );
 
   test('first write fails: nothing changes', () async {
     final repo = flaky(progress: {1});

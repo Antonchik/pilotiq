@@ -1,3 +1,5 @@
+import 'package:pilotiq/src/domain/dates.dart';
+import 'package:pilotiq/src/domain/streak.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
@@ -209,6 +211,22 @@ void main() {
         }
       }
       expect(recorded, 11);
+
+      // the free daily learning limit is not used up by the simulation, but
+      // the day counts as active
+      final days = await h.repo.dailyStats();
+      expect(days.fold<int>(0, (n, d) => n + d.answered), 0);
+      expect(days.fold<int>(0, (n, d) => n + d.examAnswered), 11);
+      expect(days.fold<int>(0, (n, d) => n + d.examCorrect), 9);
+      expect(
+        StreakCalculator.compute(
+          days,
+          days.first.date.isEmpty
+              ? DateTime.now()
+              : parseDateKey(days.first.date)!,
+        ).current,
+        1,
+      );
     });
 
     testWidgets('8 of 12 does not pass', (tester) async {

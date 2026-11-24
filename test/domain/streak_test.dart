@@ -101,6 +101,15 @@ void main() {
     expect(r.activeToday, isTrue);
   });
 
+  test('a day with only exam answers is active', () {
+    final r = StreakCalculator.compute(const [
+      DailyStat(date: '2026-06-10', examAnswered: 12, examCorrect: 9),
+      DailyStat(date: '2026-06-09', answered: 1),
+    ], today);
+    expect(r.current, 2);
+    expect(r.activeToday, isTrue);
+  });
+
   test('malformed date keys are ignored', () {
     final r = StreakCalculator.compute([
       _d('garbage'),

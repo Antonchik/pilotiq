@@ -96,10 +96,17 @@ class FlakyRepository extends ProgressRepository {
     Licence licence,
     String qid,
     bool correct,
-    DateTime now,
-  ) {
+    DateTime now, {
+    bool countsTowardDailyLimit = true,
+  }) {
     recorded++;
-    return super.recordAnswer(licence, qid, correct, now);
+    return super.recordAnswer(
+      licence,
+      qid,
+      correct,
+      now,
+      countsTowardDailyLimit: countsTowardDailyLimit,
+    );
   }
 }
 

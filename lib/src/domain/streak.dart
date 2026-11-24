@@ -14,8 +14,8 @@ class StreakResult {
 }
 
 /// Day streaks from [DailyStat]s. A day is active if at least one question was
-/// answered in it. Days are local calendar dates (the key recorded when the
-/// answer was given), so a time-zone change never splits or merges a day.
+/// answered in it, in learning or in an exam simulation (`DailyStat.activity`).
+/// Days are local calendar dates (the key recorded when the answer was given), so a time-zone change never splits or merges a day.
 /// If today has no activity yet the streak is not broken until the day ends.
 class StreakCalculator {
   const StreakCalculator._();
@@ -23,7 +23,7 @@ class StreakCalculator {
   static StreakResult compute(Iterable<DailyStat> stats, DateTime now) {
     final days = <int>{};
     for (final s in stats) {
-      if (s.answered <= 0) continue;
+      if (s.activity <= 0) continue;
       final d = parseDateKey(s.date);
       if (d != null) days.add(epochDay(d));
     }

@@ -153,4 +153,26 @@ void main() {
     });
     expect(s, const UserSettings());
   });
+
+  test('DailyStat without exam fields (old records) reads them as 0', () {
+    final s = DailyStat.fromMap(const {
+      'date': '2026-01-01',
+      'answered': 5,
+      'correct': 3,
+    });
+    expect(s.examAnswered, 0);
+    expect(s.examCorrect, 0);
+    expect(s.activity, 5);
+  });
+
+  test('DailyStat.recorded(exam: true) uses the exam counters only', () {
+    final s = const DailyStat(date: '2026-01-01')
+        .recorded(correct: true)
+        .recorded(correct: true, exam: true)
+        .recorded(correct: false, exam: true);
+    expect((s.answered, s.correct), (1, 1));
+    expect((s.examAnswered, s.examCorrect), (2, 1));
+    expect(s.activity, 3);
+    expect(DailyStat.fromMap(s.toMap()), s);
+  });
 }
