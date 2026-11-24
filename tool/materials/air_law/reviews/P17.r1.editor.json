@@ -1,0 +1,167 @@
+[
+ {
+  "key": "PL010-0315#3fcbf66c",
+  "verdict": "PASS",
+  "note": "Klucz AIS: art. 121 ust. 1 pkt 1 PL (służby żeglugi powietrznej) + art. 2 pkt 5 rozp. 2024/2803 (ANS = ATS; CNS; MET; AIS). Konstrukcja poprawna: dawne wyliczenie «oprócz służb ruchu lotniczego» zastąpione pojęciem ANS, treść klucza nadal zgodna z aktualnym stanem — nie outdated. Pułapka (ATS, APP, ACC to ATS) = art. 2 pkt 32 rozp. 923/2012."
+ },
+ {
+  "key": "PL010-0010#09662156",
+  "verdict": "PASS",
+  "note": "Klucz = art. 2 pkt 30 rozp. 923/2012; pułapki z art. 2 pkt 77 i pkt 37 zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0073#14c977ae",
+  "verdict": "FIX",
+  "note": "Klucz = SERA.8001(d), OK. Ale zdanie «Lotom IFR zapewnia się ją tylko w klasach A–E, a lotom VFR w klasach B, C i D» i pułapka «w klasach F i G … ani lotom IFR, ani VFR» wykraczają poza SERA.8001: lit. c) (wszystkie loty specjalne VFR) i lit. d) (cały ruch lotniskowy na lotniskach kontrolowanych) nie zależą od klasy, więc «tylko» jest nieścisłe i stoi w sprzeczności z pierwszym zdaniem. Proponuję: «Lit. a) i b) tego punktu obejmują loty IFR w klasach A, B, C, D i E oraz loty VFR w klasach B, C i D. Pułapka: klasy F i G nie są wymienione w SERA.8001 lit. a) i b), więc samo wykonywanie lotu IFR lub VFR w tych klasach nie daje służby kontroli ruchu lotniczego.»"
+ },
+ {
+  "key": "PL010-0315#fb55f51a",
+  "verdict": "PASS",
+  "note": "Wszystkie trzy: MET i AIS z art. 2 pkt 5 rozp. 2024/2803 (przez art. 121 ust. 1 pkt 1 PL), SAR z art. 121 ust. 2 PL («ponadto»). Zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0316#9c65f807",
+  "verdict": "PASS",
+  "note": "Klucz MET = art. 2 pkt 5 rozp. 2024/2803; służba alarmowa, informacji powietrznej, kontroli lotniska to ATS (art. 2 pkt 32 rozp. 923/2012)."
+ },
+ {
+  "key": "PL010-0316#6a5d1875",
+  "verdict": "PASS",
+  "note": "Wszystkie trzy opcje to ATS wg art. 2 pkt 32 rozp. 923/2012, więc «Żadna z odpowiedzi» poprawna; ostatnie zdanie poparte art. 121 ust. 1 pkt 1 PL i art. 2 pkt 5 rozp. 2024/2803."
+ },
+ {
+  "key": "PL010-0540#5934ec18",
+  "verdict": "PASS",
+  "note": "sameAs 0316#9c65f807 dopuszczalny: ta sama poprawna odpowiedź (MET), dystraktory różnią się tylko «kontroli ruchu lotniczego» zamiast «kontroli lotniska», a pułapka oryginału obejmuje oba («służba kontroli ruchu lotniczego, w tym kontroli lotniska»)."
+ },
+ {
+  "key": "PL010-0540#fb55f51a",
+  "verdict": "PASS",
+  "note": "sameAs 0315#fb55f51a: identyczne pytanie i odpowiedzi."
+ },
+ {
+  "key": "PL010-0541#35aa945e",
+  "verdict": "PASS",
+  "note": "Klucz SAR = art. 121 ust. 2 PL («zapewnia się ponadto służbę poszukiwania i ratownictwa»); pułapka z art. 2 pkt 32 rozp. 923/2012."
+ },
+ {
+  "key": "PL010-0541#6a5d1875",
+  "verdict": "PASS",
+  "note": "sameAs 0316#6a5d1875: identyczne pytanie i odpowiedzi."
+ },
+ {
+  "key": "PL010-1535#565cccdb",
+  "verdict": "PASS",
+  "note": "Pytanie dosłownie cytuje art. 2 pkt 32 rozp. 923/2012; pułapka (CNS, MET, AIS to inne rodzaje ANS) = art. 2 pkt 5 rozp. 2024/2803."
+ },
+ {
+  "key": "PL010-1536#75077542",
+  "verdict": "PASS",
+  "note": "Klucz (służba informacji powietrznej) obroniony: należy do ATS (art. 2 pkt 32 rozp. 923/2012), a ATS i CNS to odrębne składniki ANS (art. 2 pkt 5 rozp. 2024/2803); COM = «Łączność/telekomunikacja» (AIP GEN 2.2). Żaden dystraktor nie jest obronny."
+ },
+ {
+  "key": "PL010-1537#ba0589be",
+  "verdict": "PASS",
+  "note": "Klucz CNS = art. 2 pkt 5 rozp. 2024/2803 przez art. 121 ust. 1 pkt 1 PL; APP/TWR z AIP GEN 2.2, służba alarmowa z art. 2 pkt 32 rozp. 923/2012."
+ },
+ {
+  "key": "PL010-1538#85a78927",
+  "verdict": "PASS",
+  "note": "Klucz AIS jak 0315#3fcbf66c; pułapki (ATC, TWR, alarmowa) z art. 2 pkt 32 rozp. 923/2012 i GEN 2.2 TWR."
+ },
+ {
+  "key": "PL010-0162#9e4077c1",
+  "verdict": "PASS",
+  "note": "Klucz = art. 2 pkt 43 rozp. 923/2012 (definicja ACC dosłownie); RNAV jako metoda nawigacji z art. 2 pkt 45."
+ },
+ {
+  "key": "PL010-0202#fe437907",
+  "verdict": "PASS",
+  "note": "Klucz = cel z art. 2 pkt 30 lit. a) ppkt 1 rozp. 923/2012; pułapka z art. 2 pkt 77."
+ },
+ {
+  "key": "PL010-0254#51f916d9",
+  "verdict": "PASS",
+  "note": "Klucz «Tak» = art. 2 pkt 28 rozp. 923/2012; granica zezwolenia z art. 2 pkt 52. Różnica sformułowań (pytanie: «upoważnienie dowódcy», definicja: «upoważnienie statku powietrznego») nie zmienia odpowiedzi — żaden wariant jej nie wykorzystuje, nie sporne. Opcjonalnie (nie wymagane) można dodać SERA.8020(a), gdzie to pilot dowódca stosuje się do planu lotu, chyba że otrzymał zezwolenie organu ATC."
+ },
+ {
+  "key": "PL010-0578#9380dc7a",
+  "verdict": "PASS",
+  "note": "Klucz IFR/IFR = SERA.6001(a)(1): w klasie A wyłącznie IFR, wszystkie loty w separacji."
+ },
+ {
+  "key": "PL010-0579#4a72fd69",
+  "verdict": "PASS",
+  "note": "Klucz VFR od IFR = SERA.6001(a)(3); pułapka VFR/VFR (tylko informacje o ruchu na żądanie) z tego samego ppkt."
+ },
+ {
+  "key": "PL010-0580#f462b315",
+  "verdict": "PASS",
+  "note": "Klucz IFR od IFR = SERA.6001(a)(4); pułapka (IFR/VFR tylko informacje o ruchu) z tego samego ppkt."
+ },
+ {
+  "key": "PL010-0581#0810270b",
+  "verdict": "PASS",
+  "note": "Klucz IFR od IFR = SERA.6001(a)(5); pułapka zgodna z tym ppkt."
+ },
+ {
+  "key": "PL010-0072#6f4ce5e6",
+  "verdict": "PASS",
+  "note": "Klucz (alarmowa + informacji powietrznej) = AIP GEN 3.3 (zdanie o organie FIS w przestrzeni niekontrolowanej) i SERA.6001(a)(7). Loc na rodzicu GEN 3.3 akceptowany z powodu uciętej kotwicy GEN 3.3 pkt 3 (TODO S1 orkiestratora: po poprawce kotwicy zawęzić loc). Pułapka z SERA.8001(a)/(b) poprawna."
+ },
+ {
+  "key": "PL010-0074#7ef3cadc",
+  "verdict": "PASS",
+  "note": "Klucz = SERA.9005(a)(1); dodatkowe pozycje z (a)(2) i (a)(5) potwierdzone."
+ },
+ {
+  "key": "PL010-0186#13b1565d",
+  "verdict": "PASS",
+  "note": "Klucz = SERA.9001(a)(1)-(2); pułapka (opis AIS) = art. 2 pkt 2 rozp. 2024/2803."
+ },
+ {
+  "key": "PL010-0201#8c96ce33",
+  "verdict": "PASS",
+  "note": "Klucz = art. 2 pkt 77 rozp. 923/2012; pułapki z pkt 30 i pkt 37."
+ },
+ {
+  "key": "PL010-0354#8b197628",
+  "verdict": "PASS",
+  "note": "Klucz poprawny: FIS (art. 2 pkt 77) nie separuje; w klasie F separację IFR/IFR «w miarę możliwości» daje służba doradcza (art. 2 pkt 27, SERA.6001(a)(6), dodatek 4). Pytanie dotyczy klasyfikacji SERA, więc to, że klasa F nie jest stosowana w FIR Warszawa (AIP ENR 1.4, przypis «****»), nie czyni klucza spornym ani nieaktualnym. Drobiazg (bez FIX): SERA.6001(a)(6) mówi o «uczestniczących» statkach powietrznych IFR."
+ },
+ {
+  "key": "PL010-0398#4a7bfa3f",
+  "verdict": "PASS",
+  "note": "Klucz (niezwłocznie podać poprawiony czas) zgodny z SERA.8020(b)(4): próg 2 minuty, różnica > 3 min go przekracza; przesłanka pytania («trzy minuty») pochodzi ze starych przepisów, ale odpowiedź pozostaje prawidłowa — nie outdated, nie sporne. Pułapka (powiadomienie, nie zmiana prędkości/trasy) zgodna z ppkt 4."
+ },
+ {
+  "key": "PL010-0410#3e3178d4",
+  "verdict": "FIX",
+  "note": "Klucz poprawny (AFIS = służba informacji powietrznej dla ruchu lotniskowego, załącznik I pkt 6 rozp. 2017/373). Ale ref AIP GEN 3.3 pkt 1.4 dotyczy wyłącznie AFIS EPBY (Bydgoszcz), a tekst uogólnia go na każdy organ AFIS. Zamienić na ogólny przepis z GEN 3.3 pkt 3 lit. d: loc «GEN 3.3 pkt 3», quote «lotniskowa służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej zapewniana jest przez organ lotniskowej służby informacji powietrznej» (mieści się w obecnej kotwicy pkt 3), a w tekście: «Według AIP Polska (GEN 3.3 pkt 3) organ AFIS zapewnia w przestrzeni niekontrolowanej służbę informacji powietrznej i służbę alarmową» (bez «ATZ» albo z «np. ATZ EPBY» przy zachowaniu pkt 1.4)."
+ },
+ {
+  "key": "PL010-0577#1bf31f48",
+  "verdict": "PASS",
+  "note": "Klucz = SERA.6001(a)(7) i dodatek 4 (klasa G: separacja «Brak» dla IFR i VFR); art. 2 pkt 77 potwierdza charakter FIS. Zgodne też z AIP ENR 1.4 klasa G."
+ },
+ {
+  "key": "PL010-0200#ec47b328",
+  "verdict": "PASS",
+  "note": "Klucz = art. 2 pkt 37 rozp. 923/2012; pułapki z pkt 77 i pkt 30."
+ },
+ {
+  "key": "PL010-0207#2b82bbde",
+  "verdict": "PASS",
+  "note": "Klucz = MET.OR.100(a) załącznika V rozp. 2017/373 (organy ATS, SAR i inne podmioty); pułapka = art. 2 pkt 2 rozp. 2024/2803."
+ },
+ {
+  "key": "PL010-0209#a0b284f3",
+  "verdict": "PASS",
+  "note": "Klucz = art. 140a ust. 1 PL (zakres służby ASAR); pułapka = art. 2 pkt 2 rozp. 2024/2803."
+ },
+ {
+  "key": "PL010-0209#a91a2945",
+  "verdict": "PASS",
+  "note": "sameAs 0209#a0b284f3 dopuszczalny: ta sama poprawna odpowiedź, różni się tylko czwarta opcja («Wszystkie…» vs opis SIGMET-owy), do której pułapka oryginału się nie odnosi."
+ }
+]
