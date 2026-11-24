@@ -1,36 +1,754 @@
 [
-{"key":"PL010-0315#3fcbf66c","status":"draft","text":"Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby informacji lotniczej (AIS). Dlatego poprawną odpowiedzią jest służba informacji lotniczej. Pułapka: ATS, służba kontroli zbliżania i służba kontroli obszaru to same służby ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1","quote":"Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1 pkt 1","quote":"zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"służby meteorologiczne (MET); służby informacji lotniczej (AIS)"},{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0010#09662156","status":"draft","text":"Zgodnie z art. 2 pkt 30 rozporządzenia 923/2012 służba kontroli ruchu lotniczego jest zapewniana w celu zapobiegania kolizjom między statkami powietrznymi (także na polu manewrowym) oraz usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego. Pułapka: udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów to cel służby informacji powietrznej (art. 2 pkt 77), a zawiadamianie o statkach powietrznych potrzebujących pomocy to zadanie służby alarmowej (art. 2 pkt 37).","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 30","quote":"„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"},{"src":"EU-923-2012","loc":"art. 2 pkt 77","quote":"„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"},{"src":"EU-923-2012","loc":"art. 2 pkt 37","quote":"„służba alarmowa” oznacza służbę ustanowioną w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz w celu współdziałania z nimi w razie potrzeby"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0073#14c977ae","status":"draft","text":"Zgodnie z pkt SERA.8001 lit. d) rozporządzenia 923/2012 służba kontroli ruchu lotniczego jest zapewniana całemu ruchowi lotniskowemu na lotniskach kontrolowanych. Lotom IFR zapewnia się ją tylko w przestrzeni powietrznej klas A, B, C, D i E, a lotom VFR w klasach B, C i D. Pułapka: w klasach F i G służby kontroli ruchu lotniczego się nie zapewnia, ani lotom IFR, ani VFR.","refs":[{"src":"EU-923-2012","loc":"SERA.8001(d)","quote":"całemu ruchowi lotniskowemu na lotniskach kontrolowanych"},{"src":"EU-923-2012","loc":"SERA.8001(a)","quote":"wszystkim lotom IFR w przestrzeni powietrznej klas A, B, C, D i E"},{"src":"EU-923-2012","loc":"SERA.8001(b)","quote":"wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0315#fb55f51a","status":"draft","text":"Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby meteorologiczne (MET) i służby informacji lotniczej (AIS). Art. 121 ust. 2 Prawa lotniczego dodaje, że statkom powietrznym zapewnia się ponadto służbę poszukiwania i ratownictwa. Dlatego poprawne są wszystkie trzy wymienione służby.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1","quote":"Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1 pkt 1","quote":"zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"służby meteorologiczne (MET); służby informacji lotniczej (AIS)"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 2","quote":"Statkom powietrznym wykonującym loty w przestrzeni powietrznej zapewnia się ponadto służbę poszukiwania i ratownictwa."}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0316#9c65f807","status":"draft","text":"Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby meteorologiczne (MET). Pułapka: służba alarmowa, służba informacji powietrznej i służba kontroli ruchu lotniczego, w tym kontroli lotniska, same należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1","quote":"Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1 pkt 1","quote":"zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"służby meteorologiczne (MET); służby informacji lotniczej (AIS)"},{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0316#6a5d1875","status":"draft","text":"Zgodnie z art. 2 pkt 32 rozporządzenia 923/2012 służby ruchu lotniczego obejmują służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego i służbę kontroli ruchu lotniczego. Wszystkie wymienione służby są więc częścią służb ruchu lotniczego, a nie służbami zapewnianymi oprócz nich, dlatego poprawna jest odpowiedź „Żadna z odpowiedzi nie jest poprawna”. Oprócz służb ruchu lotniczego zapewnia się m.in. służby łączności, nawigacji i dozorowania, meteorologiczne i informacji lotniczej (art. 121 ust. 1 pkt 1 Prawa lotniczego, art. 2 pkt 5 rozporządzenia 2024/2803).","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1","quote":"Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1 pkt 1","quote":"zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"służby meteorologiczne (MET); służby informacji lotniczej (AIS)"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0540#5934ec18","status":"draft","sameAs":"PL010-0316#9c65f807"},
-{"key":"PL010-0540#fb55f51a","status":"draft","sameAs":"PL010-0315#fb55f51a"},
-{"key":"PL010-0541#35aa945e","status":"draft","text":"Zgodnie z art. 121 ust. 2 Prawa lotniczego statkom powietrznym wykonującym loty w przestrzeni powietrznej zapewnia się ponadto służbę poszukiwania i ratownictwa. Pułapka: służba alarmowa, służba kontroli ruchu lotniczego i służba informacji powietrznej same należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012), więc nie są zapewniane oprócz nich.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 2","quote":"Statkom powietrznym wykonującym loty w przestrzeni powietrznej zapewnia się ponadto służbę poszukiwania i ratownictwa."},{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0541#6a5d1875","status":"draft","sameAs":"PL010-0316#6a5d1875"},
-{"key":"PL010-1535#565cccdb","status":"draft","text":"Zgodnie z art. 2 pkt 32 rozporządzenia 923/2012 służby ruchu lotniczego (ATS) to wyrażenie ogólne obejmujące służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego i służbę kontroli ruchu lotniczego (kontroli obszaru, zbliżania lub lotniska). Pułapka: służby łączności, nawigacji i dozorowania, służby meteorologiczne i służby informacji lotniczej to odrębne od służb ruchu lotniczego rodzaje służb żeglugi powietrznej (art. 2 pkt 5 rozporządzenia 2024/2803).","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"służby meteorologiczne (MET); służby informacji lotniczej (AIS)"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-1536#75077542","status":"draft","text":"Zgodnie z art. 2 pkt 5 rozporządzenia 2024/2803 służby żeglugi powietrznej, zapewniane w polskiej przestrzeni powietrznej na podstawie art. 121 ust. 1 pkt 1 Prawa lotniczego, obejmują służby ruchu lotniczego oraz odrębne od nich służby łączności, nawigacji i dozorowania (CNS). Służba informacji powietrznej należy do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012), więc jest zapewniana oprócz CNS. Pułapka: służba nawigacji, służba dozorowania i łączność (COM) to elementy CNS.","refs":[{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1","quote":"Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1 pkt 1","quote":"zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"},{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"},{"src":"AIP-PL","loc":"GEN 2.2 COM","quote":"Łączność/telekomunikacja"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-1537#ba0589be","status":"draft","text":"Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby łączności, nawigacji i dozorowania (CNS). Pułapka: APP (kontrola zbliżania), TWR (kontrola lotniska) i służba alarmowa należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1","quote":"Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1 pkt 1","quote":"zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"},{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"},{"src":"AIP-PL","loc":"GEN 2.2 APP","quote":"Ośrodek kontroli zbliżania lub kontrola zbliżania lub służba kontroli zbliżania"},{"src":"AIP-PL","loc":"GEN 2.2 TWR","quote":"Wieża kontroli lotniska lub kontrola lotniska"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-1538#85a78927","status":"draft","text":"Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby informacji lotniczej (AIS). Pułapka: służba kontroli ruchu lotniczego, TWR (kontrola lotniska) i służba alarmowa należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1","quote":"Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 121 ust. 1 pkt 1","quote":"zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"służby meteorologiczne (MET); służby informacji lotniczej (AIS)"},{"src":"EU-923-2012","loc":"art. 2 pkt 32","quote":"„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"},{"src":"AIP-PL","loc":"GEN 2.2 TWR","quote":"Wieża kontroli lotniska lub kontrola lotniska"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0162#9e4077c1","status":"draft","text":"Zgodnie z art. 2 pkt 43 rozporządzenia 923/2012 ośrodek kontroli obszaru (ACC) to organ ustanowiony do zapewnienia służby kontroli ruchu lotniczego w odniesieniu do lotów kontrolowanych w podległych mu obszarach kontrolowanych. Pułapka: nawigacja obszarowa (RNAV) to według art. 2 pkt 45 tego rozporządzenia metoda nawigacji, a nie organ służb ruchu lotniczego.","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 43","quote":"„ośrodek kontroli obszaru (ACC)” oznacza organ ustanowiony do zapewnienia służby kontroli ruchu lotniczego w odniesieniu do lotów kontrolowanych w podległych mu obszarach kontrolowanych"},{"src":"EU-923-2012","loc":"art. 2 pkt 45","quote":"„nawigacja obszarowa (RNAV)” oznacza metodę nawigacji"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0202#fe437907","status":"draft","text":"Zgodnie z art. 2 pkt 30 rozporządzenia 923/2012 służba kontroli ruchu lotniczego jest zapewniana w celu zapobiegania kolizjom między statkami powietrznymi oraz usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego. Odpowiedź o zapobieganiu zderzeniom statków powietrznych podczas lotu oddaje pierwszy z tych celów. Pułapka: udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów to cel służby informacji powietrznej (art. 2 pkt 77).","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 30","quote":"„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"},{"src":"EU-923-2012","loc":"art. 2 pkt 77","quote":"„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0254#51f916d9","status":"draft","text":"Zgodnie z art. 2 pkt 28 rozporządzenia 923/2012 zezwolenie kontroli ruchu lotniczego (ATC) oznacza upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego, dlatego odpowiedź brzmi „Tak”. Pułapka: definicja nie uzależnia tego od granicy zezwolenia, która jest tylko punktem, do którego udzielono zezwolenia (art. 2 pkt 52).","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 28","quote":"„zezwolenie kontroli ruchu lotniczego (ATC)” oznacza upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego"},{"src":"EU-923-2012","loc":"art. 2 pkt 52","quote":"„granica zezwolenia” oznacza punkt, do którego statkowi powietrznemu zostało udzielone zezwolenie kontroli ruchu lotniczego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0578#9380dc7a","status":"draft","text":"Zgodnie z pkt SERA.6001 lit. a) ppkt 1 rozporządzenia 923/2012 w przestrzeni powietrznej klasy A dozwolone są wyłącznie loty IFR, a wszystkie loty wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i w separacji. Separacja jest więc zapewniana między lotami IFR. Pułapka: w klasie A nie ma lotów VFR, więc separacja IFR od VFR ani VFR specjalnych nie wchodzi w grę.","refs":[{"src":"EU-923-2012","loc":"SERA.6001(a)(1)","quote":"Klasa A. Dozwolone są wyłącznie loty IFR. Wszystkie loty wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i w separacji."}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0579#4a72fd69","status":"draft","text":"Zgodnie z pkt SERA.6001 lit. a) ppkt 3 rozporządzenia 923/2012 w przestrzeni powietrznej klasy C loty IFR są odseparowane od innych lotów IFR i lotów VFR, a loty VFR są odseparowane od lotów IFR. Spośród odpowiedzi poprawna jest więc separacja VFR od IFR. Pułapka: między lotami VFR separacji się nie zapewnia, a statki powietrzne wykonujące loty VFR otrzymują na żądanie tylko informacje o ruchu innych lotów VFR i rady dla zapobieżenia kolizji.","refs":[{"src":"EU-923-2012","loc":"SERA.6001(a)(3)","quote":"loty IFR są odseparowane od innych lotów IFR i lotów VFR. Loty VFR są odseparowane od lotów IFR, a statki powietrzne je wykonujące otrzymują na żądanie informacje o ruchu dotyczące innych lotów VFR oraz rady dla zapobieżenia kolizji"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0580#f462b315","status":"draft","text":"Zgodnie z pkt SERA.6001 lit. a) ppkt 4 rozporządzenia 923/2012 w przestrzeni powietrznej klasy D loty IFR są odseparowane od innych lotów IFR. Pułapka: między lotami IFR i VFR separacji się nie zapewnia, a statki powietrzne wykonujące loty IFR otrzymują na żądanie informacje o ruchu dotyczące lotów VFR oraz rady dla zapobieżenia kolizji.","refs":[{"src":"EU-923-2012","loc":"SERA.6001(a)(4)","quote":"Loty IFR są odseparowane od innych lotów IFR, a statki powietrzne wykonujące te loty otrzymują na żądanie informacje o ruchu dotyczące lotów VFR oraz rady dla zapobieżenia kolizji."}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0581#0810270b","status":"draft","text":"Zgodnie z pkt SERA.6001 lit. a) ppkt 5 rozporządzenia 923/2012 w przestrzeni powietrznej klasy E loty IFR wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i są odseparowane od innych lotów IFR. Pułapka: separacji między lotami IFR i VFR w klasie E się nie zapewnia, a informacje o ruchu wszystkim lotom podaje się tylko o ile jest to możliwe.","refs":[{"src":"EU-923-2012","loc":"SERA.6001(a)(5)","quote":"Loty IFR wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i są odseparowane od innych lotów IFR. O ile jest to możliwe, w przypadku wszystkich lotów zapewnia się informacje o ruchu."}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0072#6f4ce5e6","status":"draft","text":"Według AIP Polska (GEN 3.3 pkt 3) w przestrzeni niekontrolowanej służbę informacji powietrznej i służbę alarmową zapewnia właściwy organ FIS. Zgodnie z pkt SERA.6001 lit. a) ppkt 7 rozporządzenia 923/2012 w klasie G lotom IFR i VFR na żądanie zapewnia się służbę informacji powietrznej, bez wymogu zezwolenia ATC. Pułapka: służbę kontroli ruchu lotniczego zapewnia się lotom IFR tylko w klasach A–E, a lotom VFR w klasach B, C i D (SERA.8001).","refs":[{"src":"AIP-PL","loc":"GEN 3.3 pkt 3","quote":"Służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej są zapewniane przez właściwy organ FIS"},{"src":"EU-923-2012","loc":"SERA.6001(a)(7)","quote":"Klasa G. Dozwolone są loty IFR i VFR, a w ich przypadku na żądanie zapewnia się służbę informacji powietrznej."},{"src":"EU-923-2012","loc":"SERA.8001(a)","quote":"wszystkim lotom IFR w przestrzeni powietrznej klas A, B, C, D i E"},{"src":"EU-923-2012","loc":"SERA.8001(b)","quote":"wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0074#7ef3cadc","status":"draft","text":"Zgodnie z pkt SERA.9005 lit. a) ppkt 1 rozporządzenia 923/2012 służba informacji powietrznej zapewnia informacje SIGMET i AIRMET. Pułapka: przepis wymienia oba rodzaje informacji, nie tylko SIGMET, a lista w SERA.9005 lit. a) obejmuje także m.in. informacje o aktywności wulkanicznej i o stanie lotnisk.","refs":[{"src":"EU-923-2012","loc":"SERA.9005(a)","quote":"Służba informacji powietrznej zapewnia następujące informacje:"},{"src":"EU-923-2012","loc":"SERA.9005(a)(1)","quote":"informacje SIGMET i AIRMET"},{"src":"EU-923-2012","loc":"SERA.9005(a)(2)","quote":"informacje dotyczące przederupcyjnej aktywności wulkanicznej, erupcji wulkanicznej i chmur popiołów wulkanicznych"},{"src":"EU-923-2012","loc":"SERA.9005(a)(5)","quote":"informacje o zmianach stanu lotnisk i ich urządzeń"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0186#13b1565d","status":"draft","text":"Zgodnie z pkt SERA.9001 lit. a) rozporządzenia 923/2012 odpowiednie organy służb ruchu lotniczego zapewniają służbę informacji powietrznej wszystkim statkom powietrznym, których te informacje mogą dotyczyć i którym zapewniona jest służba kontroli ruchu lotniczego lub o których organy te zostały w inny sposób zawiadomione. Pułapka: służba utworzona w określonym obszarze, odpowiedzialna za informacje i dane lotnicze dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej, to służba informacji lotniczej (AIS), a nie informacji powietrznej (art. 2 pkt 2 rozporządzenia 2024/2803).","refs":[{"src":"EU-923-2012","loc":"SERA.9001(a)","quote":"Odpowiednie organy służb ruchu lotniczego zapewniają służbę informacji powietrznej wszystkim statkom powietrznym, których te informacje mogą dotyczyć, oraz:"},{"src":"EU-923-2012","loc":"SERA.9001(a)(1)","quote":"którym zapewniona jest służba kontroli ruchu lotniczego"},{"src":"EU-923-2012","loc":"SERA.9001(a)(2)","quote":"o których odpowiednie organy służb ruchu lotniczego zostały w inny sposób zawiadomione"},{"src":"EU-2024-2803","loc":"art. 2 pkt 2","quote":"„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0201#8c96ce33","status":"draft","text":"Zgodnie z art. 2 pkt 77 rozporządzenia 923/2012 służba informacji powietrznej to służba ustanowiona w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów. Pułapka: usprawnianie i utrzymywanie uporządkowanego przepływu ruchu lotniczego to cel służby kontroli ruchu lotniczego (art. 2 pkt 30), a zawiadamianie organów poszukiwania i ratownictwa należy do służby alarmowej (art. 2 pkt 37).","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 77","quote":"„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"},{"src":"EU-923-2012","loc":"art. 2 pkt 30","quote":"„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"},{"src":"EU-923-2012","loc":"art. 2 pkt 37","quote":"„służba alarmowa” oznacza służbę ustanowioną w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz w celu współdziałania z nimi w razie potrzeby"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0354#8b197628","status":"draft","text":"Zgodnie z art. 2 pkt 77 rozporządzenia 923/2012 służba informacji powietrznej udziela wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów, a nie separuje statków powietrznych. W klasie F (pkt SERA.6001 lit. a) ppkt 6) lotom IFR zapewnia się służbę doradczą ruchu lotniczego, a wszystkim lotom na żądanie służbę informacji powietrznej. Pułapka: separację IFR od IFR, o ile jest to możliwe, zapewnia w klasie F służba doradcza ruchu lotniczego (art. 2 pkt 27), a nie służba informacji powietrznej.","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 77","quote":"„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"},{"src":"EU-923-2012","loc":"SERA.6001(a)(6)","quote":"Wszystkim uczestniczącym statkom powietrznym wykonującym loty IFR zapewnia się służbę doradczą ruchu lotniczego, a w przypadku wszystkich lotów na żądanie zapewnia się służbę informacji powietrznej."},{"src":"EU-923-2012","loc":"art. 2 pkt 27","quote":"„służba doradcza ruchu lotniczego” oznacza służbę zapewnianą w przestrzeni powietrznej ze służbą doradczą w celu zapewnienia, w miarę możliwości, separacji między statkami powietrznymi wykonującymi operacje według planów lotu na podstawie wskazań instrumentów (IFR)"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0395#c745c3c9","status":"unverified","text":"","refs":[{"src":"EU-923-2012","loc":"SERA.8020(b)(4)","quote":"różni się o więcej niż 2 minuty od czasu, który został wcześniej podany służbom ruchu lotniczego, lub różni się o odstęp czasu określony przez właściwy organ, załoga lotnicza powiadamia jak najszybciej odpowiedni organ służb ruchu lotniczego"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"old-reg: klucz (3 minuty) odpowiada wcześniejszym przepisom ruchu lotniczego. Obecnie pkt SERA.8020 lit. b) ppkt 4 rozporządzenia 923/2012 wymaga powiadomienia organu ATS, gdy różnica przekracza 2 minuty lub odstęp określony przez właściwy organ; w dostępnych źródłach brak innego odstępu dla Polski."},
-{"key":"PL010-0398#4a7bfa3f","status":"draft","text":"Zgodnie z pkt SERA.8020 lit. b) ppkt 4 rozporządzenia 923/2012, jeżeli przewidywany czas przelotu nad następnym obowiązkowym punktem meldowania, granicą rejonu informacji powietrznej lub lotniskiem docelowym różni się o więcej niż 2 minuty od czasu podanego służbom ruchu lotniczego, załoga powiadamia jak najszybciej odpowiedni organ służb ruchu lotniczego. Różnica większa niż trzy minuty przekracza ten próg, więc należy niezwłocznie podać poprawiony przewidywany czas. Pułapka: przepis wymaga powiadomienia organu, a nie dostosowania prędkości ani zmiany trasy.","refs":[{"src":"EU-923-2012","loc":"SERA.8020(b)(4)","quote":"jeżeli przewidywany czas przelotu nad następnym obowiązkowym punktem meldowania, granicą rejonu informacji powietrznej lub lotniskiem docelowym, w zależności od tego, który z powyższych punktów będzie pierwszy, różni się o więcej niż 2 minuty od czasu, który został wcześniej podany służbom ruchu lotniczego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0410#3e3178d4","status":"draft","text":"Zgodnie z definicją w załączniku I do rozporządzenia 2017/373 (pkt 6) lotniskowa służba informacji powietrznej (AFIS) to służba informacji powietrznej dla ruchu lotniskowego, więc jej informator zapewnia służbę informacji powietrznej. Według AIP Polska (GEN 3.3 pkt 1.4) organ AFIS zapewnia w przestrzeni niekontrolowanej ATZ służbę informacji powietrznej i służbę alarmową. Pułapka: AFIS nie zapewnia służby kontroli ruchu lotniczego, a służba informacji lotniczej (AIS) to odrębna służba żeglugi powietrznej.","refs":[{"src":"EU-2017-373","loc":"załącznik I pkt 6","quote":"„lotniskowa służba informacji powietrznej (ang. aerodrome flight information service, AFIS)” oznacza służbę informacji powietrznej dla ruchu lotniskowego"},{"src":"AIP-PL","loc":"GEN 3.3 pkt 1.4","quote":"zapewnia służbę informacji powietrznej i służbę alarmową w przestrzeni"},{"src":"EU-2024-2803","loc":"art. 2 pkt 5","quote":"służby meteorologiczne (MET); służby informacji lotniczej (AIS)"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0577#1bf31f48","status":"draft","text":"Zgodnie z pkt SERA.6001 lit. a) ppkt 7 rozporządzenia 923/2012 w przestrzeni powietrznej klasy G lotom IFR i VFR na żądanie zapewnia się jedynie służbę informacji powietrznej, a dodatek 4 do tego rozporządzenia nie przewiduje w klasie G separacji dla żadnego rodzaju lotu. Służba informacji powietrznej udziela wskazówek i informacji (art. 2 pkt 77), więc nie ma obowiązku separowania statków powietrznych.","refs":[{"src":"EU-923-2012","loc":"SERA.6001(a)(7)","quote":"Klasa G. Dozwolone są loty IFR i VFR, a w ich przypadku na żądanie zapewnia się służbę informacji powietrznej."},{"src":"EU-923-2012","loc":"dodatek 4","quote":"G IFR Brak Służba informacji powietrznej na żądanie"},{"src":"EU-923-2012","loc":"art. 2 pkt 77","quote":"„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0200#ec47b328","status":"draft","text":"Zgodnie z art. 2 pkt 37 rozporządzenia 923/2012 służba alarmowa to służba ustanowiona w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz współdziałania z nimi w razie potrzeby. Pułapka: udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów to cel służby informacji powietrznej (art. 2 pkt 77), a zapobieganie kolizjom to cel służby kontroli ruchu lotniczego (art. 2 pkt 30).","refs":[{"src":"EU-923-2012","loc":"art. 2 pkt 37","quote":"„służba alarmowa” oznacza służbę ustanowioną w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz w celu współdziałania z nimi w razie potrzeby"},{"src":"EU-923-2012","loc":"art. 2 pkt 77","quote":"„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"},{"src":"EU-923-2012","loc":"art. 2 pkt 30","quote":"„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0207#2b82bbde","status":"draft","text":"Zgodnie z pkt MET.OR.100 lit. a) załącznika V do rozporządzenia 2017/373 instytucja zapewniająca służby meteorologiczne dostarcza m.in. organom służb ruchu lotniczego, organom służb poszukiwania i ratownictwa oraz innym podmiotom w sektorze lotnictwa informację meteorologiczną niezbędną do pełnienia ich funkcji. Pułapka: zapewnianie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej to zadanie służby informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803).","refs":[{"src":"EU-2017-373","loc":"MET.OR.100(a)","quote":"Instytucja zapewniająca służby meteorologiczne dostarcza operatorom, członkom załogi lotniczej, organom służb ruchu lotniczego, organom służb poszukiwania i ratownictwa, operatorom lotnisk"},{"src":"EU-2017-373","loc":"MET.OR.100(a)","quote":"oraz innym instytucjom zapewniającym służby oraz podmiotom w sektorze lotnictwa informację meteorologiczną niezbędną do pełnienia przez nich swoich funkcji"},{"src":"EU-2024-2803","loc":"art. 2 pkt 2","quote":"„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0209#a0b284f3","status":"draft","text":"Zgodnie z art. 140a ust. 1 Prawa lotniczego do zakresu działania służby poszukiwania i ratownictwa lotniczego (ASAR) należy poszukiwanie i ratowanie statków powietrznych znajdujących się w niebezpieczeństwie oraz udzielanie pomocy załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych. Pułapka: zapewnianie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej to zadanie służby informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803).","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 140a ust. 1","quote":"Poszukiwanie i ratowanie statków powietrznych znajdujących się w niebezpieczeństwie, udzielanie pomocy załogom i pasażerom statków powietrznych oraz innym osobom poszkodowanym w wyniku zdarzeń lotniczych"},{"src":"EU-2024-2803","loc":"art. 2 pkt 2","quote":"„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0209#a91a2945","status":"draft","sameAs":"PL010-0209#a0b284f3"}
+ {
+  "key": "PL010-0315#3fcbf66c",
+  "status": "draft",
+  "text": "Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby informacji lotniczej (AIS). Dlatego poprawną odpowiedzią jest służba informacji lotniczej. Pułapka: ATS, służba kontroli zbliżania i służba kontroli obszaru to same służby ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0010#09662156",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 30 rozporządzenia 923/2012 służba kontroli ruchu lotniczego jest zapewniana w celu zapobiegania kolizjom między statkami powietrznymi (także na polu manewrowym) oraz usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego. Pułapka: udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów to cel służby informacji powietrznej (art. 2 pkt 77), a zawiadamianie o statkach powietrznych potrzebujących pomocy to zadanie służby alarmowej (art. 2 pkt 37).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 30",
+    "quote": "„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 77",
+    "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 37",
+    "quote": "„służba alarmowa” oznacza służbę ustanowioną w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz w celu współdziałania z nimi w razie potrzeby"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0073#14c977ae",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.8001 lit. d) rozporządzenia 923/2012 służba kontroli ruchu lotniczego jest zapewniana całemu ruchowi lotniskowemu na lotniskach kontrolowanych. Lotom IFR zapewnia się ją tylko w przestrzeni powietrznej klas A, B, C, D i E, a lotom VFR w klasach B, C i D. Pułapka: w klasach F i G służby kontroli ruchu lotniczego się nie zapewnia, ani lotom IFR, ani VFR.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(d)",
+    "quote": "całemu ruchowi lotniskowemu na lotniskach kontrolowanych"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(a)",
+    "quote": "wszystkim lotom IFR w przestrzeni powietrznej klas A, B, C, D i E"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(b)",
+    "quote": "wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0315#fb55f51a",
+  "status": "draft",
+  "text": "Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby meteorologiczne (MET) i służby informacji lotniczej (AIS). Art. 121 ust. 2 Prawa lotniczego dodaje, że statkom powietrznym zapewnia się ponadto służbę poszukiwania i ratownictwa. Dlatego poprawne są wszystkie trzy wymienione służby.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 2",
+    "quote": "Statkom powietrznym wykonującym loty w przestrzeni powietrznej zapewnia się ponadto służbę poszukiwania i ratownictwa."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0316#9c65f807",
+  "status": "draft",
+  "text": "Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby meteorologiczne (MET). Pułapka: służba alarmowa, służba informacji powietrznej i służba kontroli ruchu lotniczego, w tym kontroli lotniska, same należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0316#6a5d1875",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 32 rozporządzenia 923/2012 służby ruchu lotniczego obejmują służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego i służbę kontroli ruchu lotniczego. Wszystkie wymienione służby są więc częścią służb ruchu lotniczego, a nie służbami zapewnianymi oprócz nich, dlatego poprawna jest odpowiedź „Żadna z odpowiedzi nie jest poprawna”. Oprócz służb ruchu lotniczego zapewnia się m.in. służby łączności, nawigacji i dozorowania, meteorologiczne i informacji lotniczej (art. 121 ust. 1 pkt 1 Prawa lotniczego, art. 2 pkt 5 rozporządzenia 2024/2803).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0540#5934ec18",
+  "status": "draft",
+  "sameAs": "PL010-0316#9c65f807"
+ },
+ {
+  "key": "PL010-0540#fb55f51a",
+  "status": "draft",
+  "sameAs": "PL010-0315#fb55f51a"
+ },
+ {
+  "key": "PL010-0541#35aa945e",
+  "status": "draft",
+  "text": "Zgodnie z art. 121 ust. 2 Prawa lotniczego statkom powietrznym wykonującym loty w przestrzeni powietrznej zapewnia się ponadto służbę poszukiwania i ratownictwa. Pułapka: służba alarmowa, służba kontroli ruchu lotniczego i służba informacji powietrznej same należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012), więc nie są zapewniane oprócz nich.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 2",
+    "quote": "Statkom powietrznym wykonującym loty w przestrzeni powietrznej zapewnia się ponadto służbę poszukiwania i ratownictwa."
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0541#6a5d1875",
+  "status": "draft",
+  "sameAs": "PL010-0316#6a5d1875"
+ },
+ {
+  "key": "PL010-1535#565cccdb",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 32 rozporządzenia 923/2012 służby ruchu lotniczego (ATS) to wyrażenie ogólne obejmujące służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego i służbę kontroli ruchu lotniczego (kontroli obszaru, zbliżania lub lotniska). Pułapka: służby łączności, nawigacji i dozorowania, służby meteorologiczne i służby informacji lotniczej to odrębne od służb ruchu lotniczego rodzaje służb żeglugi powietrznej (art. 2 pkt 5 rozporządzenia 2024/2803).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-1536#75077542",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 5 rozporządzenia 2024/2803 służby żeglugi powietrznej, zapewniane w polskiej przestrzeni powietrznej na podstawie art. 121 ust. 1 pkt 1 Prawa lotniczego, obejmują służby ruchu lotniczego oraz odrębne od nich służby łączności, nawigacji i dozorowania (CNS). Służba informacji powietrznej należy do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012), więc jest zapewniana oprócz CNS. Pułapka: służba nawigacji, służba dozorowania i łączność (COM) to elementy CNS.",
+  "refs": [
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 2.2 COM",
+    "quote": "Łączność/telekomunikacja"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-1537#ba0589be",
+  "status": "draft",
+  "text": "Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby łączności, nawigacji i dozorowania (CNS). Pułapka: APP (kontrola zbliżania), TWR (kontrola lotniska) i służba alarmowa należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 2.2 APP",
+    "quote": "Ośrodek kontroli zbliżania lub kontrola zbliżania lub służba kontroli zbliżania"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 2.2 TWR",
+    "quote": "Wieża kontroli lotniska lub kontrola lotniska"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-1538#85a78927",
+  "status": "draft",
+  "text": "Zgodnie z art. 121 ust. 1 pkt 1 Prawa lotniczego w polskiej przestrzeni powietrznej zapewnia się służby żeglugi powietrznej, które według art. 2 pkt 5 rozporządzenia 2024/2803 obejmują oprócz służb ruchu lotniczego m.in. służby informacji lotniczej (AIS). Pułapka: służba kontroli ruchu lotniczego, TWR (kontrola lotniska) i służba alarmowa należą do służb ruchu lotniczego (art. 2 pkt 32 rozporządzenia 923/2012).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 32",
+    "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 2.2 TWR",
+    "quote": "Wieża kontroli lotniska lub kontrola lotniska"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0162#9e4077c1",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 43 rozporządzenia 923/2012 ośrodek kontroli obszaru (ACC) to organ ustanowiony do zapewnienia służby kontroli ruchu lotniczego w odniesieniu do lotów kontrolowanych w podległych mu obszarach kontrolowanych. Pułapka: nawigacja obszarowa (RNAV) to według art. 2 pkt 45 tego rozporządzenia metoda nawigacji, a nie organ służb ruchu lotniczego.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 43",
+    "quote": "„ośrodek kontroli obszaru (ACC)” oznacza organ ustanowiony do zapewnienia służby kontroli ruchu lotniczego w odniesieniu do lotów kontrolowanych w podległych mu obszarach kontrolowanych"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 45",
+    "quote": "„nawigacja obszarowa (RNAV)” oznacza metodę nawigacji"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0202#fe437907",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 30 rozporządzenia 923/2012 służba kontroli ruchu lotniczego jest zapewniana w celu zapobiegania kolizjom między statkami powietrznymi oraz usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego. Odpowiedź o zapobieganiu zderzeniom statków powietrznych podczas lotu oddaje pierwszy z tych celów. Pułapka: udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów to cel służby informacji powietrznej (art. 2 pkt 77).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 30",
+    "quote": "„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 77",
+    "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0254#51f916d9",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 28 rozporządzenia 923/2012 zezwolenie kontroli ruchu lotniczego (ATC) oznacza upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego, dlatego odpowiedź brzmi „Tak”. Pułapka: definicja nie uzależnia tego od granicy zezwolenia, która jest tylko punktem, do którego udzielono zezwolenia (art. 2 pkt 52).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 28",
+    "quote": "„zezwolenie kontroli ruchu lotniczego (ATC)” oznacza upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 52",
+    "quote": "„granica zezwolenia” oznacza punkt, do którego statkowi powietrznemu zostało udzielone zezwolenie kontroli ruchu lotniczego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0578#9380dc7a",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.6001 lit. a) ppkt 1 rozporządzenia 923/2012 w przestrzeni powietrznej klasy A dozwolone są wyłącznie loty IFR, a wszystkie loty wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i w separacji. Separacja jest więc zapewniana między lotami IFR. Pułapka: w klasie A nie ma lotów VFR, więc separacja IFR od VFR ani VFR specjalnych nie wchodzi w grę.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(1)",
+    "quote": "Klasa A. Dozwolone są wyłącznie loty IFR. Wszystkie loty wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i w separacji."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0579#4a72fd69",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.6001 lit. a) ppkt 3 rozporządzenia 923/2012 w przestrzeni powietrznej klasy C loty IFR są odseparowane od innych lotów IFR i lotów VFR, a loty VFR są odseparowane od lotów IFR. Spośród odpowiedzi poprawna jest więc separacja VFR od IFR. Pułapka: między lotami VFR separacji się nie zapewnia, a statki powietrzne wykonujące loty VFR otrzymują na żądanie tylko informacje o ruchu innych lotów VFR i rady dla zapobieżenia kolizji.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(3)",
+    "quote": "loty IFR są odseparowane od innych lotów IFR i lotów VFR. Loty VFR są odseparowane od lotów IFR, a statki powietrzne je wykonujące otrzymują na żądanie informacje o ruchu dotyczące innych lotów VFR oraz rady dla zapobieżenia kolizji"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0580#f462b315",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.6001 lit. a) ppkt 4 rozporządzenia 923/2012 w przestrzeni powietrznej klasy D loty IFR są odseparowane od innych lotów IFR. Pułapka: między lotami IFR i VFR separacji się nie zapewnia, a statki powietrzne wykonujące loty IFR otrzymują na żądanie informacje o ruchu dotyczące lotów VFR oraz rady dla zapobieżenia kolizji.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(4)",
+    "quote": "Loty IFR są odseparowane od innych lotów IFR, a statki powietrzne wykonujące te loty otrzymują na żądanie informacje o ruchu dotyczące lotów VFR oraz rady dla zapobieżenia kolizji."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0581#0810270b",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.6001 lit. a) ppkt 5 rozporządzenia 923/2012 w przestrzeni powietrznej klasy E loty IFR wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i są odseparowane od innych lotów IFR. Pułapka: separacji między lotami IFR i VFR w klasie E się nie zapewnia, a informacje o ruchu wszystkim lotom podaje się tylko o ile jest to możliwe.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(5)",
+    "quote": "Loty IFR wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i są odseparowane od innych lotów IFR. O ile jest to możliwe, w przypadku wszystkich lotów zapewnia się informacje o ruchu."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0072#6f4ce5e6",
+  "status": "draft",
+  "text": "Według AIP Polska (GEN 3.3) w przestrzeni niekontrolowanej służbę informacji powietrznej i służbę alarmową zapewnia właściwy organ FIS. Zgodnie z pkt SERA.6001 lit. a) ppkt 7 rozporządzenia 923/2012 w klasie G lotom IFR i VFR na żądanie zapewnia się służbę informacji powietrznej, bez wymogu zezwolenia ATC. Pułapka: służbę kontroli ruchu lotniczego zapewnia się lotom IFR tylko w klasach A–E, a lotom VFR w klasach B, C i D (SERA.8001).",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3",
+    "quote": "Służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej są zapewniane przez właściwy organ FIS"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(7)",
+    "quote": "Klasa G. Dozwolone są loty IFR i VFR, a w ich przypadku na żądanie zapewnia się służbę informacji powietrznej."
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(a)",
+    "quote": "wszystkim lotom IFR w przestrzeni powietrznej klas A, B, C, D i E"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(b)",
+    "quote": "wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0074#7ef3cadc",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.9005 lit. a) ppkt 1 rozporządzenia 923/2012 służba informacji powietrznej zapewnia informacje SIGMET i AIRMET. Pułapka: przepis wymienia oba rodzaje informacji, nie tylko SIGMET, a lista w SERA.9005 lit. a) obejmuje także m.in. informacje o aktywności wulkanicznej i o stanie lotnisk.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9005(a)",
+    "quote": "Służba informacji powietrznej zapewnia następujące informacje:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9005(a)(1)",
+    "quote": "informacje SIGMET i AIRMET"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9005(a)(2)",
+    "quote": "informacje dotyczące przederupcyjnej aktywności wulkanicznej, erupcji wulkanicznej i chmur popiołów wulkanicznych"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9005(a)(5)",
+    "quote": "informacje o zmianach stanu lotnisk i ich urządzeń"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0186#13b1565d",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.9001 lit. a) rozporządzenia 923/2012 odpowiednie organy służb ruchu lotniczego zapewniają służbę informacji powietrznej wszystkim statkom powietrznym, których te informacje mogą dotyczyć i którym zapewniona jest służba kontroli ruchu lotniczego lub o których organy te zostały w inny sposób zawiadomione. Pułapka: służba utworzona w określonym obszarze, odpowiedzialna za informacje i dane lotnicze dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej, to służba informacji lotniczej (AIS), a nie informacji powietrznej (art. 2 pkt 2 rozporządzenia 2024/2803).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9001(a)",
+    "quote": "Odpowiednie organy służb ruchu lotniczego zapewniają służbę informacji powietrznej wszystkim statkom powietrznym, których te informacje mogą dotyczyć, oraz:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9001(a)(1)",
+    "quote": "którym zapewniona jest służba kontroli ruchu lotniczego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9001(a)(2)",
+    "quote": "o których odpowiednie organy służb ruchu lotniczego zostały w inny sposób zawiadomione"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 2",
+    "quote": "„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0201#8c96ce33",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 77 rozporządzenia 923/2012 służba informacji powietrznej to służba ustanowiona w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów. Pułapka: usprawnianie i utrzymywanie uporządkowanego przepływu ruchu lotniczego to cel służby kontroli ruchu lotniczego (art. 2 pkt 30), a zawiadamianie organów poszukiwania i ratownictwa należy do służby alarmowej (art. 2 pkt 37).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 77",
+    "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 30",
+    "quote": "„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 37",
+    "quote": "„służba alarmowa” oznacza służbę ustanowioną w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz w celu współdziałania z nimi w razie potrzeby"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0354#8b197628",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 77 rozporządzenia 923/2012 służba informacji powietrznej udziela wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów, a nie separuje statków powietrznych. W klasie F (pkt SERA.6001 lit. a) ppkt 6) lotom IFR zapewnia się służbę doradczą ruchu lotniczego, a wszystkim lotom na żądanie służbę informacji powietrznej. Pułapka: separację IFR od IFR, o ile jest to możliwe, zapewnia w klasie F służba doradcza ruchu lotniczego (art. 2 pkt 27), a nie służba informacji powietrznej.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 77",
+    "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(6)",
+    "quote": "Wszystkim uczestniczącym statkom powietrznym wykonującym loty IFR zapewnia się służbę doradczą ruchu lotniczego, a w przypadku wszystkich lotów na żądanie zapewnia się służbę informacji powietrznej."
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 27",
+    "quote": "„służba doradcza ruchu lotniczego” oznacza służbę zapewnianą w przestrzeni powietrznej ze służbą doradczą w celu zapewnienia, w miarę możliwości, separacji między statkami powietrznymi wykonującymi operacje według planów lotu na podstawie wskazań instrumentów (IFR)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0395#c745c3c9",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8020(b)(4)",
+    "quote": "różni się o więcej niż 2 minuty od czasu, który został wcześniej podany służbom ruchu lotniczego, lub różni się o odstęp czasu określony przez właściwy organ, załoga lotnicza powiadamia jak najszybciej odpowiedni organ służb ruchu lotniczego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "old-reg: klucz (3 minuty) odpowiada wcześniejszym przepisom ruchu lotniczego. Obecnie pkt SERA.8020 lit. b) ppkt 4 rozporządzenia 923/2012 wymaga powiadomienia organu ATS, gdy różnica przekracza 2 minuty lub odstęp określony przez właściwy organ; w dostępnych źródłach brak innego odstępu dla Polski."
+ },
+ {
+  "key": "PL010-0398#4a7bfa3f",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.8020 lit. b) ppkt 4 rozporządzenia 923/2012, jeżeli przewidywany czas przelotu nad następnym obowiązkowym punktem meldowania, granicą rejonu informacji powietrznej lub lotniskiem docelowym różni się o więcej niż 2 minuty od czasu podanego służbom ruchu lotniczego, załoga powiadamia jak najszybciej odpowiedni organ służb ruchu lotniczego. Różnica większa niż trzy minuty przekracza ten próg, więc należy niezwłocznie podać poprawiony przewidywany czas. Pułapka: przepis wymaga powiadomienia organu, a nie dostosowania prędkości ani zmiany trasy.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8020(b)(4)",
+    "quote": "jeżeli przewidywany czas przelotu nad następnym obowiązkowym punktem meldowania, granicą rejonu informacji powietrznej lub lotniskiem docelowym"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8020(b)(4)",
+    "quote": "różni się o więcej niż 2 minuty od czasu, który został wcześniej podany służbom ruchu lotniczego, lub różni się o odstęp czasu określony przez właściwy organ, załoga lotnicza powiadamia jak najszybciej odpowiedni organ służb ruchu lotniczego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0410#3e3178d4",
+  "status": "draft",
+  "text": "Zgodnie z definicją w załączniku I do rozporządzenia 2017/373 (pkt 6) lotniskowa służba informacji powietrznej (AFIS) to służba informacji powietrznej dla ruchu lotniskowego, więc jej informator zapewnia służbę informacji powietrznej. Według AIP Polska (GEN 3.3 pkt 1.4) organ AFIS zapewnia w przestrzeni niekontrolowanej ATZ służbę informacji powietrznej i służbę alarmową. Pułapka: AFIS nie zapewnia służby kontroli ruchu lotniczego, a służba informacji lotniczej (AIS) to odrębna służba żeglugi powietrznej.",
+  "refs": [
+   {
+    "src": "EU-2017-373",
+    "loc": "załącznik I pkt 6",
+    "quote": "„lotniskowa służba informacji powietrznej (ang. aerodrome flight information service, AFIS)” oznacza służbę informacji powietrznej dla ruchu lotniskowego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3 pkt 1.4",
+    "quote": "zapewnia służbę informacji powietrznej i służbę alarmową w przestrzeni"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0577#1bf31f48",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.6001 lit. a) ppkt 7 rozporządzenia 923/2012 w przestrzeni powietrznej klasy G lotom IFR i VFR na żądanie zapewnia się jedynie służbę informacji powietrznej, a dodatek 4 do tego rozporządzenia nie przewiduje w klasie G separacji dla żadnego rodzaju lotu. Służba informacji powietrznej udziela wskazówek i informacji (art. 2 pkt 77), więc nie ma obowiązku separowania statków powietrznych.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(7)",
+    "quote": "Klasa G. Dozwolone są loty IFR i VFR, a w ich przypadku na żądanie zapewnia się służbę informacji powietrznej."
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "dodatek 4",
+    "quote": "G IFR Brak Służba informacji powietrznej na żądanie"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 77",
+    "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0200#ec47b328",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 37 rozporządzenia 923/2012 służba alarmowa to służba ustanowiona w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz współdziałania z nimi w razie potrzeby. Pułapka: udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów to cel służby informacji powietrznej (art. 2 pkt 77), a zapobieganie kolizjom to cel służby kontroli ruchu lotniczego (art. 2 pkt 30).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 37",
+    "quote": "„służba alarmowa” oznacza służbę ustanowioną w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz w celu współdziałania z nimi w razie potrzeby"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 77",
+    "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 30",
+    "quote": "„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0207#2b82bbde",
+  "status": "draft",
+  "text": "Zgodnie z pkt MET.OR.100 lit. a) załącznika V do rozporządzenia 2017/373 instytucja zapewniająca służby meteorologiczne dostarcza m.in. organom służb ruchu lotniczego, organom służb poszukiwania i ratownictwa oraz innym podmiotom w sektorze lotnictwa informację meteorologiczną niezbędną do pełnienia ich funkcji. Pułapka: zapewnianie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej to zadanie służby informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803).",
+  "refs": [
+   {
+    "src": "EU-2017-373",
+    "loc": "MET.OR.100(a)",
+    "quote": "Instytucja zapewniająca służby meteorologiczne dostarcza operatorom, członkom załogi lotniczej, organom służb ruchu lotniczego, organom służb poszukiwania i ratownictwa, operatorom lotnisk"
+   },
+   {
+    "src": "EU-2017-373",
+    "loc": "MET.OR.100(a)",
+    "quote": "oraz innym instytucjom zapewniającym służby oraz podmiotom w sektorze lotnictwa informację meteorologiczną niezbędną do pełnienia przez nich swoich funkcji"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 2",
+    "quote": "„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0209#a0b284f3",
+  "status": "draft",
+  "text": "Zgodnie z art. 140a ust. 1 Prawa lotniczego do zakresu działania służby poszukiwania i ratownictwa lotniczego (ASAR) należy poszukiwanie i ratowanie statków powietrznych znajdujących się w niebezpieczeństwie oraz udzielanie pomocy załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych. Pułapka: zapewnianie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej to zadanie służby informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 140a ust. 1",
+    "quote": "Poszukiwanie i ratowanie statków powietrznych znajdujących się w niebezpieczeństwie, udzielanie pomocy załogom i pasażerom statków powietrznych oraz innym osobom poszkodowanym w wyniku zdarzeń lotniczych"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 2",
+    "quote": "„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0209#a91a2945",
+  "status": "draft",
+  "sameAs": "PL010-0209#a0b284f3"
+ }
 ]
