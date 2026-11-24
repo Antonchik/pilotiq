@@ -319,6 +319,112 @@ class ValidateTest(Base):
         self.assertEqual(set(asset["links"]["bpl"].values()), {self.key_of("PL010-1001")})
 
 
+class UnverifiedBasisTest(Base):
+    """Owner decision 24.11.2026: keys without a normative source get an `unverified` explanation with a `basis`;
+    it is never built into the app asset until a human expert reviews it."""
+
+    NO_SOURCE_TEXT = ("Brak przepisu w dostępnych źródłach: wyjaśnienie opiera się na ogólnej wiedzy o gaszeniu pożarów. "
+                      "Pożaru instalacji elektrycznej nie gasi się wodą, ponieważ przewodzi ona prąd.")
+
+    def setUp(self):
+        super().setUp()
+        self.k = self.key_of("PL010-0001")
+
+    def entry(self, **over):
+        r = {"key": self.k, "status": "unverified", "text": self.NO_SOURCE_TEXT, "refs": [], "disputeNote": None,
+             "sameAs": None, "basis": "no-source", "basisNote": "wiedza ogólna: gaśnice"}
+        r.update(over)
+        return r
+
+    def errors(self):
+        return self.validate(no_corpus=True).errors
+
+    def test_valid_no_source_entry_is_not_built(self):
+        self.put_src("P01", [self.entry()])
+        self.assertEqual(self.errors(), [])
+        self.assertEqual(self.build()["explanations"], {})
+        self.assertEqual(self.build()["links"], {"ppla": {}, "pplh": {}, "spl": {}, "bpl": {}})
+
+    def test_ledger_pass_cannot_publish_it(self):
+        self.put_src("P01", [self.entry()])
+        ledger = m.read_json(self.ctx.ledger)
+        ledger[self.k] = {"portion": "P01", "round": 1, "verdict": "PASS",
+                          "textSha": m.content_sha(self.entry(), "explanation"), "date": "2026-11-24"}
+        jdump(self.ctx.ledger, ledger)
+        self.assertEqual(self.build()["explanations"], {})
+
+    def test_basis_values_and_note(self):
+        self.put_src("P01", [self.entry(basis="whatever")])
+        self.assertTrue(any("basis" in e and "вне" in e for e in self.errors()))
+        self.put_src("P01", [self.entry(basisNote="")])
+        self.assertTrue(any("нет basisNote" in e for e in self.errors()))
+        self.put_src("P01", [self.entry(status="draft", basis="no-source")])
+        self.assertTrue(any("допустимы только у unverified" in e for e in self.errors()))
+
+    def test_text_form_checks_for_no_source(self):
+        self.put_src("P01", [self.entry(text="Jedno zdanie bez źródła.")])
+        self.assertTrue(any("предложений" in e for e in self.errors()))
+        self.put_src("P01", [self.entry(text="")])
+        self.assertTrue(any("пустой text" in e for e in self.errors()))
+        self.put_src("P01", [self.entry(text="Zdanie pierwsze. " * 3 + "Zdanie drugie dłuższe. " * 40)])
+        self.assertTrue(any("длиннее" in e or "предложений" in e for e in self.errors()))
+
+    def test_aip_missing_may_have_empty_text_but_nonempty_text_is_checked(self):
+        self.put_src("P01", [self.entry(basis="aip-missing", text="", basisNote="brak ENR 1.6")])
+        self.assertEqual(self.errors(), [])
+        self.put_src("P01", [self.entry(basis="aip-missing", text="Jedno zdanie.", basisNote="brak ENR 1.6")])
+        self.assertTrue(any("предложений" in e for e in self.errors()))
+        self.put_src("P01", [self.entry(basis="aip-missing", basisNote="brak ENR 1.6")])
+        self.assertEqual(self.errors(), [])
+
+    def test_basis_is_part_of_the_content_hash(self):
+        a = m.content_sha(self.entry(), "explanation")
+        self.assertNotEqual(a, m.content_sha(self.entry(basis="aip-missing"), "explanation"))
+        self.assertNotEqual(a, m.content_sha(self.entry(basisNote="inna przyczyna"), "explanation"))
+
+    def test_apply_review_skips_entries_with_basis(self):
+        self.put_src("P01", [self.entry()])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}])
+        self.assertIn("проигнорирован", self.out)
+        self.assertEqual(m.read_json(self.ctx.src_dir / "P01.json")[0]["status"], "unverified")
+        self.assertNotIn(self.k, m.read_json(self.ctx.ledger))
+        self.assertEqual(self.build()["explanations"], {})
+        self.assertEqual(self.errors(), [])
+
+    def test_apply_review_still_works_for_ordinary_entries(self):
+        other = self.key_of("PL010-0050") if any(k.startswith("PL010-0050#") for k in self.inv()) else None
+        self.put_src("P01", [self.entry(), self.rec(self.k.replace(self.k, self.key_of("PL010-1001")))])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}, {"key": self.key_of("PL010-1001"), "verdict": "PASS"}])
+        statuses = {r["key"]: r["status"] for r in m.read_json(self.ctx.src_dir / "P01.json")}
+        self.assertEqual(statuses[self.k], "unverified")
+        self.assertEqual(statuses[self.key_of("PL010-1001")], "verified")
+        self.assertIsNone(other if False else None)
+
+    def test_report_counts_bases_separately(self):
+        k2 = self.key_of("PL010-1001")
+        self.put_src("P01", [self.entry(), self.entry(key=k2, basis="aip-missing", text="", basisNote="brak AIP")])
+        self.run_cmd(m.cmd_report, src=None)
+        self.assertIn("unverified=0", self.out)
+        self.assertIn("unverified/no-source=1", self.out)
+        self.assertIn("unverified/aip-missing=1", self.out)
+
+    def test_complete_topic_ignores_keys_with_basis_or_gaps(self):
+        keys = sorted(self.inv())
+        no_source, gap = keys[0], keys[1]
+        covered = keys[2:]
+        jdump(self.ctx.topics, [{"id": "AL01", "title": {"pl": "a", "en": "a"}, "order": keys, "complete": True,
+                                 "gaps": {"noSource": [gap], "aipNotSupplied": []}}])
+        sec = {"id": "AL01-1", "heading": "H", "body": ["Tekst."], "status": "draft",
+               "refs": [{"src": "LAW", "loc": "art. 1", "quote": GOOD_QUOTE}], "questionKeys": covered}
+        jdump(self.ctx.sum_dir / "AL01.json", {"topic": "AL01", "sections": [sec]})
+        self.review("AL01.r1.editor.json", [{"key": "AL01-1", "verdict": "PASS"}])
+        self.assertTrue(any("complete" in e for e in self.errors()))          # no_source key is neither covered nor exempt yet
+        self.put_src("P01", [self.entry(key=no_source)])
+        self.assertEqual(self.errors(), [])                                    # unverified with basis + gaps.noSource exempt
+        self.put_src("P01", [self.entry(key=no_source, status="draft", basis=None, basisNote=None)])
+        self.assertTrue(any("complete" in e for e in self.errors()))           # an ordinary draft is not exempt
+
+
 class ApplyReviewTest(Base):
     def setUp(self):
         super().setUp()

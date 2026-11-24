@@ -699,13 +699,19 @@ class _ParaState:
         if token.isdigit():
             if self.keys[0] is None or token != str(int(token)):
                 return None
-            nxt = 1 if self.l2 is None else self.l2 + 1
+            if self.l2 is None:
+                return 2 if int(token) == 1 else None          # the first item is always 1
+            nxt = self.l2 + 1
             return 2 if nxt <= int(token) <= nxt + self.GAP else None
         if token.islower():
             if self.keys[1] is not None and token in _ROMAN:
-                base = 0 if self.l3 is None else (_ROMAN.index(self.l3) + 1 if self.l3 in _ROMAN else None)
-                if base is not None and base <= _ROMAN.index(token) <= base + self.GAP:
-                    return 3
+                if self.l3 is None:
+                    if token == "i":
+                        return 3
+                else:
+                    base = _ROMAN.index(self.l3) + 1 if self.l3 in _ROMAN else None
+                    if base is not None and base <= _ROMAN.index(token) <= base + self.GAP:
+                        return 3
             if len(token) == 1:
                 base = 0 if self.l1 is None else ord(self.l1) - ord("a") + 1
                 if ord(token) - ord("a") == base:   # letters: no gaps (a stray "(g)" line must not shift the list)

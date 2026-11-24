@@ -18,6 +18,8 @@ SUBJECT = "air_law"
 LICENCES = ["ppla", "pplh", "spl", "bpl"]
 STATUSES = ["none", "draft", "verified", "disputed", "unverified", "retired"]
 PUBLISHED = ("verified", "disputed")
+# unverified-запись без нормативного источника (решение владельца 24.11.2026): в приложение не попадает, пока её не проверит эксперт
+BASES = ("no-source", "aip-missing")
 VERDICT_STATUS_OK = {"verified": "PASS", "disputed": "DISPUTED"}
 MAX_TEXT = 700
 MAX_QUOTE = 300
@@ -280,7 +282,7 @@ def content_sha(rec, kind):
     if kind == "section":
         view = {k: rec.get(k) for k in ("heading", "body", "refs", "questionKeys")}
     else:
-        view = {k: rec.get(k) for k in ("text", "refs", "disputeNote", "sameAs")}
+        view = {k: rec.get(k) for k in ("text", "refs", "disputeNote", "sameAs", "basis", "basisNote")}
     s = json.dumps(view, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(s.encode("utf-8")).hexdigest()[:16]
 
@@ -565,6 +567,7 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
     # 2-9. объяснения
     seen = {}
     records = load_src_records(ctx)
+    basis_keys = {r.get("key"): bool(r.get("basis")) and r.get("status") == "unverified" for _, r in records if r.get("key")}
     new_without_record = set(inv)
     for stem, r in records:
         key = r.get("key")
@@ -591,8 +594,17 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
             elif same == key:
                 rep.err("%s: sameAs указывает на себя" % label)
         else:
-            if status in ("draft",) + PUBLISHED:
-                text = r.get("text") or ""
+            basis = r.get("basis")
+            if basis is not None or r.get("basisNote") is not None:
+                if status != "unverified":
+                    rep.err("%s: поля basis/basisNote допустимы только у unverified (статус %s)" % (label, status))
+                elif basis not in BASES:
+                    rep.err("%s: basis %r вне %s" % (label, basis, list(BASES)))
+                elif not (r.get("basisNote") or "").strip():
+                    rep.err("%s: у unverified с basis нет basisNote (причина)" % label)
+            text = r.get("text") or ""
+            if status in ("draft",) + PUBLISHED or (status == "unverified" and basis == "no-source") \
+                    or (status == "unverified" and basis == "aip-missing" and text.strip()):
                 n = count_sentences(text)
                 if not text.strip():
                     rep.err("%s: пустой text" % label)
@@ -682,7 +694,10 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
                 covered = set()
                 for s in sections_by_topic.get(t["id"], []):
                     covered.update(s.get("questionKeys", []))
-                lost = [k for k in t.get("order", []) if k not in covered]
+                gaps = t.get("gaps") or {}
+                exempt = set(gaps.get("noSource") or []) | set(gaps.get("aipNotSupplied") or [])
+                exempt |= {k for k, r in basis_keys.items() if r}   # unverified с basis: объяснения без нормы, раздел конспекта не нужен
+                lost = [k for k in t.get("order", []) if k not in covered and k not in exempt]
                 if lost:
                     rep.err("подтема %s complete, но %d ключей не входят в questionKeys проверенных разделов (например %s)" % (
                         t["id"], len(lost), lost[0]))
@@ -860,6 +875,10 @@ def cmd_apply_review(ctx, args):
     for v in verdicts:
         k, verdict = v["key"], v["verdict"]
         p, rec, kind = index[k]
+        if kind == "explanation" and rec.get("basis"):
+            print("warning: %s: запись с basis=%s (без нормативного источника): вердикт %s проигнорирован, статус и журнал не менялись" % (
+                k, rec.get("basis"), verdict))
+            continue
         if verdict == "PASS":
             new = "verified"
         elif verdict == "DISPUTED":
@@ -902,11 +921,23 @@ def cmd_report(ctx, args):
 
     def tally(statuses):
         c = {s: 0 for s in STATUSES}
+        c.update({"unverified/%s" % b: 0 for b in BASES})
         for s in statuses:
             c[s] += 1
-        return " ".join("%s=%d" % (s, c[s]) for s in STATUSES if c[s] or s in ("none", "draft", "verified", "disputed", "unverified"))
+        order = []
+        for s in STATUSES:
+            order.append(s)
+            if s == "unverified":
+                order.extend("unverified/%s" % b for b in BASES)
+        return " ".join("%s=%d" % (s, c[s]) for s in order if c[s] or s in ("none", "draft", "verified", "disputed", "unverified"))
 
-    have = {r["key"]: r.get("status") for _, r in records if r.get("key")}
+    def label(r):
+        st = r.get("status")
+        if st == "unverified" and r.get("basis") in BASES:
+            return "unverified/%s" % r["basis"]
+        return st
+
+    have = {r["key"]: label(r) for _, r in records if r.get("key")}
     print("Объяснения (всего ключей %d): %s" % (len(inv), tally([have.get(k, "none") for k in inv])))
     sec_status = []
     for stem, _, data in load_summaries(ctx):
@@ -925,7 +956,7 @@ def cmd_report(ctx, args):
     print("\nПо порциям (файлы src):")
     by_portion = {}
     for stem, r in records:
-        by_portion.setdefault(stem, []).append(r.get("status"))
+        by_portion.setdefault(stem, []).append(label(r))
     for p in sorted(by_portion):
         print("  %s (%d): %s" % (p, len(by_portion[p]), tally(by_portion[p])))
     print("\nДоля PASS в раунде 1 по журналу:")
