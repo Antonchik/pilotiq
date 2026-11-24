@@ -71,6 +71,22 @@
   "textSha": "f12189a7f6d40e38",
   "verdict": "PASS"
  },
+ "PL010-0027#2747cb98": {
+  "date": "2026-11-24",
+  "note": "Klucz „Posiadacz PPL” = art. 94 ust. 2 pkt 1 (licencja + rejestr); FCL.025(b)(4) to jedyne miejsce w korpusie z pełną nazwą „licencji pilota turystycznego (PPL)”, lokator poprawny. Pułapka: personel pokładowy (art. 95g ust. 1, art. 2 pkt 11 rozp. 1178/2011) poparta cytatami; także art. 94 ust. 1 wymienia ich osobno. Bezpłatny wzorzec – bez sporności.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "7f63a9778fa41ff8",
+  "verdict": "PASS"
+ },
+ "PL010-0047#f4230c61": {
+  "date": "2026-11-24",
+  "note": "Definicja dosłownie z art. 94 ust. 3; art. 94 ust. 4 poprawnie. Klucz jednoznaczny.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "ad87cddd5cc8a4c1",
+  "verdict": "PASS"
+ },
  "PL010-0048#144c0eb7": {
   "date": "2026-11-24",
   "note": "Klucz = art. 34 ust. 1 i ust. 1b (wpis decyzją Prezesa Urzędu). Zdanie „Przepis nie powierza wpisu żadnemu ministrowi” wynika wprost z ust. 1/1b.",
@@ -159,6 +175,118 @@
   "textSha": "d7a34d99956d0ff7",
   "verdict": "PASS"
  },
+ "PL010-0101#fb2b897a": {
+  "date": "2026-11-24",
+  "note": "Art. 96 ust. 1a dosłownie; „w okresie obowiązywania tego środka” z tego samego ustępu.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "08b408040d66e883",
+  "verdict": "PASS"
+ },
+ "PL010-0102#4710fe09": {
+  "date": "2026-11-24",
+  "note": "Wszystkie trzy warunki = art. 96 ust. 1 pkt 2, 4, 5; uwaga o aktualnej nazwie orzeczenia (pkt 5, art. 110) poprawna i potrzebna – stara nazwa „orzeczenie o braku przeciwwskazań” z wersji 2002 nie zmienia treści warunku, więc nie outdated.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "02e4238f53bcfaa6",
+  "verdict": "PASS"
+ },
+ "PL010-0102#d315ac19": {
+  "date": "2026-11-24",
+  "note": "Brak sporności tam, gdzie jest: wersja 2002 art. 96 ust. 1 pkt 2 wymagała tylko „pełnej zdolności do czynności prawnych”, a aktualna dopuszcza osobę małoletnią za zgodą opiekunów prawnych – więc dystraktor „Osobie, która nie ma pełnej zdolności do czynności prawnych” obecnie też ma oparcie w przepisie (klucz nadal poprawny → reguła: disputed). Zdanie „Pułapka: przepis wymaga pełnej zdolności … albo, u osoby małoletniej, zgody opiekunów” przeczy samo sobie jako pułapka. Poprawka: usunąć zdanie „Pułapka…”, dodać disputeNote: „Aktualny art. 96 ust. 1 pkt 2 Prawa lotniczego dopuszcza wydanie licencji osobie małoletniej, która uzyskała zgodę opiekunów prawnych, więc odpowiedź o braku pełnej zdolności do czynności prawnych też ma oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” (ref art. 96 ust. 1 pkt 2 już jest).",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "3acdea55c55b0211",
+  "verdict": "FIX"
+ },
+ "PL010-0103#5c608e2d": {
+  "date": "2026-11-24",
+  "note": "Jak 0102#d315ac19: dystraktor „Osobie, która posiada ograniczoną zdolność do czynności prawnych” obecnie ma oparcie w art. 96 ust. 1 pkt 2 (małoletni za zgodą opiekunów; w wersji 2002 tylko pełna zdolność), a „Pułapka” twierdzi odwrotnie. Poprawka: usunąć zdanie „Pułapka…”, dodać disputeNote: „Aktualny art. 96 ust. 1 pkt 2 Prawa lotniczego dopuszcza wydanie licencji osobie małoletniej za zgodą opiekunów prawnych, więc brak pełnej zdolności do czynności prawnych nie wyklucza licencji, a odpowiedź o ograniczonej zdolności też może być prawdziwa. Na egzaminie ULC zaliczana jest odpowiedź z klucza.”",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "9b01fc25aa1b105b",
+  "verdict": "FIX"
+ },
+ "PL010-0103#e4cd44fb": {
+  "date": "2026-11-24",
+  "note": "sameAs niewłaściwy: inne dystraktory („Żadna z odpowiedzi…”, „Osobie która została skazana prawomocnym wyrokiem”), a ten ostatni po uchyleniu art. 96 ust. 1 pkt 3 (w 2002: „nie była skazana prawomocnym wyrokiem”) też ma oparcie w przepisie – wykluczają tylko przypadki z art. 96 ust. 1a i pkt 1. Poprawka: osobny zapis z tekstem jak 0103#5c608e2d (po poprawce) i disputeNote obejmującym oba dystraktory: ograniczona zdolność (art. 96 ust. 1 pkt 2, małoletni za zgodą) oraz to, że art. 96 ust. 1 nie zawiera już warunku niekaralności (pkt 3 uchylony); refs: art. 96 ust. 1 pkt 2, art. 96 ust. 1 pkt 3 („3) (uchylony)”), art. 96 ust. 1a.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "f16f44bd800faf8a",
+  "verdict": "FIX"
+ },
+ "PL010-0104#d67f3d1c": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 96 ust. 1 pkt 2; dystraktory (ograniczone prawa publiczne, brak orzeczenia, wiek) niesporne.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "27f5ef055185cb12",
+  "verdict": "PASS"
+ },
+ "PL010-0105#48d42c67": {
+  "date": "2026-11-24",
+  "note": "Art. 96 ust. 1 pkt 7 + FCL.030(a) wystarczają do wniosku o obu egzaminach (FCL.030(a) zakłada egzamin praktyczny „w celu wydania licencji”). Uwaga: art. 99 ust. 1 w aktualnym brzmieniu mówi o egzaminie „z części teoretycznej lub praktycznej, … chyba że przepisy UE stanowią inaczej” – słusznie go nie przywołano. Opcjonalnie (bez wymogu) dla SPL/BPL właściwe są SFCL.145 / BFCL.145 lit. c), dla PPL FCL.235 lit. a).",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "e56757d879564cd9",
+  "verdict": "PASS"
+ },
+ "PL010-0106#d1571dcf": {
+  "date": "2026-11-24",
+  "note": "Dystraktor „Osobie która została skazana prawomocnym wyrokiem”: warunek niekaralności (art. 96 ust. 1 pkt 3 w wersji 2002) uchylono – autor sam z tego powodu oznaczył 0101#4413c718 i 0105#72bd8671 jako outdated – więc obecnie ta odpowiedź też ma oparcie w przepisie (z wyjątkiem przypadków art. 96 ust. 1a). Klucz nadal poprawny → disputed. Poprawka: dodać disputeNote, np. „Art. 96 ust. 1 Prawa lotniczego nie zawiera już warunku niekaralności (pkt 3 uchylony), a art. 96 ust. 1a wyklucza tylko osoby objęte środkiem zapobiegawczym lub zakazem prowadzenia pojazdów, więc skazanie samo w sobie nie wyklucza licencji. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” i dodać refs art. 96 ust. 1 pkt 3 oraz art. 96 ust. 1a.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "a8d6c0bce175aef3",
+  "verdict": "FIX"
+ },
+ "PL010-0106#f8178b1d": {
+  "date": "2026-11-24",
+  "note": "sameAs do 0106#d1571dcf przestaje pasować: oryginał po poprawce będzie sporny z powodu dystraktora „skazana prawomocnym wyrokiem”, którego tu nie ma (tu: „orzeczenie lotniczo-lekarskie klasy 3”), a sameAs dziedziczy sporność. Poprawka: osobny zapis z obecnym tekstem 0106#d1571dcf (bez disputeNote) albo odwrócić relację (ten klucz – 4 licencje – jako oryginał, d1571dcf jako osobny zapis sporny).",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "7e6350b1c8fecdee",
+  "verdict": "FIX"
+ },
+ "PL010-0107#49beba6b": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 96 ust. 1 pkt 5 w treści; nazwa „orzeczenie o braku przeciwwskazań” to brzmienie z 2002 r., tekst poprawnie podaje aktualną nazwę – merytorycznie warunek ten sam, nie outdated. Pułapka pkt 1 poprawna.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "ba541951b797463a",
+  "verdict": "PASS"
+ },
+ "PL010-0107#53d284de": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w przecinkach („Osobie, która…”).",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "7bc06055da77cf73",
+  "verdict": "PASS"
+ },
+ "PL010-0119#0814319b": {
+  "date": "2026-11-24",
+  "note": "Jak 0119#9e45a40b; inne brzmienie odpowiedzi (licencja lub świadectwo kwalifikacji), więc osobny tekst zamiast sameAs jest w porządku.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "1e2508960b618d41",
+  "verdict": "PASS"
+ },
+ "PL010-0119#9e45a40b": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 94 ust. 2 pkt 1 (wariant bez „świadectwa kwalifikacji” nie zmienia sensu). Pułapka (uczestnicy szkolenia wymienieni osobno w art. 94 ust. 1) zgodna z korpusem; dodany w aktualnym brzmieniu ust. 2 pkt 2 (BSP) nie wpływa na klucz.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "1e2508960b618d41",
+  "verdict": "PASS"
+ },
+ "PL010-0120#4b071eff": {
+  "date": "2026-11-24",
+  "note": "Klucz (świadectwo kwalifikacji + rejestr) = art. 94 ust. 2 pkt 1; definicja świadectwa z art. 95 ust. 1 dosłowna.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "b68e7dc2a9591185",
+  "verdict": "PASS"
+ },
  "PL010-0124#8cd3f3ce": {
   "date": "2026-11-24",
   "note": "„Wszystkie odpowiedzi są poprawne” = art. 51 ust. 1 (trzy grupy łącznie). Osobny wpis zasadny (inne odpowiedzi niż 0124#caa38600).",
@@ -174,6 +302,46 @@
   "round": 1,
   "textSha": "bc74eb944141fb76",
   "verdict": "PASS"
+ },
+ "PL010-0125#abdfb055": {
+  "date": "2026-11-24",
+  "note": "Wśród odpowiedzi nie ma personelu pokładowego, więc klucz jednoznaczny wg art. 94 ust. 1; brak disputeNote słuszny.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "88e98a84a3b4e804",
+  "verdict": "PASS"
+ },
+ "PL010-0125#b99bd9f8": {
+  "date": "2026-11-24",
+  "note": "Granica: klucz nadal poprawny, ale odpowiedź „Członkowie personelu pokładowego” stała się poprawna – aktualny art. 94 ust. 1 wymienia ich wśród uprawnionych; w tekście 2002 art. 94 ust. 1 wymieniał tylko personel lotniczy i uczestników szkolenia → disputed, nie outdated. disputeNote poprawny. Drobna uwaga (bez wymogu poprawki): art. 2 pkt 11 rozp. 1178/2011 z disputeNote nie ma osobnej pozycji w refs, ale występuje w cytacie art. 94 ust. 1.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "4bf00bfa5951aa2b",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0126#a1174e7b": {
+  "date": "2026-11-24",
+  "note": "Jak 0125#b99bd9f8: klucz (uczestnicy szkolenia) poprawny, dystraktor „personel pokładowy” obecnie też ma oparcie w art. 94 ust. 1. disputeNote poprawny.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "c0ed9566c391ae94",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0126#c597dbc0": {
+  "date": "2026-11-24",
+  "note": "Brak dystraktora o personelu pokładowym – klucz jednoznaczny; brak disputeNote słuszny.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "3cd33bad36791c73",
+  "verdict": "PASS"
+ },
+ "PL010-0126#e2be34a7": {
+  "date": "2026-11-24",
+  "note": "Jak 0126#a1174e7b; disputeNote poprawny.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "c0ed9566c391ae94",
+  "verdict": "DISPUTED"
  },
  "PL010-0129#446a12c0": {
   "date": "2026-11-24",
@@ -279,6 +447,22 @@
   "textSha": "649227a7101cf5fc",
   "verdict": "PASS"
  },
+ "PL010-0299#414073ca": {
+  "date": "2026-11-24",
+  "note": "Pilot szybowcowy = art. 94 ust. 6 pkt 1 lit. q. Pułapka: dyspozytor w pkt 5 (spójne z DISPUTED 0491#85063041), paralotnia/motolotnia w art. 95 ust. 2 pkt 2 i 3 – zgodne z korpusem.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "de7845c63bd8bf01",
+  "verdict": "PASS"
+ },
+ "PL010-0299#a7cb9b98": {
+  "date": "2026-11-24",
+  "note": "Most „balon wolny” → pilot balonowy (lit. o) przez definicję art. 2 pkt 4 rozp. 2018/395 jest logicznie poprawny i poparty cytatem; ostatnie dwa wpisy j) i q) zgodne. Nie outdated: pilot balonu (wolnego) nadal wymaga licencji. Uwaga: nazwa „pilot balonu wolnego” pochodzi z pierwotnego art. 94 ust. 6 pkt 1 lit. k (2002), ale tekst słusznie tego nie twierdzi, bo starego tekstu nie ma w korpusie.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "f8d338ce7ea06049",
+  "verdict": "PASS"
+ },
  "PL010-0356#5678e240": {
   "date": "2026-11-24",
   "note": "Klucz 150 m = SERA.5005(f)(2); wyjątki z (f), pułapka 300 m z (f)(1). Zastrzeżenie o lotnictwie państwowym w pytaniu nie wymaga komentarza.",
@@ -334,6 +518,22 @@
   "round": 1,
   "textSha": "d0a71c7029471145",
   "verdict": "DISPUTED"
+ },
+ "PL010-0385#3452b84a": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 94 ust. 6 pkt 3 w aktualnym brzmieniu (w 2002 pkt 3 brzmiał „mechanik poświadczenia obsługi statku powietrznego”, więc ten wariant pasuje do obecnego przepisu, nie jest outdated). Pułapka: skoczek (pkt 6) i pilot lotni (pkt 1) art. 95 ust. 2 – poprawnie.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "094d5b9098559d7a",
+  "verdict": "PASS"
+ },
+ "PL010-0386#9fe3ed1a": {
+  "date": "2026-11-24",
+  "note": "FCL.025(b)(4) to jedyne zakotwiczone miejsce z pełną nazwą „licencji pilota lekkich statków powietrznych (LAPL)” i słowem „wydanie licencji” – lokator akceptowalny, choć sam przepis dotyczy powtórek testów. Ustawowym odpowiednikiem są specjalności „pilot … rekreacyjny” (art. 94 ust. 6 pkt 1 lit. a, f, n, p), ale korpus nie łączy ich wprost z LAPL, więc tekst słusznie tego nie twierdzi. Pułapki z art. 95 ust. 2 pkt 2, 8, 9 poprawne.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "3ceaa99bca5f8cf7",
+  "verdict": "PASS"
  },
  "PL010-0438#02c3f09c": {
   "date": "2026-11-24",
@@ -582,6 +782,70 @@
   "round": 1,
   "textSha": "26433a0539500a83",
   "verdict": "PASS"
+ },
+ "PL010-0486#15d692c1": {
+  "date": "2026-11-24",
+  "note": "Lit. b) pilot samolotowy turystyczny; pułapka art. 95 ust. 2 pkt 6 i 9 poprawna.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "2ea42097ad5fb809",
+  "verdict": "PASS"
+ },
+ "PL010-0487#18094df7": {
+  "date": "2026-11-24",
+  "note": "Lit. c, i, m potwierdzone w art. 94 ust. 6 pkt 1; „sterowcowy zawodowy sterowcowy” to literówka w banku, tekst używa nazwy z ustawy. Wszystkie trzy specjalności były też w wersji 2002 – nie outdated.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "7a4e186d9fbfdd5e",
+  "verdict": "PASS"
+ },
+ "PL010-0487#c58ee89c": {
+  "date": "2026-11-24",
+  "note": "Lit. c) pilot samolotowy zawodowy; pułapka jak 0486#15d692c1.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "9ab43fe9452a4b11",
+  "verdict": "PASS"
+ },
+ "PL010-0490#4b3347af": {
+  "date": "2026-11-24",
+  "note": "Lit. q; brak operatora BSP i skoczka w wykazie pkt 1 sprawdzony na pełnym tekście art. 94 ust. 6; skoczek – art. 95 ust. 2 pkt 6.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "9786653ba738012a",
+  "verdict": "PASS"
+ },
+ "PL010-0491#85063041": {
+  "date": "2026-11-24",
+  "note": "Sporne (nie outdated): dyspozytor lotniczy jest w art. 94 ust. 6 pkt 5, poza wykazem załóg pkt 1 lit. a–s; także w pierwotnym tekście z 2002 r. załogi to pkt 1 lit. a–o, a dyspozytor osobny pkt 5 – klucz nigdy nie wynikał wprost z przepisu. Tekst wyjaśnia logikę klucza (jedyna specjalność z licencją), disputeNote poprawny, pkt 1 i 5 w refs.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "9d81ac0c1e7234da",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0491#e90da926": {
+  "date": "2026-11-24",
+  "note": "„Żadna z odpowiedzi” zgodne z art. 94 ust. 6 pkt 1 (lit. a–s), pkt 4 i 5 poprawnie wskazane; skoczek zawodowy nie występuje w wykazach. Ten sam NUMER w wariancie 0491#85063041 ma klucz sprzeczny – tu klucz zgodny z normą.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "f630b772d47fc63e",
+  "verdict": "PASS"
+ },
+ "PL010-0492#d0d6e09f": {
+  "date": "2026-11-24",
+  "note": "„Żadna z odpowiedzi” zgodne z art. 94 ust. 6 pkt 1 i 4 oraz art. 95 ust. 2 pkt 8.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "125f233f9423206d",
+  "verdict": "PASS"
+ },
+ "PL010-0492#ee529e21": {
+  "date": "2026-11-24",
+  "note": "Sporne (nie outdated): kontroler ruchu lotniczego to art. 94 ust. 6 pkt 4, poza wykazem załóg pkt 1; w wersji 2002 również osobny pkt 4. Tekst (jedyna specjalność z licencją wśród odpowiedzi; motolotnia pkt 3, informator pkt 8 art. 95 ust. 2) zgodny z korpusem, disputeNote poprawny.",
+  "portion": "P04",
+  "round": 1,
+  "textSha": "2a51c20dd6af9afc",
+  "verdict": "DISPUTED"
  },
  "PL010-0494#14188538": {
   "date": "2026-11-24",
