@@ -4,13 +4,11 @@ import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:pilotiq/src/bank/models.dart';
 import 'package:pilotiq/src/bank/question_bank_repository.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/exam_sim/exam_controller.dart';
 import 'package:pilotiq/src/exam_sim/exam_sweep.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
-import 'package:pilotiq/src/progress/progress_repository.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 
 import '../bank/memory_hive.dart';
