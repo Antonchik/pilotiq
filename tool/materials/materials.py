@@ -315,7 +315,7 @@ LOC_EUART = re.compile(r"^art\. %s( ust\. %s)?( pkt %s)?$" % (_N, _N, _N))
 LOC_EUANNEX = re.compile(r"^(?=załącznik|dodatek)(załącznik( [IVXLC]+)?)?( ?dodatek \d+)?( pkt %s)?$" % _L)
 # AIP Polska: ENR 1.2, ENR 1.2 pkt 3.1, GEN 2.2 CBA (skrót), ENR 5.2.1 TSA (definicja), ENR 1.4 klasa C
 LOC_AIP = re.compile(r"^(GEN|ENR|AD) \d+(\.\d+)*( pkt \d+(\.\d+)*| klasa [A-G]| [A-Z0-9][A-Z0-9/&.\-]{0,9})?$")
-LOC_EASA = re.compile(r"^((AMC|GM|CS)\d* )?[A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
+LOC_EASA = re.compile(r"^((AMC|GM|CS)\d* )?[A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*( SECTION \d+[A-Z]?)?$")
 # Article 2, Article 2(12), Article 2(129a), GM1 Article 2(12), Appendix 4, Appendix 1 pkt 1.2.1
 # ICAO (Doc 7300 / Doc 4444): Article 5, Article 3 bis, Article 5(a); Chapter 5, Appendix 2, pkt 5.4.2.1, def Aerodrome control service
 LOC_ICAO = re.compile(r"^(Article \d+( bis| ter| quater)?(\([a-z]\))?|Chapter \d+|Appendix \d+|pkt \d+(\.\d+)+|def [A-Z][^\n]{0,90})$")
@@ -352,6 +352,9 @@ def loc_parents(loc):
     if mi:   # ICAO Doc 4444: pkt 5.4.2.1 -> pkt 5.4.2 -> pkt 5.4 -> Chapter 5
         parts = mi.group(1).split(".")
         return ["pkt " + ".".join(parts[:n]) for n in range(len(parts) - 1, 1, -1)] + ["Chapter " + parts[0]]
+    ms = re.match(r"^((?:AMC|GM)\d* .+?) SECTION \d+[A-Z]?$", loc)
+    if ms:
+        return [ms.group(1)] + loc_parents(ms.group(1))   # skill-test section of an AMC: its parent is the AMC block
     mi = re.match(r"^(Appendix \d+) (?:channel|note) \S+$", loc)
     if mi:
         return [mi.group(1)]
