@@ -1,0 +1,157 @@
+[
+ {
+  "key": "PL010-0108#83bd2f1f",
+  "verdict": "DISPUTED",
+  "note": "Sporne jak P04 0106#d1571dcf: klucz = art. 96 ust. 1 pkt 6 i 7 (cytaty dosłowne), ale dystraktor „skazana prawomocnym wyrokiem” po uchyleniu art. 96 ust. 1 pkt 3 ma oparcie w przepisie; art. 96 ust. 1a (pełny tekst) wyklucza tylko środek zapobiegawczy lub wyrokowy zakaz prowadzenia pojazdów. Klucz nadal poprawny → disputed, nie outdated. disputeNote poprawny, pkt 3 i ust. 1a w refs. Pułapka pkt 1 i 5 zgodna z korpusem."
+ },
+ {
+  "key": "PL010-0108#f24a6257",
+  "verdict": "PASS",
+  "note": "Osobny zapis bez disputeNote – słusznie (brak dystraktora o skazaniu; spójne z P04 0106#f8178b1d, gdzie „orzeczenie klasy 3” uznano za niesporne). Tekst i refs jak 0108#83bd2f1f, cytaty zgodne z art. 96 ust. 1."
+ },
+ {
+  "key": "PL010-0109#3c79d0c9",
+  "verdict": "PASS",
+  "note": "Klucz = art. 96 ust. 1 pkt 5 + MED.A.030(c)(2) i (5) – cytaty dosłowne, „co najmniej” odpowiada „przynajmniej”. Dystraktor „klasy 3” niesporny (spójnie z P04 0106#f8178b1d). Pułapka pkt 1 poprawna. 3 zdania."
+ },
+ {
+  "key": "PL010-0110#2c2da77d",
+  "verdict": "PASS",
+  "note": "sameAs do 0109#3c79d0c9 dopuszczalny: ten sam klucz; inne dystraktory (szkolenie, wiek) są jednoznacznie błędne (art. 96 ust. 1 pkt 4 i 6), a pułapka oryginału odnosi się tylko do „ograniczonych praw publicznych”, obecnego w obu wariantach."
+ },
+ {
+  "key": "PL010-0110#576324c7",
+  "verdict": "PASS",
+  "note": "„Żadna” = art. 96 ust. 1 (łącznie) + pkt 1, 4, 6 – cytaty dosłowne; żaden dystraktor nie zyskał oparcia po zmianach ustawy."
+ },
+ {
+  "key": "PL010-0040#bad3da1f",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 4 i ust. 3 dosłownie; przepis nie zawiera warunku zgody ministra ani choroby."
+ },
+ {
+  "key": "PL010-0076#7480541d",
+  "verdict": "PASS",
+  "note": "FCL.015(a) (właściwy organ) + art. 96 ust. 3 (Prezes Urzędu wydaje/wznawia) – zgodne z korpusem. Drobna uwaga stylistyczna (bez wymogu): „licencje wydaje, zmienia i wznawia ich ważność Prezes ULC” → „licencje wydaje i zmienia oraz wznawia ich ważność Prezes ULC”."
+ },
+ {
+  "key": "PL010-0077#104b9e26",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 3 obejmuje świadectwa kwalifikacji („w drodze decyzji administracyjnej”); art. 95 ust. 1 i 4 dosłownie."
+ },
+ {
+  "key": "PL010-0133#7ebd5377",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 3 i 4 dosłownie; dystraktory (minister, przewodniczący komisji) słusznie odrzucone."
+ },
+ {
+  "key": "PL010-0133#1ec6110b",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: klucz identyczny, różnica tylko w dystraktorze „Żadna z odpowiedzi…” zamiast „Minister Komunikacji”; tekst oryginału pasuje bez zmian."
+ },
+ {
+  "key": "PL010-0199#cc409812",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 3 + art. 21 ust. 2 pkt 2 (cytat dosłowny, dalszy ciąg punktu o ustawie o transporcie materiałów niebezpiecznych słusznie pominięty)."
+ },
+ {
+  "key": "PL010-0412#0dbffc6f",
+  "verdict": "PASS",
+  "note": "FCL.045(a) i (b) dosłownie; klucz (orzeczenie + dokument ze zdjęciem) kompletny, warianty „tylko” słusznie odrzucone."
+ },
+ {
+  "key": "PL010-1552#e0bd3e77",
+  "verdict": "PASS",
+  "note": "SFCL.045(a)(1)–(3) i BFCL.045(a)(1)–(3) dosłownie; „m.in.” poprawne, bo ppkt 4 wymaga też danych z książki lotów. Pułapka poparta."
+ },
+ {
+  "key": "PL010-0163#e2109535",
+  "verdict": "PASS",
+  "note": "FCL.040 dosłownie; art. 98 ust. 3 poprawnie dla ważności uprawnień. Dystraktory (wiek, opłata) bez oparcia."
+ },
+ {
+  "key": "PL010-0170#a9ef27ce",
+  "verdict": "PASS",
+  "note": "Art. 98 ust. 2 dosłownie (oba warunki i zastrzeżenie o prawie UE). 3 zdania."
+ },
+ {
+  "key": "PL010-0170#7bc66964",
+  "verdict": "PASS",
+  "note": "sameAs dopuszczalny (STYLE §5: różnica w dystraktorze „Wszystkie odpowiedzi są prawidłowe”); uwaga: tekst oryginału wspomina „opłatę lotniczą”, której w tym wariancie nie ma wśród odpowiedzi – nie wprowadza w błąd, bez wymogu poprawki."
+ },
+ {
+  "key": "PL010-0171#ef7335da",
+  "verdict": "PASS",
+  "note": "Art. 98 ust. 2 dosłownie; klucz = drugi warunek przepisu."
+ },
+ {
+  "key": "PL010-0171#017e7b5a",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: różnica tylko w dystraktorze „Wszystkie odpowiedzi są prawidłowe”, tekst oryginału nie odnosi się do zmienionej odpowiedzi."
+ },
+ {
+  "key": "PL010-0038#be7cea85",
+  "verdict": "FIX",
+  "note": "Tekst pomija istotne zawężenie art. 96 ust. 5a: dotyczy on licencji z UE/Szwajcarii/EFTA tylko „w zakresie nieobjętym przepisami rozporządzenia nr 1178/2001/UE [sic] dla specjalności personelu lotniczego, o których mowa w art. 94 ust. 6 pkt 1, 3 i 5” (cytat pomija ten fragment, tekst uogólnia na wszystkie licencje). Ponadto „Pozostałe licencje … wymagają uznania (art. 96 ust. 5)” jest za szerokie – ust. 5 zastrzega ust. 5b. Poprawka: w 1. zdaniu po „Europejskim Obszarze Gospodarczym” dodać „– w zakresie nieobjętym unijnymi przepisami o licencjonowaniu (rozporządzenie 1178/2011) –”, z dodatkowym refem art. 96 ust. 5a, quote „w zakresie nieobjętym przepisami rozporządzenia nr 1178/2001/UE dla specjalności personelu lotniczego”; 2. zdanie: „Inne licencje wydane przez organ państwa obcego wymagają uznania przez Prezesa Urzędu (art. 96 ust. 5), z wyjątkami z art. 96 ust. 5b, a nie zgody ministra.” + ref art. 96 ust. 5b („Nie wymaga uznania przez Prezesa Urzędu licencja:”). Klucz nadal ma oparcie w ust. 5a – nie sporny."
+ },
+ {
+  "key": "PL010-0062#3f1ad0c5",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 3, 5, 5b dosłownie; zastrzeżenie „chyba że uznanie nie jest wymagane” trafnie powiązane z ust. 5b."
+ },
+ {
+  "key": "PL010-0062#f8207b2b",
+  "verdict": "PASS",
+  "note": "Jak 0062#3f1ad0c5; klucz bez zastrzeżenia nadal poprawny (licencja uznana jest ważna), wzmianka o ust. 5b uzupełnia. Osobny zapis zamiast sameAs – inny klucz, słusznie."
+ },
+ {
+  "key": "PL010-0026#0221df31",
+  "verdict": "PASS",
+  "note": "SERA.2020 + art. 2 pkt 104 rozp. 923/2012 + MED.A.020(a)(2) – cytaty dosłowne. Rozbieżność „środek psychotropowy” (SERA.2020) / „substancja psychotropowa” (art. 2 pkt 104) to niekonsekwencja polskiego tłumaczenia jednego pojęcia (psychoactive substance) – zestawienie dopuszczalne, opioidy/konopie/kokaina pokrywają „narkotyki”. Opcjonalnie (bez wymogu): art. 100 ust. 1 pkt 5 Prawa lotniczego („wykonywał czynności lotnicze pod wpływem alkoholu lub środków odurzających”) używa dokładnie terminu z odpowiedzi."
+ },
+ {
+  "key": "PL010-0084#1d051fd7",
+  "verdict": "PASS",
+  "note": "MED.A.020(a)(1)(2) obejmuje ucznia-pilota (loty samodzielne) – tekst trafnie to zawęża; dolegliwość = ppkt 1, leki = ppkt 2, alkohol = SERA.2020 + art. 2 pkt 104. Zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0085#e669bfd2",
+  "verdict": "PASS",
+  "note": "Jak 0026#0221df31 w wersji dla ucznia-pilota (MED.A.020(a) – loty samodzielne); cytaty dosłowne."
+ },
+ {
+  "key": "PL010-0239#ec6a907c",
+  "verdict": "PASS",
+  "note": "Art. 97 ust. 1 pkt 1, ust. 2 i ust. 1 pkt 2 lit. b) dosłownie; pułapka („zgodnie” vs „niezgodnie z warunkami”) poparta."
+ },
+ {
+  "key": "PL010-0239#aee8b1f2",
+  "verdict": "PASS",
+  "note": "Art. 97 ust. 1 pkt 1 i pkt 2 lit. a i b = trzy odpowiedzi; ust. 2 poprawnie."
+ },
+ {
+  "key": "PL010-0362#d8515055",
+  "verdict": "PASS",
+  "note": "Art. 105 ust. 2 (utrata sprawności ≈ dolegliwość), MED.A.020(a)(1)(2), SERA.2020 + art. 2 pkt 104 – zgodne z korpusem; warianty „tylko” słusznie odrzucone."
+ },
+ {
+  "key": "PL010-0362#b1cf7017",
+  "verdict": "PASS",
+  "note": "sameAs dopuszczalny: te same trzy sytuacje, w wariancie rozbite na odpowiedzi z „Wszystkie odpowiedzi są prawidłowe”; tekst oryginału („Wszystkie trzy sytuacje wymagają…”) pasuje."
+ },
+ {
+  "key": "PL010-0035#764b04e1",
+  "verdict": "PASS",
+  "note": "Art. 99 ust. 5 i ust. 1 dosłownie; wniosek o opłacie za część praktyczną zgodny z przepisem."
+ },
+ {
+  "key": "PL010-0036#92165200",
+  "verdict": "PASS",
+  "note": "Jak 0035#764b04e1 dla części teoretycznej."
+ },
+ {
+  "key": "PL010-1545#fa7f5f2c",
+  "verdict": "PASS",
+  "note": "Nie sporne: banki SPL/BPL, a art. 99 ust. 1 („z części teoretycznej lub praktycznej”) zastrzega „chyba że przepisy prawa Unii Europejskiej … stanowią inaczej”; SFCL/BFCL.135(a) i 145(a)(c) wymagają obu egzaminów – cytaty dosłowne. Spójne z P04 0105#48d42c67 (art. 99 ust. 1 słusznie nie przywołany)."
+ }
+]

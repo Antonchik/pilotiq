@@ -63,6 +63,14 @@
   "textSha": "aa63ea4bd6f71016",
   "verdict": "PASS"
  },
+ "PL010-0026#0221df31": {
+  "date": "2026-11-24",
+  "note": "SERA.2020 + art. 2 pkt 104 rozp. 923/2012 + MED.A.020(a)(2) – cytaty dosłowne. Rozbieżność „środek psychotropowy” (SERA.2020) / „substancja psychotropowa” (art. 2 pkt 104) to niekonsekwencja polskiego tłumaczenia jednego pojęcia (psychoactive substance) – zestawienie dopuszczalne, opioidy/konopie/kokaina pokrywają „narkotyki”. Opcjonalnie (bez wymogu): art. 100 ust. 1 pkt 5 Prawa lotniczego („wykonywał czynności lotnicze pod wpływem alkoholu lub środków odurzających”) używa dokładnie terminu z odpowiedzi.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "9282784b5d770338",
+  "verdict": "PASS"
+ },
  "PL010-0026#3d4d6bb7": {
   "date": "2026-11-24",
   "note": "Klucz = MED.A.020(b)(2) z lit. b) (porada „bez zbędnej zwłoki i przed skorzystaniem z przywilejów”). Pułapka nie wykracza poza (a)(2): przepis ogranicza zakaz do leków, „które mogą negatywnie wpływać na bezpieczne korzystanie z przywilejów”, więc „a nie każdego regularnie przyjmowanego leku” to wierne odczytanie tego zastrzeżenia. Nie sporne: obowiązek z (b) jest wprost kluczem.",
@@ -85,6 +93,38 @@
   "portion": "P14",
   "round": 1,
   "textSha": "eb6ac3093456197b",
+  "verdict": "PASS"
+ },
+ "PL010-0035#764b04e1": {
+  "date": "2026-11-24",
+  "note": "Art. 99 ust. 5 i ust. 1 dosłownie; wniosek o opłacie za część praktyczną zgodny z przepisem.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "2bb6711d870730e7",
+  "verdict": "PASS"
+ },
+ "PL010-0036#92165200": {
+  "date": "2026-11-24",
+  "note": "Jak 0035#764b04e1 dla części teoretycznej.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "9054d6ecaed32478",
+  "verdict": "PASS"
+ },
+ "PL010-0038#be7cea85": {
+  "date": "2026-11-24",
+  "note": "Tekst pomija istotne zawężenie art. 96 ust. 5a: dotyczy on licencji z UE/Szwajcarii/EFTA tylko „w zakresie nieobjętym przepisami rozporządzenia nr 1178/2001/UE [sic] dla specjalności personelu lotniczego, o których mowa w art. 94 ust. 6 pkt 1, 3 i 5” (cytat pomija ten fragment, tekst uogólnia na wszystkie licencje). Ponadto „Pozostałe licencje … wymagają uznania (art. 96 ust. 5)” jest za szerokie – ust. 5 zastrzega ust. 5b. Poprawka: w 1. zdaniu po „Europejskim Obszarze Gospodarczym” dodać „– w zakresie nieobjętym unijnymi przepisami o licencjonowaniu (rozporządzenie 1178/2011) –”, z dodatkowym refem art. 96 ust. 5a, quote „w zakresie nieobjętym przepisami rozporządzenia nr 1178/2001/UE dla specjalności personelu lotniczego”; 2. zdanie: „Inne licencje wydane przez organ państwa obcego wymagają uznania przez Prezesa Urzędu (art. 96 ust. 5), z wyjątkami z art. 96 ust. 5b, a nie zgody ministra.” + ref art. 96 ust. 5b („Nie wymaga uznania przez Prezesa Urzędu licencja:”). Klucz nadal ma oparcie w ust. 5a – nie sporny.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "f017b1455b27d833",
+  "verdict": "FIX"
+ },
+ "PL010-0040#bad3da1f": {
+  "date": "2026-11-24",
+  "note": "Art. 96 ust. 4 i ust. 3 dosłownie; przepis nie zawiera warunku zgody ministra ani choroby.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "ef0b53f630960949",
   "verdict": "PASS"
  },
  "PL010-0047#f4230c61": {
@@ -159,6 +199,22 @@
   "textSha": "1356b9a67b2ef246",
   "verdict": "PASS"
  },
+ "PL010-0062#3f1ad0c5": {
+  "date": "2026-11-24",
+  "note": "Art. 96 ust. 3, 5, 5b dosłownie; zastrzeżenie „chyba że uznanie nie jest wymagane” trafnie powiązane z ust. 5b.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "b08adc3df61b49d7",
+  "verdict": "PASS"
+ },
+ "PL010-0062#f8207b2b": {
+  "date": "2026-11-24",
+  "note": "Jak 0062#3f1ad0c5; klucz bez zastrzeżenia nadal poprawny (licencja uznana jest ważna), wzmianka o ust. 5b uzupełnia. Osobny zapis zamiast sameAs – inny klucz, słusznie.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "3de8f48e77608f7d",
+  "verdict": "PASS"
+ },
  "PL010-0064#5e3fc3f8": {
   "date": "2026-11-24",
   "note": "sameAs poprawne: to samo pytanie i ten sam klucz; inna jest tylko czwarta odpowiedź («Żadna z odpowiedzi…» zamiast «fakultatywny»), do której tekst oryginału się nie odnosi.",
@@ -199,6 +255,22 @@
   "textSha": "8cbb212f95a2d968",
   "verdict": "PASS"
  },
+ "PL010-0076#7480541d": {
+  "date": "2026-11-24",
+  "note": "FCL.015(a) (właściwy organ) + art. 96 ust. 3 (Prezes Urzędu wydaje/wznawia) – zgodne z korpusem. Drobna uwaga stylistyczna (bez wymogu): „licencje wydaje, zmienia i wznawia ich ważność Prezes ULC” → „licencje wydaje i zmienia oraz wznawia ich ważność Prezes ULC”.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "ceaf4a099a966ec0",
+  "verdict": "PASS"
+ },
+ "PL010-0077#104b9e26": {
+  "date": "2026-11-24",
+  "note": "Art. 96 ust. 3 obejmuje świadectwa kwalifikacji („w drodze decyzji administracyjnej”); art. 95 ust. 1 i 4 dosłownie.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "f19551ead30fad38",
+  "verdict": "PASS"
+ },
  "PL010-0083#63e1284c": {
   "date": "2026-11-24",
   "note": "Sporne słusznie: MED.B.070(g)(3) dopuszcza „okulary lub szkła kontaktowe”, więc soczewki kontaktowe nie są obowiązkowe; wymóg „niebarwione” (g)(6) dotyczy ich tylko, gdy są stosowane. Tekst wyjaśnia źródło klucza ((g)(6)), druga uwaga poparta (g)(5). disputeNote poprawny, (g)(3) i (g)(6) w refs. MED.B.070 dotyczy orzeczeń 1. i 2. klasy.",
@@ -223,6 +295,14 @@
   "textSha": "b28f7324293f499c",
   "verdict": "PASS"
  },
+ "PL010-0084#1d051fd7": {
+  "date": "2026-11-24",
+  "note": "MED.A.020(a)(1)(2) obejmuje ucznia-pilota (loty samodzielne) – tekst trafnie to zawęża; dolegliwość = ppkt 1, leki = ppkt 2, alkohol = SERA.2020 + art. 2 pkt 104. Zgodne z korpusem.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "ab52e5273af78f66",
+  "verdict": "PASS"
+ },
  "PL010-0084#5ad43359": {
   "date": "2026-11-24",
   "note": "Klucz = MED.A.020(b)(1) dosłownie; (c)(1) właściwy dla PPL (orzeczenie klasy 2). Nie sporne (jak 0084#0e6612bd).",
@@ -237,6 +317,14 @@
   "portion": "P14",
   "round": 1,
   "textSha": "bd19fe3fad4c9007",
+  "verdict": "PASS"
+ },
+ "PL010-0085#e669bfd2": {
+  "date": "2026-11-24",
+  "note": "Jak 0026#0221df31 w wersji dla ucznia-pilota (MED.A.020(a) – loty samodzielne); cytaty dosłowne.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "e780aadb8bf6ab14",
   "verdict": "PASS"
  },
  "PL010-0096#1f167277": {
@@ -357,6 +445,46 @@
   "portion": "P04",
   "round": 1,
   "textSha": "7bc06055da77cf73",
+  "verdict": "PASS"
+ },
+ "PL010-0108#83bd2f1f": {
+  "date": "2026-11-24",
+  "note": "Sporne jak P04 0106#d1571dcf: klucz = art. 96 ust. 1 pkt 6 i 7 (cytaty dosłowne), ale dystraktor „skazana prawomocnym wyrokiem” po uchyleniu art. 96 ust. 1 pkt 3 ma oparcie w przepisie; art. 96 ust. 1a (pełny tekst) wyklucza tylko środek zapobiegawczy lub wyrokowy zakaz prowadzenia pojazdów. Klucz nadal poprawny → disputed, nie outdated. disputeNote poprawny, pkt 3 i ust. 1a w refs. Pułapka pkt 1 i 5 zgodna z korpusem.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "a43e241b71e775f6",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0108#f24a6257": {
+  "date": "2026-11-24",
+  "note": "Osobny zapis bez disputeNote – słusznie (brak dystraktora o skazaniu; spójne z P04 0106#f8178b1d, gdzie „orzeczenie klasy 3” uznano za niesporne). Tekst i refs jak 0108#83bd2f1f, cytaty zgodne z art. 96 ust. 1.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "30b40b1ecc4d5ce6",
+  "verdict": "PASS"
+ },
+ "PL010-0109#3c79d0c9": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 96 ust. 1 pkt 5 + MED.A.030(c)(2) i (5) – cytaty dosłowne, „co najmniej” odpowiada „przynajmniej”. Dystraktor „klasy 3” niesporny (spójnie z P04 0106#f8178b1d). Pułapka pkt 1 poprawna. 3 zdania.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "49fa478fbcfef2a8",
+  "verdict": "PASS"
+ },
+ "PL010-0110#2c2da77d": {
+  "date": "2026-11-24",
+  "note": "sameAs do 0109#3c79d0c9 dopuszczalny: ten sam klucz; inne dystraktory (szkolenie, wiek) są jednoznacznie błędne (art. 96 ust. 1 pkt 4 i 6), a pułapka oryginału odnosi się tylko do „ograniczonych praw publicznych”, obecnego w obu wariantach.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "73dff2d39aeac919",
+  "verdict": "PASS"
+ },
+ "PL010-0110#576324c7": {
+  "date": "2026-11-24",
+  "note": "„Żadna” = art. 96 ust. 1 (łącznie) + pkt 1, 4, 6 – cytaty dosłowne; żaden dystraktor nie zyskał oparcia po zmianach ustawy.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "53773c95714b13a6",
   "verdict": "PASS"
  },
  "PL010-0119#0814319b": {
@@ -487,6 +615,62 @@
   "textSha": "c9c32c1391fe592b",
   "verdict": "FIX"
  },
+ "PL010-0133#1ec6110b": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: klucz identyczny, różnica tylko w dystraktorze „Żadna z odpowiedzi…” zamiast „Minister Komunikacji”; tekst oryginału pasuje bez zmian.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "f6d95de392c99683",
+  "verdict": "PASS"
+ },
+ "PL010-0133#7ebd5377": {
+  "date": "2026-11-24",
+  "note": "Art. 96 ust. 3 i 4 dosłownie; dystraktory (minister, przewodniczący komisji) słusznie odrzucone.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "c0b9a06ea5780844",
+  "verdict": "PASS"
+ },
+ "PL010-0163#e2109535": {
+  "date": "2026-11-24",
+  "note": "FCL.040 dosłownie; art. 98 ust. 3 poprawnie dla ważności uprawnień. Dystraktory (wiek, opłata) bez oparcia.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "fc28e5661d07c3d0",
+  "verdict": "PASS"
+ },
+ "PL010-0170#7bc66964": {
+  "date": "2026-11-24",
+  "note": "sameAs dopuszczalny (STYLE §5: różnica w dystraktorze „Wszystkie odpowiedzi są prawidłowe”); uwaga: tekst oryginału wspomina „opłatę lotniczą”, której w tym wariancie nie ma wśród odpowiedzi – nie wprowadza w błąd, bez wymogu poprawki.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "f17eeb58286d682c",
+  "verdict": "PASS"
+ },
+ "PL010-0170#a9ef27ce": {
+  "date": "2026-11-24",
+  "note": "Art. 98 ust. 2 dosłownie (oba warunki i zastrzeżenie o prawie UE). 3 zdania.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "f15326330cc6db07",
+  "verdict": "PASS"
+ },
+ "PL010-0171#017e7b5a": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w dystraktorze „Wszystkie odpowiedzi są prawidłowe”, tekst oryginału nie odnosi się do zmienionej odpowiedzi.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "833a4798c197166e",
+  "verdict": "PASS"
+ },
+ "PL010-0171#ef7335da": {
+  "date": "2026-11-24",
+  "note": "Art. 98 ust. 2 dosłownie; klucz = drugi warunek przepisu.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "8cb687d575651c56",
+  "verdict": "PASS"
+ },
  "PL010-0172#bb1bec5c": {
   "date": "2026-11-24",
   "note": "Identyczne z wzorcem STYLE.md; MED.A.045(a)(3)(i), (ii), (a)(1) zgodne z korpusem.",
@@ -525,6 +709,14 @@
   "portion": "P06",
   "round": 1,
   "textSha": "b42f9838692f4c18",
+  "verdict": "PASS"
+ },
+ "PL010-0199#cc409812": {
+  "date": "2026-11-24",
+  "note": "Art. 96 ust. 3 + art. 21 ust. 2 pkt 2 (cytat dosłowny, dalszy ciąg punktu o ustawie o transporcie materiałów niebezpiecznych słusznie pominięty).",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "a43e016c594bebbb",
   "verdict": "PASS"
  },
  "PL010-0211#b2fb296c": {
@@ -629,6 +821,22 @@
   "portion": "P06",
   "round": 2,
   "textSha": "968f6bb0212711e9",
+  "verdict": "PASS"
+ },
+ "PL010-0239#aee8b1f2": {
+  "date": "2026-11-24",
+  "note": "Art. 97 ust. 1 pkt 1 i pkt 2 lit. a i b = trzy odpowiedzi; ust. 2 poprawnie.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "f4b23f896c438543",
+  "verdict": "PASS"
+ },
+ "PL010-0239#ec6a907c": {
+  "date": "2026-11-24",
+  "note": "Art. 97 ust. 1 pkt 1, ust. 2 i ust. 1 pkt 2 lit. b) dosłownie; pułapka („zgodnie” vs „niezgodnie z warunkami”) poparta.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "c5f5a37db68c69b7",
   "verdict": "PASS"
  },
  "PL010-0250#b1421fef": {
@@ -1031,6 +1239,22 @@
   "textSha": "401fe63bc4506f5a",
   "verdict": "DISPUTED"
  },
+ "PL010-0362#b1cf7017": {
+  "date": "2026-11-24",
+  "note": "sameAs dopuszczalny: te same trzy sytuacje, w wariancie rozbite na odpowiedzi z „Wszystkie odpowiedzi są prawidłowe”; tekst oryginału („Wszystkie trzy sytuacje wymagają…”) pasuje.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "fe42e6dd4bcba6d8",
+  "verdict": "PASS"
+ },
+ "PL010-0362#d8515055": {
+  "date": "2026-11-24",
+  "note": "Art. 105 ust. 2 (utrata sprawności ≈ dolegliwość), MED.A.020(a)(1)(2), SERA.2020 + art. 2 pkt 104 – zgodne z korpusem; warianty „tylko” słusznie odrzucone.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "9200ab181906ab70",
+  "verdict": "PASS"
+ },
  "PL010-0367#f5f25476": {
   "date": "2026-11-24",
   "note": "Klucz = art. 155 ust. 1 (inspekcja i sprawdzenie dokumentów przez Prezesa Urzędu). Brak zależności od zgody wynika z ust. 4, a ust. 2 („podlegają inspekcji”) też go wspiera.",
@@ -1093,6 +1317,14 @@
   "portion": "P04",
   "round": 1,
   "textSha": "3ceaa99bca5f8cf7",
+  "verdict": "PASS"
+ },
+ "PL010-0412#0dbffc6f": {
+  "date": "2026-11-24",
+  "note": "FCL.045(a) i (b) dosłownie; klucz (orzeczenie + dokument ze zdjęciem) kompletny, warianty „tylko” słusznie odrzucone.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "3b6c48cdd44040fd",
   "verdict": "PASS"
  },
  "PL010-0438#02c3f09c": {
@@ -1535,6 +1767,14 @@
   "textSha": "e71711eac37fdea6",
   "verdict": "PASS"
  },
+ "PL010-1545#fa7f5f2c": {
+  "date": "2026-11-24",
+  "note": "Nie sporne: banki SPL/BPL, a art. 99 ust. 1 („z części teoretycznej lub praktycznej”) zastrzega „chyba że przepisy prawa Unii Europejskiej … stanowią inaczej”; SFCL/BFCL.135(a) i 145(a)(c) wymagają obu egzaminów – cytaty dosłowne. Spójne z P04 0105#48d42c67 (art. 99 ust. 1 słusznie nie przywołany).",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "890571b898fb245c",
+  "verdict": "PASS"
+ },
  "PL010-1546#34ceeac0": {
   "date": "2026-11-24",
   "note": "SAO.OP.130 – zakaz palenia tytoniu na pokładzie szybowca w żadnej fazie lotu, bez wyjątków; cytat dosłowny, 2 zdania.",
@@ -1557,6 +1797,14 @@
   "portion": "P13",
   "round": 1,
   "textSha": "600da79abf1789fc",
+  "verdict": "PASS"
+ },
+ "PL010-1552#e0bd3e77": {
+  "date": "2026-11-24",
+  "note": "SFCL.045(a)(1)–(3) i BFCL.045(a)(1)–(3) dosłownie; „m.in.” poprawne, bo ppkt 4 wymaga też danych z książki lotów. Pułapka poparta.",
+  "portion": "P05",
+  "round": 1,
+  "textSha": "39df70ce6b8210c7",
   "verdict": "PASS"
  },
  "PL010-1554#8ed701f5": {
