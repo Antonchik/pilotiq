@@ -1,33 +1,628 @@
 [
-{"key":"PL010-0327#ffde589b","status":"verified","text":"Zgodnie z art. 17 ust. 1 Prawa lotniczego Państwowa Komisja Badania Wypadków Lotniczych działa przy ministrze właściwym do spraw transportu. Jest to komisja niezależna i stała, która prowadzi lub nadzoruje badania zdarzeń lotniczych. Przepis nie przewiduje jej działania przy Prezesie Urzędu Lotnictwa Cywilnego, Radzie Ministrów ani Prezydencie RP.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 17 ust. 1","quote":"Przy ministrze właściwym do spraw transportu działa niezależna, stała Państwowa Komisja Badania Wypadków Lotniczych, prowadząca lub nadzorująca badania zdarzeń lotniczych"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0249#fb6097ab","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która była świadkiem wypadku lotniczego, jest obowiązana niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Ten sam obowiązek ma uczestnik wypadku, świadek przymusowego lądowania poza lotniskiem i znalazca porzuconego statku powietrznego lub jego szczątków. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0317#a71d4a5a","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego świadek wypadku lotniczego jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze, mogące udzielić pomocy. Odpowiedź z klucza wskazuje jedną z grup adresatów wymienionych w tym przepisie. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0001#627b8b92","status":"verified","text":"Zgodnie z art. 134 ust. 1 Prawa lotniczego komisje prowadzą badania okoliczności i przyczyn wypadków i incydentów lotniczych w celu zapobiegania takim zdarzeniom. Według art. 2 pkt 14 rozporządzenia 996/2010 badanie obejmuje ustalenie przyczyn i okoliczności zdarzenia oraz, w stosownych przypadkach, formułowanie zaleceń dotyczących bezpieczeństwa, czyli zaleceń profilaktycznych. Pułapka: komisje nie orzekają co do winy i odpowiedzialności, więc odpowiedzi ze wskazaniem winnych są błędne.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 134 ust. 1","quote":"prowadzą badania okoliczności i przyczyn zaistniałych wypadków i incydentów lotniczych. Komisje nie orzekają co do winy i odpowiedzialności."},{"src":"EU-996-2010","loc":"art. 2 pkt 14","quote":"łącznie z ustaleniem przyczyny lub przyczyn zdarzenia lub okoliczności sprzyjających jego zaistnieniu, oraz, w stosownych przypadkach, formułowanie zaleceń dotyczących bezpieczeństwa"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0009#b7fe727e","status":"verified","text":"Zgodnie z art. 135 ust. 2 Prawa lotniczego incydenty lotnicze inne niż poważne bada użytkownik statku powietrznego (albo instytucja zapewniająca służby żeglugi powietrznej lub zarządzający lotniskiem) pod nadzorem Komisji, chyba że Przewodniczący Komisji zdecydował o podjęciu badania przez Komisję. Każde zgłoszone zdarzenie najpierw kwalifikuje Przewodniczący Komisji (art. 135 ust. 1). Dlatego użytkownik przystępuje do badania incydentu po decyzji PKBWL i pod jej nadzorem.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135 ust. 2","quote":"Inne incydenty lotnicze tych statków powietrznych są badane odpowiednio przez użytkownika statku powietrznego"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135 ust. 2","quote":"pod nadzorem Komisji, chyba że Przewodniczący Komisji zdecydował o podjęciu takiego badania przez Komisję."},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135 ust. 1","quote":"Przewodniczący Komisji po otrzymaniu zgłoszenia o zdarzeniu lotniczym kwalifikuje je jako: wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0079#cfe733ba","status":"draft","text":"Zgodnie z art. 135a ust. 2 i 3 Prawa lotniczego m.in. użytkownik statku powietrznego, instytucja zapewniająca służby żeglugi powietrznej i zarządzający lotniskiem zgłaszają Komisji zdarzenie każdym dostępnym środkiem łączności niezwłocznie, jednak nie później niż 72 godziny od jego zaistnienia. Ten sam termin 72 godzin wynika z art. 4 ust. 8 rozporządzenia 376/2014 dla organizacji przekazujących zgłoszenia właściwemu organowi.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135a ust. 2","quote":"są obowiązane zgłaszać Komisji zaistnienie zdarzenia"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135a ust. 2 pkt 1","quote":"użytkownik lub dowódca statku powietrznego"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135a ust. 2 pkt 4","quote":"instytucja zapewniająca służby żeglugi powietrznej"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135a ust. 2 pkt 5","quote":"zarządzający lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135a ust. 3","quote":"Zgłoszenia zdarzenia lotniczego dokonuje się przy użyciu każdego dostępnego środka łączności niezwłocznie po zaistnieniu zdarzenia"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135a ust. 3","quote":"72 godziny od jego zaistnienia"},{"src":"EU-376-2014","loc":"art. 4 ust. 8","quote":"najszybciej jak to możliwe, a w każdym przypadku nie później niż 72 godziny od chwili, w której dowiedziała się o zdarzeniu"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0010#ff343973","status":"disputed","text":"Zgodnie z art. 135 ust. 2 Prawa lotniczego każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do rejestru jest przedmiotem badania przez Komisję. Użytkownik statku powietrznego bada, pod nadzorem Komisji, tylko inne incydenty lotnicze. Na tym opiera się klucz ULC: użytkownik nie przystępuje do badania wypadku lotniczego.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135 ust. 2","quote":"Każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do państwowego rejestru cywilnych statków powietrznych jest przedmiotem badania przez Komisję."},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135 ust. 2a","quote":"Przewodniczący Komisji może przekazać badanie wypadku lub poważnego incydentu lotniczego statku powietrznego, którego maksymalna masa startowa (MTOM) nie przekracza 2250 kg, innemu podmiotowi za jego zgodą."},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135 ust. 4","quote":"W przypadku niepodjęcia badania przez Komisję raport końcowy z badania zdarzenia przygotowuje pod nadzorem Komisji użytkownik statku powietrznego."}],"disputeNote":"Według art. 135 ust. 2a Prawa lotniczego badanie wypadku statku o MTOM do 2250 kg można przekazać innemu podmiotowi i prowadzi się je pod nadzorem Komisji; art. 135 ust. 4 pozwala użytkownikowi przygotować raport pod nadzorem Komisji dla statków spoza rejestru. Wtedy trafna jest też odpowiedź „Tak, ale pod nadzorem PKBWL”. Na egzaminie ULC zaliczana jest odpowiedź z klucza.","sameAs":null},
-{"key":"PL099-0011#512d95b7","status":"disputed","text":"Zgodnie z art. 134 ust. 5 Prawa lotniczego incydentem lotniczym jest zdarzenie inne niż wypadek lotniczy, związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na jej bezpieczeństwo. Definicja nie wymaga uszkodzenia statku powietrznego ani przerwania lotu, dlatego klucz ULC uznaje zderzenie z ptakiem w locie za incydent bez względu na konsekwencje. Tak samo incydent definiuje art. 2 pkt 7 rozporządzenia 996/2010.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 134 ust. 5","quote":"Incydentem lotniczym jest zdarzenie inne niż wypadek lotniczy, związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na jej bezpieczeństwo."},{"src":"EU-996-2010","loc":"art. 2 pkt 7","quote":"„incydent” oznacza zdarzenie inne niż wypadek związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na bezpieczeństwo lotów"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 134 ust. 2 pkt 2","quote":"statek powietrzny został uszkodzony lub nastąpiło zniszczenie jego konstrukcji, w rezultacie czego:"}],"disputeNote":"Jeżeli w wyniku zderzenia z ptakiem statek powietrzny zostanie uszkodzony tak, że wymagany jest poważny remont lub wymiana uszkodzonego elementu (art. 134 ust. 2 pkt 2 Prawa lotniczego), zdarzenie jest wypadkiem lotniczym, a nie incydentem; sformułowanie „bez względu na konsekwencje” jest więc uproszczeniem. Na egzaminie ULC zaliczana jest odpowiedź z klucza.","sameAs":null},
-{"key":"PL099-0022#aaa2df9d","status":"disputed","text":"Zgodnie z art. 4 ust. 6 rozporządzenia 376/2014 pilot dowódca zgłasza zdarzenia za pośrednictwem systemu obowiązkowego zgłaszania ustanowionego przez organizację, która go zatrudnia lub korzysta z jego usług. Zbliżenia statków powietrznych należą do zdarzeń objętych tym obowiązkiem (art. 4 ust. 1 lit. c ppkt i). Klucz ULC odnosi to do procedur użytkownika: raport składa się osobie, którą wskazuje jego instrukcja operacyjna.","refs":[{"src":"EU-376-2014","loc":"art. 4 ust. 6","quote":"za pośrednictwem systemu ustanowionego zgodnie z ust. 2 przez organizację zatrudniającą zgłaszającego, zawierającą z nim umowy lub korzystającą z jego usług, lub — alternatywnie — za pośrednictwem systemu ustanowionego zgodnie z ust. 3 przez państwo członkowskie siedziby jego organizacji"},{"src":"EU-376-2014","loc":"art. 4 ust. 6","quote":"a) pilot dowódca lub — w przypadkach gdy pilot dowódca nie jest w stanie zgłosić zdarzenia — inny członek załogi"},{"src":"EU-376-2014","loc":"art. 4 ust. 1","quote":"(i) kolizje, zbliżenia lub potencjalne kolizje;"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 135a ust. 1","quote":"Komisja przyjmuje zgłoszenia w ramach systemu obowiązkowego zgłaszania zdarzeń, o którym mowa w art. 4 ust. 3 rozporządzenia nr 376/2014/UE"}],"disputeNote":"Art. 4 ust. 6 rozporządzenia 376/2014 dopuszcza alternatywnie zgłoszenie przez system państwa członkowskiego, a w Polsce zgłoszenia w tym systemie przyjmuje Komisja (art. 135a ust. 1 Prawa lotniczego), więc odpowiedź „PKBWL” także jest zgodna z przepisami. Na egzaminie ULC zaliczana jest odpowiedź z klucza.","sameAs":null},
-{"key":"PL099-0051#1b7ba0eb","status":"draft","text":"Zgodnie z pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012 po zderzeniu z ptakiem dowódca składa właściwemu organowi po wylądowaniu pisemny raport o zderzeniu z ptakiem. Obowiązek dotyczy sytuacji, gdy statek powietrzny doznał znaczących uszkodzeń albo którykolwiek z podstawowych systemów pokładowych przestał działać lub działa nieprawidłowo. Pułapka: przepis przewiduje raport pisemny, a nie meldunek ustny.","refs":[{"src":"EU-965-2012","loc":"CAT.GEN.MPA.105(d)(2)","quote":"Po każdym zderzeniu z ptakiem, dowódca składa właściwemu organowi po wylądowaniu pisemny raport o zderzeniu z ptakiem"},{"src":"EU-965-2012","loc":"CAT.GEN.MPA.105(d)(2)","quote":"doznał w wyniku tego zderzenia znaczących uszkodzeń albo którykolwiek z podstawowych systemów pokładowych przestał działać lub działa nieprawidłowo"}],"disputeNote":"Pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012 wymaga pisemnego raportu tylko wtedy, gdy statek powietrzny doznał znaczących uszkodzeń lub zawiódł podstawowy system pokładowy; przy zderzeniu bez takich skutków przepis raportu nie wymaga, co zbliża się do odpowiedzi „Nie składa”. Na egzaminie ULC zaliczana jest odpowiedź z klucza.","sameAs":null},
-{"key":"PL099-0067#de9b6baa","status":"unverified","text":"Brak przepisu w dostępnych źródłach: wyjaśnienie opiera się na ogólnej wiedzy o zgłaszaniu zdarzeń lotniczych. W dostępnych przepisach nie ma wymogu, by raport o zdarzeniu składali wszyscy członkowie załogi albo by zatwierdzał go użytkownik, dlatego klucz ULC uznaje za wystarczający raport złożony przez jednego członka załogi. Częściowo potwierdza to art. 4 ust. 6 lit. a rozporządzenia 376/2014: zgłasza pilot dowódca, a gdy nie jest w stanie, inny członek załogi.","refs":[{"src":"EU-376-2014","loc":"art. 4 ust. 6","quote":"a) pilot dowódca lub — w przypadkach gdy pilot dowódca nie jest w stanie zgłosić zdarzenia — inny członek załogi"}],"disputeNote":null,"sameAs":null,"basis":"no-source","basisNote":"brak przepisu o „ważności” raportu o zdarzeniu; częściowo art. 4 ust. 6 lit. a rozporządzenia 376/2014"},
-{"key":"PL102-0039#4dae563b","status":"verified","sameAs":"PL099-0022#aaa2df9d"},
-{"key":"PL010-0318#9bf1770f","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego świadek wypadku lotniczego jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze. Przepis wymienia wśród nich w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0319#6fc250a2","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która była świadkiem przymusowego lądowania statku powietrznego poza lotniskiem, jest obowiązana niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Ten sam obowiązek dotyczy świadka wypadku lotniczego i znalazcy porzuconego statku powietrznego. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0320#43dbfa97","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego świadek przymusowego lądowania statku powietrznego poza lotniskiem jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze, mogące udzielić pomocy. Odpowiedź z klucza wskazuje jedną z grup adresatów wymienionych w tym przepisie. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0322#02c11389","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która odnalazła porzucony statek powietrzny lub jego szczątki, jest obowiązana niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Przepis nie wymienia straży miejskiej z nazwy; klucz ULC zalicza ją do służb porządku publicznego, którym można złożyć takie zawiadomienie. Prezes ULC, minister ani firma ubezpieczeniowa nie są adresatami tego obowiązku.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0322#d19cfdd6","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która odnalazła porzucony statek powietrzny lub jego szczątki, jest obowiązana niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze. Przepis wymienia wśród nich w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy. Wszystkie trzy wymienione odpowiedzi wskazują więc adresatów z tego przepisu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0323#32bd8779","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która odnalazła porzucony statek powietrzny lub jego szczątki, jest obowiązana niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Ten sam obowiązek ma uczestnik lub świadek wypadku lotniczego i przymusowego lądowania poza lotniskiem. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0324#36ffb996","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego znalazca porzuconego statku powietrznego lub jego szczątków jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze, mogące udzielić pomocy. Odpowiedź z klucza wskazuje jedną z grup adresatów wymienionych w tym przepisie. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0325#0df5f2cf","status":"verified","text":"Zgodnie z art. 137 ust. 4 Prawa lotniczego znalazca porzuconego statku powietrznego lub jego szczątków jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze. Przepis wymienia wśród nich w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 137 ust. 4","quote":"w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0004#0d5127d8","status":"draft","text":"Zgodnie z art. 4a ust. 1 rozporządzenia 923/2012 częstotliwość VHF w niebezpieczeństwie 121,500 MHz wykorzystuje się jedynie do celów awaryjnych określonych w pkt SERA.14095 lit. d) załącznika. Pierwszym z nich jest udostępnienie niezakłóconego kanału między statkiem powietrznym w stanie zagrożenia lub w sytuacji awaryjnej a stacją naziemną (lit. d) ppkt 1). Dlatego 121,500 MHz to częstotliwość lotniczej łączności radiotelefonicznej w niebezpieczeństwie.","refs":[{"src":"EU-923-2012","loc":"art. 4a ust. 1","quote":"państwa członkowskie zapewniają, aby VHF częstotliwość w niebezpieczeństwie (121,500 MHz) wykorzystywano jedynie do celów awaryjnych określonych w pkt SERA.14095 lit. d) załącznika"},{"src":"EU-923-2012","loc":"SERA.14095(d)(1)","quote":"udostępnienie niezakłóconego kanału między statkiem powietrznym znajdującym się w stanie zagrożenia lub w sytuacji awaryjnej a stacją naziemną"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0023#56573da8","status":"verified","text":"Zgodnie z pkt SERA.14095 lit. a) ppkt 2 rozporządzenia 923/2012 sygnałem „MAYDAY” rozpoczyna się zawiadomienie o sytuacji zagrożenia, czyli sytuacji, w której istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy (lit. a) ppkt 1 (i)). Bezpośrednie zagrożenie życia załogi i pasażerów jest właśnie taką sytuacją. Pułapka: gdy trzeba zapewnić bezpieczeństwo statkowi powietrznemu lub osobie na pokładzie, ale natychmiastowa pomoc nie jest wymagana, jest to sytuacja pilności z sygnałem „PAN PAN” (lit. a) ppkt 1 (ii)).","refs":[{"src":"EU-923-2012","loc":"SERA.14095(a)(2)","quote":"Na początku pierwszego zawiadomienia o sytuacji zagrożenia należy użyć radiotelefonicznego sygnału zagrożenia „MAYDAY”"},{"src":"EU-923-2012","loc":"SERA.14095(a)(1)(i)","quote":"sytuacja, w której istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy"},{"src":"EU-923-2012","loc":"SERA.14095(a)(1)(ii)","quote":"sytuacja, w której konieczne jest zapewnienie bezpieczeństwa statkowi powietrznemu lub innemu pojazdowi, bądź osobie znajdującej się na pokładzie albo będącej w zasięgu widzenia, lecz która nie wymaga udzielenia natychmiastowej pomocy"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0025#024cafbe","status":"verified","text":"Zgodnie z pkt SERA.14080 lit. b) rozporządzenia 923/2012 stacje lotnicze muszą utrzymywać ciągły nasłuch na kanale VHF w niebezpieczeństwie 121,5 MHz w godzinach pracy organów dysponujących takimi stacjami. AIP Polska (GEN 3.6 pkt 5) podaje, że w FIR Warszawa nasłuch częstotliwości 121,500 MHz prowadzi się w godzinach pracy organów służb ruchu lotniczego. Pułapka: 2182 kHz AIP wymienia tylko jako częstotliwość, której można użyć do powiadomienia o zagrożeniu, a nie jako częstotliwość nasłuchu organów ATS.","refs":[{"src":"EU-923-2012","loc":"SERA.14080(b)","quote":"Stacje lotnicze muszą utrzymywać ciągły nasłuch na kanale VHF w niebezpieczeństwie 121,5 MHz w godzinach pracy organów dysponujących takimi stacjami."},{"src":"AIP-PL","loc":"GEN 3.6 pkt 5","quote":"Nasłuch i przeszukiwanie częstotliwości radiowej 121,500 MHz prowadzi się w czasie godzin pracy organów służb ruchu lotniczego."},{"src":"AIP-PL","loc":"GEN 3.6 pkt 5","quote":"Częstotliwości radiowe 121,500 MHz oraz 2182 kHz mogą być używane w FIR Warszawa do powiadomienia o zagrożeniu bezpieczeństwa statku powietrznego."}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0055#3bd9f0f9","status":"unverified","text":"","refs":[{"src":"EU-923-2012","loc":"art. 4a ust. 1","quote":"państwa członkowskie zapewniają, aby VHF częstotliwość w niebezpieczeństwie (121,500 MHz) wykorzystywano jedynie do celów awaryjnych"},{"src":"AIP-PL","loc":"GEN 3.6 pkt 5","quote":"Częstotliwości radiowe 121,500 MHz oraz 2182 kHz mogą być używane w FIR Warszawa do powiadomienia o zagrożeniu bezpieczeństwa statku powietrznego."}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Ręczna radiotelegrafia w niebezpieczeństwie na 500 kHz wyszła z użycia po wprowadzeniu systemu GMDSS; obecnie częstotliwością lotniczą w niebezpieczeństwie jest 121,500 MHz (art. 4a ust. 1 rozporządzenia 923/2012), a AIP Polska (GEN 3.6 pkt 5) dopuszcza też 2182 kHz do powiadomienia o zagrożeniu."},
-{"key":"PL099-0063#3e3bd041","status":"unverified","text":"Brak przepisu w dostępnych źródłach: wyjaśnienie opiera się na ogólnej wiedzy o frazeologii łączności w niebezpieczeństwie (Załącznik 10 do Konwencji chicagowskiej, treść nie została sprawdzona). Stacja, która przekazuje dalej cudzą depeszę o sytuacji zagrożenia, poprzedza ją zwrotem „MAYDAY RELAY”, aby odbiorcy wiedzieli, że niebezpieczeństwo nie dotyczy nadawcy. Rozporządzenie 923/2012 określa sam sygnał „MAYDAY” (pkt SERA.14095 lit. a) ppkt 2), ale nie opisuje retransmisji.","refs":[{"src":"EU-923-2012","loc":"SERA.14095(a)(2)","quote":"Na początku pierwszego zawiadomienia o sytuacji zagrożenia należy użyć radiotelefonicznego sygnału zagrożenia „MAYDAY”"}],"disputeNote":null,"sameAs":null,"basis":"no-source","basisNote":"zwrot MAYDAY RELAY – Załącznik 10 t. II ICAO, brak w korpusie"},
-{"key":"PL099-0074#9b6f9c4c","status":"verified","text":"Zgodnie z pkt SERA.14005 lit. a) rozporządzenia 923/2012 kolejność pierwszeństwa depesz określa tabela S14-1: najpierw wezwania i depesze w sytuacji zagrożenia (MAYDAY), potem depesze pilne (PAN PAN), a dopiero na trzecim miejscu komunikaty dotyczące znajdowania kierunku. Transmisja dla radionamierzania ma więc niższy priorytet niż wywołanie PAN-PAN.","refs":[{"src":"EU-923-2012","loc":"SERA.14005(a)","quote":"kolejność pierwszeństwa w zakresie nawiązywania łączności i transmisji depesz muszą być zgodne z tabelą S14-1"},{"src":"EU-923-2012","loc":"SERA.14005","quote":"b) Depesze pilne, w tym depesze poprzedzone sygnałem transportu medycznego PAN PAN lub PAN PAN MEDICAL c) Komunikaty dotyczące znajdowania kierunku"}],"disputeNote":null,"sameAs":null},
-{"key":"PL099-0088#8a07a254","status":"verified","text":"Zgodnie z pkt SERA.14095 lit. a) ppkt 2 rozporządzenia 923/2012 pierwsze zawiadomienie o sytuacji zagrożenia rozpoczyna się sygnałem „MAYDAY”, a sytuacja zagrożenia to stan poważnego lub bliskiego niebezpieczeństwa wymagający natychmiastowej pomocy. Dodatek 1 pkt 1.1.1 do tego rozporządzenia pozwala statkowi powietrznemu w stanie zagrożenia użyć wszelkich środków będących w jego dyspozycji, aby zwrócić na siebie uwagę, podać pozycję i uzyskać pomoc. Dlatego w pierwszym rzędzie należy nadać wywołanie w niebezpieczeństwie wszystkimi dostępnymi środkami.","refs":[{"src":"EU-923-2012","loc":"SERA.14095(a)(2)","quote":"Na początku pierwszego zawiadomienia o sytuacji zagrożenia należy użyć radiotelefonicznego sygnału zagrożenia „MAYDAY”"},{"src":"EU-923-2012","loc":"SERA.14095(a)(1)(i)","quote":"sytuacja, w której istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy"},{"src":"EU-923-2012","loc":"dodatek 1 pkt 1.1.1","quote":"użycia przez statek powietrzny znajdujący się w stanie zagrożenia wszelkich środków, będących w jego dyspozycji, w celu zwrócenia na siebie uwagi, podania swojej pozycji i uzyskania pomocy"}],"disputeNote":null,"sameAs":null},
-{"key":"PL102-0046#8f833f6c","status":"verified","sameAs":"PL099-0074#9b6f9c4c"},
-{"key":"PL102-0047#75306122","status":"unverified","text":"","refs":[{"src":"EU-923-2012","loc":"art. 4a ust. 1","quote":"państwa członkowskie zapewniają, aby VHF częstotliwość w niebezpieczeństwie (121,500 MHz) wykorzystywano jedynie do celów awaryjnych"},{"src":"AIP-PL","loc":"GEN 3.6 pkt 5","quote":"Częstotliwości radiowe 121,500 MHz oraz 2182 kHz mogą być używane w FIR Warszawa do powiadomienia o zagrożeniu bezpieczeństwa statku powietrznego."}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Ręczna radiotelegrafia w niebezpieczeństwie na 500 kHz wyszła z użycia po wprowadzeniu systemu GMDSS; obecnie częstotliwością lotniczą w niebezpieczeństwie jest 121,500 MHz (art. 4a ust. 1 rozporządzenia 923/2012), a AIP Polska (GEN 3.6 pkt 5) dopuszcza też 2182 kHz do powiadomienia o zagrożeniu."},
-{"key":"PL102-0048#96cde93d","status":"verified","sameAs":"PL099-0025#024cafbe"},
-{"key":"PL102-0051#6d850997","status":"verified","sameAs":"PL099-0004#0d5127d8"}
+ {
+  "key": "PL010-0327#ffde589b",
+  "status": "verified",
+  "text": "Zgodnie z art. 17 ust. 1 Prawa lotniczego Państwowa Komisja Badania Wypadków Lotniczych działa przy ministrze właściwym do spraw transportu. Jest to komisja niezależna i stała, która prowadzi lub nadzoruje badania zdarzeń lotniczych. Przepis nie przewiduje jej działania przy Prezesie Urzędu Lotnictwa Cywilnego, Radzie Ministrów ani Prezydencie RP.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 17 ust. 1",
+    "quote": "Przy ministrze właściwym do spraw transportu działa niezależna, stała Państwowa Komisja Badania Wypadków Lotniczych, prowadząca lub nadzorująca badania zdarzeń lotniczych"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0249#fb6097ab",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która była świadkiem wypadku lotniczego, jest obowiązana niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Ten sam obowiązek ma uczestnik wypadku, świadek przymusowego lądowania poza lotniskiem i znalazca porzuconego statku powietrznego lub jego szczątków. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0317#a71d4a5a",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego świadek wypadku lotniczego jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze, mogące udzielić pomocy. Odpowiedź z klucza wskazuje jedną z grup adresatów wymienionych w tym przepisie. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0001#627b8b92",
+  "status": "verified",
+  "text": "Zgodnie z art. 134 ust. 1 Prawa lotniczego komisje prowadzą badania okoliczności i przyczyn wypadków i incydentów lotniczych w celu zapobiegania takim zdarzeniom. Według art. 2 pkt 14 rozporządzenia 996/2010 badanie obejmuje ustalenie przyczyn i okoliczności zdarzenia oraz, w stosownych przypadkach, formułowanie zaleceń dotyczących bezpieczeństwa, czyli zaleceń profilaktycznych. Pułapka: komisje nie orzekają co do winy i odpowiedzialności, więc odpowiedzi ze wskazaniem winnych są błędne.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 134 ust. 1",
+    "quote": "prowadzą badania okoliczności i przyczyn zaistniałych wypadków i incydentów lotniczych. Komisje nie orzekają co do winy i odpowiedzialności."
+   },
+   {
+    "src": "EU-996-2010",
+    "loc": "art. 2 pkt 14",
+    "quote": "łącznie z ustaleniem przyczyny lub przyczyn zdarzenia lub okoliczności sprzyjających jego zaistnieniu, oraz, w stosownych przypadkach, formułowanie zaleceń dotyczących bezpieczeństwa"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0009#b7fe727e",
+  "status": "verified",
+  "text": "Zgodnie z art. 135 ust. 2 Prawa lotniczego incydenty lotnicze inne niż poważne bada użytkownik statku powietrznego (albo instytucja zapewniająca służby żeglugi powietrznej lub zarządzający lotniskiem) pod nadzorem Komisji, chyba że Przewodniczący Komisji zdecydował o podjęciu badania przez Komisję. Każde zgłoszone zdarzenie najpierw kwalifikuje Przewodniczący Komisji (art. 135 ust. 1). Dlatego użytkownik przystępuje do badania incydentu po decyzji PKBWL i pod jej nadzorem.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135 ust. 2",
+    "quote": "Inne incydenty lotnicze tych statków powietrznych są badane odpowiednio przez użytkownika statku powietrznego"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135 ust. 2",
+    "quote": "pod nadzorem Komisji, chyba że Przewodniczący Komisji zdecydował o podjęciu takiego badania przez Komisję."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135 ust. 1",
+    "quote": "Przewodniczący Komisji po otrzymaniu zgłoszenia o zdarzeniu lotniczym kwalifikuje je jako: wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0079#cfe733ba",
+  "status": "draft",
+  "text": "Zgodnie z art. 135a ust. 3 Prawa lotniczego zgłoszenia zdarzenia lotniczego Komisji dokonuje się każdym dostępnym środkiem łączności niezwłocznie, jednak nie później niż 72 godziny od jego zaistnienia; dla statków nieobjętych rozporządzeniem 376/2014 obowiązek ten mają m.in. użytkownik statku powietrznego, instytucja zapewniająca służby żeglugi powietrznej i zarządzający lotniskiem (art. 135a ust. 2). Ten sam termin 72 godzin wynika z art. 4 ust. 8 rozporządzenia 376/2014 dla organizacji przekazujących zgłoszenia właściwemu organowi.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 2",
+    "quote": "w zakresie statków powietrznych nieobjętych przepisami rozporządzenia nr 376/2014/UE"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 2",
+    "quote": "są obowiązane zgłaszać Komisji zaistnienie zdarzenia"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 2 pkt 1",
+    "quote": "użytkownik lub dowódca statku powietrznego"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 2 pkt 4",
+    "quote": "instytucja zapewniająca służby żeglugi powietrznej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 2 pkt 5",
+    "quote": "zarządzający lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 3",
+    "quote": "Zgłoszenia zdarzenia lotniczego dokonuje się przy użyciu każdego dostępnego środka łączności niezwłocznie po zaistnieniu zdarzenia"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 3",
+    "quote": "72 godziny od jego zaistnienia"
+   },
+   {
+    "src": "EU-376-2014",
+    "loc": "art. 4 ust. 8",
+    "quote": "najszybciej jak to możliwe, a w każdym przypadku nie później niż 72 godziny od chwili, w której dowiedziała się o zdarzeniu"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0010#ff343973",
+  "status": "disputed",
+  "text": "Zgodnie z art. 135 ust. 2 Prawa lotniczego każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do rejestru jest przedmiotem badania przez Komisję. Użytkownik statku powietrznego bada, pod nadzorem Komisji, tylko inne incydenty lotnicze. Na tym opiera się klucz ULC: użytkownik nie przystępuje do badania wypadku lotniczego.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135 ust. 2",
+    "quote": "Każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do państwowego rejestru cywilnych statków powietrznych jest przedmiotem badania przez Komisję."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135 ust. 2a",
+    "quote": "Przewodniczący Komisji może przekazać badanie wypadku lub poważnego incydentu lotniczego statku powietrznego, którego maksymalna masa startowa (MTOM) nie przekracza 2250 kg, innemu podmiotowi za jego zgodą."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135 ust. 4",
+    "quote": "W przypadku niepodjęcia badania przez Komisję raport końcowy z badania zdarzenia przygotowuje pod nadzorem Komisji użytkownik statku powietrznego."
+   }
+  ],
+  "disputeNote": "Według art. 135 ust. 2a Prawa lotniczego badanie wypadku statku o MTOM do 2250 kg można przekazać innemu podmiotowi i prowadzi się je pod nadzorem Komisji; art. 135 ust. 4 pozwala użytkownikowi przygotować raport pod nadzorem Komisji dla statków spoza rejestru. Wtedy trafna jest też odpowiedź „Tak, ale pod nadzorem PKBWL”. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0011#512d95b7",
+  "status": "disputed",
+  "text": "Zgodnie z art. 134 ust. 5 Prawa lotniczego incydentem lotniczym jest zdarzenie inne niż wypadek lotniczy, związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na jej bezpieczeństwo. Definicja nie wymaga uszkodzenia statku powietrznego ani przerwania lotu, dlatego klucz ULC uznaje zderzenie z ptakiem w locie za incydent bez względu na konsekwencje. Tak samo incydent definiuje art. 2 pkt 7 rozporządzenia 996/2010.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 134 ust. 5",
+    "quote": "Incydentem lotniczym jest zdarzenie inne niż wypadek lotniczy, związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na jej bezpieczeństwo."
+   },
+   {
+    "src": "EU-996-2010",
+    "loc": "art. 2 pkt 7",
+    "quote": "„incydent” oznacza zdarzenie inne niż wypadek związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na bezpieczeństwo lotów"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 134 ust. 2 pkt 2",
+    "quote": "statek powietrzny został uszkodzony lub nastąpiło zniszczenie jego konstrukcji, w rezultacie czego:"
+   }
+  ],
+  "disputeNote": "Jeżeli w wyniku zderzenia z ptakiem statek powietrzny zostanie uszkodzony tak, że wymagany jest poważny remont lub wymiana uszkodzonego elementu (art. 134 ust. 2 pkt 2 Prawa lotniczego), zdarzenie jest wypadkiem lotniczym, a nie incydentem; sformułowanie „bez względu na konsekwencje” jest więc uproszczeniem. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0022#aaa2df9d",
+  "status": "disputed",
+  "text": "Zgodnie z art. 4 ust. 6 rozporządzenia 376/2014 pilot dowódca zgłasza zdarzenia za pośrednictwem systemu obowiązkowego zgłaszania ustanowionego przez organizację, która go zatrudnia lub korzysta z jego usług. Zbliżenia statków powietrznych należą do zdarzeń objętych tym obowiązkiem (art. 4 ust. 1 lit. c ppkt i). Klucz ULC odnosi to do procedur użytkownika: raport składa się osobie, którą wskazuje jego instrukcja operacyjna.",
+  "refs": [
+   {
+    "src": "EU-376-2014",
+    "loc": "art. 4 ust. 6",
+    "quote": "za pośrednictwem systemu ustanowionego zgodnie z ust. 2 przez organizację zatrudniającą zgłaszającego, zawierającą z nim umowy lub korzystającą z jego usług, lub — alternatywnie — za pośrednictwem systemu ustanowionego zgodnie z ust. 3 przez państwo członkowskie siedziby jego organizacji"
+   },
+   {
+    "src": "EU-376-2014",
+    "loc": "art. 4 ust. 6",
+    "quote": "a) pilot dowódca lub — w przypadkach gdy pilot dowódca nie jest w stanie zgłosić zdarzenia — inny członek załogi"
+   },
+   {
+    "src": "EU-376-2014",
+    "loc": "art. 4 ust. 1",
+    "quote": "(i) kolizje, zbliżenia lub potencjalne kolizje;"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 135a ust. 1",
+    "quote": "Komisja przyjmuje zgłoszenia w ramach systemu obowiązkowego zgłaszania zdarzeń, o którym mowa w art. 4 ust. 3 rozporządzenia nr 376/2014/UE"
+   }
+  ],
+  "disputeNote": "Art. 4 ust. 6 rozporządzenia 376/2014 dopuszcza alternatywnie zgłoszenie przez system państwa członkowskiego, a w Polsce zgłoszenia w tym systemie przyjmuje Komisja (art. 135a ust. 1 Prawa lotniczego), więc odpowiedź „PKBWL” także jest zgodna z przepisami. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0051#1b7ba0eb",
+  "status": "draft",
+  "text": "Zgodnie z pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012, dotyczącym operacji zarobkowego transportu lotniczego (część CAT), po zderzeniu z ptakiem dowódca składa właściwemu organowi po wylądowaniu pisemny raport o zderzeniu z ptakiem. Obowiązek dotyczy sytuacji, gdy statek powietrzny doznał znaczących uszkodzeń albo którykolwiek z podstawowych systemów pokładowych przestał działać lub działa nieprawidłowo. Pułapka: przepis przewiduje raport pisemny, a nie meldunek ustny.",
+  "refs": [
+   {
+    "src": "EU-965-2012",
+    "loc": "CAT.GEN.MPA.105(d)(2)",
+    "quote": "Po każdym zderzeniu z ptakiem, dowódca składa właściwemu organowi po wylądowaniu pisemny raport o zderzeniu z ptakiem"
+   },
+   {
+    "src": "EU-965-2012",
+    "loc": "CAT.GEN.MPA.105(d)(2)",
+    "quote": "doznał w wyniku tego zderzenia znaczących uszkodzeń albo którykolwiek z podstawowych systemów pokładowych przestał działać lub działa nieprawidłowo"
+   },
+   {
+    "src": "EU-965-2012",
+    "loc": "załącznik IV",
+    "quote": "OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO"
+   }
+  ],
+  "disputeNote": "Pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012 dotyczy tylko zarobkowego transportu lotniczego (część CAT), a część NCO nie przewiduje raportu o zderzeniu z ptakiem; nawet w CAT raport pisemny jest wymagany tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu pokładowego. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0067#de9b6baa",
+  "status": "unverified",
+  "text": "Brak przepisu w dostępnych źródłach: wyjaśnienie opiera się na ogólnej wiedzy o zgłaszaniu zdarzeń lotniczych. W dostępnych przepisach nie ma wymogu, by raport o zdarzeniu składali wszyscy członkowie załogi albo by zatwierdzał go użytkownik, dlatego klucz ULC uznaje za wystarczający raport złożony przez jednego członka załogi. Częściowo potwierdza to art. 4 ust. 6 lit. a rozporządzenia 376/2014: zgłasza pilot dowódca, a gdy nie jest w stanie, inny członek załogi.",
+  "refs": [
+   {
+    "src": "EU-376-2014",
+    "loc": "art. 4 ust. 6",
+    "quote": "a) pilot dowódca lub — w przypadkach gdy pilot dowódca nie jest w stanie zgłosić zdarzenia — inny członek załogi"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "no-source",
+  "basisNote": "brak przepisu o „ważności” raportu o zdarzeniu; częściowo art. 4 ust. 6 lit. a rozporządzenia 376/2014"
+ },
+ {
+  "key": "PL102-0039#4dae563b",
+  "status": "verified",
+  "sameAs": "PL099-0022#aaa2df9d"
+ },
+ {
+  "key": "PL010-0318#9bf1770f",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego świadek wypadku lotniczego jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze. Przepis wymienia wśród nich w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0319#6fc250a2",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która była świadkiem przymusowego lądowania statku powietrznego poza lotniskiem, jest obowiązana niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Ten sam obowiązek dotyczy świadka wypadku lotniczego i znalazcy porzuconego statku powietrznego. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0320#43dbfa97",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego świadek przymusowego lądowania statku powietrznego poza lotniskiem jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze, mogące udzielić pomocy. Odpowiedź z klucza wskazuje jedną z grup adresatów wymienionych w tym przepisie. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0322#02c11389",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która odnalazła porzucony statek powietrzny lub jego szczątki, jest obowiązana niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Przepis nie wymienia straży miejskiej z nazwy; klucz ULC zalicza ją do służb porządku publicznego, którym można złożyć takie zawiadomienie. Prezes ULC, minister ani firma ubezpieczeniowa nie są adresatami tego obowiązku.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0322#d19cfdd6",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która odnalazła porzucony statek powietrzny lub jego szczątki, jest obowiązana niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze. Przepis wymienia wśród nich w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy. Wszystkie trzy wymienione odpowiedzi wskazują więc adresatów z tego przepisu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0323#32bd8779",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego osoba, która odnalazła porzucony statek powietrzny lub jego szczątki, jest obowiązana niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego. Ten sam obowiązek ma uczestnik lub świadek wypadku lotniczego i przymusowego lądowania poza lotniskiem. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0324#36ffb996",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego znalazca porzuconego statku powietrznego lub jego szczątków jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze, mogące udzielić pomocy. Odpowiedź z klucza wskazuje jedną z grup adresatów wymienionych w tym przepisie. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0325#0df5f2cf",
+  "status": "verified",
+  "text": "Zgodnie z art. 137 ust. 4 Prawa lotniczego znalazca porzuconego statku powietrznego lub jego szczątków jest obowiązany niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze. Przepis wymienia wśród nich w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy. Przepis nie przewiduje zawiadamiania Prezesa ULC, jego delegatury ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 137 ust. 4",
+    "quote": "w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0004#0d5127d8",
+  "status": "draft",
+  "text": "Zgodnie z art. 4a ust. 1 rozporządzenia 923/2012 częstotliwość VHF w niebezpieczeństwie 121,500 MHz wykorzystuje się jedynie do celów awaryjnych określonych w pkt SERA.14095 lit. d) załącznika. Pierwszym z nich jest udostępnienie niezakłóconego kanału między statkiem powietrznym w stanie zagrożenia lub w sytuacji awaryjnej a stacją naziemną (lit. d) ppkt 1). Dlatego 121,500 MHz to częstotliwość lotniczej łączności radiotelefonicznej w niebezpieczeństwie.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 4a ust. 1",
+    "quote": "państwa członkowskie zapewniają, aby VHF częstotliwość w niebezpieczeństwie (121,500 MHz) wykorzystywano jedynie do celów awaryjnych określonych w pkt SERA.14095 lit. d) załącznika"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(d)(1)",
+    "quote": "udostępnienie niezakłóconego kanału między statkiem powietrznym znajdującym się w stanie zagrożenia lub w sytuacji awaryjnej a stacją naziemną"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(d)(3)",
+    "quote": "między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(d)(5)",
+    "quote": "łączności między jednostką ratunkową a statkiem powietrznym biorącym udział w operacjach poszukiwawczo-ratowniczych"
+   }
+  ],
+  "disputeNote": "Pkt SERA.14095 lit. d) ppkt 3 i 5 rozporządzenia 923/2012 przewidują użycie 121,500 MHz także do łączności ze służbami naziemnymi w operacjach poszukiwawczo-ratowniczych oraz z jednostką ratunkową, więc odpowiedzi o SAR i tratwach też mają oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0023#56573da8",
+  "status": "verified",
+  "text": "Zgodnie z pkt SERA.14095 lit. a) ppkt 2 rozporządzenia 923/2012 sygnałem „MAYDAY” rozpoczyna się zawiadomienie o sytuacji zagrożenia, czyli sytuacji, w której istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy (lit. a) ppkt 1 (i)). Bezpośrednie zagrożenie życia załogi i pasażerów jest właśnie taką sytuacją. Pułapka: gdy trzeba zapewnić bezpieczeństwo statkowi powietrznemu lub osobie na pokładzie, ale natychmiastowa pomoc nie jest wymagana, jest to sytuacja pilności z sygnałem „PAN PAN” (lit. a) ppkt 1 (ii)).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(a)(2)",
+    "quote": "Na początku pierwszego zawiadomienia o sytuacji zagrożenia należy użyć radiotelefonicznego sygnału zagrożenia „MAYDAY”"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(a)(1)(i)",
+    "quote": "sytuacja, w której istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(a)(1)(ii)",
+    "quote": "sytuacja, w której konieczne jest zapewnienie bezpieczeństwa statkowi powietrznemu lub innemu pojazdowi, bądź osobie znajdującej się na pokładzie albo będącej w zasięgu widzenia, lecz która nie wymaga udzielenia natychmiastowej pomocy"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0025#024cafbe",
+  "status": "verified",
+  "text": "Zgodnie z pkt SERA.14080 lit. b) rozporządzenia 923/2012 stacje lotnicze muszą utrzymywać ciągły nasłuch na kanale VHF w niebezpieczeństwie 121,5 MHz w godzinach pracy organów dysponujących takimi stacjami. AIP Polska (GEN 3.6 pkt 5) podaje, że w FIR Warszawa nasłuch częstotliwości 121,500 MHz prowadzi się w godzinach pracy organów służb ruchu lotniczego. Pułapka: 2182 kHz AIP wymienia tylko jako częstotliwość, której można użyć do powiadomienia o zagrożeniu, a nie jako częstotliwość nasłuchu organów ATS.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14080(b)",
+    "quote": "Stacje lotnicze muszą utrzymywać ciągły nasłuch na kanale VHF w niebezpieczeństwie 121,5 MHz w godzinach pracy organów dysponujących takimi stacjami."
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.6 pkt 5",
+    "quote": "Nasłuch i przeszukiwanie częstotliwości radiowej 121,500 MHz prowadzi się w czasie godzin pracy organów służb ruchu lotniczego."
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.6 pkt 5",
+    "quote": "Częstotliwości radiowe 121,500 MHz oraz 2182 kHz mogą być używane w FIR Warszawa do powiadomienia o zagrożeniu bezpieczeństwa statku powietrznego."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0055#3bd9f0f9",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 4a ust. 1",
+    "quote": "państwa członkowskie zapewniają, aby VHF częstotliwość w niebezpieczeństwie (121,500 MHz) wykorzystywano jedynie do celów awaryjnych"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.6 pkt 5",
+    "quote": "Częstotliwości radiowe 121,500 MHz oraz 2182 kHz mogą być używane w FIR Warszawa do powiadomienia o zagrożeniu bezpieczeństwa statku powietrznego."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Ręczna łączność telegraficzna na 500 kHz nie występuje w obowiązujących przepisach lotniczych; obecnie częstotliwością lotniczą w niebezpieczeństwie jest 121,500 MHz (art. 4a ust. 1 rozporządzenia 923/2012), a AIP Polska (GEN 3.6 pkt 5) dopuszcza też 2182 kHz do powiadomienia o zagrożeniu."
+ },
+ {
+  "key": "PL099-0063#3e3bd041",
+  "status": "unverified",
+  "text": "Brak przepisu w dostępnych źródłach: wyjaśnienie opiera się na ogólnej wiedzy o frazeologii łączności w niebezpieczeństwie (Załącznik 10 do Konwencji chicagowskiej, treść nie została sprawdzona). Stacja, która przekazuje dalej cudzą depeszę o sytuacji zagrożenia, poprzedza ją zwrotem „MAYDAY RELAY”, aby odbiorcy wiedzieli, że niebezpieczeństwo nie dotyczy nadawcy. Rozporządzenie 923/2012 określa sam sygnał „MAYDAY” (pkt SERA.14095 lit. a) ppkt 2), ale nie opisuje retransmisji.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(a)(2)",
+    "quote": "Na początku pierwszego zawiadomienia o sytuacji zagrożenia należy użyć radiotelefonicznego sygnału zagrożenia „MAYDAY”"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "no-source",
+  "basisNote": "zwrot MAYDAY RELAY – Załącznik 10 t. II ICAO, brak w korpusie"
+ },
+ {
+  "key": "PL099-0074#9b6f9c4c",
+  "status": "verified",
+  "text": "Zgodnie z pkt SERA.14005 lit. a) rozporządzenia 923/2012 kolejność pierwszeństwa depesz określa tabela S14-1: najpierw wezwania i depesze w sytuacji zagrożenia (MAYDAY), potem depesze pilne (PAN PAN), a dopiero na trzecim miejscu komunikaty dotyczące znajdowania kierunku. Transmisja dla radionamierzania ma więc niższy priorytet niż wywołanie PAN-PAN.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14005(a)",
+    "quote": "kolejność pierwszeństwa w zakresie nawiązywania łączności i transmisji depesz muszą być zgodne z tabelą S14-1"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14005",
+    "quote": "b) Depesze pilne, w tym depesze poprzedzone sygnałem transportu medycznego PAN PAN lub PAN PAN MEDICAL c) Komunikaty dotyczące znajdowania kierunku"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL099-0088#8a07a254",
+  "status": "verified",
+  "text": "Zgodnie z pkt SERA.14095 lit. a) ppkt 2 rozporządzenia 923/2012 pierwsze zawiadomienie o sytuacji zagrożenia rozpoczyna się sygnałem „MAYDAY”, a sytuacja zagrożenia to stan poważnego lub bliskiego niebezpieczeństwa wymagający natychmiastowej pomocy. Dodatek 1 pkt 1.1.1 do tego rozporządzenia pozwala statkowi powietrznemu w stanie zagrożenia użyć wszelkich środków będących w jego dyspozycji, aby zwrócić na siebie uwagę, podać pozycję i uzyskać pomoc. Dlatego w pierwszym rzędzie należy nadać wywołanie w niebezpieczeństwie wszystkimi dostępnymi środkami.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(a)(2)",
+    "quote": "Na początku pierwszego zawiadomienia o sytuacji zagrożenia należy użyć radiotelefonicznego sygnału zagrożenia „MAYDAY”"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.14095(a)(1)(i)",
+    "quote": "sytuacja, w której istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "dodatek 1 pkt 1.1.1",
+    "quote": "użycia przez statek powietrzny znajdujący się w stanie zagrożenia wszelkich środków, będących w jego dyspozycji, w celu zwrócenia na siebie uwagi, podania swojej pozycji i uzyskania pomocy"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL102-0046#8f833f6c",
+  "status": "verified",
+  "sameAs": "PL099-0074#9b6f9c4c"
+ },
+ {
+  "key": "PL102-0047#75306122",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 4a ust. 1",
+    "quote": "państwa członkowskie zapewniają, aby VHF częstotliwość w niebezpieczeństwie (121,500 MHz) wykorzystywano jedynie do celów awaryjnych"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.6 pkt 5",
+    "quote": "Częstotliwości radiowe 121,500 MHz oraz 2182 kHz mogą być używane w FIR Warszawa do powiadomienia o zagrożeniu bezpieczeństwa statku powietrznego."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Ręczna łączność telegraficzna na 500 kHz nie występuje w obowiązujących przepisach lotniczych; obecnie częstotliwością lotniczą w niebezpieczeństwie jest 121,500 MHz (art. 4a ust. 1 rozporządzenia 923/2012), a AIP Polska (GEN 3.6 pkt 5) dopuszcza też 2182 kHz do powiadomienia o zagrożeniu."
+ },
+ {
+  "key": "PL102-0048#96cde93d",
+  "status": "verified",
+  "sameAs": "PL099-0025#024cafbe"
+ },
+ {
+  "key": "PL102-0051#6d850997",
+  "status": "verified",
+  "sameAs": "PL099-0004#0d5127d8"
+ }
 ]
