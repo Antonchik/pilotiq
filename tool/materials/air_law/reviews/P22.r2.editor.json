@@ -1,0 +1,4 @@
+[
+ {"key": "PL010-0561#58aed3e6", "verdict": "PASS", "note": "Pułapka przeredagowana zgodnie z r1 („są oddzielone od siebie określonymi przedziałami ciśnienia”); zgodna z art. 2 pkt 78, składnia poprawna."},
+ {"key": "PL010-0590#f17e46db", "verdict": "PASS", "note": "Zdanie 2 poprawione: pkt 1.2.1 (QNH regionalne co do zasady) i pkt 1.2.2 (pod niskimi TMA/MTMA QNH głównego lotniska) — zgodne z AIP, cytat 1.2.2 dosłowny, 651 zn. Ref pkt 1.2.1 zostaje (tekst go przywołuje); drugi quote 1.2.1 („Wartość ciśnienia QNH podaje właściwy organ ATS.”) już niewykorzystany — można usunąć przy następnej edycji, nie blokuje."}
+]

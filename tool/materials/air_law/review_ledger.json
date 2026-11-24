@@ -2681,11 +2681,11 @@
  },
  "PL010-0561#58aed3e6": {
   "date": "2026-11-24",
-  "note": "Merytorycznie poprawne (art. 2 pkt 78, „określonymi przedziałami ciśnienia”), ale zdanie pułapki jest dwuznaczne/błędne składniowo: „poziomy lotu oddzielają od siebie przedziały ciśnienia” czyta się jako „poziomy rozdzielają przedziały ciśnienia”. Zamienić na: „Pułapka: poziomy lotu są oddzielone od siebie określonymi przedziałami ciśnienia, a nie różnicami wysokości.”",
+  "note": "Pułapka przeredagowana zgodnie z r1 („są oddzielone od siebie określonymi przedziałami ciśnienia”); zgodna z art. 2 pkt 78, składnia poprawna.",
   "portion": "P22",
-  "round": 1,
-  "textSha": "8f52cde0da5a5352",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "9bf4527590cd3877",
+  "verdict": "PASS"
  },
  "PL010-0562#47df032f": {
   "date": "2026-11-24",
@@ -2865,11 +2865,11 @@
  },
  "PL010-0590#f17e46db": {
   "date": "2026-11-24",
-  "note": "Klucz QNH = ENR 1.7 pkt 1.2, cytaty dosłowne, pułapka OK. Ale zdanie 2 uogólnia: pkt 1.2.2 stanowi, że w klasie G pod segmentami TMA/MTMA z dolną granicą ≤6500 ft obowiązuje QNH głównego lotniska tego TMA/MTMA, nie regionalne. Zamienić zdanie 2 na: „W przestrzeni niekontrolowanej jest to co do zasady QNH regionu nastawiania wysokościomierzy (pkt 1.2.1), a pod niskimi segmentami TMA/MTMA – QNH głównego lotniska tego rejonu (pkt 1.2.2).” i dodać ref AIP-PL „ENR 1.7 pkt 1.2.2” z quote „obowiązuje nastawienie wysokościomierza na ciśnienie QNH głównego lotniska kontrolowanego”. (Długość ok. 650 zn.)",
+  "note": "Zdanie 2 poprawione: pkt 1.2.1 (QNH regionalne co do zasady) i pkt 1.2.2 (pod niskimi TMA/MTMA QNH głównego lotniska) — zgodne z AIP, cytat 1.2.2 dosłowny, 651 zn. Ref pkt 1.2.1 zostaje (tekst go przywołuje); drugi quote 1.2.1 („Wartość ciśnienia QNH podaje właściwy organ ATS.”) już niewykorzystany — można usunąć przy następnej edycji, nie blokuje.",
   "portion": "P22",
-  "round": 1,
-  "textSha": "0e52a61f04e8b95f",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "44a89869a71c82f3",
+  "verdict": "PASS"
  },
  "PL010-0601#b73edcc4": {
   "date": "2026-11-24",
