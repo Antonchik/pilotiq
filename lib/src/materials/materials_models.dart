@@ -128,6 +128,7 @@ class SubjectMaterials {
     required this.topics,
     required this.explanations,
     required this.links,
+    this.outdated = const {},
   });
 
   final SubjectId subject;
@@ -144,9 +145,16 @@ class SubjectMaterials {
   /// `links[licence][questionId]` is the content key of the question.
   final Map<Licence, Map<String, String>> links;
 
+  /// Questions based on repealed norms: content key → what changed (the
+  /// `basisNote`). These keys are in [links] but have no explanation and are
+  /// in no topic order, so they never take a place of the free sample.
+  final Map<String, String> outdated;
+
   /// Nothing to show (an empty pilot asset).
   bool get isEmpty =>
-      explanations.isEmpty && topics.every((t) => t.sections.isEmpty);
+      explanations.isEmpty &&
+      outdated.isEmpty &&
+      topics.every((t) => t.sections.isEmpty);
 
   /// Content key of question [questionId] of [licence], if it has materials.
   String? keyOf(Licence licence, String questionId) =>
@@ -256,6 +264,16 @@ class SubjectMaterials {
             l.key as String: l.value as String,
       };
     }
+    // Optional (added to schema 1 later): older assets have no `outdated`.
+    final rawOutdated = json['outdated'] ?? const {};
+    if (rawOutdated is! Map) throw const FormatException('Invalid outdated');
+    final outdated = <String, String>{};
+    for (final e in rawOutdated.entries) {
+      final v = e.value;
+      if (e.key is! String) throw FormatException('Invalid outdated ${e.key}');
+      final note = v is Map ? v['note'] : null;
+      outdated[e.key as String] = note is String ? note : '';
+    }
     final legal = json['legalStateAsOf'];
     return SubjectMaterials(
       subject: subject,
@@ -265,6 +283,7 @@ class SubjectMaterials {
       topics: List.unmodifiable(topics),
       explanations: Map.unmodifiable(explanations),
       links: Map.unmodifiable(links),
+      outdated: Map.unmodifiable(outdated),
     );
   }
 

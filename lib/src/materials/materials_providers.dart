@@ -32,10 +32,15 @@ class ExplanationView {
     required this.questionId,
     required this.materialsVersion,
     required this.legalStateAsOf,
+    this.outdated = false,
+    this.outdatedNote,
   });
 
   final String key;
-  final MaterialStatus status;
+
+  /// Status of the explanation; `null` when the question has none (only the
+  /// [outdated] mark).
+  final MaterialStatus? status;
   final String text;
 
   /// Human readable references ("Prawo lotnicze, art. 128 ust. 1").
@@ -51,7 +56,16 @@ class ExplanationView {
   final String materialsVersion;
   final DateTime? legalStateAsOf;
 
+  /// The question is based on repealed norms. Shown to every user.
+  final bool outdated;
+
+  /// What changed in the regulations; Premium only (null when [locked]).
+  final String? outdatedNote;
+
   bool get disputed => status == MaterialStatus.disputed;
+
+  /// There is an explanation text (not only the outdated mark).
+  bool get hasExplanation => status != null;
 }
 
 /// The explanation of question `questionId` of `licence`, or `null` when it
@@ -70,22 +84,33 @@ final explanationForQuestionProvider =
       if (materials == null) return null;
       final key = materials.keyOf(licence, questionId);
       final explanation = key == null ? null : materials.explanations[key];
-      if (key == null || explanation == null) return null;
+      final outdatedNote = key == null ? null : materials.outdated[key];
+      if (key == null || (explanation == null && outdatedNote == null)) {
+        return null;
+      }
       final isPremium = ref.watch(isPremiumProvider);
-      final locked = !AccessPolicy.canSeeExplanation(
-        isPremium,
-        materials.indexInTopic(licence, key),
-      );
-      // A locked view carries no Premium content: only the status, so that
-      // a disputed question is marked as such for every user.
+      // An outdated question without an explanation is in no topic order:
+      // its note is Premium only and it takes no place of the free sample.
+      final locked = explanation == null
+          ? !isPremium
+          : !AccessPolicy.canSeeExplanation(
+              isPremium,
+              materials.indexInTopic(licence, key),
+            );
+      // A locked view carries no Premium content: only the status and the
+      // outdated mark, which every user sees.
       return ExplanationView(
         key: key,
-        status: explanation.status,
-        text: locked ? '' : explanation.text,
-        refs: locked
+        status: explanation?.status,
+        text: locked || explanation == null ? '' : explanation.text,
+        refs: locked || explanation == null
             ? const []
             : [for (final r in explanation.refs) materials.refLabel(r)],
-        disputeNote: locked ? null : explanation.disputeNote,
+        disputeNote: locked ? null : explanation?.disputeNote,
+        outdated: outdatedNote != null,
+        outdatedNote: locked || outdatedNote == null || outdatedNote.isEmpty
+            ? null
+            : outdatedNote,
         locked: locked,
         licence: licence,
         questionId: questionId,
