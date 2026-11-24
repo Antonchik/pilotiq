@@ -1452,7 +1452,7 @@ _ICAO_CHAPTER_HEADER = re.compile(r"^Chapter (\d+)\.\s+(.+?)\s+\d+-\d+$")
 _ICAO_EVEN_HEADER = re.compile(r"^(\d+)-\d+\s+Air Traffic Management \(PANS-ATM\)$")
 _ICAO_APP_HEADER = re.compile(r"^Appendix (\d+)\s+A\d+-\d+$|^A(\d+)-\d+\s+Air Traffic Management \(PANS-ATM\)$")
 _ITU_CHANNEL_RE = re.compile(r"^((?:AIS|ASM) ?\d|\d{2,4})\s+(?:[a-z]{1,2}\)(?:,\s*[a-z]{1,2}\))*\s+)?\d{3}\.\d{3}")
-_ITU_NOTE_RE = re.compile(r"^([a-z]{1,2})\)\s+\S")
+_ITU_NOTE_RE = re.compile(r"^([a-z]{1,2})\)\s*\S")
 
 
 def _english_left_half(page):
@@ -1539,7 +1539,7 @@ def icao4444_lines(path, cfg):
                         lines.append(txt)
                 else:
                     lines.append(txt)
-                prev_end = txt.endswith((".", "—"))
+                prev_end = txt.endswith((".", "—", ":"))
             page.flush_cache()
     return lines
 

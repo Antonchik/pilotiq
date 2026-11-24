@@ -655,6 +655,20 @@ class CellarFetchTest(unittest.TestCase):
         self.assertEqual(0, code, out)
         self.assertIn(b"02012R0923-20250501", (self.dir / "sources" / "EU-T" / "EU-T.html").read_bytes())
 
+    def test_fixed_celex_skips_sparql_and_pins_without_legal_state(self):
+        rec = json.loads(self.sj.read_text(encoding="utf-8"))
+        rec[0]["fetch"] = dict(rec[0]["fetch"], celex="32007R0864")
+        self.sj.write_text(json.dumps(rec), encoding="utf-8")
+        code, out = self.run_main("--pin")
+        self.assertEqual(0, code, out)
+        pinned = json.loads(self.sj.read_text(encoding="utf-8"))[0]
+        self.assertEqual("32007R0864", pinned["celex"])
+        self.assertNotIn("legalState", pinned)
+        self.assertFalse([c for c in self.seen if c[0].startswith("/sparql")])
+        self.latest = "02012R0923-29990101"
+        code, out = self.run_main("--check")
+        self.assertEqual(0, code, out)       # a newer consolidation of the same regulation is irrelevant for a fixed CELEX
+
     def test_html_challenge_page_is_rejected(self):
         self.assertTrue(fs.is_cellar(json.loads(self.sj.read_text())[0]))
         bad = self.dir / "bad.html"
@@ -814,6 +828,128 @@ class AipManualTest(unittest.TestCase):
         self.assertNotEqual(rec["sha256"], rec2["sha256"])
 
 
+class RegulationPartsTest(unittest.TestCase):
+    def test_paragraph_sign_regulation_units(self):
+        text = ("§ 1. 1. Rozporządzenie określa zasady.\n2. Drugi ustęp:\n1) pierwszy punkt;\n2) drugi punkt.\n"
+                "§ 2. Ilekroć jest mowa o:\n1) lotnisku - rozumie się obszar;\n2) lądowisku - rozumie się teren.\n"
+                "§ 3. Przepis końcowy.\nZałącznik nr 1\n1. Wiersz\n")
+        a = ec.statute_anchors(text)
+        for key in ("§ 1", "§ 1 ust. 1", "§ 1 ust. 2", "§ 1 ust. 2 pkt 2", "§ 2", "§ 2 pkt 1", "§ 2 pkt 2", "§ 3",
+                    "załącznik 1", "załącznik 1 pkt 1"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("art. 1", a)
+        import materials as m
+        for loc in ("§ 1", "§ 8 ust. 2 pkt 3", "§ 14a"):
+            self.assertTrue(m.loc_valid("statute", loc), loc)
+        self.assertEqual(m.loc_parents("§ 8 ust. 2 pkt 3"), ["§ 8 ust. 2", "§ 8"])
+
+    def test_annex_points_of_eu_regulation_without_rule_ids(self):
+        text = ("Artykuł 1\nPrzedmiot\n1. Ustęp.\nZAŁĄCZNIK\n1. OCHRONA PORTU LOTNICZEGO\n1.0. PRZEPISY OGÓLNE\n"
+                "3. Kontrola dostępu do stref\n3.1. Zasady ogólne dotyczące kontroli osób.\n3.1.1. Pierwszy punkt szczegółowy.\n")
+        a = ec.eureg_anchors(text, ("annexpoints",))
+        for key in ("art. 1", "załącznik", "załącznik pkt 1", "załącznik pkt 1.0", "załącznik pkt 3.1", "załącznik pkt 3.1.1"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("załącznik pkt 3.1", ec.eureg_anchors(text))      # off by default
+        self.assertTrue(a["załącznik pkt 3.1"][0] <= a["załącznik pkt 3.1.1"][0])
+
+    def test_rule_ids_with_slash_and_cs_prefix(self):
+        text = ("ATM/ANS.OR.A.001 Application for a certificate\nRegulation (EU) 2017/373\n(a) A provider shall apply to the authority.\n"
+                "CS ADR-DSN.B.075 Runway shoulders\nED Decision 2016/027/R\nRunway shoulders should be provided where the code letter is D or E.\n"
+                "ADR.OPS.B.010 Rescue and firefighting\nRegulation (EU) 139/2014\n(a) The aerodrome operator shall provide the service.\n")
+        a = ec.rule_anchors(text, "easa")
+        for key in ("ATM/ANS.OR.A.001", "ATM/ANS.OR.A.001(a)", "CS ADR-DSN.B.075", "ADR.OPS.B.010"):
+            self.assertIn(key, a, key)
+        import materials as m
+        for loc in ("ATM/ANS.OR.A.001", "CS ADR-DSN.B.075", "ADR.OPS.B.010(a)"):
+            self.assertTrue(m.loc_valid("easa", loc), loc)
+            self.assertTrue(m.loc_valid("eu_reg", loc) or loc.startswith("CS "), loc)
+
+
+class OwnerDocumentsTest(unittest.TestCase):
+    """Owner-supplied ICAO / ITU PDFs: manual sources, English, reference-only."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = pathlib.Path(self.tmp.name)
+        (self.dir / "sources" / "OWN").mkdir(parents=True)
+
+    def run_extract(self, sid, kind, name, pages, cfg):
+        (self.dir / "sources" / "OWN" / name).write_bytes(make_positioned_pdf(pages))
+        src = {"id": sid, "kind": kind, "lang": "en", "format": "pdf", "status": "available", "url": "u", "sha256": "",
+               "fetched": "", "fetch": {"mode": "manual", "dir": "OWN", "files": [dict(section=sid, file=name, **cfg)]}}
+        sj = self.dir / "sources.json"
+        sj.write_text(json.dumps([src]), encoding="utf-8")
+        out = []
+        code = ec.main(["--all", "--jobs", "1", "--sources-json", str(sj), "--sources-dir", str(self.dir / "sources"),
+                        "--corpus-dir", str(self.dir / "corpus"), "--anchors-dir", str(self.dir / "anchors")], out=out.append)
+        self.assertEqual(0, code, out)
+        return ((self.dir / "corpus" / (sid + ".txt")).read_text(encoding="utf-8"),
+                json.loads((self.dir / "anchors" / (sid + ".json")).read_text(encoding="utf-8")))
+
+    def test_doc7300_english_pages_articles_and_paragraphs(self):
+        en = [(40, 60, 10, "Article 1"), (40, 74, 10, "Sovereignty the contracting States recognize that each State shall have"),
+              (40, 88, 10, "complete and exclusive sovereignty over the airspace and the territory of the State."),
+              (40, 120, 10, "Article 3 bis*"), (40, 134, 10, "a) The contracting States recognize that every State must refrain from the use of"),
+              (40, 148, 10, "b) The contracting States recognize that every State shall be entitled to require that"),
+              (40, 162, 10, "Article 3 bis. This amendment came into force on 1 October 1998."),
+              (320, 60, 10, "Article 1"), (320, 74, 10, "Souverainete les Etats contractants reconnaissent que chaque Etat a la")]
+        filler = [(40, 180 + 14 * i, 10, "The contracting States agree that the State shall apply the rules to each aircraft and to any flight of the State.") for i in range(6)]
+        en = en + filler
+        foreword = [(40, 60, 10, "Foreword the Convention is a text which shall be read with the introduction of the"),
+                    (40, 74, 10, "Article 1 appears here only in the table of contents of the printed edition of this book")]
+        text, doc = self.run_extract("DOC7300", "icao", "d.pdf", [foreword, en], {"profile": "icao7300", "lang": "en"})
+        a = doc["anchors"]
+        for key in ("Article 1", "Article 3 bis", "Article 3 bis(a)", "Article 3 bis(b)"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("Souverainete", text)       # only the English (left) column
+        self.assertNotIn("Foreword", text)           # nothing before Article 1
+        self.assertEqual({"DOC7300": "en"}, doc["langs"])
+
+    def test_doc4444_chapters_definitions_and_paragraph_numbers(self):
+        def page(header, items):
+            return [(66, 51, 9, header)] + items + [(66, 735, 8, "10/11/16")]
+        p1 = page("Chapter 1. Definitions 1-3", [
+            (66, 81, 10, "Aerodrome control service. Air traffic control service for aerodrome traffic."),
+            (66, 105, 10, "Air traffic management (ATM). The dynamic, integrated management of air traffic"),
+            (84, 117, 10, "and airspace including air traffic services."),
+            (84, 141, 10, "Note.- A note belonging to the previous definition.")])
+        p2 = page("5-2 Air Traffic Management (PANS-ATM)", [])
+        p3 = page("Chapter 5. Separation Methods and Minima 5-3", [
+            (200, 81, 10, "5.2 VERTICAL SEPARATION"), (84, 105, 10, "5.2.1 Vertical separation is obtained by requiring aircraft to use different levels."),
+            (66, 117, 10, "selected from the tables."), (84, 141, 10, "5.2.1.1 Detail of the first rule."),
+            (84, 165, 10, "Note.- see Chapter 8, 8.6.5.2 for vectoring.")])
+        p0 = [(66, 60, 10, "Foreword nothing here")]
+        text, doc = self.run_extract("DOC4444", "icao", "d.pdf", [p0, [(66, 80, 10, "Chapter 1")], p1, p2, p3],
+                                     {"profile": "icao4444", "lang": "en"})
+        a = doc["anchors"]
+        for key in ("Chapter 1", "Chapter 5", "def Aerodrome control service", "def Air traffic management (ATM)",
+                    "pkt 5.2", "pkt 5.2.1", "pkt 5.2.1.1"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("Chapter 8", a)       # a "Chapter 8." reference inside a note is not a chapter
+        s, e = a["def Air traffic management (ATM)"]
+        self.assertIn("airspace including air traffic services", text[s:e])
+        self.assertIn("Note.- A note belonging", text[s:e])
+        self.assertNotIn("Foreword", text)
+
+    def test_itu_appendix_18_channels_and_notes(self):
+        page = [(150, 40, 11, "APPENDIX 18 (REV.WRC-19)"), (40, 80, 9, "Channel Notes frequencies"),
+                (44, 120, 9, "06 f) 156.300 x"), (44, 132, 9, "16 156.800 156.800 x"),
+                (44, 144, 9, "AIS 1 f), l), p) 161.975 161.975"), (170, 200, 9, "Notes referring to the Table"),
+                (40, 220, 9, "f) The frequencies 156.300 MHz may also be used by aircraft stations."),
+                (55, 232, 9, "for search and rescue."), (40, 250, 9, "g) Channels 15 and 17 may also be used on board."),
+                (353, 22, 8, "AP18-1")]
+        other = [(150, 40, 11, "APPENDIX 25 (REV.WRC-03)"), (44, 120, 9, "99 156.999 x")]
+        text, doc = self.run_extract("ITU18", "itu", "r.pdf", [page, other], {"profile": "itu-rr", "lang": "en", "pages": [0, 0]})
+        a = doc["anchors"]
+        for key in ("Appendix 18", "Appendix 18 channel 06", "Appendix 18 channel 16", "Appendix 18 channel AIS1",
+                    "Appendix 18 note f", "Appendix 18 note g"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("APPENDIX 25", text)      # only the requested pages
+        self.assertNotIn("AP18-1", text)
+        self.assertIn("search and rescue", text[slice(*a["Appendix 18 note f"])])
+
+
 class RealSourcesJsonTest(unittest.TestCase):
     def test_registry_is_well_formed(self):
         data = json.loads((HERE.parent / "sources.json").read_text(encoding="utf-8"))
@@ -823,10 +959,13 @@ class RealSourcesJsonTest(unittest.TestCase):
             for k in ("id", "title_pl", "kind", "url", "format", "version", "sha256", "fetched",
                       "reuse", "allowQuote"):
                 self.assertIn(k, s, "%s lacks %s" % (s.get("id"), k))
-            self.assertIn(s["kind"], ("statute", "eu_reg", "convention", "aip", "easa"))
+            self.assertIn(s["kind"], ("statute", "eu_reg", "convention", "aip", "easa", "icao", "itu"))
             self.assertIn(s["reuse"], ("public-domain", "eu-reuse", "reference-only"))
             if s["kind"] in ("aip", "easa") and (s.get("fetch") or {}).get("mode") != "manual":
                 self.assertFalse(s["allowQuote"], s["id"])
+            if s["kind"] in ("icao", "itu"):
+                self.assertFalse(s["allowQuote"], s["id"])    # ICAO / ITU copyright: reference only
+                self.assertEqual("reference-only", s["reuse"], s["id"])
             if s.get("status", "available") == "available":
                 self.assertRegex(s["sha256"], r"^[0-9a-f]{64}$", s["id"])
             else:
