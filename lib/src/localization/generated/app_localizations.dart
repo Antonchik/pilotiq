@@ -470,59 +470,11 @@ abstract class AppLocalizations {
   /// **'All features at a glance'**
   String get featuresDescriptionTitle;
 
-  /// All exams access label
-  ///
-  /// In en, this message translates to:
-  /// **'Access to all exams'**
-  String get allExamsAccessLabel;
-
-  /// Dark mode unlocked label
-  ///
-  /// In en, this message translates to:
-  /// **'Dark mode unlocked'**
-  String get darkModeAccessLabel;
-
-  /// All subjects access label
-  ///
-  /// In en, this message translates to:
-  /// **'Access to all questions'**
-  String get allSubjectsAccessLabel;
-
-  /// Special price label
-  ///
-  /// In en, this message translates to:
-  /// **'Get it now!'**
-  String get specialPriceLabel;
-
   /// Privacy policy label
   ///
   /// In en, this message translates to:
   /// **'Privacy Policy'**
   String get privacyPolicyLabel;
-
-  /// Premium user greeting
-  ///
-  /// In en, this message translates to:
-  /// **'You\'re a Premium User!'**
-  String get premiumUserGreeting;
-
-  /// Thanks for supporting
-  ///
-  /// In en, this message translates to:
-  /// **'Thanks for your Support!'**
-  String get thankYouMessage;
-
-  /// Let's go!
-  ///
-  /// In en, this message translates to:
-  /// **'Let\'s go!'**
-  String get letsGoMessage;
-
-  /// Premium paywall
-  ///
-  /// In en, this message translates to:
-  /// **'Go Premium!'**
-  String get premiumLabel;
 
   /// The title of the premium (paywall) screen
   ///
@@ -541,12 +493,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About this app...'**
   String get aboutScreenBody;
-
-  /// Message of the temporary paywall screen
-  ///
-  /// In en, this message translates to:
-  /// **'Premium purchases will be available here soon.'**
-  String get paywallStubMessage;
 
   /// Bottom navigation: dashboard tab
   ///
@@ -1763,7 +1709,7 @@ abstract class AppLocalizations {
   /// Paywall subtitle for the simulation limit; count is the free simulations per subject
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, one{Free access includes {count} simulation per subject. Premium gives unlimited simulations with history and topic breakdown.} other{Free access includes {count} simulations per subject. Premium gives unlimited simulations with history and topic breakdown.}}'**
+  /// **'{count, plural, one{Free access includes {count} simulation per subject. Premium gives unlimited simulations and topic breakdown.} other{Free access includes {count} simulations per subject. Premium gives unlimited simulations and topic breakdown.}}'**
   String paywallSubtitleExamLimit(int count);
 
   /// Paywall title for a locked feature
@@ -1817,7 +1763,7 @@ abstract class AppLocalizations {
   /// Benefit: unlimited simulations; count is the free simulations per subject
   ///
   /// In en, this message translates to:
-  /// **'Unlimited exam simulations with history and topic breakdown (free: {count} per subject)'**
+  /// **'Unlimited exam simulations with topic breakdown of the results (free: {count} per subject)'**
   String paywallBenefitSimulations(int count);
 
   /// Benefit: my mistakes
@@ -1940,11 +1886,23 @@ abstract class AppLocalizations {
   /// **'Restore purchases'**
   String get paywallRestore;
 
-  /// Auto-renewal and cancellation terms of subscriptions
+  /// Auto-renewal and cancellation terms of subscriptions (any store)
   ///
   /// In en, this message translates to:
-  /// **'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your App Store or Google Play account. To avoid the next charge, cancel in your account settings in the store at least 24 hours before the current period ends.'**
+  /// **'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your store account. To avoid the next charge, cancel in your account settings in the store at least 24 hours before the current period ends.'**
   String get paywallRenewalNotice;
+
+  /// Auto-renewal and cancellation terms of subscriptions (Ios)
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your Apple ID account. To avoid the next charge, cancel in your Apple ID account settings (App Store) at least 24 hours before the current period ends.'**
+  String get paywallRenewalNoticeIos;
+
+  /// Auto-renewal and cancellation terms of subscriptions (Android)
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your Google Play account. To avoid the next charge, cancel in your Google Play account settings at least 24 hours before the current period ends.'**
+  String get paywallRenewalNoticeAndroid;
 
   /// Terms of a free trial
   ///
@@ -2084,11 +2042,23 @@ abstract class AppLocalizations {
   /// **'Not available in this build of the app.'**
   String get paywallSettingsUnavailable;
 
-  /// Settings: how to cancel a subscription
+  /// Settings: how to cancel a subscription (any store)
   ///
   /// In en, this message translates to:
-  /// **'To cancel or change a subscription, open your App Store or Google Play account settings.'**
+  /// **'To cancel or change a subscription, open your account settings in the store.'**
   String get paywallSettingsManage;
+
+  /// Settings: how to cancel a subscription (Ios)
+  ///
+  /// In en, this message translates to:
+  /// **'To cancel or change a subscription, open the subscription settings of your Apple ID (App Store).'**
+  String get paywallSettingsManageIos;
+
+  /// Settings: how to cancel a subscription (Android)
+  ///
+  /// In en, this message translates to:
+  /// **'To cancel or change a subscription, open the subscriptions of your Google Play account.'**
+  String get paywallSettingsManageAndroid;
 
   /// Snack bar after a successful restore
   ///

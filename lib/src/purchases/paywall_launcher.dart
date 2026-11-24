@@ -47,19 +47,29 @@ final paywallLogProvider = Provider<void Function(String message)>(
 /// Only one paywall is open at a time.
 class _PaywallGate {
   bool open = false;
+
+  /// Set by [openPaywall] for the very next call of the opener: the user
+  /// pressed a button, so the "not too early" rule does not apply.
+  bool explicit = false;
 }
 
 final _paywallGateProvider = Provider<_PaywallGate>((ref) => _PaywallGate());
 
 /// The real opener: logs the trigger, applies the "not too early" rule to
 /// automatic triggers and pushes [PaywallScreen].
-final paywallOpenerProvider = Provider<PaywallOpener>((ref) {
+final paywallOpenerProvider = Provider<PaywallOpener>(realPaywallOpener);
+
+/// Builds the real opener (also used by tests that put it back inside a scope
+/// that has a recorder).
+PaywallOpener realPaywallOpener(Ref ref) {
   return (context, trigger) async {
     final log = ref.read(paywallLogProvider);
     log('paywall: trigger ${trigger.name}');
     final gate = ref.read(_paywallGateProvider);
+    final explicit = gate.explicit;
+    gate.explicit = false;
     if (gate.open) return;
-    if (trigger.isAutomatic) {
+    if (trigger.isAutomatic && !explicit) {
       var answers = 0;
       try {
         answers = await _totalAnswers(ref);
@@ -88,13 +98,21 @@ final paywallOpenerProvider = Provider<PaywallOpener>((ref) {
       gate.open = false;
     }
   };
-});
+}
 
 /// The single entry point for showing the paywall.
+///
+/// A call made by the app itself when a limit is hit (from a listener) leaves
+/// [explicit] false: the triggers of [PaywallTriggerRules.isAutomatic] then wait
+/// for [paywallMinAnswers] answers. A call from a button handler passes
+/// `explicit: true` and always opens the paywall (the title still follows
+/// [trigger]).
 Future<void> openPaywall(
   BuildContext context, {
   required PaywallTrigger trigger,
+  bool explicit = false,
 }) {
   final container = ProviderScope.containerOf(context, listen: false);
+  container.read(_paywallGateProvider).explicit = explicit;
   return container.read(paywallOpenerProvider)(context, trigger);
 }

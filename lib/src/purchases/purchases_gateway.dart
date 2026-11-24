@@ -2,12 +2,19 @@ import 'package:pilotiq/src/purchases/purchase_service.dart';
 
 /// What the backend says about the Premium entitlement.
 class ServerEntitlement {
-  const ServerEntitlement({required this.isActive, this.expiresAt});
+  const ServerEntitlement({
+    required this.isActive,
+    this.expiresAt,
+    this.serverTime,
+  });
 
   final bool isActive;
 
   /// End of the paid period; null for a lifetime purchase.
   final DateTime? expiresAt;
+
+  /// Time of the backend's answer (`requestDate`), if known.
+  final DateTime? serverTime;
 
   EntitlementState toState() => isActive
       ? EntitlementState(isPremium: true, expiresAt: expiresAt)

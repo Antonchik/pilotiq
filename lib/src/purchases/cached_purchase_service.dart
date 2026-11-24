@@ -71,10 +71,29 @@ abstract class CachedPurchaseService
     _publish(evaluateCachedEntitlement(_cached, _clock.now()));
   }
 
-  /// Takes over the state the backend reported and stores it.
+  int _applied = 0;
+
+  /// Number of backend answers applied so far. An answer that was requested
+  /// before another one was applied is stale and must be dropped.
   @protected
-  void applyServer(EntitlementState state) {
-    final seen = _bumpSeen();
+  int get appliedCount => _applied;
+
+  /// Takes over the state the backend reported and stores it. [serverTime] is
+  /// the time of the backend's answer: it becomes the new `lastSeenAt` even if
+  /// that is earlier than the old one (a clock that once ran ahead is fixed
+  /// by the next online answer).
+  @protected
+  void applyServer(EntitlementState state, {DateTime? serverTime}) {
+    _applied++;
+    final seen = serverTime ?? _bumpSeen();
+    if (serverTime != null) {
+      _cached = CachedEntitlement(
+        isPremium: _cached.isPremium,
+        expiresAt: _cached.expiresAt,
+        lastSeenAt: serverTime,
+        syncedOnce: _cached.syncedOnce,
+      );
+    }
     _cached = CachedEntitlement(
       isPremium: state.isPremium,
       expiresAt: state.isPremium ? state.expiresAt : null,
@@ -106,7 +125,8 @@ abstract class CachedPurchaseService
   @protected
   Future<void> onPeriodEnded() async => reevaluate();
 
-  /// Largest "now" seen so far; written to the cache about once an hour.
+  /// Largest "now" seen since the last backend answer; written to the cache
+  /// about once an hour.
   DateTime _bumpSeen() {
     final t = _clock.now();
     final previous = _cached.lastSeenAt;
@@ -144,7 +164,7 @@ abstract class CachedPurchaseService
     _timer = null;
     final end = state.expiresAt;
     if (_disposed || !state.isPremium || end == null) return;
-    var wait = end.difference(_cached.lastSeenAt ?? _clock.now());
+    var wait = end.difference(_clock.now());
     if (wait < _minRecheck) wait = _minRecheck;
     _timer = Timer(wait, () {
       _timer = null;

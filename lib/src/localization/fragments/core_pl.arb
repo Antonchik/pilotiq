@@ -36,17 +36,8 @@
   "languageButtonTooltip": "Zmień język",
   "goPremiumLabel": "Przejdź na Premium!",
   "featuresDescriptionTitle": "Wszystkie cechy w skrócie",
-  "allExamsAccessLabel": "Dostęp do wszystkich egzaminów",
-  "darkModeAccessLabel": "Tryb ciemny odblokowany",
-  "allSubjectsAccessLabel": "Dostęp do wszystkich pytań",
-  "specialPriceLabel": "Uzyskaj teraz!",
   "privacyPolicyLabel": "Polityka Prywatności",
-  "premiumUserGreeting": "Jesteś użytkownikiem Premium!",
-  "thankYouMessage": "Dziękujemy za wsparcie!",
-  "letsGoMessage": "Lecimy!",
-  "premiumLabel": "Przejdź na Premium!",
   "premiumTitle": "Premium",
   "termsOfServiceLabel": "Regulamin",
-  "aboutScreenBody": "O tej aplikacji...",
-  "paywallStubMessage": "Zakupy Premium będą tu wkrótce dostępne."
+  "aboutScreenBody": "O tej aplikacji..."
 }

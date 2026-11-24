@@ -9,13 +9,15 @@ import 'package:purchases_flutter/purchases_flutter.dart' as rc;
 
 /// Entitlement `premium` of [info]. A lifetime purchase has no expiration.
 ServerEntitlement mapCustomerInfo(rc.CustomerInfo info) {
+  final serverTime = DateTime.tryParse(info.requestDate)?.toLocal();
   final entitlement = info.entitlements.active[premiumEntitlementId];
   if (entitlement == null || !entitlement.isActive) {
-    return const ServerEntitlement(isActive: false);
+    return ServerEntitlement(isActive: false, serverTime: serverTime);
   }
   final end = entitlement.expirationDate;
   return ServerEntitlement(
     isActive: true,
+    serverTime: serverTime,
     expiresAt: end == null ? null : DateTime.tryParse(end)?.toLocal(),
   );
 }
@@ -104,9 +106,13 @@ PaywallPackage mapPackage(
   rc.IntroEligibilityStatus? eligibility,
 }) {
   final product = package.storeProduct;
+  // A prepaid plan (Google Play) is paid once and does not renew: it is
+  // shown as a one-time payment, without the auto-renewal text.
+  final prepaid = product.defaultOption?.isPrepaid ?? false;
   final subscription =
-      product.productCategory == rc.ProductCategory.subscription ||
-      product.subscriptionPeriod != null;
+      !prepaid &&
+      (product.productCategory == rc.ProductCategory.subscription ||
+          product.subscriptionPeriod != null);
   return PaywallPackage(
     id: package.identifier,
     kind: switch (package.packageType) {

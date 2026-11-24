@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show TargetPlatform;
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 
@@ -68,3 +69,20 @@ String? introText(AppLocalizations l, PaywallPackage p) {
       ? l.paywallIntroFree(length, then)
       : l.paywallIntroPaid(length, intro.priceString!, then);
 }
+
+/// Auto-renewal and cancellation terms for the store of [platform]: only the
+/// App Store on iOS, only Google Play on Android, neutral elsewhere.
+String renewalNoticeText(AppLocalizations l, TargetPlatform platform) =>
+    switch (platform) {
+      TargetPlatform.iOS => l.paywallRenewalNoticeIos,
+      TargetPlatform.android => l.paywallRenewalNoticeAndroid,
+      _ => l.paywallRenewalNotice,
+    };
+
+/// Where to cancel a subscription, for the store of [platform].
+String manageSubscriptionText(AppLocalizations l, TargetPlatform platform) =>
+    switch (platform) {
+      TargetPlatform.iOS => l.paywallSettingsManageIos,
+      TargetPlatform.android => l.paywallSettingsManageAndroid,
+      _ => l.paywallSettingsManage,
+    };

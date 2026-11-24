@@ -20,14 +20,20 @@ Future<PurchaseService> createPurchaseService({
   final store = cache ?? EntitlementCache();
   final key = apiKey ?? currentRevenueCatKey();
   if (key.isNotEmpty) {
+    PurchasesGateway? gateway;
+    RevenueCatPurchaseService? service;
     try {
-      final service = RevenueCatPurchaseService(
-        gateway: await createGateway(key),
-        cache: store,
-      );
+      gateway = await createGateway(key);
+      service = RevenueCatPurchaseService(gateway: gateway, cache: store);
       await service.start();
       return service;
     } on Object catch (e) {
+      // Release what was created before the failure.
+      if (service != null) {
+        service.dispose();
+      } else {
+        gateway?.dispose();
+      }
       debugPrint('Purchases are switched off, the store SDK failed: $e');
     }
   }

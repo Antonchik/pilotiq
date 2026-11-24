@@ -220,31 +220,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get featuresDescriptionTitle => 'Wszystkie cechy w skrócie';
 
   @override
-  String get allExamsAccessLabel => 'Dostęp do wszystkich egzaminów';
-
-  @override
-  String get darkModeAccessLabel => 'Tryb ciemny odblokowany';
-
-  @override
-  String get allSubjectsAccessLabel => 'Dostęp do wszystkich pytań';
-
-  @override
-  String get specialPriceLabel => 'Uzyskaj teraz!';
-
-  @override
   String get privacyPolicyLabel => 'Polityka Prywatności';
-
-  @override
-  String get premiumUserGreeting => 'Jesteś użytkownikiem Premium!';
-
-  @override
-  String get thankYouMessage => 'Dziękujemy za wsparcie!';
-
-  @override
-  String get letsGoMessage => 'Lecimy!';
-
-  @override
-  String get premiumLabel => 'Przejdź na Premium!';
 
   @override
   String get premiumTitle => 'Premium';
@@ -254,9 +230,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get aboutScreenBody => 'O tej aplikacji...';
-
-  @override
-  String get paywallStubMessage => 'Zakupy Premium będą tu wkrótce dostępne.';
 
   @override
   String get navToday => 'Dziś';
@@ -1154,13 +1127,13 @@ class AppLocalizationsPl extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          'Wersja bezpłatna to $count symulacji na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.',
+          'Wersja bezpłatna to $count symulacji na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.',
       many:
-          'Wersja bezpłatna to $count symulacji na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.',
+          'Wersja bezpłatna to $count symulacji na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.',
       few:
-          'Wersja bezpłatna to $count symulacje na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.',
+          'Wersja bezpłatna to $count symulacje na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.',
       one:
-          'Wersja bezpłatna to $count symulacja na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.',
+          'Wersja bezpłatna to $count symulacja na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.',
     );
     return '$_temp0';
   }
@@ -1207,7 +1180,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String paywallBenefitSimulations(int count) {
-    return 'Nielimitowane symulacje egzaminu z historią i analizą tematów (bezpłatnie: $count na przedmiot)';
+    return 'Nielimitowane symulacje egzaminu z analizą tematów wyników (bezpłatnie: $count na przedmiot)';
   }
 
   @override
@@ -1323,7 +1296,15 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get paywallRenewalNotice =>
-      'Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta App Store lub Google Play. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta w sklepie co najmniej 24 godziny przed końcem bieżącego okresu.';
+      'Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta w sklepie. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta w sklepie co najmniej 24 godziny przed końcem bieżącego okresu.';
+
+  @override
+  String get paywallRenewalNoticeIos =>
+      'Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta Apple ID. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta Apple ID (App Store) co najmniej 24 godziny przed końcem bieżącego okresu.';
+
+  @override
+  String get paywallRenewalNoticeAndroid =>
+      'Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta Google Play. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta Google Play co najmniej 24 godziny przed końcem bieżącego okresu.';
 
   @override
   String get paywallTrialNotice =>
@@ -1408,7 +1389,15 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get paywallSettingsManage =>
-      'Aby anulować lub zmienić subskrypcję, otwórz ustawienia konta App Store lub Google Play.';
+      'Aby anulować lub zmienić subskrypcję, otwórz ustawienia konta w sklepie.';
+
+  @override
+  String get paywallSettingsManageIos =>
+      'Aby anulować lub zmienić subskrypcję, otwórz ustawienia subskrypcji swojego konta Apple ID (App Store).';
+
+  @override
+  String get paywallSettingsManageAndroid =>
+      'Aby anulować lub zmienić subskrypcję, otwórz subskrypcje swojego konta Google Play.';
 
   @override
   String get paywallSettingsRestored => 'Premium przywrócone';

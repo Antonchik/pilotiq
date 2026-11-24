@@ -61,19 +61,10 @@
   "languageButtonTooltip": "Zmień język",
   "goPremiumLabel": "Przejdź na Premium!",
   "featuresDescriptionTitle": "Wszystkie cechy w skrócie",
-  "allExamsAccessLabel": "Dostęp do wszystkich egzaminów",
-  "darkModeAccessLabel": "Tryb ciemny odblokowany",
-  "allSubjectsAccessLabel": "Dostęp do wszystkich pytań",
-  "specialPriceLabel": "Uzyskaj teraz!",
   "privacyPolicyLabel": "Polityka Prywatności",
-  "premiumUserGreeting": "Jesteś użytkownikiem Premium!",
-  "thankYouMessage": "Dziękujemy za wsparcie!",
-  "letsGoMessage": "Lecimy!",
-  "premiumLabel": "Przejdź na Premium!",
   "premiumTitle": "Premium",
   "termsOfServiceLabel": "Regulamin",
   "aboutScreenBody": "O tej aplikacji...",
-  "paywallStubMessage": "Zakupy Premium będą tu wkrótce dostępne.",
   "navToday": "Dziś",
   "@navToday": {
     "description": "Bottom navigation: dashboard tab"
@@ -1140,7 +1131,7 @@
   "@paywallTitleExamLimit": {
     "description": "Paywall title when the free simulation of a subject is used"
   },
-  "paywallSubtitleExamLimit": "{count, plural, one{Wersja bezpłatna to {count} symulacja na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.} few{Wersja bezpłatna to {count} symulacje na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.} many{Wersja bezpłatna to {count} symulacji na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.} other{Wersja bezpłatna to {count} symulacji na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.}}",
+  "paywallSubtitleExamLimit": "{count, plural, one{Wersja bezpłatna to {count} symulacja na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.} few{Wersja bezpłatna to {count} symulacje na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.} many{Wersja bezpłatna to {count} symulacji na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.} other{Wersja bezpłatna to {count} symulacji na przedmiot. Premium daje nielimitowane symulacje i analizę tematów.}}",
   "@paywallSubtitleExamLimit": {
     "description": "Paywall subtitle for the simulation limit; count is the free simulations per subject",
     "placeholders": {
@@ -1186,7 +1177,7 @@
       }
     }
   },
-  "paywallBenefitSimulations": "Nielimitowane symulacje egzaminu z historią i analizą tematów (bezpłatnie: {count} na przedmiot)",
+  "paywallBenefitSimulations": "Nielimitowane symulacje egzaminu z analizą tematów wyników (bezpłatnie: {count} na przedmiot)",
   "@paywallBenefitSimulations": {
     "description": "Benefit: unlimited simulations; count is the free simulations per subject",
     "placeholders": {
@@ -1327,9 +1318,17 @@
   "@paywallRestore": {
     "description": "Button that restores purchases"
   },
-  "paywallRenewalNotice": "Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta App Store lub Google Play. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta w sklepie co najmniej 24 godziny przed końcem bieżącego okresu.",
+  "paywallRenewalNotice": "Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta w sklepie. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta w sklepie co najmniej 24 godziny przed końcem bieżącego okresu.",
   "@paywallRenewalNotice": {
-    "description": "Auto-renewal and cancellation terms of subscriptions"
+    "description": "Auto-renewal and cancellation terms of subscriptions (any store)"
+  },
+  "paywallRenewalNoticeIos": "Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta Apple ID. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta Apple ID (App Store) co najmniej 24 godziny przed końcem bieżącego okresu.",
+  "@paywallRenewalNoticeIos": {
+    "description": "Auto-renewal and cancellation terms of subscriptions (Ios)"
+  },
+  "paywallRenewalNoticeAndroid": "Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta Google Play. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta Google Play co najmniej 24 godziny przed końcem bieżącego okresu.",
+  "@paywallRenewalNoticeAndroid": {
+    "description": "Auto-renewal and cancellation terms of subscriptions (Android)"
   },
   "paywallTrialNotice": "Bezpłatny okres próbny zamienia się w płatną subskrypcję w pokazanej cenie, jeśli nie anulujesz jej przed jego końcem.",
   "@paywallTrialNotice": {
@@ -1423,9 +1422,17 @@
   "@paywallSettingsUnavailable": {
     "description": "Settings: restore is not possible in this build"
   },
-  "paywallSettingsManage": "Aby anulować lub zmienić subskrypcję, otwórz ustawienia konta App Store lub Google Play.",
+  "paywallSettingsManage": "Aby anulować lub zmienić subskrypcję, otwórz ustawienia konta w sklepie.",
   "@paywallSettingsManage": {
-    "description": "Settings: how to cancel a subscription"
+    "description": "Settings: how to cancel a subscription (any store)"
+  },
+  "paywallSettingsManageIos": "Aby anulować lub zmienić subskrypcję, otwórz ustawienia subskrypcji swojego konta Apple ID (App Store).",
+  "@paywallSettingsManageIos": {
+    "description": "Settings: how to cancel a subscription (Ios)"
+  },
+  "paywallSettingsManageAndroid": "Aby anulować lub zmienić subskrypcję, otwórz subskrypcje swojego konta Google Play.",
+  "@paywallSettingsManageAndroid": {
+    "description": "Settings: how to cancel a subscription (Android)"
   },
   "paywallSettingsRestored": "Premium przywrócone",
   "@paywallSettingsRestored": {

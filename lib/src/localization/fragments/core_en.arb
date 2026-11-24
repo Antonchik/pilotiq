@@ -147,41 +147,9 @@
   "@featuresDescriptionTitle": {
     "description": "Features description title"
   },
-  "allExamsAccessLabel": "Access to all exams",
-  "@allExamsAccessLabel": {
-    "description": "All exams access label"
-  },
-  "darkModeAccessLabel": "Dark mode unlocked",
-  "@darkModeAccessLabel": {
-    "description": "Dark mode unlocked label"
-  },
-  "allSubjectsAccessLabel": "Access to all questions",
-  "@allSubjectsAccessLabel": {
-    "description": "All subjects access label"
-  },
-  "specialPriceLabel": "Get it now!",
-  "@specialPriceLabel": {
-    "description": "Special price label"
-  },
   "privacyPolicyLabel": "Privacy Policy",
   "@privacyPolicyLabel": {
     "description": "Privacy policy label"
-  },
-  "premiumUserGreeting": "You're a Premium User!",
-  "@premiumUserGreeting": {
-    "description": "Premium user greeting"
-  },
-  "thankYouMessage": "Thanks for your Support!",
-  "@thankYouMessage": {
-    "description": "Thanks for supporting"
-  },
-  "letsGoMessage": "Let's go!",
-  "@letsGoMessage": {
-    "description": "Let's go!"
-  },
-  "premiumLabel": "Go Premium!",
-  "@premiumLabel": {
-    "description": "Premium paywall"
   },
   "premiumTitle": "Premium",
   "@premiumTitle": {
@@ -194,9 +162,5 @@
   "aboutScreenBody": "About this app...",
   "@aboutScreenBody": {
     "description": "Placeholder body of the about screen"
-  },
-  "paywallStubMessage": "Premium purchases will be available here soon.",
-  "@paywallStubMessage": {
-    "description": "Message of the temporary paywall screen"
   }
 }

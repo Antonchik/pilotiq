@@ -21,7 +21,7 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
   Future<void> start() async {
     await loadCache();
     _updates = _gateway.updates.listen(
-      (e) => applyServer(e.toState()),
+      (e) => applyServer(e.toState(), serverTime: e.serverTime),
       onError: (Object e) => debugPrint('Entitlement update failed: $e'),
     );
     observeLifecycle();
@@ -44,7 +44,12 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
   @override
   Future<void> refresh() async {
     try {
-      applyServer((await _gateway.getEntitlement()).toState());
+      final before = appliedCount;
+      final answer = await _gateway.getEntitlement();
+      // Another answer (a purchase, a restore, an SDK update) was applied while
+      // this one was on its way: this one is older, drop it.
+      if (appliedCount != before) return;
+      applyServer(answer.toState(), serverTime: answer.serverTime);
     } on Object catch (e) {
       debugPrint('Entitlement refresh failed, using the cache: $e');
       reevaluate();
@@ -77,18 +82,24 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
         if (entitlement == null || !entitlement.isActive) {
           // The store took the payment but the backend does not show Premium:
           // do not unlock, point the user to "Restore purchases".
-          if (entitlement != null) applyServer(entitlement.toState());
+          if (entitlement != null) {
+            applyServer(
+              entitlement.toState(),
+              serverTime: entitlement.serverTime,
+            );
+          }
           throw const PurchaseException(PurchaseFailureKind.notActivated);
         }
-        applyServer(entitlement.toState());
+        applyServer(entitlement.toState(), serverTime: entitlement.serverTime);
         return PurchaseOutcome.purchased;
     }
   }
 
   @override
   Future<EntitlementState> restore() async {
-    final state = (await _gateway.restore()).toState();
-    applyServer(state);
+    final answer = await _gateway.restore();
+    final state = answer.toState();
+    applyServer(state, serverTime: answer.serverTime);
     return state;
   }
 
@@ -96,7 +107,8 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
   Future<void> syncOnce() async {
     if (syncedOnceDone) return;
     try {
-      applyServer((await _gateway.sync()).toState());
+      final answer = await _gateway.sync();
+      applyServer(answer.toState(), serverTime: answer.serverTime);
       await markSyncedOnce();
     } on Object catch (e) {
       // Not marked: the next start tries again.

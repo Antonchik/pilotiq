@@ -217,31 +217,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get featuresDescriptionTitle => 'All features at a glance';
 
   @override
-  String get allExamsAccessLabel => 'Access to all exams';
-
-  @override
-  String get darkModeAccessLabel => 'Dark mode unlocked';
-
-  @override
-  String get allSubjectsAccessLabel => 'Access to all questions';
-
-  @override
-  String get specialPriceLabel => 'Get it now!';
-
-  @override
   String get privacyPolicyLabel => 'Privacy Policy';
-
-  @override
-  String get premiumUserGreeting => 'You\'re a Premium User!';
-
-  @override
-  String get thankYouMessage => 'Thanks for your Support!';
-
-  @override
-  String get letsGoMessage => 'Let\'s go!';
-
-  @override
-  String get premiumLabel => 'Go Premium!';
 
   @override
   String get premiumTitle => 'Premium';
@@ -251,10 +227,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutScreenBody => 'About this app...';
-
-  @override
-  String get paywallStubMessage =>
-      'Premium purchases will be available here soon.';
 
   @override
   String get navToday => 'Today';
@@ -1108,9 +1080,9 @@ class AppLocalizationsEn extends AppLocalizations {
       count,
       locale: localeName,
       other:
-          'Free access includes $count simulations per subject. Premium gives unlimited simulations with history and topic breakdown.',
+          'Free access includes $count simulations per subject. Premium gives unlimited simulations and topic breakdown.',
       one:
-          'Free access includes $count simulation per subject. Premium gives unlimited simulations with history and topic breakdown.',
+          'Free access includes $count simulation per subject. Premium gives unlimited simulations and topic breakdown.',
     );
     return '$_temp0';
   }
@@ -1152,7 +1124,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String paywallBenefitSimulations(int count) {
-    return 'Unlimited exam simulations with history and topic breakdown (free: $count per subject)';
+    return 'Unlimited exam simulations with topic breakdown of the results (free: $count per subject)';
   }
 
   @override
@@ -1260,7 +1232,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallRenewalNotice =>
-      'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your App Store or Google Play account. To avoid the next charge, cancel in your account settings in the store at least 24 hours before the current period ends.';
+      'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your store account. To avoid the next charge, cancel in your account settings in the store at least 24 hours before the current period ends.';
+
+  @override
+  String get paywallRenewalNoticeIos =>
+      'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your Apple ID account. To avoid the next charge, cancel in your Apple ID account settings (App Store) at least 24 hours before the current period ends.';
+
+  @override
+  String get paywallRenewalNoticeAndroid =>
+      'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your Google Play account. To avoid the next charge, cancel in your Google Play account settings at least 24 hours before the current period ends.';
 
   @override
   String get paywallTrialNotice =>
@@ -1345,7 +1325,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallSettingsManage =>
-      'To cancel or change a subscription, open your App Store or Google Play account settings.';
+      'To cancel or change a subscription, open your account settings in the store.';
+
+  @override
+  String get paywallSettingsManageIos =>
+      'To cancel or change a subscription, open the subscription settings of your Apple ID (App Store).';
+
+  @override
+  String get paywallSettingsManageAndroid =>
+      'To cancel or change a subscription, open the subscriptions of your Google Play account.';
 
   @override
   String get paywallSettingsRestored => 'Premium restored';

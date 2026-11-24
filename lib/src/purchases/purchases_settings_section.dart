@@ -93,7 +93,7 @@ class _PurchasesSettingsSectionState
         Padding(
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
           child: Text(
-            local.paywallSettingsManage,
+            manageSubscriptionText(local, theme.platform),
             key: const Key('settings_manage_subscription'),
             style: theme.textTheme.bodySmall,
           ),

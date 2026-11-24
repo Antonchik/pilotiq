@@ -210,7 +210,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
           const SizedBox(height: 16),
           if (subscriptions.isNotEmpty)
             Text(
-              local.paywallRenewalNotice,
+              renewalNoticeText(local, theme.platform),
               key: const Key('paywall_renewal_notice'),
               style: theme.textTheme.bodySmall,
             ),
@@ -292,6 +292,8 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
             retryLabel: local.paywallRetry,
             onRetry: _load,
           ),
+          ..._banners(local),
+          _restoreButton(local),
         ];
       case _Phase.empty:
         return [
@@ -302,6 +304,8 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
             retryLabel: local.paywallRetry,
             onRetry: _load,
           ),
+          ..._banners(local),
+          _restoreButton(local),
         ];
       case _Phase.ready:
         break;
@@ -340,26 +344,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
             ],
           ),
         ),
-      if (_notice == _Notice.pending)
-        _Message(
-          key: const Key('paywall_pending'),
-          icon: Icons.hourglass_empty,
-          text: local.paywallPending,
-        ),
-      if (_notice == _Notice.restoreNone)
-        _Message(
-          key: const Key('paywall_restore_none'),
-          icon: Icons.info_outline,
-          text: local.paywallRestoreNone,
-        ),
-      if (_actionError != null)
-        _Message(
-          key: const Key('paywall_action_error'),
-          icon: Icons.error_outline,
-          text: purchaseFailureText(local, _actionError!),
-          retryLabel: local.paywallRetry,
-          onRetry: _busy ? null : _retryAction,
-        ),
+      ..._banners(local),
       const SizedBox(height: 8),
       FilledButton(
         key: const Key('paywall_buy'),
@@ -367,13 +352,40 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
         child: Text(local.paywallContinue),
       ),
       const SizedBox(height: 4),
-      TextButton(
-        key: const Key('paywall_restore'),
-        onPressed: _busy ? null : _restore,
-        child: Text(local.paywallRestore),
-      ),
+      _restoreButton(local),
     ];
   }
+
+  /// Messages about the running or the last action (pending payment, nothing
+  /// to restore, a failure with "Try again").
+  List<Widget> _banners(AppLocalizations local) => [
+    if (_notice == _Notice.pending)
+      _Message(
+        key: const Key('paywall_pending'),
+        icon: Icons.hourglass_empty,
+        text: local.paywallPending,
+      ),
+    if (_notice == _Notice.restoreNone)
+      _Message(
+        key: const Key('paywall_restore_none'),
+        icon: Icons.info_outline,
+        text: local.paywallRestoreNone,
+      ),
+    if (_actionError != null)
+      _Message(
+        key: const Key('paywall_action_error'),
+        icon: Icons.error_outline,
+        text: purchaseFailureText(local, _actionError!),
+        retryLabel: local.paywallRetry,
+        onRetry: _busy ? null : _retryAction,
+      ),
+  ];
+
+  Widget _restoreButton(AppLocalizations local) => TextButton(
+    key: const Key('paywall_restore'),
+    onPressed: _busy ? null : _restore,
+    child: Text(local.paywallRestore),
+  );
 }
 
 class _Benefits extends StatelessWidget {

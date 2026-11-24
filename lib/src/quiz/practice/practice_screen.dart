@@ -362,8 +362,11 @@ class _LimitView extends StatelessWidget {
             const SizedBox(height: 16),
             FilledButton(
               key: const Key('practice_limit_premium'),
-              onPressed: () =>
-                  openPaywall(context, trigger: PaywallTrigger.dailyLimit),
+              onPressed: () => openPaywall(
+                context,
+                explicit: true,
+                trigger: PaywallTrigger.dailyLimit,
+              ),
               child: Text(local.goPremiumLabel),
             ),
             const SizedBox(height: 8),

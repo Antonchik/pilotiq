@@ -488,8 +488,11 @@ class _LimitView extends ConsumerWidget {
       children: [
         FilledButton(
           key: const Key('exam_limit_premium'),
-          onPressed: () =>
-              openPaywall(context, trigger: PaywallTrigger.examLimit),
+          onPressed: () => openPaywall(
+            context,
+            explicit: true,
+            trigger: PaywallTrigger.examLimit,
+          ),
           child: Text(local.goPremiumLabel),
         ),
         const SizedBox(height: 8),
