@@ -103,6 +103,22 @@
   "textSha": "1bf8ae071c07eed6",
   "verdict": "PASS"
  },
+ "PL010-0064#5e3fc3f8": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne: to samo pytanie i ten sam klucz; inna jest tylko czwarta odpowiedź («Żadna z odpowiedzi…» zamiast «fakultatywny»), do której tekst oryginału się nie odnosi.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "9fca4d27687980fe",
+  "verdict": "PASS"
+ },
+ "PL010-0064#da779a26": {
+  "date": "2026-11-24",
+  "note": "Klucz «okresowy» = art. 96 ust. 6 dosłownie; organ z art. 96 ust. 3 pkt 1. Cytaty i lokatory zgodne z korpusem.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "141ab36ad1c95c19",
+  "verdict": "PASS"
+ },
  "PL010-0073#3220cb22": {
   "date": "2026-11-24",
   "note": "Klucz = art. 31 ust. 1 pkt 1; pozostałe warunki z pkt 2–3. Wyliczenie w art. 31 ust. 1 jest zamknięte („wyłącznie”), więc zdanie o obywatelstwie i malowaniu jest obronne.",
@@ -414,6 +430,94 @@
   "round": 1,
   "textSha": "adc65d4e594468e3",
   "verdict": "PASS"
+ },
+ "PL010-0176#1a6471ac": {
+  "date": "2026-11-24",
+  "note": "Klucz (brzmienie z dawnego § 21 ust. 3 rozp. z 2003 r.) ma obecne oparcie w FCL.070(b)/SFCL.070(b)/BFCL.070(b) – niezwłoczny zwrot licencji właściwemu organowi; organ = Prezes Urzędu (art. 96 ust. 3 pkt 1); zastrzeżenie o zatrzymaniu – art. 100 ust. 3. Nie jest outdated. Opcja «Nie używać licencji» była i jest trywialnie prawdziwa, ale nie zmieniła się – bez sporu.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "6708b1ce5a88cd8b",
+  "verdict": "PASS"
+ },
+ "PL010-0177#13ff03fc": {
+  "date": "2026-11-24",
+  "note": "Jak 0176: FCL.070(b), SFCL.070(b), BFCL.070(b) obejmują zawieszenie licencji; art. 96 ust. 3, art. 100 ust. 3. Cytaty zgodne.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "b42f9838692f4c18",
+  "verdict": "PASS"
+ },
+ "PL010-0211#b2fb296c": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 100 ust. 1 pkt 3; pułapka zgodna (zamknięty katalog ust. 1).",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "724a84ffe1f6a586",
+  "verdict": "PASS"
+ },
+ "PL010-0212#0ab26e7f": {
+  "date": "2026-11-24",
+  "note": "Klucz = ARA.FCL.250(a)(5) dosłownie, wsparcie FCL.070(a). Pułapka mówi «nie należą do okoliczności wymienionych» – poprawne mimo «między innymi» w ARA.FCL.250(a).",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "31c8138cfb691d74",
+  "verdict": "PASS"
+ },
+ "PL010-0213#c36ad9cd": {
+  "date": "2026-11-24",
+  "note": "Klucz = ARA.FCL.250(a)(6); różnica «upoważnienia»/«certyfikatu» to różnica przekładu (EAR EN: «fraudulent use of the certificate»), nie zmiana normy – nie outdated ani disputed. Neutralne zdanie o różnicy brzmienia jest trafne.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "283e19bae51453bf",
+  "verdict": "PASS"
+ },
+ "PL010-0214#4b2e656a": {
+  "date": "2026-11-24",
+  "note": "Podstawa FCL.070(a) (część medyczna) – klucz merytorycznie aktualny; nazwa orzeczenia «o braku przeciwwskazań» to dawne brzmienie art. 96 ust. 1 pkt 5, co tekst poprawnie odnotowuje. Drobna uwaga (bez zmiany werdyktu): pytanie jest też w SPL/BPL, gdzie odpowiednikiem jest SFCL.070(a)/BFCL.070(a).",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "382ea8c66da19417",
+  "verdict": "PASS"
+ },
+ "PL010-0215#5ab6c893": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 100 ust. 1 pkt 5 i ARA.FCL.250(a)(4). Cytaty zgodne.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "7efa79373801fecc",
+  "verdict": "PASS"
+ },
+ "PL010-0216#f40419d1": {
+  "date": "2026-11-24",
+  "note": "Klucz «narkotyków» wprost w ARA.FCL.250(a)(4); art. 100 ust. 1 pkt 5 «środków odurzających». Poprawne.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "418b21c5deffe1eb",
+  "verdict": "PASS"
+ },
+ "PL010-0230#3b2952f0": {
+  "date": "2026-11-24",
+  "note": "Klucz poprawny (art. 100 ust. 1 pkt 5), ale tekst pomija element pytania «badanie PKBWL», a art. 100 ust. 3 dotyczy postępowania administracyjnego samego Prezesa Urzędu. Najbliższym obecnym odpowiednikiem sytuacji z pytania jest art. 100 ust. 4 (postępowanie uprawnionych organów państwowych w celu stwierdzenia okoliczności z ust. 1; dawny art. 100 ust. 2 wymieniał wprost Komisję). Poprawka: dodać ref {PL-PRAWO-LOTNICZE, «art. 100 ust. 4», quote «W przypadku postępowania prowadzonego przez uprawnione organy państwowe w celu stwierdzenia, czy zaistniały okoliczności, o których mowa w ust. 1, na czas prowadzenia tego postępowania Prezes Urzędu może zawiesić licencję i zatrzymać ją»} i jedno zdanie, np.: «Obecny art. 100 nie wymienia wprost badania Państwowej Komisji Badania Wypadków Lotniczych; na czas postępowania prowadzonego przez uprawnione organy państwowe zawieszenie i zatrzymanie licencji przewiduje art. 100 ust. 4.» Nie twierdzić, że PKBWL jest takim organem. Zmieścić się w 4 zdaniach/700 znakach (np. połączyć zdania 1–2: «…okoliczności z art. 100 ust. 1, m.in. wykonywania czynności lotniczych pod wpływem alkoholu (pkt 5)…»).",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "deddb963eb8c5295",
+  "verdict": "FIX"
+ },
+ "PL010-0231#c0b53fe6": {
+  "date": "2026-11-24",
+  "note": "Klucz poprawny (art. 100 ust. 1 pkt 5), ale tekst pomija element pytania «badanie PKBWL», a art. 100 ust. 3 dotyczy postępowania administracyjnego samego Prezesa Urzędu. Najbliższym obecnym odpowiednikiem sytuacji z pytania jest art. 100 ust. 4 (postępowanie uprawnionych organów państwowych w celu stwierdzenia okoliczności z ust. 1; dawny art. 100 ust. 2 wymieniał wprost Komisję). Poprawka: dodać ref {PL-PRAWO-LOTNICZE, «art. 100 ust. 4», quote «W przypadku postępowania prowadzonego przez uprawnione organy państwowe w celu stwierdzenia, czy zaistniały okoliczności, o których mowa w ust. 1, na czas prowadzenia tego postępowania Prezes Urzędu może zawiesić licencję i zatrzymać ją»} i jedno zdanie, np.: «Obecny art. 100 nie wymienia wprost badania Państwowej Komisji Badania Wypadków Lotniczych; na czas postępowania prowadzonego przez uprawnione organy państwowe zawieszenie i zatrzymanie licencji przewiduje art. 100 ust. 4.» Nie twierdzić, że PKBWL jest takim organem. Zmieścić się w 4 zdaniach/700 znakach (np. połączyć zdania 1–2: «…okoliczności z art. 100 ust. 1, m.in. wykonywania czynności lotniczych pod wpływem środków odurzających (pkt 5)…»). Przy 590 znakach trzeba skrócić: zdanie o ARA.FCL.250(a)(4) można zostawić tylko jako krótkie wtrącenie «(narkotyki wprost: ARA.FCL.250 lit. a) ppkt 4)».",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "bd130d6599282c51",
+  "verdict": "FIX"
+ },
+ "PL010-0232#7fcbbfdb": {
+  "date": "2026-11-24",
+  "note": "Klucz to dosłownie dawny § 21 ust. 4 rozp. z 2003 r. Obecnie obowiązek zwrotu licencji przy zawieszeniu samego uprawnienia wynika z SFCL.070(b)/BFCL.070(b) (SPL/BPL), ale pytanie jest też w banku PPL(A)/PPL(H), a FCL.070(b) mówi tylko o «zawieszeniu lub cofnięciu licencji» – tekst przemilcza tę różnicę, więc dla PPL jest mylący. Ponadto art. 100 ust. 6 dotyczy zwrotu licencji w celu wpisu o zawieszeniu LICENCJI z powodu zakazu prowadzenia pojazdów (ust. 5), a nie zawieszenia uprawnienia – w obecnej formie sugeruje fałszywą analogię. Poprawka: usunąć zdanie o art. 100 ust. 6 (i ref) albo wyraźnie napisać, że dotyczy zawieszenia licencji z mocy ust. 5; dodać ref FCL.070(b) i jedno zdanie: «Dla licencji PPL pkt FCL.070 lit. b) rozporządzenia 1178/2011 przewiduje zwrot licencji tylko przy jej zawieszeniu lub cofnięciu; obowiązek zwrotu przy zawieszeniu samego uprawnienia wynika wprost z przepisów SPL i BPL.» Jeżeli writer/orkiestrator uzna, że dla PPL klucz ma oparcie tylko w uchylonym § 21 ust. 4 – alternatywą jest status outdated dla całego klucza; nie DISPUTED (żadna inna odpowiedź nie stała się poprawna).",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "04a15bab63df4455",
+  "verdict": "FIX"
  },
  "PL010-0250#b1421fef": {
   "date": "2026-11-24",
@@ -1301,6 +1405,22 @@
   "portion": "P12",
   "round": 1,
   "textSha": "0ff6c5514bb8f67e",
+  "verdict": "PASS"
+ },
+ "PL010-1563#1e271f4a": {
+  "date": "2026-11-24",
+  "note": "Klucz = ARA.FCL.250(a)(2) («sfałszowania dziennika pokładowego oraz rejestrów w licencji») i art. 100 ust. 1 pkt 2. Poprawne.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "4f23329d2f899ac2",
+  "verdict": "PASS"
+ },
+ "PL010-1564#73bd55d0": {
+  "date": "2026-11-24",
+  "note": "Klucz = ARA.FCL.250(a)(1) dosłownie i art. 100 ust. 1 pkt 1. Poprawne.",
+  "portion": "P06",
+  "round": 1,
+  "textSha": "cc698bc3f868dd1d",
   "verdict": "PASS"
  }
 }
