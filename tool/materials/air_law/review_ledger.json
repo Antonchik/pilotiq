@@ -977,11 +977,11 @@
  },
  "PL010-0143#070f66d2": {
   "date": "2026-11-24",
-  "note": "Klucz (1500 m, IAS 140 kt) = SERA.5001(a)(1) i § 7 pkt 1 – treść poprawna. Ale pytanie brzmi „może być wykonany”, a dystraktor „Przy widzialności większej niż 5 km” też jest zgodny z tabelą S5-1 (w klasie G na i poniżej 900 m AMSL/300 m AGL wymagane 5 km) – dwie obronne odpowiedzi bez zmiany przepisów, jak 0441#b323e4a1 w P01. Dodać disputeNote: „Według tabeli S5-1 w pkt SERA.5001 rozporządzenia 923/2012 minimalna widzialność w locie VFR w klasie G na i poniżej 900 m AMSL lub 300 m nad terenem wynosi 5 km, więc lot przy widzialności większej niż 5 km jest również dozwolony, a odpowiedź „Przy widzialności większej niż 5 km” jest zgodna z przepisem. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” oraz do refs: EU-923-2012 | SERA.5001 | „F G 5 km Z dala od chmur i z widocznością powierzchni ziemi”.",
+  "note": "Runda 2: dodano disputeNote i ref SERA.5001 (wiersz F G 5 km). Klucz = SERA.5001(a)(1)/§ 7 pkt 1, ale dystraktor „>5 km” też zgodny z tabelą S5-1; disputeNote poprawny, punkt w refs.",
   "portion": "P20",
-  "round": 1,
-  "textSha": "00938cf5c14269ed",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "1264d2f5c24e7e1c",
+  "verdict": "DISPUTED"
  },
  "PL010-0144#8920eace": {
   "date": "2026-11-24",
@@ -2881,11 +2881,11 @@
  },
  "PL010-0519#295670a5": {
   "date": "2026-11-24",
-  "note": "Klucz = SERA.5001(a)(2) i § 7 pkt 1 lit. b – treść poprawna. Jak w 0143#070f66d2: dystraktor „Przy widzialności większej niż 5 km” również jest zgodny z tabelą S5-1 (minimum 5 km w klasie G na i poniżej 900 m AMSL/300 m AGL), pytanie brzmi „może być wykonany”. Dodać disputeNote (jak w 0143) i ref EU-923-2012 | SERA.5001 | „F G 5 km Z dala od chmur i z widocznością powierzchni ziemi”. Dystraktor A3 („nieokreślonej”) słusznie błędny – § 7 pkt 1 wymaga ≥1500 m.",
+  "note": "Runda 2: jak 0143#070f66d2 – klucz = SERA.5001(a)(2)/§ 7 pkt 1, dystraktor „>5 km” zgodny z tabelą S5-1; disputeNote poprawny, ref SERA.5001 dodany.",
   "portion": "P20",
-  "round": 1,
-  "textSha": "565188a487390664",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "3f005809c3f686e7",
+  "verdict": "DISPUTED"
  },
  "PL010-0519#f0f28a1c": {
   "date": "2026-11-24",
@@ -2905,11 +2905,11 @@
  },
  "PL010-0521#52863112": {
   "date": "2026-11-24",
-  "note": "Klucz obronny (SERA.5005(d)(1), ENR 1.2 pkt 8 a); 250 kt IAS w klasie C tylko poniżej 3050 m AMSL – SERA.6001(a)(3), przypis * do tabeli ENR 1.4 każe stosować FL100). Nieprecyzyjne: „lot VFR jest ograniczony tylko do prędkości poddźwiękowej” – przepis zakazuje prędkości okołodźwiękowych, a te obejmują też górny zakres poddźwiękowy. Przeredagować np.: „…lotów VFR nie wykonuje się z prędkościami okołodźwiękowymi ani naddźwiękowymi; na i powyżej FL 100 nie obowiązuje już limit 250 kt IAS, więc jedynym ograniczeniem jest ten zakaz, który klucz ULC oddaje jako «prędkość poddźwiękowa».” Lokator „ENR 1.4 klasa G” dla przypisu * akceptowalny (przypis dotyczy całej tabeli, kotwica tylko w G).",
+  "note": "Runda 2: sformułowanie poprawione (zakaz prędkości okołodźwiękowych/naddźwiękowych = SERA.5005(d)(1), ENR 1.2 pkt 8 a)); nowy lokator „ENR 1.4 przypis *” istnieje w kotwicach i zawiera cytat (polska część przypisu). Ostrzeżenie pl+en walidatora oczekiwane.",
   "portion": "P20",
-  "round": 1,
-  "textSha": "c6329ec8dc83e6e3",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "f46e759726bf76cf",
+  "verdict": "PASS"
  },
  "PL010-0522#5f4bec9a": {
   "date": "2026-11-24",
@@ -2929,11 +2929,11 @@
  },
  "PL010-0524#ae7ee2fc": {
   "date": "2026-11-24",
-  "note": "Klucz „z dala od chmur i z widocznością terenu lub świateł w terenie” odpowiada obecnym przepisom tylko częściowo: SERA.5005(c)(3) stosuje w nocy tabelę S5-1, w której „z dala od chmur” jest tylko w klasach F i G na i poniżej 900 m AMSL/300 m AGL, a w C i D obowiązuje 1500 m/300 m (co tekst sam przyznaje); „światła w terenie” nie występują w SERA.5005(c) ani ENR 1.2 pkt 7 (jest „kontakt wzrokowy z ziemią”). Zdanie „co odpowiada kluczowi ULC” – nadinterpretacja. Poprawić na „na tym opiera się klucz ULC” i dodać disputeNote, np.: „Według pkt SERA.5005 lit. c) ppkt 3 rozporządzenia 923/2012 w nocy stosuje się minima z tabeli S5-1 (pkt SERA.5001): lot „z dala od chmur” dopuszcza ona tylko w klasach F i G na i poniżej 900 m AMSL lub 300 m nad terenem, a w klasach C i D wymaga 1500 m w poziomie i 300 m w pionie od chmur; przepisy nie wspominają o widoczności świateł w terenie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” (wszystkie punkty są już w refs).",
+  "note": "Runda 2: „co odpowiada” zmienione na „na tym opiera się klucz ULC”; disputeNote (tabela S5-1 przez SERA.5005(c)(3): „z dala od chmur” tylko F/G nisko, C/D 1500 m/300 m, brak „świateł w terenie”) zgodny z korpusem, punkty w refs, 400 znaków (na granicy limitu).",
   "portion": "P20",
-  "round": 1,
-  "textSha": "8df97bd1781d80f3",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "7f2204bfa8df8489",
+  "verdict": "DISPUTED"
  },
  "PL010-0525#0fd8d734": {
   "date": "2026-11-24",

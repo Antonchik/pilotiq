@@ -1,0 +1,6 @@
+[
+{"key":"PL010-0143#070f66d2","verdict":"DISPUTED","note":"Runda 2: dodano disputeNote i ref SERA.5001 (wiersz F G 5 km). Klucz = SERA.5001(a)(1)/§ 7 pkt 1, ale dystraktor „>5 km” też zgodny z tabelą S5-1; disputeNote poprawny, punkt w refs."},
+{"key":"PL010-0519#295670a5","verdict":"DISPUTED","note":"Runda 2: jak 0143#070f66d2 – klucz = SERA.5001(a)(2)/§ 7 pkt 1, dystraktor „>5 km” zgodny z tabelą S5-1; disputeNote poprawny, ref SERA.5001 dodany."},
+{"key":"PL010-0521#52863112","verdict":"PASS","note":"Runda 2: sformułowanie poprawione (zakaz prędkości okołodźwiękowych/naddźwiękowych = SERA.5005(d)(1), ENR 1.2 pkt 8 a)); nowy lokator „ENR 1.4 przypis *” istnieje w kotwicach i zawiera cytat (polska część przypisu). Ostrzeżenie pl+en walidatora oczekiwane."},
+{"key":"PL010-0524#ae7ee2fc","verdict":"DISPUTED","note":"Runda 2: „co odpowiada” zmienione na „na tym opiera się klucz ULC”; disputeNote (tabela S5-1 przez SERA.5005(c)(3): „z dala od chmur” tylko F/G nisko, C/D 1500 m/300 m, brak „świateł w terenie”) zgodny z korpusem, punkty w refs, 400 znaków (na granicy limitu)."}
+]
