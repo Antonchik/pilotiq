@@ -852,6 +852,19 @@ class RegulationPartsTest(unittest.TestCase):
         self.assertNotIn("załącznik pkt 3.1", ec.eureg_anchors(text))      # off by default
         self.assertTrue(a["załącznik pkt 3.1"][0] <= a["załącznik pkt 3.1.1"][0])
 
+    def test_annex_definitions_of_eu_regulation(self):
+        text = ("Artykuł 1\nPrzedmiot\n1. Ustęp.\nZAŁĄCZNIK I\nDEFINICJE TERMINÓW\n"
+                "2) „prace lotnicze” oznaczają operację statku powietrznego;\n"
+                "57) „lotnictwo ogólne” oznacza wszelkie operacje lotnictwa cywilnego oprócz prac lotniczych;\n"
+                "57a) „lotnictwo dodatkowe” oznacza przykład;\nZAŁĄCZNIK II\nATM/ANS.AR.A.001 Zakres\nW niniejszym załączniku ustanawia się wymagania.\n")
+        a = ec.eureg_anchors(text, ("annexdefs",))
+        for key in ("załącznik I", "załącznik I pkt 2", "załącznik I pkt 57", "załącznik I pkt 57a", "załącznik II"):
+            self.assertIn(key, a, key)
+        s, e = a["załącznik I pkt 57"]
+        self.assertIn("lotnictwo ogólne", text[s:e])
+        self.assertNotIn("lotnictwo dodatkowe", text[s:e])
+        self.assertNotIn("załącznik I pkt 2", ec.eureg_anchors(text))     # off by default
+
     def test_rule_ids_with_slash_and_cs_prefix(self):
         text = ("ATM/ANS.OR.A.001 Application for a certificate\nRegulation (EU) 2017/373\n(a) A provider shall apply to the authority.\n"
                 "CS ADR-DSN.B.075 Runway shoulders\nED Decision 2016/027/R\nRunway shoulders should be provided where the code letter is D or E.\n"

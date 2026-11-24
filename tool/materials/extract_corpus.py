@@ -1020,6 +1020,7 @@ _EU_APP_RE = re.compile(r"^Dodatek (\d+)(?: do załącznika ([IVXLC]+).*)?$")
 _EU_BOUNDARY_RE = re.compile(r"^(?:PODCZĘŚĆ|SEKCJA|DZIAŁ|ROZDZIAŁ|ODDZIAŁ|TYTUŁ|\[CZĘŚĆ) \S")
 _EU_PARA_RE = re.compile(r"^(?:\(([ivx]{1,5})\)|([a-z])\)|(\d{1,2})\))\s*\S")
 _EU_UST_RE = re.compile(r"^(\d{1,3})\.\s+\S")
+_EU_DEF_RE = re.compile(r"^(\d{1,3}[a-z]?)\)\s+„")   # a numbered definition: 57) „lotnictwo ogólne” oznacza ...
 _EU_PKT_RE = re.compile(r"^(\d{1,3}[a-z]?)\)\s*\S")
 
 
@@ -1143,6 +1144,17 @@ def eureg_anchors(text, extras=()):
                     spans.append(_Span(key, start, 4))
             continue
         if mode == "annex":
+            if "annexdefs" in extras and annex is not None and mode == "annex" and annex_key:
+                mdf = _EU_DEF_RE.match(line)
+                if mdf:
+                    key = "%s pkt %s" % (annex_key, mdf.group(1))
+                    if key not in have:
+                        for sp in spans:
+                            if sp.level == 5 and sp.end is None:
+                                sp.end = start
+                        have.add(key)
+                        spans.append(_Span(key, start, 5))
+                    continue
             if "annexpoints" in extras and annex is not None and mode == "annex":
                 mpt = _APP_ROW_RE.match(line)
                 if mpt and not _RULE_RE.match(line):

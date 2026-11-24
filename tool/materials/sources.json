@@ -741,7 +741,10 @@
     "terms_note": "Decyzja Komisji 2011/833/UE o ponownym wykorzystywaniu dokumentów Komisji (strona warunków EUR-Lex nie została zweryfikowana: WAF) [ПРОВЕРИТЬ]. Tekst jest dokumentem informacyjnym; wiążące są wersje z Dziennika Urzędowego UE.",
     "bytes": 10798628,
     "celex": "02017R0373-20261004",
-    "legalState": "2026-10-04"
+    "legalState": "2026-10-04",
+    "anchorExtras": [
+      "annexdefs"
+    ]
   },
   {
     "id": "EU-300-2008",
