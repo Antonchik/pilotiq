@@ -17,19 +17,19 @@
  },
  "AL11-3": {
   "date": "2026-11-24",
-  "note": "Lista wysokości nieobecnych w tabeli dodatku 3 pomija 1750 m, występujące jako dystraktor w 0438#02c3f09c, 0439#b05b7b8e, 0440#89ac2b47 (tabela VFR: 1700 i 2000 m, IFR 1850 m). Dopisać: „Wysokości 1250, 1450, 1550 i 1750 m nie występują w tabeli z dodatku 3.” Reszta (SERA.5005(g), ENR 1.2 pkt 10, disputeNote) poprawna.",
+  "note": "FIX z rundy 1 wykonany: lista zawiera teraz 1250, 1450, 1550 i 1750 m; sprawdzone z dodatkiem 3 pkt 1.1 (poziomy VFR 1050/1350/1700/2000 m, IFR 1200/1500/1850 m) – żadna z tych wysokości nie występuje. Pozostała treść, refs (SERA.5005(g), ENR 1.2 pkt 10, dodatek 3 pkt 1.1, SERA.5005(f)) i disputeNote zgodne z korpusem; sekcja sporna, bo klucze serii przeczą warunkowi „powyżej 900 m nad terenem” lub dopuszczają kilka odpowiedzi.",
   "portion": "P01",
-  "round": 1,
-  "textSha": "697c4f0e73077ea6",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "e6cf0c12c22b53ae",
+  "verdict": "DISPUTED"
  },
  "AL11-4": {
   "date": "2026-11-24",
-  "note": "Fakt sprzeczny ze źródłem: „Promienie z przepisów dziennych (600 m nad zabudową, 150 m poza nią) w nocy nie mają zastosowania”. SERA.5005(f) dotyczy każdego lotu VFR, nie tylko dziennego (SERA.3105: „Minimalne wysokości dla lotów VFR określono w SERA.5005 lit. f)”), więc w nocy obowiązuje równolegle z lit. c) ppkt 5. Zastąpić np.: „W nocy wymagania są ostrzejsze: najwyższej przeszkody szuka się w promieniu 8 km.” Reszta sekcji poprawna.",
+  "note": "FIX z rundy 1 wykonany: błędne zdanie zastąpione poprawnym – SERA.3105 („Minimalne wysokości dla lotów VFR określono w SERA.5005 lit. f)”) i SERA.5005(f)(1)/(2) dotyczą każdego lotu VFR, także nocnego; wymogi nocne SERA.5005(c)(5) (300/600 m nad najwyższą przeszkodą w promieniu 8 km) są ostrzejsze, bo obejmują minima z lit. f). Nowe cytaty dosłowne, lokatory najdokładniejsze; 152 słowa.",
   "portion": "P01",
-  "round": 1,
-  "textSha": "0c06a824913b7d4c",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "05ed7f4e035f4b6c",
+  "verdict": "PASS"
  },
  "PL010-0013#002b1634": {
   "date": "2026-11-24",

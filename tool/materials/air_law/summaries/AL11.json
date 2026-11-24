@@ -110,7 +110,7 @@
     },
     {
       "id": "AL11-3",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Przelot poziomy VFR i tabela poziomów przelotu",
       "body": [
         "Jeżeli zezwolenie kontroli ruchu lotniczego nie stanowi inaczej, przelot poziomy VFR wykonywany powyżej 900 m (3 000 ft) nad ziemią lub wodą odbywa się na poziomie przelotu odpowiednim dla linii drogi, według tabeli poziomów przelotu z dodatku 3 do rozporządzenia 923/2012 (SERA.5005 lit. g)). AIP Polska (ENR 1.2 pkt 10) stosuje tę zasadę w FIR Warszawa.",
@@ -163,7 +163,7 @@
     },
     {
       "id": "AL11-4",
-      "status": "draft",
+      "status": "verified",
       "heading": "Minimalne wysokości lotu VFR w nocy",
       "body": [
         "Z wyjątkiem startu i lądowania lot VFR w nocy wykonuje się co najmniej na minimalnej wysokości bezwzględnej ustanowionej przez państwo, nad którego terytorium odbywa się przelot. Gdy jej nie ustalono, obowiązują wartości z pkt SERA.5005 lit. c) ppkt 5 rozporządzenia 923/2012, a AIP Polska (ENR 1.2 pkt 7) podaje te same wartości dla FIR Warszawa:",
