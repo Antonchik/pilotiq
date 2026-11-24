@@ -59,14 +59,21 @@ class _FlakyRepository extends ProgressRepository {
     Licence licence,
     String qid,
     bool correct,
-    DateTime now,
-  ) {
+    DateTime now, {
+    bool countsTowardDailyLimit = true,
+  }) {
     if (failures > 0) {
       failures--;
       throw StateError('disk full');
     }
     writes++;
-    return super.recordAnswer(licence, qid, correct, now);
+    return super.recordAnswer(
+      licence,
+      qid,
+      correct,
+      now,
+      countsTowardDailyLimit: countsTowardDailyLimit,
+    );
   }
 }
 

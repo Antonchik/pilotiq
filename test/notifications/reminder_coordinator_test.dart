@@ -8,7 +8,6 @@ import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/notifications/fake_notification_service.dart';
 import 'package:pilotiq/src/notifications/notification_service.dart';
 import 'package:pilotiq/src/notifications/providers.dart';
-import 'package:pilotiq/src/notifications/reminder_planner.dart';
 import 'package:pilotiq/src/progress/progress_repository.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/progress/user_settings.dart';
