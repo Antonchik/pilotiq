@@ -101,22 +101,11 @@ class AppLocalizationsPl extends AppLocalizations {
       'Wyniki Twoich symulacji egzaminu.';
 
   @override
-  String get subjectModeSoonBadge => 'Wkrótce';
-
-  @override
-  String examMinutesShort(int count) {
-    return '$count min';
-  }
-
-  @override
   String get appTitle => 'Pilotiq';
 
   @override
   String get copyright =>
       '© 2023 Anton Antonchik.\nWszelkie prawa zastrzeżone.';
-
-  @override
-  String get yes => 'Tak';
 
   @override
   String get no => 'Nie';
@@ -189,9 +178,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get principlesOfFlightSubjectTooltip => 'Zasady lotu';
 
   @override
-  String get startQuizTitle => 'Start';
-
-  @override
   String get continueQuizTitle => 'Kontynuuj';
 
   @override
@@ -201,30 +187,14 @@ class AppLocalizationsPl extends AppLocalizations {
   String get returnToSubjectTitle => 'Powrót do przedmiotu';
 
   @override
-  String get reviewAnswersTitle => 'Przeglądaj odpowiedzi';
-
-  @override
   String get restartMessage =>
       'Czy chcesz kontynuować rozpoczęty wcześniej test, czy zacząć od nowa?';
-
-  @override
-  String get congratsMessage =>
-      'Gratulacje!\nTest został zakończony pomyślnie!';
-
-  @override
-  String get failMessage => 'Niestety, nie udało Ci się ukończyć testu.';
 
   @override
   String get rightAnswer => 'Poprawna odpowiedź!';
 
   @override
-  String get wrongAnswer => 'Zła odpowiedź!';
-
-  @override
   String get nextQuestion => 'Następne pytanie';
-
-  @override
-  String get tryAgain => 'Spróbuj ponownie';
 
   @override
   String get fullQuizTitle => 'WSZYSTKIE PYTANIA';
@@ -242,15 +212,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get languageButtonTooltip => 'Zmień język';
-
-  @override
-  String get exitQuizTitle => 'Wyjść z testu?';
-
-  @override
-  String get timeIsUpTitle => 'Czas minął!';
-
-  @override
-  String get timeIsUpMessage => 'Nie udało Ci się ukończyć testu.';
 
   @override
   String get goPremiumLabel => 'Przejdź na Premium!';
@@ -290,9 +251,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get termsOfServiceLabel => 'Regulamin';
-
-  @override
-  String get okLabel => 'OK';
 
   @override
   String get aboutScreenBody => 'O tej aplikacji...';
@@ -1027,6 +985,14 @@ class AppLocalizationsPl extends AppLocalizations {
   String examTileLastFailed(int percent) {
     return 'Ostatni wynik: $percent%, niezaliczony';
   }
+
+  @override
+  String get examLeaveUnsavedBody =>
+      'Ostatnie odpowiedzi nie zostały zapisane na tym urządzeniu i zostaną utracone, jeśli wyjdziesz. Czas nadal płynie.';
+
+  @override
+  String get examLeaveUnsavedResultBody =>
+      'Wynik nie został jeszcze zapisany. Jeśli wyjdziesz teraz, egzamin pozostanie niezakończony, a jego wynik zostanie zapisany po ponownym otwarciu. Nie można go kontynuować.';
 
   @override
   String get reminderChannelName => 'Przypomnienia o nauce';

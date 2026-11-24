@@ -42,7 +42,11 @@ abstract class NotificationService {
   /// Removes every scheduled reminder.
   Future<void> cancelAll();
 
-  /// Schedules one reminder (inexact delivery).
+  /// Removes every scheduled reminder whose id is not in [keep].
+  Future<void> cancelExcept(Set<int> keep);
+
+  /// Schedules one reminder (inexact delivery). A reminder with an id that
+  /// is already scheduled is replaced.
   Future<void> schedule(PlannedReminder reminder, ReminderChannel channel);
 
   /// Opens the notification settings of the app in the system. Returns false

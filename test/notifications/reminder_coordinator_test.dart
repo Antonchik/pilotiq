@@ -131,7 +131,7 @@ void main() {
   });
 
   test(
-    'changing the settings cancels everything and schedules again',
+    'changing the settings replaces the schedule and drops the leftovers',
     () async {
       await useSettings({'reminderTime': '19:00'});
       await coordinator().reschedule(force: true);
@@ -142,13 +142,14 @@ void main() {
           .change((s) => s.copyWith(reminderTime: const ReminderTime(8, 30)));
       await coordinator().reschedule();
 
-      final cancel = service.calls.indexOf('cancelAll');
-      expect(cancel, isNonNegative);
+      // Nothing is cancelled up front: reminders are replaced by id and only
+      // the leftovers are removed at the end.
+      expect(service.calls, isNot(contains('cancelAll')));
+      expect(service.calls.where((c) => c == 'schedule'), hasLength(13));
       expect(
-        service.calls.sublist(cancel + 1).where((c) => c == 'schedule'),
-        isNotEmpty,
+        service.calls.where((c) => c != 'initialize').last,
+        'cancelExcept',
       );
-      expect(service.calls.first, isNot('schedule'));
       // Tomorrow: today's 08:30 has passed at 10:00.
       expect(service.scheduledSorted.first.at.hour, 8);
       expect(service.scheduledSorted.first.at.minute, 30);
@@ -167,7 +168,7 @@ void main() {
           .read(userSettingsProvider.notifier)
           .change((s) => s.copyWith(examDate: DateTime(2026, 11, 26)));
       await coordinator().reschedule();
-      expect(service.calls, contains('cancelAll'));
+      expect(service.calls, contains('cancelExcept'));
       expect(service.scheduled, hasLength(4));
 
       service.calls.clear();
@@ -175,7 +176,7 @@ void main() {
           .read(userSettingsProvider.notifier)
           .change((s) => s.copyWith(dailyGoal: 40));
       await coordinator().reschedule();
-      expect(service.calls, contains('cancelAll'));
+      expect(service.calls, contains('cancelExcept'));
       expect(service.scheduledSorted.first.body, contains('40'));
     },
   );
@@ -279,7 +280,7 @@ void main() {
     service.calls.clear();
     await coordinator().reschedule();
     expect(
-      service.calls.where((c) => c == 'schedule' || c == 'cancelAll'),
+      service.calls.where((c) => c == 'schedule' || c == 'cancelExcept'),
       isEmpty,
     );
   });
@@ -292,20 +293,12 @@ void main() {
       coordinator().reschedule(force: true),
     ]);
     expect(service.scheduled, hasLength(14));
-    // Every run is cancelAll followed by its schedules: never interleaved.
-    final calls = service.calls.where((c) => c != 'initialize').toList();
-    final cancels = [
-      for (var i = 0; i < calls.length; i++)
-        if (calls[i] == 'cancelAll') i,
-    ];
-    expect(cancels, isNotEmpty);
-    for (var i = 0; i < cancels.length; i++) {
-      final end = i + 1 < cancels.length ? cancels[i + 1] : calls.length;
-      expect(
-        calls.sublist(cancels[i] + 1, end).every((c) => c == 'schedule'),
-        isTrue,
-      );
-    }
+    // Every run is its schedules followed by one cancelExcept: never interleaved.
+    final calls = service.calls
+        .where((c) => c == 'schedule' || c == 'cancelExcept')
+        .map((c) => c == 'schedule' ? 's' : 'x')
+        .join();
+    expect(calls, matches(RegExp(r'^(s{14}x)+$')));
   });
 
   test('a failing plugin does not throw and shows as "failed"', () async {
@@ -324,6 +317,142 @@ void main() {
       ReminderPhase.scheduled,
     );
     expect(service.scheduled, hasLength(14));
+  });
+
+  test('a failure on one reminder leaves no hole and is retried', () async {
+    await useSettings({'reminderTime': '19:00'});
+    await coordinator().reschedule(force: true);
+    final before = service.scheduledSorted;
+    expect(before, hasLength(14));
+
+    // The next day: one reminder in the middle is rejected by the system.
+    now = now.add(const Duration(days: 1));
+    final broken = before[5].id;
+    service.failIds.add(broken);
+    await coordinator().reschedule();
+    expect(
+      container.read(reminderCoordinatorProvider).phase,
+      ReminderPhase.failed,
+    );
+    // Everything else is in place, including the days that came before and
+    // after the failing one; the new last day was still added.
+    expect(
+      service.scheduled.containsKey(broken),
+      isTrue,
+      reason: 'the old reminder with that id stays until replaced',
+    );
+    expect(service.scheduled, hasLength(14));
+    expect(service.calls.where((c) => c == 'cancelAll'), isEmpty);
+
+    // Retried by the next run without force.
+    service.failIds.clear();
+    await coordinator().reschedule();
+    expect(
+      container.read(reminderCoordinatorProvider),
+      const ReminderStatus(ReminderPhase.scheduled, 14),
+    );
+    expect(service.scheduledSorted.first.at.day, 24);
+  });
+
+  test('a rejection of every reminder does not throw', () async {
+    await useSettings({'reminderTime': '19:00'});
+    await coordinator().reschedule(force: true);
+    now = now.add(const Duration(days: 1));
+    service.failIds.addAll(service.scheduled.keys);
+    await coordinator().reschedule();
+    expect(
+      container.read(reminderCoordinatorProvider).phase,
+      ReminderPhase.failed,
+    );
+  });
+
+  test('a reminder closer than a minute to now is not scheduled', () async {
+    await useSettings({'reminderTime': '19:00'});
+    now = tz.TZDateTime(
+      tz.getLocation('Europe/Warsaw'),
+      2026,
+      11,
+      23,
+      18,
+      59,
+      30,
+    );
+    await coordinator().reschedule(force: true);
+    expect(service.scheduledSorted.first.at.day, 24);
+    expect(service.scheduled, hasLength(13));
+    expect(
+      container.read(reminderCoordinatorProvider).phase,
+      ReminderPhase.scheduled,
+    );
+
+    now = tz.TZDateTime(
+      tz.getLocation('Europe/Warsaw'),
+      2026,
+      11,
+      23,
+      18,
+      58,
+      30,
+    );
+    await coordinator().reschedule();
+    expect(service.scheduledSorted.first.at.day, 23);
+  });
+
+  test(
+    'reaching the goal while the app is open removes today at once',
+    () async {
+      await useSettings({'reminderTime': '19:00'});
+      await coordinator().reschedule(force: true);
+      expect(service.scheduledSorted.first.at.day, 23);
+
+      // Nothing changed: the check does not touch the plugin.
+      service.calls.clear();
+      await coordinator().checkProgress();
+      expect(service.calls, isEmpty);
+
+      for (var i = 0; i < 19; i++) {
+        await repository.recordAnswer(
+          Licence.ppla,
+          'PL010-000${1 + i % 4}',
+          true,
+          now,
+        );
+      }
+      await coordinator().checkProgress();
+      expect(service.calls, isEmpty, reason: 'goal not reached yet');
+
+      await repository.recordAnswer(Licence.ppla, 'PL010-0001', true, now);
+      await coordinator().checkProgress();
+      expect(service.scheduledSorted.first.at.day, 24);
+      expect(service.scheduled, hasLength(13));
+    },
+  );
+
+  test('the check does nothing while the reminders are off', () async {
+    await useSettings({});
+    service.calls.clear();
+    await coordinator().checkProgress();
+    expect(service.calls, isEmpty);
+  });
+
+  group('language of the reminders', () {
+    test('follows the whole preferred list, like the interface', () {
+      expect(
+        resolveDeviceLocale(const [Locale('de'), Locale('pl')]),
+        const Locale('pl'),
+      );
+      expect(
+        resolveDeviceLocale(const [Locale('en', 'US'), Locale('pl')])
+            .languageCode,
+        'en',
+      );
+      expect(
+        resolveDeviceLocale(const [Locale('pl', 'PL')]).languageCode,
+        'pl',
+      );
+      expect(resolveDeviceLocale(const [Locale('de')]).languageCode, 'en');
+      expect(resolveDeviceLocale(const []).languageCode, 'en');
+    });
   });
 
   group('permission in context', () {

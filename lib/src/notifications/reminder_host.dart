@@ -19,10 +19,25 @@ class ReminderLifecycleHost extends ConsumerStatefulWidget {
 
 class _ReminderLifecycleHostState extends ConsumerState<ReminderLifecycleHost>
     with WidgetsBindingObserver {
+  /// How often the daily progress is looked at while the app is open.
+  static const Duration _progressCheck = Duration(seconds: 15);
+
+  Timer? _timer;
+
+  void _startTimer() {
+    _timer ??= Timer.periodic(
+      _progressCheck,
+      (_) => unawaited(
+        ref.read(reminderCoordinatorProvider.notifier).checkProgress(),
+      ),
+    );
+  }
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    _startTimer();
     // After the first frame, so that the start-up of the app is not delayed.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _reschedule(force: true);
@@ -31,6 +46,7 @@ class _ReminderLifecycleHostState extends ConsumerState<ReminderLifecycleHost>
 
   @override
   void dispose() {
+    _timer?.cancel();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -41,6 +57,11 @@ class _ReminderLifecycleHostState extends ConsumerState<ReminderLifecycleHost>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) _startTimer();
+    if (state == AppLifecycleState.paused) {
+      _timer?.cancel();
+      _timer = null;
+    }
     if (state == AppLifecycleState.resumed ||
         state == AppLifecycleState.paused) {
       _reschedule();

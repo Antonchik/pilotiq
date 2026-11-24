@@ -67,14 +67,14 @@ class ExamHistoryScreen extends ConsumerWidget {
   }
 }
 
-class _HistoryList extends StatelessWidget {
+class _HistoryList extends ConsumerWidget {
   const _HistoryList({required this.attempts, required this.args});
 
   final List<ExamAttempt> attempts;
   final ExamArgs args;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
     // Newest first in the list; the chart reads oldest to newest.
     final recent = attempts.take(10).toList().reversed.toList();
@@ -93,6 +93,12 @@ class _HistoryList extends StatelessWidget {
             key: ValueKey('history_${a.id}'),
             attempt: a,
             args: args,
+            onChanged: () => ref.invalidate(
+              examHistoryProvider((
+                licence: args.licence,
+                subject: args.subject,
+              )),
+            ),
           ),
       ],
     );
@@ -172,7 +178,14 @@ class _Chart extends StatelessWidget {
 }
 
 class _AttemptTile extends StatelessWidget {
-  const _AttemptTile({super.key, required this.attempt, required this.args});
+  const _AttemptTile({
+    super.key,
+    required this.attempt,
+    required this.args,
+    required this.onChanged,
+  });
+
+  final VoidCallback onChanged;
 
   final ExamAttempt attempt;
   final ExamArgs args;
@@ -229,7 +242,10 @@ class _AttemptTile extends StatelessWidget {
       builder: (_) => ExamResultsScreen(
         attempt: attempt,
         args: args,
-        onRepeat: () => openExamSimulation(context, args),
+        onRepeat: () async {
+          await openExamSimulation(context, args);
+          onChanged();
+        },
       ),
     ),
   );

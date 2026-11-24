@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:ui' show Locale, PlatformDispatcher;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart' show basicLocaleListResolution;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
@@ -11,6 +12,10 @@ import 'package:pilotiq/src/notifications/notification_service.dart';
 import 'package:pilotiq/src/notifications/reminder_planner.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/progress/user_settings.dart';
+
+/// Reminders closer than this to "now" are not scheduled (the system
+/// rejects times that pass while the call is under way).
+const Duration minimumLeadTime = Duration(minutes: 1);
 
 /// Default time offered when the reminders are switched on.
 const ReminderTime defaultReminderTime = ReminderTime(19, 0);
@@ -35,8 +40,13 @@ final notificationServiceProvider = Provider<NotificationService>(
 /// read at the moment of scheduling (a function, so it is never stale).
 final reminderLocaleProvider = Provider<Locale Function()>(
   (ref) =>
-      () => PlatformDispatcher.instance.locale,
+      () => resolveDeviceLocale(PlatformDispatcher.instance.locales),
 );
+
+/// The locale the interface uses: the same algorithm as `MaterialApp` (the
+/// whole preferred list of the device against the supported locales).
+Locale resolveDeviceLocale(List<Locale> preferred) =>
+    basicLocaleListResolution(preferred, AppLocalizations.supportedLocales);
 
 /// Small flags of the reminders that are not user settings.
 abstract class ReminderPrefsStore {
@@ -193,6 +203,9 @@ class ReminderCoordinator extends Notifier<ReminderStatus> {
   Future<void> _tail = Future<void>.value();
   String? _lastSignature;
 
+  /// Answers given today when the schedule was last built.
+  int _answeredAtPlan = 0;
+
   @override
   ReminderStatus build() {
     ref.listen<AsyncValue<UserSettings>>(userSettingsProvider, (
@@ -209,6 +222,27 @@ class ReminderCoordinator extends Notifier<ReminderStatus> {
 
   static Object _relevant(UserSettings s) =>
       (s.reminderTime, s.examDate, s.dailyGoal, s.licence);
+
+  /// Cheap check (one box read) that the host runs while the app is open:
+  /// when the daily goal has been reached (or lost) since the last plan, the
+  /// schedule is rebuilt, so today's reminder disappears at once. Needs no
+  /// hook in the screens that record answers.
+  Future<void> checkProgress() async {
+    try {
+      final settings = ref.read(userSettingsProvider).value;
+      if (settings?.reminderTime == null) return;
+      final now = ref.read(clockProvider).now();
+      final answered =
+          (await ref.read(progressRepositoryProvider).dailyStat(now)).answered;
+      if (!ref.mounted) return;
+      final goal = settings!.dailyGoal;
+      if ((answered >= goal) != (_answeredAtPlan >= goal)) {
+        await reschedule();
+      }
+    } on Object catch (e) {
+      debugPrint('Checking the daily progress for the reminders failed: $e');
+    }
+  }
 
   /// Rebuilds the schedule. Without [force] nothing is sent to the plugin
   /// when the plan is identical to the one already set in this run.
@@ -252,6 +286,7 @@ class ReminderCoordinator extends Notifier<ReminderStatus> {
 
       final now = clock.now();
       final answered = (await repository.dailyStat(now)).answered;
+      _answeredAtPlan = answered;
       if (!ref.mounted) return;
       var due = 0;
       try {
@@ -274,7 +309,12 @@ class ReminderCoordinator extends Notifier<ReminderStatus> {
         location: location,
         texts: LocalizedReminderTexts(local),
       );
-      final signature = plan
+      final threshold = clock.now().add(minimumLeadTime);
+      final toSchedule = [
+        for (final r in plan)
+          if (r.at.isAfter(threshold)) r,
+      ];
+      final signature = toSchedule
           .map(
             (r) =>
                 '${r.id}|${r.at.millisecondsSinceEpoch}|${r.title}|${r.body}',
@@ -289,12 +329,33 @@ class ReminderCoordinator extends Notifier<ReminderStatus> {
         name: local.reminderChannelName,
         description: local.reminderChannelDescription,
       );
-      await service.cancelAll();
-      for (final reminder in plan) {
-        await service.schedule(reminder, channel);
+      // Replace by id, then drop what is left over: a failure in the middle
+      // never leaves a hole (the reminders already in place stay).
+      var failures = 0;
+      for (final reminder in toSchedule) {
+        try {
+          await service.schedule(reminder, channel);
+        } on Object catch (e) {
+          failures++;
+          debugPrint('Scheduling reminder ${reminder.id} failed: $e');
+        }
+        if (!ref.mounted) return;
+      }
+      try {
+        await service.cancelExcept({for (final r in toSchedule) r.id});
+      } on Object catch (e) {
+        failures++;
+        debugPrint('Removing the outdated reminders failed: $e');
+      }
+      _answeredAtPlan = answered;
+      if (failures > 0) {
+        // Retried by the next run (the signature is not remembered).
+        _lastSignature = null;
+        _emit(const ReminderStatus(ReminderPhase.failed));
+        return;
       }
       _lastSignature = signature;
-      _emit(ReminderStatus(ReminderPhase.scheduled, plan.length));
+      _emit(ReminderStatus(ReminderPhase.scheduled, toSchedule.length));
     } on Object catch (e, stack) {
       debugPrint('Scheduling the reminders failed: $e\n$stack');
       _lastSignature = null;

@@ -112,19 +112,6 @@
   "@subjectModeHistoryDescription": {
     "description": "Description of the history tile"
   },
-  "subjectModeSoonBadge": "Soon",
-  "@subjectModeSoonBadge": {
-    "description": "Badge of a mode that is not available yet"
-  },
-  "examMinutesShort": "{count} min",
-  "@examMinutesShort": {
-    "description": "Exam time limit in minutes, short form",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
   "appTitle": "Pilotiq",
   "@appTitle": {
     "description": "The title of the application"
@@ -132,10 +119,6 @@
   "copyright": "© 2023 Anton Antonchik.\nAll rights reserved.",
   "@copyright": {
     "description": "Copyright message"
-  },
-  "yes": "Yes",
-  "@yes": {
-    "description": "The label for Yes option"
   },
   "no": "No",
   "@no": {
@@ -225,10 +208,6 @@
   "@principlesOfFlightSubjectTooltip": {
     "description": "The title of the Principles of flight subject"
   },
-  "startQuizTitle": "Start",
-  "@startQuizTitle": {
-    "description": "The title of the start quiz button"
-  },
   "continueQuizTitle": "Continue",
   "@continueQuizTitle": {
     "description": "The title of the continue quiz button"
@@ -241,37 +220,17 @@
   "@returnToSubjectTitle": {
     "description": "The title of the return to subjects button"
   },
-  "reviewAnswersTitle": "Review answers",
-  "@reviewAnswersTitle": {
-    "description": "The title of the review results button"
-  },
   "restartMessage": "Would you like to continue the test you started before or start over?",
   "@restartMessage": {
     "description": "Message for the test restart options"
-  },
-  "congratsMessage": "Congrats!\nYou have completed the test",
-  "@congratsMessage": {
-    "description": "Message for the test completion"
-  },
-  "failMessage": "Oh no!\nYou have failed completion of the test",
-  "@failMessage": {
-    "description": "Message for the test fail"
   },
   "rightAnswer": "Good Job!",
   "@rightAnswer": {
     "description": "The message for the right answer"
   },
-  "wrongAnswer": "Wrong answer!",
-  "@wrongAnswer": {
-    "description": "The message for the wrong answer"
-  },
   "nextQuestion": "Next question",
   "@nextQuestion": {
     "description": "The label for the next question button"
-  },
-  "tryAgain": "Try again!",
-  "@tryAgain": {
-    "description": "The label for the Try again button"
   },
   "fullQuizTitle": "ALL QUESTIONS",
   "@fullQuizTitle": {
@@ -292,18 +251,6 @@
   "languageButtonTooltip": "Language",
   "@languageButtonTooltip": {
     "description": "Label for the 'Language' button"
-  },
-  "exitQuizTitle": "Exit the test?",
-  "@exitQuizTitle": {
-    "description": "Label for the 'Exit test' button"
-  },
-  "timeIsUpTitle": "Time is up!",
-  "@timeIsUpTitle": {
-    "description": "Title for the 'Time is up' dialog"
-  },
-  "timeIsUpMessage": "You have run out of time.\nYour test is over.",
-  "@timeIsUpMessage": {
-    "description": "Message for the 'Time is up' dialog"
   },
   "goPremiumLabel": "Go Premium!",
   "@goPremiumLabel": {
@@ -356,10 +303,6 @@
   "termsOfServiceLabel": "Terms of Service",
   "@termsOfServiceLabel": {
     "description": "The label of the Terms of Service link"
-  },
-  "okLabel": "OK",
-  "@okLabel": {
-    "description": "The label of the OK button"
   },
   "aboutScreenBody": "About this app...",
   "@aboutScreenBody": {
@@ -1268,6 +1211,14 @@
         "type": "int"
       }
     }
+  },
+  "examLeaveUnsavedBody": "Your latest answers could not be saved on this device and will be lost if you leave. The timer keeps running.",
+  "@examLeaveUnsavedBody": {
+    "description": "Leave dialog when answers are not stored"
+  },
+  "examLeaveUnsavedResultBody": "Your result is not saved yet. If you leave now, the exam stays unfinished and its result is saved when you open it again. It cannot be continued.",
+  "@examLeaveUnsavedResultBody": {
+    "description": "Leave dialog while the result is not stored"
   },
   "reminderChannelName": "Study reminders",
   "@reminderChannelName": {

@@ -111,18 +111,5 @@
   "subjectModeHistoryDescription": "Results of your exam simulations.",
   "@subjectModeHistoryDescription": {
     "description": "Description of the history tile"
-  },
-  "subjectModeSoonBadge": "Soon",
-  "@subjectModeSoonBadge": {
-    "description": "Badge of a mode that is not available yet"
-  },
-  "examMinutesShort": "{count} min",
-  "@examMinutesShort": {
-    "description": "Exam time limit in minutes, short form",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
   }
 }

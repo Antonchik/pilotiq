@@ -6,7 +6,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:pilotiq/src/notifications/notification_service.dart';
 import 'package:pilotiq/src/notifications/reminder_planner.dart';
-import 'package:timezone/data/latest.dart' as tzdata;
+import 'package:timezone/data/latest_all.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -65,19 +65,49 @@ class LocalNotificationService implements NotificationService {
     return location;
   }
 
-  /// The device zone by its IANA id; if the id is unknown to the database, a
-  /// fixed offset of the moment (better than a wrong region).
-  static Future<tz.Location> _deviceLocation() async {
+  /// The device zone by its IANA id (the full database knows the old names
+  /// too: Europe/Kiev, Asia/Calcutta, US/Pacific, UTC, ...). If the id is
+  /// unknown or cannot be read, a zone with a real IANA name and the current
+  /// offset is used (never an invented name: the native code needs a valid
+  /// one).
+  static Future<tz.Location> _deviceLocation() => resolveDeviceLocation(
+    () async => (await FlutterTimezone.getLocalTimezone()).identifier,
+    DateTime.now().timeZoneOffset,
+  );
+
+  /// See [_deviceLocation]; the time zone database must be initialised.
+  @visibleForTesting
+  static Future<tz.Location> resolveDeviceLocation(
+    Future<String> Function() readId,
+    Duration offset,
+  ) async {
     try {
-      final info = await FlutterTimezone.getLocalTimezone();
-      return tz.getLocation(info.identifier);
+      return tz.getLocation(await readId());
     } on Object {
-      final offset = DateTime.now().timeZoneOffset;
-      return tz.Location('device', [tz.minTime], [0], [
-        tz.TimeZone(offset, isDst: false, abbreviation: 'LOC'),
-      ]);
+      return fallbackLocation(offset);
     }
   }
+
+  /// `Etc/GMT-3` for +03:00 (the sign of the Etc zones is inverted), or
+  /// `Etc/UTC` for offsets that are not whole hours or out of range.
+  @visibleForTesting
+  static tz.Location fallbackLocation(Duration offset) {
+    final hours = offset.inMinutes / 60;
+    if (offset.inMinutes % 60 != 0 || hours < -12 || hours > 14) {
+      return tz.getLocation('Etc/UTC');
+    }
+    final h = hours.toInt();
+    if (h == 0) return tz.getLocation('Etc/UTC');
+    return tz.getLocation('Etc/GMT${h > 0 ? '-' : '+'}${h.abs()}');
+  }
+
+  /// True when the reminder channel exists and the user has switched it off.
+  @visibleForTesting
+  static bool channelDisabled(List<AndroidNotificationChannel>? channels) =>
+      channels?.any(
+        (c) => c.id == ReminderChannel.id && c.importance == Importance.none,
+      ) ??
+      false;
 
   @override
   Future<NotificationPermission> permissionStatus() async {
@@ -89,6 +119,17 @@ class LocalNotificationService implements NotificationService {
             AndroidFlutterLocalNotificationsPlugin
           >()
           ?.areNotificationsEnabled();
+      if (enabled == true) {
+        // The user can also switch off the channel of the reminders alone.
+        final channels = await _plugin
+            .resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin
+            >()
+            ?.getNotificationChannels();
+        if (channelDisabled(channels)) {
+          return NotificationPermission.denied;
+        }
+      }
     } else if (Platform.isIOS) {
       enabled =
           (await _plugin
@@ -153,6 +194,14 @@ class LocalNotificationService implements NotificationService {
       ),
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
     );
+  }
+
+  @override
+  Future<void> cancelExcept(Set<int> keep) async {
+    await initialize();
+    for (final pending in await _plugin.pendingNotificationRequests()) {
+      if (!keep.contains(pending.id)) await _plugin.cancel(id: pending.id);
+    }
   }
 
   @override

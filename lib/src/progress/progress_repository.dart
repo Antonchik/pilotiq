@@ -213,10 +213,77 @@ class ProgressRepository {
     bool correct,
     DateTime now, {
     bool countsTowardDailyLimit = true,
+  }) => _locked(
+    () => _record(
+      licence,
+      qid,
+      correct,
+      now,
+      countsTowardDailyLimit: countsTowardDailyLimit,
+    ),
+  );
+
+  /// Adds the answer of [qid] given in the stored exam attempt [attemptId] to
+  /// the progress (like [recordAnswer] with `countsTowardDailyLimit: false`)
+  /// and removes [qid] from the attempt's `unrecorded` list **in the same
+  /// journaled step**: either both happen or none. Returns false (and writes
+  /// nothing) if the attempt is gone or the answer was already counted, so a
+  /// repeated or interrupted run never counts an answer twice.
+  Future<bool> recordAttemptAnswer(
+    String attemptId,
+    String qid, {
+    required bool correct,
+    required DateTime now,
   }) => _locked(() async {
+    final attempts = await _box(attemptsBox);
+    final raw = attempts.get(attemptId);
+    final attempt = raw is Map ? ExamAttempt.tryFromMap(raw) : null;
+    if (attempt == null || !attempt.unrecorded.contains(qid)) return false;
+    await _record(
+      attempt.licence,
+      qid,
+      correct,
+      now,
+      countsTowardDailyLimit: false,
+      attemptId: attemptId,
+      attemptAfter: attempt.withoutUnrecorded([qid]).toMap(),
+    );
+    return true;
+  });
+
+  /// Removes [qids] from the attempt's `unrecorded` list without touching the
+  /// progress (answers that cannot be counted, e.g. the question left the
+  /// bank).
+  Future<void> dropUnrecordedAnswers(String attemptId, Iterable<String> qids) =>
+      _locked(() async {
+        final attempts = await _box(attemptsBox);
+        final raw = attempts.get(attemptId);
+        final attempt = raw is Map ? ExamAttempt.tryFromMap(raw) : null;
+        if (attempt == null) return;
+        await attempts.put(attemptId, attempt.withoutUnrecorded(qids).toMap());
+      });
+
+  /// Stored attempts of [licence] that still have answers to count.
+  Future<List<ExamAttempt>> attemptsWithUnrecordedAnswers(
+    Licence licence,
+  ) async => [
+    for (final a in await attempts(licence))
+      if (a.unrecorded.isNotEmpty) a,
+  ];
+
+  Future<QuestionProgress> _record(
+    Licence licence,
+    String qid,
+    bool correct,
+    DateTime now, {
+    required bool countsTowardDailyLimit,
+    String? attemptId,
+    Map<String, dynamic>? attemptAfter,
+  }) async {
     final progress = await _box(progressBoxName(licence));
     final daily = await _box(dailyBox);
     final config = await _box(configBox);
+    final attempts = attemptId == null ? null : await _box(attemptsBox);
     final examDate = UserSettings.fromMap(config.toMap()).examDate;
 
     final before =
@@ -230,7 +297,7 @@ class ProgressRepository {
     final key = DailyStat.keyFor(now);
     final stat = _readDaily(daily.get(key)) ?? DailyStat(date: key);
 
-    // Journal of the two writes: if anything fails, the previous values are
+    // Journal of the writes: if anything fails, the previous values are
     // restored (right away, or by the next locked call if even that fails),
     // so a retry by the caller is never counted twice.
     await config.put(_pendingKey, {
@@ -239,6 +306,8 @@ class ProgressRepository {
       'dailyKey': key,
       'prevProgress': _copyMap(progress.get(qid)),
       'prevDaily': _copyMap(daily.get(key)),
+      'attemptId': ?attemptId,
+      if (attemptId != null) 'prevAttempt': _copyMap(attempts!.get(attemptId)),
     });
     try {
       await progress.put(qid, after.toMap());
@@ -246,6 +315,7 @@ class ProgressRepository {
         key,
         stat.recorded(correct: correct, exam: !countsTowardDailyLimit).toMap(),
       );
+      if (attemptId != null) await attempts!.put(attemptId, attemptAfter);
       await config.delete(_pendingKey);
     } on Object {
       try {
@@ -256,7 +326,7 @@ class ProgressRepository {
       rethrow;
     }
     return after;
-  });
+  }
 
   static const String _pendingKey = 'pending_answer';
 
@@ -278,6 +348,10 @@ class ProgressRepository {
           prev is Map ? box.put(key, prev) : box.delete(key);
       await restore(progress, qid, j['prevProgress']);
       await restore(daily, dailyKey, j['prevDaily']);
+      final attemptId = j['attemptId'];
+      if (attemptId is String) {
+        await restore(await _box(attemptsBox), attemptId, j['prevAttempt']);
+      }
     }
     await config.delete(_pendingKey);
   }

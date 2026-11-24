@@ -23,7 +23,5 @@
   "subjectModeBookmarksTitle": "ZAKŁADKI",
   "subjectModeBookmarksDescription": "Pytania zapisane na później.",
   "subjectModeHistoryTitle": "HISTORIA",
-  "subjectModeHistoryDescription": "Wyniki Twoich symulacji egzaminu.",
-  "subjectModeSoonBadge": "Wkrótce",
-  "examMinutesShort": "{count} min"
+  "subjectModeHistoryDescription": "Wyniki Twoich symulacji egzaminu."
 }

@@ -1,6 +1,6 @@
 import 'package:pilotiq/src/notifications/notification_service.dart';
 import 'package:pilotiq/src/notifications/reminder_planner.dart';
-import 'package:timezone/data/latest.dart' as tzdata;
+import 'package:timezone/data/latest_all.dart' as tzdata;
 import 'package:timezone/timezone.dart' as tz;
 
 /// In-memory [NotificationService]: used by tests and on platforms where the
@@ -26,7 +26,7 @@ class FakeNotificationService implements NotificationService {
   /// the first one, like the real plugin does).
   final Map<int, PlannedReminder> scheduled = {};
 
-  /// Every call in order: `initialize`, `cancelAll`, `schedule`, `request`,
+  /// Every call in order: `initialize`, `cancelAll`, `cancelExcept`, `schedule`, `request`,
   /// `openSettings`.
   final List<String> calls = [];
 
@@ -73,6 +73,17 @@ class FakeNotificationService implements NotificationService {
   }
 
   @override
+  Future<void> cancelExcept(Set<int> keep) async {
+    calls.add('cancelExcept');
+    final error = failWith;
+    if (error != null) throw error;
+    scheduled.removeWhere((id, _) => !keep.contains(id));
+  }
+
+  /// Ids for which [schedule] throws (a partial failure).
+  final Set<int> failIds = {};
+
+  @override
   Future<void> schedule(
     PlannedReminder reminder,
     ReminderChannel channel,
@@ -80,6 +91,9 @@ class FakeNotificationService implements NotificationService {
     calls.add('schedule');
     final error = failWith;
     if (error != null) throw error;
+    if (failIds.contains(reminder.id)) {
+      throw ArgumentError('Must be a date in the future');
+    }
     lastChannel = channel;
     scheduled[reminder.id] = reminder;
   }

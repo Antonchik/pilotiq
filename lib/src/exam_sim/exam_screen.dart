@@ -141,13 +141,21 @@ class _ExamBodyState extends ConsumerState<_ExamBody>
     if (ok == true) await _controller.finish();
   }
 
-  Future<void> _confirmLeave() async {
+  /// Asks before the screen is left while the exam is running (or its result
+  /// is being stored). Answers that could not be stored are stored once more
+  /// first; if that fails again the dialog says they will be lost.
+  Future<void> _confirmLeave({bool ending = false}) async {
     final local = AppLocalizations.of(context)!;
+    final saved = ending ? true : await _controller.flushProgress();
+    if (!mounted) return;
+    final body = ending
+        ? local.examLeaveUnsavedResultBody
+        : (saved ? local.examLeaveBody : local.examLeaveUnsavedBody);
     final leave = await _dialog<bool>(
       (ctx) => AlertDialog(
         scrollable: true,
         title: Text(local.examLeaveTitle),
-        content: Text(local.examLeaveBody),
+        content: Text(body),
         actions: [
           TextButton(
             key: const Key('exam_leave_stay'),
@@ -247,10 +255,11 @@ class _ExamBodyState extends ConsumerState<_ExamBody>
       );
     }
     final running = s != null && s.phase == ExamPhase.running;
+    final ending = s != null && s.phase == ExamPhase.finishing;
     return PopScope(
-      canPop: !running,
+      canPop: !running && !ending,
       onPopInvokedWithResult: (didPop, _) {
-        if (!didPop) _confirmLeave();
+        if (!didPop) _confirmLeave(ending: ending);
       },
       child: Scaffold(
         appBar: AppBar(
@@ -494,7 +503,10 @@ class _ResumeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
     final controller = ref.read(examControllerProvider.notifier);
-    final left = state.deadline!.difference(ref.read(clockProvider).now());
+    final full = Duration(seconds: state.durationSec);
+    var left = state.deadline!.difference(ref.read(clockProvider).now());
+    if (left > full) left = full;
+    if (left.isNegative) left = Duration.zero;
     return _Message(
       icon: Icons.restore,
       title: local.examResumeTitle,

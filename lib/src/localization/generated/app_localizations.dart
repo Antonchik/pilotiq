@@ -248,18 +248,6 @@ abstract class AppLocalizations {
   /// **'Results of your exam simulations.'**
   String get subjectModeHistoryDescription;
 
-  /// Badge of a mode that is not available yet
-  ///
-  /// In en, this message translates to:
-  /// **'Soon'**
-  String get subjectModeSoonBadge;
-
-  /// Exam time limit in minutes, short form
-  ///
-  /// In en, this message translates to:
-  /// **'{count} min'**
-  String examMinutesShort(int count);
-
   /// The title of the application
   ///
   /// In en, this message translates to:
@@ -271,12 +259,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'© 2023 Anton Antonchik.\nAll rights reserved.'**
   String get copyright;
-
-  /// The label for Yes option
-  ///
-  /// In en, this message translates to:
-  /// **'Yes'**
-  String get yes;
 
   /// The label for No option
   ///
@@ -410,12 +392,6 @@ abstract class AppLocalizations {
   /// **'Principles of flight'**
   String get principlesOfFlightSubjectTooltip;
 
-  /// The title of the start quiz button
-  ///
-  /// In en, this message translates to:
-  /// **'Start'**
-  String get startQuizTitle;
-
   /// The title of the continue quiz button
   ///
   /// In en, this message translates to:
@@ -434,29 +410,11 @@ abstract class AppLocalizations {
   /// **'Return to subject'**
   String get returnToSubjectTitle;
 
-  /// The title of the review results button
-  ///
-  /// In en, this message translates to:
-  /// **'Review answers'**
-  String get reviewAnswersTitle;
-
   /// Message for the test restart options
   ///
   /// In en, this message translates to:
   /// **'Would you like to continue the test you started before or start over?'**
   String get restartMessage;
-
-  /// Message for the test completion
-  ///
-  /// In en, this message translates to:
-  /// **'Congrats!\nYou have completed the test'**
-  String get congratsMessage;
-
-  /// Message for the test fail
-  ///
-  /// In en, this message translates to:
-  /// **'Oh no!\nYou have failed completion of the test'**
-  String get failMessage;
 
   /// The message for the right answer
   ///
@@ -464,23 +422,11 @@ abstract class AppLocalizations {
   /// **'Good Job!'**
   String get rightAnswer;
 
-  /// The message for the wrong answer
-  ///
-  /// In en, this message translates to:
-  /// **'Wrong answer!'**
-  String get wrongAnswer;
-
   /// The label for the next question button
   ///
   /// In en, this message translates to:
   /// **'Next question'**
   String get nextQuestion;
-
-  /// The label for the Try again button
-  ///
-  /// In en, this message translates to:
-  /// **'Try again!'**
-  String get tryAgain;
 
   /// The label for the Full Quiz
   ///
@@ -511,24 +457,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Language'**
   String get languageButtonTooltip;
-
-  /// Label for the 'Exit test' button
-  ///
-  /// In en, this message translates to:
-  /// **'Exit the test?'**
-  String get exitQuizTitle;
-
-  /// Title for the 'Time is up' dialog
-  ///
-  /// In en, this message translates to:
-  /// **'Time is up!'**
-  String get timeIsUpTitle;
-
-  /// Message for the 'Time is up' dialog
-  ///
-  /// In en, this message translates to:
-  /// **'You have run out of time.\nYour test is over.'**
-  String get timeIsUpMessage;
 
   /// Label for Go Premium
   ///
@@ -607,12 +535,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms of Service'**
   String get termsOfServiceLabel;
-
-  /// The label of the OK button
-  ///
-  /// In en, this message translates to:
-  /// **'OK'**
-  String get okLabel;
 
   /// Placeholder body of the about screen
   ///
@@ -1633,6 +1555,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Last result: {percent}%, not passed'**
   String examTileLastFailed(int percent);
+
+  /// Leave dialog when answers are not stored
+  ///
+  /// In en, this message translates to:
+  /// **'Your latest answers could not be saved on this device and will be lost if you leave. The timer keeps running.'**
+  String get examLeaveUnsavedBody;
+
+  /// Leave dialog while the result is not stored
+  ///
+  /// In en, this message translates to:
+  /// **'Your result is not saved yet. If you leave now, the exam stays unfinished and its result is saved when you open it again. It cannot be continued.'**
+  String get examLeaveUnsavedResultBody;
 
   /// Android notification channel name
   ///

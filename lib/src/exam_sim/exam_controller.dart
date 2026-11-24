@@ -113,6 +113,10 @@ class ExamFinalizer {
       answers: answers,
       flagged: source.flagged,
       topicBreakdown: score.topicBreakdown,
+      unrecorded: [
+        for (final id in source.questionIds)
+          if (answers[id] != null && bank.containsKey(id)) id,
+      ],
     );
   }
 
@@ -150,8 +154,11 @@ class ExamFinalizer {
       attempt.licence,
       subject: attempt.subject,
     );
-    final already = stored.any((a) => a.id == attempt.id);
-    if (!already) await _repository.saveAttempt(attempt);
+    var current = stored.where((a) => a.id == attempt.id).firstOrNull;
+    if (current == null) {
+      await _repository.saveAttempt(attempt);
+      current = attempt;
+    }
     try {
       await _repository.clearInProgressAttempt(
         attempt.licence,
@@ -160,27 +167,86 @@ class ExamFinalizer {
     } on Object catch (e) {
       debugPrint('Could not clear the unfinished exam: $e');
     }
-    if (!already) {
-      // Final answer of every answered question, once, for the Leitner state
-      // and "my mistakes". Best effort: the attempt itself is already safe.
-      for (final id in attempt.questionIds) {
-        final a = attempt.answers[id];
-        final q = bank[id];
-        if (a == null || q == null) continue;
-        try {
-          await _repository.recordAnswer(
-            attempt.licence,
-            id,
-            a == q.correctIndex,
-            now,
-            countsTowardDailyLimit: false,
-          );
-        } on Object catch (e) {
-          debugPrint('Could not add an exam answer to the progress: $e');
-        }
-      }
-    }
+    // Throws when an answer could not be counted; the attempt is stored by
+    // then and a repeated call counts only what is still missing.
+    await _recordPending(current, bank, now);
     return attempt;
+  }
+
+  /// Counts the answers of stored attempts of [licence] that are not counted
+  /// yet (the app was closed or storage failed while the attempt was ended).
+  /// Every answer is counted exactly once; returns the number of attempts
+  /// that were completed. [bank] holds the questions of the licence by id.
+  Future<int> completePending(
+    Licence licence,
+    Map<String, Question> bank,
+    DateTime now, {
+    SubjectId? subject,
+  }) async {
+    var done = 0;
+    final pending = [
+      for (final a in await _repository.attempts(licence, subject: subject))
+        if (a.unrecorded.isNotEmpty) a,
+    ];
+    for (final a in pending) {
+      await _recordPending(a, bank, now);
+      done++;
+    }
+    return done;
+  }
+
+  Future<void> _recordPending(
+    ExamAttempt stored,
+    Map<String, Question> bank,
+    DateTime now,
+  ) {
+    final key = 'rec:${stored.id}';
+    final running = _recording[key];
+    if (running != null) return running;
+    final future = _doRecordPending(stored, bank, now);
+    _recording[key] = future;
+    unawaited(
+      future.then<void>(
+        (_) {
+          _recording.remove(key);
+        },
+        onError: (Object _) {
+          _recording.remove(key);
+        },
+      ),
+    );
+    return future;
+  }
+
+  final Map<String, Future<void>> _recording = {};
+
+  Future<void> _doRecordPending(
+    ExamAttempt stored,
+    Map<String, Question> bank,
+    DateTime now,
+  ) async {
+    // A fresh read: another run may have counted some answers meanwhile.
+    final latest = (await _repository.attempts(
+      stored.licence,
+      subject: stored.subject,
+    )).where((a) => a.id == stored.id).firstOrNull;
+    if (latest == null) return;
+    final gone = [
+      for (final id in latest.unrecorded)
+        if (bank[id] == null || latest.answers[id] == null) id,
+    ];
+    if (gone.isNotEmpty) {
+      await _repository.dropUnrecordedAnswers(latest.id, gone);
+    }
+    for (final id in latest.unrecorded) {
+      if (gone.contains(id)) continue;
+      await _repository.recordAttemptAnswer(
+        latest.id,
+        id,
+        correct: latest.answers[id] == bank[id]!.correctIndex,
+        now: now,
+      );
+    }
   }
 }
 
@@ -253,6 +319,7 @@ class ExamState {
     bool? finishFailed,
     ExamAttempt? attempt,
     ExamNotice? notice,
+    DateTime? startedAt,
   }) => ExamState(
     phase: phase ?? this.phase,
     language: language,
@@ -262,7 +329,7 @@ class ExamState {
     answers: answers ?? this.answers,
     flagged: flagged ?? this.flagged,
     index: index ?? this.index,
-    startedAt: startedAt,
+    startedAt: startedAt ?? this.startedAt,
     durationSec: durationSec,
     persistFailed: persistFailed ?? this.persistFailed,
     startFailed: startFailed ?? this.startFailed,
@@ -288,7 +355,7 @@ class ExamController extends AsyncNotifier<ExamState> {
   final ExamArgs args;
 
   /// Remaining time for the clock widget (updates once per second).
-  final ValueNotifier<Duration> remaining = ValueNotifier(Duration.zero);
+  late ValueNotifier<Duration> remaining;
 
   Timer? _timer;
   Future<void>? _finishFuture;
@@ -307,7 +374,12 @@ class ExamController extends AsyncNotifier<ExamState> {
     _finishFuture = null;
     _starting = false;
     _byId = args.byId;
-    ref.onDispose(() => _timer?.cancel());
+    remaining = ValueNotifier(Duration.zero);
+    final clock = remaining;
+    ref.onDispose(() {
+      _timer?.cancel();
+      clock.dispose();
+    });
     ref.listen(isPremiumProvider, (previous, premium) {
       final s = state.value;
       if (premium && s != null && s.phase == ExamPhase.limit) {
@@ -320,7 +392,25 @@ class ExamController extends AsyncNotifier<ExamState> {
       settings.questionLanguage,
     );
     final now = _now;
+    try {
+      // Answers of an attempt that was stored but not (fully) counted.
+      await ref
+          .read(examFinalizerProvider)
+          .completePending(args.licence, _byId, now, subject: args.subject);
+    } on Object catch (e) {
+      debugPrint('Could not count the answers of a stored exam: $e');
+    }
     var stored = await _repo.loadInProgressAttempt(args.licence, args.subject);
+    if (stored != null && stored.startedAt.isAfter(now)) {
+      // The clock was set back since the exam was started: the start moves
+      // back with it, so the exam never has more time than its duration.
+      stored = stored.copyWith(startedAt: now);
+      try {
+        await _repo.saveInProgressAttempt(stored);
+      } on Object catch (e) {
+        debugPrint('Could not store the new start of the exam: $e');
+      }
+    }
     if (stored != null) {
       final done = await _repo.attempts(args.licence, subject: args.subject);
       if (done.any((a) => a.id == stored!.id)) {
@@ -335,8 +425,17 @@ class ExamController extends AsyncNotifier<ExamState> {
     }
     if (stored != null) {
       final restored = _restore(stored, language, ExamPhase.resume);
+      if (stored.closing != null) {
+        // Ending had begun but the result was not stored: finish it, the exam
+        // cannot be continued any more.
+        return _closeRestored(restored, ExamNotice.none, stored.closing!);
+      }
       if (stored.isExpired(now)) {
-        return _closeRestored(restored, ExamNotice.expiredWhileClosed);
+        return _closeRestored(
+          restored,
+          ExamNotice.expiredWhileClosed,
+          AttemptReason.timeout,
+        );
       }
       return restored;
     }
@@ -403,12 +502,16 @@ class ExamController extends AsyncNotifier<ExamState> {
   }
 
   /// Ends a restored attempt whose time is over, storing it.
-  Future<ExamState> _closeRestored(ExamState s, ExamNotice notice) async {
+  Future<ExamState> _closeRestored(
+    ExamState s,
+    ExamNotice notice,
+    AttemptReason reason,
+  ) async {
     final attempt = ExamFinalizer.buildAttempt(
       source: _snapshot(s),
       bank: _byId,
       now: _now,
-      reason: AttemptReason.timeout,
+      reason: reason,
     );
     final base = s.copyWith(
       phase: ExamPhase.finishing,
@@ -427,27 +530,30 @@ class ExamController extends AsyncNotifier<ExamState> {
     return base.copyWith(phase: ExamPhase.done);
   }
 
-  InProgressAttempt _snapshot(ExamState s) => InProgressAttempt(
-    id: s.attemptId,
-    licence: args.licence,
-    subject: args.subject,
-    startedAt: s.startedAt!,
-    durationSec: s.durationSec,
-    questionIds: [for (final q in s.questions) q.id],
-    answers: {for (final q in s.questions) q.id: s.answers[q.id]},
-    flagged: [
-      for (final q in s.questions)
-        if (s.flagged.contains(q.id)) q.id,
-    ],
-    answerOrders: {
-      for (final e in s.shuffles.entries) e.key: List<int>.of(e.value.order),
-    },
-  );
+  InProgressAttempt _snapshot(ExamState s, {AttemptReason? closing}) =>
+      InProgressAttempt(
+        closing: closing,
+        id: s.attemptId,
+        licence: args.licence,
+        subject: args.subject,
+        startedAt: s.startedAt!,
+        durationSec: s.durationSec,
+        questionIds: [for (final q in s.questions) q.id],
+        answers: {for (final q in s.questions) q.id: s.answers[q.id]},
+        flagged: [
+          for (final q in s.questions)
+            if (s.flagged.contains(q.id)) q.id,
+        ],
+        answerOrders: {
+          for (final e in s.shuffles.entries)
+            e.key: List<int>.of(e.value.order),
+        },
+      );
 
   void _afterStored() {
-    ref.invalidate(
-      subjectStatsProvider((licence: args.licence, subject: args.subject)),
-    );
+    final key = (licence: args.licence, subject: args.subject);
+    ref.invalidate(subjectStatsProvider(key));
+    ref.invalidate(examStatusProvider(key));
   }
 
   // Start / resume -------------------------------------------------------------
@@ -498,6 +604,9 @@ class ExamController extends AsyncNotifier<ExamState> {
       }
       if (!ref.mounted) return;
       state = AsyncData(fresh);
+      ref.invalidate(
+        examStatusProvider((licence: args.licence, subject: args.subject)),
+      );
       _startTicker();
     } finally {
       _starting = false;
@@ -531,19 +640,35 @@ class ExamController extends AsyncNotifier<ExamState> {
   /// Recomputes the remaining time from the start time; ends the exam when it
   /// is over. Called every second and when the app comes back to the front.
   void syncTime() {
-    final s = state.value;
-    if (s == null || s.phase != ExamPhase.running) return;
+    final current = state.value;
+    if (current == null || current.phase != ExamPhase.running) return;
+    final s = _anchor(current);
     final left = s.deadline!.difference(_now);
     if (left <= Duration.zero) {
       remaining.value = Duration.zero;
       unawaited(_finish(AttemptReason.timeout));
       return;
     }
-    remaining.value = Duration(seconds: (left.inMilliseconds / 1000).ceil());
+    final full = Duration(seconds: s.durationSec);
+    final shown = left > full ? full : left;
+    remaining.value = Duration(seconds: (shown.inMilliseconds / 1000).ceil());
+  }
+
+  /// If the clock was set back to before the start, the start moves back too:
+  /// the time left is never more than the duration of the exam.
+  ExamState _anchor(ExamState s) {
+    final now = _now;
+    final start = s.startedAt;
+    if (start == null || !now.isBefore(start)) return s;
+    final next = s.copyWith(startedAt: now);
+    state = AsyncData(next);
+    if (s.phase == ExamPhase.running) _persist();
+    return next;
   }
 
   bool _expiredNow(ExamState s) {
-    if (s.deadline != null && !_now.isBefore(s.deadline!)) {
+    final a = _anchor(s);
+    if (a.deadline != null && !_now.isBefore(a.deadline!)) {
       unawaited(_finish(AttemptReason.timeout));
       return true;
     }
@@ -553,7 +678,7 @@ class ExamController extends AsyncNotifier<ExamState> {
   ExamState? get _running {
     final s = state.value;
     if (s == null || s.phase != ExamPhase.running) return null;
-    return _expiredNow(s) ? null : s;
+    return _expiredNow(s) ? null : state.value;
   }
 
   // Actions ----------------------------------------------------------------------
@@ -648,6 +773,20 @@ class ExamController extends AsyncNotifier<ExamState> {
 
   void retryPersist() => _persist();
 
+  /// Tries once more to store the running attempt, e.g. before the screen is
+  /// left. Returns false if the latest answers are still not stored.
+  Future<bool> flushProgress() async {
+    final s = state.value;
+    if (s == null || s.phase != ExamPhase.running) return true;
+    _persist();
+    try {
+      await _persistFuture;
+    } on Object {
+      return false;
+    }
+    return !(state.value?.persistFailed ?? false);
+  }
+
   // Finishing ------------------------------------------------------------------
 
   /// The single way to end an exam (button, timeout, resumed attempt). The
@@ -655,11 +794,12 @@ class ExamController extends AsyncNotifier<ExamState> {
   Future<void> _finish(AttemptReason reason) {
     final running = _finishFuture;
     if (running != null) return running;
-    final s = state.value;
-    if (s == null ||
-        (s.phase != ExamPhase.running && s.phase != ExamPhase.resume)) {
+    final first = state.value;
+    if (first == null ||
+        (first.phase != ExamPhase.running && first.phase != ExamPhase.resume)) {
       return Future.value();
     }
+    final s = _anchor(first);
     _timer?.cancel();
     final attempt = ExamFinalizer.buildAttempt(
       source: _snapshot(s),
@@ -682,12 +822,22 @@ class ExamController extends AsyncNotifier<ExamState> {
 
   /// Stores the built result; shown as done only after it is stored.
   Future<void> _store() async {
-    final attempt = state.value?.attempt;
-    if (attempt == null) return;
+    final current = state.value;
+    final attempt = current?.attempt;
+    if (current == null || attempt == null) return;
     try {
       await _persistFuture;
     } on Object {
       // A failed progress save does not matter any more.
+    }
+    try {
+      // Ending has begun: should the app die now, the exam is only finished
+      // when it is opened again, never continued.
+      await _repo.saveInProgressAttempt(
+        _snapshot(current, closing: attempt.reason),
+      );
+    } on Object catch (e) {
+      debugPrint('Could not mark the exam as ending: $e');
     }
     try {
       await ref.read(examFinalizerProvider).persist(attempt, _byId, _now);
@@ -739,6 +889,44 @@ class ExamStatus {
   final InProgressAttempt? unfinished;
 }
 
+/// Ends the unfinished attempt [u] if it has to be ended without the user: its
+/// time is over, ending had begun, or its result is stored already. Returns
+/// the attempt when it is still running (or could not be ended), else null.
+Future<InProgressAttempt?> settleUnfinished({
+  required ProgressRepository repo,
+  required ExamFinalizer finalizer,
+  required InProgressAttempt u,
+  required Map<String, Question> byId,
+  required DateTime now,
+}) async {
+  final stored = await repo.attempts(u.licence, subject: u.subject);
+  if (stored.any((a) => a.id == u.id)) {
+    try {
+      await repo.clearInProgressAttempt(u.licence, u.subject);
+    } on Object catch (e) {
+      debugPrint('Could not clear the unfinished exam: $e');
+    }
+    return null;
+  }
+  if (!u.isExpired(now) && u.closing == null) return u;
+  try {
+    await finalizer.persist(
+      ExamFinalizer.buildAttempt(
+        source: u,
+        bank: byId,
+        now: now,
+        reason: u.closing ?? AttemptReason.timeout,
+      ),
+      byId,
+      now,
+    );
+    return null;
+  } on Object catch (e) {
+    debugPrint('Could not save the expired exam: $e');
+    return u;
+  }
+}
+
 /// Status of the exam tile. Opening it also closes an unfinished attempt whose
 /// time is over: it is stored with the reason `timeout`.
 final examStatusProvider = FutureProvider.autoDispose
@@ -746,43 +934,33 @@ final examStatusProvider = FutureProvider.autoDispose
       final bank = await ref.watch(bankProvider(key.licence).future);
       final byId = {for (final q in bank.questionsOf(key.subject)) q.id: q};
       final repo = ref.watch(progressRepositoryProvider);
+      final finalizer = ref.read(examFinalizerProvider);
       final now = ref.read(clockProvider).now();
+      try {
+        await finalizer.completePending(
+          key.licence,
+          byId,
+          now,
+          subject: key.subject,
+        );
+      } on Object catch (e) {
+        debugPrint('Could not count the answers of a stored exam: $e');
+      }
       var unfinished = await repo.loadInProgressAttempt(
         key.licence,
         key.subject,
       );
-      var attempts = await repo.attempts(key.licence, subject: key.subject);
       if (unfinished != null) {
-        final u = unfinished;
-        if (attempts.any((a) => a.id == u.id)) {
-          try {
-            await repo.clearInProgressAttempt(key.licence, key.subject);
-          } on Object catch (e) {
-            debugPrint('Could not clear the unfinished exam: $e');
-          }
-          unfinished = null;
-        } else if (u.isExpired(now)) {
-          try {
-            await ref
-                .read(examFinalizerProvider)
-                .persist(
-                  ExamFinalizer.buildAttempt(
-                    source: u,
-                    bank: byId,
-                    now: now,
-                    reason: AttemptReason.timeout,
-                  ),
-                  byId,
-                  now,
-                );
-            unfinished = null;
-            attempts = await repo.attempts(key.licence, subject: key.subject);
-            ref.invalidate(subjectStatsProvider(key));
-          } on Object catch (e) {
-            debugPrint('Could not save the expired exam: $e');
-          }
-        }
+        unfinished = await settleUnfinished(
+          repo: repo,
+          finalizer: finalizer,
+          u: unfinished,
+          byId: byId,
+          now: now,
+        );
+        if (unfinished == null) ref.invalidate(subjectStatsProvider(key));
       }
+      final attempts = await repo.attempts(key.licence, subject: key.subject);
       final real = attempts.where((a) => !a.isLegacy);
       return ExamStatus(
         last: real.isEmpty ? null : real.first,

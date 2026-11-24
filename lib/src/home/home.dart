@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/bank/licence_provider.dart';
 import 'package:pilotiq/src/dashboard/dashboard_providers.dart';
 import 'package:pilotiq/src/dashboard/dashboard_screen.dart';
+import 'package:pilotiq/src/exam_sim/exam_sweep.dart';
 import 'package:pilotiq/src/home/bottom_nav.dart';
 import 'package:pilotiq/src/settings/settings_screen.dart';
 import 'package:pilotiq/src/subjects/subject_list_screen.dart';
@@ -22,6 +23,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
   void initState() {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
+    // Exams whose time ran out while the app was closed are stored now.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) runExamSweep(ref);
+    });
   }
 
   @override
@@ -36,6 +41,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     // been given elsewhere.
     if (state == AppLifecycleState.resumed) {
       ref.invalidate(dashboardProvider);
+      runExamSweep(ref);
     }
   }
 

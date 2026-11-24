@@ -24,11 +24,8 @@
   "subjectModeBookmarksDescription": "Pytania zapisane na później.",
   "subjectModeHistoryTitle": "HISTORIA",
   "subjectModeHistoryDescription": "Wyniki Twoich symulacji egzaminu.",
-  "subjectModeSoonBadge": "Wkrótce",
-  "examMinutesShort": "{count} min",
   "appTitle": "Pilotiq",
   "copyright": "© 2023 Anton Antonchik.\nWszelkie prawa zastrzeżone.",
-  "yes": "Tak",
   "no": "Nie",
   "examsTitle": "Egzaminy",
   "subjectsTitle": "Przedmioty",
@@ -51,26 +48,17 @@
   "humanPerformanceSubjectTooltip": "Człowiek możliwości i ograniczenia",
   "operationalProcedureSubjectTooltip": "Procedury operacyjne",
   "principlesOfFlightSubjectTooltip": "Zasady lotu",
-  "startQuizTitle": "Start",
   "continueQuizTitle": "Kontynuuj",
   "startNewQuizTitle": "Zacznij od nowa",
   "returnToSubjectTitle": "Powrót do przedmiotu",
-  "reviewAnswersTitle": "Przeglądaj odpowiedzi",
   "restartMessage": "Czy chcesz kontynuować rozpoczęty wcześniej test, czy zacząć od nowa?",
-  "congratsMessage": "Gratulacje!\nTest został zakończony pomyślnie!",
-  "failMessage": "Niestety, nie udało Ci się ukończyć testu.",
   "rightAnswer": "Poprawna odpowiedź!",
-  "wrongAnswer": "Zła odpowiedź!",
   "nextQuestion": "Następne pytanie",
-  "tryAgain": "Spróbuj ponownie",
   "fullQuizTitle": "WSZYSTKIE PYTANIA",
   "examQuizTitle": "SYMULATOR EGZAMINU",
   "fullModeDescription": "Tryb ten umożliwia uczestnikom testu przećwiczenie i przejrzenie dużej liczby pytań oraz uczenie się na własnych błędach.",
   "examModeDescription": "Tryb symulatora egzaminacyjnego symuluje rzeczywiste doświadczenie egzaminacyjne.",
   "languageButtonTooltip": "Zmień język",
-  "exitQuizTitle": "Wyjść z testu?",
-  "timeIsUpTitle": "Czas minął!",
-  "timeIsUpMessage": "Nie udało Ci się ukończyć testu.",
   "goPremiumLabel": "Przejdź na Premium!",
   "featuresDescriptionTitle": "Wszystkie cechy w skrócie",
   "allExamsAccessLabel": "Dostęp do wszystkich egzaminów",
@@ -84,7 +72,6 @@
   "premiumLabel": "Przejdź na Premium!",
   "premiumTitle": "Premium",
   "termsOfServiceLabel": "Regulamin",
-  "okLabel": "OK",
   "aboutScreenBody": "O tej aplikacji...",
   "paywallStubMessage": "Zakupy Premium będą tu wkrótce dostępne.",
   "navToday": "Dziś",
@@ -986,6 +973,14 @@
         "type": "int"
       }
     }
+  },
+  "examLeaveUnsavedBody": "Ostatnie odpowiedzi nie zostały zapisane na tym urządzeniu i zostaną utracone, jeśli wyjdziesz. Czas nadal płynie.",
+  "@examLeaveUnsavedBody": {
+    "description": "Leave dialog when answers are not stored"
+  },
+  "examLeaveUnsavedResultBody": "Wynik nie został jeszcze zapisany. Jeśli wyjdziesz teraz, egzamin pozostanie niezakończony, a jego wynik zostanie zapisany po ponownym otwarciu. Nie można go kontynuować.",
+  "@examLeaveUnsavedResultBody": {
+    "description": "Leave dialog while the result is not stored"
   },
   "reminderChannelName": "Przypomnienia o nauce",
   "@reminderChannelName": {

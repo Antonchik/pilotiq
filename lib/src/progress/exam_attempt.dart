@@ -1,5 +1,6 @@
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/domain/exam_scoring.dart';
+import 'package:pilotiq/src/progress/stored_time.dart';
 
 enum AttemptReason { finished, timeout, legacy }
 
@@ -22,6 +23,7 @@ class ExamAttempt {
     this.answers = const {},
     this.flagged = const [],
     this.topicBreakdown = const {},
+    this.unrecorded = const [],
   });
 
   final String id;
@@ -29,6 +31,12 @@ class ExamAttempt {
   final SubjectId subject;
   final DateTime startedAt;
   final DateTime finishedAt;
+
+  /// Questions whose answer of this attempt is not yet added to the progress
+  /// of the questions. Filled when the attempt is stored and emptied one
+  /// question at a time together with the progress write, so every answer is
+  /// counted exactly once even if the app dies in between.
+  final List<String> unrecorded;
   final int durationSec;
   final int total;
   final int correct;
@@ -45,14 +53,38 @@ class ExamAttempt {
 
   bool get isLegacy => reason == AttemptReason.legacy;
 
+  ExamAttempt withoutUnrecorded(Iterable<String> done) {
+    final skip = done.toSet();
+    return ExamAttempt(
+      id: id,
+      licence: licence,
+      subject: subject,
+      startedAt: startedAt,
+      finishedAt: finishedAt,
+      durationSec: durationSec,
+      total: total,
+      correct: correct,
+      passed: passed,
+      reason: reason,
+      questionIds: questionIds,
+      answers: answers,
+      flagged: flagged,
+      topicBreakdown: topicBreakdown,
+      unrecorded: [
+        for (final q in unrecorded)
+          if (!skip.contains(q)) q,
+      ],
+    );
+  }
+
   double get ratio => total == 0 ? 0 : correct / total;
 
   Map<String, dynamic> toMap() => {
     'id': id,
     'licence': licence.id,
     'subject': subject.id,
-    'startedAt': startedAt.toIso8601String(),
-    'finishedAt': finishedAt.toIso8601String(),
+    'startedAt': encodeMoment(startedAt),
+    'finishedAt': encodeMoment(finishedAt),
     'durationSec': durationSec,
     'total': total,
     'correct': correct,
@@ -64,6 +96,7 @@ class ExamAttempt {
       for (final e in topicBreakdown.entries) e.key: e.value.toMap(),
     },
     'reason': reason.name,
+    'unrecorded': unrecorded,
   };
 
   /// Returns null if the record is damaged (unknown licence or subject, wrong
@@ -96,6 +129,7 @@ class ExamAttempt {
         questionIds: _strings(m['questionIds']),
         answers: _answers(m['answers']),
         flagged: _strings(m['flagged']),
+        unrecorded: _strings(m['unrecorded']),
         topicBreakdown: rawTopics is Map
             ? {
                 for (final e in rawTopics.entries)
@@ -127,6 +161,7 @@ class InProgressAttempt {
     this.answers = const {},
     this.flagged = const [],
     this.answerOrders = const {},
+    this.closing,
   });
 
   final String id;
@@ -146,11 +181,18 @@ class InProgressAttempt {
   /// that a restored attempt looks exactly as before. Missing qid = canonical.
   final Map<String, List<int>> answerOrders;
 
+  /// Set once the exam is being ended (button or timeout): the attempt may
+  /// then only be finished, never continued.
+  final AttemptReason? closing;
+
   DateTime get deadline => startedAt.add(Duration(seconds: durationSec));
 
+  /// Time left at [now], always between zero and the full duration (a clock
+  /// that was set back never gives more time than the exam has).
   Duration remaining(DateTime now) {
     final left = deadline.difference(now);
-    return left.isNegative ? Duration.zero : left;
+    final full = Duration(seconds: durationSec);
+    return left.isNegative ? Duration.zero : (left > full ? full : left);
   }
 
   bool isExpired(DateTime now) => !now.isBefore(deadline);
@@ -159,28 +201,32 @@ class InProgressAttempt {
     Map<String, int?>? answers,
     List<String>? flagged,
     Map<String, List<int>>? answerOrders,
+    DateTime? startedAt,
+    AttemptReason? closing,
   }) => InProgressAttempt(
     id: id,
     licence: licence,
     subject: subject,
-    startedAt: startedAt,
+    startedAt: startedAt ?? this.startedAt,
     durationSec: durationSec,
     questionIds: questionIds,
     answers: answers ?? this.answers,
     flagged: flagged ?? this.flagged,
     answerOrders: answerOrders ?? this.answerOrders,
+    closing: closing ?? this.closing,
   );
 
   Map<String, dynamic> toMap() => {
     'id': id,
     'licence': licence.id,
     'subject': subject.id,
-    'startedAt': startedAt.toIso8601String(),
+    'startedAt': encodeMoment(startedAt),
     'durationSec': durationSec,
     'questionIds': questionIds,
     'answers': answers,
     'flagged': flagged,
     'answerOrders': answerOrders,
+    'closing': closing?.name,
   };
 
   static InProgressAttempt? tryFromMap(Map<dynamic, dynamic> m) {
@@ -202,6 +248,9 @@ class InProgressAttempt {
         questionIds: _strings(m['questionIds']),
         answers: _answers(m['answers']),
         flagged: _strings(m['flagged']),
+        closing: AttemptReason.values
+            .where((r) => r.name == m['closing'] && r != AttemptReason.legacy)
+            .firstOrNull,
         answerOrders: rawOrders is Map
             ? {
                 for (final e in rawOrders.entries)
@@ -226,7 +275,7 @@ String? _str(Object? v) => v is String ? v : null;
 
 int? _int(Object? v) => v is num ? v.toInt() : null;
 
-DateTime? _date(Object? v) => v is String ? DateTime.tryParse(v) : null;
+DateTime? _date(Object? v) => decodeMoment(v);
 
 Map<String, int?> _answers(Object? v) => v is Map
     ? {for (final e in v.entries) '${e.key}': _int(e.value)}

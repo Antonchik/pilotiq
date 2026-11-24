@@ -1,3 +1,5 @@
+import 'package:pilotiq/src/progress/stored_time.dart';
+
 /// Learning state of one question (box `progress_<licence>`, key = qid).
 class QuestionProgress {
   const QuestionProgress({
@@ -63,18 +65,17 @@ class QuestionProgress {
     'wrong': wrong,
     'consecutiveCorrect': consecutiveCorrect,
     'box': box,
-    'lastAnsweredAt': lastAnsweredAt?.toIso8601String(),
-    'dueAt': dueAt?.toIso8601String(),
+    'lastAnsweredAt': lastAnsweredAt == null
+        ? null
+        : encodeMoment(lastAnsweredAt!),
+    'dueAt': dueAt == null ? null : encodeMoment(dueAt!),
     'bookmarked': bookmarked,
     'recent': recent,
   };
 
   factory QuestionProgress.fromMap(Map<dynamic, dynamic> m) {
     int i(String k, int d) => (m[k] as num?)?.toInt() ?? d;
-    DateTime? t(String k) {
-      final v = m[k];
-      return v is String ? DateTime.tryParse(v) : null;
-    }
+    DateTime? t(String k) => decodeMoment(m[k]);
 
     final recent = <bool>[
       if (m['recent'] is List)

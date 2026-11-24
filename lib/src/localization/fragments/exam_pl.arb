@@ -518,5 +518,13 @@
         "type": "int"
       }
     }
+  },
+  "examLeaveUnsavedBody": "Ostatnie odpowiedzi nie zostały zapisane na tym urządzeniu i zostaną utracone, jeśli wyjdziesz. Czas nadal płynie.",
+  "@examLeaveUnsavedBody": {
+    "description": "Leave dialog when answers are not stored"
+  },
+  "examLeaveUnsavedResultBody": "Wynik nie został jeszcze zapisany. Jeśli wyjdziesz teraz, egzamin pozostanie niezakończony, a jego wynik zostanie zapisany po ponownym otwarciu. Nie można go kontynuować.",
+  "@examLeaveUnsavedResultBody": {
+    "description": "Leave dialog while the result is not stored"
   }
 }

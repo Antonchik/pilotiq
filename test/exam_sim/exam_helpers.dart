@@ -16,7 +16,6 @@ import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
 import 'package:pilotiq/src/progress/progress_repository.dart';
 import 'package:pilotiq/src/progress/providers.dart';
-import 'package:pilotiq/src/progress/question_progress.dart';
 import 'package:pilotiq/src/purchases/fake_purchase_service.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
@@ -91,22 +90,27 @@ class FlakyRepository extends ProgressRepository {
     return super.saveInProgressAttempt(attempt);
   }
 
+  /// 1-based numbers of the `recordAttemptAnswer` calls that throw (once).
+  final Set<int> failRecordCalls = {};
+  int recordCalls = 0;
+
   @override
-  Future<QuestionProgress> recordAnswer(
-    Licence licence,
-    String qid,
-    bool correct,
-    DateTime now, {
-    bool countsTowardDailyLimit = true,
+  Future<bool> recordAttemptAnswer(
+    String attemptId,
+    String qid, {
+    required bool correct,
+    required DateTime now,
   }) {
-    recorded++;
-    return super.recordAnswer(
-      licence,
-      qid,
-      correct,
-      now,
-      countsTowardDailyLimit: countsTowardDailyLimit,
-    );
+    recordCalls++;
+    if (failRecordCalls.remove(recordCalls)) {
+      throw StateError('disk full');
+    }
+    return super
+        .recordAttemptAnswer(attemptId, qid, correct: correct, now: now)
+        .then((counted) {
+          if (counted) recorded++;
+          return counted;
+        });
   }
 }
 

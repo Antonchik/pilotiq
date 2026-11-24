@@ -518,5 +518,13 @@
         "type": "int"
       }
     }
+  },
+  "examLeaveUnsavedBody": "Your latest answers could not be saved on this device and will be lost if you leave. The timer keeps running.",
+  "@examLeaveUnsavedBody": {
+    "description": "Leave dialog when answers are not stored"
+  },
+  "examLeaveUnsavedResultBody": "Your result is not saved yet. If you leave now, the exam stays unfinished and its result is saved when you open it again. It cannot be continued.",
+  "@examLeaveUnsavedResultBody": {
+    "description": "Leave dialog while the result is not stored"
   }
 }
