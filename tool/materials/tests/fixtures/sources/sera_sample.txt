@@ -1,0 +1,23 @@
+Contents
+SERA.5005 Visual flight rules .......................... 63
+SERA.5010 Special VFR in control zones ................. 66
+SECTION 5 VISUAL METEOROLOGICAL CONDITIONS
+SERA.5005 Visual flight rules
+Regulation (EU) No 923/2012
+(a) Except when operating as a special VFR flight, VFR flights shall be conducted so that:
+(1) the aircraft is flown in conditions of visibility and distance from cloud equal to or greater
+than those specified in Table S5-1;
+(2) the aircraft is flown clear of cloud.
+(b) Except when a clearance is obtained from an air traffic control unit, VFR flights shall not take off or land at an
+aerodrome within a control zone:
+(1) when the ceiling is less than 450 m (1 500 ft); or
+(i) first roman item;
+(ii) second roman item;
+(2) when the ground visibility is less than 5 km.
+(c) Third paragraph.
+AMC1 SERA.5005(b) Visual flight rules
+Text of the AMC.
+GM1 SERA.5005 Visual flight rules
+Text of the GM.
+SERA.5010 Special VFR in control zones
+(a) Special VFR flights may be authorised to operate within a control zone.

@@ -77,8 +77,8 @@ def download(url, dest):
     size = 0
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-            status = getattr(resp, "status", 200)
-            if status != 200:
+            status = getattr(resp, "status", None)
+            if status not in (None, 200):
                 raise FetchError("%s: HTTP %s (expected 200; an anti-bot challenge answers 202 "
                                  "with an empty body)" % (url, status))
             with open(dest, "wb") as out:
