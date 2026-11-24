@@ -1,0 +1,22 @@
+[
+ {
+  "key": "PL010-0230#3b2952f0",
+  "verdict": "PASS",
+  "note": "Poprawka wprowadzona: art. 100 ust. 3 + ust. 1 pkt 5, dodany art. 100 ust. 4 z cytatem i neutralne zdanie, że obecny art. 100 nie wymienia PKBWL. 3 zdania, 570 znaków, cytaty zgodne."
+ },
+ {
+  "key": "PL010-0231#c0b53fe6",
+  "verdict": "PASS",
+  "note": "Jak 0230; narkotyki wprost w ARA.FCL.250(a)(4), środki odurzające w art. 100 ust. 1 pkt 5; dodany art. 100 ust. 4. 3 zdania, 536 znaków."
+ },
+ {
+  "key": "PL010-0232#7fcbbfdb",
+  "verdict": "PASS",
+  "note": "Usunięto mylące odwołanie do art. 100 ust. 6; dodano FCL.070(b) i zastrzeżenie dla PPL. Opis FCL.070(b) zgodny z treścią punktu. Uwaga redakcyjna (bez wpływu na werdykt): zamiast «wymaga zwrotu … tylko przy» bezpieczniej «mówi o zwrocie licencji przy jej zawieszeniu lub cofnięciu i nie wymienia zawieszenia samego uprawnienia»."
+ },
+ {
+  "key": "PL010-0338#ef577b97",
+  "verdict": "PASS",
+  "note": "Przeklasyfikowano z outdated na draft zgodnie z r1: klucz oddaje FCL.1030(b)(1) (dalsze wymagania szkoleniowe) i (b)(3)(ii) (powody niezaliczenia w sprawozdaniu); neutralna uwaga o dawnej terminologii. Inne odpowiedzi błędne. Drobne: słowo «sprawozdanie» stoi w nadrzędnym FCL.1030(b)(3), nie w cytacie (b)(3)(ii) – kontekst jest w tym samym punkcie, akceptowalne."
+ }
+]

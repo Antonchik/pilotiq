@@ -609,27 +609,27 @@
  },
  "PL010-0230#3b2952f0": {
   "date": "2026-11-24",
-  "note": "Klucz poprawny (art. 100 ust. 1 pkt 5), ale tekst pomija element pytania «badanie PKBWL», a art. 100 ust. 3 dotyczy postępowania administracyjnego samego Prezesa Urzędu. Najbliższym obecnym odpowiednikiem sytuacji z pytania jest art. 100 ust. 4 (postępowanie uprawnionych organów państwowych w celu stwierdzenia okoliczności z ust. 1; dawny art. 100 ust. 2 wymieniał wprost Komisję). Poprawka: dodać ref {PL-PRAWO-LOTNICZE, «art. 100 ust. 4», quote «W przypadku postępowania prowadzonego przez uprawnione organy państwowe w celu stwierdzenia, czy zaistniały okoliczności, o których mowa w ust. 1, na czas prowadzenia tego postępowania Prezes Urzędu może zawiesić licencję i zatrzymać ją»} i jedno zdanie, np.: «Obecny art. 100 nie wymienia wprost badania Państwowej Komisji Badania Wypadków Lotniczych; na czas postępowania prowadzonego przez uprawnione organy państwowe zawieszenie i zatrzymanie licencji przewiduje art. 100 ust. 4.» Nie twierdzić, że PKBWL jest takim organem. Zmieścić się w 4 zdaniach/700 znakach (np. połączyć zdania 1–2: «…okoliczności z art. 100 ust. 1, m.in. wykonywania czynności lotniczych pod wpływem alkoholu (pkt 5)…»).",
+  "note": "Poprawka wprowadzona: art. 100 ust. 3 + ust. 1 pkt 5, dodany art. 100 ust. 4 z cytatem i neutralne zdanie, że obecny art. 100 nie wymienia PKBWL. 3 zdania, 570 znaków, cytaty zgodne.",
   "portion": "P06",
-  "round": 1,
-  "textSha": "deddb963eb8c5295",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "4b70329683e30c60",
+  "verdict": "PASS"
  },
  "PL010-0231#c0b53fe6": {
   "date": "2026-11-24",
-  "note": "Klucz poprawny (art. 100 ust. 1 pkt 5), ale tekst pomija element pytania «badanie PKBWL», a art. 100 ust. 3 dotyczy postępowania administracyjnego samego Prezesa Urzędu. Najbliższym obecnym odpowiednikiem sytuacji z pytania jest art. 100 ust. 4 (postępowanie uprawnionych organów państwowych w celu stwierdzenia okoliczności z ust. 1; dawny art. 100 ust. 2 wymieniał wprost Komisję). Poprawka: dodać ref {PL-PRAWO-LOTNICZE, «art. 100 ust. 4», quote «W przypadku postępowania prowadzonego przez uprawnione organy państwowe w celu stwierdzenia, czy zaistniały okoliczności, o których mowa w ust. 1, na czas prowadzenia tego postępowania Prezes Urzędu może zawiesić licencję i zatrzymać ją»} i jedno zdanie, np.: «Obecny art. 100 nie wymienia wprost badania Państwowej Komisji Badania Wypadków Lotniczych; na czas postępowania prowadzonego przez uprawnione organy państwowe zawieszenie i zatrzymanie licencji przewiduje art. 100 ust. 4.» Nie twierdzić, że PKBWL jest takim organem. Zmieścić się w 4 zdaniach/700 znakach (np. połączyć zdania 1–2: «…okoliczności z art. 100 ust. 1, m.in. wykonywania czynności lotniczych pod wpływem środków odurzających (pkt 5)…»). Przy 590 znakach trzeba skrócić: zdanie o ARA.FCL.250(a)(4) można zostawić tylko jako krótkie wtrącenie «(narkotyki wprost: ARA.FCL.250 lit. a) ppkt 4)».",
+  "note": "Jak 0230; narkotyki wprost w ARA.FCL.250(a)(4), środki odurzające w art. 100 ust. 1 pkt 5; dodany art. 100 ust. 4. 3 zdania, 536 znaków.",
   "portion": "P06",
-  "round": 1,
-  "textSha": "bd130d6599282c51",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "4e2ba7705dc11089",
+  "verdict": "PASS"
  },
  "PL010-0232#7fcbbfdb": {
   "date": "2026-11-24",
-  "note": "Klucz to dosłownie dawny § 21 ust. 4 rozp. z 2003 r. Obecnie obowiązek zwrotu licencji przy zawieszeniu samego uprawnienia wynika z SFCL.070(b)/BFCL.070(b) (SPL/BPL), ale pytanie jest też w banku PPL(A)/PPL(H), a FCL.070(b) mówi tylko o «zawieszeniu lub cofnięciu licencji» – tekst przemilcza tę różnicę, więc dla PPL jest mylący. Ponadto art. 100 ust. 6 dotyczy zwrotu licencji w celu wpisu o zawieszeniu LICENCJI z powodu zakazu prowadzenia pojazdów (ust. 5), a nie zawieszenia uprawnienia – w obecnej formie sugeruje fałszywą analogię. Poprawka: usunąć zdanie o art. 100 ust. 6 (i ref) albo wyraźnie napisać, że dotyczy zawieszenia licencji z mocy ust. 5; dodać ref FCL.070(b) i jedno zdanie: «Dla licencji PPL pkt FCL.070 lit. b) rozporządzenia 1178/2011 przewiduje zwrot licencji tylko przy jej zawieszeniu lub cofnięciu; obowiązek zwrotu przy zawieszeniu samego uprawnienia wynika wprost z przepisów SPL i BPL.» Jeżeli writer/orkiestrator uzna, że dla PPL klucz ma oparcie tylko w uchylonym § 21 ust. 4 – alternatywą jest status outdated dla całego klucza; nie DISPUTED (żadna inna odpowiedź nie stała się poprawna).",
+  "note": "Usunięto mylące odwołanie do art. 100 ust. 6; dodano FCL.070(b) i zastrzeżenie dla PPL. Opis FCL.070(b) zgodny z treścią punktu. Uwaga redakcyjna (bez wpływu na werdykt): zamiast «wymaga zwrotu … tylko przy» bezpieczniej «mówi o zwrocie licencji przy jej zawieszeniu lub cofnięciu i nie wymienia zawieszenia samego uprawnienia».",
   "portion": "P06",
-  "round": 1,
-  "textSha": "04a15bab63df4455",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "968f6bb0212711e9",
+  "verdict": "PASS"
  },
  "PL010-0250#b1421fef": {
   "date": "2026-11-24",
@@ -997,6 +997,14 @@
   "portion": "P12",
   "round": 1,
   "textSha": "eb01e991b70a3f44",
+  "verdict": "PASS"
+ },
+ "PL010-0338#ef577b97": {
+  "date": "2026-11-24",
+  "note": "Przeklasyfikowano z outdated na draft zgodnie z r1: klucz oddaje FCL.1030(b)(1) (dalsze wymagania szkoleniowe) i (b)(3)(ii) (powody niezaliczenia w sprawozdaniu); neutralna uwaga o dawnej terminologii. Inne odpowiedzi błędne. Drobne: słowo «sprawozdanie» stoi w nadrzędnym FCL.1030(b)(3), nie w cytacie (b)(3)(ii) – kontekst jest w tym samym punkcie, akceptowalne.",
+  "portion": "P06",
+  "round": 2,
+  "textSha": "1b0169ffb1b3d7a3",
   "verdict": "PASS"
  },
  "PL010-0356#5678e240": {
