@@ -284,7 +284,7 @@ _UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
 _DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
 _ANNEX_RE = re.compile(r"^Załącznik nr (\d+[a-z]?)$")
-_ROW_RE = re.compile(r"^(\d+(?:\.\d+){0,5})\.?\s+\S")
+_ROW_RE = re.compile(r"^(\d+(?:\.\d+){0,5})\.\s+\S")
 _NUM_SPLIT = re.compile(r"^(\d+)([a-z]*)$")
 _TOC_LINE = re.compile(r"\.{3,}\s*\d*\s*$")
 _PAGE_NO_TAIL = re.compile(r"[^\d.,]\s\d{1,4}$")
@@ -423,6 +423,10 @@ def statute_anchors(text):
                 close(open_ust, start)
                 open_pkt = open_ust = None
                 dead_ust = True
+                nk = _num_key(mu.group(1))
+                if _next_ok(last_ust, nk, first=(1, 2)):
+                    last_ust = nk   # the unit exists in the numbering even though it is not in force yet
+                    last_pkt = None
             else:
                 dead_ust = False
                 open_ust_span(mu.group(1), start)
@@ -432,6 +436,9 @@ def statute_anchors(text):
             if fut:
                 close(open_pkt, start)
                 open_pkt = None
+                nk = _num_key(mp.group(1))
+                if _next_ok(last_pkt, nk):
+                    last_pkt = nk
             else:
                 open_pkt_span(mp.group(1), start)
     return _finish(spans, len(text))
@@ -446,7 +453,7 @@ _AMC_FULL_RE = re.compile(r"^((?:AMC|GM)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_I
 _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
 _ART_EAR_RE = re.compile(r"^Article (\d+[a-z]?) \S")
 _APPENDIX_RE = re.compile(r"^APPENDIX (\d+) \S")
-_APP_ROW_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){0,4})\.?\s+\S")
+_APP_ROW_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){0,4})\.\s+\S")
 _PARA_RE = re.compile(r"^\(([a-z]{1,4}|\d{1,2}|[A-Z])\)\s*\S")
 _PARA_NUM_RE = re.compile(r"^(\d{1,2})\.\s+\S")
 _DEF_RE = re.compile(r"^(\d{1,3})\.\s+[‘']")
