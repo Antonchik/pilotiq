@@ -2137,11 +2137,11 @@
  },
  "PL010-0573#75ecd392": {
   "date": "2026-11-24",
-  "note": "FIX: treść główna poprawna (GEN 2.2 QNH; ATS.TR.130 lit. a) 2017/373 — cytat dosłowny), ale zdanie „Pułapka: ciśnienie … na poziomie lotniska lub na progu drogi startowej to QFE” nie odpowiada żadnemu dystraktorowi (wszystkie trzy mówią o ciśnieniu na poziomie morza) — pułapka bez pułapki w bezpłatnej witrynie. Usunąć to zdanie i ref GEN 2.2 QFE (zostają 2 zdania), albo zastąpić pułapką trafiającą w dystraktory i popartą źródłem, np. „Pułapka: QNH nie jest ciśnieniem zmierzonym na poziomie morza, lecz nastawieniem wysokościomierza, przy którym na ziemi wskazuje on wzniesienie miejsca (GEN 2.2, ATS.TR.130 lit. a)).”",
+  "note": "Poprawka zgodna z FIX r1: pułapka trafia teraz w dystraktory „zmierzone na (średnim) poziomie morza” i jest poparta GEN 2.2 QNH („Nastawianie skali wysokościomierza na ciśnienie…”) oraz ATS.TR.130 lit. a) 2017/373 („ustawienie podskali wysokościomierza w celu uzyskania wzniesienia na ziemi”); ref GEN 2.2 QFE usunięty. Cytaty dosłowne, 3 zdania, 486 znaków, validate bez uwag.",
   "portion": "P21",
-  "round": 1,
-  "textSha": "dbe238b5afe4db49",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "52d5a1a745742cde",
+  "verdict": "PASS"
  },
  "PL010-0584#69c9bb65": {
   "date": "2026-11-24",

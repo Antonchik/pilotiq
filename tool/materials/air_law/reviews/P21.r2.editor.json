@@ -1,0 +1,7 @@
+[
+ {
+  "key": "PL010-0573#75ecd392",
+  "verdict": "PASS",
+  "note": "Poprawka zgodna z FIX r1: pułapka trafia teraz w dystraktory „zmierzone na (średnim) poziomie morza” i jest poparta GEN 2.2 QNH („Nastawianie skali wysokościomierza na ciśnienie…”) oraz ATS.TR.130 lit. a) 2017/373 („ustawienie podskali wysokościomierza w celu uzyskania wzniesienia na ziemi”); ref GEN 2.2 QFE usunięty. Cytaty dosłowne, 3 zdania, 486 znaków, validate bez uwag."
+ }
+]
