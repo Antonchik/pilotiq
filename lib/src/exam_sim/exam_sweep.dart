@@ -5,6 +5,7 @@ import 'package:pilotiq/src/dashboard/dashboard_providers.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/exam_sim/exam_controller.dart';
 import 'package:pilotiq/src/progress/providers.dart';
+import 'package:pilotiq/src/quiz/practice/practice_controller.dart';
 
 /// Closes the exams that have to be closed without the user, for every
 /// licence: unfinished attempts whose time is over (they are stored as
@@ -16,6 +17,7 @@ final examSweepProvider = FutureProvider<int>((ref) async {
   final finalizer = ref.read(examFinalizerProvider);
   final now = ref.read(clockProvider).now();
   var closed = 0;
+  var counted = 0;
   for (final licence in Licence.values) {
     try {
       final unfinished = [
@@ -36,12 +38,17 @@ final examSweepProvider = FutureProvider<int>((ref) async {
         );
         if (left == null) closed++;
       }
-      await finalizer.completePending(licence, byId, now);
+      counted += await finalizer.completePending(licence, byId, now);
     } on Object catch (e) {
       debugPrint('Exam sweep of ${licence.id} failed: $e');
     }
   }
-  if (closed > 0) ref.invalidate(dashboardProvider);
+  if (closed > 0 || counted > 0) {
+    ref.invalidate(dashboardProvider);
+    // Whatever is open (subject screen) shows the new state.
+    ref.invalidate(examStatusProvider);
+    ref.invalidate(subjectStatsProvider);
+  }
   return closed;
 });
 

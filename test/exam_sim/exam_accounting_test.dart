@@ -123,7 +123,7 @@ void main() {
     final finalizer = ExamFinalizer(flaky);
     await expectLater(
       finalizer.persist(attempt, byId, DateTime(2026, 5, 1, 12, 10)),
-      throwsStateError,
+      throwsA(isA<AnswersNotCountedException>()),
     );
     final now = DateTime(2026, 5, 1, 13);
     await Future.wait([
@@ -161,7 +161,7 @@ void main() {
     final finalizer = ExamFinalizer(flaky);
     await expectLater(
       finalizer.persist(attempt, byId, DateTime(2026, 5, 1, 12, 5)),
-      throwsStateError,
+      throwsA(isA<AnswersNotCountedException>()),
     );
 
     final smaller = {ids[0]: byId[ids[0]]!};
@@ -243,4 +243,43 @@ void main() {
       expect(await flaky.attempts(Licence.pplh), isEmpty);
     });
   });
+
+  test(
+    'answers found uncounted days later go to the day of the exam',
+    () async {
+      final byId = {for (final q in h.questions) q.id: q};
+      final ids = [for (final q in h.questions.take(3)) q.id];
+      final source = InProgressAttempt(
+        id: 'z',
+        licence: Licence.ppla,
+        subject: SubjectId.communications,
+        startedAt: DateTime(2026, 5, 1, 12),
+        durationSec: 1800,
+        questionIds: ids,
+        answers: {for (final id in ids) id: 0},
+      );
+      final attempt = ExamFinalizer.buildAttempt(
+        source: source,
+        bank: byId,
+        now: DateTime(2026, 5, 1, 12, 20),
+        reason: AttemptReason.finished,
+      );
+      flaky.failRecordCalls.add(1);
+      final finalizer = ExamFinalizer(flaky);
+      await expectLater(
+        finalizer.persist(attempt, byId, DateTime(2026, 5, 1, 12, 20)),
+        throwsA(isA<AnswersNotCountedException>()),
+      );
+
+      await finalizer.completePending(
+        Licence.ppla,
+        byId,
+        DateTime(2026, 5, 4, 9),
+      );
+
+      expect((await flaky.dailyStat(DateTime(2026, 5, 1))).examAnswered, 3);
+      expect((await flaky.dailyStat(DateTime(2026, 5, 4))).examAnswered, 0);
+      expect((await flaky.dailyStat(DateTime(2026, 5, 4))).answered, 0);
+    },
+  );
 }

@@ -53,25 +53,31 @@ void main() {
       ServerEntitlement(isActive: true, expiresAt: end);
 
   group('source of truth and cache', () {
-    test('the backend entitlement makes the user premium and is cached', () async {
-      gateway.entitlement = _premium;
-      final service = await launch();
-      expect(service.current.isPremium, isTrue);
+    test(
+      'the backend entitlement makes the user premium and is cached',
+      () async {
+        gateway.entitlement = _premium;
+        final service = await launch();
+        expect(service.current.isPremium, isTrue);
 
-      // A later launch without a network still sees Premium (lifetime).
-      gateway.failure = const PurchaseException(PurchaseFailureKind.network);
-      final offline = await launch();
-      expect(offline.current.isPremium, isTrue);
-    });
+        // A later launch without a network still sees Premium (lifetime).
+        gateway.failure = const PurchaseException(PurchaseFailureKind.network);
+        final offline = await launch();
+        expect(offline.current.isPremium, isTrue);
+      },
+    );
 
-    test('a network error with a cached period in the future keeps Premium', () async {
-      gateway.entitlement = until(now.add(const Duration(days: 10)));
-      await launch();
+    test(
+      'a network error with a cached period in the future keeps Premium',
+      () async {
+        gateway.entitlement = until(now.add(const Duration(days: 10)));
+        await launch();
 
-      gateway.failure = const PurchaseException(PurchaseFailureKind.network);
-      final offline = await launch();
-      expect(offline.current.isPremium, isTrue);
-    });
+        gateway.failure = const PurchaseException(PurchaseFailureKind.network);
+        final offline = await launch();
+        expect(offline.current.isPremium, isTrue);
+      },
+    );
 
     test('a network error with an expired cached period gives free', () async {
       gateway.entitlement = until(now.add(const Duration(days: 10)));
@@ -83,31 +89,39 @@ void main() {
       expect(offline.current.isPremium, isFalse);
     });
 
-    test('the backend saying "not active" removes Premium, also mid-session', () async {
-      gateway.entitlement = _premium;
-      final service = await launch();
-      final seen = <bool>[];
-      service.entitlement.listen((e) => seen.add(e.isPremium));
+    test(
+      'the backend saying "not active" removes Premium, also mid-session',
+      () async {
+        gateway.entitlement = _premium;
+        final service = await launch();
+        final seen = <bool>[];
+        service.entitlement.listen((e) => seen.add(e.isPremium));
 
-      gateway.entitlement = _free;
-      gateway.push(_free); // refund, expiry or cancellation reported by the SDK
-      await pumpEventQueue();
-      expect(service.current.isPremium, isFalse);
-      expect(seen, [false]);
+        gateway.entitlement = _free;
+        gateway.push(
+          _free,
+        ); // refund, expiry or cancellation reported by the SDK
+        await pumpEventQueue();
+        expect(service.current.isPremium, isFalse);
+        expect(seen, [false]);
 
-      // The cache follows: the next launch offline stays free.
-      gateway.failure = const PurchaseException(PurchaseFailureKind.network);
-      final offline = await launch();
-      expect(offline.current.isPremium, isFalse);
-    });
+        // The cache follows: the next launch offline stays free.
+        gateway.failure = const PurchaseException(PurchaseFailureKind.network);
+        final offline = await launch();
+        expect(offline.current.isPremium, isFalse);
+      },
+    );
 
-    test('a refresh that says "not active" overrides a cached premium', () async {
-      gateway.entitlement = _premium;
-      final service = await launch();
-      gateway.entitlement = _free;
-      await service.refresh();
-      expect(service.current.isPremium, isFalse);
-    });
+    test(
+      'a refresh that says "not active" overrides a cached premium',
+      () async {
+        gateway.entitlement = _premium;
+        final service = await launch();
+        gateway.entitlement = _free;
+        await service.refresh();
+        expect(service.current.isPremium, isFalse);
+      },
+    );
 
     test('the SDK may report a renewal with a new end date', () async {
       gateway.entitlement = until(now.add(const Duration(days: 1)));
@@ -156,50 +170,58 @@ void main() {
       expect(tampered.current.isPremium, isFalse);
     });
 
-    test('evaluate: lastSeenAt after "now" wins, lifetime ignores the clock', () {
-      final end = DateTime.utc(2026, 12, 1);
-      final cached = CachedEntitlement(
-        isPremium: true,
-        expiresAt: end,
-        lastSeenAt: DateTime.utc(2026, 12, 2),
-      );
-      expect(
-        evaluateCachedEntitlement(cached, DateTime.utc(2026, 11, 20)).isPremium,
-        isFalse,
-      );
-      expect(
-        evaluateCachedEntitlement(
-          CachedEntitlement(
-            isPremium: true,
-            expiresAt: end,
-            lastSeenAt: DateTime.utc(2026, 11, 25),
-          ),
-          DateTime.utc(2026, 11, 20),
-        ).isPremium,
-        isTrue,
-      );
-      expect(
-        evaluateCachedEntitlement(
-          CachedEntitlement(
-            isPremium: true,
-            lastSeenAt: DateTime.utc(2099),
-          ),
-          DateTime.utc(2026, 11, 20),
-        ).isPremium,
-        isTrue,
-      );
-      expect(
-        evaluateCachedEntitlement(const CachedEntitlement(), DateTime.now())
-            .isPremium,
-        isFalse,
-      );
-    });
+    test(
+      'evaluate: lastSeenAt after "now" wins, lifetime ignores the clock',
+      () {
+        final end = DateTime.utc(2026, 12, 1);
+        final cached = CachedEntitlement(
+          isPremium: true,
+          expiresAt: end,
+          lastSeenAt: DateTime.utc(2026, 12, 2),
+        );
+        expect(
+          evaluateCachedEntitlement(
+            cached,
+            DateTime.utc(2026, 11, 20),
+          ).isPremium,
+          isFalse,
+        );
+        expect(
+          evaluateCachedEntitlement(
+            CachedEntitlement(
+              isPremium: true,
+              expiresAt: end,
+              lastSeenAt: DateTime.utc(2026, 11, 25),
+            ),
+            DateTime.utc(2026, 11, 20),
+          ).isPremium,
+          isTrue,
+        );
+        expect(
+          evaluateCachedEntitlement(
+            CachedEntitlement(isPremium: true, lastSeenAt: DateTime.utc(2099)),
+            DateTime.utc(2026, 11, 20),
+          ).isPremium,
+          isTrue,
+        );
+        expect(
+          evaluateCachedEntitlement(
+            const CachedEntitlement(),
+            DateTime.now(),
+          ).isPremium,
+          isFalse,
+        );
+      },
+    );
 
     test('moments are stored as UTC strings', () async {
       gateway.entitlement = until(DateTime.utc(2026, 12, 31, 8));
       await launch();
       final box = Hive.box<dynamic>('config');
-      expect(box.get(EntitlementCache.expiresAtKey), '2026-12-31T08:00:00.000Z');
+      expect(
+        box.get(EntitlementCache.expiresAtKey),
+        '2026-12-31T08:00:00.000Z',
+      );
       expect(box.get(EntitlementCache.lastSeenKey), endsWith('Z'));
     });
   });
@@ -228,14 +250,17 @@ void main() {
       expect(gateway.syncCalls, 2);
     });
 
-    test('a subscriber of the old version gets Premium without buying', () async {
-      // The backend does not know the store purchase until the sync.
-      gateway.entitlement = _free;
-      gateway.entitlementAfterSync = until(now.add(const Duration(days: 20)));
-      final service = await launch();
-      expect(service.current.isPremium, isTrue);
-      expect(gateway.syncCalls, 1);
-    });
+    test(
+      'a subscriber of the old version gets Premium without buying',
+      () async {
+        // The backend does not know the store purchase until the sync.
+        gateway.entitlement = _free;
+        gateway.entitlementAfterSync = until(now.add(const Duration(days: 20)));
+        final service = await launch();
+        expect(service.current.isPremium, isTrue);
+        expect(gateway.syncCalls, 1);
+      },
+    );
   });
 
   group('purchase, restore, offering', () {
@@ -268,24 +293,27 @@ void main() {
       expect(service.current.isPremium, isFalse);
     });
 
-    test('a payment the backend does not show as Premium is an error', () async {
-      final service = await launch();
-      gateway.purchaseResult = const GatewayPurchase(
-        GatewayPurchaseStatus.purchased,
-        _free,
-      );
-      await expectLater(
-        service.purchase('x'),
-        throwsA(
-          isA<PurchaseException>().having(
-            (e) => e.kind,
-            'kind',
-            PurchaseFailureKind.notActivated,
+    test(
+      'a payment the backend does not show as Premium is an error',
+      () async {
+        final service = await launch();
+        gateway.purchaseResult = const GatewayPurchase(
+          GatewayPurchaseStatus.purchased,
+          _free,
+        );
+        await expectLater(
+          service.purchase('x'),
+          throwsA(
+            isA<PurchaseException>().having(
+              (e) => e.kind,
+              'kind',
+              PurchaseFailureKind.notActivated,
+            ),
           ),
-        ),
-      );
-      expect(service.current.isPremium, isFalse);
-    });
+        );
+        expect(service.current.isPremium, isFalse);
+      },
+    );
 
     test('"already purchased" is handled as a restore', () async {
       final service = await launch();
@@ -301,7 +329,10 @@ void main() {
     test('a purchase error is thrown to the caller', () async {
       final service = await launch();
       gateway.failure = const PurchaseException(PurchaseFailureKind.network);
-      await expectLater(service.purchase('x'), throwsA(isA<PurchaseException>()));
+      await expectLater(
+        service.purchase('x'),
+        throwsA(isA<PurchaseException>()),
+      );
     });
 
     test('restore with an active entitlement gives Premium', () async {
@@ -312,70 +343,71 @@ void main() {
       expect(service.current.isPremium, isTrue);
     });
 
-    test('restore without purchases gives free and throws on a failure', () async {
-      final service = await launch();
-      expect((await service.restore()).isPremium, isFalse);
-      gateway.failure = const PurchaseException(PurchaseFailureKind.store);
-      await expectLater(service.restore(), throwsA(isA<PurchaseException>()));
-    });
-
-    test('the offering is sorted: lifetime, 3 months, 1 month, others', () async {
-      final service = await launch();
-      gateway.offering = const [
-        PaywallPackage(id: 'm', kind: PackageKind.monthly, priceString: '1'),
-        PaywallPackage(id: 'o1', kind: PackageKind.other, priceString: '4'),
-        PaywallPackage(id: 'l', kind: PackageKind.lifetime, priceString: '3'),
-        PaywallPackage(id: 'q', kind: PackageKind.quarterly, priceString: '2'),
-        PaywallPackage(id: 'o2', kind: PackageKind.other, priceString: '5'),
-      ];
-      final ids = [for (final p in await service.getOffering()) p.id];
-      expect(ids, ['l', 'q', 'm', 'o1', 'o2']);
-    });
+    test(
+      'restore without purchases gives free and throws on a failure',
+      () async {
+        final service = await launch();
+        expect((await service.restore()).isPremium, isFalse);
+        gateway.failure = const PurchaseException(PurchaseFailureKind.store);
+        await expectLater(service.restore(), throwsA(isA<PurchaseException>()));
+      },
+    );
   });
 
   group('start-up', () {
-    test('without a key the service is disabled and the cache still counts', () async {
-      gateway.entitlement = until(now.add(const Duration(days: 5)));
-      await launch();
+    test(
+      'without a key the service is disabled and the cache still counts',
+      () async {
+        gateway.entitlement = until(now.add(const Duration(days: 5)));
+        await launch();
 
-      final service = await createPurchaseService(
-        apiKey: '',
-        cache: cache,
-      );
-      addTearDown(service.dispose);
-      expect(service.isAvailable, isFalse);
-      expect(service.current.isPremium, isTrue);
-      await expectLater(
-        service.getOffering(),
-        throwsA(isA<PurchaseException>()),
-      );
-      await expectLater(service.purchase('x'), throwsA(isA<PurchaseException>()));
-      await service.syncOnce();
-    });
+        final service = await createPurchaseService(apiKey: '', cache: cache);
+        addTearDown(service.dispose);
+        expect(service.isAvailable, isFalse);
+        expect(service.current.isPremium, isTrue);
+        await expectLater(
+          service.getOffering(),
+          throwsA(isA<PurchaseException>()),
+        );
+        await expectLater(
+          service.purchase('x'),
+          throwsA(isA<PurchaseException>()),
+        );
+        await service.syncOnce();
+      },
+    );
 
-    test('a store SDK that cannot start leaves a working disabled service', () async {
-      final service = await createPurchaseService(
-        apiKey: 'test-key',
-        cache: cache,
-        createGateway: (_) async => throw StateError('no SDK'),
-      );
-      addTearDown(service.dispose);
-      expect(service.isAvailable, isFalse);
-      expect(service.current.isPremium, isFalse);
-    });
+    test(
+      'a store SDK that cannot start leaves a working disabled service',
+      () async {
+        final service = await createPurchaseService(
+          apiKey: 'test-key',
+          cache: cache,
+          createGateway: (_) async => throw StateError('no SDK'),
+        );
+        addTearDown(service.dispose);
+        expect(service.isAvailable, isFalse);
+        expect(service.current.isPremium, isFalse);
+      },
+    );
 
-    test('with a key the real service starts without waiting for the network', () async {
-      final service = await createPurchaseService(
-        apiKey: 'test-key',
-        cache: cache,
-        createGateway: (_) async => gateway,
-      );
-      addTearDown(service.dispose);
-      expect(service.isAvailable, isTrue);
-    });
+    test(
+      'with a key the real service starts without waiting for the network',
+      () async {
+        final service = await createPurchaseService(
+          apiKey: 'test-key',
+          cache: cache,
+          createGateway: (_) async => gateway,
+        );
+        addTearDown(service.dispose);
+        expect(service.isAvailable, isTrue);
+      },
+    );
 
     test('an unreadable cache does not stop the start', () async {
-      final broken = EntitlementCache(openBox: () async => throw StateError('x'));
+      final broken = EntitlementCache(
+        openBox: () async => throw StateError('x'),
+      );
       final service = RevenueCatPurchaseService(
         gateway: gateway,
         cache: broken,

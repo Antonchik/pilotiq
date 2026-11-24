@@ -1220,6 +1220,14 @@
   "@examLeaveUnsavedResultBody": {
     "description": "Leave dialog while the result is not stored"
   },
+  "examLeaveResultSavedBody": "Your result is saved. Some answers are not yet added to your progress; they will be added automatically.",
+  "@examLeaveResultSavedBody": {
+    "description": "Leave dialog: the result is stored, only counting is left"
+  },
+  "examLeaveNotMarkedBody": "The end of the exam could not be saved either. If you leave, the exam can be continued and the time keeps running.",
+  "@examLeaveNotMarkedBody": {
+    "description": "Leave dialog: nothing about the ending is stored"
+  },
   "reminderChannelName": "Study reminders",
   "@reminderChannelName": {
     "description": "Android notification channel name"

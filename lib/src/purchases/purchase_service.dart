@@ -150,7 +150,25 @@ class PurchaseException implements Exception {
   final String? detail;
 
   @override
-  String toString() => 'PurchaseException($kind${detail == null ? '' : ': $detail'})';
+  String toString() =>
+      'PurchaseException($kind${detail == null ? '' : ': $detail'})';
+}
+
+/// Plans in the order the paywall shows them: lifetime first, then 3 months,
+/// 1 month and the rest in the order of the store.
+List<PaywallPackage> sortedForPaywall(List<PaywallPackage> packages) {
+  int rank(PaywallPackage p) => switch (p.kind) {
+    PackageKind.lifetime => 0,
+    PackageKind.quarterly => 1,
+    PackageKind.monthly => 2,
+    PackageKind.other => 3,
+  };
+  final indexed = packages.indexed.toList()
+    ..sort((a, b) {
+      final byRank = rank(a.$2).compareTo(rank(b.$2));
+      return byRank != 0 ? byRank : a.$1.compareTo(b.$1);
+    });
+  return [for (final e in indexed) e.$2];
 }
 
 /// Abstraction over the store/billing backend. Tests use
@@ -170,8 +188,8 @@ abstract class PurchaseService {
   /// known state (the cache) stays.
   Future<void> refresh();
 
-  /// Plans to show, lifetime first. Throws [PurchaseException] on a failure;
-  /// an empty list means that the store has nothing to offer.
+  /// Plans to show, in the order of the store. Throws [PurchaseException] on a
+  /// failure; an empty list means that the store has nothing to offer.
   Future<List<PaywallPackage>> getOffering();
 
   /// Buys the package with [packageId]. Cancelling and a pending payment are

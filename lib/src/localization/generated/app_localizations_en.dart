@@ -960,6 +960,14 @@ class AppLocalizationsEn extends AppLocalizations {
       'Your result is not saved yet. If you leave now, the exam stays unfinished and its result is saved when you open it again. It cannot be continued.';
 
   @override
+  String get examLeaveResultSavedBody =>
+      'Your result is saved. Some answers are not yet added to your progress; they will be added automatically.';
+
+  @override
+  String get examLeaveNotMarkedBody =>
+      'The end of the exam could not be saved either. If you leave, the exam can be continued and the time keeps running.';
+
+  @override
   String get reminderChannelName => 'Study reminders';
 
   @override

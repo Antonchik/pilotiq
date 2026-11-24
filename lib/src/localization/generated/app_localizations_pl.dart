@@ -995,6 +995,14 @@ class AppLocalizationsPl extends AppLocalizations {
       'Wynik nie został jeszcze zapisany. Jeśli wyjdziesz teraz, egzamin pozostanie niezakończony, a jego wynik zostanie zapisany po ponownym otwarciu. Nie można go kontynuować.';
 
   @override
+  String get examLeaveResultSavedBody =>
+      'Wynik jest zapisany. Część odpowiedzi nie została jeszcze dodana do postępu; zostanie dodana automatycznie.';
+
+  @override
+  String get examLeaveNotMarkedBody =>
+      'Nie udało się też zapisać zakończenia egzaminu. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas nadal płynie.';
+
+  @override
   String get reminderChannelName => 'Przypomnienia o nauce';
 
   @override

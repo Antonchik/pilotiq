@@ -1568,6 +1568,18 @@ abstract class AppLocalizations {
   /// **'Your result is not saved yet. If you leave now, the exam stays unfinished and its result is saved when you open it again. It cannot be continued.'**
   String get examLeaveUnsavedResultBody;
 
+  /// Leave dialog: the result is stored, only counting is left
+  ///
+  /// In en, this message translates to:
+  /// **'Your result is saved. Some answers are not yet added to your progress; they will be added automatically.'**
+  String get examLeaveResultSavedBody;
+
+  /// Leave dialog: nothing about the ending is stored
+  ///
+  /// In en, this message translates to:
+  /// **'The end of the exam could not be saved either. If you leave, the exam can be continued and the time keeps running.'**
+  String get examLeaveNotMarkedBody;
+
   /// Android notification channel name
   ///
   /// In en, this message translates to:

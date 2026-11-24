@@ -26,14 +26,23 @@ extension PaywallTriggerRules on PaywallTrigger {
 const int paywallMinAnswers = 10;
 
 /// Function that actually shows the paywall; overridden in tests.
-typedef PaywallOpener =
-    Future<void> Function(BuildContext context, PaywallTrigger trigger);
+typedef PaywallOpener = Future<void> Function(
+  BuildContext context,
+  PaywallTrigger trigger,
+);
 
 /// Number of answers given so far, learning and exam simulations together.
 Future<int> _totalAnswers(Ref ref) async {
   final stats = await ref.read(progressRepositoryProvider).dailyStats();
   return stats.fold<int>(0, (sum, s) => sum + s.activity);
 }
+
+/// Where paywall events are logged: `debugPrint` (there is no analytics SDK).
+/// Tests replace it.
+final paywallLogProvider = Provider<void Function(String message)>(
+  (ref) =>
+      (message) => debugPrint(message),
+);
 
 /// Only one paywall is open at a time.
 class _PaywallGate {
@@ -46,7 +55,8 @@ final _paywallGateProvider = Provider<_PaywallGate>((ref) => _PaywallGate());
 /// automatic triggers and pushes [PaywallScreen].
 final paywallOpenerProvider = Provider<PaywallOpener>((ref) {
   return (context, trigger) async {
-    debugPrint('paywall: trigger ${trigger.name}');
+    final log = ref.read(paywallLogProvider);
+    log('paywall: trigger ${trigger.name}');
     final gate = ref.read(_paywallGateProvider);
     if (gate.open) return;
     if (trigger.isAutomatic) {
@@ -54,11 +64,11 @@ final paywallOpenerProvider = Provider<PaywallOpener>((ref) {
       try {
         answers = await _totalAnswers(ref);
       } on Object catch (e) {
-        debugPrint('paywall: the answer count is unknown ($e); not shown');
+        log('paywall: the answer count is unknown ($e); not shown');
         return;
       }
       if (answers < paywallMinAnswers) {
-        debugPrint(
+        log(
           'paywall: ${trigger.name} not shown yet ($answers of '
           '$paywallMinAnswers answers)',
         );

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 
@@ -68,21 +69,29 @@ class FlakyRepository extends ProgressRepository {
 
   int failAttemptSaves = 0;
   int failInProgressSaves = 0;
+
+  /// While true every write of the unfinished attempt throws.
+  bool failInProgressAlways = false;
   int attemptSaves = 0;
   int recorded = 0;
 
+  /// While set, saving an attempt waits for it.
+  Completer<void>? attemptGate;
+
   @override
-  Future<void> saveAttempt(ExamAttempt attempt) {
+  Future<void> saveAttempt(ExamAttempt attempt) async {
+    await attemptGate?.future;
     if (failAttemptSaves > 0) {
       failAttemptSaves--;
       throw StateError('disk full');
     }
     attemptSaves++;
-    return super.saveAttempt(attempt);
+    await super.saveAttempt(attempt);
   }
 
   @override
   Future<void> saveInProgressAttempt(InProgressAttempt attempt) {
+    if (failInProgressAlways) throw StateError('disk full');
     if (failInProgressSaves > 0) {
       failInProgressSaves--;
       throw StateError('disk full');

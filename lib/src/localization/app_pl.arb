@@ -982,6 +982,14 @@
   "@examLeaveUnsavedResultBody": {
     "description": "Leave dialog while the result is not stored"
   },
+  "examLeaveResultSavedBody": "Wynik jest zapisany. Część odpowiedzi nie została jeszcze dodana do postępu; zostanie dodana automatycznie.",
+  "@examLeaveResultSavedBody": {
+    "description": "Leave dialog: the result is stored, only counting is left"
+  },
+  "examLeaveNotMarkedBody": "Nie udało się też zapisać zakończenia egzaminu. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas nadal płynie.",
+  "@examLeaveNotMarkedBody": {
+    "description": "Leave dialog: nothing about the ending is stored"
+  },
   "reminderChannelName": "Przypomnienia o nauce",
   "@reminderChannelName": {
     "description": "Android notification channel name"

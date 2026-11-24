@@ -66,7 +66,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       final packages = await service.getOffering();
       if (!mounted || serial != _loadSerial) return;
       setState(() {
-        _packages = packages;
+        _packages = sortedForPaywall(packages);
         _phase = packages.isEmpty ? _Phase.empty : _Phase.ready;
         if (!packages.any((p) => p.id == _selectedId)) _selectedId = null;
       });
@@ -254,10 +254,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       l.paywallTitleResults,
       l.paywallSubtitleResults,
     ),
-    PaywallTrigger.profile => (
-      l.paywallTitleProfile,
-      l.paywallSubtitleProfile,
-    ),
+    PaywallTrigger.profile => (l.paywallTitleProfile, l.paywallSubtitleProfile),
   };
 
   List<Widget> _buildPlans(BuildContext context, AppLocalizations local) {
@@ -314,7 +311,10 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     return [
       Semantics(
         header: true,
-        child: Text(local.paywallChoosePlan, style: theme.textTheme.titleMedium),
+        child: Text(
+          local.paywallChoosePlan,
+          style: theme.textTheme.titleMedium,
+        ),
       ),
       const SizedBox(height: 8),
       for (final p in _packages)
@@ -503,10 +503,7 @@ class _PlanTile extends StatelessWidget {
                             runSpacing: 4,
                             crossAxisAlignment: WrapCrossAlignment.center,
                             children: [
-                              Text(
-                                name,
-                                style: theme.textTheme.titleMedium,
-                              ),
+                              Text(name, style: theme.textTheme.titleMedium),
                               if (best != null)
                                 Container(
                                   padding: const EdgeInsets.symmetric(
@@ -519,10 +516,9 @@ class _PlanTile extends StatelessWidget {
                                   ),
                                   child: Text(
                                     best,
-                                    style: theme.textTheme.labelSmall
-                                        ?.copyWith(
-                                          color: theme.colorScheme.onPrimary,
-                                        ),
+                                    style: theme.textTheme.labelSmall?.copyWith(
+                                      color: theme.colorScheme.onPrimary,
+                                    ),
                                   ),
                                 ),
                             ],

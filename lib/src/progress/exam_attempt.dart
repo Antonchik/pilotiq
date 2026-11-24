@@ -162,6 +162,8 @@ class InProgressAttempt {
     this.flagged = const [],
     this.answerOrders = const {},
     this.closing,
+    this.elapsedMs = 0,
+    this.lastSeenAt,
   });
 
   final String id;
@@ -170,6 +172,18 @@ class InProgressAttempt {
   final DateTime startedAt;
   final int durationSec;
   final List<String> questionIds;
+
+  /// Exam time used up to [seenAt]. It never decreases, whatever happens to
+  /// the clock of the device. Records without it count from [startedAt].
+  final int elapsedMs;
+
+  /// The moment up to which [elapsedMs] is counted (null = [startedAt]).
+  final DateTime? lastSeenAt;
+
+  DateTime get seenAt => lastSeenAt ?? startedAt;
+
+  ExamClock get clock =>
+      ExamClock(elapsedMs: elapsedMs, seenAt: seenAt, durationSec: durationSec);
 
   /// qid to the chosen answer in the canonical bank order (see
   /// [ExamAttempt.answers]); null = unanswered.
@@ -187,15 +201,11 @@ class InProgressAttempt {
 
   DateTime get deadline => startedAt.add(Duration(seconds: durationSec));
 
-  /// Time left at [now], always between zero and the full duration (a clock
-  /// that was set back never gives more time than the exam has).
-  Duration remaining(DateTime now) {
-    final left = deadline.difference(now);
-    final full = Duration(seconds: durationSec);
-    return left.isNegative ? Duration.zero : (left > full ? full : left);
-  }
+  /// Time left at [now], always between zero and the full duration. Time
+  /// used up is never given back, however the clock was set.
+  Duration remaining(DateTime now) => clock.advance(now).remaining;
 
-  bool isExpired(DateTime now) => !now.isBefore(deadline);
+  bool isExpired(DateTime now) => clock.advance(now).isOver;
 
   InProgressAttempt copyWith({
     Map<String, int?>? answers,
@@ -203,7 +213,10 @@ class InProgressAttempt {
     Map<String, List<int>>? answerOrders,
     DateTime? startedAt,
     AttemptReason? closing,
+    ExamClock? clock,
   }) => InProgressAttempt(
+    elapsedMs: clock?.elapsedMs ?? elapsedMs,
+    lastSeenAt: clock?.seenAt ?? lastSeenAt,
     id: id,
     licence: licence,
     subject: subject,
@@ -227,6 +240,8 @@ class InProgressAttempt {
     'flagged': flagged,
     'answerOrders': answerOrders,
     'closing': closing?.name,
+    'elapsedMs': elapsedMs,
+    'lastSeenAt': encodeMoment(seenAt),
   };
 
   static InProgressAttempt? tryFromMap(Map<dynamic, dynamic> m) {
@@ -248,6 +263,8 @@ class InProgressAttempt {
         questionIds: _strings(m['questionIds']),
         answers: _answers(m['answers']),
         flagged: _strings(m['flagged']),
+        elapsedMs: (_int(m['elapsedMs']) ?? 0).clamp(0, 1 << 40),
+        lastSeenAt: _date(m['lastSeenAt']),
         closing: AttemptReason.values
             .where((r) => r.name == m['closing'] && r != AttemptReason.legacy)
             .firstOrNull,
@@ -266,6 +283,57 @@ class InProgressAttempt {
       return null;
     }
   }
+}
+
+/// The time of an exam. [elapsedMs] is the time used up to [seenAt]; it only
+/// grows. When the device clock jumps back, counting simply continues from the
+/// new clock value, so no used time is ever given back and a long exam cannot
+/// be stretched by changing the time.
+class ExamClock {
+  const ExamClock({
+    required this.elapsedMs,
+    required this.seenAt,
+    required this.durationSec,
+  });
+
+  final int elapsedMs;
+  final DateTime seenAt;
+  final int durationSec;
+
+  int get _fullMs => durationSec * 1000;
+  bool get isOver => elapsedMs >= _fullMs;
+
+  /// Time left, between zero and the full duration.
+  Duration get remaining =>
+      Duration(milliseconds: (_fullMs - elapsedMs).clamp(0, _fullMs));
+
+  Duration get elapsed => Duration(milliseconds: elapsedMs.clamp(0, _fullMs));
+
+  /// The clock at [now]. When the time runs out in between, [seenAt] is the
+  /// moment it ran out, not [now].
+  ExamClock advance(DateTime now) {
+    if (isOver) return this;
+    final delta = now.difference(seenAt).inMilliseconds;
+    if (delta < 0) {
+      return ExamClock(
+        elapsedMs: elapsedMs,
+        seenAt: now,
+        durationSec: durationSec,
+      );
+    }
+    final total = elapsedMs + delta;
+    if (total >= _fullMs) {
+      return ExamClock(
+        elapsedMs: _fullMs,
+        seenAt: seenAt.add(Duration(milliseconds: _fullMs - elapsedMs)),
+        durationSec: durationSec,
+      );
+    }
+    return ExamClock(elapsedMs: total, seenAt: now, durationSec: durationSec);
+  }
+
+  /// True if [now] is before [seenAt]: the device clock was set back.
+  bool wentBack(DateTime now) => now.isBefore(seenAt);
 }
 
 List<String> _strings(Object? v) =>

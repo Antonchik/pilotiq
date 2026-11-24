@@ -11,6 +11,10 @@ import 'package:pilotiq/src/notifications/fake_notification_service.dart';
 import 'package:pilotiq/src/notifications/notification_service.dart';
 import 'package:pilotiq/src/notifications/providers.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
+import 'package:pilotiq/src/purchases/fake_purchase_service.dart';
+import 'package:pilotiq/src/purchases/paywall_launcher.dart';
+import 'package:pilotiq/src/purchases/paywall_screen.dart';
+import 'package:pilotiq/src/purchases/purchase_service.dart';
 
 import '../bank/fake_bank.dart';
 import '../dashboard/dashboard_helpers.dart';
@@ -74,7 +78,7 @@ void main() {
     if (scrollables.evaluate().isEmpty) return;
     final list = scrollables.last;
     for (final delta in [300.0, -300.0]) {
-      for (var i = 0; i < 60 && finder.evaluate().isEmpty; i++) {
+      for (var i = 0; i < 200 && finder.evaluate().isEmpty; i++) {
         await tester.drag(list, Offset(0, delta));
         await tester.pump();
       }
@@ -88,11 +92,15 @@ void main() {
     WidgetTester tester,
     Finder finder, {
     bool tap = true,
+    bool settle = true,
   }) async {
     await scrollTo(tester, finder);
     expect(finder, findsOneWidget, reason: 'not found: $finder');
     await tester.ensureVisible(finder);
-    await tester.pumpAndSettle();
+    // A screen with an endless progress animation never settles.
+    settle
+        ? await tester.pumpAndSettle()
+        : await tester.pump(const Duration(seconds: 1));
     final rect = tester.getRect(finder);
     final screen = tester.view.physicalSize;
     var bottom = screen.height;
@@ -119,7 +127,9 @@ void main() {
     } else {
       await tester.tapAt(visible.center);
     }
-    await tester.pumpAndSettle();
+    settle
+        ? await tester.pumpAndSettle()
+        : await tester.pump(const Duration(seconds: 1));
   }
 
   Future<void> pumpApp(WidgetTester tester, AppHarness h) async {
@@ -164,6 +174,47 @@ void main() {
   /// overflows of the framework dialog are tolerated at scale 3.0 only.
   Future<void> pickTime(WidgetTester tester, double scale, Finder opener) =>
       pickDate(tester, scale, opener);
+
+  /// The app with the real paywall screen behind the "Premium" card of the
+  /// profile (the harness otherwise only records the triggers), opened from
+  /// the profile tab.
+  Future<void> openPaywallScreen(WidgetTester tester, AppHarness h) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: h.overrides,
+        // The inner scope replaces the harness' recorder of the triggers.
+        child: ProviderScope(
+          overrides: [
+            paywallOpenerProvider.overrideWithValue(
+              (context, trigger) => Navigator.of(context).push<void>(
+                MaterialPageRoute(
+                  fullscreenDialog: true,
+                  builder: (_) => PaywallScreen(trigger: trigger),
+                ),
+              ),
+            ),
+          ],
+          child: const MyApp(),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+    await reach(tester, find.byKey(const Key('tab_profile')));
+    await reach(tester, find.byKey(const Key('settings_premium')));
+  }
+
+  /// Closing, restoring and the legal links of the paywall can be reached.
+  Future<void> reachPaywallChrome(
+    WidgetTester tester, {
+    bool restore = true,
+  }) async {
+    await reach(tester, find.byKey(const Key('paywall_close')), tap: false);
+    if (restore) {
+      await reach(tester, find.byKey(const Key('paywall_restore')), tap: false);
+    }
+    await reach(tester, find.byKey(const Key('paywall_terms')), tap: false);
+    await reach(tester, find.byKey(const Key('paywall_privacy')), tap: false);
+  }
 
   for (final lang in languages) {
     for (final scale in scales) {
@@ -643,6 +694,301 @@ void main() {
           await reach(
             tester,
             find.text(lang == 'pl' ? 'Polityka Prywatności' : 'Privacy Policy'),
+            tap: false,
+          );
+        });
+
+        // --- paywall -------------------------------------------------
+        screen('paywall: loading', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          final gate = Completer<void>();
+          h.purchases.offeringGate = gate;
+          await tester.pumpWidget(
+            ProviderScope(
+              overrides: h.overrides,
+              child: ProviderScope(
+                overrides: [
+                  paywallOpenerProvider.overrideWithValue(
+                    (context, trigger) => Navigator.of(context).push<void>(
+                      MaterialPageRoute(
+                        builder: (_) => PaywallScreen(trigger: trigger),
+                      ),
+                    ),
+                  ),
+                ],
+                child: const MyApp(),
+              ),
+            ),
+          );
+          await tester.pumpAndSettle();
+          await reach(tester, find.byKey(const Key('tab_profile')));
+          await tester.tap(find.byKey(const Key('settings_premium')));
+          await tester.pump();
+          await tester.pump(const Duration(seconds: 1));
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_close')),
+            tap: false,
+            settle: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_loading')),
+            tap: false,
+            settle: false,
+          );
+          gate.complete();
+          await tester.pumpAndSettle();
+        });
+
+        screen('paywall: three plans with long prices', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig({'examDate': '2026-12-04'});
+          h.purchases.offering = FakePurchaseService.longPriceOffering;
+          await openPaywallScreen(tester, h);
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_title')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_exam_countdown')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_benefits')),
+            tap: false,
+          );
+          final price = lang == 'pl'
+              ? 'PLN 99,99 / 3 miesiące'
+              : 'PLN 99,99 / 3 months';
+          for (final id in ['lifetime', 'quarterly', 'monthly']) {
+            await reach(
+              tester,
+              find.byKey(Key('paywall_plan_$id')),
+              tap: false,
+            );
+            if (id == 'quarterly') {
+              expect(
+                find.descendant(
+                  of: find.byKey(Key('paywall_plan_$id')),
+                  matching: find.text(price),
+                ),
+                findsOneWidget,
+              );
+            }
+          }
+          await reach(tester, find.byKey(const Key('paywall_plan_quarterly')));
+          await reach(tester, find.byKey(const Key('paywall_buy')), tap: false);
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_renewal_notice')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_trial_notice')),
+            tap: false,
+          );
+          await reachPaywallChrome(tester);
+        });
+
+        screen('paywall: purchase in progress', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          h.purchases.offering = FakePurchaseService.longPriceOffering;
+          final gate = Completer<void>();
+          h.purchases.purchaseGate = gate;
+          await openPaywallScreen(tester, h);
+          await reach(tester, find.byKey(const Key('paywall_plan_lifetime')));
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_buy')),
+            settle: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_purchasing')),
+            tap: false,
+            settle: false,
+          );
+          expect(
+            tester
+                .widget<FilledButton>(find.byKey(const Key('paywall_buy')))
+                .onPressed,
+            isNull,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_close')),
+            tap: false,
+            settle: false,
+          );
+          gate.complete();
+          await tester.pump(const Duration(seconds: 1));
+          await tester.pumpAndSettle();
+        });
+
+        screen('paywall: thanks after the purchase', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          h.purchases.offering = FakePurchaseService.longPriceOffering;
+          await openPaywallScreen(tester, h);
+          await reach(tester, find.byKey(const Key('paywall_plan_lifetime')));
+          await reach(tester, find.byKey(const Key('paywall_buy')));
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_thanks_title')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_close')),
+            tap: false,
+          );
+          await reach(tester, find.byKey(const Key('paywall_done')));
+          expect(find.byType(PaywallScreen), findsNothing);
+        });
+
+        screen('paywall: pending payment and an error with retry', (
+          tester,
+        ) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          h.purchases
+            ..offering = FakePurchaseService.longPriceOffering
+            ..purchaseOutcome = PurchaseOutcome.pending;
+          await openPaywallScreen(tester, h);
+          await reach(tester, find.byKey(const Key('paywall_plan_monthly')));
+          await reach(tester, find.byKey(const Key('paywall_buy')));
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_pending')),
+            tap: false,
+          );
+
+          h.purchases
+            ..purchaseOutcome = PurchaseOutcome.purchased
+            ..purchaseError = const PurchaseException(
+              PurchaseFailureKind.network,
+            );
+          await reach(tester, find.byKey(const Key('paywall_buy')));
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_action_error')),
+            tap: false,
+          );
+          h.purchases.purchaseError = null;
+          await reach(tester, find.byKey(const Key('paywall_retry')));
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_thanks_title')),
+            tap: false,
+          );
+        });
+
+        screen('paywall: error with retry', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          h.purchases.offeringError = const PurchaseException(
+            PurchaseFailureKind.store,
+          );
+          await openPaywallScreen(tester, h);
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_error')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_close')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_terms')),
+            tap: false,
+          );
+          h.purchases
+            ..offeringError = null
+            ..offering = FakePurchaseService.longPriceOffering;
+          await reach(tester, find.byKey(const Key('paywall_retry')));
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_plan_lifetime')),
+            tap: false,
+          );
+        });
+
+        screen('paywall: empty offering', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          h.purchases.offering = const [];
+          await openPaywallScreen(tester, h);
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_empty')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_retry')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_close')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_privacy')),
+            tap: false,
+          );
+        });
+
+        screen('paywall: not available in this build', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          h.purchases.isAvailable = false;
+          await openPaywallScreen(tester, h);
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_unavailable')),
+            tap: false,
+          );
+          await reachPaywallChrome(tester, restore: false);
+        });
+
+        screen('profile: purchases section', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          await pumpApp(tester, h);
+          await reach(tester, find.byKey(const Key('tab_profile')));
+          await reach(
+            tester,
+            find.byKey(const Key('settings_manage_subscription')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('settings_restore_purchases')),
+          );
+          expect(h.purchases.restoreCalls, 1);
+        });
+
+        screen('profile: purchases section without store keys', (tester) async {
+          final h = AppHarness();
+          await h.seedConfig();
+          h.purchases.isAvailable = false;
+          await pumpApp(tester, h);
+          await reach(tester, find.byKey(const Key('tab_profile')));
+          await reach(
+            tester,
+            find.byKey(const Key('settings_restore_purchases')),
             tap: false,
           );
         });

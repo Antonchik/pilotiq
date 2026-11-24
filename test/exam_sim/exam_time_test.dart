@@ -25,10 +25,8 @@ void main() {
     await settle(tester);
   }
 
-  group('the clock is set back', () {
-    testWidgets('by a day during the exam: never more than the duration', (
-      tester,
-    ) async {
+  group('the clock is set back: time used is never given back', () {
+    testWidgets('by a day during the exam', (tester) async {
       await h.pump(tester);
       await h.open(tester);
       await h.start(tester);
@@ -37,23 +35,60 @@ void main() {
 
       await h.advance(tester, const Duration(days: -1));
 
-      expect(find.text('30:00'), findsOneWidget);
-      expect(find.textContaining('24:'), findsNothing);
-      // The new start was stored: after a restart the same holds.
+      expect(find.text('25:00'), findsOneWidget);
+      // Counting goes on from the new clock value.
+      await h.advance(tester, const Duration(minutes: 1));
+      expect(find.text('24:00'), findsOneWidget);
       final saved = (await h.unfinished())!;
-      expect(saved.remaining(h.now), const Duration(minutes: 30));
+      expect(saved.remaining(h.now), const Duration(minutes: 24));
     });
 
-    testWidgets('by an hour during the exam', (tester) async {
+    testWidgets('by an hour after 20 minutes, earlier than the start', (
+      tester,
+    ) async {
       await h.pump(tester);
       await h.open(tester);
       await h.start(tester);
       await h.advance(tester, const Duration(minutes: 20));
       await h.advance(tester, const Duration(hours: -1));
 
-      expect(find.text('30:00'), findsOneWidget);
+      expect(find.text('10:00'), findsOneWidget);
       await h.advance(tester, const Duration(minutes: 1));
-      expect(find.text('29:00'), findsOneWidget);
+      expect(find.text('9:00'), findsOneWidget);
+    });
+
+    testWidgets('again and again: five times "+5 minutes, -2 hours" use up '
+        '25 minutes and the sixth ends the exam', (tester) async {
+      await h.pump(tester);
+      await h.open(tester);
+      await h.start(tester);
+      for (var i = 1; i <= 5; i++) {
+        await h.advance(tester, const Duration(minutes: 5));
+        expect(find.text('${30 - 5 * i}:00'), findsOneWidget);
+        if (i < 5) await h.advance(tester, const Duration(hours: -2));
+      }
+      // 25 minutes used; five more are enough.
+      await h.advance(tester, const Duration(hours: -2));
+      expect(find.text('5:00'), findsOneWidget);
+      await h.advance(tester, const Duration(minutes: 6));
+
+      final a = (await h.attempts()).single;
+      expect(a.reason, AttemptReason.timeout);
+      expect(a.durationSec, 1800);
+    });
+
+    testWidgets('while the app is in the background', (tester) async {
+      await h.pump(tester);
+      await h.open(tester);
+      await h.start(tester);
+      await h.advance(tester, const Duration(minutes: 10));
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+      await settle(tester);
+      h.now = h.now.subtract(const Duration(days: 1));
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+      await settle(tester);
+
+      expect(find.text('20:00'), findsOneWidget);
     });
 
     testWidgets('between killing and restoring the app', (tester) async {
@@ -65,29 +100,31 @@ void main() {
 
       h.now = h.now.subtract(const Duration(days: 1));
       await h.open(tester);
-      expect(find.textContaining('30 minutes left'), findsOneWidget);
+      expect(find.textContaining('20 minutes left'), findsOneWidget);
       await tester.tap(find.byKey(const Key('exam_resume')));
       await settle(tester);
 
-      expect(find.text('30:00'), findsOneWidget);
+      expect(find.text('20:00'), findsOneWidget);
     });
 
-    testWidgets('by an hour between killing and restoring (inside the '
-        'exam): the exam does not get longer than its duration', (
-      tester,
-    ) async {
+    testWidgets('killed in the background (no leave dialog), clock set '
+        'back by an hour before the restart', (tester) async {
       await h.pump(tester);
       await h.open(tester);
       await h.start(tester);
       await h.advance(tester, const Duration(minutes: 5));
-      await leave(tester);
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.paused);
+      await settle(tester);
 
-      h.now = h.now.subtract(const Duration(minutes: 40));
+      // The process dies; a new container opens the same storage.
+      h.now = h.now.subtract(const Duration(hours: 1));
+      tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.inactive);
+      await h.pump(tester);
       await h.open(tester);
       await tester.tap(find.byKey(const Key('exam_resume')));
       await settle(tester);
 
-      expect(find.text('30:00'), findsOneWidget);
+      expect(find.text('25:00'), findsOneWidget);
     });
   });
 
@@ -157,11 +194,37 @@ void main() {
       expect(back.startedAt, DateTime(2026, 5, 1, 12));
     });
 
-    test('remaining never exceeds the duration', () {
+    test('remaining never exceeds the duration and used time stays', () {
       final a = attempt(DateTime.utc(2026, 5, 1, 12));
       expect(
         a.remaining(DateTime.utc(2026, 4, 30, 12)),
         const Duration(minutes: 30),
+      );
+      final b = a.copyWith(
+        clock: ExamClock(
+          elapsedMs: 600000,
+          seenAt: DateTime.utc(2026, 5, 1, 12, 10),
+          durationSec: 1800,
+        ),
+      );
+      expect(
+        b.remaining(DateTime.utc(2026, 4, 30)),
+        const Duration(minutes: 20),
+      );
+      expect(
+        b.remaining(DateTime.utc(2026, 5, 1, 12, 15)),
+        const Duration(minutes: 15),
+      );
+    });
+
+    test('a record of the old format counts from its start', () {
+      final map = attempt(DateTime.utc(2026, 5, 1, 12)).toMap()
+        ..remove('elapsedMs')
+        ..remove('lastSeenAt');
+      final back = InProgressAttempt.tryFromMap(map)!;
+      expect(
+        back.remaining(DateTime.utc(2026, 5, 1, 12, 10)),
+        const Duration(minutes: 20),
       );
     });
   });

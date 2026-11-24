@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pilotiq/src/purchases/purchase_config.dart';
@@ -8,21 +7,25 @@ import 'package:purchases_flutter/purchases_flutter.dart' as rc;
 
 const _context = rc.PresentedOfferingContext('default', null, null);
 
-rc.CustomerInfo _info({rc.EntitlementInfo? premium, bool listed = true}) =>
-    rc.CustomerInfo(
-      rc.EntitlementInfos(
-        {if (premium != null) premium.identifier: premium},
-        {if (premium != null && listed && premium.isActive) premium.identifier: premium},
-      ),
-      const {},
-      const [],
-      const [],
-      const [],
-      '',
-      '',
-      const {},
-      '2026-11-24T12:00:00Z',
-    );
+rc.CustomerInfo _info({rc.EntitlementInfo? premium, bool listed = true}) {
+  final all = <String, rc.EntitlementInfo>{};
+  final active = <String, rc.EntitlementInfo>{};
+  if (premium != null) {
+    all[premium.identifier] = premium;
+    if (listed && premium.isActive) active[premium.identifier] = premium;
+  }
+  return rc.CustomerInfo(
+    rc.EntitlementInfos(all, active),
+    const {},
+    const [],
+    const [],
+    const [],
+    '',
+    '',
+    const {},
+    '2026-11-24T12:00:00Z',
+  );
+}
 
 rc.EntitlementInfo _entitlement({
   String id = 'premium',
@@ -103,10 +106,22 @@ rc.SubscriptionOption _option({
 void main() {
   group('ISO periods', () {
     test('are parsed to unit and count', () {
-      expect(BillingPeriod.tryParseIso('P3M'), const BillingPeriod(BillingUnit.month, 3));
-      expect(BillingPeriod.tryParseIso('P1W'), const BillingPeriod(BillingUnit.week, 1));
-      expect(BillingPeriod.tryParseIso('P7D'), const BillingPeriod(BillingUnit.day, 7));
-      expect(BillingPeriod.tryParseIso('P1Y'), const BillingPeriod(BillingUnit.year, 1));
+      expect(
+        BillingPeriod.tryParseIso('P3M'),
+        const BillingPeriod(BillingUnit.month, 3),
+      );
+      expect(
+        BillingPeriod.tryParseIso('P1W'),
+        const BillingPeriod(BillingUnit.week, 1),
+      );
+      expect(
+        BillingPeriod.tryParseIso('P7D'),
+        const BillingPeriod(BillingUnit.day, 7),
+      );
+      expect(
+        BillingPeriod.tryParseIso('P1Y'),
+        const BillingPeriod(BillingUnit.year, 1),
+      );
     });
 
     test('anything else is unknown, never a wrong period', () {
@@ -127,11 +142,17 @@ void main() {
       final e = mapCustomerInfo(
         _info(premium: _entitlement(expires: '2026-12-31T08:00:00Z')),
       );
-      expect(e.expiresAt!.isAtSameMomentAs(DateTime.utc(2026, 12, 31, 8)), isTrue);
+      expect(
+        e.expiresAt!.isAtSameMomentAs(DateTime.utc(2026, 12, 31, 8)),
+        isTrue,
+      );
     });
 
     test('an inactive or missing entitlement is not premium', () {
-      expect(mapCustomerInfo(_info(premium: _entitlement(active: false))).isActive, isFalse);
+      expect(
+        mapCustomerInfo(_info(premium: _entitlement(active: false))).isActive,
+        isFalse,
+      );
       expect(mapCustomerInfo(_info()).isActive, isFalse);
     });
 
@@ -154,7 +175,8 @@ void main() {
         PurchaseFailureKind.network,
       );
       expect(
-        mapPurchasesError(coded(rc.PurchasesErrorCode.offlineConnectionError)).kind,
+        mapPurchasesError(coded(rc.PurchasesErrorCode.offlineConnectionError))
+            .kind,
         PurchaseFailureKind.network,
       );
       expect(
@@ -165,7 +187,10 @@ void main() {
         mapPurchasesError(coded(rc.PurchasesErrorCode.configurationError)).kind,
         PurchaseFailureKind.unknown,
       );
-      expect(mapPurchasesError(StateError('x')).kind, PurchaseFailureKind.unknown);
+      expect(
+        mapPurchasesError(StateError('x')).kind,
+        PurchaseFailureKind.unknown,
+      );
     });
   });
 
@@ -216,8 +241,16 @@ void main() {
 
     test('the packages of the current offering are mapped in order', () {
       final offering = rc.Offering('default', '', const {}, [
-        _package(_product(id: 'a', period: 'P1M'), type: rc.PackageType.monthly, id: 'monthly'),
-        _package(_product(id: 'b', subscription: false), type: rc.PackageType.lifetime, id: 'lifetime'),
+        _package(
+          _product(id: 'a', period: 'P1M'),
+          type: rc.PackageType.monthly,
+          id: 'monthly',
+        ),
+        _package(
+          _product(id: 'b', subscription: false),
+          type: rc.PackageType.lifetime,
+          id: 'lifetime',
+        ),
       ]);
       final result = mapOffering(
         rc.Offerings({'default': offering}, current: offering),
@@ -254,7 +287,11 @@ void main() {
         null,
       ]) {
         expect(
-          mapIntroOffer(product, platform: TargetPlatform.iOS, eligibility: status),
+          mapIntroOffer(
+            product,
+            platform: TargetPlatform.iOS,
+            eligibility: status,
+          ),
           isNull,
           reason: '$status',
         );
@@ -265,7 +302,14 @@ void main() {
       final paid = mapIntroOffer(
         _product(
           period: 'P1M',
-          intro: rc.IntroductoryPrice(4.99, 'PLN 4,99', 'P1M', 1, rc.PeriodUnit.month, 1),
+          intro: rc.IntroductoryPrice(
+            4.99,
+            'PLN 4,99',
+            'P1M',
+            1,
+            rc.PeriodUnit.month,
+            1,
+          ),
         ),
         platform: TargetPlatform.iOS,
         eligibility: rc.IntroEligibilityStatus.introEligibilityStatusEligible,
@@ -277,7 +321,14 @@ void main() {
         mapIntroOffer(
           _product(
             period: 'P1M',
-            intro: rc.IntroductoryPrice(4.99, 'PLN 4,99', 'P1M', 3, rc.PeriodUnit.month, 1),
+            intro: rc.IntroductoryPrice(
+              4.99,
+              'PLN 4,99',
+              'P1M',
+              3,
+              rc.PeriodUnit.month,
+              1,
+            ),
           ),
           platform: TargetPlatform.iOS,
           eligibility: rc.IntroEligibilityStatus.introEligibilityStatusEligible,
@@ -296,35 +347,43 @@ void main() {
       expect(trial.period, const BillingPeriod(BillingUnit.day, 3));
     });
 
-    test('Android: no offer, or a trial followed by a reduced price, says nothing', () {
-      expect(
-        mapIntroOffer(
-          _product(period: 'P3M', option: _option()),
-          platform: TargetPlatform.android,
-        ),
-        isNull,
-      );
-      expect(
-        mapIntroOffer(
-          _product(period: 'P3M'),
-          platform: TargetPlatform.android,
-        ),
-        isNull,
-      );
-      expect(
-        mapIntroOffer(
-          _product(
-            period: 'P3M',
-            option: _option(
-              free: _phase(rc.PeriodUnit.day, 3),
-              intro: _phase(rc.PeriodUnit.month, 1, micros: 4990000, formatted: 'PLN 4,99'),
-            ),
+    test(
+      'Android: no offer, or a trial followed by a reduced price, says nothing',
+      () {
+        expect(
+          mapIntroOffer(
+            _product(period: 'P3M', option: _option()),
+            platform: TargetPlatform.android,
           ),
-          platform: TargetPlatform.android,
-        ),
-        isNull,
-      );
-    });
+          isNull,
+        );
+        expect(
+          mapIntroOffer(
+            _product(period: 'P3M'),
+            platform: TargetPlatform.android,
+          ),
+          isNull,
+        );
+        expect(
+          mapIntroOffer(
+            _product(
+              period: 'P3M',
+              option: _option(
+                free: _phase(rc.PeriodUnit.day, 3),
+                intro: _phase(
+                  rc.PeriodUnit.month,
+                  1,
+                  micros: 4990000,
+                  formatted: 'PLN 4,99',
+                ),
+              ),
+            ),
+            platform: TargetPlatform.android,
+          ),
+          isNull,
+        );
+      },
+    );
 
     test('a product without any offer maps to no trial on both platforms', () {
       final product = _product(period: 'P1M');
@@ -333,7 +392,8 @@ void main() {
           mapPackage(
             _package(product),
             platform: platform,
-            eligibility: rc.IntroEligibilityStatus.introEligibilityStatusEligible,
+            eligibility:
+                rc.IntroEligibilityStatus.introEligibilityStatusEligible,
           ).introOffer,
           isNull,
         );

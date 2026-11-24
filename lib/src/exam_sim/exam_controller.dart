@@ -45,6 +45,17 @@ class ExamArgs {
   int get passPercent => (spec.passRatio * 100).round();
 }
 
+/// The attempt is stored, but not all of its answers could be added to the
+/// progress yet (they are added later, once each).
+class AnswersNotCountedException implements Exception {
+  AnswersNotCountedException(this.cause);
+
+  final Object cause;
+
+  @override
+  String toString() => 'AnswersNotCountedException($cause)';
+}
+
 /// Builds, stores and closes attempts. One instance per app: concurrent calls
 /// for the same attempt share one run, so an attempt is stored and its
 /// answers are added to the progress exactly once.
@@ -90,21 +101,22 @@ class ExamFinalizer {
         licence: source.licence,
       ).passRatio,
     );
-    final deadline = source.deadline;
-    final finishedAt =
-        reason == AttemptReason.timeout || !now.isBefore(deadline)
-        ? deadline
-        : now;
-    final used = finishedAt.difference(source.startedAt).inSeconds;
+    // The time of the attempt is its real time: if ending had begun
+    // (closing), the stored clock is the moment of the click or of the
+    // expiry; otherwise the clock runs up to [now]. A later discovery (app
+    // closed, storage failed) never stretches it.
+    final clock = source.closing != null
+        ? source.clock
+        : source.clock.advance(now);
+    final finishedAt = clock.seenAt;
+    final durationSec = clock.elapsed.inSeconds;
     return ExamAttempt(
       id: source.id,
       licence: source.licence,
       subject: source.subject,
       startedAt: source.startedAt,
       finishedAt: finishedAt,
-      durationSec: used < 0
-          ? 0
-          : (used > source.durationSec ? source.durationSec : used),
+      durationSec: durationSec,
       total: score.total,
       correct: score.correct,
       passed: score.passed,
@@ -167,9 +179,14 @@ class ExamFinalizer {
     } on Object catch (e) {
       debugPrint('Could not clear the unfinished exam: $e');
     }
-    // Throws when an answer could not be counted; the attempt is stored by
-    // then and a repeated call counts only what is still missing.
-    await _recordPending(current, bank, now);
+    // The attempt is stored by now; if an answer cannot be counted the call
+    // throws [AnswersNotCountedException] and a repeat counts only what is
+    // still missing.
+    try {
+      await _recordPending(current, bank, now);
+    } on Object catch (e) {
+      throw AnswersNotCountedException(e);
+    }
     return attempt;
   }
 
@@ -244,7 +261,8 @@ class ExamFinalizer {
         latest.id,
         id,
         correct: latest.answers[id] == bank[id]!.correctIndex,
-        now: now,
+        // The day of the exam, not of the moment it is counted.
+        now: latest.finishedAt,
       );
     }
   }
@@ -267,7 +285,10 @@ class ExamState {
     this.flagged = const {},
     this.index = 0,
     this.startedAt,
+    this.clockBox,
     this.durationSec = 0,
+    this.markerStored = false,
+    this.attemptStored = false,
     this.persistFailed = false,
     this.startFailed = false,
     this.finishFailed = false,
@@ -288,7 +309,19 @@ class ExamState {
   final Set<String> flagged;
   final int index;
   final DateTime? startedAt;
+
+  /// The time of the exam (used up, last seen); see [ExamClock]. A box shared
+  /// by all copies of the state: the clock ticks every second without
+  /// rebuilding the screen.
+  final ExamClockBox? clockBox;
+  ExamClock? get clock => clockBox?.value;
   final int durationSec;
+
+  /// While the result could not be stored: whether the note "this exam is
+  /// being ended" was stored (the exam can then only be finished) and whether
+  /// the attempt itself is stored (only counting answers is left).
+  final bool markerStored;
+  final bool attemptStored;
   final bool persistFailed;
   final bool startFailed;
   final bool finishFailed;
@@ -307,7 +340,11 @@ class ExamState {
     for (final q in questions)
       if (flagged.contains(q.id)) q,
   ].length;
-  DateTime? get deadline => startedAt?.add(Duration(seconds: durationSec));
+
+  /// What is true if the user leaves while the result is not stored.
+  ExamLeave get leave => attemptStored
+      ? ExamLeave.resultSaved
+      : (markerStored ? ExamLeave.endingStored : ExamLeave.endingNotStored);
 
   ExamState copyWith({
     ExamPhase? phase,
@@ -319,7 +356,8 @@ class ExamState {
     bool? finishFailed,
     ExamAttempt? attempt,
     ExamNotice? notice,
-    DateTime? startedAt,
+    bool? markerStored,
+    bool? attemptStored,
   }) => ExamState(
     phase: phase ?? this.phase,
     language: language,
@@ -329,14 +367,39 @@ class ExamState {
     answers: answers ?? this.answers,
     flagged: flagged ?? this.flagged,
     index: index ?? this.index,
-    startedAt: startedAt ?? this.startedAt,
+    startedAt: startedAt,
+    clockBox: clockBox,
     durationSec: durationSec,
+    markerStored: markerStored ?? this.markerStored,
+    attemptStored: attemptStored ?? this.attemptStored,
     persistFailed: persistFailed ?? this.persistFailed,
     startFailed: startFailed ?? this.startFailed,
     finishFailed: finishFailed ?? this.finishFailed,
     attempt: attempt ?? this.attempt,
     notice: notice ?? this.notice,
   );
+}
+
+/// Mutable holder of the exam clock shared by the copies of a state.
+class ExamClockBox {
+  ExamClockBox(this.value);
+
+  ExamClock value;
+}
+
+/// What leaving the screen means while the result is not stored.
+enum ExamLeave {
+  /// The attempt is stored; only counting answers in the progress is left
+  /// (done automatically later).
+  resultSaved,
+
+  /// The note "being ended" is stored: the exam can only be finished, and its
+  /// result is stored the next time it is opened.
+  endingStored,
+
+  /// Nothing about the ending is stored: the exam can be continued and its
+  /// time keeps running.
+  endingNotStored,
 }
 
 /// Why the result screen carries a note.
@@ -401,16 +464,6 @@ class ExamController extends AsyncNotifier<ExamState> {
       debugPrint('Could not count the answers of a stored exam: $e');
     }
     var stored = await _repo.loadInProgressAttempt(args.licence, args.subject);
-    if (stored != null && stored.startedAt.isAfter(now)) {
-      // The clock was set back since the exam was started: the start moves
-      // back with it, so the exam never has more time than its duration.
-      stored = stored.copyWith(startedAt: now);
-      try {
-        await _repo.saveInProgressAttempt(stored);
-      } on Object catch (e) {
-        debugPrint('Could not store the new start of the exam: $e');
-      }
-    }
     if (stored != null) {
       final done = await _repo.attempts(args.licence, subject: args.subject);
       if (done.any((a) => a.id == stored!.id)) {
@@ -428,9 +481,15 @@ class ExamController extends AsyncNotifier<ExamState> {
       if (stored.closing != null) {
         // Ending had begun but the result was not stored: finish it, the exam
         // cannot be continued any more.
-        return _closeRestored(restored, ExamNotice.none, stored.closing!);
+        return _closeRestored(
+          restored.copyWith(markerStored: true),
+          stored.closing == AttemptReason.timeout
+              ? ExamNotice.expiredWhileClosed
+              : ExamNotice.none,
+          stored.closing!,
+        );
       }
-      if (stored.isExpired(now)) {
+      if (restored.clock!.isOver) {
         return _closeRestored(
           restored,
           ExamNotice.expiredWhileClosed,
@@ -497,6 +556,9 @@ class ExamController extends AsyncNotifier<ExamState> {
       flagged: {...stored.flagged},
       index: firstOpen < 0 ? 0 : firstOpen,
       startedAt: stored.startedAt,
+      clockBox: ExamClockBox(
+        stored.closing != null ? stored.clock : stored.clock.advance(_now),
+      ),
       durationSec: stored.durationSec,
     );
   }
@@ -508,7 +570,7 @@ class ExamController extends AsyncNotifier<ExamState> {
     AttemptReason reason,
   ) async {
     final attempt = ExamFinalizer.buildAttempt(
-      source: _snapshot(s),
+      source: _snapshot(s, closing: s.markerStored ? reason : null),
       bank: _byId,
       now: _now,
       reason: reason,
@@ -523,7 +585,10 @@ class ExamController extends AsyncNotifier<ExamState> {
     } on Object catch (e) {
       debugPrint('Could not save the expired exam: $e');
       _finishFuture = null;
-      return base.copyWith(finishFailed: true);
+      return base.copyWith(
+        finishFailed: true,
+        attemptStored: e is AnswersNotCountedException,
+      );
     }
     _afterStored();
     _finishFuture = Future<void>.value();
@@ -537,6 +602,8 @@ class ExamController extends AsyncNotifier<ExamState> {
         licence: args.licence,
         subject: args.subject,
         startedAt: s.startedAt!,
+        elapsedMs: s.clock!.elapsedMs,
+        lastSeenAt: s.clock!.seenAt,
         durationSec: s.durationSec,
         questionIds: [for (final q in s.questions) q.id],
         answers: {for (final q in s.questions) q.id: s.answers[q.id]},
@@ -593,6 +660,13 @@ class ExamController extends AsyncNotifier<ExamState> {
         questions: questions,
         shuffles: shuffles,
         startedAt: now,
+        clockBox: ExamClockBox(
+          ExamClock(
+            elapsedMs: 0,
+            seenAt: now,
+            durationSec: args.spec.minutes * 60,
+          ),
+        ),
         durationSec: args.spec.minutes * 60,
       );
       try {
@@ -634,41 +708,46 @@ class ExamController extends AsyncNotifier<ExamState> {
   void _startTicker() {
     _timer?.cancel();
     syncTime();
-    _timer = Timer.periodic(const Duration(seconds: 1), (_) => syncTime());
+    var ticks = 0;
+    _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+      syncTime();
+      // The used time is stored every few seconds, so that a killed app
+      // loses almost none of it.
+      if (++ticks % 15 == 0) _persist();
+    });
   }
 
-  /// Recomputes the remaining time from the start time; ends the exam when it
+  /// Brings the clock of the exam up to now and ends the exam when the time
   /// is over. Called every second and when the app comes back to the front.
   void syncTime() {
     final current = state.value;
     if (current == null || current.phase != ExamPhase.running) return;
-    final s = _anchor(current);
-    final left = s.deadline!.difference(_now);
-    if (left <= Duration.zero) {
+    final s = _tick(current);
+    if (s.clock!.isOver) {
       remaining.value = Duration.zero;
       unawaited(_finish(AttemptReason.timeout));
       return;
     }
-    final full = Duration(seconds: s.durationSec);
-    final shown = left > full ? full : left;
-    remaining.value = Duration(seconds: (shown.inMilliseconds / 1000).ceil());
+    remaining.value = Duration(
+      seconds: (s.clock!.remaining.inMilliseconds / 1000).ceil(),
+    );
   }
 
-  /// If the clock was set back to before the start, the start moves back too:
-  /// the time left is never more than the duration of the exam.
-  ExamState _anchor(ExamState s) {
+  /// Advances the exam clock to now. Time used up is never given back: if
+  /// the device clock was set back, counting goes on from the new value, and
+  /// the new reference point is stored at once.
+  ExamState _tick(ExamState s) {
+    final box = s.clockBox;
+    if (box == null) return s;
     final now = _now;
-    final start = s.startedAt;
-    if (start == null || !now.isBefore(start)) return s;
-    final next = s.copyWith(startedAt: now);
-    state = AsyncData(next);
-    if (s.phase == ExamPhase.running) _persist();
-    return next;
+    final before = box.value;
+    box.value = before.advance(now);
+    if (before.wentBack(now) && s.phase == ExamPhase.running) _persist();
+    return s;
   }
 
   bool _expiredNow(ExamState s) {
-    final a = _anchor(s);
-    if (a.deadline != null && !_now.isBefore(a.deadline!)) {
+    if (_tick(s).clock!.isOver) {
       unawaited(_finish(AttemptReason.timeout));
       return true;
     }
@@ -753,7 +832,7 @@ class ExamController extends AsyncNotifier<ExamState> {
         final s = state.value;
         if (s == null || s.phase != ExamPhase.running || !ref.mounted) break;
         try {
-          await _repo.saveInProgressAttempt(_snapshot(s));
+          await _repo.saveInProgressAttempt(_snapshot(_tick(s)));
           _mark(persistFailed: false);
         } on Object catch (e) {
           debugPrint('Could not store the exam progress: $e');
@@ -799,10 +878,10 @@ class ExamController extends AsyncNotifier<ExamState> {
         (first.phase != ExamPhase.running && first.phase != ExamPhase.resume)) {
       return Future.value();
     }
-    final s = _anchor(first);
+    final s = _tick(first);
     _timer?.cancel();
     final attempt = ExamFinalizer.buildAttempt(
-      source: _snapshot(s),
+      source: _snapshot(s, closing: reason),
       bank: _byId,
       now: _now,
       reason: reason,
@@ -820,7 +899,10 @@ class ExamController extends AsyncNotifier<ExamState> {
     return _finishFuture = _store();
   }
 
-  /// Stores the built result; shown as done only after it is stored.
+  /// Stores the built result; shown as done only after it is stored. First
+  /// the note "being ended" goes to the unfinished record (so that the exam
+  /// can never be continued once ending has begun), then the result. Both
+  /// are written again by every retry.
   Future<void> _store() async {
     final current = state.value;
     final attempt = current?.attempt;
@@ -830,30 +912,55 @@ class ExamController extends AsyncNotifier<ExamState> {
     } on Object {
       // A failed progress save does not matter any more.
     }
+    final finalizer = ref.read(examFinalizerProvider);
+    var marked = current.markerStored;
+    var stored = current.attemptStored;
     try {
-      // Ending has begun: should the app die now, the exam is only finished
-      // when it is opened again, never continued.
-      await _repo.saveInProgressAttempt(
-        _snapshot(current, closing: attempt.reason),
-      );
+      // Another run (the sweep) may have stored the result already: then no
+      // note must be written, it would bring the unfinished record back.
+      stored =
+          stored ||
+          (await _repo.attempts(
+            args.licence,
+            subject: args.subject,
+          )).any((a) => a.id == attempt.id);
     } on Object catch (e) {
-      debugPrint('Could not mark the exam as ending: $e');
+      debugPrint('Could not look for the stored exam: $e');
+    }
+    if (!stored) {
+      try {
+        await _repo.saveInProgressAttempt(
+          _snapshot(current, closing: attempt.reason),
+        );
+        marked = true;
+      } on Object catch (e) {
+        debugPrint('Could not mark the exam as ending: $e');
+        marked = false;
+      }
     }
     try {
-      await ref.read(examFinalizerProvider).persist(attempt, _byId, _now);
+      await finalizer.persist(attempt, _byId, _now);
     } on Object catch (e) {
       debugPrint('Could not save the exam result: $e');
       _finishFuture = null;
       final s = state.value;
       if (ref.mounted && s != null) {
-        state = AsyncData(s.copyWith(finishFailed: true));
+        state = AsyncData(
+          s.copyWith(
+            finishFailed: true,
+            markerStored: marked,
+            attemptStored: stored || e is AnswersNotCountedException,
+          ),
+        );
       }
       return;
     }
     if (!ref.mounted) return;
     _afterStored();
     final s = state.value;
-    if (s != null) state = AsyncData(s.copyWith(phase: ExamPhase.done));
+    if (s != null) {
+      state = AsyncData(s.copyWith(phase: ExamPhase.done, attemptStored: true));
+    }
   }
 
   /// Tries again to store a result that could not be stored.

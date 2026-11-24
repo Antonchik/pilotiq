@@ -63,8 +63,13 @@ class _ExamBodyState extends ConsumerState<_ExamBody>
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
+    final controller = ref.read(examControllerProvider.notifier);
     if (state == AppLifecycleState.resumed) {
-      ref.read(examControllerProvider.notifier).syncTime();
+      controller.syncTime();
+    } else if (state == AppLifecycleState.paused) {
+      // The process may be killed while in the background: store the answers
+      // and the time used up.
+      controller.retryPersist();
     }
   }
 
@@ -144,13 +149,16 @@ class _ExamBodyState extends ConsumerState<_ExamBody>
   /// Asks before the screen is left while the exam is running (or its result
   /// is being stored). Answers that could not be stored are stored once more
   /// first; if that fails again the dialog says they will be lost.
-  Future<void> _confirmLeave({bool ending = false}) async {
+  Future<void> _confirmLeave({ExamLeave? ending}) async {
     final local = AppLocalizations.of(context)!;
-    final saved = ending ? true : await _controller.flushProgress();
+    final saved = ending != null ? true : await _controller.flushProgress();
     if (!mounted) return;
-    final body = ending
-        ? local.examLeaveUnsavedResultBody
-        : (saved ? local.examLeaveBody : local.examLeaveUnsavedBody);
+    final body = switch (ending) {
+      ExamLeave.resultSaved => local.examLeaveResultSavedBody,
+      ExamLeave.endingStored => local.examLeaveUnsavedResultBody,
+      ExamLeave.endingNotStored => local.examLeaveNotMarkedBody,
+      null => saved ? local.examLeaveBody : local.examLeaveUnsavedBody,
+    };
     final leave = await _dialog<bool>(
       (ctx) => AlertDialog(
         scrollable: true,
@@ -259,7 +267,14 @@ class _ExamBodyState extends ConsumerState<_ExamBody>
     return PopScope(
       canPop: !running && !ending,
       onPopInvokedWithResult: (didPop, _) {
-        if (!didPop) _confirmLeave(ending: ending);
+        if (didPop) return;
+        // While the result is being stored (no error yet) the spinner is
+        // shown and leaving waits; only a failure asks the user.
+        if (ending) {
+          if (s.finishFailed) _confirmLeave(ending: s.leave);
+          return;
+        }
+        _confirmLeave();
       },
       child: Scaffold(
         appBar: AppBar(
@@ -503,10 +518,7 @@ class _ResumeView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
     final controller = ref.read(examControllerProvider.notifier);
-    final full = Duration(seconds: state.durationSec);
-    var left = state.deadline!.difference(ref.read(clockProvider).now());
-    if (left > full) left = full;
-    if (left.isNegative) left = Duration.zero;
+    final left = state.clock!.advance(ref.read(clockProvider).now()).remaining;
     return _Message(
       icon: Icons.restore,
       title: local.examResumeTitle,
@@ -629,15 +641,6 @@ class _RunningView extends ConsumerWidget {
     );
     return Column(
       children: [
-        if (state.persistFailed)
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: _ErrorBox(
-              key: const Key('exam_persist_error'),
-              text: local.examPersistError,
-              onRetry: controller.retryPersist,
-            ),
-          ),
         if (!compact)
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
@@ -655,6 +658,13 @@ class _RunningView extends ConsumerWidget {
             onToggleFlag: controller.toggleFlag,
             header: compact ? header : null,
             footer: compact ? nav : null,
+            banner: state.persistFailed
+                ? _ErrorBox(
+                    key: const Key('exam_persist_error'),
+                    text: local.examPersistError,
+                    onRetry: controller.retryPersist,
+                  )
+                : null,
           ),
         ),
         if (!compact)
@@ -733,8 +743,10 @@ class _ExamQuestionView extends StatelessWidget {
     required this.onToggleFlag,
     this.header,
     this.footer,
+    this.banner,
   });
 
+  final Widget? banner;
   final Widget? header;
   final Widget? footer;
   final Question question;
@@ -755,6 +767,7 @@ class _ExamQuestionView extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        ?banner,
         if (header != null) ...[header!, const SizedBox(height: 12)],
         BankText(
           question.text.resolve(shown),

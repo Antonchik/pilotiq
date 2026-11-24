@@ -9,11 +9,7 @@ import 'package:pilotiq/src/purchases/purchases_gateway.dart';
 /// offline use. The entitlement `premium` of the backend is the source of
 /// truth; the cache only stands in while the backend cannot be reached.
 class RevenueCatPurchaseService extends CachedPurchaseService {
-  RevenueCatPurchaseService({
-    required this._gateway,
-    super.cache,
-    super.clock,
-  });
+  RevenueCatPurchaseService({required this._gateway, super.cache, super.clock});
 
   final PurchasesGateway _gateway;
   StreamSubscription<ServerEntitlement>? _updates;
@@ -59,23 +55,7 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
   Future<void> onPeriodEnded() => refresh();
 
   @override
-  Future<List<PaywallPackage>> getOffering() async {
-    final packages = await _gateway.getOffering();
-    // Lifetime first, then the longer subscription, then the rest in the order
-    // of the store. The sort is stable.
-    int rank(PaywallPackage p) => switch (p.kind) {
-      PackageKind.lifetime => 0,
-      PackageKind.quarterly => 1,
-      PackageKind.monthly => 2,
-      PackageKind.other => 3,
-    };
-    final indexed = packages.indexed.toList()
-      ..sort((a, b) {
-        final byRank = rank(a.$2).compareTo(rank(b.$2));
-        return byRank != 0 ? byRank : a.$1.compareTo(b.$1);
-      });
-    return [for (final e in indexed) e.$2];
-  }
+  Future<List<PaywallPackage>> getOffering() => _gateway.getOffering();
 
   @override
   Future<PurchaseOutcome> purchase(String packageId) async {

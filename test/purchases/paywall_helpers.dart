@@ -32,6 +32,9 @@ class PaywallHost {
 
   final FakePurchaseService service;
   final ProgressRepository repository;
+
+  /// What the launcher logged.
+  final List<String> logs = [];
   final PaywallTrigger trigger;
   final Locale locale;
   final double textScale;
@@ -50,6 +53,7 @@ class PaywallHost {
     purchaseServiceProvider.overrideWithValue(service),
     progressRepositoryProvider.overrideWithValue(repository),
     clockProvider.overrideWithValue(Clock.fixed(paywallTestNow)),
+    paywallLogProvider.overrideWithValue(logs.add),
   ];
 
   Widget app({Widget? home, List<Override> extra = const []}) => ProviderScope(
@@ -102,11 +106,6 @@ class PaywallHost {
 /// Seeds [count] answers, so that automatic triggers are allowed.
 Future<void> seedAnswers(ProgressRepository repo, int count) async {
   for (var i = 0; i < count; i++) {
-    await repo.recordAnswer(
-      Licence.ppla,
-      'q$i',
-      true,
-      paywallTestNow,
-    );
+    await repo.recordAnswer(Licence.ppla, 'q$i', true, paywallTestNow);
   }
 }

@@ -60,7 +60,8 @@ EntitlementState evaluateCachedEntitlement(
 class EntitlementCache {
   EntitlementCache({Future<Box<dynamic>> Function()? openBox})
     : _open =
-          openBox ?? (() => Hive.openBox<dynamic>('config', crashRecovery: false));
+          openBox ??
+          (() => Hive.openBox<dynamic>('config', crashRecovery: false));
 
   static const String premiumKey = 'rcPremium';
   static const String expiresAtKey = 'rcExpiresAt';

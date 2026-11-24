@@ -30,8 +30,7 @@ PurchaseException mapPurchasesError(Object error) {
     rc.PurchasesErrorCode.networkError ||
     rc.PurchasesErrorCode.offlineConnectionError ||
     rc.PurchasesErrorCode.apiEndpointBlocked ||
-    rc.PurchasesErrorCode.productRequestTimeout =>
-      PurchaseFailureKind.network,
+    rc.PurchasesErrorCode.productRequestTimeout => PurchaseFailureKind.network,
     rc.PurchasesErrorCode.storeProblemError ||
     rc.PurchasesErrorCode.purchaseNotAllowedError ||
     rc.PurchasesErrorCode.purchaseInvalidError ||
@@ -64,7 +63,8 @@ IntroOffer? mapIntroOffer(
   rc.IntroEligibilityStatus? eligibility,
 }) {
   if (platform == TargetPlatform.iOS || platform == TargetPlatform.macOS) {
-    if (eligibility != rc.IntroEligibilityStatus.introEligibilityStatusEligible) {
+    if (eligibility !=
+        rc.IntroEligibilityStatus.introEligibilityStatusEligible) {
       return null;
     }
     final intro = product.introductoryPrice;
@@ -177,9 +177,8 @@ class PurchasesFlutterGateway implements PurchasesGateway {
   }
 
   @override
-  Future<ServerEntitlement> getEntitlement() => _guard(
-    () async => mapCustomerInfo(await rc.Purchases.getCustomerInfo()),
-  );
+  Future<ServerEntitlement> getEntitlement() =>
+      _guard(() async => mapCustomerInfo(await rc.Purchases.getCustomerInfo()));
 
   @override
   Future<List<PaywallPackage>> getOffering() => _guard(() async {
@@ -203,9 +202,10 @@ class PurchasesFlutterGateway implements PurchasesGateway {
       return const {};
     }
     try {
-      final result = await rc.Purchases.checkTrialOrIntroductoryPriceEligibility([
-        for (final p in packages) p.storeProduct.identifier,
-      ]);
+      final result =
+          await rc.Purchases.checkTrialOrIntroductoryPriceEligibility([
+            for (final p in packages) p.storeProduct.identifier,
+          ]);
       return {for (final e in result.entries) e.key: e.value.status};
     } on Object catch (e) {
       // Without the answer no trial is promised.
@@ -255,8 +255,9 @@ class PurchasesFlutterGateway implements PurchasesGateway {
 
   @override
   Future<ServerEntitlement> sync() => _guard(
-    () async =>
-        mapCustomerInfo((await rc.Purchases.syncPurchasesForResult()).customerInfo),
+    () async => mapCustomerInfo(
+      (await rc.Purchases.syncPurchasesForResult()).customerInfo,
+    ),
   );
 
   @override

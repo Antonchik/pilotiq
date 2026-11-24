@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_ce/hive.dart';
+import 'package:pilotiq/src/exam_sim/exam_sweep.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/exam_sim/exam_history_screen.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
@@ -188,5 +190,46 @@ void main() {
       expect(await h.unfinished(), isNull);
       expect(find.textContaining('Last result:'), findsOneWidget);
     });
+  });
+
+  testWidgets('a sweep updates the tile of an open subject screen', (
+    tester,
+  ) async {
+    await h.pump(tester);
+    await h.open(tester);
+    await h.start(tester);
+    await tester.tap(find.byKey(const Key('answer_0')));
+    await settle(tester);
+    await tester.pageBack();
+    await settle(tester);
+    await tester.tap(find.byKey(const Key('exam_leave_confirm')));
+    await settle(tester);
+
+    SubjectInfo subject() => SubjectInfo(
+      licence: Licence.ppla,
+      id: SubjectId.communications,
+      title: 'Comms',
+      description: '',
+      spec: h.args.spec,
+      questions: h.questions,
+    );
+    await h.pump(
+      tester,
+      home: Scaffold(
+        body: SingleChildScrollView(child: QuizList(subject: subject())),
+      ),
+    );
+    expect(find.textContaining('Unfinished attempt'), findsOneWidget);
+
+    h.now = h.now.add(const Duration(hours: 2));
+    final container = ProviderScope.containerOf(
+      tester.element(find.byType(QuizList)),
+    );
+    container.invalidate(examSweepProvider);
+    container.read(examSweepProvider.future).ignore();
+    await settle(tester);
+
+    expect(find.textContaining('Unfinished attempt'), findsNothing);
+    expect(find.textContaining('Last result:'), findsOneWidget);
   });
 }

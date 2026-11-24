@@ -145,7 +145,8 @@ void main() {
           'exam screens x$scale ${size.width.toInt()}x${size.height.toInt()} '
           '$lang',
           (tester) async {
-            final h = ExamHarness()
+            final flaky = FlakyRepository();
+            final h = ExamHarness(repository: flaky)
               ..subject = subject
               ..questions = bank.questionsOf(subject);
             await h.setUp();
@@ -227,6 +228,31 @@ void main() {
             }
             await tapAction(tester, const Key('answer_1'));
             await tapAction(tester, const Key('exam_flag'));
+
+            // The progress cannot be stored: the banner and the dialog on
+            // leaving (with the warning) are reachable.
+            flaky.failInProgressAlways = true;
+            await tapAction(tester, const Key('answer_2'));
+            await reach(
+              tester,
+              find.byKey(const Key('exam_persist_error')),
+              action: false,
+            );
+            await reach(tester, find.byKey(const Key('exam_retry')));
+            await tester.tap(find.byType(BackButton));
+            await settle(tester);
+            await reach(tester, find.byKey(const Key('exam_leave_stay')));
+            await reach(tester, find.byKey(const Key('exam_leave_confirm')));
+            await tapAction(tester, const Key('exam_leave_stay'));
+            flaky.failInProgressAlways = false;
+            await tapAction(tester, const Key('exam_retry'));
+            expect(find.byKey(const Key('exam_persist_error')), findsNothing);
+            // The dialog on leaving without a problem.
+            await tester.tap(find.byType(BackButton));
+            await settle(tester);
+            await reach(tester, find.byKey(const Key('exam_leave_stay')));
+            await reach(tester, find.byKey(const Key('exam_leave_confirm')));
+            await tapAction(tester, const Key('exam_leave_stay'));
             await reach(tester, find.byKey(const Key('exam_next')));
 
             // The grid.
@@ -251,7 +277,27 @@ void main() {
             await reach(tester, find.byKey(const Key('exam_finish_cancel')));
             await tapAction(tester, const Key('exam_finish_cancel'));
             await tapAction(tester, const Key('exam_finish_inline'));
+            // The ending fails in every way, one after the other: nothing
+            // stored, the note stored, the result stored but not counted.
+            flaky.failInProgressAlways = true;
+            flaky.failAttemptSaves = 2;
+            flaky.failRecordCalls.add(1);
             await tapAction(tester, const Key('exam_finish_confirm'));
+            for (var step = 0; step < 3; step++) {
+              await reach(
+                tester,
+                find.byKey(const Key('exam_finish_error')),
+                action: false,
+              );
+              await reach(tester, find.byKey(const Key('exam_retry')));
+              await tester.tap(find.byType(BackButton));
+              await settle(tester);
+              await reach(tester, find.byKey(const Key('exam_leave_stay')));
+              await reach(tester, find.byKey(const Key('exam_leave_confirm')));
+              await tapAction(tester, const Key('exam_leave_stay'));
+              flaky.failInProgressAlways = false;
+              await tapAction(tester, const Key('exam_retry'));
+            }
 
             // Result of a free user.
             await reach(
