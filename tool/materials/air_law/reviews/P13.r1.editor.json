@@ -1,0 +1,127 @@
+[
+ {
+  "key": "PL010-0020#60819151",
+  "verdict": "PASS",
+  "note": "Klucz (personel lotniczy i pokładowy) = art. 105 ust. 1; pułapka o odpowiedziach niepełnych poprawna."
+ },
+ {
+  "key": "PL010-0250#e2e04bb4",
+  "verdict": "PASS",
+  "note": "Klucz (kandydaci na licencję i świadectwo kwalifikacji) = art. 105 ust. 1 + art. 94 ust. 2 pkt 1. Zdanie o wyjątkach z art. 105 ust. 1a zgodne z tekstem (pkt 2 i 5; „m.in.” obejmuje też operatorów BSP i pozostałe specjalności) i przydatne jako zastrzeżenie — nie jest zbędne ani sprzeczne z kluczem; zostawić."
+ },
+ {
+  "key": "PL010-0096#1f9cb636",
+  "verdict": "PASS",
+  "note": "Klucz = art. 105 ust. 1 dosłownie."
+ },
+ {
+  "key": "PL010-0020#315617a8",
+  "verdict": "PASS",
+  "note": "Klucz «Wszystkie odpowiedzi» = art. 105 ust. 1 + art. 94 ust. 2 pkt 1 (posiadacz świadectwa kwalifikacji jest członkiem personelu lotniczego). Zdanie o art. 105 ust. 1a zgodne z korpusem i uczciwie sygnalizuje wyjątki od «wszystkich»; zostawić."
+ },
+ {
+  "key": "PL010-0250#b1421fef",
+  "verdict": "PASS",
+  "note": "Jak 0020#315617a8: wariant z «posiadającymi licencję»; tekst to wyraźnie obejmuje."
+ },
+ {
+  "key": "PL010-0096#1f167277",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: to samo pytanie i ta sama odpowiedź; inny tylko jeden dystraktor („Żadna z odpowiedzi…” zamiast „rozmowy w ATO”), a tekst oryginału nie zawiera zdania „Pułapka” o nim — pozostaje prawdziwy bez zmian."
+ },
+ {
+  "key": "PL010-0097#cd9e4c4f",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: pytanie i klucz identyczne, tekst oryginału odnosi się tylko do dystraktorów obecnych w obu wariantach."
+ },
+ {
+  "key": "PL010-0097#e3708d12",
+  "verdict": "PASS",
+  "note": "Klucz = art. 105 ust. 1 (kandydat na członka personelu lotniczego)."
+ },
+ {
+  "key": "PL010-1551#3a9afdc8",
+  "verdict": "PASS",
+  "note": "Klucz = art. 105 ust. 1 (członek personelu pokładowego)."
+ },
+ {
+  "key": "PL010-0129#446a12c0",
+  "verdict": "PASS",
+  "note": "Klucz = art. 106 ust. 1 pkt 1; pułapka z art. 106 ust. 3 poprawna (ust. 1 wymienia tylko AeMC i AME)."
+ },
+ {
+  "key": "PL010-0129#c7ebadf2",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: różnica tylko „Naczelny Lekarz” vs „Naczelny Lekarz Lotnictwa Cywilnego”; tekst używa nazwy z art. 106 ust. 3."
+ },
+ {
+  "key": "PL010-0130#0ac32c19",
+  "verdict": "PASS",
+  "note": "Klucz = art. 106 ust. 1 pkt 2; pułapka jak w 0129."
+ },
+ {
+  "key": "PL010-0130#f1efdfff",
+  "verdict": "PASS",
+  "note": "sameAs poprawne (jak 0129#c7ebadf2)."
+ },
+ {
+  "key": "PL010-0132#e7228480",
+  "verdict": "FIX",
+  "note": "Pytanie opiera się na uchylonym przepisie, nie na sporze z aktualną normą: korpus ma tylko „art. 106 ust. 2 (uchylony)”, a w obowiązujących przepisach (art. 106 ust. 1, ORA.AeMC.210) nie ma pojęcia komisji lekarskiej, która badałaby „w imieniu centrum”; pytanie nie ma poprawnej odpowiedzi według aktualnego prawa. Zdanie „Na tym składzie opiera się odpowiedź z klucza ULC” jest nieuprawnione (klucz pochodzi z dawnego art. 106 ust. 2, a nie z ORA.AeMC.210). Zgodnie z decyzją właściciela i precedensem P03 (art. 27 ust. 3 pkt 5 uchylony → outdated): zmienić na status \"unverified\", basis \"outdated\", text \"\", disputeNote null; refs zostawić (art. 106 ust. 1 pkt 1, art. 106 ust. 2 „(uchylony)”, ORA.AeMC.210(a)(1)–(3)); usunąć art. 106 ust. 3. basisNote np.: „Art. 106 ust. 2 Prawa lotniczego (komisja lekarska centrum medycyny lotniczej) jest uchylony; badania przeprowadzają i orzeczenia wydają centra medycyny lotniczej i lekarze orzecznicy (art. 106 ust. 1), a personel centrum określa pkt ORA.AeMC.210 lit. a) rozporządzenia 1178/2011.”"
+ },
+ {
+  "key": "PL010-0132#eeb59538",
+  "verdict": "FIX",
+  "note": "Jak 0132#e7228480 (ten sam uchylony przepis; treści dawnego ust. 2 nie ma w korpusie): zmienić na unverified/basis \"outdated\", text \"\", disputeNote null, ten sam basisNote (≤300 znaków) i refs (bez art. 106 ust. 3). Zdanie „Na tym składzie opiera się odpowiedź z klucza ULC, która mówi o specjalistach z zakresu medycyny transportu…” jest nieuprawnione — ORA.AeMC.210 nie mówi o tych specjalnościach."
+ },
+ {
+  "key": "PL010-0172#bb1bec5c",
+  "verdict": "PASS",
+  "note": "Identyczne z wzorcem STYLE.md; MED.A.045(a)(3)(i), (ii), (a)(1) zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0173#17b30ff9",
+  "verdict": "DISPUTED",
+  "note": "Sporne słusznie: wśród odpowiedzi jest 60 miesięcy, poprawne wg MED.A.045(a)(3)(i) dla osób poniżej 40 lat, które też są „poniżej 50 roku życia”. Tekst wyjaśnia, że klucz odnosi pytanie do przedziału 40–50 z (a)(3)(ii); pułapka z (a)(3)(iii) poprawna. disputeNote poprawny, punkt (a)(3)(i) jest w refs."
+ },
+ {
+  "key": "PL010-0174#f43a685c",
+  "verdict": "PASS",
+  "note": "Nie sporne: brak odpowiedzi 60 miesięcy, więc 24 miesiące (MED.A.045(a)(3)(ii)) to jedyna obronna odpowiedź. Pułapka 12 miesięcy poparta (a)(3)(iii) i (a)(1)."
+ },
+ {
+  "key": "PL010-0542#1ecad0aa",
+  "verdict": "PASS",
+  "note": "Klucz 12 miesięcy = MED.A.045(a)(1); pułapka 6 miesięcy z (a)(2)(i)/(ii) poprawna (drobne: „pilotów” zamiast „posiadaczy licencji” — dopuszczalne)."
+ },
+ {
+  "key": "PL010-0543#cd325711",
+  "verdict": "PASS",
+  "note": "Klucz 6 miesięcy = MED.A.045(a)(2)(i). Pytanie pomija słowo „pasażerów”, ale tekst podaje warunek dosłownie z przepisu („zarobkowego transportu lotniczego pasażerów”), więc nie wprowadza w błąd; pytanie jest skróconym brzmieniem tego przepisu, żadna inna odpowiedź nie jest zamierzoną normą — nie sporne."
+ },
+ {
+  "key": "PL010-1539#f0eebf53",
+  "verdict": "PASS",
+  "note": "Klucz 60 miesięcy = MED.A.045(a)(3)(i); zdanie o utracie ważności po 42 latach dosłownie z tego samego ppkt; pułapka (a)(3)(ii) poprawna."
+ },
+ {
+  "key": "PL010-1540#ffeebfe9",
+  "verdict": "PASS",
+  "note": "Klucz 6 miesięcy = MED.A.045(a)(2)(ii); pułapka (a)(1) poprawna."
+ },
+ {
+  "key": "PL010-0026#3d4d6bb7",
+  "verdict": "PASS",
+  "note": "Klucz = MED.A.020(b)(2) z lit. b) (porada „bez zbędnej zwłoki i przed skorzystaniem z przywilejów”). Pułapka nie wykracza poza (a)(2): przepis ogranicza zakaz do leków, „które mogą negatywnie wpływać na bezpieczne korzystanie z przywilejów”, więc „a nie każdego regularnie przyjmowanego leku” to wierne odczytanie tego zastrzeżenia. Nie sporne: obowiązek z (b) jest wprost kluczem."
+ },
+ {
+  "key": "PL010-0083#63e1284c",
+  "verdict": "DISPUTED",
+  "note": "Sporne słusznie: MED.B.070(g)(3) dopuszcza „okulary lub szkła kontaktowe”, więc soczewki kontaktowe nie są obowiązkowe; wymóg „niebarwione” (g)(6) dotyczy ich tylko, gdy są stosowane. Tekst wyjaśnia źródło klucza ((g)(6)), druga uwaga poparta (g)(5). disputeNote poprawny, (g)(3) i (g)(6) w refs. MED.B.070 dotyczy orzeczeń 1. i 2. klasy."
+ },
+ {
+  "key": "PL010-0083#64897989",
+  "verdict": "PASS",
+  "note": "Klucz zapasowe okulary = MED.B.070(g)(5); (g)(3) wspiera kontekst obowiązku korekcji. Nie sporne."
+ }
+]
