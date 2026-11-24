@@ -116,7 +116,7 @@
         "Jeżeli zezwolenie kontroli ruchu lotniczego nie stanowi inaczej, przelot poziomy VFR wykonywany powyżej 900 m (3 000 ft) nad ziemią lub wodą odbywa się na poziomie przelotu odpowiednim dla linii drogi, według tabeli poziomów przelotu z dodatku 3 do rozporządzenia 923/2012 (SERA.5005 lit. g)). AIP Polska (ENR 1.2 pkt 10) stosuje tę zasadę w FIR Warszawa.",
         "- Poniżej 900 m nad terenem poziom z tabeli nie jest wymagany; obowiązują minimalne wysokości z SERA.5005 lit. f).",
         "- Granica 900 m jest liczona od ziemi lub wody, a nie od poziomu morza, więc to wzniesienie terenu decyduje, czy dana wysokość bezwzględna wymaga poziomu z tabeli.",
-        "- Wysokości 1250, 1450 i 1550 m nie występują w tabeli z dodatku 3.",
+        "- Wysokości 1250, 1450, 1550 i 1750 m nie występują w tabeli z dodatku 3.",
         "Klucz ULC w pytaniach o przelot poziomy w FIR Warszawa w klasie C lub G przyjmuje 300 m (w jednym wariancie 600 m); aktualny przepis dopuszcza taki przelot tylko poniżej 900 m nad terenem, więc w wariantach z warunkiem „powyżej 900 m nad terenem” odpowiedź z klucza przeczy warunkowi pytania."
       ],
       "refs": [
@@ -170,7 +170,7 @@
         "- nad terenem wyżynnym lub nad obszarami górskimi: co najmniej 600 m (2 000 ft) nad najwyższą przeszkodą;",
         "- nad pozostałym terenem: co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą;",
         "- w obu przypadkach liczy się najwyższą przeszkodę w promieniu 8 km od przypuszczalnej pozycji statku powietrznego.",
-        "Punktem odniesienia jest więc przeszkoda, a nie elewacja lotniska. Promienie z przepisów dziennych (600 m nad zabudową, 150 m poza nią) w nocy nie mają zastosowania: w nocy promień wynosi 8 km."
+        "Punktem odniesienia jest więc przeszkoda, a nie elewacja lotniska. Minimalne wysokości z pkt SERA.5005 lit. f) (300 m nad zabudową w promieniu 600 m, 150 m poza nią) dotyczą każdego lotu VFR, także nocnego (SERA.3105); w nocy wymagania są ostrzejsze: najwyższej przeszkody szuka się w promieniu 8 km."
       ],
       "refs": [
         {
@@ -202,6 +202,21 @@
           "src": "AIP-PL",
           "loc": "ENR 1.2 pkt 7",
           "quote": "nad terenem wyżynnym lub nad obszarami górskimi na poziomie co najmniej 600 m (2000 ft) nad najwyższą przeszkodą"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3105",
+          "quote": "Minimalne wysokości dla lotów VFR określono w SERA.5005 lit. f)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)(1)",
+          "quote": "na wysokości względnej mniejszej niż 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)(2)",
+          "quote": "nad terenem innym niż wymieniony w pkt 1 na wysokości względnej mniejszej niż 150 m (500 ft) nad lądem lub wodą"
         }
       ],
       "questionKeys": [
