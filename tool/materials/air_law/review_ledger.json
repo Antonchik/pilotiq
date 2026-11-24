@@ -439,6 +439,254 @@
   "textSha": "59ebce1206f2eedd",
   "verdict": "PASS"
  },
+ "PL010-0257#d24341aa": {
+  "date": "2026-11-24",
+  "note": "Klucz 16 lat = SFCL.120 i art. 96 ust. 2 pkt 1; pułapki 17 lat (art. 96 ust. 2 pkt 4) i 21 lat (pkt 6) zgodne z korpusem.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "a3d987c689ed55b1",
+  "verdict": "PASS"
+ },
+ "PL010-0258#162110e4": {
+  "date": "2026-11-24",
+  "note": "Art. 94 ust. 6 pkt 1 lit. p, q wymienia tylko pilota szybowcowego rekreacyjnego i pilota szybowcowego (lit. c – samolotowy zawodowy); SFCL.001 – jedna licencja SPL; przywileje zarobkowe SFCL.115(a)(3)(i)-(ii) zgodne. Klucz nie jest sporny (art. 96 ust. 2 pkt 5 «pilot zawodowy bez względu na kategorię» nie tworzy licencji szybowcowej zawodowej).",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "d5ea4c52eb0809e3",
+  "verdict": "PASS"
+ },
+ "PL010-0261#5c533218": {
+  "date": "2026-11-24",
+  "note": "SFCL.015(b) – dowód spełnienia wymagań SFCL i MED; SFCL.130(a)(1)-(2) – szkolenie teoretyczne i w locie; art. 96 ust. 1 pkt 5 – sprawność psychiczna i fizyczna potwierdzona orzeczeniem. Art. 96 ust. 1 opisano poprawnie jako warunki wydania, nie wykaz dokumentów. Pułapka (odpowiedzi niepełne) zasadna.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "ed075e9ca2715e79",
+  "verdict": "PASS"
+ },
+ "PL010-0262#c049e5e3": {
+  "date": "2026-11-24",
+  "note": "Sporne potwierdzone: MED.A.030(c)(1) – dla SPL wystarcza orzeczenie na potrzeby LAPL; klasa 2 tylko dla PPL (c)(2) i SPL w operacjach zarobkowych (c)(4). Klucz «2 klasy» pozostaje prawidłowy dla PPL, więc nie jest to «outdated» (odpowiedź nie jest poprawna wyłącznie według dawnego brzmienia); żadna inna odpowiedź nie jest poprawna. Tekst wyjaśnia, na czym opiera się klucz, disputeNote poprawny (punkt c)(1) i (c)(4) są w refs, formuła o kluczu ULC obecna).",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "a4b0f11457c3b4ae",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0263#0ea0abfa": {
+  "date": "2026-11-24",
+  "note": "SFCL.115(a)(1) i (a)(3)(i)-(ii) – 18 lat i 75 h/200 startów; art. 96 ust. 2 pkt 1 – 18 lat przy zawodowym wykonywaniu czynności pilota. Termin aktu «operacje niezarobkowe» użyty prawidłowo.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "25e625217e6dc25b",
+  "verdict": "PASS"
+ },
+ "PL010-0264#ece31364": {
+  "date": "2026-11-24",
+  "note": "Brak wymogu wykształcenia: SFCL.120/130 i art. 96 ust. 2 pkt 1 określają tylko wiek i szkolenie; ogólny art. 96 ust. 1 pkt 4 («wymogi w zakresie wieku i wykształcenia») nie ustala żadnego poziomu dla pilota szybowcowego, a wykształcenie średnie pojawia się w ustawie tylko np. w art. 95 ust. 3 pkt 8-9 (informator). Klucz «Nie» niesporny.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "1e2f859901cd5e1b",
+  "verdict": "PASS"
+ },
+ "PL010-0265#9936a11e": {
+  "date": "2026-11-24",
+  "note": "ATO/DTO = SFCL.130(a), art. 2 pkt 16 i 24 rozp. 1178/2011; pułapka: art. 95a ust. 1 – rejestr podmiotów szkolących dotyczy świadectw kwalifikacji. Zgodne z korpusem.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "b3c36596c78cd61a",
+  "verdict": "PASS"
+ },
+ "PL010-0266#0916f2a1": {
+  "date": "2026-11-24",
+  "note": "SFCL.130(a)(1)-(2) – wiedza teoretyczna i szkolenie w locie; SFCL.145(c); CTO wg pkt 7 objaśnień załącznika nr 6 (wiatrakowce, nawigator). Drobiazg: SFCL.130(a) występuje w refs dwukrotnie z różnymi cytatami – dopuszczalne.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "80542fcfcaf2fcc7",
+  "verdict": "PASS"
+ },
+ "PL010-0267#5122fa42": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 1 (PRE-FLIGHT OPERATIONS AND DEPARTURE: inspection, documentation, flight planning, mass and balance, pre-take-off checks) potwierdza tekst. Dystraktor «napełnianie powłoki» to egzamin balonowy – nie wymaga komentarza. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 1» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "00c4bdb23a302a75",
+  "verdict": "FIX"
+ },
+ "PL010-0268#f5ac6f10": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 3 a «Maintain straight flight: attitude and speed control» – «kontrola położenia» to poprawny odpowiednik «attitude»; tekst uczciwie zaznacza, że klucz ULC mówi «kontrola wysokości». Nie sporne: to ten sam punkt programu (rozbieżność tłumaczenia), żadna inna odpowiedź nie jest obronna. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 3» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "59c31aefed69eb78",
+  "verdict": "FIX"
+ },
+ "PL010-0269#64f8c599": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 3 d «Flight at high angle of attack (critically low air speed)» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 3» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "bff29e52d7b20727",
+  "verdict": "FIX"
+ },
+ "PL010-0270#06ae6c63": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 2B f «Correct release from tow»; uwaga o pełnym wykonaniu co najmniej jednej metody startu leży w kotwicy «AMC1 SFCL.145 SECTION 1» (Note for SECTION 2A-2C) – dodać też tę kotwicę albo zostawić rodzica dla tego zdania. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 2B» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "99b53ff72089b26f",
+  "verdict": "FIX"
+ },
+ "PL010-0271#197febdc": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 2B AEROTOW LAUNCH; wzmianka o starcie za wyciągarką/samochodem i z własnym napędem – dodać «AMC1 SFCL.145 SECTION 2A» i «AMC1 SFCL.145 SECTION 2C». Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 2B» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "81f3277c6adfeef2",
+  "verdict": "FIX"
+ },
+ "PL010-0272#cfe9ba07": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 a «Aerodrome circuit joining procedure» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "656738e803994959",
+  "verdict": "FIX"
+ },
+ "PL010-0273#db8582f6": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 b «Collision avoidance: look-out procedures»; zdanie o obserwacji we wszystkich sekcjach opiera się na nocie przed sekcją 1, która jest tylko w rodzicu «AMC1 SFCL.145» – tę kotwicę zostawić obok sekcji 4. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "57cd73857ac661bd",
+  "verdict": "FIX"
+ },
+ "PL010-0274#64398428": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 c «Pre-landing checks» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "0e56b8e915a68b74",
+  "verdict": "FIX"
+ },
+ "PL010-0275#1a395835": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 f «Crosswind landing if suitable conditions are available» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "39b13a7045e5485b",
+  "verdict": "FIX"
+ },
+ "PL010-0276#da70ebd9": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 e «Precision landing (simulation of out-landing and short field)» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "c4006e92cab88e3b",
+  "verdict": "FIX"
+ },
+ "PL010-0277#fbd53beb": {
+  "date": "2026-11-24",
+  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 3 f «Spin avoidance and recovery» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 3» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "45ab3005f323c525",
+  "verdict": "FIX"
+ },
+ "PL010-0278#368cbbc1": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(1)(i) prawo lotnicze. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "f850628096048866",
+  "verdict": "PASS"
+ },
+ "PL010-0279#142f7aec": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(2)(iv) wiedza ogólna o statkach powietrznych związana z szybowcami. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "5f25e40130cd6418",
+  "verdict": "PASS"
+ },
+ "PL010-0280#8352e62d": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(2)(iii) wykonywanie i planowanie lotu = «osiągi i planowanie lotów» (EN flight performance and planning) – mapowanie jawne i trafne. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "f430e047e90e028c",
+  "verdict": "PASS"
+ },
+ "PL010-0281#514e21c9": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(1)(ii) możliwości człowieka = «człowiek – możliwości i ograniczenia» – mapowanie jawne. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "ab49e8ba57659db0",
+  "verdict": "PASS"
+ },
+ "PL010-0282#c67e92fb": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(1)(iii) meteorologia. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "5535543b32581ebe",
+  "verdict": "PASS"
+ },
+ "PL010-0283#ff79bc99": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(2)(v) nawigacja. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "735ff3ecc54c9980",
+  "verdict": "PASS"
+ },
+ "PL010-0284#11dba07d": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(2)(ii) procedury operacyjne. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "a82d2663a7af3493",
+  "verdict": "PASS"
+ },
+ "PL010-0285#6ee9f144": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(2)(i) zasady lotu; aerodynamika nie jest osobnym przedmiotem. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "c8e423faaaffb288",
+  "verdict": "PASS"
+ },
+ "PL010-0286#e0a7e145": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 (a)(1)(iv) łączność. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "32df6d790b280b1e",
+  "verdict": "PASS"
+ },
+ "PL010-0287#57e1d428": {
+  "date": "2026-11-24",
+  "note": "SFCL.135 psychologii człowieka brak na liście SFCL.135(a); pozostałe opcje są na liście. Cytat z listy obejmuje kilka podpunktów, więc (a)(1)/(a)(2) to najwęższe kotwice zawierające cytat. Dystraktory nie występują na liście.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "096e1020466ce181",
+  "verdict": "PASS"
+ },
+ "PL010-0288#e8ed1708": {
+  "date": "2026-11-24",
+  "note": "10 h z instruktorem = SFCL.130(a)(2)(i); 15 h, 2 h samodzielnie pod nadzorem, 45 startów i lądowań = (a)(2), (ii), (iii). Pułapka 15 h poprawna.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "8cc3d9cd0264aa2f",
+  "verdict": "PASS"
+ },
+ "PL010-0289#c68d42bf": {
+  "date": "2026-11-24",
+  "note": "45 startów i lądowań = SFCL.130(a)(2)(iii); zaliczenie maks. 10 startów i lądowań dla posiadacza innej licencji (z wyjątkiem balonowej) = SFCL.130(b)(2).",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "4d1f06c4eaeeaf06",
+  "verdict": "PASS"
+ },
  "PL010-0298#5a0017b5": {
   "date": "2026-11-24",
   "note": "Adresat zawiadomienia = Prezes Urzędu (art. 51 ust. 2).",
@@ -461,6 +709,38 @@
   "portion": "P04",
   "round": 1,
   "textSha": "f8d338ce7ea06049",
+  "verdict": "PASS"
+ },
+ "PL010-0326#ee8656a3": {
+  "date": "2026-11-24",
+  "note": "Nie sporne. Wartość klucza «5 godzin jako pilot dowódca» = SFCL.160(a)(1); żadna inna odpowiedź (4/7/10 h) nie ma oparcia. Niepełność dotyczy treści pytania (pomija 15 startów, 2 loty szkoleniowe i alternatywę FE(S)), nie klucza: 5 h PIC nadal spełnia wymóg godzinowy, a tekst uczciwie uzupełnia pozostałe warunki z (a)(1)(i)-(ii) i (a)(2). Wszystkie cytaty w kotwicach.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "80734e6fe1a468a3",
+  "verdict": "PASS"
+ },
+ "PL010-0328#4f2e637e": {
+  "date": "2026-11-24",
+  "note": "Wywód z trzech przepisów poprawny: art. 21 ust. 2 (wstęp: zadania Prezesa Urzędu, funkcje władzy lotniczej) pkt 5a – certyfikacja podmiotów; zał. 6 tabela 1 cz. III pkt 1 – wydanie certyfikatu ATO; art. 10a ust. 1 i art. 2 pkt 16 rozp. 1178/2011 – ATO szkoli na podstawie zatwierdzenia właściwego organu. Uwaga językowa (bez wymogu poprawki): art. 10a ust. 1 akapit drugi zwalnia DTO z zatwierdzenia, więc «pozwala organizacji szkolić pilotów dopiero po uzyskaniu zatwierdzenia» jest ścisłe tylko dla ATO – kontekst zdania to wyjaśnia.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "cdb52d1297c2bad6",
+  "verdict": "PASS"
+ },
+ "PL010-0332#70328924": {
+  "date": "2026-11-24",
+  "note": "AMC1 ORA.ATO.135(b)(2): primary flight controls instantly accessible by both student and instructor, except balloons/single-seat, e.g. dual controls or centre stick – przekład wierny; ORA.ATO.135(a) – cytat zgodny; wskaźnik kierunku wiatru = AMC1 ORA.ATO.140(a)(2) (lotnisko).",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "f16410173ae6334a",
+  "verdict": "PASS"
+ },
+ "PL010-0333#ae52d302": {
+  "date": "2026-11-24",
+  "note": "AMC1 ORA.ATO.135(c)(1): aircraft suitably equipped to simulate IMC – «warunki meteorologiczne dla lotów według wskazań przyrządów (IMC)» to termin SERA; autorotacja = (c)(4) tylko śmigłowce; wskaźnik wiatru i oświetlenie drogi startowej = AMC1 ORA.ATO.140(a)(2)-(3). Nie sporne: dystraktor autorotacji dotyczy wyłącznie floty śmigłowcowej.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "eb01e991b70a3f44",
   "verdict": "PASS"
  },
  "PL010-0356#5678e240": {
@@ -975,6 +1255,14 @@
   "textSha": "e71711eac37fdea6",
   "verdict": "PASS"
  },
+ "PL010-1546#34ceeac0": {
+  "date": "2026-11-24",
+  "note": "SAO.OP.130 – zakaz palenia tytoniu na pokładzie szybowca w żadnej fazie lotu, bez wyjątków; cytat dosłowny, 2 zdania.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "6a8f730424c6adb3",
+  "verdict": "PASS"
+ },
  "PL010-1550#43edacd4": {
   "date": "2026-11-24",
   "note": "Klucz = art. 95a ust. 3a; art. 21 ust. 2 pkt 8 wymienia rejestr podmiotów szkolących obok statków, lotnisk i personelu – zgodnie z korpusem.",
@@ -997,6 +1285,22 @@
   "portion": "P03",
   "round": 1,
   "textSha": "b201182a1a35bb0e",
+  "verdict": "PASS"
+ },
+ "PL010-1560#db25d3ed": {
+  "date": "2026-11-24",
+  "note": "ATO lub DTO = SFCL.130(a), BFCL.130, FCL.210(a); definicja ATO art. 2 pkt 16; AHAC/POA/CTO zgodne z objaśnieniami w załączniku nr 6 (pkt 1, 10, 7). Załącznik 6 nie ma węższego kotwiczenia definicji – lokator najwęższy możliwy.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "55d4d825f865e91b",
+  "verdict": "PASS"
+ },
+ "PL010-1561#3bd72c37": {
+  "date": "2026-11-24",
+  "note": "14 lat = SFCL.125(b); upoważnienie i nadzór FI(S) = SFCL.125(a); pułapka 16 lat = SFCL.120.",
+  "portion": "P12",
+  "round": 1,
+  "textSha": "0ff6c5514bb8f67e",
   "verdict": "PASS"
  }
 }
