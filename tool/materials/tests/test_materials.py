@@ -434,6 +434,12 @@ class SourcesTest(Base):
         self.put_src("P01", [self.rec(self.k, status="verified", refs=[{"src": "REF", "loc": "SERA.5005(b)"}])])
         self.assertTrue(any("якоря" in e for e in self.validate().errors))
 
+    def test_future_edition_marker_in_quote_rejected(self):
+        q = "Statek powietrzny \u27e6PRZYSZŁA REDAKCJA\u27e7 to urządzenie"
+        self.put_src("P01", [self.rec(self.k, refs=[{"src": "LAW", "loc": "art. 1", "quote": q}])])
+        self.assertTrue(any("будущей редакции" in e for e in self.validate().errors))
+        self.assertTrue(any("будущей редакции" in e for e in self.validate(no_corpus=True).errors))
+
     def test_reference_only_quote_forbidden(self):
         self.put_src("P01", [self.rec(self.k, refs=[{"src": "REF", "loc": "SERA.5005", "quote": "x"}])])
         self.assertTrue(any("цитаты запрещены" in e for e in self.validate().errors))
@@ -475,6 +481,37 @@ class LocTest(unittest.TestCase):
         self.assertTrue(m.loc_valid("eu_reg", "NCO.GEN.105"))
         self.assertTrue(m.loc_valid("aip", "ENR 1.2 pkt 2.1"))
         self.assertFalse(m.loc_valid("aip", "ENR"))
+
+    def test_new_locator_forms(self):
+        good = {
+            "statute": ["załącznik 1", "załącznik 5a", "załącznik 6 pkt 3.14", "załącznik 1 pkt 1.1"],
+            "eu_reg": ["art. 2 pkt 12", "art. 3 ust. 1 pkt 2", "załącznik I", "załącznik", "dodatek 1", "załącznik I dodatek 3",
+                       "dodatek 6 pkt 2.2", "załącznik I dodatek 3 pkt 13", "załącznik II pkt 4.1", "FCL.205.A",
+                       "SERA.5005(b)(1)(i)", "MED.A.030", "ORA.AeMC.215", "21.A.3A", "M.A.201", "145.A.30", "66.B.100"],
+            "easa": ["Article 2", "Article 2(12)", "Article 2(129a)", "GM1 Article 2(12)", "GM1 Article 2", "Appendix 4",
+                     "Appendix 1 pkt 1.2.1", "AMC1 SERA.5005(f)", "SERA.5005"],
+        }
+        bad = {
+            "statute": ["załącznik", "załącznik I", "załącznik 1 pkt", "załącznik 1 pkt 1."],
+            "eu_reg": ["załącznik i", "dodatek", "dodatek 1 dodatek 2", "załącznik I pkt", "załącznik Ix", "art. 2 pkt", "1.A.3", "21.", "załączniki"],
+            "easa": ["Article", "Article 2()", "Appendix", "Appendix 1 pkt", "GM Article x", "article 2"],
+        }
+        for kind, locs in good.items():
+            for loc in locs:
+                self.assertTrue(m.loc_valid(kind, loc), (kind, loc))
+        for kind, locs in bad.items():
+            for loc in locs:
+                self.assertFalse(m.loc_valid(kind, loc), (kind, loc))
+
+    def test_new_parents(self):
+        self.assertEqual(m.loc_parents("załącznik 1 pkt 1.1"), ["załącznik 1"])
+        self.assertEqual(m.loc_parents("art. 3 ust. 1 pkt 2"), ["art. 3 ust. 1", "art. 3"])
+        self.assertEqual(m.loc_parents("załącznik I dodatek 3 pkt 13"), ["załącznik I dodatek 3", "załącznik I"])
+        self.assertEqual(m.loc_parents("dodatek 6 pkt 2.2"), ["dodatek 6"])
+        self.assertEqual(m.loc_parents("dodatek 1"), [])
+        self.assertEqual(m.loc_parents("Article 2(129a)"), ["Article 2"])
+        self.assertEqual(m.loc_parents("GM1 Article 2(12)"), ["GM1 Article 2"])
+        self.assertEqual(m.loc_parents("Appendix 1 pkt 1.2.1"), ["Appendix 1"])
 
     def test_parents(self):
         self.assertEqual(m.loc_parents("art. 5 ust. 2 pkt 3"), ["art. 5 ust. 2", "art. 5"])
