@@ -27,10 +27,13 @@ Table S5-1 (*)
 (***) When so prescribed by the competent authority:
 (a) flight visibilities reduced to not less than 1 500 m may be permitted;
 AMC1 FCL.210; FCL.215 Training course and theoretical knowledge examination
+ED Decision 2020/004/R
 (a) Training course syllabus.
 AMC1 SERA.5005(f) Visual flight rules
+ED Decision 2020/004/R
 Text of the acceptable means of compliance for point (f).
 AMC1 SERA.5005(b) Visual flight rules
+ED Decision 2020/004/R
 Text of the acceptable means of compliance for point (b).
 GM1 to Appendix 4 ATS airspace classes
 Text of the guidance material to the appendix of classes.

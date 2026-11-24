@@ -626,12 +626,14 @@ def _heading_rejected(rows, flags, idx):
                 or _changelog_title(line))
 
 
-def _loser_occurrences(rows, flags):
+def _loser_occurrences(rows, flags, require_source=False):
     """Line indexes of repeated or empty headings that are not the real rule heading.
 
     The same rule heading appears in a table of contents, in a change log and in the body. The real one is the
     first occurrence followed by text (>= MIN_BODY characters, source lines such as "Regulation (EU) ..." not
-    counted) before the next heading or division line. A heading that never has a body gets no anchor."""
+    counted) before the next heading or division line. A heading that never has a body gets no anchor.
+    With require_source (EASA Easy Access Rules) an occurrence followed, within its wrapped title, by the source
+    line ("Regulation (EU) ..." / "ED Decision ...") is preferred."""
     occ = {}
     for i, (_, ln) in enumerate(rows):
         if flags[i]:
@@ -648,9 +650,18 @@ def _loser_occurrences(rows, flags):
             if len(ln) >= 25 and not _SOURCE_LINE_RE.match(ln):   # short lines are wrapped table-of-contents titles
                 n += len(ln)
         return n
+    def has_source(i):
+        for j in range(i + 1, min(i + 5, len(rows))):
+            if _SOURCE_LINE_RE.match(rows[j][1]):
+                return True
+            if flags[j]:
+                return False
+        return False
     losers = set()
     for idxs in occ.values():
         good = [i for i in idxs if not _heading_rejected(rows, flags, i) and body(i) >= MIN_BODY]
+        if require_source and any(has_source(i) for i in good):
+            good = [i for i in good if has_source(i)]
         keep = good[0] if good else None
         losers.update(i for i in idxs if i != keep)
     return losers
@@ -778,7 +789,7 @@ def rule_anchors(text, kind, extras=()):
 
     rows = _line_offsets(text)
     flags = _heading_flags(rows)
-    losers = _loser_occurrences(rows, flags)
+    losers = _loser_occurrences(rows, flags, require_source=(kind == "easa"))
     for idx, (start, line) in enumerate(rows):
         if idx in losers:
             continue   # repeated heading of a table of contents / change log
