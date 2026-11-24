@@ -289,19 +289,19 @@
  },
  "PL010-0361#917d15cf": {
   "date": "2026-11-24",
-  "note": "Sporność zasadna: definicja (załącznik I pkt 57 do rozporządzenia 2017/373) wyłącza z lotnictwa ogólnego także prace lotnicze, więc klucz, który wyłącza tylko zarobkowy przewóz, jest szerszy od normy. Lokator „załącznik I” to jedyny dostępny anchor, OK. Tekst przeczy jednak disputeNote: „tylko pierwsza oddaje tę definicję” wobec „klucz oddaje definicję w uproszczeniu”. Zmienić drugie zdanie na: „Spośród odpowiedzi tylko pierwsza jest zbliżona do tej definicji, bo wyłącza zarobkowy transport lotniczy.” Opcjonalnie w pierwszym zdaniu: „(pkt 57)”. Po tej poprawce: DISPUTED.",
+  "note": "Tekst zgodny z disputeNote („zbliżona do tej definicji”). Definicja z załącznika I do rozporządzenia 2017/373 (pkt 57) wyłącza z lotnictwa ogólnego także prace lotnicze, więc klucz jest szerszy od normy. disputeNote poprawny, punkt w refs.",
   "portion": "P03",
-  "round": 1,
-  "textSha": "d14913716380e837",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "a278a5a9782bb913",
+  "verdict": "DISPUTED"
  },
  "PL010-0361#bdafd792": {
   "date": "2026-11-24",
-  "note": "sameAs niepoprawny dla pytania spornego. Zamiast „Lot SAR” jest tu „Żadna z odpowiedzi nie jest prawidłowa”, a przy ścisłym brzmieniu definicji (prace lotnicze też wyłączone) ta odpowiedź staje się obronna. Tego nie obejmuje disputeNote oryginału. Potrzebny osobny wpis: tekst jak w oryginale po poprawce i disputeNote z dopiskiem, że przy ścisłym czytaniu definicji obronna jest też odpowiedź „Żadna z odpowiedzi nie jest prawidłowa”, a na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "note": "Osobny wpis zamiast sameAs. disputeNote słusznie wskazuje, że przy ścisłym czytaniu definicji obronna jest też odpowiedź „Żadna z odpowiedzi nie jest prawidłowa”. Pułapka (usługi specjalne to prace lotnicze) zgodna z załącznikiem I.",
   "portion": "P03",
-  "round": 1,
-  "textSha": "681823a927acddf4",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "401fe63bc4506f5a",
+  "verdict": "DISPUTED"
  },
  "PL010-0367#f5f25476": {
   "date": "2026-11-24",
@@ -585,11 +585,11 @@
  },
  "PL010-0494#14188538": {
   "date": "2026-11-24",
-  "note": "Tekst nie łączy pytania z przepisem: obecny art. 52 ust. 2 nie wymienia już „potwierdzeń spełnienia wymagań ochrony środowiska”, tylko „certyfikaty”, a art. 53 ust. 1 mówi o badaniu wymagań, nie o uznawaniu. Wniosek jest obronny, ale trzeba go pokazać jawnie i oprzeć na art. 53 ust. 2. Proponuję drugie zdanie: „Przepis nie wymienia już osobno potwierdzeń spełnienia wymagań ochrony środowiska, lecz obejmuje certyfikaty wydane lub potwierdzone przez obcy organ; odpowiadający im polski dokument, świadectwo zdatności w zakresie hałasu, wydaje Prezes Urzędu w drodze decyzji administracyjnej (art. 53 ust. 2).” Dodać ref art. 53 ust. 2 z cytatem „Prezes Urzędu stwierdza spełnienie wymagań, o których mowa w ust. 1, w świadectwie zdatności w zakresie hałasu wydawanym w drodze decyzji administracyjnej.” Ref art. 53 ust. 1 można zostawić albo usunąć. Nie wymieniać EUROCONTROL w tekście, bo korzysta z niego sameAs 0494#32aa5576.",
+  "note": "Poprawione: wniosek z art. 52 ust. 2 podany jawnie, świadectwo zdatności w zakresie hałasu wydaje Prezes Urzędu (art. 53 ust. 2, cytat zgodny z korpusem), uznanie decyzją (art. 52 ust. 3). Tekst nie wymienia EUROCONTROL, więc sameAs 0494#32aa5576 pozostaje ważny. Drobne powtórzenie „certyfikaty wydane lub potwierdzone” w zdaniach 1 i 2 nie wymaga poprawki.",
   "portion": "P03",
-  "round": 1,
-  "textSha": "239a1d8ff0763b74",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "40d91a3cfc2c2076",
+  "verdict": "PASS"
  },
  "PL010-0494#32aa5576": {
   "date": "2026-11-24",

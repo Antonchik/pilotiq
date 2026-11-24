@@ -1,0 +1,5 @@
+[
+ {"key":"PL010-0494#14188538","verdict":"PASS","note":"Poprawione: wniosek z art. 52 ust. 2 podany jawnie, świadectwo zdatności w zakresie hałasu wydaje Prezes Urzędu (art. 53 ust. 2, cytat zgodny z korpusem), uznanie decyzją (art. 52 ust. 3). Tekst nie wymienia EUROCONTROL, więc sameAs 0494#32aa5576 pozostaje ważny. Drobne powtórzenie „certyfikaty wydane lub potwierdzone” w zdaniach 1 i 2 nie wymaga poprawki."},
+ {"key":"PL010-0361#917d15cf","verdict":"DISPUTED","note":"Tekst zgodny z disputeNote („zbliżona do tej definicji”). Definicja z załącznika I do rozporządzenia 2017/373 (pkt 57) wyłącza z lotnictwa ogólnego także prace lotnicze, więc klucz jest szerszy od normy. disputeNote poprawny, punkt w refs."},
+ {"key":"PL010-0361#bdafd792","verdict":"DISPUTED","note":"Osobny wpis zamiast sameAs. disputeNote słusznie wskazuje, że przy ścisłym czytaniu definicji obronna jest też odpowiedź „Żadna z odpowiedzi nie jest prawidłowa”. Pułapka (usługi specjalne to prace lotnicze) zgodna z załącznikiem I."}
+]
