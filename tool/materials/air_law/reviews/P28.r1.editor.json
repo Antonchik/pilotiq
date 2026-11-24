@@ -1,0 +1,137 @@
+[
+ {
+  "key": "PL010-0428#497af734",
+  "verdict": "PASS",
+  "note": "Klucz = art. 206 ust. 1 (przepisy prawa cywilnego o odpowiedzialności przy posługiwaniu się mechanicznymi środkami komunikacji); zastrzeżenie ust. 2 i 3 oraz art. 207 zgodne z tekstem. Cytat i lokator poprawne."
+ },
+ {
+  "key": "PL010-0626#58a57219",
+  "verdict": "PASS",
+  "note": "Klucz = art. 9 (obywatele polscy i cudzoziemcy) w zw. z pkt 2 i art. 8 (lot i manewrowanie). Brak warunku zgody w przepisie. Lokatory najwęższe."
+ },
+ {
+  "key": "PL010-0303#4d31e791",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 6 (bezprawnie używający + solidarnie osoby z ust. 1–5, chyba że bez ich winy) w zw. z ust. 5 (użytkownik z rejestru, chyba że udowodni). Pułapka z ust. 3 poprawna."
+ },
+ {
+  "key": "PL010-0303#a15ffd4e",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 1 i 2 (eksploatujący = używający w czasie spowodowania szkody). Ubezpieczyciel i właściciel nie występują w art. 207."
+ },
+ {
+  "key": "PL010-0499#63ebcb0e",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 1 i 2; pułapka (rejestr, «nawet jeżeli udowodni») przeczy ust. 5. Poprawne."
+ },
+ {
+  "key": "PL010-0499#8d845b55",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: identyczne pytanie i klucz, różni się tylko dystraktor «Ubezpieczyciel» vs «Wszystkie odpowiedzi są prawidłowe»; tekst oryginału nie odnosi się do tego dystraktora."
+ },
+ {
+  "key": "PL010-0500#165b96e8",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 5 dosłownie; pułapka z ust. 2 poprawna."
+ },
+ {
+  "key": "PL010-0500#838017dd",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: różnica tylko «Ubezpieczyciel» / «Wszystkie odpowiedzi są prawidłowe»."
+ },
+ {
+  "key": "PL010-0504#52e70515",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 6 w zw. z ust. 1 i 2; pułapka z ust. 5. Poprawne."
+ },
+ {
+  "key": "PL010-0504#da38054e",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: różnica tylko «Ubezpieczyciel» / «Wszystkie odpowiedzi są prawidłowe»."
+ },
+ {
+  "key": "PL010-0505#875df351",
+  "verdict": "PASS",
+  "note": "sameAs na PL010-0303#4d31e791 poprawne: klucz identyczny, dystraktory poza «Ubezpieczyciel» identyczne; pułapka oryginału (przekazanie prawa używania) jest wśród odpowiedzi."
+ },
+ {
+  "key": "PL010-0505#ab8fbc2f",
+  "verdict": "PASS",
+  "note": "sameAs na PL010-0303#4d31e791 poprawne: różni się tylko kropka po «prawidłowe»."
+ },
+ {
+  "key": "PL010-0304#4235d859",
+  "verdict": "PASS",
+  "note": "Klucz «bezprawnie eksploatuje w czasie spowodowania szkody» = art. 207 ust. 6 + ust. 2; pułapka poprawna."
+ },
+ {
+  "key": "PL010-0501#0a859e5d",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 3 w zw. z ust. 1; pułapka z ust. 5. Poprawne."
+ },
+ {
+  "key": "PL010-0501#406114e9",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: różnica tylko «Ubezpieczyciel» / «Wszystkie odpowiedzi są prawidłowe»."
+ },
+ {
+  "key": "PL010-0502#bc260424",
+  "verdict": "FIX",
+  "note": "Klucz = art. 207 ust. 4 (sformułowanie klucza to skrót ust. 4, nie sporne: pozostałe odpowiedzi błędne wg ust. 3 i 7). Ale zdanie 2 «Taka osoba jest eksploatującą statek w rozumieniu art. 207 ust. 2» pomija warunek ust. 2 «w czasie spowodowania szkody». Poprawka: «Jeżeli używała statku w czasie spowodowania szkody, jest osobą eksploatującą (art. 207 ust. 2) i ponosi odpowiedzialność za szkody (art. 207 ust. 1).» Reszta (pułapka z ust. 7) poprawna."
+ },
+ {
+  "key": "PL010-0502#cc4a1d31",
+  "verdict": "PASS",
+  "note": "sameAs poprawne (różnica tylko «Wszystkie odpowiedzi są prawidłowe» / «Ubezpieczyciel»); tekst przejmie poprawkę oryginału PL010-0502#bc260424."
+ },
+ {
+  "key": "PL010-0503#63d6f655",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 6; pułapka z ust. 3. Poprawne."
+ },
+ {
+  "key": "PL010-0506#47f87807",
+  "verdict": "PASS",
+  "note": "Klucz = art. 207 ust. 6 w zw. z ust. 3; pułapka z ust. 5. Poprawne."
+ },
+ {
+  "key": "PL010-0506#e47ac7c7",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: różnica tylko «Wszystkie odpowiedzi są prawidłowe» / «Ubezpieczyciel»."
+ },
+ {
+  "key": "PL010-0346#3694eff7",
+  "verdict": "PASS",
+  "note": "Klucz = art. 206 ust. 2 (wyłączenie tylko dla przelotu zgodnego z przepisami); wniosek o przelocie niezgodnym z przepisami wynika wprost z ust. 1–2."
+ },
+ {
+  "key": "PL010-0346#a3492a50",
+  "verdict": "PASS",
+  "note": "sameAs poprawne: różni się tylko czwarty dystraktor («Tak, w zależności od typu…» / «Żadna z odpowiedzi…»), tekst oryginału go nie omawia."
+ },
+ {
+  "key": "PL010-0454#cfe42ec0",
+  "verdict": "PASS",
+  "note": "Nie sporne: stary art. 12 ust. 1 PL (lex loci) uchylony, ale art. 33 PPM → art. 4 ust. 1 Rzym II (prawo państwa, w którym powstaje szkoda) daje przy szkodzie na obszarze danego państwa tę samą odpowiedź; inne opcje (rejestracja, lądowanie, start) nie są obronne. Wyjątek z ust. 2 trafnie wskazany. Cytaty i lokatory zgodne z korpusem (EU-864-2007, PL-PPM-2011)."
+ },
+ {
+  "key": "PL010-0455#b7b5fce3",
+  "verdict": "PASS",
+  "note": "Jak 0454: art. 4 ust. 1 Rzym II; odstępstwa z art. 4 ust. 2 i 3 zgodne z tekstem («przepis… przewiduje tylko» odnosi się do art. 4 — poprawne). Kwalifikacja zderzenia jako czynu niedozwolonego oczywista."
+ },
+ {
+  "key": "PL010-0456#526d8c92",
+  "verdict": "FIX",
+  "note": "Klucz nie jest sprzeczny z art. 11 Rzym II — w braku stosunku stron i wspólnego pobytu ust. 3 daje tę samą odpowiedź (tak jak 0454 przy art. 4 ust. 2 nie jest sporne), więc DISPUTED nie spełnia reguły rozgraniczenia; zarazem disputeNote («klucz oddaje wcześniejsze przepisy») opisuje przypadek outdated. Ponadto teza, że «pomoc udzielona przez statek powietrzny bez umowy» jest prowadzeniem cudzych spraw bez zlecenia, to kwalifikacja spoza korpusu (art. 11 nie wspomina pomocy/ratownictwa, a «wynagrodzenie» za pomoc nie jest typowym roszczeniem gestora). Poprawka: przeklasyfikować na unverified/outdated jak 0458/0461 (text pusty, basisNote np.: «Uchylono art. 12 Prawa lotniczego, który dla pomocy przez statek powietrzny wskazywał prawo państwa miejsca zdarzenia. Prawo właściwe wskazuje dziś rozporządzenie Rzym II (art. 33 ustawy – Prawo prywatne międzynarodowe), bez przepisu szczególnego o pomocy; przy prowadzeniu cudzych spraw bez zlecenia decyduje stosunek stron, wspólny pobyt lub miejsce działania (art. 11).»), refs: art. 12, PPM art. 33, Rzym II art. 11 ust. 1–3."
+ },
+ {
+  "key": "PL010-0457#a95341fe",
+  "verdict": "FIX",
+  "note": "Klucz nie jest sprzeczny z art. 11 Rzym II — w braku stosunku stron i wspólnego pobytu ust. 3 daje tę samą odpowiedź (tak jak 0454 przy art. 4 ust. 2 nie jest sporne), więc DISPUTED nie spełnia reguły rozgraniczenia; zarazem disputeNote («klucz oddaje wcześniejsze przepisy») opisuje przypadek outdated. Ponadto teza, że «pomoc udzielona statkowi powietrznemu bez umowy» jest prowadzeniem cudzych spraw bez zlecenia, to kwalifikacja spoza korpusu (art. 11 nie wspomina pomocy/ratownictwa, a «wynagrodzenie» za pomoc nie jest typowym roszczeniem gestora). Poprawka: przeklasyfikować na unverified/outdated jak 0458/0461 (text pusty, basisNote np.: «Uchylono art. 12 Prawa lotniczego, który dla pomocy statkowi powietrznemu wskazywał prawo państwa miejsca zdarzenia. Prawo właściwe wskazuje dziś rozporządzenie Rzym II (art. 33 ustawy – Prawo prywatne międzynarodowe), bez przepisu szczególnego o pomocy; przy prowadzeniu cudzych spraw bez zlecenia decyduje stosunek stron, wspólny pobyt lub miejsce działania (art. 11).»), refs: art. 12, PPM art. 33, Rzym II art. 11 ust. 1–3."
+ },
+ {
+  "key": "PL099-0041#53193328",
+  "verdict": "PASS",
+  "note": "Klucz grzywna = art. 210 ust. 1 pkt 10 (wbrew art. 158, naruszenie obowiązków bezpiecznej eksploatacji) + sankcja ust. 1; ust. 4 tryb wykroczeniowy; pułapka z art. 211 ust. 1 pkt 1 poprawna. Lokatory rodzica 'art. 210 ust. 1'/'art. 211 ust. 1' dla końcówki «– podlega…» są właściwe merytorycznie (ostrzeżenie validate o pkt 15/pkt 12 to znany defekt kotwic: sankcja doklejona do ostatniego punktu)."
+ }
+]

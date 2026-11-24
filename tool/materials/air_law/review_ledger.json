@@ -2047,6 +2047,30 @@
   "textSha": "6b99b2455b9a73d1",
   "verdict": "PASS"
  },
+ "PL010-0303#4d31e791": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 6 (bezprawnie używający + solidarnie osoby z ust. 1–5, chyba że bez ich winy) w zw. z ust. 5 (użytkownik z rejestru, chyba że udowodni). Pułapka z ust. 3 poprawna.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "6724787dbc41a3cf",
+  "verdict": "PASS"
+ },
+ "PL010-0303#a15ffd4e": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 1 i 2 (eksploatujący = używający w czasie spowodowania szkody). Ubezpieczyciel i właściciel nie występują w art. 207.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "7eb5cff37fe298a8",
+  "verdict": "PASS"
+ },
+ "PL010-0304#4235d859": {
+  "date": "2026-11-24",
+  "note": "Klucz «bezprawnie eksploatuje w czasie spowodowania szkody» = art. 207 ust. 6 + ust. 2; pułapka poprawna.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "909fb153bbb57e18",
+  "verdict": "PASS"
+ },
  "PL010-0304#57dc8d03": {
   "date": "2026-11-24",
   "note": "Art. 109 ust. 4 (lista prowadzona przez Prezesa Urzędu), ust. 5 i pułapka z ust. 8 — zgodne z korpusem.",
@@ -2253,6 +2277,22 @@
   "portion": "P06",
   "round": 2,
   "textSha": "1b0169ffb1b3d7a3",
+  "verdict": "PASS"
+ },
+ "PL010-0346#3694eff7": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 206 ust. 2 (wyłączenie tylko dla przelotu zgodnego z przepisami); wniosek o przelocie niezgodnym z przepisami wynika wprost z ust. 1–2.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "a7b9db7b7529a709",
+  "verdict": "PASS"
+ },
+ "PL010-0346#a3492a50": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne: różni się tylko czwarty dystraktor («Tak, w zależności od typu…» / «Żadna z odpowiedzi…»), tekst oryginału go nie omawia.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "e870060782d47381",
   "verdict": "PASS"
  },
  "PL010-0350#1e07d083": {
@@ -2591,6 +2631,14 @@
   "textSha": "719887ed403963f9",
   "verdict": "PASS"
  },
+ "PL010-0428#497af734": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 206 ust. 1 (przepisy prawa cywilnego o odpowiedzialności przy posługiwaniu się mechanicznymi środkami komunikacji); zastrzeżenie ust. 2 i 3 oraz art. 207 zgodne z tekstem. Cytat i lokator poprawne.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "8df9c2465771aec4",
+  "verdict": "PASS"
+ },
  "PL010-0434#52a1b469": {
   "date": "2026-11-24",
   "note": "Poprawka wprowadzona: zastrzeżenie SERA.4001(d) dla krajowych lotów VFR z quote w refs; skrócenie do 30 min tylko dla przestrzeni niekontrolowanej (ENR 1.10 pkt 4.8 lit. c)). 2 zdania, 638 znaków, cytaty zgodne z korpusem.",
@@ -2855,6 +2903,38 @@
   "textSha": "8101173697893a02",
   "verdict": "DISPUTED"
  },
+ "PL010-0454#cfe42ec0": {
+  "date": "2026-11-24",
+  "note": "Nie sporne: stary art. 12 ust. 1 PL (lex loci) uchylony, ale art. 33 PPM → art. 4 ust. 1 Rzym II (prawo państwa, w którym powstaje szkoda) daje przy szkodzie na obszarze danego państwa tę samą odpowiedź; inne opcje (rejestracja, lądowanie, start) nie są obronne. Wyjątek z ust. 2 trafnie wskazany. Cytaty i lokatory zgodne z korpusem (EU-864-2007, PL-PPM-2011).",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "21c15ff3dc56eb78",
+  "verdict": "PASS"
+ },
+ "PL010-0455#b7b5fce3": {
+  "date": "2026-11-24",
+  "note": "Jak 0454: art. 4 ust. 1 Rzym II; odstępstwa z art. 4 ust. 2 i 3 zgodne z tekstem («przepis… przewiduje tylko» odnosi się do art. 4 — poprawne). Kwalifikacja zderzenia jako czynu niedozwolonego oczywista.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "4f9bdf28cb1d130e",
+  "verdict": "PASS"
+ },
+ "PL010-0456#526d8c92": {
+  "date": "2026-11-24",
+  "note": "Klucz nie jest sprzeczny z art. 11 Rzym II — w braku stosunku stron i wspólnego pobytu ust. 3 daje tę samą odpowiedź (tak jak 0454 przy art. 4 ust. 2 nie jest sporne), więc DISPUTED nie spełnia reguły rozgraniczenia; zarazem disputeNote («klucz oddaje wcześniejsze przepisy») opisuje przypadek outdated. Ponadto teza, że «pomoc udzielona przez statek powietrzny bez umowy» jest prowadzeniem cudzych spraw bez zlecenia, to kwalifikacja spoza korpusu (art. 11 nie wspomina pomocy/ratownictwa, a «wynagrodzenie» za pomoc nie jest typowym roszczeniem gestora). Poprawka: przeklasyfikować na unverified/outdated jak 0458/0461 (text pusty, basisNote np.: «Uchylono art. 12 Prawa lotniczego, który dla pomocy przez statek powietrzny wskazywał prawo państwa miejsca zdarzenia. Prawo właściwe wskazuje dziś rozporządzenie Rzym II (art. 33 ustawy – Prawo prywatne międzynarodowe), bez przepisu szczególnego o pomocy; przy prowadzeniu cudzych spraw bez zlecenia decyduje stosunek stron, wspólny pobyt lub miejsce działania (art. 11).»), refs: art. 12, PPM art. 33, Rzym II art. 11 ust. 1–3.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "773f451184e5d88b",
+  "verdict": "FIX"
+ },
+ "PL010-0457#a95341fe": {
+  "date": "2026-11-24",
+  "note": "Klucz nie jest sprzeczny z art. 11 Rzym II — w braku stosunku stron i wspólnego pobytu ust. 3 daje tę samą odpowiedź (tak jak 0454 przy art. 4 ust. 2 nie jest sporne), więc DISPUTED nie spełnia reguły rozgraniczenia; zarazem disputeNote («klucz oddaje wcześniejsze przepisy») opisuje przypadek outdated. Ponadto teza, że «pomoc udzielona statkowi powietrznemu bez umowy» jest prowadzeniem cudzych spraw bez zlecenia, to kwalifikacja spoza korpusu (art. 11 nie wspomina pomocy/ratownictwa, a «wynagrodzenie» za pomoc nie jest typowym roszczeniem gestora). Poprawka: przeklasyfikować na unverified/outdated jak 0458/0461 (text pusty, basisNote np.: «Uchylono art. 12 Prawa lotniczego, który dla pomocy statkowi powietrznemu wskazywał prawo państwa miejsca zdarzenia. Prawo właściwe wskazuje dziś rozporządzenie Rzym II (art. 33 ustawy – Prawo prywatne międzynarodowe), bez przepisu szczególnego o pomocy; przy prowadzeniu cudzych spraw bez zlecenia decyduje stosunek stron, wspólny pobyt lub miejsce działania (art. 11).»), refs: art. 12, PPM art. 33, Rzym II art. 11 ust. 1–3.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "6cfe00f0bb05f2fb",
+  "verdict": "FIX"
+ },
  "PL010-0463#19d61118": {
   "date": "2026-11-24",
   "note": "sameAs poprawny: wariant rawMixed z tym samym sensem (maks. 5 h na urządzeniu treningowym z 45 h), te same liczby w dystraktorach (15/10/7); tekst oryginału pasuje bez zmian.",
@@ -3101,6 +3181,126 @@
   "portion": "P03",
   "round": 1,
   "textSha": "136dd7cd80cbdea2",
+  "verdict": "PASS"
+ },
+ "PL010-0499#63ebcb0e": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 1 i 2; pułapka (rejestr, «nawet jeżeli udowodni») przeczy ust. 5. Poprawne.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "79874b8a1cc88979",
+  "verdict": "PASS"
+ },
+ "PL010-0499#8d845b55": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne: identyczne pytanie i klucz, różni się tylko dystraktor «Ubezpieczyciel» vs «Wszystkie odpowiedzi są prawidłowe»; tekst oryginału nie odnosi się do tego dystraktora.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "6d26dd0147c063cb",
+  "verdict": "PASS"
+ },
+ "PL010-0500#165b96e8": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 5 dosłownie; pułapka z ust. 2 poprawna.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "1de429880500f7cf",
+  "verdict": "PASS"
+ },
+ "PL010-0500#838017dd": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne: różnica tylko «Ubezpieczyciel» / «Wszystkie odpowiedzi są prawidłowe».",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "68aa174c9a0eb1b6",
+  "verdict": "PASS"
+ },
+ "PL010-0501#0a859e5d": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 3 w zw. z ust. 1; pułapka z ust. 5. Poprawne.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "f5c723473636a1b3",
+  "verdict": "PASS"
+ },
+ "PL010-0501#406114e9": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne: różnica tylko «Ubezpieczyciel» / «Wszystkie odpowiedzi są prawidłowe».",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "7098c1ce569e69a3",
+  "verdict": "PASS"
+ },
+ "PL010-0502#bc260424": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 4 (sformułowanie klucza to skrót ust. 4, nie sporne: pozostałe odpowiedzi błędne wg ust. 3 i 7). Ale zdanie 2 «Taka osoba jest eksploatującą statek w rozumieniu art. 207 ust. 2» pomija warunek ust. 2 «w czasie spowodowania szkody». Poprawka: «Jeżeli używała statku w czasie spowodowania szkody, jest osobą eksploatującą (art. 207 ust. 2) i ponosi odpowiedzialność za szkody (art. 207 ust. 1).» Reszta (pułapka z ust. 7) poprawna.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "10d97b237d63e426",
+  "verdict": "FIX"
+ },
+ "PL010-0502#cc4a1d31": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne (różnica tylko «Wszystkie odpowiedzi są prawidłowe» / «Ubezpieczyciel»); tekst przejmie poprawkę oryginału PL010-0502#bc260424.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "cd4717dd95065aba",
+  "verdict": "PASS"
+ },
+ "PL010-0503#63d6f655": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 6; pułapka z ust. 3. Poprawne.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "34ae6327cd8f06ea",
+  "verdict": "PASS"
+ },
+ "PL010-0504#52e70515": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 6 w zw. z ust. 1 i 2; pułapka z ust. 5. Poprawne.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "4f400684ee9de428",
+  "verdict": "PASS"
+ },
+ "PL010-0504#da38054e": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne: różnica tylko «Ubezpieczyciel» / «Wszystkie odpowiedzi są prawidłowe».",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "6abe412f71c2ac24",
+  "verdict": "PASS"
+ },
+ "PL010-0505#875df351": {
+  "date": "2026-11-24",
+  "note": "sameAs na PL010-0303#4d31e791 poprawne: klucz identyczny, dystraktory poza «Ubezpieczyciel» identyczne; pułapka oryginału (przekazanie prawa używania) jest wśród odpowiedzi.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "61cc451a9c89d1e6",
+  "verdict": "PASS"
+ },
+ "PL010-0505#ab8fbc2f": {
+  "date": "2026-11-24",
+  "note": "sameAs na PL010-0303#4d31e791 poprawne: różni się tylko kropka po «prawidłowe».",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "61cc451a9c89d1e6",
+  "verdict": "PASS"
+ },
+ "PL010-0506#47f87807": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 207 ust. 6 w zw. z ust. 3; pułapka z ust. 5. Poprawne.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "a6ba5db581bc03c0",
+  "verdict": "PASS"
+ },
+ "PL010-0506#e47ac7c7": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawne: różnica tylko «Wszystkie odpowiedzi są prawidłowe» / «Ubezpieczyciel».",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "dd6e18fb1397accf",
   "verdict": "PASS"
  },
  "PL010-0512#7d9a7d4c": {
@@ -3703,6 +3903,14 @@
   "textSha": "511360f9d4536dc5",
   "verdict": "PASS"
  },
+ "PL010-0626#58a57219": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 9 (obywatele polscy i cudzoziemcy) w zw. z pkt 2 i art. 8 (lot i manewrowanie). Brak warunku zgody w przepisie. Lokatory najwęższe.",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "eea0d95ba24332a5",
+  "verdict": "PASS"
+ },
  "PL010-0627#cd987965": {
   "date": "2026-11-24",
   "note": "Sporne słusznie: klucz VFR poprawny (SERA.6001(a)(3), SERA.8005(b)(3) – w klasie C brak separacji VFR/VFR), ale SERA.8005(b) separuje loty specjalne VFR tylko od IFR (pkt 4) i od innych SVFR (pkt 5), nie od VFR, więc „VFR – specjalny” też jest obronne. disputeNote poprawny, punkty w refs. Uwaga redakcyjna (bez wpływu): „tylko informacje o ruchu i na żądanie rady” odpowiada brzmieniu AIP ENR 1.4 klasa C, w SERA.6001(a)(3) „na żądanie” odnosi się także do informacji o ruchu.",
@@ -3965,6 +4173,14 @@
   "portion": "P29",
   "round": 1,
   "textSha": "77ef13ac2d2b1fe8",
+  "verdict": "PASS"
+ },
+ "PL099-0041#53193328": {
+  "date": "2026-11-24",
+  "note": "Klucz grzywna = art. 210 ust. 1 pkt 10 (wbrew art. 158, naruszenie obowiązków bezpiecznej eksploatacji) + sankcja ust. 1; ust. 4 tryb wykroczeniowy; pułapka z art. 211 ust. 1 pkt 1 poprawna. Lokatory rodzica 'art. 210 ust. 1'/'art. 211 ust. 1' dla końcówki «– podlega…» są właściwe merytorycznie (ostrzeżenie validate o pkt 15/pkt 12 to znany defekt kotwic: sankcja doklejona do ostatniego punktu).",
+  "portion": "P28",
+  "round": 1,
+  "textSha": "76e3a4423e26f976",
   "verdict": "PASS"
  },
  "PL099-0042#dc422ecc": {
