@@ -289,11 +289,11 @@
  },
  "PL010-0073#14c977ae": {
   "date": "2026-11-24",
-  "note": "Klucz = SERA.8001(d), OK. Ale zdanie «Lotom IFR zapewnia się ją tylko w klasach A–E, a lotom VFR w klasach B, C i D» i pułapka «w klasach F i G … ani lotom IFR, ani VFR» wykraczają poza SERA.8001: lit. c) (wszystkie loty specjalne VFR) i lit. d) (cały ruch lotniskowy na lotniskach kontrolowanych) nie zależą od klasy, więc «tylko» jest nieścisłe i stoi w sprzeczności z pierwszym zdaniem. Proponuję: «Lit. a) i b) tego punktu obejmują loty IFR w klasach A, B, C, D i E oraz loty VFR w klasach B, C i D. Pułapka: klasy F i G nie są wymienione w SERA.8001 lit. a) i b), więc samo wykonywanie lotu IFR lub VFR w tych klasach nie daje służby kontroli ruchu lotniczego.»",
+  "note": "Poprawione: tekst trzyma się SERA.8001 lit. a), b), d), bez «tylko»; pułapka o klasach F i G sformułowana w granicach przepisu.",
   "portion": "P17",
-  "round": 1,
-  "textSha": "b9f306ae3e620956",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "c69ac458dc37b578",
+  "verdict": "PASS"
  },
  "PL010-0073#3220cb22": {
   "date": "2026-11-24",
@@ -1649,11 +1649,11 @@
  },
  "PL010-0410#3e3178d4": {
   "date": "2026-11-24",
-  "note": "Klucz poprawny (AFIS = służba informacji powietrznej dla ruchu lotniskowego, załącznik I pkt 6 rozp. 2017/373). Ale ref AIP GEN 3.3 pkt 1.4 dotyczy wyłącznie AFIS EPBY (Bydgoszcz), a tekst uogólnia go na każdy organ AFIS. Zamienić na ogólny przepis z GEN 3.3 pkt 3 lit. d: loc «GEN 3.3 pkt 3», quote «lotniskowa służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej zapewniana jest przez organ lotniskowej służby informacji powietrznej» (mieści się w obecnej kotwicy pkt 3), a w tekście: «Według AIP Polska (GEN 3.3 pkt 3) organ AFIS zapewnia w przestrzeni niekontrolowanej służbę informacji powietrznej i służbę alarmową» (bez «ATZ» albo z «np. ATZ EPBY» przy zachowaniu pkt 1.4).",
+  "note": "Poprawione: ref AIP GEN 3.3 pkt 3 lit. d (ogólny przepis o organie AFIS w przestrzeni niekontrolowanej), quote w kotwicy, bez uogólnienia ATZ EPBY.",
   "portion": "P17",
-  "round": 1,
-  "textSha": "d505da90d638aa0b",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "e2e46d5723474dba",
+  "verdict": "PASS"
  },
  "PL010-0412#0dbffc6f": {
   "date": "2026-11-24",
