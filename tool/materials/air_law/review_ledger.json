@@ -31,6 +31,22 @@
   "textSha": "05ed7f4e035f4b6c",
   "verdict": "PASS"
  },
+ "PL010-0001#41570700": {
+  "date": "2026-11-24",
+  "note": "„Wszystkie odpowiedzi” = art. 116 ust. 1 (broń palna i gazowa, materiały wybuchowe) + ust. 2 (urządzenia, środki, substancje zagrażające bezpieczeństwu lotu lub pasażerów). Cytaty zgodne z korpusem.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "32c772f64cf8f531",
+  "verdict": "PASS"
+ },
+ "PL010-0001#dd8ac4c9": {
+  "date": "2026-11-24",
+  "note": "Klucz = trzy kategorie z art. 116 ust. 1 (broń palna, gazowa, materiały wybuchowe); dystraktory pomijają jedną z nich. Zdanie o wyjątkach poparte art. 116 ust. 3 (wprowadzenie, cytat w ust. 3 poza pkt – lokator prawidłowy).",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "62f3182f765b2171",
+  "verdict": "PASS"
+ },
  "PL010-0002#6b5604c8": {
   "date": "2026-11-24",
   "note": "Klucz łączy oba obowiązki z art. 114 ust. 1; dystraktory jednoskładnikowe słusznie opisane jako niepełne (wzorzec „najpełniejszej odpowiedzi”, nie sporne). Brzmienie art. 114 bez zmian od 2002 r.",
@@ -69,6 +85,22 @@
   "portion": "P25",
   "round": 1,
   "textSha": "454abab8df262441",
+  "verdict": "PASS"
+ },
+ "PL010-0009#082b38de": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 123 ust. 2 pkt 3 i 4; dystraktory niepełne lub spoza katalogu (ochrona granic).",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "f365ca1cee80b450",
+  "verdict": "PASS"
+ },
+ "PL010-0009#c73e6ad6": {
+  "date": "2026-11-24",
+  "note": "Trzy odpowiedzi = art. 123 ust. 2 pkt 1, 2, 3.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "b227a1ae386b2038",
   "verdict": "PASS"
  },
  "PL010-0010#09662156": {
@@ -685,6 +717,30 @@
   "portion": "P04",
   "round": 1,
   "textSha": "b68e7dc2a9591185",
+  "verdict": "PASS"
+ },
+ "PL010-0121#8a45b682": {
+  "date": "2026-11-24",
+  "note": "Klucz dosłownie = art. 115 ust. 5 w zw. z ust. 3 pkt 2 (osoba podejrzana o przestępstwo); spójne z przyjętym P25 (art. 115).",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "2100540f530dd950",
+  "verdict": "PASS"
+ },
+ "PL010-0122#d294f35d": {
+  "date": "2026-11-24",
+  "note": "Jak 0121; osoba zagrażająca bezpieczeństwu lotu mieści się w art. 115 ust. 3 pkt 2.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "82d407489915e524",
+  "verdict": "PASS"
+ },
+ "PL010-0123#3a7153c5": {
+  "date": "2026-11-24",
+  "note": "Jak 0121; osoba zagrażająca porządkowi na pokładzie mieści się w art. 115 ust. 3 pkt 2.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "a4351f8c1b4c838a",
   "verdict": "PASS"
  },
  "PL010-0124#8cd3f3ce": {
@@ -1575,6 +1631,22 @@
   "textSha": "f8d338ce7ea06049",
   "verdict": "PASS"
  },
+ "PL010-0300#4d8cd5ab": {
+  "date": "2026-11-24",
+  "note": "Agencja Wywiadu wymieniona w art. 116 ust. 3 pkt 1; pkt 3 odsyła do służb z pkt 1 (lot + szkolenie). Warunki „bez zamiaru odbycia lotu” i szkolenia oddane poprawnie; inspektorów ULC, Straży Miejskiej i ministerstwa wśród wyjątków brak.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "3a0f76d1debb262a",
+  "verdict": "PASS"
+ },
+ "PL010-0301#5b9f62f3": {
+  "date": "2026-11-24",
+  "note": "Policja w art. 116 ust. 3 pkt 1, pkt 3 przez odesłanie; jak 0300#4d8cd5ab. Osobny wpis zasadny (inny klucz).",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "6b99b2455b9a73d1",
+  "verdict": "PASS"
+ },
  "PL010-0304#57dc8d03": {
   "date": "2026-11-24",
   "note": "Art. 109 ust. 4 (lista prowadzona przez Prezesa Urzędu), ust. 5 i pułapka z ust. 8 — zgodne z korpusem.",
@@ -1725,6 +1797,38 @@
   "portion": "P12",
   "round": 1,
   "textSha": "cdb52d1297c2bad6",
+  "verdict": "PASS"
+ },
+ "PL010-0329#4cc2e01a": {
+  "date": "2026-11-24",
+  "note": "Ochrona granic poza katalogiem art. 123 ust. 2; pozostałe odpowiedzi = pkt 4, 5, 6.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "af45d3454f9c92a2",
+  "verdict": "PASS"
+ },
+ "PL010-0329#93fd1d26": {
+  "date": "2026-11-24",
+  "note": "Trzy odpowiedzi = art. 123 ust. 2 pkt 4, 5, 6.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "a052a1af3e3dabc4",
+  "verdict": "PASS"
+ },
+ "PL010-0330#16e9ecdd": {
+  "date": "2026-11-24",
+  "note": "Trzy odpowiedzi = art. 123 ust. 2 pkt 3, 7, 8.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "3d850419894af069",
+  "verdict": "PASS"
+ },
+ "PL010-0330#4f809426": {
+  "date": "2026-11-24",
+  "note": "Ochrona granic poza katalogiem; pozostałe = art. 123 ust. 2 pkt 3, 7, 8.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "2e15b9e3d8c67315",
   "verdict": "PASS"
  },
  "PL010-0332#70328924": {
@@ -2871,6 +2975,38 @@
   "textSha": "44a89869a71c82f3",
   "verdict": "PASS"
  },
+ "PL010-0599#83afc9ca": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 123 ust. 2 pkt 5 i 8; odpowiedzi z „tylko” niepełne.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "51b0ea3d60ec3e36",
+  "verdict": "PASS"
+ },
+ "PL010-0599#93fd1d26": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczny odcisk treści (#93fd1d26) jak PL010-0329#93fd1d26.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "08e2f96ca0079819",
+  "verdict": "PASS"
+ },
+ "PL010-0600#16e9ecdd": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczny odcisk treści (#16e9ecdd) jak PL010-0330#16e9ecdd.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "4bbaedb84bf5ed19",
+  "verdict": "PASS"
+ },
+ "PL010-0600#653a8570": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 123 ust. 2 pkt 6 i 7; odpowiedzi z „tylko” niepełne.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "3ab3030fc87c28a9",
+  "verdict": "PASS"
+ },
  "PL010-0601#b73edcc4": {
   "date": "2026-11-24",
   "note": "Wniosek „grubość > 0” wynika z art. 2 pkt 135 („najniższy poziom lotu … powyżej wysokości bezwzględnej przejściowej”) i definicji warstwy (2017/373 zał. I pkt 247). Dane FIR Warszawa (6500 ft; jeden TL FL080/FL090 zależnie od ciśnienia — ENR 1.7 pkt 2.6.1, 3.1, 3.1.1) zgodne z AIP; trzecie zdanie to dopuszczalny wniosek z tych punktów. Brak przepisu o minimalnej grubości 150/300 m w korpusie → dystraktory nieobronne, nie sporne.",
@@ -3087,6 +3223,14 @@
   "textSha": "cc698bc3f868dd1d",
   "verdict": "PASS"
  },
+ "PL010-1575#3502e5a3": {
+  "date": "2026-11-24",
+  "note": "Straż Graniczna w art. 116 ust. 3 pkt 1 i 3 oraz dodatkowo pkt 2 (warta ochronna, art. 186a ust. 1) – wszystko zgodne z korpusem; 3 zdania, 610 znaków.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "82f615ab31d61087",
+  "verdict": "PASS"
+ },
  "PL099-0001#627b8b92": {
   "date": "2026-11-24",
   "note": "Klucz = art. 134 ust. 1 PL (badanie okoliczności i przyczyn, cel zapobiegawczy) + art. 2 pkt 14 rozp. 996/2010 (zalecenia dotyczące bezpieczeństwa); pułapka o winie poparta zdaniem „Komisje nie orzekają co do winy i odpowiedzialności”. Utożsamienie zaleceń dotyczących bezpieczeństwa z „profilaktycznymi” z klucza – dopuszczalne.",
@@ -3151,6 +3295,30 @@
   "textSha": "77ef13ac2d2b1fe8",
   "verdict": "PASS"
  },
+ "PL099-0042#dc422ecc": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 115 ust. 3 pkt 2 + ust. 5 (Policja i Straż Graniczna); dystraktory spoza przepisu.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "091d042f4f3455b3",
+  "verdict": "PASS"
+ },
+ "PL099-0043#f7f12979": {
+  "date": "2026-11-24",
+  "note": "Klucz dosłownie = CAT.GEN.MPA.135 lit. c); lit. b) ppkt 1 i lit. a) ppkt 2 zgodne z korpusem, pułapka (przedstawiciel organu odpowiedzialnego za inspekcje ma wstęp, ale nie decyduje) trafna. Przepis jest z części CAT, a w części NCO odpowiednika brak – tekst nie twierdzi, że dotyczy on wszystkich lotów, więc dopuszczalne (opcjonalnie writer może dopisać „w zarobkowym przewozie lotniczym”, jak w 0076, bez wymogu).",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "182afeb623277d65",
+  "verdict": "PASS"
+ },
+ "PL099-0048#41a50c8a": {
+  "date": "2026-11-24",
+  "note": "Sprawdzone: NCO.OP.155 (jedyny przepis dla samolotów/śmigłowców poza CAT/NCC w korpusie) – „Pilot dowódca nie zezwala na palenie tytoniu na pokładzie: a) kiedy uznaje się to za konieczne ze względów bezpieczeństwa; oraz b) podczas uzupełniania paliwa” – brak bezwzględnego zakazu, więc klucz „Palenie tytoniu nie jest dozwolone” wykracza poza normę; żadnej zmiany redakcji korpus nie wykazuje → disputed, nie outdated. Bezwzględne zakazy są tylko dla szybowców (SAO.OP.130) i balonów (BOP.BAS.135), a pytanie jest z banków PPL(A)/PPL(H). Tekst objaśnia, na czym opiera się klucz; disputeNote (340 znaków) wskazuje lit. a) i b), które są w refs, ostrożna formuła „wcześniejsze przepisy lub bardziej rygorystyczna interpretacja”, zawiera formułę o kluczu ULC.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "1c3669674ba8af3c",
+  "verdict": "DISPUTED"
+ },
  "PL099-0051#1b7ba0eb": {
   "date": "2026-11-24",
   "note": "Poprawione: tekst wskazuje część CAT (ref załącznik IV „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO”), disputeNote (351 zn.) trafnie podaje, że część NCO nie przewiduje raportu o zderzeniu z ptakiem (w 965/2012 tylko CAT.GEN.MPA.105(d)), a w CAT raport tylko przy znaczących uszkodzeniach/awarii systemu; punkty w refs.",
@@ -3167,6 +3335,14 @@
   "textSha": "08e3c5a69da65fdf",
   "verdict": "PASS"
  },
+ "PL099-0076#648818ba": {
+  "date": "2026-11-24",
+  "note": "Klucz = NCO.GEN.105 lit. c) (właściwa część dla PPL), CAT.GEN.MPA.105 lit. a) ppkt 4 poprawnie oznaczony jako przepis dla zarobkowego przewozu lotniczego; cytaty zgodne z korpusem.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "d28e7397b1277c2e",
+  "verdict": "PASS"
+ },
  "PL099-0079#cfe733ba": {
   "date": "2026-11-24",
   "note": "Poprawione: 72 h oparte na art. 135a ust. 3 PL (dotyczy każdego zgłoszenia Komisji), krąg podmiotów z ust. 2 z zastrzeżeniem „statków nieobjętych rozporządzeniem 376/2014”, poparty cytatem; art. 4 ust. 8 rozp. 376/2014 poprawnie odniesiony do właściwego organu. 2 zdania, 539 zn.",
@@ -3181,6 +3357,22 @@
   "portion": "P25",
   "round": 1,
   "textSha": "03129d1bd870d295",
+  "verdict": "PASS"
+ },
+ "PL099-0083#17d3126e": {
+  "date": "2026-11-24",
+  "note": "Klucz (powiadomić ATS) = SERA.11005 lit. aa): ustawić 7500 i zawiadomić organ ATS. Lokator „SERA.11005” jest najwęższy dostępny (literowe „aa)/ab)” nie mają jeszcze własnych kotwic – znane TODO S1), a w tekście poprawnie podano „lit. aa)”. Słowa „pierwszy obowiązek” przepis nie używa, ale tekst go nie przypisuje przepisowi – brak faktu ponad źródło. NCO.GEN.105 lit. g) zgodny z korpusem.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "58171bd5aac388e0",
+  "verdict": "PASS"
+ },
+ "PL099-0086#d8733033": {
+  "date": "2026-11-24",
+  "note": "Klucz = SERA.10005 lit. b) (w łączności ATS powietrze-ziemia nie wspomina się o charakterze sytuacji, z wyjątkiem opisanym w przepisie); pułapka z lit. a) z jej własnym zastrzeżeniem „z wyjątkiem sytuacji przewidzianych w lit. b)” – trafna.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "e6a533024918905d",
   "verdict": "PASS"
  },
  "PL099-0087#f368e5d5": {
@@ -3207,12 +3399,36 @@
   "textSha": "5607e656bd2ae6a2",
   "verdict": "PASS"
  },
+ "PL099-0100#33e15656": {
+  "date": "2026-11-24",
+  "note": "Art. 123 ust. 2 – zakaz zrzutów z zamkniętym katalogiem celów; „dowolna uroczystość” nie jest celem z katalogu, a przepis nie zna zgody władz ani „warunków bezpieczeństwa” jako podstawy. Wątpliwość co do pkt 5 („sportu i obsługi imprez masowych”) nie czyni klucza spornym: pytanie dotyczy uroczystości jako takiej, nie imprezy masowej (pojęcie ustawowe), a pkt 5 przewiduje wyjątek tylko na potrzeby obsługi takiej imprezy. Tekst wymienia pkt 5 wśród wyjątków, więc jest uczciwy wobec czytelnika.",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "9c215dc85832e3ca",
+  "verdict": "PASS"
+ },
  "PL102-0021#25232f08": {
   "date": "2026-11-24",
   "note": "sameAs poprawny: pytanie i odpowiedzi identyczne z PL099-0082#7e61b8ba (różnica tylko „..” w odpowiedzi A).",
   "portion": "P25",
   "round": 1,
   "textSha": "48cf8c0c7404b85d",
+  "verdict": "PASS"
+ },
+ "PL102-0031#1295a643": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0042#dc422ecc (różnią się tylko kropki).",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "8ccd89318496b334",
+  "verdict": "PASS"
+ },
+ "PL102-0034#f1fb18dc": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: pytanie i odpowiedzi identyczne z PL099-0100#33e15656 (różnica tylko brak kropki w „Zabroniony”).",
+  "portion": "P26",
+  "round": 1,
+  "textSha": "e5a0c18d75a43c94",
   "verdict": "PASS"
  },
  "PL102-0035#f368e5d5": {
