@@ -305,17 +305,17 @@ def is_published(rec, kind, ledger, id_):
 _N = r"\d+(?:[a-z]{1,3}|\[\d+[a-z]{0,3}\][a-z]{0,3})?"
 _L = r"\d+(?:\.\d+)*"  # номер строки таблицы / позиции: 1, 1.1, 3.14
 # załącznik 6, załącznik 6 tabela 2, załącznik 6 tabela 2 część I, załącznik 6 tabela 2 część I pkt 3.14
-LOC_STATUTE = re.compile(r"^(art\. %s( ust\. %s)?( pkt %s)?|załącznik \d+[a-z]?( tabela \d+)?( część [IVX]+[a-z]?)?( pkt %s)?)$"
+LOC_STATUTE = re.compile(r"^((art\. |§ )%s( ust\. %s)?( pkt %s)?|załącznik \d+[a-z]?( tabela \d+)?( część [IVX]+[a-z]?)?( pkt %s)?)$"
                          % (_N, _N, _N, _L))
 LOC_CONVENTION = re.compile(r"^(art\. %s( ust\. %s)?|załącznik \d+( pkt \d+(\.\d+)*)?)$" % (_N, _N), re.I)
 # правила: FCL.205.A, SERA.5005(b)(1)(i), MED.A.030, ORA.AeMC.215, M.A.201; Part 21/145/66/147: 21.A.3A, 145.A.30
-LOC_EUPARA = re.compile(r"^([A-Z][A-Za-z]*|\d{2,3})(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
+LOC_EUPARA = re.compile(r"^([A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?|\d{2,3})(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
 LOC_EUART = re.compile(r"^art\. %s( ust\. %s)?( pkt %s)?$" % (_N, _N, _N))
 # приложения: załącznik, załącznik I, dodatek 3, załącznik I dodatek 3, любое из них + pkt L
 LOC_EUANNEX = re.compile(r"^(?=załącznik|dodatek)(załącznik( [IVXLC]+)?)?( ?dodatek \d+)?( pkt %s)?$" % _L)
 # AIP Polska: ENR 1.2, ENR 1.2 pkt 3.1, GEN 2.2 CBA (skrót), ENR 5.2.1 TSA (definicja), ENR 1.4 klasa C
 LOC_AIP = re.compile(r"^(GEN|ENR|AD) \d+(\.\d+)*( pkt \d+(\.\d+)*| klasa [A-G]| [A-Z0-9][A-Z0-9/&.\-]{0,9})?$")
-LOC_EASA = re.compile(r"^((AMC|GM)\d* )?[A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
+LOC_EASA = re.compile(r"^((AMC|GM|CS)\d* )?[A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
 # Article 2, Article 2(12), Article 2(129a), GM1 Article 2(12), Appendix 4, Appendix 1 pkt 1.2.1
 LOC_EASA_ART = re.compile(r"^(GM\d* )?Article \d+[a-z]?(\([0-9a-z]+\))*$")
 LOC_EASA_APP = re.compile(r"^Appendix \d+( pkt %s| to (AMC|GM)\d* [A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*)?$" % _L)

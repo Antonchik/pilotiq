@@ -21,7 +21,7 @@ that have none and the source-level sha256 (SHA-256 of the sorted "<file>:<sha25
 adding entries to "files" (and placing the file); --check compares the local files with the pins.
 
 CELLAR mode (official Polish consolidated EU regulations, no EUR-Lex WAF): a source with
-  "fetch": {"mode": "cellar", "base": "2012R0923"}
+  "fetch": {"mode": "cellar", "base": "2012R0923"}  or  {"mode": "cellar", "celex": "32007R0864"} (a fixed CELEX)
 resolves the newest consolidated CELEX "0<base>-YYYYMMDD" with SPARQL on publications.europa.eu, then downloads
 https://publications.europa.eu/resource/celex/<CELEX> as XHTML (Accept-Language from fetch.lang, default pol).
 The pinned CELEX is what gets downloaded (reproducible); --check also reports a newer consolidated CELEX.
@@ -133,6 +133,8 @@ def cellar_headers(src):
 
 
 def celex_date(celex):
+    if "-" not in celex:
+        return None     # an act as published has no consolidation date
     d = celex.rsplit("-", 1)[1]
     return "%s-%s-%s" % (d[:4], d[4:6], d[6:])
 
@@ -200,6 +202,8 @@ def resolve_download(src, pin):
     if not is_cellar(src):
         return src["url"], None, None
     celex = src.get("celex") if src.get("sha256") else None
+    if not celex and src["fetch"].get("celex"):
+        celex = src["fetch"]["celex"]      # a fixed CELEX (e.g. 32007R0864, the act as published): no SPARQL lookup
     if not celex:
         celex = resolve_latest_celex(src)   # unpinned: without --pin the caller refuses to keep the file
     return cellar_url(src, celex), cellar_headers(src), celex
@@ -316,7 +320,8 @@ def cmd_fetch(sources, chosen, sources_json, sources_dir, pin, out):
             if celex:
                 src["celex"] = celex
                 src["url"] = url
-                src["legalState"] = celex_date(celex)
+                if celex_date(celex):
+                    src["legalState"] = celex_date(celex)
             changed_json = True
             out("PINNED   %s sha256=%s bytes=%d" % (sid, digest, size))
         else:
@@ -347,7 +352,7 @@ def cmd_check(chosen, sources_dir, out):
             part = os.path.join(tmpdir, sid)
             try:
                 url, headers, celex = resolve_download(src, False)
-                if is_cellar(src):
+                if is_cellar(src) and not src["fetch"].get("celex"):
                     latest = resolve_latest_celex(src)
                     if latest != src.get("celex"):
                         out("CHANGED  %s: a newer consolidated version exists: %s (pinned %s); "

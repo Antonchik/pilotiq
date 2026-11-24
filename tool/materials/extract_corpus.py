@@ -47,7 +47,7 @@ FUTURE_MARK = "\u27e6PRZYSZŁA REDAKCJA\u27e7"
 
 # EU / EASA rule identifiers: SERA.5005, SERA.14095, FCL.205.A, NCO.GEN.105, MED.A.030, ORA.AeMC.215,
 # ARA.GEN.135A, 21.A.3A, 145.A.30, M.A.201, T.A.101
-_RULE_ID = (r"(?:[A-Z]{2,6}(?:\.[A-Za-z]{1,6})*\.\d{1,5}[A-Z]?(?:\.[A-Z])?"
+_RULE_ID = (r"(?:[A-Z]{2,6}(?:[/-][A-Z]{2,6})?(?:\.[A-Za-z]{1,6})*\.\d{1,5}[A-Z]?(?:\.[A-Z])?"
             r"|(?:\d{2,3}|[A-Z])\.[A-Z]\.\d{1,5}[A-Z]?)")
 
 _SPACES = re.compile(r"[ \t  -   ]+")
@@ -241,7 +241,7 @@ class _TextExtractor(html.parser.HTMLParser):
 
 
 # EUR-Lex / CELLAR consolidated XHTML: amendment-reference paragraphs and the table of contents are not text of the act
-_EURLEX_SKIP = re.compile(r"\b(modref|toc-\d+|arrow|superscript)\b")
+_EURLEX_SKIP = re.compile(r"\b(modref|toc-\d+|arrow|superscript|oj-note|oj-note-tag|oj-super)\b")
 _AMEND_MARK = re.compile(r"[►▼◄](?:[A-Z]\d*[A-Z]?\d*)?")
 _LABEL_ONLY = re.compile(r"^(?:\(?[a-z]{1,4}\)|\(?\d{1,3}[a-z]?\)|\d{1,3}[a-z]?\.|%s)$" % _RULE_ID)
 
@@ -326,7 +326,7 @@ def _finish(spans, total):
 
 
 _ART_ID = r"\d+[a-z]{0,3}(?:\[\d+[a-z]{0,2}\])?"
-_ART_RE = re.compile(r"^Art\.\s*(%s)\.(?:\s+(.*))?$" % _ART_ID)
+_ART_RE = re.compile(r"^(Art\.|§)\s*(%s)\.(?:\s+(.*))?$" % _ART_ID)   # "Art. 5." of statutes, "§ 5." of regulations
 _UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
 _DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
@@ -492,7 +492,8 @@ def statute_anchors(text, future_out=None):
             continue
         m = _ART_RE.match(line)
         if m:
-            token = m.group(1)
+            token = m.group(2)
+            unit = "§ " if m.group(1) == "§" else "art. "
             if not started:
                 if token != "1":
                     continue
@@ -504,17 +505,17 @@ def statute_anchors(text, future_out=None):
                 cur_art = None
                 continue
             close_future(start, 1)
-            if any(sp.key == "art. " + token for sp in spans[-400:]):
+            if any(sp.key == unit + token for sp in spans[-400:]):
                 m = None  # duplicate heading text: treat as ordinary text
             if m:
                 close_art_tree(start)
-                cur_art = "art. " + token
+                cur_art = unit + token
                 open_art = _Span(cur_art, start, 1)
                 spans.append(open_art)
                 open_ust = open_pkt = None
                 last_ust = last_pkt = None
                 dead_ust = False
-                rest = m.group(2) or ""
+                rest = m.group(3) or ""
                 mu = _UST_RE.match(rest)
                 if mu and _next_ok(None, _num_key(mu.group(1))):
                     open_ust_span(mu.group(1), start)
@@ -558,7 +559,7 @@ def statute_anchors(text, future_out=None):
 _ID_PAREN = r"%s(?:\([a-z0-9]+\))*" % _RULE_ID
 _RULE_RE = re.compile(r"^(%s)(?:\s+(\S.*))?$" % _RULE_ID)
 # "AMC1 SERA.5005(f) Title" and the multi-rule form "AMC1 FCL.210; FCL.215 Title"
-_AMC_FULL_RE = re.compile(r"^((?:AMC|GM)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_ID_PAREN, _ID_PAREN))
+_AMC_FULL_RE = re.compile(r"^((?:AMC|GM|CS)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_ID_PAREN, _ID_PAREN))
 _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
 _ART_EAR_RE = re.compile(r"^Article (\d+[a-z]?) \S")
 _GM_ART_RE = re.compile(r"^((?:AMC|GM)\d*) (?:to )?Article (\d+[a-z]?(?:\(\d+[a-z]?\))?)(?=\s)")
@@ -1027,7 +1028,7 @@ def _gap_ok(last, cur, maxgap=3):
     return last[0] < cur[0] <= last[0] + maxgap and cur[1] == ""
 
 
-def eureg_anchors(text):
+def eureg_anchors(text, extras=()):
     """Anchors for Polish consolidated EU regulations (EUR-Lex / CELLAR XHTML text).
 
     art. N | art. N ust. K | art. N pkt K | art. N ust. K pkt M       (Artykuł N; K = "K." paragraph, M = "M)" point or definition)
@@ -1092,7 +1093,7 @@ def eureg_anchors(text):
             close(app, start)
             close(annex, start)
             for sp in spans:
-                if sp.level == 4 and sp.end is None:
+                if sp.level in (4, 5) and sp.end is None:
                     sp.end = start
             app = None
             mode = "annex"
@@ -1136,6 +1137,17 @@ def eureg_anchors(text):
                     spans.append(_Span(key, start, 4))
             continue
         if mode == "annex":
+            if "annexpoints" in extras:
+                mpt = _APP_ROW_RE.match(line)
+                if mpt and not _RULE_RE.match(line):
+                    key = ("%s pkt %s" % (annex_key, mpt.group(1))) if annex_key else None
+                    if key and key not in have:
+                        for sp in spans:
+                            if sp.level == 5 and sp.end is None:
+                                sp.end = start
+                        have.add(key)
+                        spans.append(_Span(key, start, 5))
+                    continue
             mr = _RULE_RE.match(line)
             if mr and (mr.group(2) is None or not mr.group(2)[:1].islower()):
                 if _changelog_title(line):
@@ -1429,7 +1441,7 @@ def anchors_for(src, text):
         anchors = statute_anchors(text, future)
         return anchors, future
     if kind == "eu_reg":
-        return eureg_anchors(text), []
+        return eureg_anchors(text, extras), []
     if kind == "easa":
         return rule_anchors(text, kind, extras), []
     if kind == "aip":
