@@ -793,6 +793,11 @@ void main() {
             find.byKey(const Key('paywall_trial_notice')),
             tap: false,
           );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_one_time_notice')),
+            tap: false,
+          );
           await reachPaywallChrome(tester);
         });
 
@@ -909,6 +914,11 @@ void main() {
           );
           await reach(
             tester,
+            find.byKey(const Key('paywall_restore')),
+            tap: false,
+          );
+          await reach(
+            tester,
             find.byKey(const Key('paywall_terms')),
             tap: false,
           );
@@ -941,6 +951,11 @@ void main() {
           await reach(
             tester,
             find.byKey(const Key('paywall_close')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('paywall_restore')),
             tap: false,
           );
           await reach(

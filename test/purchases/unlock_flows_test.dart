@@ -1,12 +1,20 @@
+import 'dart:math';
+
+import 'package:clock/clock.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_ce/hive.dart';
 import 'package:pilotiq/src/app.dart';
+import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/progress/providers.dart';
+import 'package:pilotiq/src/purchases/fake_purchase_service.dart';
+import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/bank/question_bank_repository.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/exam_sim/exam_entry.dart';
 import 'package:pilotiq/src/exam_sim/exam_history_screen.dart';
+import 'package:pilotiq/src/progress/exam_attempt.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/paywall_screen.dart';
 import 'package:pilotiq/src/quiz/practice/practice_controller.dart';
@@ -27,6 +35,44 @@ Widget _realPaywall(Widget child) => ProviderScope(
   child: child,
 );
 
+/// Like `ExamHarness.pump`, but without the recorder of the paywall triggers:
+/// the real paywall opens (the screens are pushed routes, so a scope inside
+/// `home` would not reach them).
+Future<void> _pumpReal(
+  WidgetTester tester,
+  ExamHarness h, {
+  required Widget home,
+  bool premium = false,
+}) async {
+  tester.view.physicalSize = const Size(1080, 2400);
+  tester.view.devicePixelRatio = 1;
+  addTearDown(tester.view.reset);
+  h.service = FakePurchaseService(premium: premium);
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [
+        purchaseServiceProvider.overrideWithValue(h.service),
+        progressRepositoryProvider.overrideWithValue(h.repo),
+        questionBankRepositoryProvider.overrideWithValue(
+          QuestionBankRepository(
+            bundle: ExamBankBundle(),
+            parser: (json, licence) async => parseBank(json, licence: licence),
+          ),
+        ),
+        clockProvider.overrideWithValue(Clock(() => h.now)),
+        randomProvider.overrideWithValue(Random(7)),
+      ],
+      child: MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        locale: const Locale('en'),
+        home: home,
+      ),
+    ),
+  );
+  await settle(tester);
+}
+
 Future<void> _buyLifetime(WidgetTester tester) async {
   expect(find.byType(PaywallScreen), findsOneWidget);
   await tester.tap(_key('paywall_plan_lifetime'));
@@ -41,9 +87,29 @@ Future<void> _buyLifetime(WidgetTester tester) async {
 
 void main() {
   group('exam simulation limit', () {
-    final h = ExamHarness();
-    setUp(h.setUp);
-    tearDown(h.tearDown);
+    late ExamHarness h;
+    setUp(() async {
+      h = ExamHarness();
+      await h.setUp();
+    });
+    tearDown(() => h.tearDown());
+
+    Future<void> seedReviewable() => h.repo.saveAttempt(
+      ExamAttempt(
+        id: 'review',
+        licence: Licence.ppla,
+        subject: SubjectId.communications,
+        startedAt: DateTime(2026, 4, 2, 9),
+        finishedAt: DateTime(2026, 4, 2, 9, 20),
+        durationSec: 1200,
+        total: 2,
+        correct: 1,
+        passed: false,
+        reason: AttemptReason.finished,
+        questionIds: const ['PL090-0001', 'PL090-0002'],
+        answers: const {'PL090-0001': 1, 'PL090-0002': 0},
+      ),
+    );
 
     Widget openButton() => Builder(
       builder: (context) => Scaffold(
@@ -60,7 +126,7 @@ void main() {
     testWidgets('the button on the limit screen opens the paywall even with '
         'no answers at all, and buying lets the user start', (tester) async {
       await h.seedAttempt(); // one finished simulation, no answers in the stats
-      await h.pump(tester, home: _realPaywall(openButton()));
+      await _pumpReal(tester, h, home: openButton());
       await h.open(tester);
 
       // The automatic call waits for 10 answers: nothing opened by itself.
@@ -69,6 +135,7 @@ void main() {
 
       await tester.tap(_key('exam_limit_premium'));
       await tester.pumpAndSettle();
+      expect(find.byType(PaywallScreen), findsOneWidget);
       expect(find.text('The free simulation is used'), findsOneWidget);
 
       await _buyLifetime(tester);
@@ -79,8 +146,8 @@ void main() {
     testWidgets('the result teaser: buy, come back, the teaser is gone', (
       tester,
     ) async {
-      await h.seedAttempt();
-      await h.pump(tester, home: _realPaywall(ExamHistoryScreen(args: h.args)));
+      await seedReviewable();
+      await _pumpReal(tester, h, home: ExamHistoryScreen(args: h.args));
       await tester.tap(find.byKey(const ValueKey('history_review')));
       await settle(tester);
       expect(_key('exam_result_teaser'), findsOneWidget);
@@ -94,9 +161,10 @@ void main() {
 
     testWidgets('losing Premium on the result and review screens does not '
         'crash', (tester) async {
-      await h.seedAttempt();
-      await h.pump(
+      await seedReviewable();
+      await _pumpReal(
         tester,
+        h,
         premium: true,
         home: ExamHistoryScreen(args: h.args),
       );

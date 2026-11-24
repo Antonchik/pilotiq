@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:clock/clock.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_ce/hive.dart';
@@ -354,6 +356,51 @@ void main() {
     );
   });
 
+  group('clock that once ran ahead', () {
+    test('the next online answer resets the remembered time', () async {
+      final end = DateTime.utc(2026, 12, 20);
+      // The clock is far ahead for a while (a wrong date), an answer arrives.
+      now = DateTime.utc(2030, 1, 1);
+      gateway.entitlement = ServerEntitlement(isActive: true, expiresAt: end);
+      await launch();
+
+      // The user fixes the clock; the next launch is online and the server
+      // time (2026) replaces the remembered 2030.
+      now = DateTime.utc(2026, 11, 24, 12);
+      gateway.entitlement = ServerEntitlement(
+        isActive: true,
+        expiresAt: end,
+        serverTime: now,
+      );
+      await launch();
+
+      // Offline from then on: the paid period still counts.
+      gateway.failure = const PurchaseException(PurchaseFailureKind.network);
+      final offline = await launch();
+      expect(offline.current.isPremium, isTrue);
+    });
+  });
+
+  group('answers that arrive late', () {
+    test('a refresh started before a purchase does not undo it', () async {
+      final service = await launch();
+      gateway.entitlementGate = Completer<void>();
+      final slow = service.refresh(); // will answer "not active"
+      await pumpEventQueue();
+
+      gateway.purchaseResult = const GatewayPurchase(
+        GatewayPurchaseStatus.purchased,
+        _premium,
+      );
+      await service.purchase('lifetime');
+      expect(service.current.isPremium, isTrue);
+
+      gateway.entitlementGate!.complete();
+      await slow;
+      expect(service.current.isPremium, isTrue);
+    });
+  });
+
   group('start-up', () {
     test(
       'without a key the service is disabled and the cache still counts',
@@ -404,6 +451,18 @@ void main() {
       },
     );
 
+    test('a gateway whose service cannot start is released', () async {
+      final broken = _BrokenGateway();
+      final service = await createPurchaseService(
+        apiKey: 'test-key',
+        cache: cache,
+        createGateway: (_) async => broken,
+      );
+      addTearDown(service.dispose);
+      expect(service.isAvailable, isFalse);
+      expect(broken.disposed, isTrue);
+    });
+
     test('an unreadable cache does not stop the start', () async {
       final broken = EntitlementCache(
         openBox: () async => throw StateError('x'),
@@ -420,4 +479,10 @@ void main() {
       expect(service.current.isPremium, isTrue);
     });
   });
+}
+
+/// A gateway whose update stream cannot be opened: the service fails to start.
+class _BrokenGateway extends FakeGateway {
+  @override
+  Stream<ServerEntitlement> get updates => throw StateError('no stream');
 }

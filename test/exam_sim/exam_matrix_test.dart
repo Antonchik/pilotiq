@@ -118,15 +118,23 @@ void main() {
         expect(state.finishFailed, isTrue);
         expect(state.attemptStored, stored);
         expect(state.markerStored, c.markerOk);
-        // What the dialog on leaving says matches the facts.
-        expect(
-          state.leave,
-          stored
-              ? ExamLeave.resultSaved
-              : (c.markerOk
-                    ? ExamLeave.endingStored
-                    : ExamLeave.endingNotStored),
-        );
+      }
+      // What the dialog on leaving says: the screen asks the controller to
+      // store the progress once more (the storage is still failing here) and
+      // takes the text from `state.leave`.
+      var promised = ExamLeave.resultSaved;
+      if (c.result != _Result.allOk) {
+        await ctl.flushForLeave();
+        state = stateOf(container);
+        promised = state.leave;
+        final expected = stored
+            ? ExamLeave.resultSaved
+            : c.markerOk
+            ? ExamLeave.endingStored
+            : c.timeout
+            ? (c.progressOk ? ExamLeave.timeoutSaved : ExamLeave.timeoutLost)
+            : (c.progressOk ? ExamLeave.continueSaved : ExamLeave.continueLost);
+        expect(promised, expected);
       }
       expect((await h.attempts()).length, stored ? 1 : 0);
       final left = await h.unfinished();
@@ -158,14 +166,22 @@ void main() {
       state = stateOf(container);
 
       if (stored) {
+        expect(promised, ExamLeave.resultSaved);
         expect(state.phase, ExamPhase.rules, reason: 'nothing to resume');
         await _expectEnded(h, flaky, ids, c, t0, answers: answered);
       } else if (c.markerOk) {
+        expect(promised, ExamLeave.endingStored);
         expect(state.phase, ExamPhase.done, reason: 'ending is finished');
         await _expectEnded(h, flaky, ids, c, t0, answers: answered);
       } else if (c.timeout) {
         // Time is over: closed from what was stored (answers that could not
         // be stored are lost; the dialog said so).
+        // timeoutSaved: calculated from the saved answers; timeoutLost: the
+        // latest answers do not count.
+        expect(
+          promised,
+          c.progressOk ? ExamLeave.timeoutSaved : ExamLeave.timeoutLost,
+        );
         expect(state.phase, ExamPhase.done);
         await _expectEnded(
           h,
@@ -178,6 +194,12 @@ void main() {
       } else {
         // Nothing about the ending is stored and time is left: the exam
         // honestly continues.
+        // continueSaved: all answers kept; continueLost: continues from the
+        // last stored state (fewer answers).
+        expect(
+          promised,
+          c.progressOk ? ExamLeave.continueSaved : ExamLeave.continueLost,
+        );
         expect(state.phase, ExamPhase.resume);
         expect(await h.attempts(), isEmpty);
         expect(state.answeredCount, c.progressOk ? answered : 0);

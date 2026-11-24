@@ -335,6 +335,41 @@ void main() {
             await settle(tester);
             await tapAction(tester, const Key('exam_result_history'));
             await reach(tester, find.byType(Card).first);
+
+            // The dialogs on leaving while the ending is not stored, for
+            // every combination of reason and stored answers (the other two
+            // texts were shown above).
+            for (final timeout in [false, true]) {
+              for (final progressOk in [true, false]) {
+                if (!timeout && progressOk) continue;
+                await Hive.box<dynamic>('attempts').clear();
+                await h.repo.clearInProgressAttempt(Licence.ppla, subject);
+                flaky.failAttemptSaves = 0;
+                flaky.failInProgressAlways = false;
+                await pump(premium: true);
+                await h.open(tester);
+                await tapAction(tester, const Key('exam_start'));
+                flaky.failInProgressAlways = !progressOk;
+                await tapAction(tester, const Key('answer_0'));
+                flaky.failInProgressAlways = true;
+                flaky.failAttemptSaves = 100;
+                if (timeout) {
+                  await h.advance(tester, const Duration(minutes: 61));
+                } else {
+                  await tapAction(tester, const Key('exam_finish_button'));
+                  await tapAction(tester, const Key('exam_finish_confirm'));
+                }
+                await reach(tester, find.byKey(const Key('exam_retry')));
+                await tester.tap(find.byType(BackButton));
+                await settle(tester);
+                await reach(tester, find.byKey(const Key('exam_leave_stay')));
+                await reach(
+                  tester,
+                  find.byKey(const Key('exam_leave_confirm')),
+                );
+                await tapAction(tester, const Key('exam_leave_stay'));
+              }
+            }
           },
         );
       }

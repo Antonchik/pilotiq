@@ -937,7 +937,19 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get examLeaveNotMarkedBody =>
-      'The end of the exam could not be saved either. If you leave, the exam can be continued and the time keeps running.';
+      'The end of the exam could not be saved, but your answers are. If you leave, the exam can be continued and the time keeps running.';
+
+  @override
+  String get examLeaveContinueLostBody =>
+      'The end of the exam and your latest answers could not be saved. The latest answers will be lost. If you leave, the exam can be continued from the last saved state and the time keeps running.';
+
+  @override
+  String get examLeaveTimeoutSavedBody =>
+      'Time is up, but the result could not be saved yet. If you leave, it will be calculated from the saved answers when you open the exam again.';
+
+  @override
+  String get examLeaveTimeoutLostBody =>
+      'Time is up, but the result could not be saved yet. If you leave, it will be calculated from the saved answers when you open the exam again. Your latest answers were not saved and will not count.';
 
   @override
   String get reminderChannelName => 'Study reminders';

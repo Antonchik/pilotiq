@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ui' show Tristate;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart' show SemanticsNode;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -189,6 +190,94 @@ void main() {
     });
   });
 
+  group('store wording', () {
+    Future<String> renewalOn(WidgetTester tester, TargetPlatform? p) async {
+      debugDefaultTargetPlatformOverride = p;
+      try {
+        await PaywallHost(service: storeLike()).open(tester);
+        return tester.widget<Text>(_key('paywall_renewal_notice')).data!;
+      } finally {
+        debugDefaultTargetPlatformOverride = null;
+      }
+    }
+
+    testWidgets('iOS names only the App Store', (tester) async {
+      final t = await renewalOn(tester, TargetPlatform.iOS);
+      expect(t, contains('Apple ID'));
+      expect(t, isNot(contains('Google')));
+    });
+
+    testWidgets('Android names only Google Play', (tester) async {
+      final t = await renewalOn(tester, TargetPlatform.android);
+      expect(t, contains('Google Play'));
+      expect(t, isNot(contains('Apple')));
+      expect(t, isNot(contains('App Store')));
+    });
+
+    testWidgets('other platforms say "the store"', (tester) async {
+      final t = await renewalOn(tester, TargetPlatform.linux);
+      expect(t, isNot(contains('Google')));
+      expect(t, isNot(contains('Apple')));
+      expect(t, contains('store'));
+    });
+  });
+
+  group('restore is reachable', () {
+    testWidgets('also when the plans failed to load, and it works', (
+      tester,
+    ) async {
+      final service = storeLike()
+        ..offeringError = const PurchaseException(PurchaseFailureKind.network);
+      await PaywallHost(service: service).open(tester);
+      expect(_key('paywall_error'), findsOneWidget);
+      await tester.tap(_key('paywall_restore'));
+      await tester.pumpAndSettle();
+      expect(service.restoreCalls, 1);
+      expect(find.text('Thank you!'), findsOneWidget);
+    });
+
+    testWidgets('also with an empty offering; "nothing found" is shown', (
+      tester,
+    ) async {
+      final service = FakePurchaseService(offering: const [])
+        ..restoreFindsPremium = false;
+      await PaywallHost(service: service).open(tester);
+      expect(_key('paywall_empty'), findsOneWidget);
+      await tester.tap(_key('paywall_restore'));
+      await tester.pumpAndSettle();
+      expect(_key('paywall_restore_none'), findsOneWidget);
+    });
+
+    testWidgets('a failing restore in the error state offers Try again', (
+      tester,
+    ) async {
+      final service = FakePurchaseService(offering: const [])
+        ..restoreError = const PurchaseException(PurchaseFailureKind.store);
+      await PaywallHost(service: service).open(tester);
+      await tester.tap(_key('paywall_restore'));
+      await tester.pumpAndSettle();
+      expect(_key('paywall_action_error'), findsOneWidget);
+    });
+
+    testWidgets('not offered in a build without store keys', (tester) async {
+      await PaywallHost(service: FakePurchaseService(isAvailable: false))
+          .open(tester);
+      expect(_key('paywall_restore'), findsNothing);
+    });
+  });
+
+  group('wording', () {
+    testWidgets('history is not sold as a Premium feature', (tester) async {
+      final host = PaywallHost(
+        service: storeLike(),
+        trigger: PaywallTrigger.examLimit,
+      );
+      await seedAnswers(host.repository, 10);
+      await host.open(tester);
+      expect(find.textContaining('history'), findsNothing);
+    });
+  });
+
   group('page', () {
     testWidgets('the close button is visible at once and closes', (
       tester,
@@ -216,7 +305,7 @@ void main() {
       expect(find.text('Privacy Policy'), findsOneWidget);
       expect(find.textContaining('renew automatically'), findsOneWidget);
       expect(
-        find.textContaining('cancel in your account settings'),
+        find.textContaining('Google Play account settings'),
         findsOneWidget,
       );
       expect(
@@ -282,7 +371,7 @@ void main() {
       );
       expect(
         find.text(
-          'Unlimited exam simulations with history and topic breakdown '
+          'Unlimited exam simulations with topic breakdown of the results '
           '(free: ${AccessPolicy.freeExamsPerSubject} per subject)',
         ),
         findsOneWidget,

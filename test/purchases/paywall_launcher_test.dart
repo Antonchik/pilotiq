@@ -86,6 +86,37 @@ void main() {
     });
   });
 
+  group('a button on a limit screen always opens it', () {
+    for (final trigger in [
+      PaywallTrigger.dailyLimit,
+      PaywallTrigger.examLimit,
+    ]) {
+      testWidgets('${trigger.name} with explicit: true and no answers', (
+        tester,
+      ) async {
+        final host = PaywallHost(service: service());
+        host.configureView(tester);
+        await tester.pumpWidget(host.app());
+        await tester.pumpAndSettle();
+        final context = tester.element(find.byKey(const Key('open_paywall')));
+
+        openPaywall(context, trigger: trigger).ignore();
+        await tester.pumpAndSettle();
+        expect(find.byType(PaywallScreen), findsNothing, reason: 'automatic');
+
+        openPaywall(context, trigger: trigger, explicit: true).ignore();
+        await tester.pumpAndSettle();
+        expect(find.byType(PaywallScreen), findsOneWidget);
+        // The flag is used up by that call.
+        await tester.tap(find.byKey(const Key('paywall_close')));
+        await tester.pumpAndSettle();
+        openPaywall(context, trigger: trigger).ignore();
+        await tester.pumpAndSettle();
+        expect(find.byType(PaywallScreen), findsNothing);
+      });
+    }
+  });
+
   group('explicit actions always open it', () {
     for (final trigger in [
       PaywallTrigger.profile,

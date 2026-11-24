@@ -81,7 +81,10 @@ void main() {
     expect(a.isExpired(DateTime(2026, 1, 1, 10, 10)), isTrue);
     expect(a.isExpired(DateTime(2026, 1, 1, 10, 9)), isFalse);
     final back = InProgressAttempt.tryFromMap(a.toMap())!;
-    expect(back.deadline, a.deadline);
+    expect(
+      back.remaining(DateTime(2026, 1, 1, 10, 4)),
+      a.remaining(DateTime(2026, 1, 1, 10, 4)),
+    );
   });
 
   test('UserSettings defaults and roundtrip', () {

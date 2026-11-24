@@ -18,6 +18,9 @@ class FakeGateway implements PurchasesGateway {
   /// purchase of the user then).
   ServerEntitlement? entitlementAfterSync;
 
+  /// While set, [getEntitlement] waits for it (a slow answer).
+  Completer<void>? entitlementGate;
+
   List<PaywallPackage> offering = const [];
   GatewayPurchase purchaseResult = const GatewayPurchase(
     GatewayPurchaseStatus.cancelled,
@@ -42,8 +45,10 @@ class FakeGateway implements PurchasesGateway {
   @override
   Future<ServerEntitlement> getEntitlement() async {
     getEntitlementCalls++;
+    final answer = entitlement;
+    await entitlementGate?.future;
     _check();
-    return entitlement;
+    return answer;
   }
 
   @override

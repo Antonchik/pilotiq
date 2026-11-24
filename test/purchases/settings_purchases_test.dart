@@ -85,7 +85,7 @@ void main() {
     await tester.ensureVisible(_key('settings_manage_subscription'));
     expect(
       find.text(
-        'To cancel or change a subscription, open your App Store or Google Play account settings.',
+        'To cancel or change a subscription, open the subscriptions of your Google Play account.',
       ),
       findsOneWidget,
     );

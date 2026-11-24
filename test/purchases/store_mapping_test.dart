@@ -260,6 +260,37 @@ void main() {
     });
   });
 
+  group('prepaid plans', () {
+    test('do not renew: no period, no renewal, no trial', () {
+      final p = mapPackage(
+        _package(
+          _product(
+            period: 'P3M',
+            option: rc.SubscriptionOption(
+              'opt',
+              'p:base',
+              'p',
+              const [],
+              const [],
+              true,
+              null,
+              true,
+              null,
+              _phase(rc.PeriodUnit.day, 3),
+              null,
+              null,
+              null,
+            ),
+          ),
+        ),
+        platform: TargetPlatform.android,
+      );
+      expect(p.isSubscription, isFalse);
+      expect(p.period, isNull);
+      expect(p.introOffer, isNull);
+    });
+  });
+
   group('introductory offer', () {
     final iosTrial = rc.IntroductoryPrice(
       0,

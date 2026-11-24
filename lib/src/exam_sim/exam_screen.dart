@@ -149,16 +149,26 @@ class _ExamBodyState extends ConsumerState<_ExamBody>
   /// Asks before the screen is left while the exam is running (or its result
   /// is being stored). Answers that could not be stored are stored once more
   /// first; if that fails again the dialog says they will be lost.
-  Future<void> _confirmLeave({ExamLeave? ending}) async {
+  Future<void> _confirmLeave({bool ending = false}) async {
     final local = AppLocalizations.of(context)!;
-    final saved = ending != null ? true : await _controller.flushProgress();
-    if (!mounted) return;
-    final body = switch (ending) {
-      ExamLeave.resultSaved => local.examLeaveResultSavedBody,
-      ExamLeave.endingStored => local.examLeaveUnsavedResultBody,
-      ExamLeave.endingNotStored => local.examLeaveNotMarkedBody,
-      null => saved ? local.examLeaveBody : local.examLeaveUnsavedBody,
-    };
+    String body;
+    if (ending) {
+      await _controller.flushForLeave();
+      if (!mounted) return;
+      final kind = ref.read(examControllerProvider).requireValue.leave;
+      body = switch (kind) {
+        ExamLeave.resultSaved => local.examLeaveResultSavedBody,
+        ExamLeave.endingStored => local.examLeaveUnsavedResultBody,
+        ExamLeave.continueSaved => local.examLeaveNotMarkedBody,
+        ExamLeave.continueLost => local.examLeaveContinueLostBody,
+        ExamLeave.timeoutSaved => local.examLeaveTimeoutSavedBody,
+        ExamLeave.timeoutLost => local.examLeaveTimeoutLostBody,
+      };
+    } else {
+      final saved = await _controller.flushProgress();
+      if (!mounted) return;
+      body = saved ? local.examLeaveBody : local.examLeaveUnsavedBody;
+    }
     final leave = await _dialog<bool>(
       (ctx) => AlertDialog(
         scrollable: true,
@@ -271,7 +281,7 @@ class _ExamBodyState extends ConsumerState<_ExamBody>
         // While the result is being stored (no error yet) the spinner is
         // shown and leaving waits; only a failure asks the user.
         if (ending) {
-          if (s.finishFailed) _confirmLeave(ending: s.leave);
+          if (s.finishFailed) _confirmLeave(ending: true);
           return;
         }
         _confirmLeave();

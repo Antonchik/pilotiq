@@ -282,4 +282,50 @@ void main() {
       expect((await flaky.dailyStat(DateTime(2026, 5, 4))).answered, 0);
     },
   );
+
+  test('an old ending note without a clock counts the time as before', () {
+    final byId = {for (final q in h.questions) q.id: q};
+    final source = InProgressAttempt(
+      id: 'old',
+      licence: Licence.ppla,
+      subject: SubjectId.communications,
+      startedAt: DateTime(2026, 5, 1, 12),
+      durationSec: 1800,
+      questionIds: [h.questions.first.id],
+      closing: AttemptReason.finished,
+    );
+    final a = ExamFinalizer.buildAttempt(
+      source: source,
+      bank: byId,
+      now: DateTime(2026, 5, 1, 12, 10),
+      reason: AttemptReason.finished,
+    );
+    expect(a.durationSec, 600);
+    expect(a.finishedAt, DateTime(2026, 5, 1, 12, 10));
+  });
+
+  test('the end is never before the start plus the time used', () {
+    final byId = {for (final q in h.questions) q.id: q};
+    final start = DateTime(2026, 5, 1, 12);
+    final source = InProgressAttempt(
+      id: 'back',
+      licence: Licence.ppla,
+      subject: SubjectId.communications,
+      startedAt: start,
+      durationSec: 1800,
+      questionIds: [h.questions.first.id],
+      closing: AttemptReason.finished,
+      elapsedMs: 600000,
+      // The clock was set back a day before the end.
+      lastSeenAt: start.subtract(const Duration(days: 1)),
+    );
+    final a = ExamFinalizer.buildAttempt(
+      source: source,
+      bank: byId,
+      now: start,
+      reason: AttemptReason.finished,
+    );
+    expect(a.finishedAt, start.add(const Duration(minutes: 10)));
+    expect(a.durationSec, 600);
+  });
 }

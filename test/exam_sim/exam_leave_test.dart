@@ -200,4 +200,112 @@ void main() {
     expect(await h.unfinished(), isNull);
     expect(await h.attempts(), hasLength(1));
   });
+
+  /// The ending cannot be stored at all (storage down). Answers were stored
+  /// ([progressOk]) or not. Reason: the button or the time.
+  Future<void> endingDown(
+    WidgetTester tester, {
+    required bool progressOk,
+    required bool timeout,
+  }) async {
+    await h.pump(tester);
+    await h.open(tester);
+    await h.start(tester);
+    flaky.failInProgressAlways = !progressOk;
+    for (var i = 0; i < 4; i++) {
+      await tester.tap(find.byKey(const Key('answer_0')));
+      await tester.pump();
+      await tester.tap(find.byKey(const Key('exam_next')));
+      await settle(tester);
+    }
+    flaky.failInProgressAlways = true;
+    flaky.failAttemptSaves = 100;
+    if (timeout) {
+      await h.advance(tester, const Duration(minutes: 31));
+      expect(find.byKey(const Key('exam_finish_error')), findsOneWidget);
+    } else {
+      await h.advance(tester, const Duration(minutes: 5));
+      await failToFinish(tester);
+    }
+    await tester.pageBack();
+    await settle(tester);
+  }
+
+  Future<void> leaveAndReopen(WidgetTester tester) async {
+    await tester.tap(find.byKey(const Key('exam_leave_confirm')));
+    await settle(tester);
+    flaky.failInProgressAlways = false;
+    flaky.failAttemptSaves = 0;
+    await h.open(tester);
+  }
+
+  testWidgets('(a) the button, answers stored: the exam can be continued '
+      'with all answers', (tester) async {
+    await endingDown(tester, progressOk: true, timeout: false);
+    expect(find.textContaining('but your answers are'), findsOneWidget);
+    await leaveAndReopen(tester);
+    expect(find.byKey(const Key('exam_resume')), findsOneWidget);
+    expect(find.textContaining('4 of 12 answered'), findsOneWidget);
+  });
+
+  testWidgets('(b) the button, answers not stored: the dialog says they are '
+      'lost and the exam continues without them', (tester) async {
+    await endingDown(tester, progressOk: false, timeout: false);
+    expect(find.textContaining('latest answers will be lost'), findsOneWidget);
+    expect(find.textContaining('last saved state'), findsOneWidget);
+    await leaveAndReopen(tester);
+    expect(find.byKey(const Key('exam_resume')), findsOneWidget);
+    expect(find.textContaining('0 of 12 answered'), findsOneWidget);
+  });
+
+  testWidgets('(c) time is up, answers stored: the result comes from them '
+      'when the exam is opened', (tester) async {
+    await endingDown(tester, progressOk: true, timeout: true);
+    expect(
+      find.textContaining('calculated from the saved answers'),
+      findsOneWidget,
+    );
+    expect(find.textContaining('will not count'), findsNothing);
+    await leaveAndReopen(tester);
+    expect(find.byKey(const Key('exam_resume')), findsNothing);
+    final a = (await h.attempts()).single;
+    expect(a.reason, AttemptReason.timeout);
+    expect(a.answers.values.whereType<int>(), hasLength(4));
+  });
+
+  testWidgets('(d) time is up, answers not stored: they do not count, and '
+      'the dialog says so', (tester) async {
+    await endingDown(tester, progressOk: false, timeout: true);
+    expect(find.textContaining('will not count'), findsOneWidget);
+    await leaveAndReopen(tester);
+    final a = (await h.attempts()).single;
+    expect(a.reason, AttemptReason.timeout);
+    expect(a.answers.values.whereType<int>(), isEmpty);
+  });
+
+  testWidgets('if the storage works again when the dialog is about to '
+      'open, the answers are stored first and the text says so', (
+    tester,
+  ) async {
+    await h.pump(tester);
+    await h.open(tester);
+    await h.start(tester);
+    flaky.failInProgressAlways = true;
+    await tester.tap(find.byKey(const Key('answer_0')));
+    await settle(tester);
+    flaky.failAttemptSaves = 100;
+    await failToFinish(tester);
+
+    flaky.failInProgressAlways = false;
+    await tester.pageBack();
+    await settle(tester);
+
+    expect(find.textContaining('latest answers will be lost'), findsNothing);
+    expect(find.textContaining('but your answers are'), findsOneWidget);
+    await tester.tap(find.byKey(const Key('exam_leave_confirm')));
+    await settle(tester);
+    flaky.failAttemptSaves = 0;
+    await h.open(tester);
+    expect(find.textContaining('1 of 12 answered'), findsOneWidget);
+  });
 }

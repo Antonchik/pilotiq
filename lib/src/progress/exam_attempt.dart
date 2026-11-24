@@ -199,8 +199,6 @@ class InProgressAttempt {
   /// then only be finished, never continued.
   final AttemptReason? closing;
 
-  DateTime get deadline => startedAt.add(Duration(seconds: durationSec));
-
   /// Time left at [now], always between zero and the full duration. Time
   /// used up is never given back, however the clock was set.
   Duration remaining(DateTime now) => clock.advance(now).remaining;

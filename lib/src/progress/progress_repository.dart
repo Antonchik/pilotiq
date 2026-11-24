@@ -288,12 +288,23 @@ class ProgressRepository {
 
     final before =
         _readProgress(progress.get(qid)) ?? QuestionProgress(qid: qid);
-    final after = _leitner.answer(
+    var after = _leitner.answer(
       before,
       correct: correct,
       now: now,
       examDate: examDate,
     );
+    final last = before.lastAnsweredAt;
+    if (attemptId != null && last != null && last.isAfter(now)) {
+      // An exam answer counted late: the question was answered since the exam.
+      // The counters take it in, but the newer state of the question (box,
+      // streak, next review, last answer) is not moved back.
+      after = before.copyWith(
+        seen: before.seen + 1,
+        correct: before.correct + (correct ? 1 : 0),
+        wrong: before.wrong + (correct ? 0 : 1),
+      );
+    }
     final key = DailyStat.keyFor(now);
     final stat = _readDaily(daily.get(key)) ?? DailyStat(date: key);
 

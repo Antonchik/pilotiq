@@ -105,10 +105,15 @@ class ExamFinalizer {
     // (closing), the stored clock is the moment of the click or of the
     // expiry; otherwise the clock runs up to [now]. A later discovery (app
     // closed, storage failed) never stretches it.
-    final clock = source.closing != null
+    final clock = source.closing != null && source.lastSeenAt != null
         ? source.clock
         : source.clock.advance(now);
-    final finishedAt = clock.seenAt;
+    // Never earlier than the start plus the time used (a clock that was set
+    // back must not put the end before the beginning).
+    final earliest = source.startedAt.add(clock.elapsed);
+    final finishedAt = clock.seenAt.isBefore(earliest)
+        ? earliest
+        : clock.seenAt;
     final durationSec = clock.elapsed.inSeconds;
     return ExamAttempt(
       id: source.id,
@@ -342,9 +347,15 @@ class ExamState {
   ].length;
 
   /// What is true if the user leaves while the result is not stored.
-  ExamLeave get leave => attemptStored
-      ? ExamLeave.resultSaved
-      : (markerStored ? ExamLeave.endingStored : ExamLeave.endingNotStored);
+  ExamLeave get leave {
+    if (attemptStored) return ExamLeave.resultSaved;
+    if (markerStored) return ExamLeave.endingStored;
+    final timeout = attempt?.reason == AttemptReason.timeout;
+    if (timeout) {
+      return persistFailed ? ExamLeave.timeoutLost : ExamLeave.timeoutSaved;
+    }
+    return persistFailed ? ExamLeave.continueLost : ExamLeave.continueSaved;
+  }
 
   ExamState copyWith({
     ExamPhase? phase,
@@ -397,9 +408,21 @@ enum ExamLeave {
   /// result is stored the next time it is opened.
   endingStored,
 
-  /// Nothing about the ending is stored: the exam can be continued and its
-  /// time keeps running.
-  endingNotStored,
+  /// Nothing about the ending is stored, the reason is the button and the
+  /// answers are stored: the exam can be continued, the time keeps running.
+  continueSaved,
+
+  /// As [continueSaved], but the latest answers are not stored and are lost;
+  /// the exam continues from the last stored state.
+  continueLost,
+
+  /// The time is over, nothing about the ending is stored, the answers are:
+  /// the result is calculated from them when the exam is opened again.
+  timeoutSaved,
+
+  /// As [timeoutSaved], but the latest answers are not stored and will not
+  /// count.
+  timeoutLost,
 }
 
 /// Why the result screen carries a note.
@@ -864,6 +887,35 @@ class ExamController extends AsyncNotifier<ExamState> {
       return false;
     }
     return !(state.value?.persistFailed ?? false);
+  }
+
+  /// Before the dialog on leaving while the ending is not stored: tries once
+  /// more to store the answers that could not be stored, so that the dialog
+  /// tells the truth about them.
+  Future<void> flushForLeave() async {
+    final s = state.value;
+    if (s == null) return;
+    if (s.phase == ExamPhase.running) {
+      await flushProgress();
+      return;
+    }
+    if (s.phase != ExamPhase.finishing ||
+        s.attemptStored ||
+        s.markerStored ||
+        !s.persistFailed) {
+      return;
+    }
+    try {
+      await _persistFuture;
+    } on Object {
+      // not important here
+    }
+    try {
+      await _repo.saveInProgressAttempt(_snapshot(s));
+      _mark(persistFailed: false);
+    } on Object catch (e) {
+      debugPrint('Could not store the exam progress: $e');
+    }
   }
 
   // Finishing ------------------------------------------------------------------

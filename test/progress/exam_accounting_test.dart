@@ -125,4 +125,27 @@ void main() {
       );
     });
   });
+
+  test('a late exam answer does not move back a newer state of the '
+      'question', () async {
+    final exam = DateTime.utc(2026, 5, 1, 10, 20);
+    await repo.saveAttempt(attempt(unrecorded: const ['a']));
+    // The question was practised after the exam, before the late counting.
+    final later = DateTime.utc(2026, 5, 3, 9);
+    await repo.recordAnswer(Licence.ppla, 'a', true, later);
+    await repo.recordAnswer(Licence.ppla, 'a', true, later);
+    final before = (await repo.progressOf(Licence.ppla, 'a'))!;
+
+    await repo.recordAttemptAnswer('att', 'a', correct: false, now: exam);
+
+    final after = (await repo.progressOf(Licence.ppla, 'a'))!;
+    expect(after.seen, before.seen + 1);
+    expect(after.wrong, before.wrong + 1);
+    expect(after.correct, before.correct);
+    expect(after.box, before.box);
+    expect(after.consecutiveCorrect, before.consecutiveCorrect);
+    expect(after.dueAt, before.dueAt);
+    expect(after.lastAnsweredAt, before.lastAnsweredAt);
+    expect((await repo.attempts(Licence.ppla)).single.unrecorded, isEmpty);
+  });
 }

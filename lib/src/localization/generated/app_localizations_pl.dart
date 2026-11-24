@@ -973,7 +973,19 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get examLeaveNotMarkedBody =>
-      'Nie udało się też zapisać zakończenia egzaminu. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas nadal płynie.';
+      'Nie udało się zapisać zakończenia egzaminu, ale odpowiedzi są zapisane. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas nadal płynie.';
+
+  @override
+  String get examLeaveContinueLostBody =>
+      'Nie udało się zapisać zakończenia egzaminu ani ostatnich odpowiedzi. Ostatnie odpowiedzi zostaną utracone. Jeśli wyjdziesz, egzamin będzie można kontynuować od ostatniego zapisanego stanu, a czas nadal płynie.';
+
+  @override
+  String get examLeaveTimeoutSavedBody =>
+      'Czas minął, ale nie udało się jeszcze zapisać wyniku. Jeśli wyjdziesz, zostanie obliczony z zapisanych odpowiedzi przy następnym otwarciu egzaminu.';
+
+  @override
+  String get examLeaveTimeoutLostBody =>
+      'Czas minął, ale nie udało się jeszcze zapisać wyniku. Jeśli wyjdziesz, zostanie obliczony z zapisanych odpowiedzi przy następnym otwarciu egzaminu. Ostatnie odpowiedzi nie zostały zapisane i nie zostaną uwzględnione.';
 
   @override
   String get reminderChannelName => 'Przypomnienia o nauce';
