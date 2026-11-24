@@ -1,0 +1,147 @@
+[
+ {
+  "key": "PL010-0226#1a030b4b",
+  "verdict": "PASS",
+  "note": "Zgodne z FCL.025(c)(1) i (c)(1)(i). Ostrzeżenie validate akceptowalne: zdanie zamykające „Okresy podane w ppkt (i) i (ii) liczy się…” należy do pkt (c)(1) (odnosi się do (i) i (ii)), a extractor dołączył je do zakresu (iii); loc FCL.025(c)(1) jest merytorycznie poprawny, (iii) byłby błędny."
+ },
+ {
+  "key": "PL010-0229#93f53bee",
+  "verdict": "PASS",
+  "note": "FCL.915(a): 18 lat; pułapka FCL.200 poprawna. Dla SPL/BPL (licencje w linkach) SFCL/BFCL też wymagają 18 lat dla instruktora – brak sprzeczności."
+ },
+ {
+  "key": "PL010-0227#98403277",
+  "verdict": "PASS",
+  "note": "FCL.625(d) dosłownie potwierdza klucz."
+ },
+ {
+  "key": "PL010-0403#22537431",
+  "verdict": "PASS",
+  "note": "FCL.810(a)(1)(ii): 5 h nocą, w tym 3 h z instruktorem; pułapka poprawna."
+ },
+ {
+  "key": "PL010-0404#7c5ce532",
+  "verdict": "PASS",
+  "note": "FCL.810(a)(1)(ii) – 50 km (27 NM); dodatkowe zdanie o 6 miesiącach w DTO/ATO poparte FCL.810(a)(1)."
+ },
+ {
+  "key": "PL010-0407#1f3aeceb",
+  "verdict": "PASS",
+  "note": "FCL.200 i art. 96 ust. 2 pkt 4 – 17 lat; pułapka art. 96 ust. 2 pkt 5 poprawna."
+ },
+ {
+  "key": "PL010-0408#5e00cb49",
+  "verdict": "PASS",
+  "note": "art. 96 ust. 2 pkt 4/5/6 i FCL.200 – zgodne."
+ },
+ {
+  "key": "PL010-0426#ce5130ce",
+  "verdict": "PASS",
+  "note": "FCL.400.A – MPL 18 lat; pułapka FCL.200 poprawna."
+ },
+ {
+  "key": "PL010-0427#93f53bee",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: ten sam fp (93f53bee), identyczne pytanie i odpowiedzi co 0229#93f53bee."
+ },
+ {
+  "key": "PL010-0425#9575bd85",
+  "verdict": "PASS",
+  "note": "FCL.205.A(a)/(b) – zgodne; „operacje niekomercyjne” ≈ „cele niezarobkowe” w kluczu, różnica nazwana w tekście. Osobny wpis zamiast sameAs dopuszczalny (inny 4. dystraktor, inny szyk pytania)."
+ },
+ {
+  "key": "PL010-0425#ea008287",
+  "verdict": "PASS",
+  "note": "Jak 0425#9575bd85; tekst pasuje również do dystraktora o przewozie odpłatnym (pułapka o wynagrodzeniu)."
+ },
+ {
+  "key": "PL010-0463#2bb6a2c9",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a): 5 h na FSTD – zgodne."
+ },
+ {
+  "key": "PL010-0463#19d61118",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: wariant rawMixed z tym samym sensem (maks. 5 h na urządzeniu treningowym z 45 h), te same liczby w dystraktorach (15/10/7); tekst oryginału pasuje bez zmian."
+ },
+ {
+  "key": "PL010-0465#6e9f6b50",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a) – 45 h bez podziału na klasy; dystraktory mają inne liczby, brak sporu."
+ },
+ {
+  "key": "PL010-0465#b368e1cc",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a), (a)(1), (a)(2) – zgodne."
+ },
+ {
+  "key": "PL010-0466#877140b5",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a)(1) – 25 h z instruktorem."
+ },
+ {
+  "key": "PL010-0466#94bc8590",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a)(1) – 25 h; dystraktory 30/15/10 h błędne niezależnie od klasy."
+ },
+ {
+  "key": "PL010-0467#3b832689",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a)(1) – 25 h; tekst trafnie wskazuje rozbieżność PL (wielosilnikowe) / EN (jednosilnikowe) w kluczu. Pozostałe opcje mają złe liczby, więc klucz jest jedyną odpowiedzią z 25 h – sporu nie ma (słowo „wielosilnikowe” w PL to błąd tłumaczenia, por. FCL.720.A(a)(1))."
+ },
+ {
+  "key": "PL010-0467#44712b6f",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: różnica tylko „to/do” w pytaniu, odpowiedzi identyczne."
+ },
+ {
+  "key": "PL010-0468#31cfb564",
+  "verdict": "FIX",
+  "note": "Spór nieuzasadniony: dystraktor „10 h przy szkoleniu na samolotach wielosilnikowych tłokowych” nie opisuje możliwego szkolenia PPL(A), bo FCL.720.A(a)(1): „Osoba ubiegająca się o wydanie pierwszego uprawnienia na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową, musi wykonać co najmniej 70 godzin lotu jako pilot dowódca na samolotach.” Klucz (SEP) jest więc jedyną zgodną odpowiedzią. Poprawka: disputeNote = null; drugie zdanie zastąpić: „Pułapka: wariant z samolotami wielosilnikowymi tłokowymi nie pasuje do kandydata na PPL(A), bo pierwsze uprawnienie na klasę samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca na samolotach (pkt FCL.720.A lit. a) pkt 1).” i dodać ref EU-1178-2011 / FCL.720.A(a)(1) z powyższym quote."
+ },
+ {
+  "key": "PL010-0468#6afb94dc",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a)(2) – 10 h solo pod nadzorem, w tym 5 h nawigacyjnych."
+ },
+ {
+  "key": "PL010-0470#0298d86b",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a)(2) – 5 h samodzielnych lotów nawigacyjnych; pułapka 10 h poprawna."
+ },
+ {
+  "key": "PL010-0470#2013084b",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: różnica tylko „to/do” w pytaniu."
+ },
+ {
+  "key": "PL010-0471#e96c6af7",
+  "verdict": "PASS",
+  "note": "FCL.210.A(a)(2) – 270 km (150 NM), dwa lądowania z pełnym zatrzymaniem na lotniskach innych niż odlotu; pułapka poprawna."
+ },
+ {
+  "key": "PL010-0534#085740df",
+  "verdict": "PASS",
+  "note": "FCL.210.A(d): „z wyjątkiem balonów” – klucz „nie ma takiej możliwości” zgodny; „w ten sposób” trafnie zawęża wniosek."
+ },
+ {
+  "key": "PL010-0535#e2127d14",
+  "verdict": "PASS",
+  "note": "FCL.210.A(d) nie ogranicza „licencji pilota na inną kategorię” do licencji części FCL; licencja wiatrakowcowa krajowa (art. 94 ust. 6 pkt 1 lit. k, przepis przejściowy rozp. 1178/2011 przewiduje zaliczanie krajowych licencji wiatrakowcowych do 18.02.2028) dotyczy innej kategorii (wiatrakowce mają w części FCL odrębną licencję GPL). Klucz zgodny, lit. k trafnie dobrana do „wiatrakowcowego zawodowego”."
+ },
+ {
+  "key": "PL010-0537#f04c5291",
+  "verdict": "PASS",
+  "note": "FCL.210.A(d) + FCL.010 (szybowiec – kategoria) – klucz „nie więcej niż 10 h” zgodny. Uwaga o SPL z przywilejami TMG (lit. c)) trafna i poparta quote; żaden dystraktor nie odpowiada schematowi z lit. c) (45→15 h), więc sporu brak."
+ },
+ {
+  "key": "PL010-0538#590d3fee",
+  "verdict": "PASS",
+  "note": "FCL.210.A(d) + FCL.010 (śmigłowiec – kategoria) – zgodne."
+ },
+ {
+  "key": "PL010-0539#a1cc18b0",
+  "verdict": "FIX",
+  "note": "Locator/treść nieprecyzyjne: pytanie dotyczy ogólnie „licencji pilota wiatrakowcowego”, a tekst wskazuje art. 94 ust. 6 pkt 1 lit. k, czyli tylko „pilot wiatrakowcowy zawodowy”. Poprawka: w tekście „którą wymienia art. 94 ust. 6 pkt 1 lit. j i k Prawa lotniczego”, a quote refu art. 94 ust. 6 pkt 1 zmienić na „j) pilot wiatrakowcowy turystyczny, k) pilot wiatrakowcowy zawodowy,” (dosłownie w korpusie, dwa sąsiednie wiersze). Merytorycznie (FCL.210.A(d), wyłączenie lit. a) pkt 2) bez zastrzeżeń."
+ }
+]
