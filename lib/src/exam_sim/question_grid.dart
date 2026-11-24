@@ -68,8 +68,7 @@ class QuestionGrid extends StatelessWidget {
                 button: true,
                 selected: current,
                 excludeSemantics: true,
-                label:
-                    '${local.examGridCell(i + 1)}, ${states.join(', ')}',
+                label: '${local.examGridCell(i + 1)}, ${states.join(', ')}',
                 onTap: () => onSelect(i),
                 child: InkWell(
                   key: Key('grid_cell_$i'),

@@ -13,14 +13,13 @@ String formatClock(Duration d) {
 }
 
 /// Whole minutes, rounded up (for labels read by a screen reader).
-int ceilMinutes(Duration d) =>
-    d.isNegative ? 0 : (d.inSeconds + 59) ~/ 60;
+int ceilMinutes(Duration d) => d.isNegative ? 0 : (d.inSeconds + 59) ~/ 60;
 
 /// Local date and time of [d] in the language of the app.
 String formatDateTime(BuildContext context, DateTime d) {
   final local = d.toLocal();
   final m = MaterialLocalizations.of(context);
-  return '${m.formatMediumDate(local)}, '
+  return '${m.formatShortDate(local)}, '
       '${m.formatTimeOfDay(TimeOfDay.fromDateTime(local))}';
 }
 
@@ -38,17 +37,21 @@ class PassBadge extends StatelessWidget {
     final color = passed
         ? (dark ? Colors.green.shade300 : Colors.green.shade800)
         : (dark ? Colors.red.shade300 : Colors.red.shade800);
-    final style = (large
-            ? Theme.of(context).textTheme.headlineSmall
-            : Theme.of(context).textTheme.titleSmall)
-        ?.copyWith(color: color, fontWeight: FontWeight.bold);
+    final style =
+        (large
+                ? Theme.of(context).textTheme.headlineSmall
+                : Theme.of(context).textTheme.titleSmall)
+            ?.copyWith(color: color, fontWeight: FontWeight.bold);
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(passed ? Icons.check_circle : Icons.cancel, color: color),
         const SizedBox(width: 8),
         Flexible(
-          child: Text(passed ? local.examPassed : local.examFailed, style: style),
+          child: Text(
+            passed ? local.examPassed : local.examFailed,
+            style: style,
+          ),
         ),
       ],
     );

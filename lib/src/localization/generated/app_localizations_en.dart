@@ -592,6 +592,407 @@ class AppLocalizationsEn extends AppLocalizations {
       'Question texts are given as published by ULC.';
 
   @override
+  String get examScreenTitle => 'Exam simulation';
+
+  @override
+  String get examRulesHeading => 'Before you start';
+
+  @override
+  String examRulesQuestions(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions',
+      one: '$count question',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examRulesTime(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '$minutes minute',
+    );
+    return 'Time limit: $_temp0';
+  }
+
+  @override
+  String examRulesPass(int percent) {
+    return 'Pass mark: $percent% of all questions. An unanswered question counts as wrong.';
+  }
+
+  @override
+  String get examRulesNavigate =>
+      'You can move between questions freely and change your answers until you finish the exam.';
+
+  @override
+  String get examRulesNoFeedback =>
+      'The correct answer is not shown during the exam. Mark a question to come back to it later.';
+
+  @override
+  String get examRulesTimer =>
+      'The timer keeps running when you leave the app. When time runs out the exam ends and the result is saved.';
+
+  @override
+  String get examRulesFresh =>
+      'Every attempt draws a new random set of questions of this subject, spread across its topics.';
+
+  @override
+  String get examStartButton => 'Start exam';
+
+  @override
+  String get examStartFailed =>
+      'The exam could not be started because the attempt could not be saved on this device.';
+
+  @override
+  String get examSaveRetry => 'Retry';
+
+  @override
+  String get examLimitTitle => 'Free simulation used';
+
+  @override
+  String get examLimitBody =>
+      'You have used the free simulation of this subject. Premium gives unlimited simulations with history and topic breakdown.';
+
+  @override
+  String get examLimitHistory => 'Open history';
+
+  @override
+  String get examResumeTitle => 'Unfinished exam';
+
+  @override
+  String examResumeBody(int answered, int total, int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '$minutes minute',
+    );
+    return 'You have an exam in progress: $answered of $total answered, $_temp0 left.';
+  }
+
+  @override
+  String get examResumeContinue => 'Continue exam';
+
+  @override
+  String get examResumeFinish => 'Finish exam now';
+
+  @override
+  String examQuestionOf(int current, int total) {
+    return 'Question $current of $total';
+  }
+
+  @override
+  String examAnsweredCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count answered',
+      one: '$count answered',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examTimeLeftSemantics(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes left',
+      one: '$minutes minute left',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examTimeLow => 'Low time';
+
+  @override
+  String get examPrevious => 'Previous';
+
+  @override
+  String get examNext => 'Next';
+
+  @override
+  String get examFlagAdd => 'Mark to come back later';
+
+  @override
+  String get examFlagRemove => 'Marked: tap to unmark';
+
+  @override
+  String get examGridTooltip => 'Question grid';
+
+  @override
+  String get examFinishTooltip => 'Finish exam';
+
+  @override
+  String get examFinishButton => 'Finish exam';
+
+  @override
+  String examAnswerSemantics(int position, int total, String text) {
+    return 'Answer $position of $total: $text';
+  }
+
+  @override
+  String get examPersistError =>
+      'Your progress could not be saved on this device. Your answers are kept for now.';
+
+  @override
+  String get examGridTitle => 'Questions';
+
+  @override
+  String get examGridLegendAnswered => 'Answered';
+
+  @override
+  String get examGridLegendUnanswered => 'Not answered';
+
+  @override
+  String get examGridLegendFlagged => 'Marked';
+
+  @override
+  String get examGridClose => 'Close';
+
+  @override
+  String examGridCell(int number) {
+    return 'Question $number';
+  }
+
+  @override
+  String get examGridStateAnswered => 'answered';
+
+  @override
+  String get examGridStateUnanswered => 'not answered';
+
+  @override
+  String get examGridStateFlagged => 'marked to come back';
+
+  @override
+  String get examGridStateCurrent => 'current question';
+
+  @override
+  String get examFinishDialogTitle => 'Finish the exam?';
+
+  @override
+  String examFinishUnanswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions are not answered.',
+      one: '$count question is not answered.',
+      zero: 'All questions are answered.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examFinishUnansweredNote =>
+      'Questions without an answer count as wrong.';
+
+  @override
+  String examFinishFlagged(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions are marked to come back to.',
+      one: '$count question is marked to come back to.',
+      zero: 'No questions are marked.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examFinishKeepWorking => 'Keep working';
+
+  @override
+  String get examFinishConfirm => 'Finish exam';
+
+  @override
+  String get examLeaveTitle => 'Leave the exam?';
+
+  @override
+  String get examLeaveBody =>
+      'The timer keeps running. You can continue from the subject screen until time runs out.';
+
+  @override
+  String get examLeaveStay => 'Stay';
+
+  @override
+  String get examLeaveConfirm => 'Leave';
+
+  @override
+  String get examSavingResult => 'Saving your result…';
+
+  @override
+  String get examFinishSaveError =>
+      'Your result could not be saved yet. It is not shown as saved until it is.';
+
+  @override
+  String get examTimeUpNotice =>
+      'Time is up. The exam was finished automatically and your result was saved.';
+
+  @override
+  String get examExpiredOnOpenNotice =>
+      'Time ran out while the exam was not open. It was finished and saved automatically.';
+
+  @override
+  String get examResultTitle => 'Exam result';
+
+  @override
+  String get examPassed => 'PASSED';
+
+  @override
+  String get examFailed => 'NOT PASSED';
+
+  @override
+  String examResultCorrect(int correct, int total) {
+    return '$correct of $total correct';
+  }
+
+  @override
+  String examResultPassMark(int percent) {
+    return 'Pass mark: $percent%';
+  }
+
+  @override
+  String examResultTime(String time) {
+    return 'Time used: $time';
+  }
+
+  @override
+  String examResultUnanswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions without an answer (counted as wrong).',
+      one: '$count question without an answer (counted as wrong).',
+      zero: 'Every question was answered.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examBreakdownTitle => 'Results by topic';
+
+  @override
+  String examBreakdownRow(String topic, int correct, int total, int percent) {
+    return '$topic: $correct of $total ($percent%)';
+  }
+
+  @override
+  String get examTeaserTitle => 'Topic breakdown and answer review';
+
+  @override
+  String get examTeaserBody =>
+      'With Premium you see where you lose points, review every answer and train the questions you missed.';
+
+  @override
+  String get examReviewButton => 'Review answers';
+
+  @override
+  String get examTrainMistakes => 'Train mistakes of this attempt';
+
+  @override
+  String get examRepeat => 'Repeat exam';
+
+  @override
+  String get examHistoryButton => 'History';
+
+  @override
+  String get examReviewTitle => 'Answer review';
+
+  @override
+  String get examReviewFilterAll => 'All';
+
+  @override
+  String get examReviewFilterWrong => 'Wrong or unanswered';
+
+  @override
+  String examReviewQuestionNumber(int index, int total) {
+    return 'Question $index of $total';
+  }
+
+  @override
+  String get examReviewYourAnswer => 'Your answer';
+
+  @override
+  String get examReviewCorrectAnswer => 'Correct answer';
+
+  @override
+  String get examReviewNoAnswer => 'No answer given';
+
+  @override
+  String get examReviewMissing =>
+      'This question is no longer in the question bank.';
+
+  @override
+  String get examReviewMarkCorrect => 'Correct';
+
+  @override
+  String get examReviewMarkWrong => 'Wrong';
+
+  @override
+  String get examReviewMarkUnanswered => 'Not answered';
+
+  @override
+  String get examReviewEmptyWrong => 'No wrong answers in this attempt.';
+
+  @override
+  String get examReviewFlagged => 'Marked to come back';
+
+  @override
+  String get examHistoryTitle => 'Exam history';
+
+  @override
+  String get examHistoryEmpty =>
+      'No simulations yet. Your results will appear here.';
+
+  @override
+  String get examHistoryLegacy => 'Before version 2.0';
+
+  @override
+  String get examHistoryLoadError => 'The history could not be loaded.';
+
+  @override
+  String get examHistoryChartTitle => 'Last results';
+
+  @override
+  String examHistoryChartSemantics(String results) {
+    return 'Last results, oldest first: $results';
+  }
+
+  @override
+  String get examHistoryTimedOut => 'Time ran out';
+
+  @override
+  String examHistoryPassLine(int percent) {
+    return 'Pass mark $percent%';
+  }
+
+  @override
+  String examTileInProgress(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minutes',
+      one: '$minutes minute',
+    );
+    return 'Unfinished attempt, $_temp0 left';
+  }
+
+  @override
+  String examTileLastPassed(int percent) {
+    return 'Last result: $percent%, passed';
+  }
+
+  @override
+  String examTileLastFailed(int percent) {
+    return 'Last result: $percent%, not passed';
+  }
+
+  @override
   String practiceProgress(int current, int total) {
     return '$current / $total';
   }

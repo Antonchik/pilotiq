@@ -749,6 +749,526 @@
   "@aboutQuestionsNote": {
     "description": "Questions are not reworded"
   },
+  "examScreenTitle": "Exam simulation",
+  "@examScreenTitle": {
+    "description": "Title of the exam simulation screen"
+  },
+  "examRulesHeading": "Before you start",
+  "@examRulesHeading": {
+    "description": "Heading of the rules page"
+  },
+  "examRulesQuestions": "{count, plural, one{{count} question} other{{count} questions}}",
+  "@examRulesQuestions": {
+    "description": "Number of questions of the exam",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examRulesTime": "Time limit: {minutes, plural, one{{minutes} minute} other{{minutes} minutes}}",
+  "@examRulesTime": {
+    "description": "Time limit of the exam",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "examRulesPass": "Pass mark: {percent}% of all questions. An unanswered question counts as wrong.",
+  "@examRulesPass": {
+    "description": "Pass mark rule",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examRulesNavigate": "You can move between questions freely and change your answers until you finish the exam.",
+  "@examRulesNavigate": {
+    "description": "Navigation rule"
+  },
+  "examRulesNoFeedback": "The correct answer is not shown during the exam. Mark a question to come back to it later.",
+  "@examRulesNoFeedback": {
+    "description": "No feedback and flag rule"
+  },
+  "examRulesTimer": "The timer keeps running when you leave the app. When time runs out the exam ends and the result is saved.",
+  "@examRulesTimer": {
+    "description": "Timer rule"
+  },
+  "examRulesFresh": "Every attempt draws a new random set of questions of this subject, spread across its topics.",
+  "@examRulesFresh": {
+    "description": "Fresh sample rule"
+  },
+  "examStartButton": "Start exam",
+  "@examStartButton": {
+    "description": "Start button"
+  },
+  "examStartFailed": "The exam could not be started because the attempt could not be saved on this device.",
+  "@examStartFailed": {
+    "description": "Error when the attempt cannot be stored at start"
+  },
+  "examSaveRetry": "Retry",
+  "@examSaveRetry": {
+    "description": "Retry button of the save errors"
+  },
+  "examLimitTitle": "Free simulation used",
+  "@examLimitTitle": {
+    "description": "Title when the free exam is used"
+  },
+  "examLimitBody": "You have used the free simulation of this subject. Premium gives unlimited simulations with history and topic breakdown.",
+  "@examLimitBody": {
+    "description": "Body when the free exam is used"
+  },
+  "examLimitHistory": "Open history",
+  "@examLimitHistory": {
+    "description": "Button that opens the exam history"
+  },
+  "examResumeTitle": "Unfinished exam",
+  "@examResumeTitle": {
+    "description": "Title of the resume page"
+  },
+  "examResumeBody": "You have an exam in progress: {answered} of {total} answered, {minutes, plural, one{{minutes} minute} other{{minutes} minutes}} left.",
+  "@examResumeBody": {
+    "description": "Body of the resume page",
+    "placeholders": {
+      "answered": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "examResumeContinue": "Continue exam",
+  "@examResumeContinue": {
+    "description": "Resume button"
+  },
+  "examResumeFinish": "Finish exam now",
+  "@examResumeFinish": {
+    "description": "Finish the unfinished exam button"
+  },
+  "examQuestionOf": "Question {current} of {total}",
+  "@examQuestionOf": {
+    "description": "Position in the exam",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "examAnsweredCount": "{count, plural, one{{count} answered} other{{count} answered}}",
+  "@examAnsweredCount": {
+    "description": "Number of answered questions",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examTimeLeftSemantics": "{minutes, plural, one{{minutes} minute left} other{{minutes} minutes left}}",
+  "@examTimeLeftSemantics": {
+    "description": "Accessibility label of the timer",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "examTimeLow": "Low time",
+  "@examTimeLow": {
+    "description": "Shown when little time is left"
+  },
+  "examPrevious": "Previous",
+  "@examPrevious": {
+    "description": "Previous question button"
+  },
+  "examNext": "Next",
+  "@examNext": {
+    "description": "Next question button"
+  },
+  "examFlagAdd": "Mark to come back later",
+  "@examFlagAdd": {
+    "description": "Flag button"
+  },
+  "examFlagRemove": "Marked: tap to unmark",
+  "@examFlagRemove": {
+    "description": "Unflag button"
+  },
+  "examGridTooltip": "Question grid",
+  "@examGridTooltip": {
+    "description": "Tooltip of the grid button"
+  },
+  "examFinishTooltip": "Finish exam",
+  "@examFinishTooltip": {
+    "description": "Tooltip of the finish button"
+  },
+  "examFinishButton": "Finish exam",
+  "@examFinishButton": {
+    "description": "Finish button"
+  },
+  "examAnswerSemantics": "Answer {position} of {total}: {text}",
+  "@examAnswerSemantics": {
+    "description": "Accessibility label of an answer",
+    "placeholders": {
+      "position": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "text": {
+        "type": "String"
+      }
+    }
+  },
+  "examPersistError": "Your progress could not be saved on this device. Your answers are kept for now.",
+  "@examPersistError": {
+    "description": "Error when the running attempt cannot be stored"
+  },
+  "examGridTitle": "Questions",
+  "@examGridTitle": {
+    "description": "Title of the grid"
+  },
+  "examGridLegendAnswered": "Answered",
+  "@examGridLegendAnswered": {
+    "description": "Legend of the grid"
+  },
+  "examGridLegendUnanswered": "Not answered",
+  "@examGridLegendUnanswered": {
+    "description": "Legend of the grid"
+  },
+  "examGridLegendFlagged": "Marked",
+  "@examGridLegendFlagged": {
+    "description": "Legend of the grid"
+  },
+  "examGridClose": "Close",
+  "@examGridClose": {
+    "description": "Close button of the grid"
+  },
+  "examGridCell": "Question {number}",
+  "@examGridCell": {
+    "description": "Accessibility label of a grid cell",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "examGridStateAnswered": "answered",
+  "@examGridStateAnswered": {
+    "description": "State in the label of a grid cell"
+  },
+  "examGridStateUnanswered": "not answered",
+  "@examGridStateUnanswered": {
+    "description": "State in the label of a grid cell"
+  },
+  "examGridStateFlagged": "marked to come back",
+  "@examGridStateFlagged": {
+    "description": "State in the label of a grid cell"
+  },
+  "examGridStateCurrent": "current question",
+  "@examGridStateCurrent": {
+    "description": "State in the label of a grid cell"
+  },
+  "examFinishDialogTitle": "Finish the exam?",
+  "@examFinishDialogTitle": {
+    "description": "Title of the confirmation"
+  },
+  "examFinishUnanswered": "{count, plural, =0{All questions are answered.} one{{count} question is not answered.} other{{count} questions are not answered.}}",
+  "@examFinishUnanswered": {
+    "description": "Unanswered questions in the confirmation",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examFinishUnansweredNote": "Questions without an answer count as wrong.",
+  "@examFinishUnansweredNote": {
+    "description": "Note in the confirmation"
+  },
+  "examFinishFlagged": "{count, plural, =0{No questions are marked.} one{{count} question is marked to come back to.} other{{count} questions are marked to come back to.}}",
+  "@examFinishFlagged": {
+    "description": "Marked questions in the confirmation",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examFinishKeepWorking": "Keep working",
+  "@examFinishKeepWorking": {
+    "description": "Cancel of the confirmation"
+  },
+  "examFinishConfirm": "Finish exam",
+  "@examFinishConfirm": {
+    "description": "Confirm of the confirmation"
+  },
+  "examLeaveTitle": "Leave the exam?",
+  "@examLeaveTitle": {
+    "description": "Title of the leave dialog"
+  },
+  "examLeaveBody": "The timer keeps running. You can continue from the subject screen until time runs out.",
+  "@examLeaveBody": {
+    "description": "Body of the leave dialog"
+  },
+  "examLeaveStay": "Stay",
+  "@examLeaveStay": {
+    "description": "Stay button"
+  },
+  "examLeaveConfirm": "Leave",
+  "@examLeaveConfirm": {
+    "description": "Leave button"
+  },
+  "examSavingResult": "Saving your result…",
+  "@examSavingResult": {
+    "description": "Shown while the result is saved"
+  },
+  "examFinishSaveError": "Your result could not be saved yet. It is not shown as saved until it is.",
+  "@examFinishSaveError": {
+    "description": "Error when the attempt cannot be stored at the end"
+  },
+  "examTimeUpNotice": "Time is up. The exam was finished automatically and your result was saved.",
+  "@examTimeUpNotice": {
+    "description": "Notice after a timeout"
+  },
+  "examExpiredOnOpenNotice": "Time ran out while the exam was not open. It was finished and saved automatically.",
+  "@examExpiredOnOpenNotice": {
+    "description": "Notice after an expired attempt was restored"
+  },
+  "examResultTitle": "Exam result",
+  "@examResultTitle": {
+    "description": "Title of the result screen"
+  },
+  "examPassed": "PASSED",
+  "@examPassed": {
+    "description": "Passed badge"
+  },
+  "examFailed": "NOT PASSED",
+  "@examFailed": {
+    "description": "Failed badge"
+  },
+  "examResultCorrect": "{correct} of {total} correct",
+  "@examResultCorrect": {
+    "description": "Score line",
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "examResultPassMark": "Pass mark: {percent}%",
+  "@examResultPassMark": {
+    "description": "Pass mark line",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examResultTime": "Time used: {time}",
+  "@examResultTime": {
+    "description": "Time used line",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "examResultUnanswered": "{count, plural, =0{Every question was answered.} one{{count} question without an answer (counted as wrong).} other{{count} questions without an answer (counted as wrong).}}",
+  "@examResultUnanswered": {
+    "description": "Unanswered questions line",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "examBreakdownTitle": "Results by topic",
+  "@examBreakdownTitle": {
+    "description": "Title of the topic breakdown"
+  },
+  "examBreakdownRow": "{topic}: {correct} of {total} ({percent}%)",
+  "@examBreakdownRow": {
+    "description": "Row of the topic breakdown",
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      },
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examTeaserTitle": "Topic breakdown and answer review",
+  "@examTeaserTitle": {
+    "description": "Title of the premium teaser"
+  },
+  "examTeaserBody": "With Premium you see where you lose points, review every answer and train the questions you missed.",
+  "@examTeaserBody": {
+    "description": "Body of the premium teaser"
+  },
+  "examReviewButton": "Review answers",
+  "@examReviewButton": {
+    "description": "Review button"
+  },
+  "examTrainMistakes": "Train mistakes of this attempt",
+  "@examTrainMistakes": {
+    "description": "Train mistakes button"
+  },
+  "examRepeat": "Repeat exam",
+  "@examRepeat": {
+    "description": "Repeat button"
+  },
+  "examHistoryButton": "History",
+  "@examHistoryButton": {
+    "description": "History button"
+  },
+  "examReviewTitle": "Answer review",
+  "@examReviewTitle": {
+    "description": "Title of the review"
+  },
+  "examReviewFilterAll": "All",
+  "@examReviewFilterAll": {
+    "description": "Filter of the review"
+  },
+  "examReviewFilterWrong": "Wrong or unanswered",
+  "@examReviewFilterWrong": {
+    "description": "Filter of the review"
+  },
+  "examReviewQuestionNumber": "Question {index} of {total}",
+  "@examReviewQuestionNumber": {
+    "description": "Heading of a reviewed question",
+    "placeholders": {
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "examReviewYourAnswer": "Your answer",
+  "@examReviewYourAnswer": {
+    "description": "Label in the review"
+  },
+  "examReviewCorrectAnswer": "Correct answer",
+  "@examReviewCorrectAnswer": {
+    "description": "Label in the review"
+  },
+  "examReviewNoAnswer": "No answer given",
+  "@examReviewNoAnswer": {
+    "description": "Label in the review"
+  },
+  "examReviewMissing": "This question is no longer in the question bank.",
+  "@examReviewMissing": {
+    "description": "Shown when the bank no longer has the question"
+  },
+  "examReviewMarkCorrect": "Correct",
+  "@examReviewMarkCorrect": {
+    "description": "Result mark in the review"
+  },
+  "examReviewMarkWrong": "Wrong",
+  "@examReviewMarkWrong": {
+    "description": "Result mark in the review"
+  },
+  "examReviewMarkUnanswered": "Not answered",
+  "@examReviewMarkUnanswered": {
+    "description": "Result mark in the review"
+  },
+  "examReviewEmptyWrong": "No wrong answers in this attempt.",
+  "@examReviewEmptyWrong": {
+    "description": "Empty filtered review"
+  },
+  "examReviewFlagged": "Marked to come back",
+  "@examReviewFlagged": {
+    "description": "Mark in the review"
+  },
+  "examHistoryTitle": "Exam history",
+  "@examHistoryTitle": {
+    "description": "Title of the history"
+  },
+  "examHistoryEmpty": "No simulations yet. Your results will appear here.",
+  "@examHistoryEmpty": {
+    "description": "Empty history"
+  },
+  "examHistoryLegacy": "Before version 2.0",
+  "@examHistoryLegacy": {
+    "description": "Label of a legacy attempt"
+  },
+  "examHistoryLoadError": "The history could not be loaded.",
+  "@examHistoryLoadError": {
+    "description": "Error of the history"
+  },
+  "examHistoryChartTitle": "Last results",
+  "@examHistoryChartTitle": {
+    "description": "Title of the chart"
+  },
+  "examHistoryChartSemantics": "Last results, oldest first: {results}",
+  "@examHistoryChartSemantics": {
+    "description": "Accessibility label of the chart",
+    "placeholders": {
+      "results": {
+        "type": "String"
+      }
+    }
+  },
+  "examHistoryTimedOut": "Time ran out",
+  "@examHistoryTimedOut": {
+    "description": "Mark of an attempt that ended by timeout"
+  },
+  "examHistoryPassLine": "Pass mark {percent}%",
+  "@examHistoryPassLine": {
+    "description": "Label of the pass line",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examTileInProgress": "Unfinished attempt, {minutes, plural, one{{minutes} minute} other{{minutes} minutes}} left",
+  "@examTileInProgress": {
+    "description": "Status of the exam tile with an unfinished attempt",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "examTileLastPassed": "Last result: {percent}%, passed",
+  "@examTileLastPassed": {
+    "description": "Status of the exam tile",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "examTileLastFailed": "Last result: {percent}%, not passed",
+  "@examTileLastFailed": {
+    "description": "Status of the exam tile",
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
   "practiceProgress": "{current} / {total}",
   "@practiceProgress": {
     "description": "Position in the session",

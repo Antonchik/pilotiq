@@ -1064,6 +1064,576 @@ abstract class AppLocalizations {
   /// **'Question texts are given as published by ULC.'**
   String get aboutQuestionsNote;
 
+  /// Title of the exam simulation screen
+  ///
+  /// In en, this message translates to:
+  /// **'Exam simulation'**
+  String get examScreenTitle;
+
+  /// Heading of the rules page
+  ///
+  /// In en, this message translates to:
+  /// **'Before you start'**
+  String get examRulesHeading;
+
+  /// Number of questions of the exam
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} question} other{{count} questions}}'**
+  String examRulesQuestions(int count);
+
+  /// Time limit of the exam
+  ///
+  /// In en, this message translates to:
+  /// **'Time limit: {minutes, plural, one{{minutes} minute} other{{minutes} minutes}}'**
+  String examRulesTime(int minutes);
+
+  /// Pass mark rule
+  ///
+  /// In en, this message translates to:
+  /// **'Pass mark: {percent}% of all questions. An unanswered question counts as wrong.'**
+  String examRulesPass(int percent);
+
+  /// Navigation rule
+  ///
+  /// In en, this message translates to:
+  /// **'You can move between questions freely and change your answers until you finish the exam.'**
+  String get examRulesNavigate;
+
+  /// No feedback and flag rule
+  ///
+  /// In en, this message translates to:
+  /// **'The correct answer is not shown during the exam. Mark a question to come back to it later.'**
+  String get examRulesNoFeedback;
+
+  /// Timer rule
+  ///
+  /// In en, this message translates to:
+  /// **'The timer keeps running when you leave the app. When time runs out the exam ends and the result is saved.'**
+  String get examRulesTimer;
+
+  /// Fresh sample rule
+  ///
+  /// In en, this message translates to:
+  /// **'Every attempt draws a new random set of questions of this subject, spread across its topics.'**
+  String get examRulesFresh;
+
+  /// Start button
+  ///
+  /// In en, this message translates to:
+  /// **'Start exam'**
+  String get examStartButton;
+
+  /// Error when the attempt cannot be stored at start
+  ///
+  /// In en, this message translates to:
+  /// **'The exam could not be started because the attempt could not be saved on this device.'**
+  String get examStartFailed;
+
+  /// Retry button of the save errors
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get examSaveRetry;
+
+  /// Title when the free exam is used
+  ///
+  /// In en, this message translates to:
+  /// **'Free simulation used'**
+  String get examLimitTitle;
+
+  /// Body when the free exam is used
+  ///
+  /// In en, this message translates to:
+  /// **'You have used the free simulation of this subject. Premium gives unlimited simulations with history and topic breakdown.'**
+  String get examLimitBody;
+
+  /// Button that opens the exam history
+  ///
+  /// In en, this message translates to:
+  /// **'Open history'**
+  String get examLimitHistory;
+
+  /// Title of the resume page
+  ///
+  /// In en, this message translates to:
+  /// **'Unfinished exam'**
+  String get examResumeTitle;
+
+  /// Body of the resume page
+  ///
+  /// In en, this message translates to:
+  /// **'You have an exam in progress: {answered} of {total} answered, {minutes, plural, one{{minutes} minute} other{{minutes} minutes}} left.'**
+  String examResumeBody(int answered, int total, int minutes);
+
+  /// Resume button
+  ///
+  /// In en, this message translates to:
+  /// **'Continue exam'**
+  String get examResumeContinue;
+
+  /// Finish the unfinished exam button
+  ///
+  /// In en, this message translates to:
+  /// **'Finish exam now'**
+  String get examResumeFinish;
+
+  /// Position in the exam
+  ///
+  /// In en, this message translates to:
+  /// **'Question {current} of {total}'**
+  String examQuestionOf(int current, int total);
+
+  /// Number of answered questions
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} answered} other{{count} answered}}'**
+  String examAnsweredCount(int count);
+
+  /// Accessibility label of the timer
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes, plural, one{{minutes} minute left} other{{minutes} minutes left}}'**
+  String examTimeLeftSemantics(int minutes);
+
+  /// Shown when little time is left
+  ///
+  /// In en, this message translates to:
+  /// **'Low time'**
+  String get examTimeLow;
+
+  /// Previous question button
+  ///
+  /// In en, this message translates to:
+  /// **'Previous'**
+  String get examPrevious;
+
+  /// Next question button
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get examNext;
+
+  /// Flag button
+  ///
+  /// In en, this message translates to:
+  /// **'Mark to come back later'**
+  String get examFlagAdd;
+
+  /// Unflag button
+  ///
+  /// In en, this message translates to:
+  /// **'Marked: tap to unmark'**
+  String get examFlagRemove;
+
+  /// Tooltip of the grid button
+  ///
+  /// In en, this message translates to:
+  /// **'Question grid'**
+  String get examGridTooltip;
+
+  /// Tooltip of the finish button
+  ///
+  /// In en, this message translates to:
+  /// **'Finish exam'**
+  String get examFinishTooltip;
+
+  /// Finish button
+  ///
+  /// In en, this message translates to:
+  /// **'Finish exam'**
+  String get examFinishButton;
+
+  /// Accessibility label of an answer
+  ///
+  /// In en, this message translates to:
+  /// **'Answer {position} of {total}: {text}'**
+  String examAnswerSemantics(int position, int total, String text);
+
+  /// Error when the running attempt cannot be stored
+  ///
+  /// In en, this message translates to:
+  /// **'Your progress could not be saved on this device. Your answers are kept for now.'**
+  String get examPersistError;
+
+  /// Title of the grid
+  ///
+  /// In en, this message translates to:
+  /// **'Questions'**
+  String get examGridTitle;
+
+  /// Legend of the grid
+  ///
+  /// In en, this message translates to:
+  /// **'Answered'**
+  String get examGridLegendAnswered;
+
+  /// Legend of the grid
+  ///
+  /// In en, this message translates to:
+  /// **'Not answered'**
+  String get examGridLegendUnanswered;
+
+  /// Legend of the grid
+  ///
+  /// In en, this message translates to:
+  /// **'Marked'**
+  String get examGridLegendFlagged;
+
+  /// Close button of the grid
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get examGridClose;
+
+  /// Accessibility label of a grid cell
+  ///
+  /// In en, this message translates to:
+  /// **'Question {number}'**
+  String examGridCell(int number);
+
+  /// State in the label of a grid cell
+  ///
+  /// In en, this message translates to:
+  /// **'answered'**
+  String get examGridStateAnswered;
+
+  /// State in the label of a grid cell
+  ///
+  /// In en, this message translates to:
+  /// **'not answered'**
+  String get examGridStateUnanswered;
+
+  /// State in the label of a grid cell
+  ///
+  /// In en, this message translates to:
+  /// **'marked to come back'**
+  String get examGridStateFlagged;
+
+  /// State in the label of a grid cell
+  ///
+  /// In en, this message translates to:
+  /// **'current question'**
+  String get examGridStateCurrent;
+
+  /// Title of the confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Finish the exam?'**
+  String get examFinishDialogTitle;
+
+  /// Unanswered questions in the confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{All questions are answered.} one{{count} question is not answered.} other{{count} questions are not answered.}}'**
+  String examFinishUnanswered(int count);
+
+  /// Note in the confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Questions without an answer count as wrong.'**
+  String get examFinishUnansweredNote;
+
+  /// Marked questions in the confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No questions are marked.} one{{count} question is marked to come back to.} other{{count} questions are marked to come back to.}}'**
+  String examFinishFlagged(int count);
+
+  /// Cancel of the confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Keep working'**
+  String get examFinishKeepWorking;
+
+  /// Confirm of the confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Finish exam'**
+  String get examFinishConfirm;
+
+  /// Title of the leave dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Leave the exam?'**
+  String get examLeaveTitle;
+
+  /// Body of the leave dialog
+  ///
+  /// In en, this message translates to:
+  /// **'The timer keeps running. You can continue from the subject screen until time runs out.'**
+  String get examLeaveBody;
+
+  /// Stay button
+  ///
+  /// In en, this message translates to:
+  /// **'Stay'**
+  String get examLeaveStay;
+
+  /// Leave button
+  ///
+  /// In en, this message translates to:
+  /// **'Leave'**
+  String get examLeaveConfirm;
+
+  /// Shown while the result is saved
+  ///
+  /// In en, this message translates to:
+  /// **'Saving your result…'**
+  String get examSavingResult;
+
+  /// Error when the attempt cannot be stored at the end
+  ///
+  /// In en, this message translates to:
+  /// **'Your result could not be saved yet. It is not shown as saved until it is.'**
+  String get examFinishSaveError;
+
+  /// Notice after a timeout
+  ///
+  /// In en, this message translates to:
+  /// **'Time is up. The exam was finished automatically and your result was saved.'**
+  String get examTimeUpNotice;
+
+  /// Notice after an expired attempt was restored
+  ///
+  /// In en, this message translates to:
+  /// **'Time ran out while the exam was not open. It was finished and saved automatically.'**
+  String get examExpiredOnOpenNotice;
+
+  /// Title of the result screen
+  ///
+  /// In en, this message translates to:
+  /// **'Exam result'**
+  String get examResultTitle;
+
+  /// Passed badge
+  ///
+  /// In en, this message translates to:
+  /// **'PASSED'**
+  String get examPassed;
+
+  /// Failed badge
+  ///
+  /// In en, this message translates to:
+  /// **'NOT PASSED'**
+  String get examFailed;
+
+  /// Score line
+  ///
+  /// In en, this message translates to:
+  /// **'{correct} of {total} correct'**
+  String examResultCorrect(int correct, int total);
+
+  /// Pass mark line
+  ///
+  /// In en, this message translates to:
+  /// **'Pass mark: {percent}%'**
+  String examResultPassMark(int percent);
+
+  /// Time used line
+  ///
+  /// In en, this message translates to:
+  /// **'Time used: {time}'**
+  String examResultTime(String time);
+
+  /// Unanswered questions line
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{Every question was answered.} one{{count} question without an answer (counted as wrong).} other{{count} questions without an answer (counted as wrong).}}'**
+  String examResultUnanswered(int count);
+
+  /// Title of the topic breakdown
+  ///
+  /// In en, this message translates to:
+  /// **'Results by topic'**
+  String get examBreakdownTitle;
+
+  /// Row of the topic breakdown
+  ///
+  /// In en, this message translates to:
+  /// **'{topic}: {correct} of {total} ({percent}%)'**
+  String examBreakdownRow(String topic, int correct, int total, int percent);
+
+  /// Title of the premium teaser
+  ///
+  /// In en, this message translates to:
+  /// **'Topic breakdown and answer review'**
+  String get examTeaserTitle;
+
+  /// Body of the premium teaser
+  ///
+  /// In en, this message translates to:
+  /// **'With Premium you see where you lose points, review every answer and train the questions you missed.'**
+  String get examTeaserBody;
+
+  /// Review button
+  ///
+  /// In en, this message translates to:
+  /// **'Review answers'**
+  String get examReviewButton;
+
+  /// Train mistakes button
+  ///
+  /// In en, this message translates to:
+  /// **'Train mistakes of this attempt'**
+  String get examTrainMistakes;
+
+  /// Repeat button
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat exam'**
+  String get examRepeat;
+
+  /// History button
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get examHistoryButton;
+
+  /// Title of the review
+  ///
+  /// In en, this message translates to:
+  /// **'Answer review'**
+  String get examReviewTitle;
+
+  /// Filter of the review
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get examReviewFilterAll;
+
+  /// Filter of the review
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong or unanswered'**
+  String get examReviewFilterWrong;
+
+  /// Heading of a reviewed question
+  ///
+  /// In en, this message translates to:
+  /// **'Question {index} of {total}'**
+  String examReviewQuestionNumber(int index, int total);
+
+  /// Label in the review
+  ///
+  /// In en, this message translates to:
+  /// **'Your answer'**
+  String get examReviewYourAnswer;
+
+  /// Label in the review
+  ///
+  /// In en, this message translates to:
+  /// **'Correct answer'**
+  String get examReviewCorrectAnswer;
+
+  /// Label in the review
+  ///
+  /// In en, this message translates to:
+  /// **'No answer given'**
+  String get examReviewNoAnswer;
+
+  /// Shown when the bank no longer has the question
+  ///
+  /// In en, this message translates to:
+  /// **'This question is no longer in the question bank.'**
+  String get examReviewMissing;
+
+  /// Result mark in the review
+  ///
+  /// In en, this message translates to:
+  /// **'Correct'**
+  String get examReviewMarkCorrect;
+
+  /// Result mark in the review
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong'**
+  String get examReviewMarkWrong;
+
+  /// Result mark in the review
+  ///
+  /// In en, this message translates to:
+  /// **'Not answered'**
+  String get examReviewMarkUnanswered;
+
+  /// Empty filtered review
+  ///
+  /// In en, this message translates to:
+  /// **'No wrong answers in this attempt.'**
+  String get examReviewEmptyWrong;
+
+  /// Mark in the review
+  ///
+  /// In en, this message translates to:
+  /// **'Marked to come back'**
+  String get examReviewFlagged;
+
+  /// Title of the history
+  ///
+  /// In en, this message translates to:
+  /// **'Exam history'**
+  String get examHistoryTitle;
+
+  /// Empty history
+  ///
+  /// In en, this message translates to:
+  /// **'No simulations yet. Your results will appear here.'**
+  String get examHistoryEmpty;
+
+  /// Label of a legacy attempt
+  ///
+  /// In en, this message translates to:
+  /// **'Before version 2.0'**
+  String get examHistoryLegacy;
+
+  /// Error of the history
+  ///
+  /// In en, this message translates to:
+  /// **'The history could not be loaded.'**
+  String get examHistoryLoadError;
+
+  /// Title of the chart
+  ///
+  /// In en, this message translates to:
+  /// **'Last results'**
+  String get examHistoryChartTitle;
+
+  /// Accessibility label of the chart
+  ///
+  /// In en, this message translates to:
+  /// **'Last results, oldest first: {results}'**
+  String examHistoryChartSemantics(String results);
+
+  /// Mark of an attempt that ended by timeout
+  ///
+  /// In en, this message translates to:
+  /// **'Time ran out'**
+  String get examHistoryTimedOut;
+
+  /// Label of the pass line
+  ///
+  /// In en, this message translates to:
+  /// **'Pass mark {percent}%'**
+  String examHistoryPassLine(int percent);
+
+  /// Status of the exam tile with an unfinished attempt
+  ///
+  /// In en, this message translates to:
+  /// **'Unfinished attempt, {minutes, plural, one{{minutes} minute} other{{minutes} minutes}} left'**
+  String examTileInProgress(int minutes);
+
+  /// Status of the exam tile
+  ///
+  /// In en, this message translates to:
+  /// **'Last result: {percent}%, passed'**
+  String examTileLastPassed(int percent);
+
+  /// Status of the exam tile
+  ///
+  /// In en, this message translates to:
+  /// **'Last result: {percent}%, not passed'**
+  String examTileLastFailed(int percent);
+
   /// Position in the session
   ///
   /// In en, this message translates to:

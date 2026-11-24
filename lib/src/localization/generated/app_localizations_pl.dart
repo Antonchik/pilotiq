@@ -610,6 +610,425 @@ class AppLocalizationsPl extends AppLocalizations {
       'Treści pytań podano w takiej postaci, w jakiej opublikował je ULC.';
 
   @override
+  String get examScreenTitle => 'Symulacja egzaminu';
+
+  @override
+  String get examRulesHeading => 'Zanim zaczniesz';
+
+  @override
+  String examRulesQuestions(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania',
+      many: '$count pytań',
+      few: '$count pytania',
+      one: '$count pytanie',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examRulesTime(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minuty',
+      many: '$minutes minut',
+      few: '$minutes minuty',
+      one: '$minutes minuta',
+    );
+    return 'Limit czasu: $_temp0';
+  }
+
+  @override
+  String examRulesPass(int percent) {
+    return 'Próg zaliczenia: $percent% wszystkich pytań. Pytanie bez odpowiedzi liczy się jako błędne.';
+  }
+
+  @override
+  String get examRulesNavigate =>
+      'Możesz swobodnie przechodzić między pytaniami i zmieniać odpowiedzi aż do zakończenia egzaminu.';
+
+  @override
+  String get examRulesNoFeedback =>
+      'Podczas egzaminu poprawna odpowiedź nie jest pokazywana. Oznacz pytanie, aby wrócić do niego później.';
+
+  @override
+  String get examRulesTimer =>
+      'Czas płynie także po wyjściu z aplikacji. Gdy czas minie, egzamin kończy się, a wynik zostaje zapisany.';
+
+  @override
+  String get examRulesFresh =>
+      'Każde podejście losuje nowy zestaw pytań z tego przedmiotu, rozłożony na tematy.';
+
+  @override
+  String get examStartButton => 'Rozpocznij egzamin';
+
+  @override
+  String get examStartFailed =>
+      'Nie udało się rozpocząć egzaminu, bo nie można zapisać podejścia na tym urządzeniu.';
+
+  @override
+  String get examSaveRetry => 'Spróbuj ponownie';
+
+  @override
+  String get examLimitTitle => 'Darmowa symulacja wykorzystana';
+
+  @override
+  String get examLimitBody =>
+      'Wykorzystano darmową symulację tego przedmiotu. Premium daje nieograniczone symulacje z historią i analizą tematów.';
+
+  @override
+  String get examLimitHistory => 'Otwórz historię';
+
+  @override
+  String get examResumeTitle => 'Niedokończony egzamin';
+
+  @override
+  String examResumeBody(int answered, int total, int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minuty',
+      many: '$minutes minut',
+      few: '$minutes minuty',
+      one: '$minutes minuta',
+    );
+    return 'Masz egzamin w toku: odpowiedzi $answered z $total, pozostało $_temp0.';
+  }
+
+  @override
+  String get examResumeContinue => 'Kontynuuj egzamin';
+
+  @override
+  String get examResumeFinish => 'Zakończ egzamin teraz';
+
+  @override
+  String examQuestionOf(int current, int total) {
+    return 'Pytanie $current z $total';
+  }
+
+  @override
+  String examAnsweredCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count odpowiedzi',
+      many: '$count odpowiedzi',
+      few: '$count odpowiedzi',
+      one: '$count odpowiedź',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String examTimeLeftSemantics(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minuty',
+      many: '$minutes minut',
+      few: '$minutes minuty',
+      one: '$minutes minuta',
+    );
+    return 'Pozostało $_temp0';
+  }
+
+  @override
+  String get examTimeLow => 'Mało czasu';
+
+  @override
+  String get examPrevious => 'Wstecz';
+
+  @override
+  String get examNext => 'Dalej';
+
+  @override
+  String get examFlagAdd => 'Oznacz, aby wrócić później';
+
+  @override
+  String get examFlagRemove => 'Oznaczone: dotknij, aby usunąć oznaczenie';
+
+  @override
+  String get examGridTooltip => 'Siatka pytań';
+
+  @override
+  String get examFinishTooltip => 'Zakończ egzamin';
+
+  @override
+  String get examFinishButton => 'Zakończ egzamin';
+
+  @override
+  String examAnswerSemantics(int position, int total, String text) {
+    return 'Odpowiedź $position z $total: $text';
+  }
+
+  @override
+  String get examPersistError =>
+      'Nie udało się zapisać postępu na tym urządzeniu. Odpowiedzi są na razie zachowane.';
+
+  @override
+  String get examGridTitle => 'Pytania';
+
+  @override
+  String get examGridLegendAnswered => 'Z odpowiedzią';
+
+  @override
+  String get examGridLegendUnanswered => 'Bez odpowiedzi';
+
+  @override
+  String get examGridLegendFlagged => 'Oznaczone';
+
+  @override
+  String get examGridClose => 'Zamknij';
+
+  @override
+  String examGridCell(int number) {
+    return 'Pytanie $number';
+  }
+
+  @override
+  String get examGridStateAnswered => 'z odpowiedzią';
+
+  @override
+  String get examGridStateUnanswered => 'bez odpowiedzi';
+
+  @override
+  String get examGridStateFlagged => 'oznaczone do powrotu';
+
+  @override
+  String get examGridStateCurrent => 'bieżące pytanie';
+
+  @override
+  String get examFinishDialogTitle => 'Zakończyć egzamin?';
+
+  @override
+  String examFinishUnanswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania bez odpowiedzi.',
+      many: '$count pytań bez odpowiedzi.',
+      few: '$count pytania bez odpowiedzi.',
+      one: '$count pytanie bez odpowiedzi.',
+      zero: 'Na wszystkie pytania udzielono odpowiedzi.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examFinishUnansweredNote =>
+      'Pytania bez odpowiedzi liczą się jako błędne.';
+
+  @override
+  String examFinishFlagged(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania oznaczonego do powrotu.',
+      many: '$count pytań oznaczonych do powrotu.',
+      few: '$count pytania oznaczone do powrotu.',
+      one: '$count pytanie oznaczone do powrotu.',
+      zero: 'Brak oznaczonych pytań.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examFinishKeepWorking => 'Wróć do egzaminu';
+
+  @override
+  String get examFinishConfirm => 'Zakończ egzamin';
+
+  @override
+  String get examLeaveTitle => 'Opuścić egzamin?';
+
+  @override
+  String get examLeaveBody =>
+      'Czas nadal płynie. Możesz kontynuować z ekranu przedmiotu, dopóki czas nie minie.';
+
+  @override
+  String get examLeaveStay => 'Zostań';
+
+  @override
+  String get examLeaveConfirm => 'Wyjdź';
+
+  @override
+  String get examSavingResult => 'Zapisywanie wyniku…';
+
+  @override
+  String get examFinishSaveError =>
+      'Nie udało się jeszcze zapisać wyniku. Nie jest pokazywany jako zapisany, dopóki się nie zapisze.';
+
+  @override
+  String get examTimeUpNotice =>
+      'Czas minął. Egzamin został zakończony automatycznie, a wynik zapisany.';
+
+  @override
+  String get examExpiredOnOpenNotice =>
+      'Czas minął, gdy egzamin nie był otwarty. Został zakończony i zapisany automatycznie.';
+
+  @override
+  String get examResultTitle => 'Wynik egzaminu';
+
+  @override
+  String get examPassed => 'ZALICZONY';
+
+  @override
+  String get examFailed => 'NIEZALICZONY';
+
+  @override
+  String examResultCorrect(int correct, int total) {
+    return '$correct z $total poprawnych';
+  }
+
+  @override
+  String examResultPassMark(int percent) {
+    return 'Próg zaliczenia: $percent%';
+  }
+
+  @override
+  String examResultTime(String time) {
+    return 'Wykorzystany czas: $time';
+  }
+
+  @override
+  String examResultUnanswered(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania bez odpowiedzi (liczone jako błędne).',
+      many: '$count pytań bez odpowiedzi (liczone jako błędne).',
+      few: '$count pytania bez odpowiedzi (liczone jako błędne).',
+      one: '$count pytanie bez odpowiedzi (liczone jako błędne).',
+      zero: 'Na każde pytanie udzielono odpowiedzi.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get examBreakdownTitle => 'Wyniki według tematów';
+
+  @override
+  String examBreakdownRow(String topic, int correct, int total, int percent) {
+    return '$topic: $correct z $total ($percent%)';
+  }
+
+  @override
+  String get examTeaserTitle => 'Wyniki według tematów i przegląd odpowiedzi';
+
+  @override
+  String get examTeaserBody =>
+      'W Premium zobaczysz, gdzie tracisz punkty, przejrzysz każdą odpowiedź i potrenujesz pytania z błędami.';
+
+  @override
+  String get examReviewButton => 'Przejrzyj odpowiedzi';
+
+  @override
+  String get examTrainMistakes => 'Trenuj błędy z tego podejścia';
+
+  @override
+  String get examRepeat => 'Powtórz egzamin';
+
+  @override
+  String get examHistoryButton => 'Historia';
+
+  @override
+  String get examReviewTitle => 'Przegląd odpowiedzi';
+
+  @override
+  String get examReviewFilterAll => 'Wszystkie';
+
+  @override
+  String get examReviewFilterWrong => 'Błędne lub bez odpowiedzi';
+
+  @override
+  String examReviewQuestionNumber(int index, int total) {
+    return 'Pytanie $index z $total';
+  }
+
+  @override
+  String get examReviewYourAnswer => 'Twoja odpowiedź';
+
+  @override
+  String get examReviewCorrectAnswer => 'Poprawna odpowiedź';
+
+  @override
+  String get examReviewNoAnswer => 'Brak odpowiedzi';
+
+  @override
+  String get examReviewMissing => 'Tego pytania nie ma już w bazie pytań.';
+
+  @override
+  String get examReviewMarkCorrect => 'Poprawnie';
+
+  @override
+  String get examReviewMarkWrong => 'Błędnie';
+
+  @override
+  String get examReviewMarkUnanswered => 'Bez odpowiedzi';
+
+  @override
+  String get examReviewEmptyWrong =>
+      'Brak błędnych odpowiedzi w tym podejściu.';
+
+  @override
+  String get examReviewFlagged => 'Oznaczone do powrotu';
+
+  @override
+  String get examHistoryTitle => 'Historia egzaminów';
+
+  @override
+  String get examHistoryEmpty =>
+      'Brak symulacji. Tutaj pojawią się Twoje wyniki.';
+
+  @override
+  String get examHistoryLegacy => 'Przed wersją 2.0';
+
+  @override
+  String get examHistoryLoadError => 'Nie udało się wczytać historii.';
+
+  @override
+  String get examHistoryChartTitle => 'Ostatnie wyniki';
+
+  @override
+  String examHistoryChartSemantics(String results) {
+    return 'Ostatnie wyniki, od najstarszego: $results';
+  }
+
+  @override
+  String get examHistoryTimedOut => 'Czas minął';
+
+  @override
+  String examHistoryPassLine(int percent) {
+    return 'Próg $percent%';
+  }
+
+  @override
+  String examTileInProgress(int minutes) {
+    String _temp0 = intl.Intl.pluralLogic(
+      minutes,
+      locale: localeName,
+      other: '$minutes minuty',
+      many: '$minutes minut',
+      few: '$minutes minuty',
+      one: '$minutes minuta',
+    );
+    return 'Niedokończone podejście, pozostało $_temp0';
+  }
+
+  @override
+  String examTileLastPassed(int percent) {
+    return 'Ostatni wynik: $percent%, zaliczony';
+  }
+
+  @override
+  String examTileLastFailed(int percent) {
+    return 'Ostatni wynik: $percent%, niezaliczony';
+  }
+
+  @override
   String practiceProgress(int current, int total) {
     return '$current / $total';
   }

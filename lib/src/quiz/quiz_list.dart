@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:pilotiq/src/exam_sim/exam_controller.dart';
 import 'package:pilotiq/src/exam_sim/exam_entry.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/quiz/practice/practice_controller.dart';
@@ -22,6 +24,21 @@ class QuizList extends ConsumerWidget {
     final isPremium = ref.watch(isPremiumProvider);
     final key = (licence: subject.licence, subject: subject.id);
     final stats = ref.watch(subjectStatsProvider(key)).value;
+    final examStatus = ref.watch(examStatusProvider(key)).value;
+    final examArgs = ExamArgs.fromSubject(subject);
+    String? examLine;
+    if (examStatus?.unfinished != null) {
+      final left = examStatus!.unfinished!.remaining(
+        ref.read(clockProvider).now(),
+      );
+      examLine = local.examTileInProgress((left.inSeconds + 59) ~/ 60);
+    } else if (examStatus?.last != null) {
+      final last = examStatus!.last!;
+      final percent = (last.ratio * 100).round();
+      examLine = last.passed
+          ? local.examTileLastPassed(percent)
+          : local.examTileLastFailed(percent);
+    }
 
     Future<void> practise(PracticeMode mode) async {
       await openPractice(
@@ -71,7 +88,12 @@ class QuizList extends ConsumerWidget {
           key: const Key('mode_exam'),
           title: local.examQuizTitle,
           description: local.examModeDescription,
-          onTap: () => openExamSimulation(context, ref, subject),
+          status: examLine,
+          onTap: () async {
+            await openExamSimulation(context, examArgs);
+            ref.invalidate(examStatusProvider(key));
+            ref.invalidate(subjectStatsProvider(key));
+          },
         ),
         modeTile(
           tileKey: const Key('mode_mistakes'),
@@ -101,9 +123,10 @@ class QuizList extends ConsumerWidget {
               : local.practiceModeBookmarksStatus(stats.bookmarks),
         ),
         _ModeTile(
+          key: const Key('mode_history'),
           title: local.subjectModeHistoryTitle,
           description: local.subjectModeHistoryDescription,
-          soonBadge: local.subjectModeSoonBadge,
+          onTap: () => openExamHistory(context, examArgs),
         ),
         if (!isPremium)
           Padding(
@@ -125,7 +148,6 @@ class _ModeTile extends StatelessWidget {
     required this.title,
     required this.description,
     this.onTap,
-    this.soonBadge,
     this.status,
     this.lockedBadge,
   });
@@ -137,16 +159,13 @@ class _ModeTile extends StatelessWidget {
   /// Live counter shown under the description.
   final String? status;
 
-  /// Badge text of a mode that is not available yet (the tile is disabled).
-  final String? soonBadge;
-
   /// Badge of a Premium mode that the user cannot use yet (the tile still
   /// reacts to a tap by opening the paywall).
   final String? lockedBadge;
 
   @override
   Widget build(BuildContext context) {
-    final badge = soonBadge ?? lockedBadge;
+    final badge = lockedBadge;
     final stat = status;
     return Semantics(
       container: true,
