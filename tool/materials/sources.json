@@ -814,5 +814,102 @@
     "terms_url": "https://www.easa.europa.eu/en/copyright-disclaimer",
     "terms_note": "EASA: 'Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.' Plan treats EASA as reference-only (no quotes in the app).",
     "bytes": 18241604
+  },
+  {
+    "status": "available",
+    "format": "pdf",
+    "sha256": "4658e634322f77514b43c34aeb980161d1940c9dda1a3c9b705a7eb7fa37d1cc",
+    "fetched": "2026-11-24",
+    "reuse": "reference-only",
+    "allowQuote": false,
+    "lang": "en",
+    "id": "ICAO-DOC-7300",
+    "title_pl": "ICAO Doc 7300 – Konwencja o międzynarodowym lotnictwie cywilnym (Chicago 1944), wydanie 9 (2006), tekst angielski",
+    "kind": "icao",
+    "url": "https://www.icao.int/publications/Documents/7300_cons.pdf",
+    "version": "Doc 7300/9 (2006), plik dostarczony przez właściciela (skan z OCR, kolumna angielska)",
+    "terms_url": "https://www.icao.int/Pages/Terms-of-Use.aspx",
+    "terms_note": "Prawa autorskie ICAO; tylko odniesienie do artykułu i własna parafraza, bez cytatów (allowQuote=false). [ПРОВЕРИТЬ владельцем: licencja ICAO]",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-ITU",
+      "files": [
+        {
+          "section": "Doc 7300",
+          "file": "ICAO-Doc7300-9ed.pdf",
+          "profile": "icao7300",
+          "lang": "en",
+          "sha256": "88d9f0c7bbb121cff3c2cea28c9e26d2b2c2cf71001b442c5c01831cd59ec033",
+          "bytes": 8249303
+        }
+      ]
+    },
+    "bytes": 8249303
+  },
+  {
+    "status": "available",
+    "format": "pdf",
+    "sha256": "907cb74e2cb169b4dedee157aa5fdb8ddbd9d7ac78abf3123dd19d703dcbe3f3",
+    "fetched": "2026-11-24",
+    "reuse": "reference-only",
+    "allowQuote": false,
+    "lang": "en",
+    "id": "ICAO-DOC-4444",
+    "title_pl": "ICAO Doc 4444 PANS-ATM, wydanie 16 (2016), tekst angielski",
+    "kind": "icao",
+    "url": "https://store.icao.int/en/procedures-for-air-navigation-services-air-traffic-management-doc-4444",
+    "version": "Doc 4444/16 (2016), plik dostarczony przez właściciela (ICAO-Doc4444-EN.pdf; kopia francuska ICAO-Doc4444.pdf tylko jako zapasowa, nie użyta)",
+    "terms_url": "https://www.icao.int/Pages/Terms-of-Use.aspx",
+    "terms_note": "Prawa autorskie ICAO; tylko odniesienie i własna parafraza, bez cytatów. [ПРОВЕРИТЬ владельцем: licencja ICAO]",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-ITU",
+      "files": [
+        {
+          "section": "Doc 4444",
+          "file": "ICAO-Doc4444-EN.pdf",
+          "profile": "icao4444",
+          "lang": "en",
+          "sha256": "727a8009f2cde75c28031519c1f250aa57d49e1efd99771440c12d52364f475a",
+          "bytes": 7796522
+        }
+      ]
+    },
+    "bytes": 7796522
+  },
+  {
+    "status": "available",
+    "format": "pdf",
+    "sha256": "a5db909f09d5df433be3951978adf2cef7720d78ef621cd48fa135eeb51576fb",
+    "fetched": "2026-11-24",
+    "reuse": "reference-only",
+    "allowQuote": false,
+    "lang": "en",
+    "id": "ITU-RR-2020-AP18",
+    "title_pl": "ITU Radio Regulations 2020, Vol. 2 – Appendix 18 (kanały VHF morskie), tekst angielski",
+    "kind": "itu",
+    "url": "https://www.itu.int/pub/R-REG-RR",
+    "version": "Radio Regulations, edition of 2020, Appendices (Rev. WRC-19); wyodrębniono tylko Appendix 18 (strony AP18-1…AP18-6)",
+    "terms_url": "https://www.itu.int/en/Pages/copyright.aspx",
+    "terms_note": "Prawa autorskie ITU; tylko odniesienie, bez cytatów. [ПРОВЕРИТЬ владельцем: licencja ITU]",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-ITU",
+      "files": [
+        {
+          "section": "Appendix 18",
+          "file": "ITU-RR-2020-Vol2.pdf",
+          "profile": "itu-rr",
+          "lang": "en",
+          "pages": [
+            310,
+            315
+          ],
+          "sha256": "08d18e4a23bc09b2a4a259b00fc054285d6fd21f0f9fc90b24235862fe07dcb0",
+          "bytes": 6786395
+        }
+      ]
+    },
+    "bytes": 6786395
   }
 ]

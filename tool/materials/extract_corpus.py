@@ -1439,6 +1439,254 @@ def aip_sections_anchors(text, sections):
     return _finish(spans, len(text)), langs
 
 
+# --------------------------------------------------------------------------- owner-supplied ICAO / ITU documents (manual sources)
+#
+# kind "icao" (Doc 7300 Convention, Doc 4444 PANS-ATM) and kind "itu" (Radio Regulations Appendix 18): reference-only,
+# English. The per-file "profile" in sources.json selects the reader and the anchor rules.
+
+_EN_STOP = set("the of and shall to in that is by for with be any which state states aircraft contracting each".split())
+_ICAO_ART_RE = re.compile(r"^Article (\d+)( bis| ter| quater)?\*{0,2}$")
+_ICAO_PKT_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){1,5})\s+(?=[A-Z(])")
+_ICAO_DEF_RE = re.compile(r"^([A-Z][^.:;]{1,70}?)\.\s+\S")
+_ICAO_CHAPTER_HEADER = re.compile(r"^Chapter (\d+)\.\s+(.+?)\s+\d+-\d+$")
+_ICAO_EVEN_HEADER = re.compile(r"^(\d+)-\d+\s+Air Traffic Management \(PANS-ATM\)$")
+_ICAO_APP_HEADER = re.compile(r"^Appendix (\d+)\s+A\d+-\d+$|^A(\d+)-\d+\s+Air Traffic Management \(PANS-ATM\)$")
+_ITU_CHANNEL_RE = re.compile(r"^((?:AIS|ASM) ?\d|\d{2,4})\s+(?:[a-z]{1,2}\)(?:,\s*[a-z]{1,2}\))*\s+)?\d{3}\.\d{3}")
+_ITU_NOTE_RE = re.compile(r"^([a-z]{1,2})\)\s+\S")
+
+
+def _english_left_half(page):
+    left = page.filter(lambda o: o["object_type"] != "char" or o["x0"] < page.width / 2)
+    text = left.extract_text() or ""
+    words = re.findall(r"[a-z]+", text.lower())
+    score = sum(1 for w in words if w in _EN_STOP) / max(1, len(words))
+    return left, score, len(words)
+
+
+def icao7300_lines(path, cfg):
+    """English column of the 9th edition of the Convention (EN|FR spreads; only pages from Article 1 on)."""
+    import pdfplumber
+
+    lines = []
+    started = False
+    with pdfplumber.open(path) as pdf:
+        for page in pdf.pages:
+            left, score, nwords = _english_left_half(page)
+            if score <= 0.12 or nwords < 80:
+                continue
+            rows = [clean_line(ln["text"]) for ln in left.extract_text_lines()]
+            rows = [r for r in rows if r and not re.fullmatch(r"\d{1,3}", r)]
+            if not started:
+                if "Article 1" not in rows:
+                    continue
+                started = True
+            lines.extend(rows)
+            page.flush_cache()
+    return lines
+
+
+def icao4444_lines(path, cfg):
+    """PANS-ATM (Doc 4444, 16th ed.): chapters from Chapter 1; running headers dropped, replaced by "Chapter N. Title" /
+    "Appendix N" lines; Chapter 1 definitions joined to one line each."""
+    import pdfplumber
+
+    lines = []
+    chapter = None
+    started = False
+    with pdfplumber.open(path) as pdf:
+        for page in pdf.pages:
+            rows = page.extract_text_lines()
+            if not rows:
+                continue
+            head = clean_line(rows[0]["text"]) if rows[0]["top"] < 60 else ""
+            body = [r for r in rows if 60 <= r["top"] <= 725]
+            title = None
+            m = _ICAO_CHAPTER_HEADER.match(head)
+            if m:
+                cur, title = ("Chapter", m.group(1)), m.group(2)
+            elif _ICAO_EVEN_HEADER.match(head):
+                cur = ("Chapter", _ICAO_EVEN_HEADER.match(head).group(1))
+            elif _ICAO_APP_HEADER.match(head):
+                g = _ICAO_APP_HEADER.match(head)
+                cur = ("Appendix", g.group(1) or g.group(2))
+            elif head == "Chapter 1" or (rows and clean_line(rows[0]["text"]) == "Chapter 1"):
+                cur = ("Chapter", "1")
+            else:
+                cur = None
+            if not started:
+                if cur != ("Chapter", "1"):
+                    continue
+                started = True
+            if cur and cur != chapter:
+                chapter = cur
+                if cur[0] == "Chapter":
+                    lines.append(("== Chapter %s. %s ==" % (cur[1], title or "")).replace(". ==", " =="))
+                else:
+                    lines.append("== Appendix %s ==" % cur[1])
+            is_defs = chapter == ("Chapter", "1")
+            prev_end = True
+            for r in body:
+                txt = clean_line(r["text"])
+                if not txt or re.fullmatch(r"\d{1,2}/\d{1,2}/\d{2}(?:/\d{2})?", txt):
+                    continue
+                if is_defs and lines:
+                    first = _ICAO_DEF_RE.match(txt) and not txt.startswith(("Note", "a)", "b)", "c)", "d)"))
+                    if first and (r["x0"] < 72 or prev_end):
+                        lines.append(txt)
+                    elif lines and not lines[-1].startswith("== "):
+                        lines[-1] += " " + txt
+                    else:
+                        lines.append(txt)
+                else:
+                    lines.append(txt)
+                prev_end = txt.endswith((".", "—"))
+            page.flush_cache()
+    return lines
+
+
+def itu_lines(path, cfg):
+    import pdfplumber
+
+    lo, hi = cfg.get("pages", [0, 10 ** 6])
+    lines = []
+    with pdfplumber.open(path) as pdf:
+        for idx, page in enumerate(pdf.pages):
+            if not lo <= idx <= hi:
+                continue
+            for ln in page.extract_text_lines():
+                t = clean_line(ln["text"])
+                if t and not re.fullmatch(r"AP\d+-\d+|- \d+ -", t):
+                    lines.append(t)
+            page.flush_cache()
+    return lines
+
+
+_OWNER_PROFILES = {"icao7300": icao7300_lines, "icao4444": icao4444_lines, "itu-rr": itu_lines}
+
+
+def build_owner_corpus(src, sources_dir):
+    base = os.path.join(sources_dir, src["fetch"].get("dir", src["id"]))
+    f = src["fetch"]["files"][0]
+    path = os.path.join(base, f["file"])
+    if not os.path.exists(path):
+        raise ExtractError("%s: %s not found (place it into %s)" % (src["id"], f["file"], base))
+    lines = clean_lines(_OWNER_PROFILES[f["profile"]](path, f))
+    return "\n".join(lines) + "\n", f
+
+
+def owner_anchors(text, cfg):
+    """Anchors: icao7300 `Article 5`, `Article 3 bis`, `Article 5(a)`; icao4444 `Chapter 5`, `Appendix 2`, `pkt 5.4.2.1`,
+    `def Aerodrome control service`; itu-rr `Appendix 18`, `Appendix 18 channel 06`, `Appendix 18 note f`."""
+    spans = []
+    have = set()
+
+    def add(key, start, level):
+        if key in have:
+            return None
+        have.add(key)
+        sp = _Span(key, start, level)
+        spans.append(sp)
+        return sp
+
+    rows = _line_offsets(text)
+    prof = cfg["profile"]
+    if prof == "icao7300":
+        art = None
+        last_letter = None
+        for start, line in rows:
+            m = _ICAO_ART_RE.match(line)
+            if m:
+                if art is not None and art.end is None:
+                    art.end = start
+                for sp in spans:
+                    if sp.level == 2 and sp.end is None:
+                        sp.end = start
+                if int(m.group(1)) > 96:
+                    continue     # OCR noise: the Convention has 96 articles
+                key = "Article %s%s" % (m.group(1), m.group(2) or "")
+                art = add(key, start, 1)
+                last_letter = None
+                continue
+            if art is None:
+                continue
+            ml = re.match(r"^([a-z])\)\s+\S", line)
+            if ml:
+                exp = "a" if last_letter is None else chr(ord(last_letter) + 1)
+                if ml.group(1) == exp:
+                    for sp in spans:
+                        if sp.level == 2 and sp.end is None:
+                            sp.end = start
+                    add("%s(%s)" % (art.key, exp), start, 2)
+                    last_letter = exp
+    elif prof == "icao4444":
+        chapter = None
+        defs_on = False
+        for start, line in rows:
+            mc = re.match(r"^== Chapter (\d+)\b", line)
+            ma = re.match(r"^== Appendix (\d+) ==$", line)
+            if mc or ma:
+                for sp in spans:
+                    if sp.end is None and sp.level == 1:
+                        sp.end = start
+                chapter = int(mc.group(1)) if mc else None
+                add("Chapter %s" % mc.group(1) if mc else "Appendix %s" % ma.group(1), start, 1)
+                defs_on = bool(mc and mc.group(1) == "1")
+                continue
+            if defs_on:
+                md = _ICAO_DEF_RE.match(line)
+                if md and not line.startswith("Note"):
+                    for sp in spans:
+                        if sp.level == 2 and sp.end is None:
+                            sp.end = start
+                    add("def %s" % md.group(1), start, 2)
+                continue
+            mp = _ICAO_PKT_RE.match(line)
+            if mp and chapter is not None and int(mp.group(1).split(".")[0]) == chapter:
+                for sp in spans:
+                    if sp.level >= 2 and sp.end is None and not mp.group(1).startswith(sp.key[4:] + "."):
+                        sp.end = start
+                add("pkt %s" % mp.group(1), start, 2 + mp.group(1).count("."))
+        # synthetic ancestors (pkt 5.4.2 for pkt 5.4.2.1) as the union of their children
+        for key in [k for k in list(have) if k.startswith("pkt ")]:
+            parts = key[4:].split(".")
+            for n in range(len(parts) - 1, 1, -1):
+                parent = "pkt " + ".".join(parts[:n])
+                kids = [sp for sp in spans if sp.key.startswith(parent + ".")]
+                if parent not in have and kids:
+                    ps = add(parent, min(k.start for k in kids), n + 1)
+                    ps.end = max(k.end if k.end is not None else len(text) for k in kids)
+    elif prof == "itu-rr":
+        root = None
+        in_notes = False
+        for start, line in rows:
+            if root is None and re.match(r"^APPENDIX 18\b", line):
+                root = add("Appendix 18", start, 1)
+                continue
+            if root is None:
+                continue
+            if line.startswith("Notes referring to the Table"):
+                in_notes = True
+            if not in_notes:
+                mc = _ITU_CHANNEL_RE.match(line)
+                if mc:
+                    for sp in spans:
+                        if sp.level == 2 and sp.end is None:
+                            sp.end = start
+                    add("Appendix 18 channel %s" % mc.group(1).replace(" ", ""), start, 2)
+            else:
+                mn = _ITU_NOTE_RE.match(line)
+                if mn:
+                    for sp in spans:
+                        if sp.level == 2 and sp.end is None:
+                            sp.end = start
+                    add("Appendix 18 note %s" % mn.group(1), start, 2)
+    for sp in spans:
+        if sp.end is None:
+            sp.end = len(text)
+    # an item ends at the end of its container
+    return _finish(spans, len(text))
+
+
 def anchors_for(src, text):
     kind = src["kind"]
     extras = tuple(src.get("anchorExtras", ()))
@@ -1478,6 +1726,13 @@ def write_anchors(path, text_sha, anchors, future=(), langs=None):
 
 
 def extract_one(src, sources_dir, corpus_dir, anchors_dir):
+    if (src.get("fetch") or {}).get("mode") == "manual" and src["kind"] in ("icao", "itu"):
+        text, cfg = build_owner_corpus(src, sources_dir)
+        sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        anchors = owner_anchors(text, cfg)
+        write_text(os.path.join(corpus_dir, src["id"] + ".txt"), text)
+        write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors, (), {src["id"]: "en"})
+        return src["id"], len(text), len(anchors)
     if (src.get("fetch") or {}).get("mode") == "manual":
         text, sections = build_manual_corpus(src, sources_dir)
         sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
