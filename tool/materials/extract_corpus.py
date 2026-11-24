@@ -1377,6 +1377,7 @@ _AIP_TOP_RE = re.compile(r"^(\d{1,2})\.\s+\S")
 _AIP_DEF_RE = re.compile(r"^(?P<name>[A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻ0-9 ,/()-]*?)\s*\((?P<abbr>[A-Z]{2,6})\)\s*[–-]\s")
 _AIP_ABBR_RE = re.compile(r"^([A-Z0-9][A-Z0-9/&.\-]{0,9})[†‡*¤#]*\s+\S")
 _AIP_INDICATOR_RE = re.compile(r"^.*?\b(EP[A-Z]{2})\*{0,3}(?:\s|$)")
+_AIP_FOOTNOTE_RE = re.compile(r"^(\*{1,4}) - \S")
 _AIP_CLASS_RE = re.compile(r"^([A-G])\*{0,4}(?:\s|$)")
 
 
@@ -1417,10 +1418,13 @@ def aip_sections_anchors(text, sections):
                 if m:
                     items.append((start, "%s %s" % (section, m.group(1)), 1))
         elif mode == "abbreviations":
+            seen_abbr = {}
             for start, line in rows:
                 m = _AIP_ABBR_RE.match(line)
                 if m and line[:1] not in _AIP_SYMBOLS and len(line.split()) >= 2 and not line.startswith(section + " "):
-                    items.append((start, "%s %s" % (section, m.group(1)), 1))
+                    key = "%s %s" % (section, m.group(1))
+                    seen_abbr[key] = seen_abbr.get(key, 0) + 1      # CTA = "Obliczony czas..." / "Obszar kontrolowany": CTA, CTA 2
+                    items.append((start, key if seen_abbr[key] == 1 else "%s %d" % (key, seen_abbr[key]), 1))
         else:
             has_heads = any(_AIP_HEAD_RE.match(ln) for _, ln in rows)
             last_top = 0
@@ -1454,6 +1458,10 @@ def aip_sections_anchors(text, sections):
                     items.append((st, "%s %s" % (section, mdef.group("abbr")), 1))
                     continue
                 if cfg.get("classes"):
+                    mf = _AIP_FOOTNOTE_RE.match(line)
+                    if mf:
+                        items.append((start, "%s przypis %s" % (section, mf.group(1)), 1))
+                        continue
                     mc = _AIP_CLASS_RE.match(line)
                     if mc and (last_class is None or ord(mc.group(1)) == ord(last_class) + 1):
                         last_class = mc.group(1)

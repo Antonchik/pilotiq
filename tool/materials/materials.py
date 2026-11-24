@@ -314,7 +314,7 @@ LOC_EUART = re.compile(r"^art\. %s( ust\. %s)?( pkt %s)?$" % (_N, _N, _N))
 # приложения: załącznik, załącznik I, dodatek 3, załącznik I dodatek 3, любое из них + pkt L
 LOC_EUANNEX = re.compile(r"^(?=załącznik|dodatek)(załącznik( [IVXLC]+)?)?( ?dodatek \d+)?( pkt %s)?$" % _L)
 # AIP Polska: ENR 1.2, ENR 1.2 pkt 3.1, GEN 2.2 CBA (skrót), ENR 5.2.1 TSA (definicja), ENR 1.4 klasa C
-LOC_AIP = re.compile(r"^(GEN|ENR|AD) \d+(\.\d+)*( pkt \d+(\.\d+)*| klasa [A-G]| [A-Z0-9][A-Z0-9/&.\-]{0,9})?$")
+LOC_AIP = re.compile(r"^(GEN|ENR|AD) \d+(\.\d+)*( pkt \d+(\.\d+)*| klasa [A-G]| przypis \*{1,4}| [A-Z0-9][A-Z0-9/&.\-]{0,9}( \d{1,2})?)?$")
 LOC_EASA = re.compile(r"^((AMC|GM|CS)\d* )?[A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*( SECTION \d+[A-Z]?)?$")
 # Article 2, Article 2(12), Article 2(129a), GM1 Article 2(12), Appendix 4, Appendix 1 pkt 1.2.1
 # ICAO (Doc 7300 / Doc 4444): Article 5, Article 3 bis, Article 5(a); Chapter 5, Appendix 2, pkt 5.4.2.1, def Aerodrome control service
@@ -362,7 +362,7 @@ def loc_parents(loc):
         return ["Chapter 1"]
     if re.match(r"^Appendix \d+ to (?:AMC|GM)", loc):
         return []   # EASA "Appendix 1 to AMC1 SERA.6005(c)" is a block of its own
-    mt = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*) (?:klasa [A-G]|[A-Z0-9][A-Z0-9/&.\-]{0,9})$", loc)
+    mt = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*) (?:klasa [A-G]|przypis \*{1,4}|[A-Z0-9][A-Z0-9/&.\-]{0,9}(?: \d{1,2})?)$", loc)
     if mt:
         return [mt.group(1)]   # AIP abbreviation / definition / airspace class entry: its parent is the section
     ma = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*) pkt (\d+(?:\.\d+)*)$", loc)
