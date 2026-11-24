@@ -1051,6 +1051,8 @@ _EU_APP_RE = re.compile(r"^Dodatek (\d+)(?: do załącznika ([IVXLC]+).*)?$")
 _EU_BOUNDARY_RE = re.compile(r"^(?:PODCZĘŚĆ|SEKCJA|DZIAŁ|ROZDZIAŁ|ODDZIAŁ|TYTUŁ|\[CZĘŚĆ) \S")
 _EU_PARA_RE = re.compile(r"^(?:\(([ivx]{1,5})\)|([a-z])\)|(\d{1,2})\))\s*\S")
 _EU_UST_RE = re.compile(r"^(\d{1,3})\.\s+\S")
+_DODATEK_UP_RE = re.compile(r"^(?:DODATEK|Dodatek) \d+-?[A-Z]?\d*\b")
+_NUM_ONLY_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){1,5})\.$")   # "1.1.1.1." with the text on the next line
 _EU_DEF_RE = re.compile(r"^(\d{1,3}[a-z]?)\)\s+„")   # a numbered definition: 57) „lotnictwo ogólne” oznacza ...
 _EU_PKT_RE = re.compile(r"^(\d{1,3}[a-z]?)\)\s*\S")
 
@@ -1085,6 +1087,7 @@ def eureg_anchors(text, extras=()):
     state = None
     para = {}
     mode = "pre"
+    last_ch, pts_on, pt_last = 0, False, {}
 
     def close(sp, at):
         if sp is not None and sp.end is None:
@@ -1125,13 +1128,16 @@ def eureg_anchors(text, extras=()):
             last_ust = last_pkt = None
             continue
         mx = _EU_ANNEX_RE.match(line)
+        if mx and not mx.group(1) and "załącznik" in have and mode in ("annex", "app"):
+            continue    # a page heading "ZAŁĄCZNIK" repeated inside the one annex (Dodatek 6-C): not a new annex
         if mx:
+            last_ch, pts_on, pt_last = 0, False, {}
             close_art(start)
             close_block(start)
             close(app, start)
             close(annex, start)
             for sp in spans:
-                if sp.level in (4, 5) and sp.end is None:
+                if (sp.level in (4, 5) or sp.level >= 20) and sp.end is None:
                     sp.end = start
             app = None
             mode = "annex"
@@ -1187,15 +1193,44 @@ def eureg_anchors(text, extras=()):
                         spans.append(_Span(key, start, 5))
                     continue
             if "annexpoints" in extras and annex is not None and mode == "annex":
-                mpt = _APP_ROW_RE.match(line)
+                if _DODATEK_UP_RE.match(line):
+                    # an appendix (forms, questionnaires: "8.1. Czy ...?") is not part of the numbered chapters
+                    for sp in spans:
+                        if sp.level >= 20 and sp.end is None:
+                            sp.end = start
+                    pts_on = False
+                    continue
+                mpt = _APP_ROW_RE.match(line) or _NUM_ONLY_RE.match(line)
                 if mpt and not _RULE_RE.match(line):
-                    key = ("%s pkt %s" % (annex_key, mpt.group(1))) if annex_key else None
-                    if key and key not in have:
-                        for sp in spans:
-                            if sp.level == 5 and sp.end is None:
-                                sp.end = start
-                        have.add(key)
-                        spans.append(_Span(key, start, 5))
+                    num = mpt.group(1)
+                    parts = num.split(".")
+                    nparts = len(parts)
+                    rest = line[len(mpt.group(0)):] if _APP_ROW_RE.match(line) else ""
+                    accepted = None
+                    if nparts == 1:
+                        head = line[line.index(".") + 1:].strip()
+                        if head and head == head.upper() and re.search(r"[A-ZĄĆĘŁŃÓŚŹŻ]{3}", head) \
+                                and last_ch < int(num) <= last_ch + 3 and annex_key:
+                            last_ch = int(num)
+                            pts_on = True
+                            pt_last = {}
+                            accepted = (annex_key + " pkt " + num, 20)
+                    elif pts_on and int(parts[0]) == last_ch:
+                        parent = ".".join(parts[:-1])
+                        pkey = "%s pkt %s" % (annex_key, parent)
+                        prev = pt_last.get(parent, -1)
+                        val = int(parts[-1]) if parts[-1].isdigit() else -9
+                        if (nparts == 2 or pkey in have) and prev < val <= prev + 3:
+                            pt_last[parent] = val
+                            accepted = ("%s pkt %s" % (annex_key, num), 20 + nparts - 1)
+                    if accepted is not None:
+                        key, lv = accepted
+                        if key not in have:
+                            for sp in spans:
+                                if sp.level >= lv and sp.level >= 20 and sp.end is None:
+                                    sp.end = start
+                            have.add(key)
+                            spans.append(_Span(key, start, lv))
                     continue
             mr = _RULE_RE.match(line)
             if mr and (mr.group(2) is None or not mr.group(2)[:1].islower()):
