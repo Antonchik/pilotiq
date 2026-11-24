@@ -42,7 +42,9 @@ class ExplanationView {
   final List<String> refs;
   final String? disputeNote;
 
-  /// Premium only for the current user: the panel shows a teaser.
+  /// Premium only for the current user: the panel shows a teaser (and, for
+  /// a disputed question, the dispute mark); [text], [refs] and
+  /// [disputeNote] are then empty.
   final bool locked;
   final Licence licence;
   final String questionId;
@@ -70,16 +72,21 @@ final explanationForQuestionProvider =
       final explanation = key == null ? null : materials.explanations[key];
       if (key == null || explanation == null) return null;
       final isPremium = ref.watch(isPremiumProvider);
+      final locked = !AccessPolicy.canSeeExplanation(
+        isPremium,
+        materials.indexInTopic(licence, key),
+      );
+      // A locked view carries no Premium content: only the status, so that
+      // a disputed question is marked as such for every user.
       return ExplanationView(
         key: key,
         status: explanation.status,
-        text: explanation.text,
-        refs: [for (final r in explanation.refs) materials.refLabel(r)],
-        disputeNote: explanation.disputeNote,
-        locked: !AccessPolicy.canSeeExplanation(
-          isPremium,
-          materials.indexInTopic(licence, key),
-        ),
+        text: locked ? '' : explanation.text,
+        refs: locked
+            ? const []
+            : [for (final r in explanation.refs) materials.refLabel(r)],
+        disputeNote: locked ? null : explanation.disputeNote,
+        locked: locked,
         licence: licence,
         questionId: questionId,
         materialsVersion: materials.materialsVersion,

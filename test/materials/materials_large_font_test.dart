@@ -10,7 +10,7 @@ import 'package:pilotiq/src/quiz/practice/practice_screen.dart';
 import '../onboarding/large_font_helpers.dart';
 import 'materials_helpers.dart';
 
-/// The explanation panel (open, locked, disputed), the study notes and a
+/// The explanation panel (open, locked, disputed, locked and disputed), the study notes and a
 /// summary with large system fonts on small screens in both languages, with
 /// the matrix and the helpers of `test/onboarding/large_font_test.dart`:
 /// nothing overflows (an exception fails the test) and every action can be
@@ -82,6 +82,30 @@ void main() {
             ),
           );
           await reach(tester, key('explanation_polish_only'), tap: false);
+          await reach(tester, key('explanation_unlock'));
+          expect(h.paywalls, hasLength(1));
+        });
+
+        screen('locked disputed explanation', (tester) async {
+          final h = MaterialsHarness();
+          await pump(
+            tester,
+            h,
+            Scaffold(
+              appBar: AppBar(title: const Text('Practice')),
+              body: ListView(
+                padding: const EdgeInsets.all(16),
+                children: const [
+                  QuestionExplanation(
+                    licence: Licence.ppla,
+                    questionId: 'PL010-0005',
+                    questionLanguage: QuestionLanguage.pl,
+                  ),
+                ],
+              ),
+            ),
+          );
+          await reach(tester, key('explanation_disputed_exam'), tap: false);
           await reach(tester, key('explanation_unlock'));
           expect(h.paywalls, hasLength(1));
         });

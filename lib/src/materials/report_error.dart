@@ -114,15 +114,24 @@ Future<void> reportMaterialError(
   );
 }
 
-/// The text of a report with a "copy" button.
-class MaterialReportDialog extends StatelessWidget {
+/// The text of a report with a "copy" button. The confirmation of the copy
+/// is shown inside the dialog (a snack bar would be hidden by its barrier).
+class MaterialReportDialog extends StatefulWidget {
   const MaterialReportDialog({super.key, required this.text});
 
   final String text;
 
   @override
+  State<MaterialReportDialog> createState() => _MaterialReportDialogState();
+}
+
+class _MaterialReportDialogState extends State<MaterialReportDialog> {
+  bool _copied = false;
+
+  @override
   Widget build(BuildContext context) {
     final local = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
     return AlertDialog(
       key: const Key('materials_report_dialog'),
       title: Text(local.materialsReportDialogTitle),
@@ -133,18 +142,38 @@ class MaterialReportDialog extends StatelessWidget {
         children: [
           Text(local.materialsReportDialogBody),
           const SizedBox(height: 12),
-          SelectableText(text, key: const Key('materials_report_text')),
+          SelectableText(widget.text, key: const Key('materials_report_text')),
+          if (_copied)
+            Semantics(
+              liveRegion: true,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 12),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.check_circle_outline,
+                      size: 18,
+                      color: theme.colorScheme.primary,
+                    ),
+                    const SizedBox(width: 6),
+                    Expanded(
+                      child: Text(
+                        local.materialsReportCopied,
+                        key: const Key('materials_report_copied'),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
         ],
       ),
       actions: [
         TextButton(
           key: const Key('materials_report_copy'),
           onPressed: () async {
-            await Clipboard.setData(ClipboardData(text: text));
-            if (!context.mounted) return;
-            ScaffoldMessenger.maybeOf(context)?.showSnackBar(
-              SnackBar(content: Text(local.materialsReportCopied)),
-            );
+            await Clipboard.setData(ClipboardData(text: widget.text));
+            if (mounted) setState(() => _copied = true);
           },
           child: Text(local.materialsReportCopy),
         ),

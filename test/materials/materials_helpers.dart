@@ -32,7 +32,7 @@ import '../bank/memory_hive.dart';
 /// Content keys of `fixtures/air_law_fixture.json`.
 ///
 /// Topic AL01 has the order K1, K2, K3, K4, K5, K8 and two sections (AL01-1
-/// covers K1 and K3, AL01-2 covers K4); topic AL02 has the disputed K6.
+/// covers K1 and K3, AL01-2 covers K4); K5 and K6 (topic AL02) are disputed.
 ///
 /// Links: PPL(A) has K1 (PL010-0001), K2 (PL010-0010), K3 (PL010-0003), K4
 /// (PL010-0004), K5 (PL010-0005) and no explanation for PL010-0002; PPL(H)

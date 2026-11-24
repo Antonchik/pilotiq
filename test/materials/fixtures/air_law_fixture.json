@@ -34,15 +34,15 @@
    "text": "Objaśnienie czwarte. Dostępne w Premium."
   },
   "PL010-0005#e5e5e5e5": {
-   "disputeNote": null,
+   "disputeNote": "Notatka sporna do piątego pytania.",
    "refs": [
     {
      "loc": "SERA.5001",
      "src": "EU-SERA"
     }
    ],
-   "status": "verified",
-   "text": "Objaśnienie piąte. Krótko."
+   "status": "disputed",
+   "text": "Objaśnienie piąte, sporne. Krótko."
   },
   "PL010-0006#f6f6f6f6": {
    "disputeNote": null,

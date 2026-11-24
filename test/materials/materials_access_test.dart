@@ -62,6 +62,25 @@ void main() {
     );
   });
 
+  test('a locked view carries no Premium content, only the status', () async {
+    final c = container();
+    final v = (await c.read(
+      explanationForQuestionProvider((Licence.ppla, 'PL010-0005')).future,
+    ))!;
+    expect(v.locked, isTrue);
+    expect(v.disputed, isTrue);
+    expect(v.text, isEmpty);
+    expect(v.refs, isEmpty);
+    expect(v.disputeNote, isNull);
+
+    final premium = (await container(premium: true).read(
+      explanationForQuestionProvider((Licence.ppla, 'PL010-0005')).future,
+    ))!;
+    expect(premium.locked, isFalse);
+    expect(premium.text, isNotEmpty);
+    expect(premium.disputeNote, isNotNull);
+  });
+
   test('premium sees every explanation', () async {
     final c = container(premium: true);
     final locked = await lockedOf(c, Licence.ppla, [

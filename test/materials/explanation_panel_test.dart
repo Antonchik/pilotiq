@@ -126,6 +126,50 @@ void main() {
     );
   });
 
+  testWidgets('free: a locked disputed question still shows the dispute '
+      'mark and the ULC-key sentence, but not its note or text', (
+    tester,
+  ) async {
+    final h = MaterialsHarness();
+    await h.pump(
+      tester,
+      explanationOf(Licence.ppla, 'PL010-0005'),
+      locale: const Locale('pl'),
+    );
+    expect(find.text('Objaśnienie dostępne w Premium'), findsOneWidget);
+    expect(key('explanation_disputed'), findsOneWidget);
+    expect(find.text('Pytanie sporne'), findsOneWidget);
+    expect(
+      find.text('Na egzaminie liczy się odpowiedź z klucza ULC.'),
+      findsOneWidget,
+    );
+    expect(key('explanation_dispute_note'), findsNothing);
+    expect(find.text('Notatka sporna do piątego pytania.'), findsNothing);
+    expect(find.text('Objaśnienie piąte, sporne. Krótko.'), findsNothing);
+    expect(key('explanation_text'), findsNothing);
+    expect(key('explanation_report'), findsNothing);
+    await tester.tap(key('explanation_unlock'));
+    await tester.pumpAndSettle();
+    expect(h.paywalls, [(PaywallTrigger.materials, true)]);
+  });
+
+  testWidgets('the disputed title is a header for screen readers', (
+    tester,
+  ) async {
+    final handle = tester.ensureSemantics();
+    final h = MaterialsHarness();
+    await h.pump(
+      tester,
+      explanationOf(Licence.pplh, 'PL010-0001'),
+      locale: const Locale('pl'),
+    );
+    expect(
+      tester.getSemantics(key('explanation_disputed_title')),
+      isSemantics(label: 'Pytanie sporne', isHeader: true),
+    );
+    handle.dispose();
+  });
+
   testWidgets('questions in English: the "Polish only" note', (tester) async {
     final h = MaterialsHarness();
     await h.pump(
@@ -178,9 +222,19 @@ void main() {
       expect(text, contains('Wersja materiałów: fx123456'));
       expect(text, contains('Data bazy pytań: 01.08.2024'));
 
+      expect(key('materials_report_copied'), findsNothing);
       await tester.tap(key('materials_report_copy'));
       await tester.pumpAndSettle();
       expect(copied, [text]);
+      // The confirmation is inside the dialog, not under its barrier.
+      expect(
+        find.descendant(
+          of: key('materials_report_dialog'),
+          matching: find.text('Copied'),
+        ),
+        findsOneWidget,
+      );
+      expect(find.byType(SnackBar), findsNothing);
       await tester.tap(key('materials_report_close'));
       await tester.pumpAndSettle();
       expect(key('materials_report_dialog'), findsNothing);

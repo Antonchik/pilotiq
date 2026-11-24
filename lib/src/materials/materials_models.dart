@@ -156,16 +156,8 @@ class SubjectMaterials {
   String refLabel(MaterialRef ref) =>
       '${sources[ref.src]?.title ?? ref.src}, ${ref.loc}';
 
-  late final Map<String, MaterialsTopic> _topicOfKey = {
-    for (final t in topics)
-      for (final k in t.order) k: t,
-  };
-
   final Map<Licence, Map<String, int>> _indexCache = {};
   final Map<Licence, Map<String, List<String>>> _idsCache = {};
-
-  /// Topic whose order contains [key].
-  MaterialsTopic? topicOf(String key) => _topicOfKey[key];
 
   /// 0-based position of [key] in its topic, counted only over the keys that
   /// have a question in the bank of [licence]; `null` when the key is in no

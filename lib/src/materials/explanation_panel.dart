@@ -105,7 +105,8 @@ class ExplanationPanel extends StatelessWidget {
               ),
             ),
           const SizedBox(height: 8),
-          if (view.locked)
+          if (view.locked) ...[
+            if (view.disputed) const _DisputedBlock(),
             FilledButton.tonal(
               key: const Key('explanation_unlock'),
               onPressed: () => openPaywall(
@@ -114,43 +115,9 @@ class ExplanationPanel extends StatelessWidget {
                 explicit: true,
               ),
               child: Text(local.materialsUnlock),
-            )
-          else ...[
-            if (view.disputed)
-              Container(
-                key: const Key('explanation_disputed'),
-                width: double.infinity,
-                margin: const EdgeInsets.only(bottom: 8),
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: scheme.tertiaryContainer,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      local.materialsDisputedTitle,
-                      style: theme.textTheme.titleSmall?.copyWith(
-                        color: scheme.onTertiaryContainer,
-                      ),
-                    ),
-                    if (note != null)
-                      Text(
-                        note,
-                        key: const Key('explanation_dispute_note'),
-                        style: TextStyle(color: scheme.onTertiaryContainer),
-                      ),
-                    Text(
-                      local.materialsDisputedExam,
-                      style: TextStyle(
-                        color: scheme.onTertiaryContainer,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            ),
+          ] else ...[
+            if (view.disputed) _DisputedBlock(note: note),
             Text(
               view.text,
               key: const Key('explanation_text'),
@@ -187,6 +154,62 @@ class ExplanationPanel extends StatelessWidget {
               ),
             ),
           ],
+        ],
+      ),
+    );
+  }
+}
+
+/// "Pytanie sporne": the ULC key is doubtful, but it is the one that counts
+/// in the exam. [note] (why it is doubtful) is Premium content: a locked
+/// explanation shows the block without it.
+class _DisputedBlock extends StatelessWidget {
+  const _DisputedBlock({this.note});
+
+  final String? note;
+
+  @override
+  Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final note = this.note;
+    return Container(
+      key: const Key('explanation_disputed'),
+      width: double.infinity,
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: scheme.tertiaryContainer,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Semantics(
+            header: true,
+            child: Text(
+              local.materialsDisputedTitle,
+              key: const Key('explanation_disputed_title'),
+              style: theme.textTheme.titleSmall?.copyWith(
+                color: scheme.onTertiaryContainer,
+              ),
+            ),
+          ),
+          if (note != null)
+            Text(
+              note,
+              key: const Key('explanation_dispute_note'),
+              style: TextStyle(color: scheme.onTertiaryContainer),
+            ),
+          Text(
+            local.materialsDisputedExam,
+            key: const Key('explanation_disputed_exam'),
+            style: TextStyle(
+              color: scheme.onTertiaryContainer,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ],
       ),
     );
