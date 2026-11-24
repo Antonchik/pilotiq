@@ -331,6 +331,7 @@ _UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
 _DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
 _ANNEX_RE = re.compile(r"^Załącznik nr (\d+[a-z]?)$")
+_ITEM_RE = re.compile(r"^(?:[a-z]\)|–|-|\d+[a-z]?\)|\d+[a-z]?\.|Art\.)\s")
 _TABLE_RE = re.compile(r"^Tabela nr (\d+)$")
 _PART_RE = re.compile(r"^Część ([IVX]+[a-z]?)(?:\s.*)?$")
 _FOOTNOTES_RE = re.compile(r"^Przypisy:?$")
@@ -428,6 +429,10 @@ def statute_anchors(text, future_out=None):
     for start, raw in _line_offsets(text):
         fut = FUTURE_MARK in raw
         line = " ".join(raw.replace(FUTURE_MARK, " ").split()) if fut else raw
+        if fut_start is not None and fut_level == 4 and not fut and start > fut_start and _ITEM_RE.match(line):
+            close_future(start, 4)   # a marked letter / dash item ended: the next item is in force again
+        if fut and fut_start is None:
+            fut_start, fut_level = start, 4   # provisional: a marker inside a lit. / dash item (unit headings re-open at their level)
         ma = _ANNEX_RE.match(line)
         if ma:
             close_art_tree(start)
