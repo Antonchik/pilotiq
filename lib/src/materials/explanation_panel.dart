@@ -207,6 +207,7 @@ class _DisputedBlock extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Semantics(
+            container: true,
             header: true,
             child: Text(
               local.materialsDisputedTitle,
@@ -269,6 +270,7 @@ class _OutdatedBlock extends StatelessWidget {
               const SizedBox(width: 8),
               Expanded(
                 child: Semantics(
+                  container: true,
                   header: true,
                   child: Text(
                     local.materialsOutdatedTitle,
