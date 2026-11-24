@@ -89,19 +89,35 @@ class ProgressRepository {
   /// opened even with recovery (first frame damaged) and a copy exists, the
   /// file is deleted and an empty box is opened so the app can start. Every
   /// such case is added to [recoveryEvents].
-  static Future<Box<dynamic>> _openWithBackup(String name) async {
+  static Future<Box<dynamic>> _openWithBackup(String name) =>
+      openWithBackupUsing(name, _hiveOpen);
+
+  static Future<Box<dynamic>> _hiveOpen(
+    String name, {
+    required bool crashRecovery,
+  }) => Hive.openBox<dynamic>(name, crashRecovery: crashRecovery);
+
+  /// [_openWithBackup] with the raw Hive opener injected (for tests).
+  static Future<Box<dynamic>> openWithBackupUsing(
+    String name,
+    Future<Box<dynamic>> Function(String name, {required bool crashRecovery})
+    hiveOpen,
+  ) async {
     try {
-      return await Hive.openBox<dynamic>(name, crashRecovery: false);
-    } on Object {
+      return await hiveOpen(name, crashRecovery: false);
+    } on HiveError {
+      // Only a damaged file is recovered. Any other failure (a locked file,
+      // no disk access, ...) is a plain error: no copy, no reset, no
+      // RecoveryEvent; the caller can retry.
       final backup = await _backupDamagedFile(name);
       try {
-        final box = await Hive.openBox<dynamic>(name);
+        final box = await hiveOpen(name, crashRecovery: true);
         _recoveryEvents.add(RecoveryEvent(name, backup, reset: false));
         return box;
       } on Object {
         if (backup == null) rethrow;
         await Hive.deleteBoxFromDisk(name);
-        final box = await Hive.openBox<dynamic>(name);
+        final box = await hiveOpen(name, crashRecovery: true);
         _recoveryEvents.add(RecoveryEvent(name, backup, reset: true));
         return box;
       }
@@ -174,13 +190,21 @@ class ProgressRepository {
 
   /// Saves the settings. `schemaVersion` is never written here (only
   /// [completeMigration] does), so a stale object cannot roll it back.
-  Future<void> saveSettings(UserSettings settings) => _locked(() async {
+  ///
+  /// The default theme is not stored until a theme was chosen; pass
+  /// [themeChosen] when the user picked the theme (also "System"), so that a
+  /// later migration of the legacy `dark` flag cannot override it.
+  Future<void> saveSettings(
+    UserSettings settings, {
+    bool themeChosen = false,
+  }) => _locked(() async {
     final map = settings.toMap()..remove('schemaVersion');
     final box = await _box(configBox);
     // The default theme is not stored until the user (or the migration) has
     // chosen one: otherwise it would hide the 1.2.0 `dark` flag from a
     // migration that runs later.
-    if (settings.themeMode == AppThemeMode.system &&
+    if (!themeChosen &&
+        settings.themeMode == AppThemeMode.system &&
         !box.containsKey('themeMode')) {
       map.remove('themeMode');
     }
@@ -298,11 +322,17 @@ class ProgressRepository {
     if (attemptId != null && last != null && last.isAfter(now)) {
       // An exam answer counted late: the question was answered since the exam.
       // The counters take it in, but the newer state of the question (box,
-      // streak, next review, last answer) is not moved back.
+      // next review, last answer) is not moved back. The streak never grows
+      // from it. A wrong exam answer cuts the streak
+      // as far as it is known: only the answer given after the exam (the
+      // latest one) is certain to follow it, so the streak is capped at 1.
       after = before.copyWith(
         seen: before.seen + 1,
         correct: before.correct + (correct ? 1 : 0),
         wrong: before.wrong + (correct ? 0 : 1),
+        consecutiveCorrect: correct
+            ? before.consecutiveCorrect
+            : (before.consecutiveCorrect > 1 ? 1 : before.consecutiveCorrect),
       );
     }
     final key = DailyStat.keyFor(now);
@@ -343,6 +373,10 @@ class ProgressRepository {
 
   static Map<dynamic, dynamic>? _copyMap(Object? v) =>
       v is Map ? Map<dynamic, dynamic>.of(v) : null;
+
+  /// Finishes (rolls back) an interrupted answer record left in the journal,
+  /// if any. Called at start-up, before the first reads.
+  Future<void> recoverPending() => _locked(() async {});
 
   /// Rolls back an unfinished [recordAnswer] left in the journal, if any.
   Future<void> _recoverPending() async {

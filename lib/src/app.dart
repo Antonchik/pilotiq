@@ -42,6 +42,14 @@ Future<MigrationOutcome> runStartupMigration(
   ProviderContainer container,
 ) async {
   final outcome = await container.read(legacyMigrationProvider).run();
+  // Finish an answer record that was interrupted by the last run, so that the
+  // first reads (the dashboard) never see a partly applied answer. Failure is
+  // not fatal: the next locked write repeats it.
+  try {
+    await container.read(progressRepositoryProvider).recoverPending();
+  } on Object {
+    // see above
+  }
   // Drop anything that might have been computed from the pre-migration data.
   container.invalidate(userSettingsProvider);
   return outcome;
@@ -82,53 +90,72 @@ class PilotiqRoot extends StatefulWidget {
 }
 
 class _PilotiqRootState extends State<PilotiqRoot> {
-  late Future<ProviderContainer> _start = _begin();
+  /// Number of the current start; an answer of an older start is stale.
+  int _generation = 0;
+  ProviderContainer? _container;
+  Object? _error;
+  bool _disposed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _begin();
+  }
 
   /// Starts the initialisation. A failure (also a synchronous one) is
-  /// reported by the screen, never as an unhandled error.
-  Future<ProviderContainer> _begin() {
-    final start = Future<ProviderContainer>.sync(widget.initialize);
-    start.ignore();
-    return start;
+  /// reported by the screen, never as an unhandled error. While a start is
+  /// running the loading indicator is shown, never the old error screen.
+  void _begin() {
+    final generation = ++_generation;
+    _error = null;
+    Future<ProviderContainer>.sync(widget.initialize).then(
+      (container) {
+        if (_disposed || generation != _generation) {
+          // Replaced or disposed while it was starting: nobody will use it.
+          container.dispose();
+          return;
+        }
+        setState(() => _container = container);
+      },
+      onError: (Object error) {
+        if (_disposed || generation != _generation) return;
+        setState(() => _error = error);
+      },
+    );
   }
 
   @override
   void dispose() {
+    _disposed = true;
     // The container lives as long as this widget.
-    _start.then((c) => c.dispose(), onError: (Object _) {});
+    _container?.dispose();
     super.dispose();
   }
 
   void _retry() {
-    setState(() {
-      _start = _begin();
-    });
+    // Retry is only offered on the error screen, i.e. when no start runs.
+    if (_error == null || _container != null) return;
+    setState(_begin);
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<ProviderContainer>(
-      future: _start,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          return UncontrolledProviderScope(
-            container: snapshot.data!,
-            child: const MyApp(),
-          );
-        }
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          supportedLocales: AppLocalizations.supportedLocales,
-          theme: lightAppTheme,
-          darkTheme: darkAppTheme,
-          home: snapshot.hasError
-              ? _StartupErrorScreen(onRetry: _retry)
-              : const Scaffold(
-                  body: Center(child: CircularProgressIndicator()),
-                ),
-        );
-      },
+    final container = _container;
+    if (container != null) {
+      return UncontrolledProviderScope(
+        container: container,
+        child: const MyApp(),
+      );
+    }
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      theme: lightAppTheme,
+      darkTheme: darkAppTheme,
+      home: _error != null
+          ? _StartupErrorScreen(onRetry: _retry)
+          : const Scaffold(body: Center(child: CircularProgressIndicator())),
     );
   }
 }

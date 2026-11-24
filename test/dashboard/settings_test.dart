@@ -14,12 +14,12 @@ class _FlakyRepository extends ProgressRepository {
   int failures;
 
   @override
-  Future<void> saveSettings(settings) async {
+  Future<void> saveSettings(settings, {bool themeChosen = false}) async {
     if (failures > 0) {
       failures--;
       throw StateError('box could not be opened');
     }
-    return super.saveSettings(settings);
+    return super.saveSettings(settings, themeChosen: themeChosen);
   }
 }
 

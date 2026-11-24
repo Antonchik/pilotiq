@@ -26,12 +26,16 @@ class UserSettingsNotifier extends AsyncNotifier<UserSettings> {
       ref.watch(progressRepositoryProvider).loadSettings();
 
   /// Applies [mutate] to the current settings and persists the result.
+  /// [themeChosen]: the change is the user's own theme choice.
   Future<void> change(
-    UserSettings Function(UserSettings current) mutate,
-  ) async {
+    UserSettings Function(UserSettings current) mutate, {
+    bool themeChosen = false,
+  }) async {
     final current = state.value ?? await future;
     final next = mutate(current);
-    await ref.read(progressRepositoryProvider).saveSettings(next);
+    await ref
+        .read(progressRepositoryProvider)
+        .saveSettings(next, themeChosen: themeChosen);
     state = AsyncData(next);
   }
 }

@@ -21,6 +21,7 @@ class ThemeModeButton extends ConsumerWidget {
               (s) => s.copyWith(
                 themeMode: isDark ? AppThemeMode.light : AppThemeMode.dark,
               ),
+              themeChosen: true,
             )
           : null,
     );

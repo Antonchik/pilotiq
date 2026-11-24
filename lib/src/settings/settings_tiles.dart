@@ -17,10 +17,13 @@ const List<int> dailyGoalChoices = [10, 20, 40];
 Future<bool> changeSettings(
   BuildContext context,
   WidgetRef ref,
-  UserSettings Function(UserSettings current) mutate,
-) async {
+  UserSettings Function(UserSettings current) mutate, {
+  bool themeChosen = false,
+}) async {
   try {
-    await ref.read(userSettingsProvider.notifier).change(mutate);
+    await ref
+        .read(userSettingsProvider.notifier)
+        .change(mutate, themeChosen: themeChosen);
     return true;
   } on Object {
     if (!context.mounted) return false;
@@ -37,7 +40,12 @@ Future<bool> changeSettings(
               // A box that failed to open is remembered by the repository,
               // so the retry starts with a fresh one.
               ref.invalidate(progressRepositoryProvider);
-              changeSettings(context, ref, mutate).ignore();
+              changeSettings(
+                context,
+                ref,
+                mutate,
+                themeChosen: themeChosen,
+              ).ignore();
             },
           ),
         ),
@@ -341,6 +349,7 @@ class ThemeTile extends ConsumerWidget {
                   context,
                   ref,
                   (s) => s.copyWith(themeMode: selection.first),
+                  themeChosen: true,
                 ),
         ),
       ),

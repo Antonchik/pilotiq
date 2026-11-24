@@ -143,9 +143,37 @@ void main() {
     expect(after.wrong, before.wrong + 1);
     expect(after.correct, before.correct);
     expect(after.box, before.box);
-    expect(after.consecutiveCorrect, before.consecutiveCorrect);
+    // The wrong exam answer precedes the later ones: the streak is cut to the
+    // one answer that certainly followed it, never left inflated.
+    expect(before.consecutiveCorrect, 2);
+    expect(after.consecutiveCorrect, 1);
     expect(after.dueAt, before.dueAt);
     expect(after.lastAnsweredAt, before.lastAnsweredAt);
     expect((await repo.attempts(Licence.ppla)).single.unrecorded, isEmpty);
+  });
+
+  test('a late correct exam answer never grows the streak', () async {
+    final exam = DateTime.utc(2026, 5, 1, 10, 20);
+    await repo.saveAttempt(attempt(unrecorded: const ['a']));
+    final later = DateTime.utc(2026, 5, 3, 9);
+    await repo.recordAnswer(Licence.ppla, 'a', true, later);
+    await repo.recordAnswer(Licence.ppla, 'a', true, later);
+
+    await repo.recordAttemptAnswer('att', 'a', correct: true, now: exam);
+
+    final after = (await repo.progressOf(Licence.ppla, 'a'))!;
+    expect(after.consecutiveCorrect, 2);
+    expect(after.seen, 3);
+  });
+
+  test('a late wrong exam answer keeps a streak of 0 at 0', () async {
+    final exam = DateTime.utc(2026, 5, 1, 10, 20);
+    await repo.saveAttempt(attempt(unrecorded: const ['a']));
+    final later = DateTime.utc(2026, 5, 3, 9);
+    await repo.recordAnswer(Licence.ppla, 'a', false, later);
+
+    await repo.recordAttemptAnswer('att', 'a', correct: false, now: exam);
+
+    expect((await repo.progressOf(Licence.ppla, 'a'))!.consecutiveCorrect, 0);
   });
 }
