@@ -1,216 +1,216 @@
 {
- "topic": "AL11",
- "sections": [
-  {
-   "id": "AL11-1",
-   "status": "draft",
-   "heading": "Minimalne wysokości lotu VFR w dzień",
-   "body": [
-    "Statek powietrzny nie wykonuje lotu nad gęstą zabudową dużych miast, miasteczek, osiedli ani nad zgromadzeniem osób na wolnym powietrzu, chyba że leci na wysokości, która w sytuacji awaryjnej pozwoli wylądować bez nadmiernego narażania osób lub mienia na ziemi (SERA.3105). Wartości dla lotów VFR podaje pkt SERA.5005 lit. f) rozporządzenia 923/2012, a dla FIR Warszawa powtarza je AIP Polska (ENR 1.2 pkt 9):",
-    "- nad gęstą zabudową i nad zgromadzeniem osób na wolnym powietrzu: co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego;",
-    "- nad innym terenem: co najmniej 150 m (500 ft) nad lądem lub wodą albo 150 m nad najwyższą przeszkodą w promieniu 150 m od statku powietrznego;",
-    "- wyjątki: start i lądowanie oraz lot za zezwoleniem właściwego organu.",
-    "W przepisie o zabudowie 300 m to wysokość nad przeszkodą, a 600 m to promień, w którym szuka się najwyższej przeszkody."
-   ],
-   "refs": [
+  "topic": "AL11",
+  "sections": [
     {
-     "src": "EU-923-2012",
-     "loc": "SERA.3105",
-     "quote": "statek powietrzny nie wykonuje lotu nad gęstą zabudową dużych miast, miasteczek, osiedli lub nad zgromadzeniem osób na wolnym powietrzu, chyba że lot odbywa się na takiej wysokości, która w przypadku sytuacji awaryjnej pozwoli na wykonanie lądowania bez nadmiernego narażania osób lub mienia na ziemi"
+      "id": "AL11-1",
+      "status": "verified",
+      "heading": "Minimalne wysokości lotu VFR w dzień",
+      "body": [
+        "Statek powietrzny nie wykonuje lotu nad gęstą zabudową dużych miast, miasteczek, osiedli ani nad zgromadzeniem osób na wolnym powietrzu, chyba że leci na wysokości, która w sytuacji awaryjnej pozwoli wylądować bez nadmiernego narażania osób lub mienia na ziemi (SERA.3105). Wartości dla lotów VFR podaje pkt SERA.5005 lit. f) rozporządzenia 923/2012, a dla FIR Warszawa powtarza je AIP Polska (ENR 1.2 pkt 9):",
+        "- nad gęstą zabudową i nad zgromadzeniem osób na wolnym powietrzu: co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego;",
+        "- nad innym terenem: co najmniej 150 m (500 ft) nad lądem lub wodą albo 150 m nad najwyższą przeszkodą w promieniu 150 m od statku powietrznego;",
+        "- wyjątki: start i lądowanie oraz lot za zezwoleniem właściwego organu.",
+        "W przepisie o zabudowie 300 m to wysokość nad przeszkodą, a 600 m to promień, w którym szuka się najwyższej przeszkody."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3105",
+          "quote": "statek powietrzny nie wykonuje lotu nad gęstą zabudową dużych miast, miasteczek, osiedli lub nad zgromadzeniem osób na wolnym powietrzu, chyba że lot odbywa się na takiej wysokości, która w przypadku sytuacji awaryjnej pozwoli na wykonanie lądowania bez nadmiernego narażania osób lub mienia na ziemi"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)",
+          "quote": "Z wyjątkiem sytuacji, gdy jest to konieczne ze względu na start lub lądowanie lub gdy uzyskano zezwolenie właściwego organu, lot VFR nie jest wykonywany"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)(1)",
+          "quote": "nad gęstą zabudową dużych miast, miasteczek, osiedli lub nad zgromadzeniem osób na wolnym powietrzu na wysokości względnej mniejszej niż 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)(2)",
+          "quote": "nad terenem innym niż wymieniony w pkt 1 na wysokości względnej mniejszej niż 150 m (500 ft) nad lądem lub wodą, lub 150 m (500 ft) nad najwyższą przeszkodą znajdującą się w promieniu 150 m (500 ft) od statku powietrznego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 9",
+          "quote": "na wysokości względnej mniejszej niż 300 m (1000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0013#002b1634",
+        "PL010-0013#b623b0e6",
+        "PL010-0356#5678e240",
+        "PL010-0438#79564ffc",
+        "PL010-0439#cfb8f724",
+        "PL010-0440#c40de77d",
+        "PL010-0441#51261d4c",
+        "PL010-0442#43e561f0",
+        "PL010-0443#bdaa0840",
+        "PL010-0444#e7118e07",
+        "PL010-0445#b1f3de67",
+        "PL010-0446#243da8f9",
+        "PL010-0447#01d2fbb0",
+        "PL010-0448#15a63678",
+        "PL010-0449#e9d33179",
+        "PL010-0450#ea197bbb",
+        "PL010-0451#ea197bbb",
+        "PL010-0452#62407f64"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(f)",
-     "quote": "Z wyjątkiem sytuacji, gdy jest to konieczne ze względu na start lub lądowanie lub gdy uzyskano zezwolenie właściwego organu, lot VFR nie jest wykonywany"
+      "id": "AL11-2",
+      "status": "disputed",
+      "heading": "Klasa przestrzeni a minimalne wysokości",
+      "body": [
+        "Pkt SERA.5005 lit. f) rozporządzenia 923/2012 nie wymienia klas przestrzeni powietrznej. Minimum 300 m nad zabudową i zgromadzeniami osób oraz 150 m nad innym terenem obowiązuje tak samo w każdej klasie, w której lot VFR jest dozwolony. W pytaniach typu „w przestrzeni klasy B…G nad miastami” klasa nie zmienia odpowiedzi: 300 m nad najwyższą przeszkodą.",
+        "Dwa zastrzeżenia:",
+        "- w klasie A dozwolone są wyłącznie loty IFR (SERA.6001 lit. a) ppkt 1), więc lot VFR w klasie A nie jest możliwy;",
+        "- przepis nie przewiduje osobnej wysokości nad lasami: poza zabudową i zgromadzeniami osób obowiązuje 150 m (SERA.5005 lit. f) ppkt 2).",
+        "Klucz ULC w pytaniach o klasę A i o lasy przyjmuje 300 m nad najwyższą przeszkodą; aktualny przepis wiąże tę wartość tylko z gęstą zabudową i zgromadzeniami osób."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)(1)",
+          "quote": "nad gęstą zabudową dużych miast, miasteczek, osiedli lub nad zgromadzeniem osób na wolnym powietrzu na wysokości względnej mniejszej niż 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)(2)",
+          "quote": "nad terenem innym niż wymieniony w pkt 1 na wysokości względnej mniejszej niż 150 m (500 ft) nad lądem lub wodą, lub 150 m (500 ft) nad najwyższą przeszkodą znajdującą się w promieniu 150 m (500 ft) od statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(1)",
+          "quote": "Klasa A. Dozwolone są wyłącznie loty IFR."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0438#79564ffc",
+        "PL010-0439#cfb8f724",
+        "PL010-0440#c40de77d",
+        "PL010-0441#51261d4c",
+        "PL010-0442#43e561f0",
+        "PL010-0443#bdaa0840",
+        "PL010-0444#e7118e07",
+        "PL010-0445#b1f3de67",
+        "PL010-0446#243da8f9",
+        "PL010-0447#01d2fbb0",
+        "PL010-0448#15a63678",
+        "PL010-0449#e9d33179",
+        "PL010-0450#ea197bbb",
+        "PL010-0451#ea197bbb",
+        "PL010-0452#62407f64"
+      ],
+      "disputeNote": "Pytania o lot VFR w klasie A są sprzeczne z pkt SERA.6001 lit. a) ppkt 1 (w klasie A tylko IFR), a pytanie o lasy z pkt SERA.5005 lit. f) ppkt 2 (poza zabudową 150 m). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(f)(1)",
-     "quote": "nad gęstą zabudową dużych miast, miasteczek, osiedli lub nad zgromadzeniem osób na wolnym powietrzu na wysokości względnej mniejszej niż 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego"
+      "id": "AL11-3",
+      "status": "draft",
+      "heading": "Przelot poziomy VFR i tabela poziomów przelotu",
+      "body": [
+        "Jeżeli zezwolenie kontroli ruchu lotniczego nie stanowi inaczej, przelot poziomy VFR wykonywany powyżej 900 m (3 000 ft) nad ziemią lub wodą odbywa się na poziomie przelotu odpowiednim dla linii drogi, według tabeli poziomów przelotu z dodatku 3 do rozporządzenia 923/2012 (SERA.5005 lit. g)). AIP Polska (ENR 1.2 pkt 10) stosuje tę zasadę w FIR Warszawa.",
+        "- Poniżej 900 m nad terenem poziom z tabeli nie jest wymagany; obowiązują minimalne wysokości z SERA.5005 lit. f).",
+        "- Granica 900 m jest liczona od ziemi lub wody, a nie od poziomu morza, więc to wzniesienie terenu decyduje, czy dana wysokość bezwzględna wymaga poziomu z tabeli.",
+        "- Wysokości 1250, 1450 i 1550 m nie występują w tabeli z dodatku 3.",
+        "Klucz ULC w pytaniach o przelot poziomy w FIR Warszawa w klasie C lub G przyjmuje 300 m (w jednym wariancie 600 m); aktualny przepis dopuszcza taki przelot tylko poniżej 900 m nad terenem, więc w wariantach z warunkiem „powyżej 900 m nad terenem” odpowiedź z klucza przeczy warunkowi pytania."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(g)",
+          "quote": "loty VFR w przelotach poziomych wykonywanych powyżej 900 m (3 000 ft) nad ziemią lub wodą, lub na wyższym poziomie określonym przez właściwy organ, są wykonywane na poziomie przelotu odpowiednim dla danej linii drogi zgodnie z tabelą poziomów przelotu zamieszczoną w dodatku 3"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 10",
+          "quote": "loty VFR w przelotach poziomych wykonywanych powyżej 900 m (3000 ft) nad ziemią lub wodą są wykonywane na poziomie przelotu odpowiednim dla danej linii drogi"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "dodatek 3 pkt 1.1",
+          "quote": "040 4 000 1 200 045 4 500 1 350 050 5 000 1 500 055 5 500 1 700 060 6 000 1 850"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(f)",
+          "quote": "Z wyjątkiem sytuacji, gdy jest to konieczne ze względu na start lub lądowanie lub gdy uzyskano zezwolenie właściwego organu, lot VFR nie jest wykonywany"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0438#02c3f09c",
+        "PL010-0439#b05b7b8e",
+        "PL010-0440#89ac2b47",
+        "PL010-0441#b323e4a1",
+        "PL010-0442#bcc6166e",
+        "PL010-0443#37e90a68",
+        "PL010-0444#85cd0b8b",
+        "PL010-0445#6c38a9d5",
+        "PL010-0446#b66d2091",
+        "PL010-0447#b66d2091",
+        "PL010-0448#b66d2091",
+        "PL010-0449#4fd0f873",
+        "PL010-0450#1698d78b",
+        "PL010-0451#1698d78b",
+        "PL010-0452#fb09d002",
+        "PL010-1337#bbcc07b5"
+      ],
+      "disputeNote": "Według pkt SERA.5005 lit. g) i AIP ENR 1.2 pkt 10 powyżej 900 m nad ziemią lub wodą obowiązuje poziom z tabeli w dodatku 3, a wysokość bezwzględna 300 m jest niższa niż 900 m nad terenem. Poniżej tej granicy przepis dopuszcza więcej niż jedną z podanych wysokości. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(f)(2)",
-     "quote": "nad terenem innym niż wymieniony w pkt 1 na wysokości względnej mniejszej niż 150 m (500 ft) nad lądem lub wodą, lub 150 m (500 ft) nad najwyższą przeszkodą znajdującą się w promieniu 150 m (500 ft) od statku powietrznego"
-    },
-    {
-     "src": "AIP-PL",
-     "loc": "ENR 1.2 pkt 9",
-     "quote": "na wysokości względnej mniejszej niż 300 m (1000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego"
+      "id": "AL11-4",
+      "status": "draft",
+      "heading": "Minimalne wysokości lotu VFR w nocy",
+      "body": [
+        "Z wyjątkiem startu i lądowania lot VFR w nocy wykonuje się co najmniej na minimalnej wysokości bezwzględnej ustanowionej przez państwo, nad którego terytorium odbywa się przelot. Gdy jej nie ustalono, obowiązują wartości z pkt SERA.5005 lit. c) ppkt 5 rozporządzenia 923/2012, a AIP Polska (ENR 1.2 pkt 7) podaje te same wartości dla FIR Warszawa:",
+        "- nad terenem wyżynnym lub nad obszarami górskimi: co najmniej 600 m (2 000 ft) nad najwyższą przeszkodą;",
+        "- nad pozostałym terenem: co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą;",
+        "- w obu przypadkach liczy się najwyższą przeszkodę w promieniu 8 km od przypuszczalnej pozycji statku powietrznego.",
+        "Punktem odniesienia jest więc przeszkoda, a nie elewacja lotniska. Promienie z przepisów dziennych (600 m nad zabudową, 150 m poza nią) w nocy nie mają zastosowania: w nocy promień wynosi 8 km."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(5)",
+          "quote": "z wyjątkiem przypadków, gdy jest to konieczne ze względu na start lub lądowanie albo gdy zostało udzielone specjalne zezwolenie przez właściwy organ, lot VFR w nocy jest wykonywany"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(5)",
+          "quote": "lot VFR w nocy jest wykonywany na poziomie odpowiadającym co najmniej minimalnej bezwzględnej wysokości lotu ustanowionej przez państwo, nad którego terytorium wykonywany jest przelot, a gdy nie jest ona ustalona"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(5)(i)",
+          "quote": "nad terenem wyżynnym lub nad obszarami górskimi – na poziomie co najmniej 600 m (2 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 8 km od przypuszczalnej pozycji statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(5)(ii)",
+          "quote": "nad terenem innym niż wymieniony w ppkt (i) – na poziomie co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 8 km od przypuszczalnej pozycji statku powietrznego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 7",
+          "quote": "na poziomie co najmniej 300 m (1000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 8 km od przypuszczalnej pozycji statku powietrznego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 7",
+          "quote": "nad terenem wyżynnym lub nad obszarami górskimi na poziomie co najmniej 600 m (2000 ft) nad najwyższą przeszkodą"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0530#8e378916",
+        "PL010-0519#f0f28a1c",
+        "PL010-0523#86288683",
+        "PL010-0525#0fd8d734"
+      ],
+      "disputeNote": null
     }
-   ],
-   "questionKeys": [
-    "PL010-0013#002b1634",
-    "PL010-0013#b623b0e6",
-    "PL010-0356#5678e240",
-    "PL010-0438#79564ffc",
-    "PL010-0439#cfb8f724",
-    "PL010-0440#c40de77d",
-    "PL010-0441#51261d4c",
-    "PL010-0442#43e561f0",
-    "PL010-0443#bdaa0840",
-    "PL010-0444#e7118e07",
-    "PL010-0445#b1f3de67",
-    "PL010-0446#243da8f9",
-    "PL010-0447#01d2fbb0",
-    "PL010-0448#15a63678",
-    "PL010-0449#e9d33179",
-    "PL010-0450#ea197bbb",
-    "PL010-0451#ea197bbb",
-    "PL010-0452#62407f64"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL11-2",
-   "status": "draft",
-   "heading": "Klasa przestrzeni a minimalne wysokości",
-   "body": [
-    "Pkt SERA.5005 lit. f) rozporządzenia 923/2012 nie wymienia klas przestrzeni powietrznej. Minimum 300 m nad zabudową i zgromadzeniami osób oraz 150 m nad innym terenem obowiązuje tak samo w każdej klasie, w której lot VFR jest dozwolony. W pytaniach typu „w przestrzeni klasy B…G nad miastami” klasa nie zmienia odpowiedzi: 300 m nad najwyższą przeszkodą.",
-    "Dwa zastrzeżenia:",
-    "- w klasie A dozwolone są wyłącznie loty IFR (SERA.6001 lit. a) ppkt 1), więc lot VFR w klasie A nie jest możliwy;",
-    "- przepis nie przewiduje osobnej wysokości nad lasami: poza zabudową i zgromadzeniami osób obowiązuje 150 m (SERA.5005 lit. f) ppkt 2).",
-    "Klucz ULC w pytaniach o klasę A i o lasy przyjmuje 300 m nad najwyższą przeszkodą; aktualny przepis wiąże tę wartość tylko z gęstą zabudową i zgromadzeniami osób."
-   ],
-   "refs": [
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(f)(1)",
-     "quote": "nad gęstą zabudową dużych miast, miasteczek, osiedli lub nad zgromadzeniem osób na wolnym powietrzu na wysokości względnej mniejszej niż 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 600 m od statku powietrznego"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(f)(2)",
-     "quote": "nad terenem innym niż wymieniony w pkt 1 na wysokości względnej mniejszej niż 150 m (500 ft) nad lądem lub wodą, lub 150 m (500 ft) nad najwyższą przeszkodą znajdującą się w promieniu 150 m (500 ft) od statku powietrznego"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.6001(a)(1)",
-     "quote": "Klasa A. Dozwolone są wyłącznie loty IFR."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0438#79564ffc",
-    "PL010-0439#cfb8f724",
-    "PL010-0440#c40de77d",
-    "PL010-0441#51261d4c",
-    "PL010-0442#43e561f0",
-    "PL010-0443#bdaa0840",
-    "PL010-0444#e7118e07",
-    "PL010-0445#b1f3de67",
-    "PL010-0446#243da8f9",
-    "PL010-0447#01d2fbb0",
-    "PL010-0448#15a63678",
-    "PL010-0449#e9d33179",
-    "PL010-0450#ea197bbb",
-    "PL010-0451#ea197bbb",
-    "PL010-0452#62407f64"
-   ],
-   "disputeNote": "Pytania o lot VFR w klasie A są sprzeczne z pkt SERA.6001 lit. a) ppkt 1 (w klasie A tylko IFR), a pytanie o lasy z pkt SERA.5005 lit. f) ppkt 2 (poza zabudową 150 m). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
-  },
-  {
-   "id": "AL11-3",
-   "status": "draft",
-   "heading": "Przelot poziomy VFR i tabela poziomów przelotu",
-   "body": [
-    "Jeżeli zezwolenie kontroli ruchu lotniczego nie stanowi inaczej, przelot poziomy VFR wykonywany powyżej 900 m (3 000 ft) nad ziemią lub wodą odbywa się na poziomie przelotu odpowiednim dla linii drogi, według tabeli poziomów przelotu z dodatku 3 do rozporządzenia 923/2012 (SERA.5005 lit. g)). AIP Polska (ENR 1.2 pkt 10) stosuje tę zasadę w FIR Warszawa.",
-    "- Poniżej 900 m nad terenem poziom z tabeli nie jest wymagany; obowiązują minimalne wysokości z SERA.5005 lit. f).",
-    "- Granica 900 m jest liczona od ziemi lub wody, a nie od poziomu morza, więc to wzniesienie terenu decyduje, czy dana wysokość bezwzględna wymaga poziomu z tabeli.",
-    "- Wysokości 1250, 1450 i 1550 m nie występują w tabeli z dodatku 3.",
-    "Klucz ULC w pytaniach o przelot poziomy w FIR Warszawa w klasie C lub G przyjmuje 300 m (w jednym wariancie 600 m); aktualny przepis dopuszcza taki przelot tylko poniżej 900 m nad terenem, więc w wariantach z warunkiem „powyżej 900 m nad terenem” odpowiedź z klucza przeczy warunkowi pytania."
-   ],
-   "refs": [
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(g)",
-     "quote": "loty VFR w przelotach poziomych wykonywanych powyżej 900 m (3 000 ft) nad ziemią lub wodą, lub na wyższym poziomie określonym przez właściwy organ, są wykonywane na poziomie przelotu odpowiednim dla danej linii drogi zgodnie z tabelą poziomów przelotu zamieszczoną w dodatku 3"
-    },
-    {
-     "src": "AIP-PL",
-     "loc": "ENR 1.2 pkt 10",
-     "quote": "loty VFR w przelotach poziomych wykonywanych powyżej 900 m (3000 ft) nad ziemią lub wodą są wykonywane na poziomie przelotu odpowiednim dla danej linii drogi"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "dodatek 3 pkt 1.1",
-     "quote": "040 4 000 1 200 045 4 500 1 350 050 5 000 1 500 055 5 500 1 700 060 6 000 1 850"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(f)",
-     "quote": "Z wyjątkiem sytuacji, gdy jest to konieczne ze względu na start lub lądowanie lub gdy uzyskano zezwolenie właściwego organu, lot VFR nie jest wykonywany"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0438#02c3f09c",
-    "PL010-0439#b05b7b8e",
-    "PL010-0440#89ac2b47",
-    "PL010-0441#b323e4a1",
-    "PL010-0442#bcc6166e",
-    "PL010-0443#37e90a68",
-    "PL010-0444#85cd0b8b",
-    "PL010-0445#6c38a9d5",
-    "PL010-0446#b66d2091",
-    "PL010-0447#b66d2091",
-    "PL010-0448#b66d2091",
-    "PL010-0449#4fd0f873",
-    "PL010-0450#1698d78b",
-    "PL010-0451#1698d78b",
-    "PL010-0452#fb09d002",
-    "PL010-1337#bbcc07b5"
-   ],
-   "disputeNote": "Według pkt SERA.5005 lit. g) i AIP ENR 1.2 pkt 10 powyżej 900 m nad ziemią lub wodą obowiązuje poziom z tabeli w dodatku 3, a wysokość bezwzględna 300 m jest niższa niż 900 m nad terenem. Poniżej tej granicy przepis dopuszcza więcej niż jedną z podanych wysokości. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
-  },
-  {
-   "id": "AL11-4",
-   "status": "draft",
-   "heading": "Minimalne wysokości lotu VFR w nocy",
-   "body": [
-    "Z wyjątkiem startu i lądowania lot VFR w nocy wykonuje się co najmniej na minimalnej wysokości bezwzględnej ustanowionej przez państwo, nad którego terytorium odbywa się przelot. Gdy jej nie ustalono, obowiązują wartości z pkt SERA.5005 lit. c) ppkt 5 rozporządzenia 923/2012, a AIP Polska (ENR 1.2 pkt 7) podaje te same wartości dla FIR Warszawa:",
-    "- nad terenem wyżynnym lub nad obszarami górskimi: co najmniej 600 m (2 000 ft) nad najwyższą przeszkodą;",
-    "- nad pozostałym terenem: co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą;",
-    "- w obu przypadkach liczy się najwyższą przeszkodę w promieniu 8 km od przypuszczalnej pozycji statku powietrznego.",
-    "Punktem odniesienia jest więc przeszkoda, a nie elewacja lotniska. Promienie z przepisów dziennych (600 m nad zabudową, 150 m poza nią) w nocy nie mają zastosowania: w nocy promień wynosi 8 km."
-   ],
-   "refs": [
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(c)(5)",
-     "quote": "z wyjątkiem przypadków, gdy jest to konieczne ze względu na start lub lądowanie albo gdy zostało udzielone specjalne zezwolenie przez właściwy organ, lot VFR w nocy jest wykonywany"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(c)(5)",
-     "quote": "lot VFR w nocy jest wykonywany na poziomie odpowiadającym co najmniej minimalnej bezwzględnej wysokości lotu ustanowionej przez państwo, nad którego terytorium wykonywany jest przelot, a gdy nie jest ona ustalona"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(c)(5)(i)",
-     "quote": "nad terenem wyżynnym lub nad obszarami górskimi – na poziomie co najmniej 600 m (2 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 8 km od przypuszczalnej pozycji statku powietrznego"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.5005(c)(5)(ii)",
-     "quote": "nad terenem innym niż wymieniony w ppkt (i) – na poziomie co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 8 km od przypuszczalnej pozycji statku powietrznego"
-    },
-    {
-     "src": "AIP-PL",
-     "loc": "ENR 1.2 pkt 7",
-     "quote": "na poziomie co najmniej 300 m (1000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 8 km od przypuszczalnej pozycji statku powietrznego"
-    },
-    {
-     "src": "AIP-PL",
-     "loc": "ENR 1.2 pkt 7",
-     "quote": "nad terenem wyżynnym lub nad obszarami górskimi na poziomie co najmniej 600 m (2000 ft) nad najwyższą przeszkodą"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0530#8e378916",
-    "PL010-0519#f0f28a1c",
-    "PL010-0523#86288683",
-    "PL010-0525#0fd8d734"
-   ],
-   "disputeNote": null
-  }
- ]
+  ]
 }

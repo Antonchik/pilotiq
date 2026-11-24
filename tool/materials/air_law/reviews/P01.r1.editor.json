@@ -1,0 +1,212 @@
+[
+ {
+  "key": "PL010-0013#002b1634",
+  "verdict": "PASS",
+  "note": "Klucz 600 m = SERA.5005(f)(1); wyjątek z SERA.5005(f); pułapka (300 m to wysokość, nie promień) zgodna z przepisem."
+ },
+ {
+  "key": "PL010-0013#b623b0e6",
+  "verdict": "PASS",
+  "note": "Klucz 300 m = SERA.5005(f)(1); pułapka 150 m poparta SERA.5005(f)(2)."
+ },
+ {
+  "key": "PL010-0356#5678e240",
+  "verdict": "PASS",
+  "note": "Klucz 150 m = SERA.5005(f)(2); wyjątki z (f), pułapka 300 m z (f)(1). Zastrzeżenie o lotnictwie państwowym w pytaniu nie wymaga komentarza."
+ },
+ {
+  "key": "PL010-0438#79564ffc",
+  "verdict": "DISPUTED",
+  "note": "Sporne: wartość klucza = SERA.5005(f)(1), ale pytanie zakłada VFR w klasie A, co wyklucza SERA.6001(a)(1) („Dozwolone są wyłącznie loty IFR”); ściśle biorąc żadna wysokość VFR w klasie A nie istnieje. disputeNote poprawny, punkty w refs."
+ },
+ {
+  "key": "PL010-0439#cfb8f724",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa B dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0440#c40de77d",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa C dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0441#51261d4c",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa D dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0442#43e561f0",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa E dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0443#bdaa0840",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa F dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0444#e7118e07",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa G dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0445#b1f3de67",
+  "verdict": "DISPUTED",
+  "note": "Sporne jak 0438#79564ffc: wartość = SERA.5005(f)(1), ale VFR w klasie A sprzeczny z SERA.6001(a)(1). disputeNote poprawny."
+ },
+ {
+  "key": "PL010-0446#243da8f9",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa B dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0447#01d2fbb0",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa C dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0448#15a63678",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa D dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0449#e9d33179",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa E dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0450#ea197bbb",
+  "verdict": "PASS",
+  "note": "Nie sporne: klucz «300 m nad najwyższą przeszkodą» = SERA.5005(f)(1) (i AIP ENR 1.2 pkt 9), przepis nie zależy od klasy przestrzeni, a klasa F dopuszcza VFR (SERA.6001). Żadna inna odpowiedź nie jest obronna (250/200/350 m). Lokatory i cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0451#ea197bbb",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczny odcisk (pytanie i odpowiedzi jak w 0450#ea197bbb, w banku także „klasy F”). Oryginał nie jest sporny (SERA.5005(f)(1) nie zależy od klasy)."
+ },
+ {
+  "key": "PL010-0452#62407f64",
+  "verdict": "DISPUTED",
+  "note": "Sporne: lasy to „teren inny” – SERA.5005(f)(2) wymaga 150 m, nie 300 m; do tego VFR w klasie A sprzeczny z SERA.6001(a)(1). Tekst wyjaśnia źródło klucza, disputeNote poprawny."
+ },
+ {
+  "key": "PL010-0438#02c3f09c",
+  "verdict": "DISPUTED",
+  "note": "Sporne: klucz 300 m AMSL dopuszczalny wg SERA.5005(g)/ENR 1.2 pkt 10 tylko przy nisko położonym terenie; granica 900 m liczona od ziemi, więc nad terenem >350 m także 1250 m AMSL nie wymaga poziomu z tabeli. Ten sam NUMER w innym wariancie ma klucz „wysokość względna 300 m” (0439#b05b7b8e). Rachunek w disputeNote sprawdzony."
+ },
+ {
+  "key": "PL010-0439#b05b7b8e",
+  "verdict": "PASS",
+  "note": "Nie sporne: 300 m AGL zawsze < 900 m nad terenem (SERA.5005(g), ENR 1.2 pkt 10), jedyna odpowiedź zgodna niezależnie od terenu. Pułapka sprawdzona z dodatkiem 3: poziomy VFR 1050/1350/1700/2000 m – 1250/1450/1750 nie występują."
+ },
+ {
+  "key": "PL010-0440#89ac2b47",
+  "verdict": "PASS",
+  "note": "Jak 0439#b05b7b8e; „powinien” oddane ostrożnie („jest zgodny z przepisami”) – przepis dopuszcza, nie nakazuje 300 m, ale wśród odpowiedzi tylko ta jest zgodna bez względu na teren, więc nie sporne."
+ },
+ {
+  "key": "PL010-0441#b323e4a1",
+  "verdict": "DISPUTED",
+  "note": "Sporne: 600 m AMSL (dystraktor) też jest < 900 m nad terenem, więc nie wymaga poziomu z tabeli; co więcej w PL010-1337#bbcc07b5 ULC uznaje właśnie 600 m AMSL za klucz. disputeNote trafny (przy warunku pytania o zachowaniu minimów)."
+ },
+ {
+  "key": "PL010-0442#bcc6166e",
+  "verdict": "DISPUTED",
+  "note": "Sporne: 300 i 500 m AMSL obie < 900 m nad terenem (SERA.5005(g)); różnica zależy tylko od wzniesienia terenu (SERA.5005(f)(2)). disputeNote poprawny."
+ },
+ {
+  "key": "PL010-0443#37e90a68",
+  "verdict": "DISPUTED",
+  "note": "Sporne jak 0442#bcc6166e (dystraktor 150 m AMSL); disputeNote poprawny, punkty w refs."
+ },
+ {
+  "key": "PL010-0444#85cd0b8b",
+  "verdict": "DISPUTED",
+  "note": "Sporne jak 0442#bcc6166e (dystraktor 450 m AMSL); disputeNote poprawny."
+ },
+ {
+  "key": "PL010-0445#6c38a9d5",
+  "verdict": "DISPUTED",
+  "note": "Sporne: zależność od terenu jak 0438#02c3f09c, a „powinien” – przepis jedynie dopuszcza 300 m. Pułapka 1250/1450/1550 sprawdzona z dodatkiem 3."
+ },
+ {
+  "key": "PL010-0446#b66d2091",
+  "verdict": "DISPUTED",
+  "note": "Sporne: warunek „powyżej 900 m nad terenem” + SERA.5005(g)/ENR 1.2 pkt 10 wymagają poziomu z dodatku 3; 300 m AMSL przeczy warunkowi, a 1250/1450/1550 nie są poziomami tabeli – żadna odpowiedź nie jest zgodna z przepisem."
+ },
+ {
+  "key": "PL010-0447#b66d2091",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak 0446#b66d2091; status sporny dziedziczy po oryginale (PASS tylko potwierdza tożsamość)."
+ },
+ {
+  "key": "PL010-0448#b66d2091",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak 0446#b66d2091; sporność dziedziczona po oryginale."
+ },
+ {
+  "key": "PL010-0449#4fd0f873",
+  "verdict": "DISPUTED",
+  "note": "Sporne jak 0446#b66d2091 (wariant „powinien”)."
+ },
+ {
+  "key": "PL010-0450#1698d78b",
+  "verdict": "DISPUTED",
+  "note": "Sporne jak 0446#b66d2091 (klasa G, warunek „powyżej 900 m nad terenem”)."
+ },
+ {
+  "key": "PL010-0451#1698d78b",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak 0450#1698d78b; sporność dziedziczona po oryginale."
+ },
+ {
+  "key": "PL010-0452#fb09d002",
+  "verdict": "DISPUTED",
+  "note": "Sporne jak 0446#b66d2091: przy „powyżej 900 m nad terenem” 300 m AMSL przeczy warunkowi, 1250/1450/1550 nie są poziomami z dodatku 3. Brak w pytaniu zastrzeżenia o minimach nie zmienia oceny."
+ },
+ {
+  "key": "PL010-1337#bbcc07b5",
+  "verdict": "DISPUTED",
+  "note": "Sporne: klucz 600 m AMSL dopuszczalny tylko nad nisko położonym terenem; nad terenem >350 m 1250 m AMSL też jest < 900 m AGL. Sprzeczność z 0441#b323e4a1 (tam 600 m AMSL jest dystraktorem) potwierdza sporność."
+ },
+ {
+  "key": "PL010-0530#8e378916",
+  "verdict": "PASS",
+  "note": "Klucz „przeszkód” = SERA.5005(c)(5)(i)(ii) i ENR 1.2 pkt 7 ppkt 4 (najwyższa przeszkoda w promieniu 8 km). ENR 1.2 pkt 7 nie ma podkotwic – lokator najdokładniejszy możliwy."
+ },
+ {
+  "key": "PL010-0519#f0f28a1c",
+  "verdict": "PASS",
+  "note": "Klucz 8 km = SERA.5005(c)(5)(ii) i ENR 1.2 pkt 7."
+ },
+ {
+  "key": "PL010-0523#86288683",
+  "verdict": "PASS",
+  "note": "Klucz 8 km = SERA.5005(c)(5)(i) i ENR 1.2 pkt 7."
+ },
+ {
+  "key": "PL010-0525#0fd8d734",
+  "verdict": "PASS",
+  "note": "Klucz 300 m = SERA.5005(c)(5)(ii) / ENR 1.2 pkt 7 ppkt 4(ii). Uwaga redakcyjna (bez wpływu): SERA.5005(c)(5) wymienia też specjalne zezwolenie właściwego organu, AIP tylko start i lądowanie – zdanie o wyjątku jest zgodne z AIP."
+ },
+ {
+  "key": "AL11-1",
+  "verdict": "PASS",
+  "note": "Treść zgodna z SERA.3105, SERA.5005(f)(1)(2) i ENR 1.2 pkt 9; 151 słów. Drobna uwaga do ewentualnej przyszłej redakcji: SERA.5005(f) nie jest przepisem wyłącznie „dziennym” (patrz FIX AL11-4), nagłówek „w dzień” jest akceptowalny jako kontrast z sekcją nocną."
+ },
+ {
+  "key": "AL11-2",
+  "verdict": "DISPUTED",
+  "note": "Sporne poprawnie: klasa A sprzeczna z SERA.6001(a)(1), lasy – SERA.5005(f)(2) daje 150 m. Uwaga: zdanie „aktualny przepis wiąże tę wartość tylko z gęstą zabudową” trafia w pytanie o lasy; w pytaniach o klasę A spór dotyczy przesłanki, co disputeNote oddaje poprawnie."
+ },
+ {
+  "key": "AL11-3",
+  "verdict": "FIX",
+  "note": "Lista wysokości nieobecnych w tabeli dodatku 3 pomija 1750 m, występujące jako dystraktor w 0438#02c3f09c, 0439#b05b7b8e, 0440#89ac2b47 (tabela VFR: 1700 i 2000 m, IFR 1850 m). Dopisać: „Wysokości 1250, 1450, 1550 i 1750 m nie występują w tabeli z dodatku 3.” Reszta (SERA.5005(g), ENR 1.2 pkt 10, disputeNote) poprawna."
+ },
+ {
+  "key": "AL11-4",
+  "verdict": "FIX",
+  "note": "Fakt sprzeczny ze źródłem: „Promienie z przepisów dziennych (600 m nad zabudową, 150 m poza nią) w nocy nie mają zastosowania”. SERA.5005(f) dotyczy każdego lotu VFR, nie tylko dziennego (SERA.3105: „Minimalne wysokości dla lotów VFR określono w SERA.5005 lit. f)”), więc w nocy obowiązuje równolegle z lit. c) ppkt 5. Zastąpić np.: „W nocy wymagania są ostrzejsze: najwyższej przeszkody szuka się w promieniu 8 km.” Reszta sekcji poprawna."
+ }
+]
