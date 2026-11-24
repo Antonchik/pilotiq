@@ -127,6 +127,14 @@
   "textSha": "18e7bf76a3c16214",
   "verdict": "PASS"
  },
+ "PL010-0018#5e11c975": {
+  "date": "2026-11-24",
+  "note": "§ 2 pkt 12, AIP GEN 2.2 ATZ (sparafrazowany), art. 2 pkt 11 rozporządzenia 923/2012; pułapka MATZ (§ 2 pkt 27) zgodna.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "62f0e64efc5f7102",
+  "verdict": "PASS"
+ },
  "PL010-0020#315617a8": {
   "date": "2026-11-24",
   "note": "Klucz «Wszystkie odpowiedzi» = art. 105 ust. 1 + art. 94 ust. 2 pkt 1 (posiadacz świadectwa kwalifikacji jest członkiem personelu lotniczego). Zdanie o art. 105 ust. 1a zgodne z korpusem i uczciwie sygnalizuje wyjątki od «wszystkich»; zostawić.",
@@ -141,6 +149,30 @@
   "portion": "P13",
   "round": 1,
   "textSha": "aa63ea4bd6f71016",
+  "verdict": "PASS"
+ },
+ "PL010-0022#2dd815c4": {
+  "date": "2026-11-24",
+  "note": "§ 2 pkt 17 i art. 2 pkt 56 rozporządzenia 923/2012 dosłownie; pułapka CBA (§ 2 pkt 15) i CTR (§ 2 pkt 18) zgodna z tekstem.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "946606ae538a191a",
+  "verdict": "PASS"
+ },
+ "PL010-0023#7e3e196d": {
+  "date": "2026-11-24",
+  "note": "§ 2 pkt 18, AIP GEN 2.2 CTR, art. 2 pkt 61 rozporządzenia 923/2012; pułapka TMA (§ 2 pkt 43) i MATZ (§ 2 pkt 27) zgodna. AIP sparafrazowany, bez dosłownego cytatu w tekście.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "c29ef9e4f43009d1",
+  "verdict": "PASS"
+ },
+ "PL010-0023#d0543952": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różni się tylko literówką «powietrzne.j» w dystraktorze.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "8e5f24708469e781",
   "verdict": "PASS"
  },
  "PL010-0026#0221df31": {
@@ -174,6 +206,14 @@
   "round": 3,
   "textSha": "92b9e3ed643f6b47",
   "verdict": "DISPUTED"
+ },
+ "PL010-0028#e0967f76": {
+  "date": "2026-11-24",
+  "note": "SERA.6001(a)(3): „Wszystkie loty wykonywane są z zapewnieniem służby kontroli ruchu lotniczego…” i „W przypadku wszystkich lotów wymagana jest ciągła łączność foniczna powietrze-ziemia” – klucz łączy oba; pułapka klasy A z SERA.6001(a)(1).",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "f6aec89dfa43c136",
+  "verdict": "PASS"
  },
  "PL010-0029#29389dba": {
   "date": "2026-11-24",
@@ -359,6 +399,54 @@
   "textSha": "f21ac5d27dd21d03",
   "verdict": "PASS"
  },
+ "PL010-0056#00b19b3f": {
+  "date": "2026-11-24",
+  "note": "Treść zgodna z korpusem (art. 2 pkt 36 rozporządzenia 923/2012; załącznik XI dodatek 1 sekcja I lit. b) ppkt 2 rozporządzenia 2017/373: „nie mniejszej niż 200 m (700 ft)… chyba że właściwy organ postanowi inaczej”; draft słuszny, norma istnieje). Ale pierwsze zdanie nie odpowiada na pytanie (STYLE §1 pkt 2) – 200 m pojawia się dopiero w zdaniu 2–3. Poprawka: zacząć od «Zgodnie z załącznikiem XI do rozporządzenia 2017/373 (dodatek 1, sekcja I lit. b) ppkt 2) dolną granicę obszaru kontrolowanego ustala się na wysokości względnej nie mniejszej niż 200 m (700 ft) nad powierzchnią ziemi lub wody, chyba że właściwy organ postanowi inaczej.», potem «Droga lotnicza jest obszarem kontrolowanym lub jego częścią ustanowioną w postaci korytarza (art. 2 pkt 36 rozporządzenia 923/2012), więc jej dolna granica nie powinna leżeć niżej niż 200 m nad terenem.» Loc «załącznik XI» (rodzic) akceptowalny do czasu naprawy kotwicy dodatku 1.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "d31a6fccff95f976",
+  "verdict": "FIX"
+ },
+ "PL010-0056#3d580d89": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w spacji «200 m»/«200m».",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "5121c8c49c124c51",
+  "verdict": "PASS"
+ },
+ "PL010-0057#3039404c": {
+  "date": "2026-11-24",
+  "note": "Klucz (na powierzchni terenu) = art. 2 pkt 61 rozporządzenia 923/2012 i załącznik I pkt 154 rozporządzenia 2017/373 – poprawnie. W pułapce «200 m nad powierzchnią ziemi to najniższa dopuszczalna dolna granica obszaru kontrolowanego» przesadza: przepis dodaje „chyba że właściwy organ postanowi inaczej”, więc 200 m nie jest bezwzględnym minimum. Poprawka: «Pułapka: 200 m nad powierzchnią ziemi to wymagana co do zasady najniższa dolna granica obszaru kontrolowanego (CTA), a nie strefy kontrolowanej lotniska (załącznik XI do rozporządzenia 2017/373).»",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "6b3fcc36652cf3e3",
+  "verdict": "FIX"
+ },
+ "PL010-0057#5e31e759": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w spacjach przy jednostkach.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "357aac9338426f35",
+  "verdict": "PASS"
+ },
+ "PL010-0058#0f272edc": {
+  "date": "2026-11-24",
+  "note": "Treść zgodna z korpusem (załącznik I pkt 239 i załącznik XI dodatek 1 sekcja I lit. b) ppkt 2 rozporządzenia 2017/373; art. 2 pkt 61 rozporządzenia 923/2012); draft słuszny. Pierwsze zdanie to definicja TMA, a nie odpowiedź (STYLE §1 pkt 2). Poprawka: zacząć od «Zgodnie z załącznikiem XI do rozporządzenia 2017/373 (dodatek 1, sekcja I lit. b) ppkt 2) dolną granicę obszaru kontrolowanego, a więc także TMA, ustala się na wysokości względnej nie mniejszej niż 200 m (700 ft) nad powierzchnią ziemi lub wody, chyba że właściwy organ postanowi inaczej.», a definicję TMA (załącznik I pkt 239) przenieść do zdania drugiego; pułapka bez zmian.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "e9dd7a1ce7e3a1f4",
+  "verdict": "FIX"
+ },
+ "PL010-0058#968171df": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w spacjach przy jednostkach.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "a8ed3aaf43651193",
+  "verdict": "PASS"
+ },
  "PL010-0062#3f1ad0c5": {
   "date": "2026-11-24",
   "note": "Art. 96 ust. 3, 5, 5b dosłownie; zastrzeżenie „chyba że uznanie nie jest wymagane” trafnie powiązane z ust. 5b.",
@@ -390,6 +478,22 @@
   "round": 1,
   "textSha": "141ab36ad1c95c19",
   "verdict": "PASS"
+ },
+ "PL010-0071#d13b854e": {
+  "date": "2026-11-24",
+  "note": "Klucz CTA = § 4 ust. 1 pkt 1; CTR i TRA/CBA z § 4 ust. 1 pkt 2 i 3, pułapka ATZ/MATZ z § 5 ust. 1 pkt 2 i 3 – zgodne z korpusem. Dystraktor «CTA i TSA» nie zyskuje oparcia: TSA nie ma w § 4 ust. 1, a § 5 ust. 1 pkt 4 zalicza ją do przestrzeni niekontrolowanej; § 9 ust. 4 (TSA może być klasyfikowana jak przestrzeń kontrolowana) to niespójność aktu, a nie podstawa do sporu. 3 zdania.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "77a882500e702f21",
+  "verdict": "PASS"
+ },
+ "PL010-0072#0906fe25": {
+  "date": "2026-11-24",
+  "note": "Sporne: klucz ATZ = § 5 ust. 1 pkt 2, ale § 5 ust. 1 pkt 3 („MATZ stanowiąca przestrzeń powietrzną nad wojskowym lotniskiem niekontrolowanym… dla której określono klasę przestrzeni właściwą dla przestrzeni niekontrolowanej lub nie została ona sklasyfikowana”) czyni poprawną także odpowiedź «MATZ». Klucz nadal poprawny, a drugi wariant też → disputed. disputeNote poprawny, pkt 3 w refs. Uwaga dla orkiestratora: to drugi bezpłatny klucz podtematu (order w topics.json).",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "86fb4054c944f431",
+  "verdict": "DISPUTED"
  },
  "PL010-0072#6f4ce5e6": {
   "date": "2026-11-24",
@@ -871,6 +975,86 @@
   "textSha": "c0b9a06ea5780844",
   "verdict": "PASS"
  },
+ "PL010-0143#070f66d2": {
+  "date": "2026-11-24",
+  "note": "Klucz (1500 m, IAS 140 kt) = SERA.5001(a)(1) i § 7 pkt 1 – treść poprawna. Ale pytanie brzmi „może być wykonany”, a dystraktor „Przy widzialności większej niż 5 km” też jest zgodny z tabelą S5-1 (w klasie G na i poniżej 900 m AMSL/300 m AGL wymagane 5 km) – dwie obronne odpowiedzi bez zmiany przepisów, jak 0441#b323e4a1 w P01. Dodać disputeNote: „Według tabeli S5-1 w pkt SERA.5001 rozporządzenia 923/2012 minimalna widzialność w locie VFR w klasie G na i poniżej 900 m AMSL lub 300 m nad terenem wynosi 5 km, więc lot przy widzialności większej niż 5 km jest również dozwolony, a odpowiedź „Przy widzialności większej niż 5 km” jest zgodna z przepisem. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” oraz do refs: EU-923-2012 | SERA.5001 | „F G 5 km Z dala od chmur i z widocznością powierzchni ziemi”.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "00938cf5c14269ed",
+  "verdict": "FIX"
+ },
+ "PL010-0144#8920eace": {
+  "date": "2026-11-24",
+  "note": "Nie sporne dzięki „tylko”: „z dala od chmur i z widocznością powierzchni ziemi” = tabela S5-1 (F G), a „tylko przy widzialności >5 km” jest fałszywe (dozwolone 5 km i zmniejszenie do 1500 m wg § 7). Pułapka 250 kt IAS = SERA.6001(a)(7).",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "33d5456bcdafe732",
+  "verdict": "PASS"
+ },
+ "PL010-0146#8418c2c3": {
+  "date": "2026-11-24",
+  "note": "Klucz 300 m pionowo w klasie C poniżej FL 100 = tabela S5-1 (oba przedziały A–E/A–G), uwaga o FL 100 z tabeli. Tabela S5-1 (SERA.5001) zgodna z korpusem, lokatory i cytaty poprawne.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "c6381a0c90526c6c",
+  "verdict": "PASS"
+ },
+ "PL010-0147#bd2debc1": {
+  "date": "2026-11-24",
+  "note": "Klucz 1500 m poziomo = tabela S5-1. Tabela S5-1 (SERA.5001) zgodna z korpusem, lokatory i cytaty poprawne.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "40355325d9db6d1d",
+  "verdict": "PASS"
+ },
+ "PL010-0148#8bc50331": {
+  "date": "2026-11-24",
+  "note": "Klucz 5 km = tabela S5-1; pułapka 8 km (na i powyżej 3050 m AMSL) zgodna z tabelą. Tabela S5-1 (SERA.5001) zgodna z korpusem, lokatory i cytaty poprawne.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "6ad116c333525d72",
+  "verdict": "PASS"
+ },
+ "PL010-0150#9448007a": {
+  "date": "2026-11-24",
+  "note": "Klucz 300 m pionowo w klasie G powyżej 900 m AMSL/300 m AGL = wiersz A–G tabeli S5-1; pułapka „z dala od chmur” (F G na i poniżej) poprawna.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "6bd9909a2ffa92d4",
+  "verdict": "PASS"
+ },
+ "PL010-0151#d4863966": {
+  "date": "2026-11-24",
+  "note": "Klucz 1500 m poziomo = wiersz A–G tabeli S5-1; pułapka poprawna.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "94949f65d032a1bb",
+  "verdict": "PASS"
+ },
+ "PL010-0152#cdf8bd49": {
+  "date": "2026-11-24",
+  "note": "Klucz 5 km = wiersz A–G tabeli S5-1; pułapka 1500 m poparta § 7 (tylko na i poniżej 900 m AMSL/300 m AGL, w dzień).",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "53c4c455a2586ba1",
+  "verdict": "PASS"
+ },
+ "PL010-0153#d39df1ba": {
+  "date": "2026-11-24",
+  "note": "Klucz 450 m (1500 ft) = SERA.5005(c)(3)(i) i ENR 1.2 pkt 7 3)(i); wyjątek (ii) poprawnie oddany; pułapka 300 m = (c)(5)(ii).",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "8ccd53f0a46fa84f",
+  "verdict": "PASS"
+ },
+ "PL010-0157#1d2cf7d4": {
+  "date": "2026-11-24",
+  "note": "§ 2 pkt 27 i § 5 ust. 1 pkt 3 dosłownie; pułapka MCTR (§ 2 pkt 29) zgodna. 3 zdania.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "0de002e9c8b1fe30",
+  "verdict": "PASS"
+ },
  "PL010-0162#9e4077c1": {
   "date": "2026-11-24",
   "note": "Klucz = art. 2 pkt 43 rozp. 923/2012 (definicja ACC dosłownie); RNAV jako metoda nawigacji z art. 2 pkt 45.",
@@ -975,6 +1159,22 @@
   "textSha": "bfd59b72d8771e6f",
   "verdict": "PASS"
  },
+ "PL010-0180#f8dbdb51": {
+  "date": "2026-11-24",
+  "note": "§ 1 pkt 1 („z podziałem na przestrzeń kontrolowaną i przestrzeń niekontrolowaną”), § 4 ust. 1, § 5 ust. 1, § 8 ust. 1 – zgodne; parafraza «dzieli się» dopuszczalna.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "24560e295452af06",
+  "verdict": "PASS"
+ },
+ "PL010-0182#8e5a0b6c": {
+  "date": "2026-11-24",
+  "note": "art. 2 pkt 76 rozporządzenia 923/2012 i załącznik I pkt 51 rozporządzenia 2017/373 dosłownie; pułapka «służba informacji lotniczej» poparta art. 2 pkt 5 rozporządzenia 2024/2803 (AIS wymienione osobno wśród ANS).",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "cd407d72f2e1da5e",
+  "verdict": "PASS"
+ },
  "PL010-0186#13b1565d": {
   "date": "2026-11-24",
   "note": "Klucz = SERA.9001(a)(1)-(2); pułapka (opis AIS) = art. 2 pkt 2 rozp. 2024/2803.",
@@ -989,6 +1189,22 @@
   "portion": "P21",
   "round": 1,
   "textSha": "ab36bb6f7cf43a25",
+  "verdict": "PASS"
+ },
+ "PL010-0190#5ff32bdb": {
+  "date": "2026-11-24",
+  "note": "§ 2 pkt 43, AIP GEN 2.2 TMA (sparafrazowany), załącznik I pkt 239 rozporządzenia 2017/373; pułapka CTR (§ 2 pkt 18) i MCTR (§ 2 pkt 29) zgodna.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "c30bc2737cd0e15f",
+  "verdict": "PASS"
+ },
+ "PL010-0190#6d621c95": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w znaku «;»/«:» w pytaniu.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "cf884cc78a20647b",
   "verdict": "PASS"
  },
  "PL010-0193#44defe31": {
@@ -1006,6 +1222,22 @@
   "round": 1,
   "textSha": "66d2f54424863a43",
   "verdict": "PASS"
+ },
+ "PL010-0194#49cd0b71": {
+  "date": "2026-11-24",
+  "note": "Merytorycznie poprawne: w ENR 1.4 klasy A, B, E, F mają przypis **** (nieużywane w FIR Warszawa), C, D, G – bez; niesklasyfikowana przestrzeń z § 5 ust. 1 pkt 3 i 4. Ale tekst zawiera dosłowny cytat AIP «Klasa nie stosowana w FIR Warszawa», a cytaty AIP mogą być tylko w quote (do aplikacji nie trafiają; tekst ma parafrazować). Poprawka: «…klasy A, B, E i F oznaczono w tabeli jako niestosowane w FIR Warszawa, więc…». Loc przypisu (ENR 1.4 klasa G) – znana luka kotwic, akceptowalne.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "2bea2f60c764e0f4",
+  "verdict": "FIX"
+ },
+ "PL010-0194#61f73ddd": {
+  "date": "2026-11-24",
+  "note": "Jak 0194#49cd0b71: usunąć dosłowny cytat AIP «Klasa nie stosowana w FIR Warszawa» z tekstu i sparafrazować («oznaczono jako niestosowane w FIR Warszawa»). Brak D w kluczu nie czyni go spornym ani nieaktualnym: wszystkie wymienione elementy (C, G, niesklasyfikowana) są prawdziwe, a każdy dystraktor zawiera klasę nieużywaną (A, B, E lub F); żaden dystraktor nie stał się poprawny – status draft bez disputeNote słuszny, ostatnie zdanie o klasie D zgodne z ENR 1.4.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "2b653aff0888563d",
+  "verdict": "FIX"
  },
  "PL010-0199#cc409812": {
   "date": "2026-11-24",
@@ -1253,6 +1485,14 @@
   "portion": "P25",
   "round": 1,
   "textSha": "1094337950ee12f7",
+  "verdict": "PASS"
+ },
+ "PL010-0235#2eb25b85": {
+  "date": "2026-11-24",
+  "note": "Nie sporne: § 4 ust. 1 pkt 1 – CTA obejmuje TMA/MTMA, AWY, CDR i przestrzeń FL 095–FL 660; klucz jest niepełny, ale nie zawiera żadnego błędnego elementu, a każdy dystraktor dodaje CTR, który należy do § 4 ust. 1 pkt 2 (osobno od CTA); wariant z «FL 95 do FL 460» też zawiera CTR. Tekst uczciwie mówi o «podstawowych składnikach». Cytaty zgodne.",
+  "portion": "P15",
+  "round": 1,
+  "textSha": "7179d95f6b5a418f",
   "verdict": "PASS"
  },
  "PL010-0239#aee8b1f2": {
@@ -1855,6 +2095,14 @@
   "textSha": "1b0169ffb1b3d7a3",
   "verdict": "PASS"
  },
+ "PL010-0350#1e07d083": {
+  "date": "2026-11-24",
+  "note": "Klucz 8 km na i powyżej 3050 m AMSL = tabela S5-1; pułapka 5 km poprawna.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "6aa1aa06d43ba981",
+  "verdict": "PASS"
+ },
  "PL010-0352#a60b9a4c": {
   "date": "2026-11-24",
   "note": "Klucz 2000 = § 11 pkt 2 rozp. MI z 17.07.2020 (cytat dosłowny, akt obowiązujący) i SERA.13005(b)(2); pułapki 7000 (§ 11 pkt 1) i 7600 (SERA.13005(a)(2)) zgodne. Lokatory najwęższe.",
@@ -1877,6 +2125,14 @@
   "portion": "P17",
   "round": 1,
   "textSha": "e4cf2502664031df",
+  "verdict": "PASS"
+ },
+ "PL010-0355#3433e35e": {
+  "date": "2026-11-24",
+  "note": "Klucz 1500 m = wiersz A–G tabeli S5-1; 1350 m AMSL nad terenem 300 m = 1050 m AGL > 900 m, więc lot jest powyżej obu granic (900 m AMSL i 300 m AGL) – rachunek poprawny.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "4a25ca2d7d474c5a",
   "verdict": "PASS"
  },
  "PL010-0356#5678e240": {
@@ -2599,12 +2855,68 @@
   "textSha": "136dd7cd80cbdea2",
   "verdict": "PASS"
  },
+ "PL010-0514#2e030923": {
+  "date": "2026-11-24",
+  "note": "Klucz 450 m = SERA.5005(b)(1) i ENR 1.2 pkt 6 a); uzupełnienie o (b)(2) poprawne.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "3d8ba7ef6d9be753",
+  "verdict": "PASS"
+ },
+ "PL010-0514#5de0da8e": {
+  "date": "2026-11-24",
+  "note": "Klucz 1,5 km = SERA.5010(b)(2) i ENR 1.2 pkt 14 b) 2); „wyłącznie w ciągu dnia” z AIP (SERA.5010(a) z zastrzeżeniem organu) – zgodnie z cytowanym AIP. Pułapka 5 km z tabeli S5-1.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "097a21ccb7951505",
+  "verdict": "PASS"
+ },
+ "PL010-0515#091b6d5e": {
+  "date": "2026-11-24",
+  "note": "Klucz 5 km = SERA.5005(b)(2) i ENR 1.2 pkt 6 b); uzupełnienie o (b)(1) poprawne.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "f0ac016d21157c67",
+  "verdict": "PASS"
+ },
+ "PL010-0519#295670a5": {
+  "date": "2026-11-24",
+  "note": "Klucz = SERA.5001(a)(2) i § 7 pkt 1 lit. b – treść poprawna. Jak w 0143#070f66d2: dystraktor „Przy widzialności większej niż 5 km” również jest zgodny z tabelą S5-1 (minimum 5 km w klasie G na i poniżej 900 m AMSL/300 m AGL), pytanie brzmi „może być wykonany”. Dodać disputeNote (jak w 0143) i ref EU-923-2012 | SERA.5001 | „F G 5 km Z dala od chmur i z widocznością powierzchni ziemi”. Dystraktor A3 („nieokreślonej”) słusznie błędny – § 7 pkt 1 wymaga ≥1500 m.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "565188a487390664",
+  "verdict": "FIX"
+ },
  "PL010-0519#f0f28a1c": {
   "date": "2026-11-24",
   "note": "Klucz 8 km = SERA.5005(c)(5)(ii) i ENR 1.2 pkt 7.",
   "portion": "P01",
   "round": 1,
   "textSha": "689429ae03b4e5a4",
+  "verdict": "PASS"
+ },
+ "PL010-0520#010a0ea1": {
+  "date": "2026-11-24",
+  "note": "Klucz 300 m pionowo na i powyżej 3050 m AMSL = tabela S5-1; uwaga o FL 100 poprawna.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "6b54ef225f0da594",
+  "verdict": "PASS"
+ },
+ "PL010-0521#52863112": {
+  "date": "2026-11-24",
+  "note": "Klucz obronny (SERA.5005(d)(1), ENR 1.2 pkt 8 a); 250 kt IAS w klasie C tylko poniżej 3050 m AMSL – SERA.6001(a)(3), przypis * do tabeli ENR 1.4 każe stosować FL100). Nieprecyzyjne: „lot VFR jest ograniczony tylko do prędkości poddźwiękowej” – przepis zakazuje prędkości okołodźwiękowych, a te obejmują też górny zakres poddźwiękowy. Przeredagować np.: „…lotów VFR nie wykonuje się z prędkościami okołodźwiękowymi ani naddźwiękowymi; na i powyżej FL 100 nie obowiązuje już limit 250 kt IAS, więc jedynym ograniczeniem jest ten zakaz, który klucz ULC oddaje jako «prędkość poddźwiękowa».” Lokator „ENR 1.4 klasa G” dla przypisu * akceptowalny (przypis dotyczy całej tabeli, kotwica tylko w G).",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "c6329ec8dc83e6e3",
+  "verdict": "FIX"
+ },
+ "PL010-0522#5f4bec9a": {
+  "date": "2026-11-24",
+  "note": "Klucz 1500 m poziomo na i powyżej 3050 m AMSL = tabela S5-1.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "2d06736ff5e57553",
   "verdict": "PASS"
  },
  "PL010-0523#86288683": {
@@ -2614,6 +2926,14 @@
   "round": 1,
   "textSha": "7f1b01600dd38aef",
   "verdict": "PASS"
+ },
+ "PL010-0524#ae7ee2fc": {
+  "date": "2026-11-24",
+  "note": "Klucz „z dala od chmur i z widocznością terenu lub świateł w terenie” odpowiada obecnym przepisom tylko częściowo: SERA.5005(c)(3) stosuje w nocy tabelę S5-1, w której „z dala od chmur” jest tylko w klasach F i G na i poniżej 900 m AMSL/300 m AGL, a w C i D obowiązuje 1500 m/300 m (co tekst sam przyznaje); „światła w terenie” nie występują w SERA.5005(c) ani ENR 1.2 pkt 7 (jest „kontakt wzrokowy z ziemią”). Zdanie „co odpowiada kluczowi ULC” – nadinterpretacja. Poprawić na „na tym opiera się klucz ULC” i dodać disputeNote, np.: „Według pkt SERA.5005 lit. c) ppkt 3 rozporządzenia 923/2012 w nocy stosuje się minima z tabeli S5-1 (pkt SERA.5001): lot „z dala od chmur” dopuszcza ona tylko w klasach F i G na i poniżej 900 m AMSL lub 300 m nad terenem, a w klasach C i D wymaga 1500 m w poziomie i 300 m w pionie od chmur; przepisy nie wspominają o widoczności świateł w terenie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” (wszystkie punkty są już w refs).",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "8df97bd1781d80f3",
+  "verdict": "FIX"
  },
  "PL010-0525#0fd8d734": {
   "date": "2026-11-24",
@@ -2765,6 +3085,14 @@
   "portion": "P13",
   "round": 1,
   "textSha": "672752d172af300f",
+  "verdict": "PASS"
+ },
+ "PL010-0554#a05beff0": {
+  "date": "2026-11-24",
+  "note": "Klucz „uszkodzony zespół napędowy” = ICAO Doc 4444 pkt 6.5.6.1.1 a) i 7.7.3.3 a) („engine failure”), SERA.3210(c)(4)(ii). Nie sporne: „uszkodzone podwozie” nie zmusza do lądowania, a SERA.11001(c) daje pierwszeństwo statkowi w sytuacji awaryjnej tylko „w takim stopniu, w jakim konieczność taka wynika z okoliczności”. Pułapka VIP/HUM zgodna z listą a)–c) Doc 4444 (bez cytatów – icao, allowQuote false).",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "33944f74d8cfe7e3",
   "verdict": "PASS"
  },
  "PL010-0560#4c789a86": {
@@ -2975,6 +3303,30 @@
   "textSha": "44a89869a71c82f3",
   "verdict": "PASS"
  },
+ "PL010-0596#120b851e": {
+  "date": "2026-11-24",
+  "note": "Klucz 250 kt IAS = SERA.6001(a)(3)–(7) (C: loty VFR, D–G: wszystkie loty) i ENR 1.4; pułapka IAS/TAS poprawna. Cytat ENR 1.4 klasa C to pomieszane kolumny tabeli (ostrzeżenie walidatora oczekiwane), ale mieści „250 kt poniżej” z polskiej kolumny.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "f387ed123cea4ed7",
+  "verdict": "PASS"
+ },
+ "PL010-0597#77740433": {
+  "date": "2026-11-24",
+  "note": "Klucz 300 m pionowo = wiersz A–G tabeli S5-1; rachunek 1050 m AGL poprawny; pułapka poprawna.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "cb1ea6ee1be1a5d3",
+  "verdict": "PASS"
+ },
+ "PL010-0598#43478e3d": {
+  "date": "2026-11-24",
+  "note": "Klucz 5 km = wiersz A–G tabeli S5-1; pułapka 8 km poprawna.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "6f6a9a6a728f0882",
+  "verdict": "PASS"
+ },
  "PL010-0599#83afc9ca": {
   "date": "2026-11-24",
   "note": "Klucz = art. 123 ust. 2 pkt 5 i 8; odpowiedzi z „tylko” niepełne.",
@@ -3015,6 +3367,30 @@
   "textSha": "a4195a82ffc4fb6a",
   "verdict": "PASS"
  },
+ "PL010-0611#3f7716b4": {
+  "date": "2026-11-24",
+  "note": "Klucz „w prawo” = SERA.3210(c)(1), dosłowny cytat; przepis nie rozróżnia rodzajów statków powietrznych.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "1f9ae3e017173125",
+  "verdict": "PASS"
+ },
+ "PL010-0612#d3095446": {
+  "date": "2026-11-24",
+  "note": "Klucz „odległość nieokreślona – bez niebezpieczeństwa kolizji” = SERA.3205; SERA.3210(c) i (c)(1) poprawnie uzupełniają. Cytat z (c) leży we wstępie lit. c) – lokator najwęższy.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "6ee46055357fa57b",
+  "verdict": "PASS"
+ },
+ "PL010-0612#f44d35e2": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnice tylko wielkość litery „W” i kropka po „150 m.”; pytanie i klucz identyczne.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "09515e58b6c292ab",
+  "verdict": "PASS"
+ },
  "PL010-0614#17448f58": {
   "date": "2026-11-24",
   "note": "SERA.11015(b)(4): „wybiera mod A kod 7700, chyba że otrzymał inne polecenie…” — dosłownie; pułapki 7500/7600 z SERA.13005(a)(2)-(3). Lokatory najwęższe.",
@@ -3046,6 +3422,14 @@
   "round": 1,
   "textSha": "511360f9d4536dc5",
   "verdict": "PASS"
+ },
+ "PL010-0627#cd987965": {
+  "date": "2026-11-24",
+  "note": "Sporne słusznie: klucz VFR poprawny (SERA.6001(a)(3), SERA.8005(b)(3) – w klasie C brak separacji VFR/VFR), ale SERA.8005(b) separuje loty specjalne VFR tylko od IFR (pkt 4) i od innych SVFR (pkt 5), nie od VFR, więc „VFR – specjalny” też jest obronne. disputeNote poprawny, punkty w refs. Uwaga redakcyjna (bez wpływu): „tylko informacje o ruchu i na żądanie rady” odpowiada brzmieniu AIP ENR 1.4 klasa C, w SERA.6001(a)(3) „na żądanie” odnosi się także do informacji o ruchu.",
+  "portion": "P20",
+  "round": 1,
+  "textSha": "fab9355147d14d67",
+  "verdict": "DISPUTED"
  },
  "PL010-0628#3056ac80": {
   "date": "2026-11-24",
