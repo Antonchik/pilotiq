@@ -1052,6 +1052,7 @@ _EU_BOUNDARY_RE = re.compile(r"^(?:PODCZĘŚĆ|SEKCJA|DZIAŁ|ROZDZIAŁ|ODDZIAŁ|
 _EU_PARA_RE = re.compile(r"^(?:\(([ivx]{1,5})\)|([a-z])\)|(\d{1,2})\))\s*\S")
 _EU_UST_RE = re.compile(r"^(\d{1,3})\.\s+\S")
 _DODATEK_UP_RE = re.compile(r"^(?:DODATEK|Dodatek) \d+-?[A-Z]?\d*\b")
+_NUM_HEAD_NODOT_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){1,2})\s+[A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻ ,/()–-]{5,}$")   # "6.5 ZATWIERDZENI PRZEWOŹNICY DROGOWI"
 _NUM_ONLY_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){1,5})\.$")   # "1.1.1.1." with the text on the next line
 _EU_DEF_RE = re.compile(r"^(\d{1,3}[a-z]?)\)\s+„")   # a numbered definition: 57) „lotnictwo ogólne” oznacza ...
 _EU_PKT_RE = re.compile(r"^(\d{1,3}[a-z]?)\)\s*\S")
@@ -1120,6 +1121,9 @@ def eureg_anchors(text, extras=()):
     for idx, (start, line) in enumerate(rows):
         if idx in losers and flags[idx] and mode == "annex":
             continue   # repeated heading of an annex table of contents
+        if mode == "art" and art is not None and _EU_BOUNDARY_RE.match(line):
+            close_art(start)    # "ROZDZIAŁ V / ZASADY WSPÓLNE" between two articles belongs to neither
+            continue
         ma = _EU_ART_RE.match(line)
         if ma and mode in ("pre", "art"):
             close_art(start)
@@ -1200,12 +1204,11 @@ def eureg_anchors(text, extras=()):
                             sp.end = start
                     pts_on = False
                     continue
-                mpt = _APP_ROW_RE.match(line) or _NUM_ONLY_RE.match(line)
+                mpt = _APP_ROW_RE.match(line) or _NUM_ONLY_RE.match(line) or _NUM_HEAD_NODOT_RE.match(line)
                 if mpt and not _RULE_RE.match(line):
                     num = mpt.group(1)
                     parts = num.split(".")
                     nparts = len(parts)
-                    rest = line[len(mpt.group(0)):] if _APP_ROW_RE.match(line) else ""
                     accepted = None
                     if nparts == 1:
                         head = line[line.index(".") + 1:].strip()
