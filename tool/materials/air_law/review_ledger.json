@@ -2809,19 +2809,19 @@
  },
  "PL099-0087#f368e5d5": {
   "date": "2026-11-24",
-  "note": "Dwie nieścisłości w pułapce: (1) „za cenę naruszenia przepisów” – art. 117 nic nie mówi o naruszaniu przepisów, więc to fakt spoza źródła; (2) „bezpieczeństwem własnego statku i osób na pokładzie” zawęża przepis, który mówi o „powierzonego mu statku powietrznego, pasażerów, załogi lub innych osób”. Poprawka drugiego zdania: „Pułapka: przepis nakazuje udzielić pomocy tylko w zakresie, w jakim nie naraża to powierzonego statku powietrznego, pasażerów, załogi lub innych osób, więc nie wymaga użycia „wszelkich środków”, a samo powiadomienie służb nie wyczerpuje obowiązku pomocy.” (ostatni człon można pominąć). Klucz poprawny, art. 117 bez zmian od 2002 r.; sameAs PL102-0035 pozostaje ważny po poprawce.",
+  "note": "Poprawione: pułapka bez faktu spoza źródła, zakres „pasażerów, załogi lub innych osób” jak w art. 117 ust. 1. 2 zdania, 548 znaków; sameAs PL102-0035 pozostaje ważny.",
   "portion": "P25",
-  "round": 1,
-  "textSha": "551603b8fad98e02",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "cc0880d8c125e66b",
+  "verdict": "PASS"
  },
  "PL099-0092#a74def59": {
   "date": "2026-11-24",
-  "note": "Pułapka przypisuje pkt SERA.2010 lit. a) treść, której on nie ma: przepis mówi o odpowiedzialności pilota dowódcy „za użytkowanie statku powietrznego zgodnie z przepisami niniejszego rozporządzenia”, nie za bezpieczeństwo. Poprawka trzeciego zdania: „Pułapka: odpowiedzialność tę przepisy nakładają na dowódcę, a nie na całą załogę ani kontrolera ruchu lotniczego; pkt SERA.2010 lit. a) rozporządzenia 923/2012 dodaje, że pilot dowódca odpowiada za użytkowanie statku powietrznego zgodnie z przepisami niezależnie od tego, czy osobiście go pilotuje.” (albo usunąć wzmiankę o SERA.2010 i ten ref). Reszta poprawna: „dowódca załogi” z pytania słusznie utożsamiony z dowódcą statku powietrznego (art. 113 ust. 2, art. 114 ust. 1); NCO.GEN.105(a)(1) zgodny z korpusem; klucz nie jest sporny.",
+  "note": "Poprawione: pułapka oddaje SERA.2010 lit. a) wiernie (użytkowanie zgodnie z przepisami, niezależnie od tego, czy osobiście pilotuje). Skrócone zdanie 2 zgodne z NCO.GEN.105(a)(1) (pominięcie „wszystkich” i „podczas użytkowania” nie zmienia sensu). 3 zdania, 697 znaków, validate bez uwag.",
   "portion": "P25",
-  "round": 1,
-  "textSha": "5421da5b5ae58ed2",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "5607e656bd2ae6a2",
+  "verdict": "PASS"
  },
  "PL102-0021#25232f08": {
   "date": "2026-11-24",

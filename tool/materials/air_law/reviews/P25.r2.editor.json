@@ -1,0 +1,4 @@
+[
+ {"key":"PL099-0092#a74def59","verdict":"PASS","note":"Poprawione: pułapka oddaje SERA.2010 lit. a) wiernie (użytkowanie zgodnie z przepisami, niezależnie od tego, czy osobiście pilotuje). Skrócone zdanie 2 zgodne z NCO.GEN.105(a)(1) (pominięcie „wszystkich” i „podczas użytkowania” nie zmienia sensu). 3 zdania, 697 znaków, validate bez uwag."},
+ {"key":"PL099-0087#f368e5d5","verdict":"PASS","note":"Poprawione: pułapka bez faktu spoza źródła, zakres „pasażerów, załogi lub innych osób” jak w art. 117 ust. 1. 2 zdania, 548 znaków; sameAs PL102-0035 pozostaje ważny."}
+]
