@@ -1,0 +1,21 @@
+[
+ {"key":"PL010-0084#0e6612bd","verdict":"PASS","note":"Klucz = MED.A.020(b)(1) („operacji chirurgicznej lub inwazyjnej procedurze medycznej”), cytaty zgodne z korpusem. Nie sporne: odpowiedź „Nie powinni wykonywać czynności personelu lotniczego” to bezwarunkowy zakaz, a (b) wymaga porady „przed skorzystaniem z przywilejów”, po której AeMC/AME decyduje o wznowieniu (c) — tekst to oddaje. Uwaga drobna: pytanie dla SPL/BPL (orzeczenie LAPL), dla których właściwy jest (c)(2) (także lekarz medycyny ogólnej); sformułowanie „lekarz” w tekście jest prawdziwe dla obu ppkt."},
+ {"key":"PL010-0084#5ad43359","verdict":"PASS","note":"Klucz = MED.A.020(b)(1) dosłownie; (c)(1) właściwy dla PPL (orzeczenie klasy 2). Nie sporne (jak 0084#0e6612bd)."},
+ {"key":"PL010-0085#bd9f8bd2","verdict":"PASS","note":"Klucz = MED.A.020(b)(7) „po raz pierwszy korzystają z soczewek korekcyjnych”; zakaz bezwarunkowy z dystraktora nie wynika z (b)/(c). Cytaty zgodne."},
+ {"key":"PL010-0251#a9120e12","verdict":"PASS","note":"Dawne sformułowanie pytania (porada lekarza orzecznika, badania okolicznościowe), ale istota klucza obowiązuje: art. 105 ust. 3 (świadomość utraty sprawności wymaganej → natychmiastowe badania) i MED.A.020(a)(1) (obniżenie sprawności mogące uniemożliwić bezpieczne korzystanie z przywilejów). Nie outdated, nie sporne; cytaty dosłowne."},
+ {"key":"PL010-0030#a42ae0d0","verdict":"PASS","note":"Art. 105 ust. 2 dosłownie; brak wyjątków w przepisie — poprawnie."},
+ {"key":"PL010-0049#5774b3b6","verdict":"PASS","note":"Art. 105 ust. 3 dosłownie; brak obowiązku informowania Prezesa ULC/ministra — zgodne z przepisem."},
+ {"key":"PL010-0049#afac79a5","verdict":"PASS","note":"sameAs poprawny: te same pytanie i klucz, różni się tylko „Wszystkie odpowiedzi są prawidłowe” zamiast „Do zawieszenia licencji”; tekst oryginału o zawieszeniu nie mówi."},
+ {"key":"PL010-0050#5482a1de","verdict":"DISPUTED","note":"Sporne słusznie, bez zmiany redakcji: art. 106 ust. 4 przyznaje Prezesowi Urzędu prawo złożenia odwołania, a nie jego rozpatrzenia; organem odwoławczym jest Naczelny Lekarz (art. 106 ust. 3, art. 107 ust. 1 pkt 1). Klucz jest najbliższą odpowiedzią (samo „Do Naczelnego Lekarza” nie występuje). Przesłanka „komisji lekarskiej centrum” pochodzi z uchylonego art. 106 ust. 2, ale odpowiedź nie zależy od niej (orzeczenie centrum nadal zaskarża się do Naczelnego Lekarza), więc nie outdated (inaczej niż P13 0132, gdzie pytano o skład komisji). disputeNote poprawny, punkty w refs."},
+ {"key":"PL010-0050#ce6170e3","verdict":"PASS","note":"Klucz „Naczelny Lekarz Lotnictwa Cywilnego” = art. 106 ust. 3 + art. 24 ust. 1, art. 107 ust. 1 pkt 1. Przesłanka o komisji lekarskiej (uchylony ust. 2) nie zmienia odpowiedzi — klucz poprawny według obecnego prawa, więc draft, nie outdated; ostatnie zdanie rzetelnie zaznacza zmianę. Spójne z P13 0129/0130."},
+ {"key":"PL010-0051#88d53fc0","verdict":"DISPUTED","note":"Jak 0050#5482a1de dla lekarza orzecznika: art. 106 ust. 4 daje Prezesowi Urzędu prawo wniesienia odwołania, nie jego rozpatrzenia (art. 106 ust. 3, art. 107 ust. 1 pkt 1). disputeNote poprawny, punkty w refs."},
+ {"key":"PL010-0051#fd588f0e","verdict":"PASS","note":"14 dni = art. 106 ust. 3; zdanie o KPA z tego samego ustępu. Dwie refs z tym samym loc są dopuszczalne (różne fragmenty)."},
+ {"key":"PL010-0217#0313bb42","verdict":"PASS","note":"Art. 106 ust. 3, 14 dni od otrzymania orzeczenia — dosłownie."},
+ {"key":"PL010-0217#98288b12","verdict":"PASS","note":"sameAs poprawny (rawMixed PL/EN tego samego pytania, ten sam klucz)."},
+ {"key":"PL010-0218#5cae4536","verdict":"PASS","note":"sameAs poprawny (rawMixed PL/EN, ten sam klucz)."},
+ {"key":"PL010-0218#b09c751b","verdict":"PASS","note":"Art. 106 ust. 3 dosłownie."},
+ {"key":"PL010-0252#000fa095","verdict":"PASS","note":"Art. 105 ust. 4 dosłownie; brak warunków miejsca/wieku."},
+ {"key":"PL010-0304#57dc8d03","verdict":"PASS","note":"Art. 109 ust. 4 (lista prowadzona przez Prezesa Urzędu), ust. 5 i pułapka z ust. 8 — zgodne z korpusem."},
+ {"key":"PL010-0305#57dc8d03","verdict":"PASS","note":"sameAs poprawny: identyczne pytanie i odpowiedzi jak 0304#57dc8d03."},
+ {"key":"PL010-0306#ab89293e","verdict":"PASS","note":"Art. 108 ust. 13 dosłownie; pułapka z art. 107 ust. 1 pkt 4 i 5 poprawna."}
+]

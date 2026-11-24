@@ -79,6 +79,14 @@
   "textSha": "7f63a9778fa41ff8",
   "verdict": "PASS"
  },
+ "PL010-0030#a42ae0d0": {
+  "date": "2026-11-24",
+  "note": "Art. 105 ust. 2 dosłownie; brak wyjątków w przepisie — poprawnie.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "eb6ac3093456197b",
+  "verdict": "PASS"
+ },
  "PL010-0047#f4230c61": {
   "date": "2026-11-24",
   "note": "Definicja dosłownie z art. 94 ust. 3; art. 94 ust. 4 poprawnie. Klucz jednoznaczny.",
@@ -101,6 +109,54 @@
   "portion": "P03",
   "round": 1,
   "textSha": "1bf8ae071c07eed6",
+  "verdict": "PASS"
+ },
+ "PL010-0049#5774b3b6": {
+  "date": "2026-11-24",
+  "note": "Art. 105 ust. 3 dosłownie; brak obowiązku informowania Prezesa ULC/ministra — zgodne z przepisem.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "85cad4e9a1c8cb92",
+  "verdict": "PASS"
+ },
+ "PL010-0049#afac79a5": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: te same pytanie i klucz, różni się tylko „Wszystkie odpowiedzi są prawidłowe” zamiast „Do zawieszenia licencji”; tekst oryginału o zawieszeniu nie mówi.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "cb1f9642fddd55aa",
+  "verdict": "PASS"
+ },
+ "PL010-0050#5482a1de": {
+  "date": "2026-11-24",
+  "note": "Sporne słusznie, bez zmiany redakcji: art. 106 ust. 4 przyznaje Prezesowi Urzędu prawo złożenia odwołania, a nie jego rozpatrzenia; organem odwoławczym jest Naczelny Lekarz (art. 106 ust. 3, art. 107 ust. 1 pkt 1). Klucz jest najbliższą odpowiedzią (samo „Do Naczelnego Lekarza” nie występuje). Przesłanka „komisji lekarskiej centrum” pochodzi z uchylonego art. 106 ust. 2, ale odpowiedź nie zależy od niej (orzeczenie centrum nadal zaskarża się do Naczelnego Lekarza), więc nie outdated (inaczej niż P13 0132, gdzie pytano o skład komisji). disputeNote poprawny, punkty w refs.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "88b6c509f99dc3c6",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0050#ce6170e3": {
+  "date": "2026-11-24",
+  "note": "Klucz „Naczelny Lekarz Lotnictwa Cywilnego” = art. 106 ust. 3 + art. 24 ust. 1, art. 107 ust. 1 pkt 1. Przesłanka o komisji lekarskiej (uchylony ust. 2) nie zmienia odpowiedzi — klucz poprawny według obecnego prawa, więc draft, nie outdated; ostatnie zdanie rzetelnie zaznacza zmianę. Spójne z P13 0129/0130.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "9b15b4d8d24efb40",
+  "verdict": "PASS"
+ },
+ "PL010-0051#88d53fc0": {
+  "date": "2026-11-24",
+  "note": "Jak 0050#5482a1de dla lekarza orzecznika: art. 106 ust. 4 daje Prezesowi Urzędu prawo wniesienia odwołania, nie jego rozpatrzenia (art. 106 ust. 3, art. 107 ust. 1 pkt 1). disputeNote poprawny, punkty w refs.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "89115c49f6861de7",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0051#fd588f0e": {
+  "date": "2026-11-24",
+  "note": "14 dni = art. 106 ust. 3; zdanie o KPA z tego samego ustępu. Dwie refs z tym samym loc są dopuszczalne (różne fragmenty).",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "1356b9a67b2ef246",
   "verdict": "PASS"
  },
  "PL010-0064#5e3fc3f8": {
@@ -157,6 +213,30 @@
   "portion": "P13",
   "round": 1,
   "textSha": "8672bcd147b4c8a7",
+  "verdict": "PASS"
+ },
+ "PL010-0084#0e6612bd": {
+  "date": "2026-11-24",
+  "note": "Klucz = MED.A.020(b)(1) („operacji chirurgicznej lub inwazyjnej procedurze medycznej”), cytaty zgodne z korpusem. Nie sporne: odpowiedź „Nie powinni wykonywać czynności personelu lotniczego” to bezwarunkowy zakaz, a (b) wymaga porady „przed skorzystaniem z przywilejów”, po której AeMC/AME decyduje o wznowieniu (c) — tekst to oddaje. Uwaga drobna: pytanie dla SPL/BPL (orzeczenie LAPL), dla których właściwy jest (c)(2) (także lekarz medycyny ogólnej); sformułowanie „lekarz” w tekście jest prawdziwe dla obu ppkt.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "b28f7324293f499c",
+  "verdict": "PASS"
+ },
+ "PL010-0084#5ad43359": {
+  "date": "2026-11-24",
+  "note": "Klucz = MED.A.020(b)(1) dosłownie; (c)(1) właściwy dla PPL (orzeczenie klasy 2). Nie sporne (jak 0084#0e6612bd).",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "8e355b8d364e1146",
+  "verdict": "PASS"
+ },
+ "PL010-0085#bd9f8bd2": {
+  "date": "2026-11-24",
+  "note": "Klucz = MED.A.020(b)(7) „po raz pierwszy korzystają z soczewek korekcyjnych”; zakaz bezwarunkowy z dystraktora nie wynika z (b)/(c). Cytaty zgodne.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "bd19fe3fad4c9007",
   "verdict": "PASS"
  },
  "PL010-0096#1f167277": {
@@ -495,6 +575,38 @@
   "textSha": "418b21c5deffe1eb",
   "verdict": "PASS"
  },
+ "PL010-0217#0313bb42": {
+  "date": "2026-11-24",
+  "note": "Art. 106 ust. 3, 14 dni od otrzymania orzeczenia — dosłownie.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "fac1f17cd1f07759",
+  "verdict": "PASS"
+ },
+ "PL010-0217#98288b12": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny (rawMixed PL/EN tego samego pytania, ten sam klucz).",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "c1d023c881fea210",
+  "verdict": "PASS"
+ },
+ "PL010-0218#5cae4536": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny (rawMixed PL/EN, ten sam klucz).",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "c3ebf8fec121c313",
+  "verdict": "PASS"
+ },
+ "PL010-0218#b09c751b": {
+  "date": "2026-11-24",
+  "note": "Art. 106 ust. 3 dosłownie.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "be9fb5da7e4fb7ad",
+  "verdict": "PASS"
+ },
  "PL010-0230#3b2952f0": {
   "date": "2026-11-24",
   "note": "Klucz poprawny (art. 100 ust. 1 pkt 5), ale tekst pomija element pytania «badanie PKBWL», a art. 100 ust. 3 dotyczy postępowania administracyjnego samego Prezesa Urzędu. Najbliższym obecnym odpowiednikiem sytuacji z pytania jest art. 100 ust. 4 (postępowanie uprawnionych organów państwowych w celu stwierdzenia okoliczności z ust. 1; dawny art. 100 ust. 2 wymieniał wprost Komisję). Poprawka: dodać ref {PL-PRAWO-LOTNICZE, «art. 100 ust. 4», quote «W przypadku postępowania prowadzonego przez uprawnione organy państwowe w celu stwierdzenia, czy zaistniały okoliczności, o których mowa w ust. 1, na czas prowadzenia tego postępowania Prezes Urzędu może zawiesić licencję i zatrzymać ją»} i jedno zdanie, np.: «Obecny art. 100 nie wymienia wprost badania Państwowej Komisji Badania Wypadków Lotniczych; na czas postępowania prowadzonego przez uprawnione organy państwowe zawieszenie i zatrzymanie licencji przewiduje art. 100 ust. 4.» Nie twierdzić, że PKBWL jest takim organem. Zmieścić się w 4 zdaniach/700 znakach (np. połączyć zdania 1–2: «…okoliczności z art. 100 ust. 1, m.in. wykonywania czynności lotniczych pod wpływem alkoholu (pkt 5)…»).",
@@ -533,6 +645,22 @@
   "portion": "P13",
   "round": 1,
   "textSha": "d2d6ca9468ebfb38",
+  "verdict": "PASS"
+ },
+ "PL010-0251#a9120e12": {
+  "date": "2026-11-24",
+  "note": "Dawne sformułowanie pytania (porada lekarza orzecznika, badania okolicznościowe), ale istota klucza obowiązuje: art. 105 ust. 3 (świadomość utraty sprawności wymaganej → natychmiastowe badania) i MED.A.020(a)(1) (obniżenie sprawności mogące uniemożliwić bezpieczne korzystanie z przywilejów). Nie outdated, nie sporne; cytaty dosłowne.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "a5fcda5f28dc078b",
+  "verdict": "PASS"
+ },
+ "PL010-0252#000fa095": {
+  "date": "2026-11-24",
+  "note": "Art. 105 ust. 4 dosłownie; brak warunków miejsca/wieku.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "2d8e05e801275479",
   "verdict": "PASS"
  },
  "PL010-0253#00a47f5d": {
@@ -813,6 +941,30 @@
   "portion": "P04",
   "round": 1,
   "textSha": "f8d338ce7ea06049",
+  "verdict": "PASS"
+ },
+ "PL010-0304#57dc8d03": {
+  "date": "2026-11-24",
+  "note": "Art. 109 ust. 4 (lista prowadzona przez Prezesa Urzędu), ust. 5 i pułapka z ust. 8 — zgodne z korpusem.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "77bf05dfc3155145",
+  "verdict": "PASS"
+ },
+ "PL010-0305#57dc8d03": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak 0304#57dc8d03.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "3ead27f9f5015dcd",
+  "verdict": "PASS"
+ },
+ "PL010-0306#ab89293e": {
+  "date": "2026-11-24",
+  "note": "Art. 108 ust. 13 dosłownie; pułapka z art. 107 ust. 1 pkt 4 i 5 poprawna.",
+  "portion": "P14",
+  "round": 1,
+  "textSha": "f59d59dfebed83ae",
   "verdict": "PASS"
  },
  "PL010-0326#ee8656a3": {

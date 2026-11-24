@@ -303,7 +303,7 @@ def is_published(rec, kind, ledger, id_):
 
 # номер: 67, 67fa, 156zd, 87[1], 87[1a] (надстрочный индекс в квадратных скобках, как в anchors)
 _N = r"\d+(?:[a-z]{1,3}|\[\d+[a-z]{0,3}\][a-z]{0,3})?"
-_L = r"\d+(?:\.\d+)*"  # номер строки таблицы / позиции: 1, 1.1, 3.14
+_L = r"\d+[a-z]?(?:\.\d+[a-z]?)*"  # номер строки таблицы / позиции: 1, 1.1, 3.14
 # załącznik 6, załącznik 6 tabela 2, załącznik 6 tabela 2 część I, załącznik 6 tabela 2 część I pkt 3.14
 LOC_STATUTE = re.compile(r"^((art\. |§ )%s( ust\. %s)?( pkt %s)?|załącznik \d+[a-z]?( tabela \d+)?( część [IVX]+[a-z]?)?( pkt %s)?)$"
                          % (_N, _N, _N, _L))
