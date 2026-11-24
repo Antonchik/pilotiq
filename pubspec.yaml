@@ -38,6 +38,8 @@ flutter_launcher_icons:
   ios: true
   remove_alpha_ios: true
   image_path: "assets/icon/icon.png"
+  image_path_ios_dark_transparent: "design/icons/icon_dark.png"
+  image_path_ios_tinted_grayscale: "design/icons/icon_tinted.png"
   min_sdk_android: 24
 
 flutter:

@@ -176,6 +176,7 @@
 - [ ] Сборка проходит шаг build hook пакета `objective_c` (через него работает `path_provider_foundation` 2.6.0).
 - [ ] В собранном приложении есть `PrivacyInfo.xcprivacy`, а `SceneDelegate.swift` входит в сборку → приложение запускается и показывает первый экран.
 - [ ] Bundle ID и команда разработчика не изменились → сборка попадает в то же приложение в App Store Connect.
+- [ ] Иконка приложения на iPhone с iOS 18+: в настройках «Экран „Домой“» переключить вид иконок на тёмный и на тонированный → тёмная иконка (пропеллер со светлым контуром на тёмном фоне) и тонированная показываются без белого квадрата. Исходники вариантов — `design/icons/icon_dark.png` и `icon_tinted.png`; иконки iOS пересобираются командой `dart run flutter_launcher_icons` (настройки — в `pubspec.yaml`).
 - [ ] В Xcode: Archive → Generate Privacy Report → отчёт сверен с `ios/Runner/PrivacyInfo.xcprivacy` и манифестами плагинов, включая RevenueCat и `objective_c.framework`. Манифест приложения объявляет «без отслеживания, данные не собираются»; у плагина `purchases_flutter` своего манифеста нет, его приносит нативный SDK RevenueCat. [ПРОВЕРИТЬ: согласуется ли итоговый отчёт с ответами в анкете App Privacy — см. раздел 8.2.]
 - [ ] В аккаунте разработчика Apple для App ID включена возможность In-App Purchase, а в App Store Connect действует соглашение Paid Applications. Отдельный файл entitlements для покупок не нужен.
 
@@ -412,4 +413,3 @@ iOS:
 **Технический долг**
 
 - Flutter 3.50 помечает устаревшим основной набор виджетов (`package:flutter/material.dart`); переход на новый пакет не сделан и остаётся отдельной задачей. Чтобы `flutter analyze` проходил, в `analysis_options.yaml` правило `deprecated_member_use` отключено (`ignore`). Поэтому анализатор не показывает нынешние предупреждения об устаревших API — по последней проверке их 67, все относятся к пакету Material и двум делегатам локализации — и не покажет будущие. Как посмотреть: временно заменить в `analysis_options.yaml` значение на `deprecated_member_use: info` и выполнить `flutter analyze --no-fatal-infos`.
-- В `assets/covers/` лежат файлы `ppla-en.png` и `pplh-en.png`, на которые код больше не ссылается. Они оставлены до вашего решения.
