@@ -80,6 +80,46 @@ void main() {
       expect(find.byKey(const Key('exam_history_chart')), findsOneWidget);
     });
 
+    testWidgets('a migrated attempt has no percentage, no "0 of 0" and no '
+        'bar in the chart', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await h.seedAttempt(
+        id: 'real',
+        startedAt: DateTime(2026, 4, 5, 8),
+        correct: 6,
+      );
+      await h.seedAttempt(
+        id: 'old',
+        reason: AttemptReason.legacy,
+        startedAt: DateTime.fromMillisecondsSinceEpoch(0),
+        correct: 0,
+        total: 0,
+      );
+      await h.pump(tester, home: ExamHistoryScreen(args: h.args));
+
+      final tile = find.byKey(const ValueKey('history_old'));
+      expect(tile, findsOneWidget);
+      expect(
+        find.descendant(of: tile, matching: find.text('Before version 2.0')),
+        findsOneWidget,
+      );
+      expect(
+        find.descendant(of: tile, matching: find.textContaining('%')),
+        findsNothing,
+      );
+      expect(
+        find.descendant(of: tile, matching: find.textContaining('0 of 0')),
+        findsNothing,
+      );
+      expect(find.text('0%'), findsNothing);
+      // The chart counts only the real attempt.
+      expect(
+        find.bySemanticsLabel('Last results, oldest first: 50%'),
+        findsOneWidget,
+      );
+      semantics.dispose();
+    });
+
     testWidgets('an empty history says so', (tester) async {
       await h.pump(tester, home: ExamHistoryScreen(args: h.args));
       expect(find.byKey(const Key('exam_history_empty')), findsOneWidget);

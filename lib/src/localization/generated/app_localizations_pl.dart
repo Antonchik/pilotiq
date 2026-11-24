@@ -111,9 +111,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get no => 'Nie';
 
   @override
-  String get examsTitle => 'Egzaminy';
-
-  @override
   String get subjectsTitle => 'Przedmioty';
 
   @override
@@ -178,20 +175,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get principlesOfFlightSubjectTooltip => 'Zasady lotu';
 
   @override
-  String get continueQuizTitle => 'Kontynuuj';
-
-  @override
-  String get startNewQuizTitle => 'Zacznij od nowa';
-
-  @override
   String get returnToSubjectTitle => 'Powrót do przedmiotu';
-
-  @override
-  String get restartMessage =>
-      'Czy chcesz kontynuować rozpoczęty wcześniej test, czy zacząć od nowa?';
-
-  @override
-  String get rightAnswer => 'Poprawna odpowiedź!';
 
   @override
   String get nextQuestion => 'Następne pytanie';
@@ -211,13 +195,7 @@ class AppLocalizationsPl extends AppLocalizations {
       'Tryb symulatora egzaminacyjnego symuluje rzeczywiste doświadczenie egzaminacyjne.';
 
   @override
-  String get languageButtonTooltip => 'Zmień język';
-
-  @override
   String get goPremiumLabel => 'Przejdź na Premium!';
-
-  @override
-  String get featuresDescriptionTitle => 'Wszystkie cechy w skrócie';
 
   @override
   String get privacyPolicyLabel => 'Polityka Prywatności';
@@ -227,9 +205,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get termsOfServiceLabel => 'Regulamin';
-
-  @override
-  String get aboutScreenBody => 'O tej aplikacji...';
 
   @override
   String get navToday => 'Dziś';

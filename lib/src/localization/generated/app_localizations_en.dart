@@ -110,9 +110,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get no => 'No';
 
   @override
-  String get examsTitle => 'Exams';
-
-  @override
   String get subjectsTitle => 'Subjects';
 
   @override
@@ -175,20 +172,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get principlesOfFlightSubjectTooltip => 'Principles of flight';
 
   @override
-  String get continueQuizTitle => 'Continue';
-
-  @override
-  String get startNewQuizTitle => 'Restart';
-
-  @override
   String get returnToSubjectTitle => 'Return to subject';
-
-  @override
-  String get restartMessage =>
-      'Would you like to continue the test you started before or start over?';
-
-  @override
-  String get rightAnswer => 'Good Job!';
 
   @override
   String get nextQuestion => 'Next question';
@@ -208,13 +192,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'The exam simulator mode simulates the actual exam experience.';
 
   @override
-  String get languageButtonTooltip => 'Language';
-
-  @override
   String get goPremiumLabel => 'Go Premium!';
-
-  @override
-  String get featuresDescriptionTitle => 'All features at a glance';
 
   @override
   String get privacyPolicyLabel => 'Privacy Policy';
@@ -224,9 +202,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get termsOfServiceLabel => 'Terms of Service';
-
-  @override
-  String get aboutScreenBody => 'About this app...';
 
   @override
   String get navToday => 'Today';

@@ -11,6 +11,8 @@ import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/progress/legacy_migration.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 
+import '../bank/memory_hive.dart';
+
 /// Start-up with the real version 1.2.0 boxes of `test/fixtures/legacy_hive`.
 void main() {
   late Directory dir;
@@ -132,7 +134,14 @@ void main() {
         initialize: () async {
           calls++;
           if (calls == 1) throw StateError('disk is full');
-          return ProviderContainer();
+          // Boxes in memory: file boxes cannot open inside fake-async.
+          return ProviderContainer(
+            overrides: [
+              progressRepositoryProvider.overrideWithValue(
+                memoryProgressRepository(),
+              ),
+            ],
+          );
         },
       ),
     );

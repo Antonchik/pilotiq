@@ -11,10 +11,6 @@
   "@no": {
     "description": "The label for No option"
   },
-  "examsTitle": "Exams",
-  "@examsTitle": {
-    "description": "The title of the exams screen"
-  },
   "subjectsTitle": "Subjects",
   "@subjectsTitle": {
     "description": "The title of the subjects screen"
@@ -95,25 +91,9 @@
   "@principlesOfFlightSubjectTooltip": {
     "description": "The title of the Principles of flight subject"
   },
-  "continueQuizTitle": "Continue",
-  "@continueQuizTitle": {
-    "description": "The title of the continue quiz button"
-  },
-  "startNewQuizTitle": "Restart",
-  "@startNewQuizTitle": {
-    "description": "The title of the restart quiz button"
-  },
   "returnToSubjectTitle": "Return to subject",
   "@returnToSubjectTitle": {
     "description": "The title of the return to subjects button"
-  },
-  "restartMessage": "Would you like to continue the test you started before or start over?",
-  "@restartMessage": {
-    "description": "Message for the test restart options"
-  },
-  "rightAnswer": "Good Job!",
-  "@rightAnswer": {
-    "description": "The message for the right answer"
   },
   "nextQuestion": "Next question",
   "@nextQuestion": {
@@ -135,17 +115,9 @@
   "@examModeDescription": {
     "description": "Description for the Exam mode Quiz"
   },
-  "languageButtonTooltip": "Language",
-  "@languageButtonTooltip": {
-    "description": "Label for the 'Language' button"
-  },
   "goPremiumLabel": "Go Premium!",
   "@goPremiumLabel": {
     "description": "Label for Go Premium"
-  },
-  "featuresDescriptionTitle": "All features at a glance",
-  "@featuresDescriptionTitle": {
-    "description": "Features description title"
   },
   "privacyPolicyLabel": "Privacy Policy",
   "@privacyPolicyLabel": {
@@ -158,9 +130,5 @@
   "termsOfServiceLabel": "Terms of Service",
   "@termsOfServiceLabel": {
     "description": "The label of the Terms of Service link"
-  },
-  "aboutScreenBody": "About this app...",
-  "@aboutScreenBody": {
-    "description": "Placeholder body of the about screen"
   }
 }

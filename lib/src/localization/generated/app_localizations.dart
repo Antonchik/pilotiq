@@ -266,12 +266,6 @@ abstract class AppLocalizations {
   /// **'No'**
   String get no;
 
-  /// The title of the exams screen
-  ///
-  /// In en, this message translates to:
-  /// **'Exams'**
-  String get examsTitle;
-
   /// The title of the subjects screen
   ///
   /// In en, this message translates to:
@@ -392,35 +386,11 @@ abstract class AppLocalizations {
   /// **'Principles of flight'**
   String get principlesOfFlightSubjectTooltip;
 
-  /// The title of the continue quiz button
-  ///
-  /// In en, this message translates to:
-  /// **'Continue'**
-  String get continueQuizTitle;
-
-  /// The title of the restart quiz button
-  ///
-  /// In en, this message translates to:
-  /// **'Restart'**
-  String get startNewQuizTitle;
-
   /// The title of the return to subjects button
   ///
   /// In en, this message translates to:
   /// **'Return to subject'**
   String get returnToSubjectTitle;
-
-  /// Message for the test restart options
-  ///
-  /// In en, this message translates to:
-  /// **'Would you like to continue the test you started before or start over?'**
-  String get restartMessage;
-
-  /// The message for the right answer
-  ///
-  /// In en, this message translates to:
-  /// **'Good Job!'**
-  String get rightAnswer;
 
   /// The label for the next question button
   ///
@@ -452,23 +422,11 @@ abstract class AppLocalizations {
   /// **'The exam simulator mode simulates the actual exam experience.'**
   String get examModeDescription;
 
-  /// Label for the 'Language' button
-  ///
-  /// In en, this message translates to:
-  /// **'Language'**
-  String get languageButtonTooltip;
-
   /// Label for Go Premium
   ///
   /// In en, this message translates to:
   /// **'Go Premium!'**
   String get goPremiumLabel;
-
-  /// Features description title
-  ///
-  /// In en, this message translates to:
-  /// **'All features at a glance'**
-  String get featuresDescriptionTitle;
 
   /// Privacy policy label
   ///
@@ -487,12 +445,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms of Service'**
   String get termsOfServiceLabel;
-
-  /// Placeholder body of the about screen
-  ///
-  /// In en, this message translates to:
-  /// **'About this app...'**
-  String get aboutScreenBody;
 
   /// Bottom navigation: dashboard tab
   ///

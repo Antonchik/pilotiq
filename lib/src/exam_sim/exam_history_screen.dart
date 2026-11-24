@@ -77,7 +77,13 @@ class _HistoryList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final local = AppLocalizations.of(context)!;
     // Newest first in the list; the chart reads oldest to newest.
-    final recent = attempts.take(10).toList().reversed.toList();
+    // Migrated (legacy) attempts have no result to chart.
+    final recent = attempts
+        .where((a) => !a.isLegacy)
+        .take(10)
+        .toList()
+        .reversed
+        .toList();
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
@@ -199,7 +205,7 @@ class _AttemptTile extends StatelessWidget {
         ? local.examHistoryLegacy
         : formatDateTime(context, a.startedAt);
     final details = [
-      local.examResultCorrect(a.correct, a.total),
+      if (!legacy) local.examResultCorrect(a.correct, a.total),
       if (!legacy)
         local.examResultTime(formatClock(Duration(seconds: a.durationSec))),
       if (a.reason == AttemptReason.timeout) local.examHistoryTimedOut,
@@ -209,7 +215,7 @@ class _AttemptTile extends StatelessWidget {
       button: !legacy,
       excludeSemantics: true,
       label:
-          '$when, ${_percent(a)}%, '
+          '$when, ${legacy ? '' : '${_percent(a)}%, '}'
           '${a.passed ? local.examPassed : local.examFailed}, '
           '${details.join(', ')}',
       onTap: legacy ? null : () => _open(context),
@@ -220,10 +226,11 @@ class _AttemptTile extends StatelessWidget {
             spacing: 12,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
-              Text(
-                '${_percent(a)}%',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
+              if (!legacy)
+                Text(
+                  '${_percent(a)}%',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
               PassBadge(passed: a.passed),
             ],
           ),

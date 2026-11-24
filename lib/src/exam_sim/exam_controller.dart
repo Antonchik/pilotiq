@@ -1,5 +1,3 @@
-import 'package:pilotiq/src/notifications/providers.dart';
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -11,9 +9,10 @@ import 'package:pilotiq/src/domain/access_policy.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/domain/exam_builder.dart';
 import 'package:pilotiq/src/domain/exam_scoring.dart';
+import 'package:pilotiq/src/notifications/providers.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
-import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/progress/progress_repository.dart';
+import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/progress/user_settings.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/quiz/practice/practice_controller.dart';
