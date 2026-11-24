@@ -576,7 +576,7 @@ _CHANGELOG_RE = re.compile(
     r"|(?:\b(?:New(?: point)?|Changed|Deleted|Renumbered|Moved)\s+(?:Reg\.|N/a|Regulation|ED Decision|EDD)(?=\s|$))")
 _TABLE_NOTE_RE = re.compile(r"^\(\*+\)")
 _ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
-_BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+\b.*|Appendix \d+ to .*|"
+_BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+(?![A-Za-z0-9:])(?!\s*:).*|Appendix \d+ to .*|"
                           r"ANNEX( [IVX]+)?\b.*|ANEKS [IVX]+\b.*|Table of contents|Contents)$")
 
 
