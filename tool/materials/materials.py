@@ -308,11 +308,12 @@ LOC_EUPARA = re.compile(r"^([A-Z][A-Za-z]*|\d{2,3})(\.[A-Za-z0-9]+)+(\([a-z0-9]+
 LOC_EUART = re.compile(r"^art\. %s( ust\. %s)?( pkt %s)?$" % (_N, _N, _N))
 # приложения: załącznik, załącznik I, dodatek 3, załącznik I dodatek 3, любое из них + pkt L
 LOC_EUANNEX = re.compile(r"^(?=załącznik|dodatek)(załącznik( [IVXLC]+)?)?( ?dodatek \d+)?( pkt %s)?$" % _L)
-LOC_AIP = re.compile(r"^(GEN|ENR|AD) \d+(\.\d+)*( pkt \d+(\.\d+)*)?$")
+# AIP Polska: ENR 1.2, ENR 1.2 pkt 3.1, GEN 2.2 CBA (skrót), ENR 5.2.1 TSA (definicja), ENR 1.4 klasa C
+LOC_AIP = re.compile(r"^(GEN|ENR|AD) \d+(\.\d+)*( pkt \d+(\.\d+)*| klasa [A-G]| [A-Z0-9][A-Z0-9/&.\-]{0,9})?$")
 LOC_EASA = re.compile(r"^((AMC|GM)\d* )?[A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
 # Article 2, Article 2(12), Article 2(129a), GM1 Article 2(12), Appendix 4, Appendix 1 pkt 1.2.1
 LOC_EASA_ART = re.compile(r"^(GM\d* )?Article \d+[a-z]?(\([0-9a-z]+\))*$")
-LOC_EASA_APP = re.compile(r"^Appendix \d+( pkt %s)?$" % _L)
+LOC_EASA_APP = re.compile(r"^Appendix \d+( pkt %s| to (AMC|GM)\d* [A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*)?$" % _L)
 FUTURE_MARK = "PRZYSZŁA REDAKCJA"
 
 
@@ -334,6 +335,15 @@ def loc_parents(loc):
     """Родительские локаторы от ближнего к дальнему: 'art. 5 ust. 2 pkt 3' -> ['art. 5 ust. 2', 'art. 5']."""
     out = []
     cur = loc
+    if re.match(r"^Appendix \d+ to (?:AMC|GM)", loc):
+        return []   # EASA "Appendix 1 to AMC1 SERA.6005(c)" is a block of its own
+    mt = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*) (?:klasa [A-G]|[A-Z0-9][A-Z0-9/&.\-]{0,9})$", loc)
+    if mt:
+        return [mt.group(1)]   # AIP abbreviation / definition / airspace class entry: its parent is the section
+    ma = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*) pkt (\d+(?:\.\d+)*)$", loc)
+    if ma:   # AIP: every dotted level is an anchor (pkt 3.1.2 -> pkt 3.1 -> pkt 3 -> section)
+        parts = ma.group(2).split(".")
+        return ["%s pkt %s" % (ma.group(1), ".".join(parts[:n])) for n in range(len(parts) - 1, 0, -1)] + [ma.group(1)]
     while True:
         m = re.match(r"^(.*\S)\s+(pkt|ust\.|dodatek|część|tabela)\s+\S+$", cur)
         if m:
@@ -511,6 +521,11 @@ def check_refs(rep, label, rec, sources, store, status):
             elif norm_quote(quote) not in at:
                 rep.err("%s: quote не найден в тексте якоря %s %s" % (label, src, loc))
             else:
+                msec = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*)\b", loc)
+                lang = ((store.anchors(src) or {}).get("langs") or {}).get(msec.group(1)) if msec else None
+                if lang and lang != "pl":
+                    rep.warn("%s: раздел %s источника %s не только польский (%s): цитируйте польскую колонку, для ENR 1.1 — "
+                             "английский текст есть единственный" % (label, msec.group(1), src, lang))
                 child = store.descendant_with_quote(src, loc, quote)
                 if child:
                     rep.warn("%s: quote целиком лежит в более точном пункте %r, укажите его вместо %r" % (label, child, loc))

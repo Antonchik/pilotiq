@@ -14,6 +14,12 @@ size and fetch date are written into sources.json. A pinned source whose downloa
 bytes do not match the pin is never written to sources/ and the run exits non-zero.
 Sources with status != "available" are skipped (they are listed as unavailable).
 
+MANUAL mode (files the owner downloads by hand, no network): a source with
+  "fetch": {"mode": "manual", "dir": "AIP-PL-OWNER", "files": [{"section": "ENR 1.2", "file": "ENR 1.2.pdf", "sha256": "..."}]}
+is looked up in sources/<dir>/. Each file is verified against its own sha256; --pin records the sha256 and size of files
+that have none and the source-level sha256 (SHA-256 of the sorted "<file>:<sha256>" lines). More sections are added by
+adding entries to "files" (and placing the file); --check compares the local files with the pins.
+
 CELLAR mode (official Polish consolidated EU regulations, no EUR-Lex WAF): a source with
   "fetch": {"mode": "cellar", "base": "2012R0923"}
 resolves the newest consolidated CELEX "0<base>-YYYYMMDD" with SPARQL on publications.europa.eu, then downloads
@@ -199,6 +205,69 @@ def resolve_download(src, pin):
     return cellar_url(src, celex), cellar_headers(src), celex
 
 
+def is_manual(src):
+    return (src.get("fetch") or {}).get("mode") == "manual"
+
+
+def manual_dir(src, sources_dir):
+    return os.path.join(sources_dir, src["fetch"].get("dir", src["id"]))
+
+
+def manual_digest(files):
+    lines = sorted("%s:%s" % (f["file"], f.get("sha256", "")) for f in files)
+    return hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest()
+
+
+def cmd_manual(src, sources_dir, pin, out):
+    """Verify (and with pin record) the hand-downloaded files of a manual source. Returns (exit code, changed)."""
+    sid = src["id"]
+    base = manual_dir(src, sources_dir)
+    code = EXIT_OK
+    changed = False
+    for f in src["fetch"]["files"]:
+        path = os.path.join(base, f["file"])
+        if not os.path.exists(path):
+            out("ERROR    %s: %s is missing (download it manually into %s)" % (sid, f["file"], base))
+            code = max(code, EXIT_ERROR)
+            continue
+        try:
+            check_magic({"format": f.get("format", src["format"]), "url": path}, path)
+        except FetchError as e:
+            out("ERROR    %s: %s" % (sid, e))
+            code = max(code, EXIT_ERROR)
+            continue
+        digest = sha256_file(path)
+        pinned = f.get("sha256") or ""
+        if pinned and digest != pinned:
+            out("MISMATCH %s %s: local sha256 %s != pinned %s" % (sid, f["file"], digest, pinned))
+            code = max(code, EXIT_MISMATCH)
+        elif not pinned:
+            if pin:
+                f["sha256"] = digest
+                f["bytes"] = os.path.getsize(path)
+                changed = True
+                out("PINNED   %s %s sha256=%s" % (sid, f["file"], digest))
+            else:
+                out("ERROR    %s %s: no pinned sha256; re-run with --pin to record %s" % (sid, f["file"], digest))
+                code = max(code, EXIT_ERROR)
+        else:
+            out("OK       %s %s (manual, sha256 matches)" % (sid, f["file"]))
+    if code == EXIT_OK and all(f.get("sha256") for f in src["fetch"]["files"]):
+        total = manual_digest(src["fetch"]["files"])
+        if src.get("sha256") != total:
+            if pin or not src.get("sha256"):
+                src["sha256"] = total
+                src["bytes"] = sum(f.get("bytes", 0) for f in src["fetch"]["files"])
+                if not src.get("fetched"):
+                    src["fetched"] = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+                changed = True
+            else:
+                out("MISMATCH %s: the list of files changed (source sha256 %s != %s); re-run with --pin" % (
+                    sid, src.get("sha256"), total))
+                code = max(code, EXIT_MISMATCH)
+    return code, changed
+
+
 def cmd_fetch(sources, chosen, sources_json, sources_dir, pin, out):
     code = EXIT_OK
     changed_json = False
@@ -206,6 +275,11 @@ def cmd_fetch(sources, chosen, sources_json, sources_dir, pin, out):
         sid = src["id"]
         if not is_available(src):
             out("SKIP     %s (unavailable: %s)" % (sid, src.get("unavailable_reason", "")))
+            continue
+        if is_manual(src):
+            c, ch = cmd_manual(src, sources_dir, pin, out)
+            code = max(code, c)
+            changed_json = changed_json or ch
             continue
         dest = source_path(sources_dir, src)
         pinned = src.get("sha256") or ""
@@ -252,7 +326,7 @@ def cmd_fetch(sources, chosen, sources_json, sources_dir, pin, out):
     return code
 
 
-def cmd_check(chosen, out):
+def cmd_check(chosen, sources_dir, out):
     code = EXIT_OK
     tmpdir = tempfile.mkdtemp(prefix="materials-check-")
     try:
@@ -260,6 +334,10 @@ def cmd_check(chosen, out):
             sid = src["id"]
             if not is_available(src):
                 out("SKIP     %s (unavailable)" % sid)
+                continue
+            if is_manual(src):
+                c, _ = cmd_manual(src, sources_dir, False, out)
+                code = max(code, EXIT_CHANGED if c else EXIT_OK)
                 continue
             pinned = src.get("sha256") or ""
             if not pinned:
@@ -315,7 +393,7 @@ def main(argv=None, out=print):
         out("ERROR: %s" % e)
         return EXIT_ERROR
     if args.check:
-        return cmd_check(chosen, out)
+        return cmd_check(chosen, args.sources_dir, out)
     return cmd_fetch(sources, chosen, args.sources_json, args.sources_dir, args.pin, out)
 
 

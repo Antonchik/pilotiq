@@ -499,6 +499,24 @@ class AnnexTableLocatorTest(Base):
         self.assertTrue(any("quote не найден" in e for e in errs), errs)
 
 
+class AipLangWarningTest(Base):
+    def test_quote_from_mixed_or_english_section_warns(self):
+        k = self.key_of("PL010-0001")
+        text = "ENR 1.1 GENERAL RULES The basic legal act on aviation in the FIR Warszawa is the Aviation Law Act."
+        (self.ctx.corpus / "AIP.txt").write_text(text, encoding="utf-8")
+        jdump(self.ctx.anchors / "AIP.json", {"textSha": hashlib.sha256(text.encode("utf-8")).hexdigest(),
+                                              "anchors": {"ENR 1.1": [0, len(text)]}, "langs": {"ENR 1.1": "en"}})
+        srcs = m.read_json(self.ctx.sources)
+        srcs.append({"id": "AIP", "title_pl": "AIP Polska", "kind": "aip", "status": "available", "fetched": "2026-11-24",
+                     "allowQuote": True, "lang": "pl"})
+        jdump(self.ctx.sources, srcs)
+        self.put_src("P01", [self.rec(k, refs=[{"src": "AIP", "loc": "ENR 1.1",
+                                                 "quote": "The basic legal act on aviation in the FIR Warszawa"}])])
+        rep = self.validate()
+        self.assertEqual([], rep.errors)
+        self.assertTrue(any("не только польский" in w for w in rep.warnings), rep.warnings)
+
+
 class SourcesTest(Base):
     def setUp(self):
         super().setUp()
@@ -600,6 +618,24 @@ class LocTest(unittest.TestCase):
         self.assertEqual(m.loc_parents("Article 2(129a)"), ["Article 2"])
         self.assertEqual(m.loc_parents("GM1 Article 2(12)"), ["GM1 Article 2"])
         self.assertEqual(m.loc_parents("Appendix 1 pkt 1.2.1"), ["Appendix 1"])
+
+    def test_aip_locators(self):
+        for loc in ("ENR 1.2", "GEN 2.2", "ENR 5.2.1", "ENR 1.2 pkt 3", "ENR 1.2 pkt 3.1.2", "GEN 2.2 CBA", "GEN 2.2 A/A",
+                    "ENR 5.2.1 TSA", "ENR 1.4 klasa C"):
+            self.assertTrue(m.loc_valid("aip", loc), loc)
+        for loc in ("ENR", "ENR 1.2 pkt", "ENR 1.2 pkt 3.", "ENR 1.4 klasa H", "ENR 1.2 cba", "enr 1.2", "ENR 1.2 pkt 3 pkt 4"):
+            self.assertFalse(m.loc_valid("aip", loc), loc)
+        self.assertEqual(m.loc_parents("ENR 1.2 pkt 3.1.2"), ["ENR 1.2 pkt 3.1", "ENR 1.2 pkt 3", "ENR 1.2"])
+        self.assertEqual(m.loc_parents("ENR 1.2 pkt 3"), ["ENR 1.2"])
+        self.assertEqual(m.loc_parents("GEN 2.2 CBA"), ["GEN 2.2"])
+        self.assertEqual(m.loc_parents("ENR 1.4 klasa C"), ["ENR 1.4"])
+        self.assertEqual(m.loc_parents("ENR 1.2"), [])
+
+    def test_easa_appendix_to_amc(self):
+        self.assertTrue(m.loc_valid("easa", "Appendix 1 to AMC1 SERA.14001"))
+        self.assertTrue(m.loc_valid("easa", "Appendix 1 to AMC1 SERA.6005(c)"))
+        self.assertFalse(m.loc_valid("easa", "Appendix 1 to X"))
+        self.assertEqual(m.loc_parents("Appendix 1 to AMC1 SERA.6005(c)"), [])
 
     def test_parents(self):
         self.assertEqual(m.loc_parents("art. 5 ust. 2 pkt 3"), ["art. 5 ust. 2", "art. 5"])

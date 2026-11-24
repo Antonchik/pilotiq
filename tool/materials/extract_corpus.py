@@ -563,6 +563,7 @@ _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
 _ART_EAR_RE = re.compile(r"^Article (\d+[a-z]?) \S")
 _GM_ART_RE = re.compile(r"^((?:AMC|GM)\d*) (?:to )?Article (\d+[a-z]?(?:\(\d+[a-z]?\))?)(?=\s)")
 _GM_OTHER_RE = re.compile(r"^(?:AMC|GM)\d*\s+(?:and (?:AMC|GM)\d*\s+)?to\s")
+_AMC_APP_RE = re.compile(r"^(Appendix \d+ to (?:AMC|GM)\d* %s(?:\([a-z0-9]+\))*)(?=\s|$)" % _RULE_ID)
 _APPENDIX_RE = re.compile(r"^APPENDIX (\d+) \S")
 _APP_ROW_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){0,4})\.\s+\S")
 _PARA_RE = re.compile(r"^\(([a-z]{1,4}|\d{1,2}|[A-Z])\)\s*\S")
@@ -812,6 +813,18 @@ def rule_anchors(text, kind, extras=()):
         is_head = bool(mm or _RULE_RE.match(line))
         if _PAGE_NO_TAIL.search(line) and is_head:
             continue  # table-of-contents entry whose dot leaders were lost
+        mapp = _AMC_APP_RE.match(line) if kind == "easa" else None
+        if mapp:
+            end_all(start)
+            end_app(start)
+            key = mapp.group(1)
+            if key not in have:
+                have.add(key)
+                sp = _Span(key, start, 1)
+                spans.append(sp)
+                group = [sp]
+            state = None
+            continue
         if _BOUNDARY_RE.match(line):
             end_all(start)
             end_app(start)
@@ -819,6 +832,8 @@ def rule_anchors(text, kind, extras=()):
         if app_extra and _APPENDIX_RE.match(line):
             ma = _APPENDIX_RE.match(line)
             key = "Appendix " + ma.group(1)
+            if app is not None and app.key == key and start - app.start < 200:
+                continue   # the heading is printed twice in a row
             end_all(start)
             end_app(start)
             if key not in have:
@@ -1203,6 +1218,196 @@ def aip_anchors(text):
     return _finish(spans, len(text))
 
 
+# --------------------------------------------------------------------------- AIP Polska (manually downloaded eAIP sections)
+#
+# Each eAIP page is a two-column PL | EN print. The Polish column is the left half of the page: its words start left
+# of the gutter. ENR 1.1 is English only (columns "full", lang "en"); the table sections ENR 1.4 / ENR 2.1 are read
+# across the whole width. The pages are listed per file in sources.json: fetch.files[{section, file, columns, lang, entries}].
+
+_AIP_NOISE = re.compile(
+    r"^(?:AIP POLSKA\b.*|AIP POLAND\b.*|(?:GEN|ENR) [\d.]+ - \d+(?: AIP POLSKA)?|\d{2} [A-Z]{3} \d{4}(?: AIP POLAND)?|"
+    r"POLSKA AGENCJA ŻEGLUGI POWIETRZNEJ|AIRAC AMDT .*|AMDT\b.*|POLISH AIR NAVIGATION.*)$")
+_AIP_SYMBOLS = "†‡*¤#"
+AIP_HEADER_Y = 45
+
+
+def _aip_split_x(page):
+    """x of the gutter between the Polish and the English column: the x in 270..330 crossed by the fewest words."""
+    words = page.extract_words()
+    best = None
+    for x in range(270, 331, 2):
+        crossing = sum(1 for w in words if w["x0"] < x < w["x1"])
+        key = (crossing, abs(x - 298))
+        if best is None or key < best[0]:
+            best = (key, x)
+    return best[1]
+
+
+def _aip_clean(lines):
+    out = []
+    for ln in lines:
+        c = clean_line(ln)
+        if c and not _AIP_NOISE.match(c):
+            out.append(c)
+    return out
+
+
+def aip_file_lines(path, cfg):
+    """Corpus lines of one eAIP section file. Returns (lines, page_dates)."""
+    import pdfplumber
+
+    columns = cfg.get("columns", "split")
+    lines = []
+    dates = []
+    with pdfplumber.open(path) as pdf:
+        for page in pdf.pages:
+            head = " ".join((page.extract_text() or "").split("\n")[:3])
+            dates.extend(re.findall(r"\b\d{2} [A-Z]{3} \d{4}\b", head))
+            if columns == "split":
+                split = _aip_split_x(page)
+                pg = page.filter(lambda o, sx=split: o["object_type"] != "char" or o["x0"] < sx)
+            else:
+                pg = page
+            rows = [ln for ln in pg.extract_text_lines() if ln["top"] > AIP_HEADER_Y or not _AIP_NOISE.match(clean_line(ln["text"]))]
+            rows = [ln for ln in rows if clean_line(ln["text"]) and not _AIP_NOISE.match(clean_line(ln["text"]))]
+            if cfg.get("entries") == "abbreviations":
+                margin = min([ln["x0"] for ln in rows] or [0])
+                for ln in rows:
+                    txt = clean_line(ln["text"])
+                    if ln["x0"] < margin + 12:
+                        first = txt.split(" ", 1)[0]
+                        if first[:1] in _AIP_SYMBOLS or len(txt.split()) < 2:
+                            lines.append(txt)       # legend or alphabet heading, not an entry
+                        else:
+                            lines.append("\x01" + txt)   # \x01 marks "an entry starts here" for the joining below
+                    elif re.fullmatch(r"[A-Z]", txt):
+                        continue                    # letter heading in the middle of the page
+                    elif lines and lines[-1].startswith("\x01"):
+                        lines[-1] += " " + txt     # continuation of the entry meaning
+                    else:
+                        lines.append(txt)
+            else:
+                lines.extend(clean_line(ln["text"]) for ln in rows)
+            page.flush_cache()
+    lines = [ln[1:] if ln.startswith("\x01") else ln for ln in lines]
+    return lines, dates
+
+
+def build_manual_corpus(src, sources_dir):
+    """(text, sections) of a manual source; sections = [(section, start, end, cfg, page_dates)] in file order."""
+    base = os.path.join(sources_dir, src["fetch"].get("dir", src["id"]))
+    chunks = []
+    sections = []
+    pos = 0
+    for f in src["fetch"]["files"]:
+        path = os.path.join(base, f["file"])
+        if not os.path.exists(path):
+            raise ExtractError("%s: %s not found (place it into %s)" % (src["id"], f["file"], base))
+        lines, dates = aip_file_lines(path, f)
+        lines = clean_lines(lines)
+        if f.get("lang", "pl") == "pl":
+            lines = dehyphenate(lines)
+        block = "\n".join(lines) + "\n"
+        sections.append((f["section"], pos, pos + len(block), f, dates))
+        chunks.append(block)
+        pos += len(block)
+    return "".join(chunks), sections
+
+
+_AIP_HEAD_RE = re.compile(r"^(\d{1,2})\s+([A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻ0-9 ,/()'’.&-]{2,})$")
+_AIP_DOT_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,2})+)\.?\s+\S")
+_AIP_TOP_RE = re.compile(r"^(\d{1,2})\.\s+\S")
+_AIP_DEF_RE = re.compile(r"^(?P<name>[A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻ0-9 ,/()-]*?)\s*\((?P<abbr>[A-Z]{2,6})\)\s*[–-]\s")
+_AIP_ABBR_RE = re.compile(r"^([A-Z0-9][A-Z0-9/&.\-]{0,9})[†‡*¤#]*\s+\S")
+_AIP_CLASS_RE = re.compile(r"^([A-G])\*{0,4}(?:\s|$)")
+
+
+def _aip_pkt_key(section, number):
+    return "%s pkt %s" % (section, number)
+
+
+def aip_sections_anchors(text, sections):
+    """Anchors of the manual AIP source (see notes §5): `ENR 1.2`, `ENR 1.2 pkt 3.1`, `GEN 2.2 CBA`, `ENR 5.2.1 TSA`,
+    `ENR 1.4 klasa C`. Returns (anchors, langs)."""
+    spans = []
+    langs = {}
+    have = set()
+
+    def add(key, start, level):
+        if key in have:
+            return None
+        have.add(key)
+        sp = _Span(key, start, level)
+        spans.append(sp)
+        return sp
+
+    for section, s0, s1, cfg, _dates in sections:
+        langs[section] = cfg.get("lang") or ("pl+en" if cfg.get("columns") == "full" else "pl")
+        sec = add(section, s0, 1)
+        sec.end = s1
+        rows = [(s0 + o, ln) for o, ln in _line_offsets(text[s0:s1]) if ln]
+        mode = cfg.get("entries", "text")
+        items = []   # (start, key, depth)
+        if mode == "abbreviations":
+            for start, line in rows:
+                m = _AIP_ABBR_RE.match(line)
+                if m and line[:1] not in _AIP_SYMBOLS and len(line.split()) >= 2 and not line.startswith(section + " "):
+                    items.append((start, "%s %s" % (section, m.group(1)), 1))
+        else:
+            has_heads = any(_AIP_HEAD_RE.match(ln) for _, ln in rows)
+            last_top = 0
+            last_class = None
+            for i, (start, line) in enumerate(rows):
+                mh = _AIP_HEAD_RE.match(line)
+                if mh and int(mh.group(1)) <= 40 and not line.startswith(section.split()[0] + " "):
+                    items.append((start, _aip_pkt_key(section, mh.group(1)), 1))
+                    continue
+                md = _AIP_DOT_RE.match(line)
+                if md:
+                    items.append((start, _aip_pkt_key(section, md.group(1)), md.group(1).count(".") + 1))
+                    continue
+                mt = _AIP_TOP_RE.match(line)
+                if mt and not has_heads and last_top < int(mt.group(1)) <= last_top + 3:
+                    last_top = int(mt.group(1))
+                    items.append((start, _aip_pkt_key(section, mt.group(1)), 1))
+                    continue
+                mdef = _AIP_DEF_RE.match(line)
+                if mdef:
+                    st = start
+                    if i and rows[i - 1][1] == rows[i - 1][1].upper() and re.search(r"[A-ZĄĆĘŁŃÓŚŹŻ]{3}", rows[i - 1][1]) \
+                            and not _AIP_HEAD_RE.match(rows[i - 1][1]) and not _AIP_DEF_RE.match(rows[i - 1][1]):
+                        st = rows[i - 1][0]
+                    items.append((st, "%s %s" % (section, mdef.group("abbr")), 1))
+                    continue
+                if cfg.get("classes"):
+                    mc = _AIP_CLASS_RE.match(line)
+                    if mc and (last_class is None or ord(mc.group(1)) == ord(last_class) + 1):
+                        last_class = mc.group(1)
+                        items.append((start, "%s klasa %s" % (section, mc.group(1)), 1))
+        items.sort(key=lambda it: it[0])
+        # end of an item: next item that is not its descendant (dotted numbers), else section end
+        for idx, (start, key, depth) in enumerate(items):
+            end = s1
+            for start2, key2, _d in items[idx + 1:]:
+                if key.split(" pkt ")[-1] != key and key2.startswith(key + ".") and " pkt " in key2:
+                    continue
+                end = start2
+                break
+            sp = add(key, start, 1 + depth)
+            if sp is not None:
+                sp.end = end
+        # synthetic parents of dotted points whose parent line is missing (union of the children)
+        for key in [k for k in list(have) if k.startswith(section + " pkt ")]:
+            parts = key.split(" pkt ")[1].split(".")
+            for n in range(len(parts) - 1, 0, -1):
+                parent = _aip_pkt_key(section, ".".join(parts[:n]))
+                kids = [sp for sp in spans if sp.key.startswith(parent + ".") and sp.key.startswith(section + " pkt ")]
+                if parent not in have and kids:
+                    ps = add(parent, min(k.start for k in kids), n + 1)
+                    ps.end = max(k.end for k in kids)
+    return _finish(spans, len(text)), langs
+
+
 def anchors_for(src, text):
     kind = src["kind"]
     extras = tuple(src.get("anchorExtras", ()))
@@ -1227,19 +1432,28 @@ def write_text(path, text):
         f.write(text)
 
 
-def write_anchors(path, text_sha, anchors, future=()):
+def write_anchors(path, text_sha, anchors, future=(), langs=None):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     rows = ",\n".join("    %s: [%d, %d]" % (json.dumps(k, ensure_ascii=False), s, e)
                       for k, (s, e) in anchors.items())
     fut = ""
     if future:
         fut = ',\n  "future": [%s]' % ", ".join("[%d, %d]" % (a, b) for a, b in future)
+    if langs and any(v != "pl" for v in langs.values()):
+        fut += ',\n  "langs": %s' % json.dumps({k: v for k, v in langs.items() if v != "pl"}, ensure_ascii=False, sort_keys=True)
     body = '{\n  "textSha": "%s",\n  "anchors": {\n%s\n  }%s\n}\n' % (text_sha, rows, fut)
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(body)
 
 
 def extract_one(src, sources_dir, corpus_dir, anchors_dir):
+    if (src.get("fetch") or {}).get("mode") == "manual":
+        text, sections = build_manual_corpus(src, sources_dir)
+        sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        anchors, langs = aip_sections_anchors(text, sections)
+        write_text(os.path.join(corpus_dir, src["id"] + ".txt"), text)
+        write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors, (), langs)
+        return src["id"], len(text), len(anchors)
     path = os.path.join(sources_dir, src["id"], "%s.%s" % (src["id"], src["format"]))
     if not os.path.exists(path):
         raise ExtractError("%s: %s not found (run fetch_sources.py first)" % (src["id"], path))

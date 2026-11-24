@@ -354,39 +354,126 @@
     "bytes": 4446102
   },
   {
-    "id": "AIP-PL-IFR",
-    "title_pl": "AIP Polska (eAIP IFR: GEN 1.x, ENR 1.1–1.6, ENR 2, ENR 5)",
+    "id": "AIP-PL",
+    "title_pl": "AIP Polska – wybrane rozdziały (pobrane ręcznie przez właściciela)",
     "kind": "aip",
     "lang": "pl",
-    "status": "unavailable",
-    "unavailable_reason": "eAIP is hosted on docs.pansa.pl, which the agent proxy refuses (HTTP 403 'no rule or network setting allows this host'); ais.pansa.pl itself only links to it. Owner: add host docs.pansa.pl to the environment or download the offline eAIP manually.",
-    "url": "https://docs.pansa.pl/ais/eaipifr/defaultInt_offline_2026-10-29.html",
-    "format": "html",
-    "version": "eAIP IFR, AIRAC effective 2026-10-29 (offline edition)",
-    "sha256": "",
-    "fetched": "",
+    "status": "available",
+    "url": "https://ais.pansa.pl/publikacje/aip-polska/",
+    "format": "pdf",
+    "version": "AIP Polska, selected sections printed by the owner; latest page date per section in fetch.files (AIRAC AMDT 07/26–11/26)",
+    "sha256": "e7bee77971c2067386b7252d92ef47ed0a5400559002f86d843283ecfde4bb9b",
+    "fetched": "2026-11-24",
     "reuse": "reference-only",
-    "allowQuote": false,
-    "landing_url": "https://ais.pansa.pl/publikacje/aip-polska/",
+    "allowQuote": true,
     "terms_url": "https://ais.pansa.pl/o-ais/zastrzezenia-prawne/",
-    "terms_note": "PANSA: 'nie moga byc uzywane w celach komercyjnych. Wszelka modyfikacja, reprodukcja lub przetwarzanie zawartosci ... jest zabronione.' Only references and own paraphrase."
-  },
-  {
-    "id": "AIP-PL-VFR",
-    "title_pl": "AIP Polska (eAIP VFR)",
-    "kind": "aip",
-    "lang": "pl",
-    "status": "unavailable",
-    "unavailable_reason": "eAIP is hosted on docs.pansa.pl, which the agent proxy refuses (HTTP 403). Owner: add host docs.pansa.pl to the environment or download the offline eAIP manually.",
-    "url": "https://docs.pansa.pl/ais/eaipvfr/defaultInt_offline_2026-10-29.html",
-    "format": "html",
-    "version": "eAIP VFR, AIRAC effective 2026-10-29 (offline edition)",
-    "sha256": "",
-    "fetched": "",
-    "reuse": "reference-only",
-    "allowQuote": false,
-    "landing_url": "https://ais.pansa.pl/publikacje/aip-polska/",
-    "terms_url": "https://ais.pansa.pl/o-ais/zastrzezenia-prawne/",
-    "terms_note": "PANSA: 'nie moga byc uzywane w celach komercyjnych. Wszelka modyfikacja, reprodukcja lub przetwarzanie zawartosci ... jest zabronione.' Only references and own paraphrase."
+    "terms_note": "PANSA: 'nie mogą być używane w celach komercyjnych … reprodukcja lub przetwarzanie … jest zabronione'. [ПРОВЕРИТЬ владельцем: условия PANSA]. allowQuote=true (по решению оркестратора) только для коротких цитат из польской колонки; в ассет quote не попадает.",
+    "fetch": {
+      "mode": "manual",
+      "dir": "AIP-PL-OWNER",
+      "files": [
+        {
+          "section": "GEN 2.2",
+          "file": "GEN 2.2.pdf",
+          "entries": "abbreviations",
+          "sha256": "d3c72fb28cc34d47b69e123d7af6a3fe3cfeb79687b3519444122fa61ea0179e",
+          "bytes": 329884,
+          "effective": "2026-02-19",
+          "amdt": "02/26",
+          "pageDates": {
+            "2025-04-17": 2,
+            "2026-02-19": 35
+          }
+        },
+        {
+          "section": "ENR 1.1",
+          "file": "ENR 1.1.pdf",
+          "columns": "full",
+          "lang": "en",
+          "sha256": "0fdd27a2ccd0fc85e4be0c46f81ef0830f11009c54f4ee83fc3e144b4e12ea5c",
+          "bytes": 75732,
+          "effective": null,
+          "note": "Safari print of the eAIP web page, English only, no page dates / AMDT"
+        },
+        {
+          "section": "ENR 1.2",
+          "file": "ENR 1.2.pdf",
+          "sha256": "98dfdc073a63586c65fc0a3961400f4300b006c55582f6c9ac3f5f986c02076e",
+          "bytes": 84910,
+          "effective": "2026-07-09",
+          "amdt": "07/26",
+          "pageDates": {
+            "2025-04-17": 1,
+            "2026-07-09": 3
+          }
+        },
+        {
+          "section": "ENR 1.4",
+          "file": "ENR 1.4.pdf",
+          "columns": "full",
+          "classes": true,
+          "sha256": "21a0bbcc949a491cd1abec2ba089ff55506a1504b8245be579d8bbccd44d571d",
+          "bytes": 90233,
+          "effective": "2026-07-09",
+          "amdt": "07/26",
+          "pageDates": {
+            "2025-04-17": 3,
+            "2026-07-09": 1
+          }
+        },
+        {
+          "section": "ENR 1.7",
+          "file": "ENR 1.7.pdf",
+          "sha256": "87f8da16b5f3e5464364774acc41176ae3e3bc4a2aaa5661a161435dd1424db8",
+          "bytes": 97702,
+          "effective": "2026-07-09",
+          "amdt": "07/26",
+          "pageDates": {
+            "2025-04-17": 3,
+            "2026-07-09": 2
+          }
+        },
+        {
+          "section": "ENR 2.1",
+          "file": "ENR 2.1.pdf",
+          "columns": "full",
+          "sha256": "6753d044c9f2572d4335975e7643dfc9f1006954fd180763c66b77088124e5c1",
+          "bytes": 53234,
+          "effective": "2026-10-29",
+          "amdt": "11/26",
+          "pageDates": {
+            "2026-10-29": 2
+          }
+        },
+        {
+          "section": "ENR 5.1",
+          "file": "ENR 5.1.pdf",
+          "sha256": "2f9ab5398c880f5c8f51b4c49ee1884c44a7c156b5ccc8a103162c4273e2a540",
+          "bytes": 102517,
+          "effective": "2026-10-29",
+          "amdt": "11/26",
+          "pageDates": {
+            "2025-04-17": 4,
+            "2026-10-29": 1
+          }
+        },
+        {
+          "section": "ENR 5.2.1",
+          "file": "ENR 5.2.1.pdf",
+          "sha256": "4f97307589bdb7075236b8a2c6a58ddcc94da190d8aa36751d15379e6bc94aba",
+          "bytes": 155113,
+          "effective": "2026-10-01",
+          "amdt": "10/26",
+          "pageDates": {
+            "2025-04-17": 1,
+            "2025-06-12": 1,
+            "2026-07-09": 5,
+            "2026-10-01": 3
+          }
+        }
+      ]
+    },
+    "bytes": 989325,
+    "legalState": "2026-02-19"
   }
 ]

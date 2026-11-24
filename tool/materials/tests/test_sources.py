@@ -663,6 +663,157 @@ class CellarFetchTest(unittest.TestCase):
             fs.check_magic({"format": "html", "url": "u"}, str(bad))
 
 
+def make_positioned_pdf(pages):
+    """PDF with absolutely positioned text: pages = [[(x, y, size, text), ...], ...] (y from the page top)."""
+    objs = [b"<< /Type /Catalog /Pages 2 0 R >>", None]
+    kids = []
+    for items in pages:
+        body = []
+        for x, y, size, text in items:
+            esc = text.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)")
+            body.append("BT /F1 %d Tf %d %d Td (%s) Tj ET" % (size, x, 842 - y, esc))
+        stream = "\n".join(body).encode("latin-1")
+        objs.append(b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents %d 0 R "
+                    b"/Resources << /Font << /F1 %d 0 R >> >> >>" % (len(objs) + 2, 3 + 2 * len(pages)))
+        kids.append(len(objs))
+        objs.append(b"<< /Length %d >>\nstream\n" % len(stream) + stream + b"\nendstream")
+    objs[1] = b"<< /Type /Pages /Kids [%s] /Count %d >>" % (" ".join("%d 0 R" % k for k in kids).encode(), len(pages))
+    objs.append(b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>")
+    out = bytearray(b"%PDF-1.4\n")
+    offs = []
+    for i, o in enumerate(objs, 1):
+        offs.append(len(out))
+        out += b"%d 0 obj\n" % i + o + b"\nendobj\n"
+    xref = len(out)
+    out += b"xref\n0 %d\n0000000000 65535 f \n" % (len(objs) + 1)
+    for o in offs:
+        out += b"%010d 00000 n \n" % o
+    out += b"trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n" % (len(objs) + 1, xref)
+    return bytes(out)
+
+
+class AipManualTest(unittest.TestCase):
+    """Manually downloaded eAIP sections: two-column PL | EN pages, only the Polish column is the corpus."""
+
+    ENR12 = [(52, 20, 9, "AIP POLSKA ENR 1.2 - 1"), (52, 32, 9, "AIP POLAND 09 JUL 2026"),
+             (52, 60, 10, "ENR 1.2 PRZEPISY WYKONYWANIA LOTU"), (310, 60, 10, "ENR 1.2 VISUAL FLIGHT RULES"),
+             (52, 90, 10, "1. W FIR Warszawa stosuje sie przepisy SERA."), (310, 90, 10, "1. Within the FIR Warszawa the SERA applies."),
+             (52, 110, 10, "2. Zwolnienia mozna uzyskac w trybie wyjatkowym."), (310, 110, 10, "2. Exemptions may be granted."),
+             (52, 130, 10, "3. Na zadanie piloci stosuja nastepujace zasady:"), (310, 130, 10, "3. On request pilots shall apply the rules:"),
+             (52, 150, 10, "3.1. Pierwsza zasada dotyczy widzialnosci."), (310, 150, 10, "3.1. The first rule concerns visibility."),
+             (52, 170, 10, "3.1.1. Szczegol pierwszej zasady."), (310, 170, 10, "3.1.1. Detail of the first rule."),
+             (52, 200, 10, "5. Punkt po przerwie w numeracji."), (310, 200, 10, "5. Point after a gap in numbering."),
+             (52, 800, 8, "AIRAC AMDT 07/26 POLISH AIR NAVIGATION SERVICES AGENCY")]
+    GEN22 = [(54, 20, 9, "AIP POLSKA GEN 2.2 - 1"), (54, 50, 10, "GEN 2.2 SKROTY WYKORZYSTYWANE W PUBLIKACJACH AIS"),
+             (54, 80, 10, "* Legenda skrotow"),
+             (54, 100, 10, "CBA Strefa lotow po obydwu stronach granicy"), (310, 100, 10, "CBA Cross border area"),
+             (54, 120, 10, "CTR Rejon kontrolowany lotniska"), (182, 132, 10, "oraz jego okolice"),
+             (310, 120, 10, "CTR Control zone"),
+             (54, 150, 10, "MRT Trasa lotnictwa wojskowego"), (310, 150, 10, "MRT Military route")]
+    ENR521 = [(52, 60, 10, "ENR 5.2.1 ZASADY"), (52, 80, 10, "1 DEFINICJE"), (310, 80, 10, "1 DEFINITIONS"),
+              (52, 100, 10, "STREFA CZASOWO WYDZIELONA (TSA) - przestrzen powietrzna"), (310, 100, 10, "TEMPORARY SEGREGATED AREA (TSA) - airspace"),
+              (52, 120, 10, "PRZESTRZEN BUFOROWA NA POTRZEBY WALIDOWANIA"), (52, 132, 10, "PLANOW LOTU (FBZ) - wirtualny bufor"),
+              (52, 160, 10, "2 PRZEZNACZENIE"), (52, 180, 10, "2.1. Strefy TSA/TRA ustanawia sie dla celow."), (310, 180, 10, "2.1. TSAs and TRAs are established.")]
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = pathlib.Path(self.tmp.name)
+        (self.dir / "sources" / "AIP-T").mkdir(parents=True)
+        files = [("ENR 1.2", "ENR 1.2.pdf", self.ENR12, {}), ("GEN 2.2", "GEN 2.2.pdf", self.GEN22, {"entries": "abbreviations"}),
+                 ("ENR 5.2.1", "ENR 5.2.1.pdf", self.ENR521, {})]
+        self.files = []
+        for sec, name, items, cfg in files:
+            (self.dir / "sources" / "AIP-T" / name).write_bytes(make_positioned_pdf([items]))
+            self.files.append(dict(section=sec, file=name, **cfg))
+        self.src = {"id": "AIP-T", "kind": "aip", "lang": "pl", "format": "pdf", "status": "available", "url": "u",
+                    "sha256": "", "fetched": "", "fetch": {"mode": "manual", "dir": "AIP-T", "files": self.files}}
+        self.sj = self.dir / "sources.json"
+        self.sj.write_text(json.dumps([self.src]), encoding="utf-8")
+
+    def extract(self):
+        out = []
+        code = ec.main(["--all", "--jobs", "1", "--sources-json", str(self.sj), "--sources-dir", str(self.dir / "sources"),
+                        "--corpus-dir", str(self.dir / "corpus"), "--anchors-dir", str(self.dir / "anchors")], out=out.append)
+        self.assertEqual(0, code, out)
+        text = (self.dir / "corpus" / "AIP-T.txt").read_text(encoding="utf-8")
+        return text, json.loads((self.dir / "anchors" / "AIP-T.json").read_text(encoding="utf-8"))
+
+    def test_only_the_polish_column_numbered_paragraphs_and_hierarchy(self):
+        text, doc = self.extract()
+        a = doc["anchors"]
+        for key in ("ENR 1.2", "ENR 1.2 pkt 1", "ENR 1.2 pkt 2", "ENR 1.2 pkt 3", "ENR 1.2 pkt 3.1", "ENR 1.2 pkt 3.1.1",
+                    "ENR 1.2 pkt 5"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("Within the FIR", text)
+        self.assertNotIn("VISUAL FLIGHT RULES", text)
+        self.assertNotIn("AIP POLSKA", text)
+        self.assertNotIn("AIRAC AMDT", text)
+        s, e = a["ENR 1.2 pkt 3"]
+        self.assertIn("Szczegol pierwszej zasady", text[s:e])      # a paragraph contains its sub-paragraphs
+        s, e = a["ENR 1.2 pkt 2"]
+        self.assertNotIn("Na zadanie", text[s:e])
+        self.assertEqual({}, {k: v for k, v in doc.get("langs", {}).items() if v != "pl"})
+
+    def test_abbreviations_and_definitions(self):
+        text, doc = self.extract()
+        a = doc["anchors"]
+        for key in ("GEN 2.2 CBA", "GEN 2.2 CTR", "GEN 2.2 MRT", "ENR 5.2.1 TSA", "ENR 5.2.1 FBZ", "ENR 5.2.1 pkt 2.1", "ENR 5.2.1 pkt 2"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("GEN 2.2 GEN", a)
+        s, e = a["GEN 2.2 CTR"]
+        self.assertEqual("CTR Rejon kontrolowany lotniska oraz jego okolice", text[s:e].strip())
+        self.assertNotIn("Control zone", text)
+        s, e = a["ENR 5.2.1 FBZ"]
+        self.assertTrue(text[s:].startswith("PRZESTRZEN BUFOROWA"), text[s:s + 40])   # the definition starts on the line before the (FBZ)
+
+    def test_english_only_and_table_sections_are_marked(self):
+        self.files[0]["lang"] = "en"
+        self.files[0]["columns"] = "full"
+        self.files[2]["columns"] = "full"
+        self.sj.write_text(json.dumps([self.src]), encoding="utf-8")
+        text, doc = self.extract()
+        self.assertEqual({"ENR 1.2": "en", "ENR 5.2.1": "pl+en"}, doc["langs"])
+        self.assertIn("Within the FIR", text)
+
+    def test_deterministic(self):
+        t1, d1 = self.extract()
+        t2, d2 = self.extract()
+        self.assertEqual((t1, d1), (t2, d2))
+
+    def run_fetch(self, *args):
+        out = []
+        code = fs.main(list(args) + ["--sources-json", str(self.sj), "--sources-dir", str(self.dir / "sources")], out=out.append)
+        return code, out
+
+    def test_manual_pin_check_and_mismatch(self):
+        code, out = self.run_fetch()
+        self.assertEqual(fs.EXIT_ERROR, code, out)              # not pinned yet
+        code, out = self.run_fetch("--pin")
+        self.assertEqual(0, code, out)
+        rec = json.loads(self.sj.read_text(encoding="utf-8"))[0]
+        self.assertTrue(all(len(f["sha256"]) == 64 for f in rec["fetch"]["files"]))
+        self.assertEqual(fs.manual_digest(rec["fetch"]["files"]), rec["sha256"])
+        self.assertEqual(0, self.run_fetch("--check")[0])
+        (self.dir / "sources" / "AIP-T" / "ENR 1.2.pdf").write_bytes(b"%PDF-changed")
+        code, out = self.run_fetch("--check")
+        self.assertEqual(fs.EXIT_CHANGED, code, out)
+        (self.dir / "sources" / "AIP-T" / "ENR 1.2.pdf").unlink()
+        code, out = self.run_fetch()
+        self.assertEqual(fs.EXIT_ERROR, code)
+        self.assertTrue(any("missing" in line for line in out), out)
+
+    def test_adding_a_section_changes_the_source_digest(self):
+        self.assertEqual(0, self.run_fetch("--pin")[0])
+        rec = json.loads(self.sj.read_text(encoding="utf-8"))[0]
+        rec["fetch"]["files"].append({"section": "ENR 1.4", "file": "ENR 1.4.pdf"})
+        (self.dir / "sources" / "AIP-T" / "ENR 1.4.pdf").write_bytes(make_positioned_pdf([[(52, 60, 10, "ENR 1.4 KLASYFIKACJA")]]))
+        self.sj.write_text(json.dumps([rec]), encoding="utf-8")
+        self.assertEqual(0, self.run_fetch("--pin")[0])
+        rec2 = json.loads(self.sj.read_text(encoding="utf-8"))[0]
+        self.assertNotEqual(rec["sha256"], rec2["sha256"])
+
+
 class RealSourcesJsonTest(unittest.TestCase):
     def test_registry_is_well_formed(self):
         data = json.loads((HERE.parent / "sources.json").read_text(encoding="utf-8"))
@@ -674,7 +825,7 @@ class RealSourcesJsonTest(unittest.TestCase):
                 self.assertIn(k, s, "%s lacks %s" % (s.get("id"), k))
             self.assertIn(s["kind"], ("statute", "eu_reg", "convention", "aip", "easa"))
             self.assertIn(s["reuse"], ("public-domain", "eu-reuse", "reference-only"))
-            if s["kind"] in ("aip", "easa"):
+            if s["kind"] in ("aip", "easa") and (s.get("fetch") or {}).get("mode") != "manual":
                 self.assertFalse(s["allowQuote"], s["id"])
             if s.get("status", "available") == "available":
                 self.assertRegex(s["sha256"], r"^[0-9a-f]{64}$", s["id"])
