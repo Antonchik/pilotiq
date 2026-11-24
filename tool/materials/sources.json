@@ -531,6 +531,7 @@
         {
           "section": "GEN 3.1",
           "file": "GEN 3.1.pdf",
+          "bilingual": true,
           "effective": "2026-06-11",
           "amdt": "06/26",
           "pageDates": {
@@ -556,6 +557,7 @@
         {
           "section": "GEN 3.6",
           "file": "GEN 3.6.pdf",
+          "bilingual": true,
           "effective": "2026-09-03",
           "amdt": "09/26",
           "pageDates": {

@@ -1316,7 +1316,13 @@ def aip_file_lines(path, cfg):
             dates.extend(re.findall(r"\b\d{2} [A-Z]{3} \d{4}\b", head))
             if columns == "split":
                 split = _aip_split_x(page)
-                pg = page.filter(lambda o, sx=split: o["object_type"] != "char" or o["x0"] < sx)
+                # a word belongs to the Polish half when it STARTS left of the gutter: words that cross the gutter
+                # (full-width table cells) stay whole instead of being cut in the middle
+                keep = set()
+                for w in page.extract_words(return_chars=True):
+                    if w["x0"] < split:
+                        keep.update((round(c["x0"], 2), round(c["top"], 2), c["text"]) for c in w["chars"])
+                pg = page.filter(lambda o, k=keep: o["object_type"] != "char" or (o["text"].isspace() and o["x0"] < split) or (round(o["x0"], 2), round(o["top"], 2), o["text"]) in k)
             else:
                 pg = page
             rows = [ln for ln in pg.extract_text_lines() if ln["top"] > AIP_HEADER_Y or not _AIP_NOISE.match(clean_line(ln["text"]))]
@@ -1374,6 +1380,11 @@ _AIP_INDICATOR_RE = re.compile(r"^.*?\b(EP[A-Z]{2})\*{0,3}(?:\s|$)")
 _AIP_CLASS_RE = re.compile(r"^([A-G])\*{0,4}(?:\s|$)")
 
 
+_REF_WRAPPED_RE = re.compile(
+    r"(?:\b(?:ENR|GEN|AD|Załącznika|Załączniku|Załącznik|Annex|rozdziału|rozdział|pkt|punkcie|punktu|punkt|ust\.|część|części|sekcji|Part|Chapter|Appendix)|patrz:?)\s*$",
+    re.I)
+
+
 def _aip_pkt_key(section, number):
     return "%s pkt %s" % (section, number)
 
@@ -1394,7 +1405,7 @@ def aip_sections_anchors(text, sections):
         return sp
 
     for section, s0, s1, cfg, _dates in sections:
-        langs[section] = cfg.get("lang") or ("pl+en" if cfg.get("columns") == "full" else "pl")
+        langs[section] = cfg.get("lang") or ("pl+en" if cfg.get("columns") == "full" or cfg.get("bilingual") else "pl")
         sec = add(section, s0, 1)
         sec.end = s1
         rows = [(s0 + o, ln) for o, ln in _line_offsets(text[s0:s1]) if ln]
@@ -1413,12 +1424,18 @@ def aip_sections_anchors(text, sections):
         else:
             has_heads = any(_AIP_HEAD_RE.match(ln) for _, ln in rows)
             last_top = 0
+            last_head = 0
             last_class = None
             for i, (start, line) in enumerate(rows):
+                if i and _REF_WRAPPED_RE.search(rows[i - 1][1]):
+                    continue    # "... AIP Polska ENR⏎1.10 oraz ...": a wrapped cross-reference, not a new point
                 mh = _AIP_HEAD_RE.match(line)
                 if mh and int(mh.group(1)) <= 40 and not line.startswith(section.split()[0] + " "):
-                    items.append((start, _aip_pkt_key(section, mh.group(1)), 1))
-                    continue
+                    n = int(mh.group(1))
+                    if last_head < n <= last_head + 4:     # headings run 1, 2, 3 ...: a stray "15 ICAO." in a cell is not one
+                        last_head = n
+                        items.append((start, _aip_pkt_key(section, mh.group(1)), 1))
+                        continue
                 md = _AIP_DOT_RE.match(line)
                 if md:
                     items.append((start, _aip_pkt_key(section, md.group(1)), md.group(1).count(".") + 1))
