@@ -38,8 +38,12 @@ DEFAULT_ANCHORS_DIR = os.path.join(HERE, "anchors")
 # EAR pages: header zone above this y (pt), footer zone below FOOTER_Y are cropped away.
 EAR_HEADER_Y = 88
 EAR_FOOTER_Y = 770
-# Sejm statute PDFs: footnotes are set in 9 pt, the body in 10 pt.
-SEJM_FOOTNOTE_SIZES = (8.5, 9.5)
+# Sejm statute PDFs: the body is set in 10 pt; footnotes and running headers in 9 pt and smaller;
+# footnote reference marks (and the index of an article such as 87[1]) are superscripts below 8 pt.
+SEJM_BODY_MIN_SIZE = 9.6
+SEJM_SUPERSCRIPT_MAX = 8.0
+# Marks text that belongs to a redaction which is not in force yet (see sejm_page_lines).
+FUTURE_MARK = "\u27e6PRZYSZŁA REDAKCJA\u27e7"
 
 _SPACES = re.compile(r"[ \t  -   ]+")
 _CTRL = re.compile(r"[\x00-\x08\x0b-\x1f\x7f​‌‍﻿]")
@@ -86,6 +90,78 @@ def dehyphenate(lines):
 
 # --------------------------------------------------------------------------- readers
 
+_ANNEX_HEAD = re.compile(r"^Załącznik nr \d+[a-z]?$")
+_FOOT_START = re.compile(r"^(\d+)\)\s+(.*)$")
+_FUTURE_PAIR_OLD = re.compile(r"^(W tym brzmieniu obowiązuje|Wprowadzenie do wyliczenia w tym brzmieniu|"
+                              r"Obowiązuje do wejścia)")
+_FUTURE_NEW = re.compile(r"^(Ze zmianą wprowadzoną|Wprowadzenie do wyliczenia ze zmianą|Wejdzie w życie)")
+
+
+def _dominant_size(chars):
+    sizes = {}
+    for ch in chars:
+        s = round(ch["size"], 1)
+        sizes[s] = sizes.get(s, 0) + 1
+    return max(sizes.items(), key=lambda kv: (kv[1], kv[0]))[0] if sizes else 10.0
+
+
+def sejm_page_lines(page, carry=frozenset()):
+    """Body lines of one Dziennik Ustaw page.
+
+    * footnote lines (dominant size < 9.6 pt) are dropped, except the right-aligned annex heading
+      "Załącznik nr N";
+    * superscript footnote marks "27)" glued to numbers ("Art. 44.27)", "4)49)") are removed so that the
+      unit number is visible at the start of the line;
+    * a mark whose footnote says that the text is the version in force only until a later amendment
+      ("W tym brzmieniu obowiązuje do wejścia w życie zmiany, o której mowa w odnośniku N+1") makes
+      the N+1 version a not-yet-binding one: that mark is replaced with FUTURE_MARK. A footnote may sit
+      on the page before its mark, so the set of such marks of the previous page (carry) is honoured too.
+
+    Returns (lines, marks_to_carry_to_the_next_page).
+    """
+    from pdfplumber.utils import extract_text
+
+    lines = page.extract_text_lines(return_chars=True)
+    body, foot = [], {}
+    for ln in lines:
+        if _dominant_size(ln["chars"]) < SEJM_BODY_MIN_SIZE and not _ANNEX_HEAD.match(ln["text"].strip()):
+            m = _FOOT_START.match(ln["text"].strip())
+            if m:
+                foot[int(m.group(1))] = m.group(2)
+            continue
+        body.append(ln)
+    future = set()
+    for n, t in foot.items():
+        if _FUTURE_PAIR_OLD.match(t):
+            future.add(n + 1)
+        if _FUTURE_NEW.match(t):
+            future.add(n)
+    carry_out = frozenset(future)
+    future |= set(carry)
+    out = []
+    for ln in body:
+        groups = []  # (is_small, [chars])
+        for ch in ln["chars"]:
+            small = ch["size"] < SEJM_SUPERSCRIPT_MAX
+            if groups and groups[-1][0] == small:
+                groups[-1][1].append(ch)
+            else:
+                groups.append((small, [ch]))
+        parts = []
+        for small, chs in groups:
+            if not small:
+                parts.append(extract_text(chs, x_tolerance_ratio=0.15))
+                continue
+            raw = "".join(c["text"] for c in chs)
+            m = re.fullmatch(r"\s*(\d+)\)\s*", raw)
+            if m:
+                parts.append(" %s " % FUTURE_MARK if int(m.group(1)) in future else " ")
+            else:
+                parts.append(raw)
+        out.append(re.sub(r"\s+([),;])", r"\1", "".join(parts)))
+    return out, carry_out
+
+
 def read_pdf_lines(path, profile):
     import pdfplumber  # imported lazily: only needed for PDF sources
 
@@ -96,23 +172,16 @@ def read_pdf_lines(path, profile):
                              r"[\d.]+\s+PL\s+Dziennik Urzędowy Unii Europejskiej\s+L \d+/\d+)$"),
         "easa": re.compile(r"^Powered by EASA eRules Page \d+ of \d+"),
     }.get(profile)
+    carry = frozenset()
     with pdfplumber.open(path) as pdf:
         for page in pdf.pages:
             if profile == "easa":
                 box = (0, EAR_HEADER_Y, page.width, min(EAR_FOOTER_Y, page.height))
-                text = page.crop(box).extract_text() or ""
-                page_lines = text.split("\n")
+                page_lines = (page.crop(box).extract_text() or "").split("\n")
+            elif profile == "sejm":
+                page_lines, carry = sejm_page_lines(page, carry)
             else:
-                page_lines = []
-                for ln in page.extract_text_lines(return_chars=True):
-                    sizes = {}
-                    for ch in ln["chars"]:
-                        s = round(ch["size"], 1)
-                        sizes[s] = sizes.get(s, 0) + 1
-                    dominant = max(sizes.items(), key=lambda kv: (kv[1], kv[0]))[0] if sizes else 10.0
-                    if profile == "sejm" and SEJM_FOOTNOTE_SIZES[0] <= dominant < SEJM_FOOTNOTE_SIZES[1]:
-                        continue
-                    page_lines.append(ln["text"])
+                page_lines = [ln["text"] for ln in page.extract_text_lines()]
             for pl in page_lines:
                 cl = clean_line(pl)
                 if cl and not (header_re and header_re.match(cl)):
@@ -211,10 +280,11 @@ def _finish(spans, total):
 
 _ART_ID = r"\d+[a-z]{0,3}(?:\[\d+[a-z]{0,2}\])?"
 _ART_RE = re.compile(r"^Art\.\s*(%s)\.(?:\s+(.*))?$" % _ART_ID)
-_UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.\s+\S")
+_UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
-_DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?|"
-                     r"Załącznik nr \d+\.?)$")
+_DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
+_ANNEX_RE = re.compile(r"^Załącznik nr (\d+[a-z]?)$")
+_ROW_RE = re.compile(r"^(\d+(?:\.\d+){0,5})\.?\s+\S")
 _NUM_SPLIT = re.compile(r"^(\d+)([a-z]*)$")
 _TOC_LINE = re.compile(r"\.{3,}\s*\d*\s*$")
 _PAGE_NO_TAIL = re.compile(r"[^\d.,]\s\d{1,4}$")
@@ -225,32 +295,49 @@ def _num_key(token):
     return (int(m.group(1)), m.group(2)) if m else None
 
 
-def _next_ok(last, cur):
-    """cur follows last: next integer, or the same integer with a later suffix (1 -> 1a, 1a -> 1b, 1a -> 2)."""
+def _next_ok(last, cur, first=(1,)):
+    """cur follows last: next integer, or the same integer with a later suffix (1 -> 1a, 1a -> 1b, 1a -> 2).
+
+    The first unit must be one of `first` (for paragraphs an unnumbered single first paragraph is
+    allowed: "Art. 201. text / 2. (uchylony)")."""
     if cur is None:
         return False
     if last is None:
-        return cur == (1, "")
+        return cur[1] == "" and cur[0] in first
     if cur[0] == last[0] + 1 and cur[1] == "":
         return True
     return cur[0] == last[0] and cur[1] > last[1]
 
 
 def statute_anchors(text):
-    """art. N / art. N ust. N / art. N ust. N pkt N / art. N pkt N for Polish statutes and conventions."""
+    """Anchors for Polish statutes and conventions.
+
+    art. N | art. N ust. N | art. N ust. N pkt N | art. N pkt N      (N as printed: 17a, 87[1], 156zd)
+    załącznik N | załącznik N pkt L                                   (annex "Załącznik nr N"; L = Lp. of a table row, e.g. 1.1)
+
+    Units that carry FUTURE_MARK are the redaction that is not binding yet (a later amendment replaces the
+    one in force); they get no anchor and are excluded from the ranges of the units in force.
+    """
     spans = []
     open_art = open_ust = open_pkt = None
     cur_art = None
-    last_art = last_ust = last_pkt = None
+    last_ust = last_pkt = None
     started = False
+    annex = None
+    annex_rows = set()
+    dead_ust = False
 
     def close(sp, at):
         if sp is not None and sp.end is None:
             sp.end = at
 
-    def open_pkt_span(token, start, art_key, ust_key):
+    def close_art_tree(at):
+        for sp in (open_pkt, open_ust, open_art):
+            close(sp, at)
+
+    def open_pkt_span(token, start):
         nonlocal open_pkt, last_pkt
-        key = (ust_key or art_key) + " pkt " + token
+        key = (open_ust.key if open_ust else cur_art) + " pkt " + token
         close(open_pkt, start)
         open_pkt = _Span(key, start, 3)
         spans.append(open_pkt)
@@ -266,10 +353,37 @@ def statute_anchors(text):
         spans.append(open_ust)
         last_ust = _num_key(token)
 
-    for start, line in _line_offsets(text):
+    for start, raw in _line_offsets(text):
+        fut = FUTURE_MARK in raw
+        line = " ".join(raw.replace(FUTURE_MARK, " ").split()) if fut else raw
+        ma = _ANNEX_RE.match(line)
+        if ma:
+            close_art_tree(start)
+            open_art = open_ust = open_pkt = None
+            cur_art = None
+            close(annex, start)
+            for sp in spans:
+                if sp.end is None and sp.level == 2:
+                    sp.end = start
+            annex = _Span("załącznik " + ma.group(1), start, 1)
+            spans.append(annex)
+            annex_rows = set()
+            started = True
+            continue
+        if annex is not None:
+            mr = _ROW_RE.match(line)
+            if mr and not fut:
+                key = annex.key + " pkt " + mr.group(1)
+                if key not in annex_rows:
+                    annex_rows.add(key)
+                    for sp in spans[::-1]:
+                        if sp.level == 2 and sp.end is None:
+                            sp.end = start
+                            break
+                    spans.append(_Span(key, start, 2))
+            continue
         if started and _DIV_RE.match(line):
-            for sp in (open_pkt, open_ust, open_art):
-                close(sp, start)
+            close_art_tree(start)
             open_art = open_ust = open_pkt = None
             cur_art = None
             continue
@@ -280,16 +394,21 @@ def statute_anchors(text):
                 if token != "1":
                     continue
                 started = True
-            elif any(sp.key == "art. " + token for sp in spans[-400:]):
+            if fut:
+                close_art_tree(start)
+                open_art = open_ust = open_pkt = None
+                cur_art = None
+                continue
+            if any(sp.key == "art. " + token for sp in spans[-400:]):
                 m = None  # duplicate heading text: treat as ordinary text
             if m:
-                for sp in (open_pkt, open_ust, open_art):
-                    close(sp, start)
+                close_art_tree(start)
                 cur_art = "art. " + token
                 open_art = _Span(cur_art, start, 1)
                 spans.append(open_art)
                 open_ust = open_pkt = None
                 last_ust = last_pkt = None
+                dead_ust = False
                 rest = m.group(2) or ""
                 mu = _UST_RE.match(rest)
                 if mu and _next_ok(None, _num_key(mu.group(1))):
@@ -298,26 +417,43 @@ def statute_anchors(text):
         if not started or cur_art is None:
             continue
         mu = _UST_RE.match(line)
-        if mu and _next_ok(last_ust, _num_key(mu.group(1))):
-            open_ust_span(mu.group(1), start)
+        if mu and (fut or _next_ok(last_ust, _num_key(mu.group(1)), first=(1, 2))):
+            if fut:
+                close(open_pkt, start)
+                close(open_ust, start)
+                open_pkt = open_ust = None
+                dead_ust = True
+            else:
+                dead_ust = False
+                open_ust_span(mu.group(1), start)
             continue
         mp = _PKT_RE.match(line)
-        if mp and _next_ok(last_pkt, _num_key(mp.group(1))):
-            open_pkt_span(mp.group(1), start, cur_art, open_ust.key if open_ust else None)
+        if mp and not dead_ust and (fut or _next_ok(last_pkt, _num_key(mp.group(1)))):
+            if fut:
+                close(open_pkt, start)
+                open_pkt = None
+            else:
+                open_pkt_span(mp.group(1), start)
     return _finish(spans, len(text))
 
 
 # EU / EASA rule identifiers: SERA.5005, FCL.205.A, NCO.GEN.105, MED.A.030, BFCL.115, ORO.FC.100 ...
 _RULE_ID = r"[A-Z]{2,6}(?:\.[A-Z]{1,6})*\.\d{1,4}(?:\.[A-Z])?"
+_ID_PAREN = r"%s(?:\([a-z0-9]+\))*" % _RULE_ID
 _RULE_RE = re.compile(r"^(%s)(?:\s+(\S.*))?$" % _RULE_ID)
-_AMC_RE = re.compile(r"^((?:AMC|GM)\d*)\s+(%s)(\([a-z0-9]+\))*(?:\s+(\S.*))?$" % _RULE_ID)
-_AMC_FULL_RE = re.compile(r"^((?:AMC|GM)\d*)\s+(%s(?:\([a-z0-9]+\))*)(?=\s|$)" % _RULE_ID)
+# "AMC1 SERA.5005(f) Title" and the multi-rule form "AMC1 FCL.210; FCL.215 Title"
+_AMC_FULL_RE = re.compile(r"^((?:AMC|GM)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_ID_PAREN, _ID_PAREN))
 _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
+_ART_EAR_RE = re.compile(r"^Article (\d+[a-z]?) \S")
+_APPENDIX_RE = re.compile(r"^APPENDIX (\d+) \S")
+_APP_ROW_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){0,4})\.?\s+\S")
 _PARA_RE = re.compile(r"^\(([a-z]{1,4}|\d{1,2}|[A-Z])\)\s*\S")
 _PARA_NUM_RE = re.compile(r"^(\d{1,2})\.\s+\S")
+_DEF_RE = re.compile(r"^(\d{1,3})\.\s+[‘']")
+_TABLE_NOTE_RE = re.compile(r"^\(\*+\)")
 _ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
-_BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+\b.*|APPENDIX \d+\b.*|Appendix \d+ to .*|"
-                          r"ANNEX [IVX]+\b.*|ANEKS [IVX]+\b.*|Table of contents|Contents)$")
+_BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+\b.*|Appendix \d+ to .*|"
+                          r"ANNEX( [IVX]+)?\b.*|ANEKS [IVX]+\b.*|Table of contents|Contents)$")
 
 
 class _ParaState:
@@ -328,9 +464,11 @@ class _ParaState:
         self.l2 = None
         self.l3 = None
         self.keys = [None, None, None]
+        self.frozen = False   # a table footnote "(*)" starts: later "(a)" lines are footnote text
 
     def classify(self, token):
-        # returns level 1..3 or None
+        if self.frozen:
+            return None
         if token.isdigit():
             if self.keys[0] is None or token != str(int(token)):
                 return None
@@ -363,132 +501,176 @@ class _ParaState:
         return "".join("(%s)" % k for k in self.keys if k is not None)
 
 
-def rule_anchors(text, kind):
-    """Rule-ID anchors for EU regulations (PL) and EASA Easy Access Rules (EN)."""
+def rule_anchors(text, kind, extras=()):
+    """Rule-ID anchors for EU regulations (PL) and EASA Easy Access Rules (EN).
+
+    SERA.5005 | SERA.5005(a)(1)(i) | AMC1 SERA.5005(f) | GM1 FCL.205.A     always;
+    a heading "AMC1 FCL.210; FCL.215" gives one anchor per listed rule (same range);
+    the parent "AMC1 X" of "AMC1 X(b)" is the union of its children;
+    extras ("article", "appendix"; only for the one regulation an EAR is built around):
+      Article N | Article N(M)  (M = numbered paragraph or definition number, e.g. Article 2(12))
+      Appendix N | Appendix N pkt 1.2.1
+    kind eu_reg (PL text) additionally gives art. N | art. N ust. N.
+    """
     spans = []
-    open_rule = None   # level 1: whole rule / AMC / GM block
-    open_para = {}     # level -> span
+    have = set()
+    group = []          # spans of the current heading (all end together)
+    para = {}           # level -> open paragraph span
     state = None
     base = None
-    have_keys = set()
+    children = {}       # parent alias key -> child spans
+    art = None          # open Article span (extras) / EU art. span
+    art_last = None
+    app = None
+    app_rows = set()
+    art_extra = "article" in extras
+    app_extra = "appendix" in extras
 
-    def close_all(at):
-        nonlocal open_rule, open_para, state, base
-        if open_rule is not None and open_rule.end is None:
-            open_rule.end = at
-        for sp in open_para.values():
+    def end_all(at):
+        nonlocal group, para, state, base, art, app
+        for sp in group:
             if sp.end is None:
                 sp.end = at
-        open_rule, open_para, state, base = None, {}, None, None
+        for sp in para.values():
+            if sp.end is None:
+                sp.end = at
+        group, para, state, base = [], {}, None, None
+        if art is not None and art.end is None:
+            art.end = at
+        art = None
+        for sp in spans:
+            if sp.level == 8 and sp.end is None:
+                sp.end = at
 
-    def start_block(key, start, parent_alias=None):
-        nonlocal open_rule, state, base
-        close_all(start)
-        if key in have_keys:
-            return False
-        have_keys.add(key)
-        open_rule = _Span(key, start, 1)
-        spans.append(open_rule)
-        if parent_alias and parent_alias not in have_keys:
-            have_keys.add(parent_alias)
-            alias = _Span(parent_alias, start, 1)
-            spans.append(alias)
-            open_rule_aliases.append(alias)
-        state = _ParaState()
-        base = key.split("(")[0] if "(" in key else key
-        return True
-
-    open_rule_aliases = []
-    art_open = None
-    art_state = None
+    def end_app(at):
+        nonlocal app
+        if app is not None and app.end is None:
+            app.end = at
+        for sp in spans:
+            if sp.level == 9 and sp.end is None:
+                sp.end = at
+        app = None
 
     rows = _line_offsets(text)
     for idx, (start, line) in enumerate(rows):
         if _TOC_LINE.search(line) or (idx + 1 < len(rows) and _TOC_LINE.search(rows[idx + 1][1])):
             continue  # table-of-contents entry (dot leaders, possibly on the wrapped second line)
-        if _BOUNDARY_RE.match(line):
-            close_all(start)
-            for al in open_rule_aliases:
-                if al.end is None:
-                    al.end = start
-            open_rule_aliases = []
-            continue
-        ma = _ART_EU_RE.match(line) if kind == "eu_reg" else None
-        if ma:
-            close_all(start)
-            if art_open is not None and art_open.end is None:
-                art_open.end = start
-            key = "art. " + ma.group(1)
-            if key not in have_keys:
-                have_keys.add(key)
-                art_open = _Span(key, start, 1)
-                spans.append(art_open)
-                art_state = None
-            continue
         mm = _AMC_FULL_RE.match(line)
-        if _PAGE_NO_TAIL.search(line) and (mm or _RULE_RE.match(line)):
-            continue  # table-of-contents entry whose dot leaders were lost: title followed by a page number
+        is_head = bool(mm or _RULE_RE.match(line))
+        if _PAGE_NO_TAIL.search(line) and is_head:
+            continue  # table-of-contents entry whose dot leaders were lost
+        if _BOUNDARY_RE.match(line):
+            end_all(start)
+            end_app(start)
+            continue
+        if app_extra and _APPENDIX_RE.match(line):
+            ma = _APPENDIX_RE.match(line)
+            key = "Appendix " + ma.group(1)
+            end_all(start)
+            end_app(start)
+            if key not in have:
+                have.add(key)
+                app = _Span(key, start, 1)
+                spans.append(app)
+                app_rows = set()
+            continue
+        ma = _ART_EU_RE.match(line) if kind == "eu_reg" else (_ART_EAR_RE.match(line) if art_extra else None)
+        if ma and app is None:
+            end_all(start)
+            key = ("art. " if kind == "eu_reg" else "Article ") + ma.group(1)
+            if key not in have:
+                have.add(key)
+                art = _Span(key, start, 1)
+                spans.append(art)
+                art_last = None
+            continue
         if mm and kind in ("easa", "eu_reg"):
-            if art_open is not None and art_open.end is None:
-                art_open.end = start
-            for al in open_rule_aliases:
-                if al.end is None:
-                    al.end = start
-            open_rule_aliases = []
-            full = mm.group(1) + " " + mm.group(2)
-            parent = mm.group(1) + " " + re.sub(r"(\([a-z0-9]+\))+$", "", mm.group(2))
-            start_block(full, start, parent if parent != full else None)
+            end_app(start)
+            end_all(start)
+            head = mm.group(1)
+            ids = [i.strip() for i in mm.group(2).split(";")]
+            fulls = ["%s %s" % (head, i) for i in ids]
+            new = [f for f in fulls if f not in have]
+            if new:
+                group = []
+                for f in new:
+                    have.add(f)
+                    sp = _Span(f, start, 1)
+                    spans.append(sp)
+                    group.append(sp)
+                    mpar = re.match(r"^(.*\S)(\([a-z0-9]+\))+$", f)
+                    if mpar:
+                        parent = re.sub(r"(\([a-z0-9]+\))+$", "", f)
+                        children.setdefault(parent, []).append(sp)
+                state = _ParaState()
+                base = new[0]
             continue
         mr = _RULE_RE.match(line)
         if mr and (mr.group(2) is None or not mr.group(2)[:1].islower()):
-            # a heading has a capitalised title (or none); lower-case continuation is running text
-            if art_open is not None and art_open.end is None:
-                art_open.end = start
-            for al in open_rule_aliases:
-                if al.end is None:
-                    al.end = start
-            open_rule_aliases = []
-            start_block(mr.group(1), start)
+            end_app(start)
+            end_all(start)
+            if mr.group(1) not in have:
+                have.add(mr.group(1))
+                sp = _Span(mr.group(1), start, 1)
+                spans.append(sp)
+                group = [sp]
+                state = _ParaState()
+                base = mr.group(1)
             continue
-        if open_rule is not None and state is not None:
+        if app is not None and app_extra:
+            mrow = _APP_ROW_RE.match(line)
+            if mrow:
+                key = app.key + " pkt " + mrow.group(1)
+                if key not in app_rows:
+                    app_rows.add(key)
+                    end_row = [sp for sp in spans if sp.level == 9 and sp.end is None]
+                    for sp in end_row:
+                        sp.end = start
+                    spans.append(_Span(key, start, 9))
+            continue
+        if state is not None and group:
+            if _TABLE_NOTE_RE.match(line):
+                state.frozen = True
             mp = _PARA_RE.match(line)
             if mp:
                 token = mp.group(1)
                 level = state.classify(token)
                 if level is not None:
-                    for lv in [l for l in open_para if l >= level]:
-                        sp = open_para.pop(lv)
-                        sp.end = start
+                    for lv in [l for l in para if l >= level]:
+                        para.pop(lv).end = start
                     state.accept(token, level)
                     key = base + state.key_suffix()
-                    if key not in have_keys:
-                        have_keys.add(key)
+                    if key not in have:
+                        have.add(key)
                         sp = _Span(key, start, 1 + level)
                         spans.append(sp)
-                        open_para[level] = sp
+                        para[level] = sp
                     continue
-        if kind == "eu_reg" and art_open is not None and open_rule is None:
-            mn = _PARA_NUM_RE.match(line)
-            if mn:
-                token = mn.group(1)
-                last = art_state
-                if (last is None and token == "1") or (last is not None and int(token) == last + 1):
-                    art_state = int(token)
-                    for lv in [l for l in open_para if l >= 2]:
-                        sp = open_para.pop(lv)
-                        sp.end = start
-                    key = art_open.key + " ust. " + token
-                    if key not in have_keys:
-                        have_keys.add(key)
-                        sp = _Span(key, start, 2)
-                        spans.append(sp)
-                        open_para[2] = sp
-    close_all(len(text))
-    for al in open_rule_aliases:
-        if al.end is None:
-            al.end = len(text)
-    if art_open is not None and art_open.end is None:
-        art_open.end = len(text)
+        if art is not None:
+            if kind == "eu_reg" or art_extra:
+                mn = _PARA_NUM_RE.match(line)
+                md = _DEF_RE.match(line)
+                if mn:
+                    num = int(mn.group(1))
+                    ok = (art_last is None and num == 1) or (art_last is not None and num == art_last + 1)
+                    if not ok and md and art_last is not None and art_last < num <= art_last + 3:
+                        ok = True     # definitions list: a missing number in the printed sequence
+                    if ok:
+                        art_last = num
+                        key = art.key + (" ust. %d" % num if kind == "eu_reg" else "(%d)" % num)
+                        for sp in spans:
+                            if sp.level == 8 and sp.end is None:
+                                sp.end = start
+                        if key not in have:
+                            have.add(key)
+                            spans.append(_Span(key, start, 8))
+    end_all(len(text))
+    end_app(len(text))
+    for parent, kids in children.items():
+        if parent not in have:
+            have.add(parent)
+            spans.append(_Span(parent, min(k.start for k in kids), 1))
+            spans[-1].end = max(k.end if k.end is not None else len(text) for k in kids)
     return _finish(spans, len(text))
 
 
@@ -529,10 +711,11 @@ def aip_anchors(text):
 
 def anchors_for(src, text):
     kind = src["kind"]
+    extras = tuple(src.get("anchorExtras", ()))
     if kind in ("statute", "convention"):
         return statute_anchors(text)
     if kind in ("eu_reg", "easa"):
-        return rule_anchors(text, kind)
+        return rule_anchors(text, kind, extras)
     if kind == "aip":
         return aip_anchors(text)
     raise ExtractError("%s: unknown kind %r" % (src["id"], kind))

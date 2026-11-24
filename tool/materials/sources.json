@@ -1,13 +1,13 @@
 [
   {
     "id": "PL-PRAWO-LOTNICZE",
-    "title_pl": "Prawo lotnicze (ustawa z dnia 3 lipca 2002 r.) - tekst jednolity",
+    "title_pl": "Prawo lotnicze (ustawa z dnia 3 lipca 2002 r.) – tekst jednolity",
     "kind": "statute",
     "lang": "pl",
     "status": "available",
     "url": "https://api.sejm.gov.pl/eli/acts/DU/2026/1407/text.pdf",
     "format": "pdf",
-    "version": "Dz.U. 2026 poz. 1407 (obwieszczenie Marszalka Sejmu z 17.09.2026, tekst jednolity; stan prawny na 16.09.2026)",
+    "version": "Dz.U. 2026 poz. 1407 (obwieszczenie Marszałka Sejmu z 17.09.2026, tekst jednolity; stan prawny na 16.09.2026)",
     "sha256": "2d05f6c6fd1d5456c18a382ba55c02f0f9de9b3c7c396576dfce18b069c7317f",
     "fetched": "2026-11-24",
     "reuse": "public-domain",
@@ -19,7 +19,7 @@
   },
   {
     "id": "PL-KONWENCJA-CHICAGO",
-    "title_pl": "Konwencja o miedzynarodowym lotnictwie cywilnym (Chicago, 1944)",
+    "title_pl": "Konwencja o międzynarodowym lotnictwie cywilnym (Chicago, 1944)",
     "kind": "convention",
     "lang": "pl",
     "status": "unavailable",
@@ -36,7 +36,7 @@
   },
   {
     "id": "EU-923-2012",
-    "title_pl": "Rozporzadzenie wykonawcze Komisji (UE) nr 923/2012 (SERA) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie wykonawcze Komisji (UE) nr 923/2012 (SERA) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -53,7 +53,7 @@
   },
   {
     "id": "EU-1178-2011",
-    "title_pl": "Rozporzadzenie Komisji (UE) nr 1178/2011 (Part-FCL, Part-MED) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie Komisji (UE) nr 1178/2011 (Part-FCL, Part-MED) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -70,7 +70,7 @@
   },
   {
     "id": "EU-965-2012",
-    "title_pl": "Rozporzadzenie Komisji (UE) nr 965/2012 (Part-NCO, Part-ORO ...) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie Komisji (UE) nr 965/2012 (Part-NCO, Part-ORO …) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -87,7 +87,7 @@
   },
   {
     "id": "EU-2018-395",
-    "title_pl": "Rozporzadzenie wykonawcze Komisji (UE) 2018/395 (Part-BOP, Part-BFCL) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie wykonawcze Komisji (UE) 2018/395 (Part-BOP, Part-BFCL) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -104,7 +104,7 @@
   },
   {
     "id": "EU-2018-1976",
-    "title_pl": "Rozporzadzenie wykonawcze Komisji (UE) 2018/1976 (Part-SAO, Part-SFCL) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie wykonawcze Komisji (UE) 2018/1976 (Part-SAO, Part-SFCL) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -121,7 +121,7 @@
   },
   {
     "id": "EU-996-2010",
-    "title_pl": "Rozporzadzenie (UE) nr 996/2010 (badanie wypadkow i incydentow) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie (UE) nr 996/2010 (badanie wypadków i incydentów) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -138,7 +138,7 @@
   },
   {
     "id": "EU-376-2014",
-    "title_pl": "Rozporzadzenie (UE) nr 376/2014 (zglaszanie zdarzen) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie (UE) nr 376/2014 (zgłaszanie zdarzeń) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -155,7 +155,7 @@
   },
   {
     "id": "EU-748-2012",
-    "title_pl": "Rozporzadzenie Komisji (UE) nr 748/2012 (zdatnosc do lotu, rejestracja - Part 21) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie Komisji (UE) nr 748/2012 (zdatność do lotu, rejestracja – Part 21) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -172,7 +172,7 @@
   },
   {
     "id": "EU-1321-2014",
-    "title_pl": "Rozporzadzenie Komisji (UE) nr 1321/2014 (ciagla zdatnosc do lotu) - wersja skonsolidowana PL",
+    "title_pl": "Rozporządzenie Komisji (UE) nr 1321/2014 (ciągła zdatność do lotu) – wersja skonsolidowana PL",
     "kind": "eu_reg",
     "lang": "pl",
     "status": "unavailable",
@@ -189,7 +189,7 @@
   },
   {
     "id": "EASA-EAR-SERA",
-    "title_pl": "EASA Easy Access Rules for SERA (Rozporzadzenie 923/2012; wersja angielska)",
+    "title_pl": "EASA Easy Access Rules for SERA (rozporządzenie 923/2012; wersja angielska)",
     "kind": "easa",
     "lang": "en",
     "status": "available",
@@ -203,11 +203,15 @@
     "landing_url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/easy-access-rules-standardised-european-rules-air",
     "terms_url": "https://www.easa.europa.eu/en/copyright-disclaimer",
     "terms_note": "EASA: 'Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.' Plan treats EASA as reference-only (no quotes in the app).",
-    "bytes": 4594437
+    "bytes": 4594437,
+    "anchorExtras": [
+      "article",
+      "appendix"
+    ]
   },
   {
     "id": "EASA-EAR-AIRCREW",
-    "title_pl": "EASA Easy Access Rules for Aircrew (Rozporzadzenie 1178/2011: Part-FCL, Part-MED; wersja angielska)",
+    "title_pl": "EASA Easy Access Rules for Aircrew (rozporządzenie 1178/2011: Part-FCL, Part-MED; wersja angielska)",
     "kind": "easa",
     "lang": "en",
     "status": "available",
@@ -225,7 +229,7 @@
   },
   {
     "id": "EASA-EAR-AIROPS",
-    "title_pl": "EASA Easy Access Rules for Air Operations (Rozporzadzenie 965/2012: Part-NCO ...; wersja angielska)",
+    "title_pl": "EASA Easy Access Rules for Air Operations (rozporządzenie 965/2012: Part-NCO …; wersja angielska)",
     "kind": "easa",
     "lang": "en",
     "status": "available",
@@ -243,7 +247,7 @@
   },
   {
     "id": "EASA-EAR-BALLOONS",
-    "title_pl": "EASA Easy Access Rules for Balloons (Rozporzadzenie 2018/395: Part-BOP, Part-BFCL; wersja angielska)",
+    "title_pl": "EASA Easy Access Rules for Balloons (rozporządzenie 2018/395: Part-BOP, Part-BFCL; wersja angielska)",
     "kind": "easa",
     "lang": "en",
     "status": "available",
@@ -261,13 +265,13 @@
   },
   {
     "id": "EASA-EAR-SAILPLANE",
-    "title_pl": "EASA Sailplane Rule Book - Easy Access Rules (Rozporzadzenie 2018/1976: Part-SAO, Part-SFCL; wersja angielska)",
+    "title_pl": "EASA Sailplane Rule Book – Easy Access Rules (rozporządzenie 2018/1976: Part-SAO, Part-SFCL; wersja angielska)",
     "kind": "easa",
     "lang": "en",
     "status": "available",
     "url": "https://www.easa.europa.eu/en/downloads/94424/en",
     "format": "pdf",
-    "version": "Sailplane Rule Book, revision from September 2020 (older than the current consolidated regulation)",
+    "version": "Sailplane Rule Book (EAR), published November 2022 (PDF dated 2022-11-02; the EASA page says \"Revision from September 2020\"); older than the current consolidated regulation",
     "sha256": "1a929a26125f7fcce94af09c4e168a10ba50ad0e6a76da90b48259efc91869b6",
     "fetched": "2026-11-24",
     "reuse": "reference-only",
@@ -279,7 +283,7 @@
   },
   {
     "id": "AIP-PL-IFR",
-    "title_pl": "AIP Polska (eAIP IFR: GEN 1.x, ENR 1.1-1.6, ENR 2, ENR 5)",
+    "title_pl": "AIP Polska (eAIP IFR: GEN 1.x, ENR 1.1–1.6, ENR 2, ENR 5)",
     "kind": "aip",
     "lang": "pl",
     "status": "unavailable",
