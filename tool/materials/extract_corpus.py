@@ -1326,6 +1326,7 @@ _AIP_DOT_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,2})+)\.?\s+\S")
 _AIP_TOP_RE = re.compile(r"^(\d{1,2})\.\s+\S")
 _AIP_DEF_RE = re.compile(r"^(?P<name>[A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻ0-9 ,/()-]*?)\s*\((?P<abbr>[A-Z]{2,6})\)\s*[–-]\s")
 _AIP_ABBR_RE = re.compile(r"^([A-Z0-9][A-Z0-9/&.\-]{0,9})[†‡*¤#]*\s+\S")
+_AIP_INDICATOR_RE = re.compile(r"^.*?\b(EP[A-Z]{2})\*{0,3}(?:\s|$)")
 _AIP_CLASS_RE = re.compile(r"^([A-G])\*{0,4}(?:\s|$)")
 
 
@@ -1355,7 +1356,12 @@ def aip_sections_anchors(text, sections):
         rows = [(s0 + o, ln) for o, ln in _line_offsets(text[s0:s1]) if ln]
         mode = cfg.get("entries", "text")
         items = []   # (start, key, depth)
-        if mode == "abbreviations":
+        if mode == "indicators":
+            for start, line in rows:
+                m = _AIP_INDICATOR_RE.match(line)
+                if m:
+                    items.append((start, "%s %s" % (section, m.group(1)), 1))
+        elif mode == "abbreviations":
             for start, line in rows:
                 m = _AIP_ABBR_RE.match(line)
                 if m and line[:1] not in _AIP_SYMBOLS and len(line.split()) >= 2 and not line.startswith(section + " "):

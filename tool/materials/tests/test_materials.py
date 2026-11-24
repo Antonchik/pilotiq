@@ -407,7 +407,7 @@ class UnverifiedBasisTest(Base):
         self.assertIn("unverified/no-source=1", self.out)
         self.assertIn("unverified/aip-missing=1", self.out)
 
-    def test_complete_topic_ignores_keys_with_basis_or_gaps(self):
+    def test_complete_topic_exempts_only_entries_with_basis_not_gaps(self):
         keys = sorted(self.inv())
         no_source, gap = keys[0], keys[1]
         covered = keys[2:]
@@ -417,11 +417,78 @@ class UnverifiedBasisTest(Base):
                "refs": [{"src": "LAW", "loc": "art. 1", "quote": GOOD_QUOTE}], "questionKeys": covered}
         jdump(self.ctx.sum_dir / "AL01.json", {"topic": "AL01", "sections": [sec]})
         self.review("AL01.r1.editor.json", [{"key": "AL01-1", "verdict": "PASS"}])
-        self.assertTrue(any("complete" in e for e in self.errors()))          # no_source key is neither covered nor exempt yet
+        self.assertTrue(any("complete" in e for e in self.errors()))
         self.put_src("P01", [self.entry(key=no_source)])
-        self.assertEqual(self.errors(), [])                                    # unverified with basis + gaps.noSource exempt
-        self.put_src("P01", [self.entry(key=no_source, status="draft", basis=None, basisNote=None)])
+        # gaps.noSource does NOT exempt a key: `gap` has no record and no section, so the topic is still incomplete
+        errs = [e for e in self.errors() if "complete" in e]
+        self.assertTrue(errs and "1 ключей" in errs[0], errs)
+        # once the gap key is also an unverified entry with a basis, the topic can be complete
+        self.put_src("P01", [self.entry(key=no_source), self.entry(key=gap, basis="aip-missing", text="", basisNote="brak AIP")])
+        self.assertEqual(self.errors(), [])
+        self.put_src("P01", [self.entry(key=no_source), self.entry(key=gap, status="draft", basis=None, basisNote=None)])
         self.assertTrue(any("complete" in e for e in self.errors()))           # an ordinary draft is not exempt
+        self.put_src("P01", [self.entry(key=no_source), self.entry(key=gap, basis="bogus")])
+        self.assertTrue(any("complete" in e for e in self.errors()))           # an invalid basis does not exempt either
+
+    def test_refs_of_basis_entries_are_checked_like_published_ones(self):
+        bad = [{"src": "LAW", "loc": "art. 999 ust. 7", "quote": "Gaśnice proszkowe są obowiązkowe"},
+               {"src": "NIE-ISTNIEJE", "loc": "xyz", "quote": "cokolwiek"}]
+        self.put_src("P01", [self.entry(refs=bad)])
+        errs = self.validate().errors
+        self.assertTrue(any("якоря" in e and "art. 999" in e for e in errs), errs)      # grammar passes, anchor missing
+        self.assertTrue(any("NIE-ISTNIEJE" in e for e in errs), errs)
+        self.put_src("P01", [self.entry(refs=[{"src": "LAW", "loc": "art. 1", "quote": "Statek powietrzny to teleport"}])])
+        self.assertTrue(any("quote не найден" in e for e in self.validate().errors))
+        self.put_src("P01", [self.entry(refs=[{"src": "LAW", "loc": "art. 1", "quote": GOOD_QUOTE}])])
+        self.assertEqual(self.validate().errors, [])
+        self.put_src("P01", [self.entry(refs=[{"src": "LAW", "loc": "art. 1"}])])           # a quote is not required
+        self.assertEqual(self.validate().errors, [])
+        self.put_src("P01", [self.entry(refs=[{"src": "UNAV", "loc": "SERA.5005"}])])
+        self.assertTrue(any("недоступен" in e for e in self.validate(no_corpus=True).errors))
+
+    def test_same_as_cannot_be_combined_with_basis(self):
+        other = self.key_of("PL010-1001")
+        self.put_src("P01", [self.entry(sameAs=other)])
+        self.assertTrue(any("sameAs нельзя сочетать с basis" in e for e in self.errors()))
+
+    def outdated(self, **over):
+        fields = {"basis": "outdated", "text": "",
+                  "basisNote": "Uchylone rozp. MI z 9.10.2003; zastąpione rozp. MI z 5.03.2019."}
+        fields.update(over)
+        return self.entry(**fields)
+
+    def test_outdated_entry_rules(self):
+        self.put_src("P01", [self.outdated()])
+        self.assertEqual(self.errors(), [])
+        self.put_src("P01", [self.outdated(text="Jakiś tekst. I drugie zdanie.")])
+        self.assertTrue(any("text должен быть пустым" in e for e in self.errors()))
+        self.put_src("P01", [self.outdated(basisNote="x" * 301)])
+        self.assertTrue(any("basisNote длиннее" in e for e in self.errors()))
+        self.put_src("P01", [self.outdated(basisNote="")])
+        self.assertTrue(any("нет basisNote" in e for e in self.errors()))
+        self.put_src("P01", [self.outdated(refs=[{"src": "LAW", "loc": "art. 999"}])])
+        self.assertTrue(any("якоря" in e for e in self.validate().errors))
+
+    def test_outdated_entry_is_built_as_a_separate_list_with_links(self):
+        self.put_src("P01", [self.outdated()])
+        asset = self.build()
+        self.assertEqual(asset["schema"], 1)
+        self.assertEqual(asset["explanations"], {})
+        self.assertEqual(set(asset["outdated"]), {self.k})
+        self.assertIn("Uchylone rozp. MI", asset["outdated"][self.k]["note"])
+        self.assertEqual(set(asset["links"]["ppla"].values()) | set(asset["links"]["pplh"].values()), {self.k})
+        self.assertEqual(self.validate(check_asset=True).errors, [])
+        # the other basis values never reach the asset
+        self.put_src("P01", [self.entry()])
+        self.assertEqual(self.build()["outdated"], {})
+
+    def test_outdated_is_skipped_by_apply_review_reported_and_exempt(self):
+        self.put_src("P01", [self.outdated()])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}])
+        self.assertIn("проигнорирован", self.out)
+        self.assertEqual(m.read_json(self.ctx.src_dir / "P01.json")[0]["status"], "unverified")
+        self.run_cmd(m.cmd_report, src=None)
+        self.assertIn("unverified/outdated=1", self.out)
 
 
 class ApplyReviewTest(Base):

@@ -19,7 +19,10 @@ LICENCES = ["ppla", "pplh", "spl", "bpl"]
 STATUSES = ["none", "draft", "verified", "disputed", "unverified", "retired"]
 PUBLISHED = ("verified", "disputed")
 # unverified-запись без нормативного источника (решение владельца 24.11.2026): в приложение не попадает, пока её не проверит эксперт
-BASES = ("no-source", "aip-missing")
+BASES = ("no-source", "aip-missing", "outdated")
+# outdated: вопрос опирается на отменённую норму; объяснения нет (text пуст), basisNote = что отменено и чем заменено;
+# такая запись попадает в ассет отдельным списком "outdated" (приложение показывает пометку всем), см. README
+MAX_OUTDATED_NOTE = 300
 VERDICT_STATUS_OK = {"verified": "PASS", "disputed": "DISPUTED"}
 MAX_TEXT = 700
 MAX_QUOTE = 300
@@ -471,6 +474,8 @@ class Report:
 def check_refs(rep, label, rec, sources, store, status):
     refs = rec.get("refs") or []
     published = status in PUBLISHED
+    has_basis = status == "unverified" and rec.get("basis") in BASES
+    strict = published or has_basis       # unverified+basis: любые указанные refs проверяются как у опубликованных
     if published and not refs:
         rep.err("%s: у %s нет refs" % (label, status))
     for r in refs:
@@ -479,7 +484,7 @@ def check_refs(rep, label, rec, sources, store, status):
         if quote is not None and len(quote) > MAX_QUOTE:
             rep.err("%s: quote длиннее %d символов (%s)" % (label, MAX_QUOTE, loc))
         ok = True
-        if published:
+        if strict:
             if src not in sources:
                 rep.err("%s: src %r нет в sources.json" % (label, src))
                 continue
@@ -510,7 +515,7 @@ def check_refs(rep, label, rec, sources, store, status):
             rep.err("%s: quote содержит маркер будущей редакции (%s), цитировать можно только действующий текст" % (
                 label, FUTURE_MARK))
             continue
-        if (published or status == "draft") and quote and ok and store.use_corpus and src in sources \
+        if (strict or status == "draft") and quote and ok and store.use_corpus and src in sources \
                 and src_available(sources[src]):
             if store.corpus_in_sync(src) is False:
                 rep.err("%s: textSha в anchors/%s.json не совпадает с corpus/%s.txt (пересоберите якоря: extract_corpus.py)" % (
@@ -567,7 +572,8 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
     # 2-9. объяснения
     seen = {}
     records = load_src_records(ctx)
-    basis_keys = {r.get("key"): bool(r.get("basis")) and r.get("status") == "unverified" for _, r in records if r.get("key")}
+    basis_keys = {r.get("key"): r.get("basis") in BASES and r.get("status") == "unverified"
+                  and not r.get("sameAs") for _, r in records if r.get("key")}
     new_without_record = set(inv)
     for stem, r in records:
         key = r.get("key")
@@ -588,6 +594,8 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
             continue
         new_without_record.discard(key)
         same = r.get("sameAs")
+        if same and (r.get("basis") is not None or r.get("basisNote") is not None):
+            rep.err("%s: sameAs нельзя сочетать с basis/basisNote" % label)
         if same:
             if same not in inv:
                 rep.err("%s: sameAs на несуществующий ключ %s" % (label, same))
@@ -602,6 +610,11 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
                     rep.err("%s: basis %r вне %s" % (label, basis, list(BASES)))
                 elif not (r.get("basisNote") or "").strip():
                     rep.err("%s: у unverified с basis нет basisNote (причина)" % label)
+                elif basis == "outdated":
+                    if (r.get("text") or "").strip():
+                        rep.err("%s: у basis=outdated text должен быть пустым (объяснения нет)" % label)
+                    if len(r.get("basisNote")) > MAX_OUTDATED_NOTE:
+                        rep.err("%s: basisNote длиннее %d символов" % (label, MAX_OUTDATED_NOTE))
             text = r.get("text") or ""
             if status in ("draft",) + PUBLISHED or (status == "unverified" and basis == "no-source") \
                     or (status == "unverified" and basis == "aip-missing" and text.strip()):
@@ -694,9 +707,7 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
                 covered = set()
                 for s in sections_by_topic.get(t["id"], []):
                     covered.update(s.get("questionKeys", []))
-                gaps = t.get("gaps") or {}
-                exempt = set(gaps.get("noSource") or []) | set(gaps.get("aipNotSupplied") or [])
-                exempt |= {k for k, r in basis_keys.items() if r}   # unverified с basis: объяснения без нормы, раздел конспекта не нужен
+                exempt = {k for k, ok in basis_keys.items() if ok}   # только записи unverified с допустимым basis
                 lost = [k for k in t.get("order", []) if k not in covered and k not in exempt]
                 if lost:
                     rep.err("подтема %s complete, но %d ключей не входят в questionKeys проверенных разделов (например %s)" % (
@@ -759,6 +770,12 @@ def build_asset_text(ctx):
             "refs": clean_refs(r.get("refs")), "disputeNote": r.get("disputeNote") or None,
         }
     alias = {k: v for k, v in alias.items() if v in explanations}
+    outdated = {}
+    for key, r in sorted(records.items()):
+        if r.get("status") == "unverified" and r.get("basis") == "outdated" and not r.get("sameAs") \
+                and not (r.get("text") or "").strip() and (r.get("basisNote") or "").strip() \
+                and len(r["basisNote"]) <= MAX_OUTDATED_NOTE:
+            outdated[key] = {"note": r["basisNote"].strip()}
 
     sections_by_topic = {}
     for stem, _, data in load_summaries(ctx):
@@ -784,6 +801,8 @@ def build_asset_text(ctx):
     for e in inv_list:
         key = e["key"]
         target = key if key in explanations else alias.get(key)
+        if target is None and key in outdated:
+            target = key
         if target is None and key in section_keys:
             target = key
         if target is None:
@@ -804,7 +823,7 @@ def build_asset_text(ctx):
         "legalStateAsOf": fetched[0] if fetched else None,
         "sources": {s: {"title": sources[s].get("title_pl", s), "version": sources[s].get("version"),
                         "kind": sources[s].get("kind")} for s in sorted(used) if s in sources},
-        "topics": out_topics, "explanations": explanations,
+        "topics": out_topics, "explanations": explanations, "outdated": outdated,
         "links": {lic: links[lic] for lic in LICENCES},
     }
     body = dump_compact(asset)

@@ -362,7 +362,7 @@
     "url": "https://ais.pansa.pl/publikacje/aip-polska/",
     "format": "pdf",
     "version": "AIP Polska, selected sections printed by the owner; latest page date per section in fetch.files (AIRAC AMDT 07/26–11/26)",
-    "sha256": "e7bee77971c2067386b7252d92ef47ed0a5400559002f86d843283ecfde4bb9b",
+    "sha256": "c5f8a89fa8800216df903276c9ae7c88429d2de49838ff0b5dc24d9b1358ade1",
     "fetched": "2026-11-24",
     "reuse": "reference-only",
     "allowQuote": true,
@@ -470,10 +470,105 @@
             "2026-07-09": 5,
             "2026-10-01": 3
           }
+        },
+        {
+          "section": "ENR 1.9",
+          "file": "ENR 1.9.pdf",
+          "effective": "2025-08-07",
+          "amdt": "08/25",
+          "pageDates": {
+            "2025-04-17": 2,
+            "2025-07-10": 2,
+            "2025-08-07": 1
+          },
+          "sha256": "7d6d5cf2c6d04504e7bf51c085ca866b782bdebb23b9a6164b2f93a2cfeb82b3",
+          "bytes": 105857
+        },
+        {
+          "section": "ENR 1.10",
+          "file": "ENR 1.10.pdf",
+          "effective": "2026-10-01",
+          "amdt": "10/26",
+          "pageDates": {
+            "2026-02-19": 2,
+            "2026-03-19": 9,
+            "2026-07-09": 4,
+            "2026-09-03": 19,
+            "2026-10-01": 1
+          },
+          "sha256": "86c5ba77fdcf98a6c05e7affd57c4f90fe72fbf9aedfb3dd896a6f26b2160e35",
+          "bytes": 932432
+        },
+        {
+          "section": "ENR 5.2.3",
+          "file": "ENR 5.2.3.pdf",
+          "columns": "full",
+          "effective": "2026-02-19",
+          "amdt": "02/26",
+          "pageDates": {
+            "2026-02-19": 1
+          },
+          "sha256": "d509659953c586fdc33f6722175ee697ec1bd4d4e3b509dcc6d7ca9b0ff6a86a",
+          "bytes": 49713
+        },
+        {
+          "section": "GEN 2.4",
+          "file": "GEN 2.4.pdf",
+          "columns": "full",
+          "entries": "indicators",
+          "effective": "2026-05-14",
+          "amdt": "05/26",
+          "pageDates": {
+            "2025-10-02": 10,
+            "2025-11-27": 2,
+            "2026-01-22": 2,
+            "2026-04-16": 1,
+            "2026-05-14": 4
+          },
+          "sha256": "1cb49a0b335d6a589bc796ce66b96cdc4e1f48d7c7bf4a80cba52782828a25a4",
+          "bytes": 329203
+        },
+        {
+          "section": "GEN 3.1",
+          "file": "GEN 3.1.pdf",
+          "effective": "2026-06-11",
+          "amdt": "06/26",
+          "pageDates": {
+            "2025-09-04": 1,
+            "2025-10-30": 1,
+            "2026-02-19": 4,
+            "2026-06-11": 4
+          },
+          "sha256": "fd84fdb3a4a81748d235142c4c66336fb15e17dc43aa2e05d369c45ed7853f3e",
+          "bytes": 173002
+        },
+        {
+          "section": "GEN 3.3",
+          "file": "GEN 3.3.pdf",
+          "effective": "2026-10-01",
+          "amdt": "10/26",
+          "pageDates": {
+            "2026-10-01": 7
+          },
+          "sha256": "9d0e86f0706ca3811552fb4a427cdd125b632da779608904d7ea65b1b8bceed0",
+          "bytes": 647429
+        },
+        {
+          "section": "GEN 3.6",
+          "file": "GEN 3.6.pdf",
+          "effective": "2026-09-03",
+          "amdt": "09/26",
+          "pageDates": {
+            "2025-05-15": 1,
+            "2026-02-19": 1,
+            "2026-09-03": 4
+          },
+          "sha256": "1a63b213ab4d474eb402d9f2514ce57c5ebca0ad999556f43e173b589f75e86f",
+          "bytes": 797135
         }
       ]
     },
-    "bytes": 989325,
-    "legalState": "2026-02-19"
+    "bytes": 4024096,
+    "legalState": "2025-08-07"
   }
 ]
