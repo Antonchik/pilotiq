@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_ce_flutter/hive_ce_flutter.dart';
 import 'package:pilotiq/src/dark_theme/theme_mode_provider.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/notifications/reminder_host.dart';
 import 'package:pilotiq/src/progress/legacy_migration.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/routes.dart';
@@ -23,6 +24,8 @@ class MyApp extends ConsumerWidget {
       theme: lightAppTheme,
       darkTheme: darkAppTheme,
       themeMode: ref.watch(themeModeProvider),
+      builder: (context, child) =>
+          ReminderLifecycleHost(child: child ?? const SizedBox.shrink()),
       routes: appRoutes,
     );
   }

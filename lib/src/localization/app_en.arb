@@ -1269,6 +1269,135 @@
       }
     }
   },
+  "reminderChannelName": "Study reminders",
+  "@reminderChannelName": {
+    "description": "Android notification channel name"
+  },
+  "reminderChannelDescription": "A daily reminder to study for the exam",
+  "@reminderChannelDescription": {
+    "description": "Android notification channel description"
+  },
+  "reminderStudyTitle": "Time to study",
+  "@reminderStudyTitle": {
+    "description": "Title of the daily study reminder"
+  },
+  "reminderDaysToExam": "{days, plural, one{1 day to the exam} other{{days} days to the exam}}",
+  "@reminderDaysToExam": {
+    "description": "Days left until the exam, part of a reminder",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderGoalLeft": "{count, plural, one{1 answer to today's goal} other{{count} answers to today's goal}}",
+  "@reminderGoalLeft": {
+    "description": "Answers left to the daily goal, part of a reminder",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderDueQuestions": "{count, plural, one{1 question to review} other{{count} questions to review}}",
+  "@reminderDueQuestions": {
+    "description": "Questions due for review, part of a reminder",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderExamWeekTitle": "One week to the exam",
+  "@reminderExamWeekTitle": {
+    "description": "Title of the reminder seven days before the exam"
+  },
+  "reminderExamEveTitle": "Your exam is tomorrow",
+  "@reminderExamEveTitle": {
+    "description": "Title of the reminder the day before the exam"
+  },
+  "reminderExamEveBody": "Go over your mistakes once more and get a good night's sleep.",
+  "@reminderExamEveBody": {
+    "description": "Body of the reminder the day before the exam"
+  },
+  "reminderAfterExamTitle": "How did the exam go?",
+  "@reminderAfterExamTitle": {
+    "description": "Title of the reminder the day after the exam"
+  },
+  "reminderAfterExamBody": "Good luck with the result! If you need another go, set a new exam date in Profile.",
+  "@reminderAfterExamBody": {
+    "description": "Body of the reminder the day after the exam"
+  },
+  "remindersSectionTitle": "Reminders",
+  "@remindersSectionTitle": {
+    "description": "Settings section title"
+  },
+  "remindersToggleTitle": "Daily study reminder",
+  "@remindersToggleTitle": {
+    "description": "Switch title"
+  },
+  "remindersToggleOff": "Off",
+  "@remindersToggleOff": {
+    "description": "Subtitle of the reminder switch when off"
+  },
+  "remindersToggleOn": "Every day at {time}",
+  "@remindersToggleOn": {
+    "description": "Subtitle of the reminder switch when on",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "remindersTimeTitle": "Reminder time",
+  "@remindersTimeTitle": {
+    "description": "Time tile title and time picker help text"
+  },
+  "remindersBlocked": "Notifications are blocked for the app, so no reminders will be shown.",
+  "@remindersBlocked": {
+    "description": "Shown when the system permission is missing"
+  },
+  "remindersOpenSettings": "Open system settings",
+  "@remindersOpenSettings": {
+    "description": "Button that opens the system notification settings"
+  },
+  "remindersOpenSettingsFailed": "Could not open the settings. Open your phone's Settings, then Apps, Pilotiq, Notifications.",
+  "@remindersOpenSettingsFailed": {
+    "description": "Snack bar when the system settings cannot be opened"
+  },
+  "remindersScheduleFailed": "The reminders could not be scheduled.",
+  "@remindersScheduleFailed": {
+    "description": "Shown when scheduling failed"
+  },
+  "remindersRetry": "Try again",
+  "@remindersRetry": {
+    "description": "Button that repeats scheduling"
+  },
+  "onboardingRemindersTitle": "When should we remind you?",
+  "@onboardingRemindersTitle": {
+    "description": "Onboarding reminders page title"
+  },
+  "onboardingRemindersBody": "One reminder a day at the time you choose. The app asks the system for permission to show notifications only after you tap the button below.",
+  "@onboardingRemindersBody": {
+    "description": "Onboarding reminders page text"
+  },
+  "onboardingRemindersEnable": "Turn on reminders",
+  "@onboardingRemindersEnable": {
+    "description": "Onboarding button that turns reminders on and asks for permission"
+  },
+  "onboardingRemindersEnabled": "Reminders are on, every day at {time}.",
+  "@onboardingRemindersEnabled": {
+    "description": "Onboarding: reminders are on",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingRemindersDenied": "Notifications are not allowed. You can turn the reminders on later in Profile.",
+  "@onboardingRemindersDenied": {
+    "description": "Onboarding: permission was refused"
+  },
   "practiceProgress": "{current} / {total}",
   "@practiceProgress": {
     "description": "Position in the session",

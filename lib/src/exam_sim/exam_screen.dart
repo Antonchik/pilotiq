@@ -569,6 +569,52 @@ class _RunningView extends ConsumerWidget {
     final controller = ref.read(examControllerProvider.notifier);
     final q = state.current!;
     final isLast = state.index >= state.questions.length - 1;
+    // With very large system fonts the header and the buttons would leave no
+    // room for the question: then they scroll together with it.
+    final compact = MediaQuery.textScalerOf(context).scale(1) > 1.3;
+    final header = Wrap(
+      spacing: 16,
+      runSpacing: 4,
+      crossAxisAlignment: WrapCrossAlignment.center,
+      children: [
+        _TimerChip(remaining: controller.remaining),
+        Text(
+          local.examQuestionOf(state.index + 1, state.questions.length),
+          key: const Key('exam_position'),
+          style: Theme.of(context).textTheme.titleSmall,
+        ),
+        Text(
+          local.examAnsweredCount(state.answeredCount),
+          key: const Key('exam_answered'),
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
+      ],
+    );
+    final nav = OverflowBar(
+      alignment: MainAxisAlignment.spaceBetween,
+      overflowAlignment: OverflowBarAlignment.center,
+      spacing: 8,
+      overflowSpacing: 8,
+      children: [
+        OutlinedButton(
+          key: const Key('exam_prev'),
+          onPressed: state.index > 0 ? controller.previous : null,
+          child: Text(local.examPrevious),
+        ),
+        if (isLast)
+          FilledButton(
+            key: const Key('exam_finish_inline'),
+            onPressed: onFinish,
+            child: Text(local.examFinishButton),
+          )
+        else
+          FilledButton(
+            key: const Key('exam_next'),
+            onPressed: controller.next,
+            child: Text(local.examNext),
+          ),
+      ],
+    );
     return Column(
       children: [
         if (state.persistFailed)
@@ -580,27 +626,11 @@ class _RunningView extends ConsumerWidget {
               onRetry: controller.retryPersist,
             ),
           ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-          child: Wrap(
-            spacing: 16,
-            runSpacing: 4,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            children: [
-              _TimerChip(remaining: controller.remaining),
-              Text(
-                local.examQuestionOf(state.index + 1, state.questions.length),
-                key: const Key('exam_position'),
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-              Text(
-                local.examAnsweredCount(state.answeredCount),
-                key: const Key('exam_answered'),
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
-            ],
+        if (!compact)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+            child: header,
           ),
-        ),
         Expanded(
           child: _ExamQuestionView(
             key: ValueKey(q.id),
@@ -611,39 +641,18 @@ class _RunningView extends ConsumerWidget {
             flagged: state.flagged.contains(q.id),
             onAnswer: controller.answer,
             onToggleFlag: controller.toggleFlag,
+            header: compact ? header : null,
+            footer: compact ? nav : null,
           ),
         ),
-        SafeArea(
-          top: false,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(16, 4, 16, 12),
-            child: OverflowBar(
-              alignment: MainAxisAlignment.spaceBetween,
-              overflowAlignment: OverflowBarAlignment.center,
-              spacing: 8,
-              overflowSpacing: 8,
-              children: [
-                OutlinedButton(
-                  key: const Key('exam_prev'),
-                  onPressed: state.index > 0 ? controller.previous : null,
-                  child: Text(local.examPrevious),
-                ),
-                if (isLast)
-                  FilledButton(
-                    key: const Key('exam_finish_inline'),
-                    onPressed: onFinish,
-                    child: Text(local.examFinishButton),
-                  )
-                else
-                  FilledButton(
-                    key: const Key('exam_next'),
-                    onPressed: controller.next,
-                    child: Text(local.examNext),
-                  ),
-              ],
+        if (!compact)
+          SafeArea(
+            top: false,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 4, 16, 12),
+              child: nav,
             ),
           ),
-        ),
       ],
     );
   }
@@ -710,8 +719,12 @@ class _ExamQuestionView extends StatelessWidget {
     required this.flagged,
     required this.onAnswer,
     required this.onToggleFlag,
+    this.header,
+    this.footer,
   });
 
+  final Widget? header;
+  final Widget? footer;
   final Question question;
   final ShuffledAnswers shuffled;
   final QuestionLanguage language;
@@ -730,6 +743,7 @@ class _ExamQuestionView extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        if (header != null) ...[header!, const SizedBox(height: 12)],
         BankText(
           question.text.resolve(shown),
           style: theme.textTheme.bodyLarge!.copyWith(
@@ -760,6 +774,7 @@ class _ExamQuestionView extends StatelessWidget {
           label: Text(flagged ? local.examFlagRemove : local.examFlagAdd),
           onPressed: onToggleFlag,
         ),
+        if (footer != null) ...[const SizedBox(height: 12), footer!],
       ],
     );
   }

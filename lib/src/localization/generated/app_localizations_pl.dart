@@ -1029,6 +1029,125 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String get reminderChannelName => 'Przypomnienia o nauce';
+
+  @override
+  String get reminderChannelDescription =>
+      'Codzienne przypomnienie o nauce do egzaminu';
+
+  @override
+  String get reminderStudyTitle => 'Czas na naukę';
+
+  @override
+  String reminderDaysToExam(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: 'Do egzaminu: $days dnia',
+      many: 'Do egzaminu: $days dni',
+      few: 'Do egzaminu: $days dni',
+      one: 'Do egzaminu: 1 dzień',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reminderGoalLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Do dzisiejszego celu: $count odpowiedzi',
+      many: 'Do dzisiejszego celu: $count odpowiedzi',
+      few: 'Do dzisiejszego celu: $count odpowiedzi',
+      one: 'Do dzisiejszego celu: 1 odpowiedź',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reminderDueQuestions(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pytania do powtórki',
+      many: '$count pytań do powtórki',
+      few: '$count pytania do powtórki',
+      one: '1 pytanie do powtórki',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderExamWeekTitle => 'Tydzień do egzaminu';
+
+  @override
+  String get reminderExamEveTitle => 'Egzamin już jutro';
+
+  @override
+  String get reminderExamEveBody =>
+      'Powtórz jeszcze raz swoje błędy i dobrze się wyśpij.';
+
+  @override
+  String get reminderAfterExamTitle => 'Jak poszedł egzamin?';
+
+  @override
+  String get reminderAfterExamBody =>
+      'Powodzenia z wynikiem! Jeśli potrzebujesz kolejnego podejścia, ustaw nową datę egzaminu w Profilu.';
+
+  @override
+  String get remindersSectionTitle => 'Przypomnienia';
+
+  @override
+  String get remindersToggleTitle => 'Codzienne przypomnienie o nauce';
+
+  @override
+  String get remindersToggleOff => 'Wyłączone';
+
+  @override
+  String remindersToggleOn(String time) {
+    return 'Codziennie o $time';
+  }
+
+  @override
+  String get remindersTimeTitle => 'Godzina przypomnienia';
+
+  @override
+  String get remindersBlocked =>
+      'Powiadomienia są zablokowane dla aplikacji, więc przypomnienia nie będą wyświetlane.';
+
+  @override
+  String get remindersOpenSettings => 'Otwórz ustawienia systemu';
+
+  @override
+  String get remindersOpenSettingsFailed =>
+      'Nie udało się otworzyć ustawień. Otwórz Ustawienia telefonu, potem Aplikacje, Pilotiq, Powiadomienia.';
+
+  @override
+  String get remindersScheduleFailed => 'Nie udało się zaplanować przypomnień.';
+
+  @override
+  String get remindersRetry => 'Spróbuj ponownie';
+
+  @override
+  String get onboardingRemindersTitle => 'Kiedy przypominać?';
+
+  @override
+  String get onboardingRemindersBody =>
+      'Jedno przypomnienie dziennie o wybranej godzinie. Aplikacja poprosi system o zgodę na powiadomienia dopiero po dotknięciu przycisku poniżej.';
+
+  @override
+  String get onboardingRemindersEnable => 'Włącz przypomnienia';
+
+  @override
+  String onboardingRemindersEnabled(String time) {
+    return 'Przypomnienia włączone, codziennie o $time.';
+  }
+
+  @override
+  String get onboardingRemindersDenied =>
+      'Powiadomienia nie są dozwolone. Przypomnienia możesz włączyć później w Profilu.';
+
+  @override
   String practiceProgress(int current, int total) {
     return '$current / $total';
   }

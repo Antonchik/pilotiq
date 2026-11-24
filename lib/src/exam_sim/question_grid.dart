@@ -25,35 +25,37 @@ class QuestionGrid extends StatelessWidget {
     final local = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
     final scale = MediaQuery.textScalerOf(context).scale(1).clamp(1.0, 2.0);
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
-          child: Wrap(
-            spacing: 16,
-            runSpacing: 4,
-            children: [
-              _Legend(Icons.check_circle, local.examGridLegendAnswered),
-              _Legend(Icons.circle_outlined, local.examGridLegendUnanswered),
-              _Legend(Icons.flag, local.examGridLegendFlagged),
-            ],
+    return CustomScrollView(
+      key: const Key('exam_grid'),
+      shrinkWrap: true,
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+            child: Wrap(
+              spacing: 16,
+              runSpacing: 4,
+              children: [
+                _Legend(Icons.check_circle, local.examGridLegendAnswered),
+                _Legend(Icons.circle_outlined, local.examGridLegendUnanswered),
+                _Legend(Icons.flag, local.examGridLegendFlagged),
+              ],
+            ),
           ),
         ),
-        Flexible(
-          child: GridView.builder(
-            key: const Key('exam_grid'),
-            shrinkWrap: true,
-            padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+        SliverPadding(
+          padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+          sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 72 * scale,
               mainAxisExtent: 64 * scale,
               mainAxisSpacing: 8,
               crossAxisSpacing: 8,
             ),
-            itemCount: count,
-            itemBuilder: (context, i) {
+            delegate: SliverChildBuilderDelegate(childCount: count, (
+              context,
+              i,
+            ) {
               final answered = isAnswered(i);
               final flagged = isFlagged(i);
               final current = i == currentIndex;
@@ -116,7 +118,7 @@ class QuestionGrid extends StatelessWidget {
                   ),
                 ),
               );
-            },
+            }),
           ),
         ),
       ],

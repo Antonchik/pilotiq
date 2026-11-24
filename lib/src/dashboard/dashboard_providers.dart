@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/legacy.dart';
 import 'package:pilotiq/src/bank/question_bank_repository.dart';
 import 'package:pilotiq/src/dashboard/dashboard_data.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
+import 'package:pilotiq/src/notifications/providers.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 
 /// Index of the selected tab of the home screen (0 Today, 1 Subjects,
@@ -46,7 +47,7 @@ final dashboardProvider = FutureProvider.autoDispose<DashboardData>((
   }
   final progress = await repository.allProgress(licence);
   final horizon = endOfLocalDay(now);
-  return DashboardData.compute(
+  final data = DashboardData.compute(
     licence: licence,
     now: now,
     examDate: settings.examDate,
@@ -63,6 +64,10 @@ final dashboardProvider = FutureProvider.autoDispose<DashboardData>((
         if (p.seen > 0 && p.dueAt != null && !p.dueAt!.isAfter(horizon)) p.qid,
     ],
   );
+  // The daily goal may have been reached since the schedule was made: bring
+  // the reminders up to date (never fails, never waits).
+  unawaited(ref.read(reminderCoordinatorProvider.notifier).reschedule());
+  return data;
 });
 
 /// Licence whose migrated 1.x results are the most numerous, or null when

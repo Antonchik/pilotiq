@@ -987,6 +987,135 @@
       }
     }
   },
+  "reminderChannelName": "Przypomnienia o nauce",
+  "@reminderChannelName": {
+    "description": "Android notification channel name"
+  },
+  "reminderChannelDescription": "Codzienne przypomnienie o nauce do egzaminu",
+  "@reminderChannelDescription": {
+    "description": "Android notification channel description"
+  },
+  "reminderStudyTitle": "Czas na naukę",
+  "@reminderStudyTitle": {
+    "description": "Title of the daily study reminder"
+  },
+  "reminderDaysToExam": "{days, plural, one{Do egzaminu: 1 dzień} few{Do egzaminu: {days} dni} many{Do egzaminu: {days} dni} other{Do egzaminu: {days} dnia}}",
+  "@reminderDaysToExam": {
+    "description": "Days left until the exam, part of a reminder",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderGoalLeft": "{count, plural, one{Do dzisiejszego celu: 1 odpowiedź} few{Do dzisiejszego celu: {count} odpowiedzi} many{Do dzisiejszego celu: {count} odpowiedzi} other{Do dzisiejszego celu: {count} odpowiedzi}}",
+  "@reminderGoalLeft": {
+    "description": "Answers left to the daily goal, part of a reminder",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderDueQuestions": "{count, plural, one{1 pytanie do powtórki} few{{count} pytania do powtórki} many{{count} pytań do powtórki} other{{count} pytania do powtórki}}",
+  "@reminderDueQuestions": {
+    "description": "Questions due for review, part of a reminder",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "reminderExamWeekTitle": "Tydzień do egzaminu",
+  "@reminderExamWeekTitle": {
+    "description": "Title of the reminder seven days before the exam"
+  },
+  "reminderExamEveTitle": "Egzamin już jutro",
+  "@reminderExamEveTitle": {
+    "description": "Title of the reminder the day before the exam"
+  },
+  "reminderExamEveBody": "Powtórz jeszcze raz swoje błędy i dobrze się wyśpij.",
+  "@reminderExamEveBody": {
+    "description": "Body of the reminder the day before the exam"
+  },
+  "reminderAfterExamTitle": "Jak poszedł egzamin?",
+  "@reminderAfterExamTitle": {
+    "description": "Title of the reminder the day after the exam"
+  },
+  "reminderAfterExamBody": "Powodzenia z wynikiem! Jeśli potrzebujesz kolejnego podejścia, ustaw nową datę egzaminu w Profilu.",
+  "@reminderAfterExamBody": {
+    "description": "Body of the reminder the day after the exam"
+  },
+  "remindersSectionTitle": "Przypomnienia",
+  "@remindersSectionTitle": {
+    "description": "Settings section title"
+  },
+  "remindersToggleTitle": "Codzienne przypomnienie o nauce",
+  "@remindersToggleTitle": {
+    "description": "Switch title"
+  },
+  "remindersToggleOff": "Wyłączone",
+  "@remindersToggleOff": {
+    "description": "Subtitle of the reminder switch when off"
+  },
+  "remindersToggleOn": "Codziennie o {time}",
+  "@remindersToggleOn": {
+    "description": "Subtitle of the reminder switch when on",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "remindersTimeTitle": "Godzina przypomnienia",
+  "@remindersTimeTitle": {
+    "description": "Time tile title and time picker help text"
+  },
+  "remindersBlocked": "Powiadomienia są zablokowane dla aplikacji, więc przypomnienia nie będą wyświetlane.",
+  "@remindersBlocked": {
+    "description": "Shown when the system permission is missing"
+  },
+  "remindersOpenSettings": "Otwórz ustawienia systemu",
+  "@remindersOpenSettings": {
+    "description": "Button that opens the system notification settings"
+  },
+  "remindersOpenSettingsFailed": "Nie udało się otworzyć ustawień. Otwórz Ustawienia telefonu, potem Aplikacje, Pilotiq, Powiadomienia.",
+  "@remindersOpenSettingsFailed": {
+    "description": "Snack bar when the system settings cannot be opened"
+  },
+  "remindersScheduleFailed": "Nie udało się zaplanować przypomnień.",
+  "@remindersScheduleFailed": {
+    "description": "Shown when scheduling failed"
+  },
+  "remindersRetry": "Spróbuj ponownie",
+  "@remindersRetry": {
+    "description": "Button that repeats scheduling"
+  },
+  "onboardingRemindersTitle": "Kiedy przypominać?",
+  "@onboardingRemindersTitle": {
+    "description": "Onboarding reminders page title"
+  },
+  "onboardingRemindersBody": "Jedno przypomnienie dziennie o wybranej godzinie. Aplikacja poprosi system o zgodę na powiadomienia dopiero po dotknięciu przycisku poniżej.",
+  "@onboardingRemindersBody": {
+    "description": "Onboarding reminders page text"
+  },
+  "onboardingRemindersEnable": "Włącz przypomnienia",
+  "@onboardingRemindersEnable": {
+    "description": "Onboarding button that turns reminders on and asks for permission"
+  },
+  "onboardingRemindersEnabled": "Przypomnienia włączone, codziennie o {time}.",
+  "@onboardingRemindersEnabled": {
+    "description": "Onboarding: reminders are on",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "onboardingRemindersDenied": "Powiadomienia nie są dozwolone. Przypomnienia możesz włączyć później w Profilu.",
+  "@onboardingRemindersDenied": {
+    "description": "Onboarding: permission was refused"
+  },
   "practiceProgress": "{current} / {total}",
   "practiceFinishSession": "Zakończ sesję",
   "practiceLastQuestionButton": "Zakończ",

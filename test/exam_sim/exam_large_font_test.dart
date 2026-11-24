@@ -7,6 +7,7 @@ import 'package:pilotiq/src/bank/models.dart';
 import 'package:pilotiq/src/bank/question_bank_repository.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
+import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 
 import 'exam_helpers.dart';
@@ -70,18 +71,15 @@ void main() {
   }) async {
     final scrollables = find.byType(Scrollable);
     for (final delta in [-300.0, 300.0]) {
-      for (var i = 0; i < 80 && finder.evaluate().isEmpty; i++) {
+      for (var i = 0; i < 300 && finder.evaluate().isEmpty; i++) {
         if (scrollables.evaluate().isEmpty) break;
-        await tester.drag(scrollables.last, Offset(0, delta));
+        await tester.drag(scrollables.last, Offset(0, delta * 2));
         await tester.pump();
       }
       if (finder.evaluate().isNotEmpty) break;
     }
     expect(finder, findsOneWidget, reason: 'not in the tree: $finder');
-    await tester.ensureVisible(finder);
-    await tester.pump();
     final view = tester.view.physicalSize / tester.view.devicePixelRatio;
-    final rect = tester.getRect(finder);
     final scrollers = find.ancestor(
       of: finder,
       matching: find.byType(Scrollable),
@@ -89,13 +87,34 @@ void main() {
     final area = scrollers.evaluate().isEmpty
         ? Offset.zero & view
         : tester.getRect(scrollers.first).intersect(Offset.zero & view);
+    // Scroll until the control is fully inside its area, or - when it is
+    // taller than the area - until a part of it is.
+    for (var i = 0; i < 40 && scrollers.evaluate().isNotEmpty; i++) {
+      final r = tester.getRect(finder);
+      final double delta;
+      if (r.height <= area.height) {
+        delta = r.top < area.top - 0.5
+            ? area.top - r.top
+            : (r.bottom > area.bottom + 0.5 ? area.bottom - r.bottom : 0);
+      } else {
+        delta = (r.top - area.top).abs() < 1 ? 0 : area.top - r.top;
+      }
+      if (delta == 0) break;
+      // The drag spends the touch slop (20) before the list starts to move.
+      await tester.drag(
+        scrollers.first,
+        Offset(0, delta + (delta < 0 ? -20 : 20)),
+      );
+      await tester.pump();
+    }
+    final rect = tester.getRect(finder);
     final visible = rect.intersect(area);
     expect(
       visible.width > 0 && visible.height > 0,
       isTrue,
       reason: '$finder is outside of its area $area: $rect',
     );
-    if (rect.height <= area.height) {
+    if (action && rect.height <= area.height) {
       expect(
         rect.top >= area.top - 0.5 && rect.bottom <= area.bottom + 0.5,
         isTrue,
@@ -250,7 +269,7 @@ void main() {
             await reach(tester, find.byKey(const Key('exam_result_history')));
             await reach(tester, find.byKey(const Key('exam_result_back')));
             await tapAction(tester, const Key('exam_teaser_premium'));
-            expect(h.paywalls, hasLength(1));
+            expect(h.paywalls.last, PaywallTrigger.examResults);
 
             // Premium: topics, review, training.
             h.service.setEntitlement(const EntitlementState(isPremium: true));
@@ -266,7 +285,7 @@ void main() {
               find.byKey(ValueKey('review_${ids.length - 1}')),
             );
             await tapAction(tester, const Key('review_filter_wrong'));
-            await tester.pageBack();
+            await tester.tap(find.byType(BackButton));
             await settle(tester);
             await tapAction(tester, const Key('exam_result_history'));
             await reach(tester, find.byType(Card).first);

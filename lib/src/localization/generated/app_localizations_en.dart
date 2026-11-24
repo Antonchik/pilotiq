@@ -993,6 +993,119 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get reminderChannelName => 'Study reminders';
+
+  @override
+  String get reminderChannelDescription =>
+      'A daily reminder to study for the exam';
+
+  @override
+  String get reminderStudyTitle => 'Time to study';
+
+  @override
+  String reminderDaysToExam(int days) {
+    String _temp0 = intl.Intl.pluralLogic(
+      days,
+      locale: localeName,
+      other: '$days days to the exam',
+      one: '1 day to the exam',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reminderGoalLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count answers to today\'s goal',
+      one: '1 answer to today\'s goal',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String reminderDueQuestions(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count questions to review',
+      one: '1 question to review',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get reminderExamWeekTitle => 'One week to the exam';
+
+  @override
+  String get reminderExamEveTitle => 'Your exam is tomorrow';
+
+  @override
+  String get reminderExamEveBody =>
+      'Go over your mistakes once more and get a good night\'s sleep.';
+
+  @override
+  String get reminderAfterExamTitle => 'How did the exam go?';
+
+  @override
+  String get reminderAfterExamBody =>
+      'Good luck with the result! If you need another go, set a new exam date in Profile.';
+
+  @override
+  String get remindersSectionTitle => 'Reminders';
+
+  @override
+  String get remindersToggleTitle => 'Daily study reminder';
+
+  @override
+  String get remindersToggleOff => 'Off';
+
+  @override
+  String remindersToggleOn(String time) {
+    return 'Every day at $time';
+  }
+
+  @override
+  String get remindersTimeTitle => 'Reminder time';
+
+  @override
+  String get remindersBlocked =>
+      'Notifications are blocked for the app, so no reminders will be shown.';
+
+  @override
+  String get remindersOpenSettings => 'Open system settings';
+
+  @override
+  String get remindersOpenSettingsFailed =>
+      'Could not open the settings. Open your phone\'s Settings, then Apps, Pilotiq, Notifications.';
+
+  @override
+  String get remindersScheduleFailed => 'The reminders could not be scheduled.';
+
+  @override
+  String get remindersRetry => 'Try again';
+
+  @override
+  String get onboardingRemindersTitle => 'When should we remind you?';
+
+  @override
+  String get onboardingRemindersBody =>
+      'One reminder a day at the time you choose. The app asks the system for permission to show notifications only after you tap the button below.';
+
+  @override
+  String get onboardingRemindersEnable => 'Turn on reminders';
+
+  @override
+  String onboardingRemindersEnabled(String time) {
+    return 'Reminders are on, every day at $time.';
+  }
+
+  @override
+  String get onboardingRemindersDenied =>
+      'Notifications are not allowed. You can turn the reminders on later in Profile.';
+
+  @override
   String practiceProgress(int current, int total) {
     return '$current / $total';
   }

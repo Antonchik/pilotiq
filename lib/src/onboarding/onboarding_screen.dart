@@ -4,6 +4,8 @@ import 'package:pilotiq/src/bank/licence_presentation.dart';
 import 'package:pilotiq/src/dashboard/dashboard_providers.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/notifications/providers.dart';
+import 'package:pilotiq/src/notifications/reminder_onboarding_page.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/progress/user_settings.dart';
 import 'package:pilotiq/src/settings/settings_tiles.dart';
@@ -17,12 +19,16 @@ class OnboardingDraft {
     required this.examDate,
     required this.dailyGoal,
     required this.fromLegacy,
+    this.reminderTime,
   });
 
   final Licence licence;
   final QuestionLanguage language;
   final DateTime? examDate;
   final int dailyGoal;
+
+  /// Null: no reminders.
+  final ReminderTime? reminderTime;
 
   /// Pre-filled from results migrated from version 1.x.
   final bool fromLegacy;
@@ -33,11 +39,16 @@ class OnboardingDraft {
     DateTime? examDate,
     bool clearExamDate = false,
     int? dailyGoal,
+    ReminderTime? reminderTime,
+    bool clearReminderTime = false,
   }) => OnboardingDraft(
     licence: licence ?? this.licence,
     language: language ?? this.language,
     examDate: clearExamDate ? null : (examDate ?? this.examDate),
     dailyGoal: dailyGoal ?? this.dailyGoal,
+    reminderTime: clearReminderTime
+        ? null
+        : (reminderTime ?? this.reminderTime),
     fromLegacy: fromLegacy,
   );
 }
@@ -53,6 +64,7 @@ class OnboardingDraftNotifier extends Notifier<OnboardingDraft> {
       language: settings.questionLanguage,
       examDate: settings.examDate,
       dailyGoal: settings.dailyGoal,
+      reminderTime: settings.reminderTime,
       fromLegacy: hint != null,
     );
   }
@@ -66,7 +78,7 @@ final onboardingDraftProvider =
       OnboardingDraftNotifier.new,
     );
 
-/// One page of the onboarding. Further pages (reminders) are added to
+/// One page of the onboarding. Further pages are added to
 /// [onboardingStepsProvider].
 class OnboardingStep {
   const OnboardingStep({
@@ -92,6 +104,12 @@ final onboardingStepsProvider = Provider<List<OnboardingStep>>(
       builder: (context) => const _ExamDateStep(),
     ),
     OnboardingStep(id: 'goal', builder: (context) => const _GoalStep()),
+    if (ref.watch(remindersSupportedProvider))
+      OnboardingStep(
+        id: 'reminders',
+        skippable: true,
+        builder: (context) => const ReminderOnboardingPage(),
+      ),
   ],
 );
 
@@ -125,6 +143,8 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
         examDate: draft.examDate,
         clearExamDate: draft.examDate == null,
         dailyGoal: draft.dailyGoal,
+        reminderTime: draft.reminderTime,
+        clearReminderTime: draft.reminderTime == null,
         onboardingDone: true,
       ),
     );

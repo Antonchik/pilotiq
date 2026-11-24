@@ -7,6 +7,9 @@ import 'package:hive_ce/hive.dart';
 import 'package:pilotiq/src/app.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/home/home.dart';
+import 'package:pilotiq/src/notifications/fake_notification_service.dart';
+import 'package:pilotiq/src/notifications/notification_service.dart';
+import 'package:pilotiq/src/notifications/providers.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
 
 import '../bank/fake_bank.dart';
@@ -126,6 +129,26 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// The app with the reminders switched on over a fake notification service.
+  Future<void> pumpReminderApp(
+    WidgetTester tester,
+    AppHarness h,
+    FakeNotificationService service,
+  ) async {
+    await tester.pumpWidget(
+      ProviderScope(
+        overrides: [
+          ...h.overrides,
+          remindersSupportedProvider.overrideWithValue(true),
+          notificationServiceProvider.overrideWithValue(service),
+          reminderPrefsProvider.overrideWithValue(MemoryReminderPrefsStore()),
+        ],
+        child: const MyApp(),
+      ),
+    );
+    await tester.pumpAndSettle();
+  }
+
   Future<void> pickDate(
     WidgetTester tester,
     double scale,
@@ -136,6 +159,11 @@ void main() {
       await reach(tester, find.text('OK'));
     });
   }
+
+  /// Opens the standard time picker through [opener] and confirms it; layout
+  /// overflows of the framework dialog are tolerated at scale 3.0 only.
+  Future<void> pickTime(WidgetTester tester, double scale, Finder opener) =>
+      pickDate(tester, scale, opener);
 
   for (final lang in languages) {
     for (final scale in scales) {
@@ -459,6 +487,136 @@ void main() {
           await reach(tester, find.byKey(const Key('tab_profile')));
           await reach(tester, find.byKey(const Key('settings_premium')));
           expect(h.paywalls, isEmpty);
+        });
+
+        // --- reminders (S10) -------------------------------------------
+        screen('onboarding: reminders page, turn on and change the time', (
+          tester,
+        ) async {
+          final service = FakeNotificationService();
+          await pumpReminderApp(tester, AppHarness(), service);
+          await reach(tester, find.byKey(const Key('onboarding_next')));
+          await reach(tester, find.byKey(const Key('onboarding_skip')));
+          await reach(tester, find.byKey(const Key('onboarding_next')));
+          await reach(
+            tester,
+            find.byKey(const Key('onboarding_reminders_enable')),
+          );
+          await pickTime(
+            tester,
+            scale,
+            find.byKey(const Key('onboarding_reminder_time')),
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('onboarding_reminders_off')),
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('onboarding_reminders_enable')),
+          );
+          await reach(tester, find.byKey(const Key('onboarding_back')));
+          await reach(tester, find.byKey(const Key('onboarding_next')));
+          await reach(tester, find.byKey(const Key('onboarding_finish')));
+          expect(find.byType(HomeScreen), findsOneWidget);
+          expect(Hive.box<dynamic>('config').get('reminderTime'), '19:00');
+        });
+
+        screen('onboarding: reminders page after a refusal', (tester) async {
+          final service = FakeNotificationService(
+            permission: NotificationPermission.denied,
+          );
+          await pumpReminderApp(tester, AppHarness(), service);
+          await reach(tester, find.byKey(const Key('onboarding_next')));
+          await reach(tester, find.byKey(const Key('onboarding_skip')));
+          await reach(tester, find.byKey(const Key('onboarding_next')));
+          await reach(
+            tester,
+            find.byKey(const Key('onboarding_reminders_enable')),
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('onboarding_reminders_denied')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('onboarding_reminders_open_settings')),
+          );
+          expect(service.openSettingsCount, 1);
+          await reach(tester, find.byKey(const Key('onboarding_finish')));
+          expect(find.byType(HomeScreen), findsOneWidget);
+        });
+
+        screen('profile: reminders section, time dialog and switch', (
+          tester,
+        ) async {
+          final service = FakeNotificationService();
+          final h = AppHarness();
+          await h.seedConfig({'reminderTime': '07:30'});
+          await pumpReminderApp(tester, h, service);
+          await reach(tester, find.byKey(const Key('tab_profile')));
+          await reach(
+            tester,
+            find.byKey(const Key('settings_reminders_switch')),
+            tap: false,
+          );
+          await pickTime(
+            tester,
+            scale,
+            find.byKey(const Key('settings_reminder_time')),
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('settings_reminders_switch')),
+          );
+          expect(Hive.box<dynamic>('config').get('reminderTime'), isNull);
+          await reach(
+            tester,
+            find.byKey(const Key('settings_reminders_switch')),
+          );
+          expect(Hive.box<dynamic>('config').get('reminderTime'), '19:00');
+        });
+
+        screen('profile: reminders blocked and failed', (tester) async {
+          final blocked = FakeNotificationService(
+            permission: NotificationPermission.denied,
+          );
+          final h = AppHarness();
+          await h.seedConfig({'reminderTime': '07:30'});
+          await pumpReminderApp(tester, h, blocked);
+          await reach(tester, find.byKey(const Key('tab_profile')));
+          await reach(
+            tester,
+            find.byKey(const Key('settings_reminders_blocked')),
+            tap: false,
+          );
+          await reach(
+            tester,
+            find.byKey(const Key('settings_reminders_open_settings')),
+          );
+          expect(blocked.openSettingsCount, 1);
+        });
+
+        screen('profile: reminders scheduling failed and retry', (
+          tester,
+        ) async {
+          final failing = FakeNotificationService()..failWith = StateError('x');
+          final h = AppHarness();
+          await h.seedConfig({'reminderTime': '07:30'});
+          await pumpReminderApp(tester, h, failing);
+          await reach(tester, find.byKey(const Key('tab_profile')));
+          await reach(
+            tester,
+            find.byKey(const Key('settings_reminders_failed')),
+            tap: false,
+          );
+          failing.failWith = null;
+          await reach(
+            tester,
+            find.byKey(const Key('settings_reminders_retry')),
+          );
+          expect(failing.scheduled, isNotEmpty);
         });
 
         screen('about: every line and link', (tester) async {

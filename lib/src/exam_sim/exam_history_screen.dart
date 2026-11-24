@@ -203,14 +203,15 @@ class _AttemptTile extends StatelessWidget {
       child: Card(
         child: ListTile(
           onTap: legacy ? null : () => _open(context),
-          title: Row(
+          title: Wrap(
+            spacing: 12,
+            crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               Text(
                 '${_percent(a)}%',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              const SizedBox(width: 12),
-              Expanded(child: PassBadge(passed: a.passed)),
+              PassBadge(passed: a.passed),
             ],
           ),
           subtitle: Column(

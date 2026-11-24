@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/bank/licence_presentation.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/notifications/providers.dart';
+import 'package:pilotiq/src/notifications/reminder_settings_tile.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/progress/user_settings.dart';
 
@@ -63,12 +65,23 @@ class SettingsSectionHeader extends StatelessWidget {
   );
 }
 
-/// Slot for the "Reminders" section. The reminders step fills it in.
-class RemindersSettingsSlot extends StatelessWidget {
+/// The "Reminders" section; hidden where the platform has no notifications.
+class RemindersSettingsSlot extends ConsumerWidget {
   const RemindersSettingsSlot({super.key});
 
   @override
-  Widget build(BuildContext context) => const SizedBox.shrink();
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (!ref.watch(remindersSupportedProvider)) return const SizedBox.shrink();
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SettingsSectionHeader(
+          AppLocalizations.of(context)!.remindersSectionTitle,
+        ),
+        const ReminderSettingsSection(),
+      ],
+    );
+  }
 }
 
 /// Slot for the purchases section ("Restore purchases"). The paywall step

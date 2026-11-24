@@ -1634,6 +1634,162 @@ abstract class AppLocalizations {
   /// **'Last result: {percent}%, not passed'**
   String examTileLastFailed(int percent);
 
+  /// Android notification channel name
+  ///
+  /// In en, this message translates to:
+  /// **'Study reminders'**
+  String get reminderChannelName;
+
+  /// Android notification channel description
+  ///
+  /// In en, this message translates to:
+  /// **'A daily reminder to study for the exam'**
+  String get reminderChannelDescription;
+
+  /// Title of the daily study reminder
+  ///
+  /// In en, this message translates to:
+  /// **'Time to study'**
+  String get reminderStudyTitle;
+
+  /// Days left until the exam, part of a reminder
+  ///
+  /// In en, this message translates to:
+  /// **'{days, plural, one{1 day to the exam} other{{days} days to the exam}}'**
+  String reminderDaysToExam(int days);
+
+  /// Answers left to the daily goal, part of a reminder
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{1 answer to today\'s goal} other{{count} answers to today\'s goal}}'**
+  String reminderGoalLeft(int count);
+
+  /// Questions due for review, part of a reminder
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{1 question to review} other{{count} questions to review}}'**
+  String reminderDueQuestions(int count);
+
+  /// Title of the reminder seven days before the exam
+  ///
+  /// In en, this message translates to:
+  /// **'One week to the exam'**
+  String get reminderExamWeekTitle;
+
+  /// Title of the reminder the day before the exam
+  ///
+  /// In en, this message translates to:
+  /// **'Your exam is tomorrow'**
+  String get reminderExamEveTitle;
+
+  /// Body of the reminder the day before the exam
+  ///
+  /// In en, this message translates to:
+  /// **'Go over your mistakes once more and get a good night\'s sleep.'**
+  String get reminderExamEveBody;
+
+  /// Title of the reminder the day after the exam
+  ///
+  /// In en, this message translates to:
+  /// **'How did the exam go?'**
+  String get reminderAfterExamTitle;
+
+  /// Body of the reminder the day after the exam
+  ///
+  /// In en, this message translates to:
+  /// **'Good luck with the result! If you need another go, set a new exam date in Profile.'**
+  String get reminderAfterExamBody;
+
+  /// Settings section title
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get remindersSectionTitle;
+
+  /// Switch title
+  ///
+  /// In en, this message translates to:
+  /// **'Daily study reminder'**
+  String get remindersToggleTitle;
+
+  /// Subtitle of the reminder switch when off
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get remindersToggleOff;
+
+  /// Subtitle of the reminder switch when on
+  ///
+  /// In en, this message translates to:
+  /// **'Every day at {time}'**
+  String remindersToggleOn(String time);
+
+  /// Time tile title and time picker help text
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get remindersTimeTitle;
+
+  /// Shown when the system permission is missing
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are blocked for the app, so no reminders will be shown.'**
+  String get remindersBlocked;
+
+  /// Button that opens the system notification settings
+  ///
+  /// In en, this message translates to:
+  /// **'Open system settings'**
+  String get remindersOpenSettings;
+
+  /// Snack bar when the system settings cannot be opened
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the settings. Open your phone\'s Settings, then Apps, Pilotiq, Notifications.'**
+  String get remindersOpenSettingsFailed;
+
+  /// Shown when scheduling failed
+  ///
+  /// In en, this message translates to:
+  /// **'The reminders could not be scheduled.'**
+  String get remindersScheduleFailed;
+
+  /// Button that repeats scheduling
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get remindersRetry;
+
+  /// Onboarding reminders page title
+  ///
+  /// In en, this message translates to:
+  /// **'When should we remind you?'**
+  String get onboardingRemindersTitle;
+
+  /// Onboarding reminders page text
+  ///
+  /// In en, this message translates to:
+  /// **'One reminder a day at the time you choose. The app asks the system for permission to show notifications only after you tap the button below.'**
+  String get onboardingRemindersBody;
+
+  /// Onboarding button that turns reminders on and asks for permission
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on reminders'**
+  String get onboardingRemindersEnable;
+
+  /// Onboarding: reminders are on
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders are on, every day at {time}.'**
+  String onboardingRemindersEnabled(String time);
+
+  /// Onboarding: permission was refused
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications are not allowed. You can turn the reminders on later in Profile.'**
+  String get onboardingRemindersDenied;
+
   /// Position in the session
   ///
   /// In en, this message translates to:
