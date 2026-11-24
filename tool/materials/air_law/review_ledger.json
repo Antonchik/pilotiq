@@ -111,6 +111,22 @@
   "textSha": "2aea8bfdc5b74e01",
   "verdict": "PASS"
  },
+ "PL010-0011#5b67ea6c": {
+  "date": "2026-11-24",
+  "note": "Sporne: brzmienie klucza = definicja służby informacji powietrznej (art. 2 pkt 77 rozp. 923/2012, dosłownie), a pytanie dotyczy służby informacji lotniczej (AIS, art. 2 pkt 2 rozp. 2024/2803). Spójne z P17 (0186, 0201: AIS ≠ FIS) i z 0205/0185 w tej porcji, gdzie ULC używa definicji AIS. Inne odpowiedzi nieobronne. Tekst wyjaśnia źródło klucza, disputeNote poprawny (383 zn., punkty w refs).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "7f8e7aba29897974",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0011#a5e2619c": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różni się tylko brakiem kropki w jednej odpowiedzi.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "af85029e46ca0944",
+  "verdict": "PASS"
+ },
  "PL010-0013#002b1634": {
   "date": "2026-11-24",
   "note": "Klucz 600 m = SERA.5005(f)(1); wyjątek z SERA.5005(f); pułapka (300 m to wysokość, nie promień) zgodna z przepisem.",
@@ -533,6 +549,14 @@
   "portion": "P03",
   "round": 1,
   "textSha": "b018d696c9fd2952",
+  "verdict": "PASS"
+ },
+ "PL010-0075#6c447917": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 121 ust. 3 Prawa lotniczego dosłownie; PAŻP jako AIS = GEN 3.1 pkt 1.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "f2f3309f6294edd1",
   "verdict": "PASS"
  },
  "PL010-0075#e5916ce6": {
@@ -1079,6 +1103,46 @@
   "textSha": "0de002e9c8b1fe30",
   "verdict": "PASS"
  },
+ "PL010-0159#65e698cb": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 2 pkt 8 rozp. 2024/2803 (kompatybilność natężenia ruchu z przepustowością); pułapka ASM z pkt 12, spójna z 0161#199151b9.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "326c338747463ab2",
+  "verdict": "PASS"
+ },
+ "PL010-0160#5273b40d": {
+  "date": "2026-11-24",
+  "note": "Opis w pytaniu = art. 2 pkt 8 (ATFM); rozwinięcia RNAV/ALERFA/ATIS z GEN 2.2 zgodne z korpusem.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "57e592c8de9b3694",
+  "verdict": "PASS"
+ },
+ "PL010-0160#cb0c5906": {
+  "date": "2026-11-24",
+  "note": "Wariant „Żadna z odpowiedzi”: brak opcji o ATFM; przydział przestrzeni = ASM (pkt 12), służby = ATS (pkt 10).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "595bbc66e2b4d244",
+  "verdict": "PASS"
+ },
+ "PL010-0161#199151b9": {
+  "date": "2026-11-24",
+  "note": "Klucz (przydział elementów przestrzeni użytkownikom) odpowiada art. 2 pkt 12 rozp. 2024/2803 (dynamiczny podział czasu użytkowania, segregacja między kategoriami użytkowników). Pułapka ATFM z pkt 8.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "77b0162cb3db8cb0",
+  "verdict": "PASS"
+ },
+ "PL010-0161#352f1e5b": {
+  "date": "2026-11-24",
+  "note": "Sporne: klucz „optymalizacja natężenia ruchu” to istota ATFM (art. 2 pkt 8: kompatybilność natężenia ruchu z przepustowością), a ASM wg art. 2 pkt 12 optymalizuje wykorzystanie przestrzeni; ten sam NUMER w wariancie 0161#199151b9 ma klucz „przydział elementów przestrzeni”. Klucz sprzeczny z aktualną definicją bez zmiany brzmienia → disputed. Tekst wskazuje źródło klucza (słowo „optymalizacja”), disputeNote poprawny (398 zn.).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "2a5d2970264b1cdf",
+  "verdict": "DISPUTED"
+ },
  "PL010-0162#9e4077c1": {
   "date": "2026-11-24",
   "note": "Klucz = art. 2 pkt 43 rozp. 923/2012 (definicja ACC dosłownie); RNAV jako metoda nawigacji z art. 2 pkt 45.",
@@ -1086,6 +1150,14 @@
   "round": 1,
   "textSha": "8d5e93293bd66a35",
   "verdict": "PASS"
+ },
+ "PL010-0162#b1693ba4": {
+  "date": "2026-11-24",
+  "note": "Sporne: klucz „Żadna” da się bronić ścisłym brzmieniem art. 2 pkt 12 (brak słowa „przydział”), ale odpowiedź o przydziale elementów przestrzeni jest równie obronna i ULC uznaje ją za poprawną w 0161#199151b9 (sprawdzone w inventory). Wg reguły rozgraniczenia – disputed. disputeNote poprawny.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "514a92cb0443dee7",
+  "verdict": "DISPUTED"
  },
  "PL010-0163#e2109535": {
   "date": "2026-11-24",
@@ -1199,6 +1271,14 @@
   "textSha": "cd407d72f2e1da5e",
   "verdict": "PASS"
  },
+ "PL010-0185#9a53bc4b": {
+  "date": "2026-11-24",
+  "note": "Klucz = definicja AIS (art. 2 pkt 2 rozp. 2024/2803); pułapka (opcja 4 to FIS wg SERA.9001(a)) poprawna i spójna z P17 0186#13b1565d.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "a752e79e11e7bb49",
+  "verdict": "PASS"
+ },
  "PL010-0186#13b1565d": {
   "date": "2026-11-24",
   "note": "Klucz = SERA.9001(a)(1)-(2); pułapka (opis AIS) = art. 2 pkt 2 rozp. 2024/2803.",
@@ -1263,6 +1343,14 @@
   "textSha": "4340c80579cfec82",
   "verdict": "PASS"
  },
+ "PL010-0195#db2ebae9": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 121 ust. 1 pkt 1–3 Prawa lotniczego dosłownie; art. 2 pkt 9 rozp. 2024/2803 potwierdza. Uwaga: topics.json ma ten klucz w gaps.noSource – źródło jest w korpusie.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "daeff2e9f4a65d28",
+  "verdict": "PASS"
+ },
  "PL010-0199#cc409812": {
   "date": "2026-11-24",
   "note": "Art. 96 ust. 3 + art. 21 ust. 2 pkt 2 (cytat dosłowny, dalszy ciąg punktu o ustawie o transporcie materiałów niebezpiecznych słusznie pominięty).",
@@ -1295,12 +1383,44 @@
   "textSha": "04875c600cb2c87b",
   "verdict": "PASS"
  },
+ "PL010-0205#2a8e9204": {
+  "date": "2026-11-24",
+  "note": "Klucz zgodny z art. 2 pkt 2 rozp. 2024/2803; „publikowanie” poparte wykazem produktów AIS (GEN 3.1 pkt 3: AIP, NOTAM). Pułapka MET poprawna.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "2b1f4844075392d8",
+  "verdict": "PASS"
+ },
+ "PL010-0206#25c480d8": {
+  "date": "2026-11-24",
+  "note": "Klucz = MET.OR.100(a) (dostarczanie informacji meteorologicznej członkom załogi lotniczej); pułapki AIS i ASAR poparte refs.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "f1d8d83cbf82827a",
+  "verdict": "PASS"
+ },
  "PL010-0207#2b82bbde": {
   "date": "2026-11-24",
   "note": "Klucz = MET.OR.100(a) załącznika V rozp. 2017/373 (organy ATS, SAR i inne podmioty); pułapka = art. 2 pkt 2 rozp. 2024/2803.",
   "portion": "P17",
   "round": 1,
   "textSha": "4f0df2d1fdf4b585",
+  "verdict": "PASS"
+ },
+ "PL010-0208#324484b3": {
+  "date": "2026-11-24",
+  "note": "Wariant „Żadna z odpowiedzi”: żadna opcja nie opisuje MET (MET.OR.100(a)); pozostałe przypisane do ASAR i AIS poprawnie.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "d471dcaaa973d680",
+  "verdict": "PASS"
+ },
+ "PL010-0208#7adf52a1": {
+  "date": "2026-11-24",
+  "note": "Nie sporne: klucz to opis SIGMET (załącznik I pkt 93 rozp. 2017/373; MET.OR.250(a) – biuro nadzoru wydaje SIGMET), a art. 2 pkt 44 rozp. 2024/2803 obejmuje ostrzeżenia w zakresie MET. Klucz jest częścią zadań MET, żadna inna opcja nie jest obronna. Tekst uczciwie wskazuje źródło sformułowania.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "8426e85419b8f42e",
   "verdict": "PASS"
  },
  "PL010-0209#a0b284f3": {
@@ -1317,6 +1437,22 @@
   "portion": "P17",
   "round": 1,
   "textSha": "3b1e7ee99f275f8a",
+  "verdict": "PASS"
+ },
+ "PL010-0210#3c241477": {
+  "date": "2026-11-24",
+  "note": "Wariant „Żadna z odpowiedzi”: brak opcji o ASAR; AIS (art. 2 pkt 2 rozp. 2024/2803) i MET (MET.OR.100(a)) poprawnie przypisane. Zgodne z P17 0209.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "d2a807bfd9dcfe5d",
+  "verdict": "PASS"
+ },
+ "PL010-0210#a51038e6": {
+  "date": "2026-11-24",
+  "note": "Klucz = cel służby ASAR z art. 140a ust. 1; pułapka AIS z art. 2 pkt 2 rozp. 2024/2803. Cytaty i lokatory zgodne.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "92e3178faecf45f1",
   "verdict": "PASS"
  },
  "PL010-0211#b2fb296c": {
@@ -2167,6 +2303,30 @@
   "textSha": "60c5f723cce07ad5",
   "verdict": "PASS"
  },
+ "PL010-0358#15582d37": {
+  "date": "2026-11-24",
+  "note": "AFIL = ENR 1.10 pkt 1.4.2 i GEN 2.2; przekazanie planu w locie SERA.4001(c)(2).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "20242ade24775989",
+  "verdict": "PASS"
+ },
+ "PL010-0358#4f8005ef": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnice tylko „A type”/„Type” i cudzysłowy w części EN.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "4cbd3f57316c85f5",
+  "verdict": "PASS"
+ },
+ "PL010-0359#c42a4ecb": {
+  "date": "2026-11-24",
+  "note": "CPL = art. 2 pkt 64 rozp. 923/2012 dosłownie; AFIL i SPL wg GEN 2.2 zgodne z korpusem.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "1c72c443ac47e225",
+  "verdict": "PASS"
+ },
  "PL010-0361#917d15cf": {
   "date": "2026-11-24",
   "note": "Tekst zgodny z disputeNote („zbliżona do tej definicji”). Definicja z załącznika I do rozporządzenia 2017/373 (pkt 57) wyłącza z lotnictwa ogólnego także prace lotnicze, więc klucz jest szerszy od normy. disputeNote poprawny, punkt w refs.",
@@ -2246,6 +2406,14 @@
   "round": 1,
   "textSha": "d0a71c7029471145",
   "verdict": "DISPUTED"
+ },
+ "PL010-0381#50505fda": {
+  "date": "2026-11-24",
+  "note": "Art. 130 ust. 1 i 1a Prawa lotniczego (odpłatność służb żeglugi powietrznej), powiązanie z ATM przez art. 121 ust. 1 pkt 1. Przepis nie różnicuje podmiotów – pułapka poprawna.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "faa1f716acd3a16d",
+  "verdict": "PASS"
  },
  "PL010-0385#3452b84a": {
   "date": "2026-11-24",
@@ -2383,6 +2551,14 @@
   "textSha": "3b6c48cdd44040fd",
   "verdict": "PASS"
  },
+ "PL010-0413#e23e22cd": {
+  "date": "2026-11-24",
+  "note": "AIRAC: definicja (załącznik I pkt 121 rozp. 2017/373) i zakres AIS.TR.505(a)(1)–(3) – informacje istotne operacyjnie. Pułapka o tomach AIP wynika z przepisu. (Opcjonalnie: „pkt AIS.TR.505 lit. a) załącznika VI”.)",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "482bc4c9878663c9",
+  "verdict": "PASS"
+ },
  "PL010-0425#9575bd85": {
   "date": "2026-11-24",
   "note": "FCL.205.A(a)/(b) – zgodne; „operacje niekomercyjne” ≈ „cele niezarobkowe” w kluczu, różnica nazwana w tekście. Osobny wpis zamiast sameAs dopuszczalny (inny 4. dystraktor, inny szyk pytania).",
@@ -2413,6 +2589,30 @@
   "portion": "P08",
   "round": 1,
   "textSha": "719887ed403963f9",
+  "verdict": "PASS"
+ },
+ "PL010-0434#52a1b469": {
+  "date": "2026-11-24",
+  "note": "Klucz 60 min poprawny (ENR 1.10 pkt 4.8 lit. d) i f) – sprawdzone w korpusie). Zdanie 2 pomija zastrzeżenie z SERA.4001(d): „O ile właściwy organ nie określi krótszego okresu czasu dla krajowych lotów VFR” – a pytanie dotyczy właśnie krajowego VFR, a AIP lit. c) jest takim skróceniem. Poprawka: zastąpić zdania 2–3 jednym: „Pkt SERA.4001 lit. d) ppkt 3 rozporządzenia 923/2012 wymaga złożenia planu lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego, co najmniej 60 minut przed odlotem, o ile właściwy organ nie określi krótszego okresu dla krajowych lotów VFR; AIP Polska skraca ten okres do 30 minut tylko dla lotów VFR w całości w przestrzeni niekontrolowanej (lit. c)).” i dodać do refs SERA.4001(d) quote „O ile właściwy organ nie określi krótszego okresu czasu dla krajowych lotów VFR”. Pilnować ≤700 znaków.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "1ecd725b8b9d0315",
+  "verdict": "FIX"
+ },
+ "PL010-0435#75ca6812": {
+  "date": "2026-11-24",
+  "note": "Klucz 60 min = ENR 1.10 pkt 4.8 lit. e); SERA.4001(d) chapeau (przelot nad granicami międzynarodowymi) + (d)(3) – zastrzeżenie dla krajowych VFR tu nie dotyczy. Pułapka 3 h = lit. a). Anchor pkt 4.8 w obecnym korpusie poprawny (cała lista a–g).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "5db1827b324c9cfa",
+  "verdict": "PASS"
+ },
+ "PL010-0437#71f4638b": {
+  "date": "2026-11-24",
+  "note": "Klucz 30 min = ENR 1.10 pkt 4.8 lit. c); wymóg planu dla VFR z FIS i służbą alarmową = pkt 4.5 lit. b). Odwołanie pytania do „pkt 7.2 Biuletynu VFR” (brak w korpusie) nie zmienia wyniku – obecna norma AIP daje tę samą wartość; tekst słusznie nie powołuje biuletynu.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "5052f7e21dc52eb8",
   "verdict": "PASS"
  },
  "PL010-0438#02c3f09c": {
@@ -2759,6 +2959,14 @@
   "textSha": "7663d57b69515685",
   "verdict": "PASS"
  },
+ "PL010-0473#c96c1aeb": {
+  "date": "2026-11-24",
+  "note": "Klucz 15 min = ENR 1.10 pkt 5.1.3.1 dosłownie; DLA/CHG pkt 5.1.2; 30 min pkt 5.1.3.2 (wartość spoza opcji, ale poparta i pomocna).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "7928c5e599a9959a",
+  "verdict": "PASS"
+ },
  "PL010-0484#b123db09": {
   "date": "2026-11-24",
   "note": "Klucz dosłownie = art. 2 pkt 3. Pułapka (nie tylko właściciel; wpis do rejestru, nie do świadectwa zdatności) wynika z definicji.",
@@ -2831,6 +3039,22 @@
   "textSha": "2a51c20dd6af9afc",
   "verdict": "DISPUTED"
  },
+ "PL010-0493#bf781a0c": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: wariant rawMixed (PL+EN) tego samego pytania i odpowiedzi.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "20bf191e9611417f",
+  "verdict": "PASS"
+ },
+ "PL010-0493#e6036b4c": {
+  "date": "2026-11-24",
+  "note": "ATS = FIS, alarmowa, doradcza, ATC (art. 2 pkt 32 rozp. 923/2012); AIS odrębną służbą ANS (art. 2 pkt 5 rozp. 2024/2803). Spójne z P17 (0315/0316).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "28577c4c85898e8b",
+  "verdict": "PASS"
+ },
  "PL010-0494#14188538": {
   "date": "2026-11-24",
   "note": "Poprawione: wniosek z art. 52 ust. 2 podany jawnie, świadectwo zdatności w zakresie hałasu wydaje Prezes Urzędu (art. 53 ust. 2, cytat zgodny z korpusem), uznanie decyzją (art. 52 ust. 3). Tekst nie wymienia EUROCONTROL, więc sameAs 0494#32aa5576 pozostaje ważny. Drobne powtórzenie „certyfikaty wydane lub potwierdzone” w zdaniach 1 i 2 nie wymaga poprawki.",
@@ -2878,6 +3102,14 @@
   "round": 1,
   "textSha": "136dd7cd80cbdea2",
   "verdict": "PASS"
+ },
+ "PL010-0512#7d9a7d4c": {
+  "date": "2026-11-24",
+  "note": "Nie outdated i nie sporne: klucz (ACC Warszawa jako organ ATS pełniący rolę punktu alarmowego, art. 140a ust. 7) pozostaje jedyną obroną odpowiedzią wg aktualnego prawa; zmienia się tylko przesłanka pytania (ośrodek cywilno-wojskowy, art. 140a ust. 5 pkt 1; podośrodki ARSC są wojskowe wg GEN 3.6). Poprawka: słowo „obecnie” sugeruje wcześniejszy stan prawny, którego korpus nie potwierdza. Zastąpić ostatnie zdanie: „Według art. 140a ust. 5 pkt 1 i ust. 7 alarm trafia do cywilno-wojskowego ośrodka koordynacji poszukiwania i ratownictwa lotniczego, a nie do organu wyłącznie wojskowego, jak zakłada pytanie.”",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "5f981b59d6875def",
+  "verdict": "FIX"
  },
  "PL010-0514#2e030923": {
   "date": "2026-11-24",
@@ -3119,6 +3351,14 @@
   "textSha": "33944f74d8cfe7e3",
   "verdict": "PASS"
  },
+ "PL010-0559#88221b13": {
+  "date": "2026-11-24",
+  "note": "Definicja AIP (załącznik I pkt 118 rozp. 2017/373) – publikacja organu państwowego; GEN 3.1 pkt 3 potwierdza AIP jako produkt AIS Polska.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "8da82f28ed901a0a",
+  "verdict": "PASS"
+ },
  "PL010-0560#4c789a86": {
   "date": "2026-11-24",
   "note": "art. 2 pkt 93 (poziom) dosłownie; pułapka: dystraktory to warianty definicji FL z art. 2 pkt 78.",
@@ -3277,6 +3517,22 @@
   "portion": "P17",
   "round": 1,
   "textSha": "4723983a213e65a8",
+  "verdict": "PASS"
+ },
+ "PL010-0582#d097ef09": {
+  "date": "2026-11-24",
+  "note": "Treść zgodna z ICAO Doc 4444 pkt 15.3.10 (EN, sprawdzone w korpusie): decyzję o wznowieniu normalnych operacji podejmują użytkownicy/ich przedstawiciele i dowódcy. W polskich aktach korpusu brak odpowiednika (szukano w 923/2012, 2017/373, rozp. przepisy ruchu 2020, AIP). Ref bez quote jak dla reference-only; precedens P22 0409 (verified tylko na Doc 4444). Tekst pomija lit. b) (ETA ACC), ale tak samo jak pytanie.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "c6cfc9c732107b6d",
+  "verdict": "PASS"
+ },
+ "PL010-0582#d664ade5": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko „a/”→„a)” i rozwinięcie „pow.”; odpowiedzi identyczne.",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "43fc304ec52c085f",
   "verdict": "PASS"
  },
  "PL010-0584#69c9bb65": {
@@ -3541,6 +3797,14 @@
   "portion": "P13",
   "round": 1,
   "textSha": "40afecc830f7403a",
+  "verdict": "PASS"
+ },
+ "PL010-1543#cacf0d8c": {
+  "date": "2026-11-24",
+  "note": "Czteroliterowy wskaźnik: ENR 1.10 pkt 3.5.1, dodatek 6 pkt 2.2 (rubryka 13 – sprawdzone w tekście kotwicy; węższej kotwicy brak), Doc 4444 def. Location indicator, przykład EPWW (GEN 2.4).",
+  "portion": "P18",
+  "round": 1,
+  "textSha": "20f3a4f57fccb56b",
   "verdict": "PASS"
  },
  "PL010-1544#e9b43d62": {
