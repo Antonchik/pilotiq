@@ -919,7 +919,7 @@
   },
   {
     "id": "PL-ROZP-LICENCJONOWANIE-2021",
-    "title_pl": "Rozporządzenie MTBiGM z 2013 r. w sprawie licencjonowania personelu lotniczego – tekst jednolity",
+    "title_pl": "Rozporządzenie MTBiGM w sprawie licencjonowania personelu lotniczego – tekst jednolity (obwieszczenie z 13.08.2021)",
     "kind": "statute",
     "lang": "pl",
     "status": "available",
@@ -1031,6 +1031,9 @@
     "terms_url": "https://api.sejm.gov.pl/eli.html",
     "terms_note": "Akty normatywne nie są przedmiotem prawa autorskiego (art. 4 pkt 1 ustawy o prawie autorskim i prawach pokrewnych).",
     "url": "https://api.sejm.gov.pl/eli/acts/DU/2013/1068/text.pdf",
-    "version": "Dz.U. 2013 poz. 1068 (status ELI: obowiązujący)"
+    "version": "Dz.U. 2013 poz. 1068 (status ELI: obowiązujący)",
+    "sha256": "d6c7b7633eaec5490960f6f39b084a05ce8f2ea117fc5b751c5f933c25d3dddd",
+    "bytes": 766640,
+    "fetched": "2026-11-24"
   }
 ]
