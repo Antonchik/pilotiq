@@ -63,7 +63,7 @@
    {
     "src": "PL-PRAWO-LOTNICZE",
     "loc": "art. 122 ust. 1",
-    "quote": "Użytkownik polskiej przestrzeni powietrznej jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego, a także organów dowodzenia obroną powietrzną, jak również poleceń przekazanych mu przez wojskowe statki powietrzne"
+    "quote": "jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego, a także organów dowodzenia obroną powietrzną, jak również poleceń przekazanych mu przez wojskowe statki powietrzne"
    }
   ],
   "disputeNote": null,
@@ -241,7 +241,7 @@
  {
   "key": "PL010-0007#d367756c",
   "status": "draft",
-  "text": "Zgodnie z art. 119 ust. 4 pkt 1 Prawa lotniczego zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące może wprowadzić, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej oraz ministrami właściwymi do spraw wewnętrznych i środowiska. Obecne brzmienie przepisu wymienia wśród uzgadniających także ministra właściwego do spraw klimatu. Pułapka: przepis nie przewiduje porozumienia z Prezesem ULC ani działania ministra bez uzgodnień.",
+  "text": "Zgodnie z art. 119 ust. 4 pkt 1 Prawa lotniczego zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące może wprowadzić, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej i ministrami właściwymi m.in. do spraw wewnętrznych oraz środowiska. Obecne brzmienie przepisu wymienia wśród uzgadniających także ministra właściwego do spraw klimatu, którego odpowiedź z klucza nie podaje. Pułapka: przepis nie przewiduje porozumienia z Prezesem ULC ani działania ministra bez uzgodnień.",
   "refs": [
    {
     "src": "PL-PRAWO-LOTNICZE",
@@ -265,7 +265,7 @@
  {
   "key": "PL010-0127#61f18628",
   "status": "draft",
-  "text": "Zgodnie z art. 119 ust. 4 pkt 2 Prawa lotniczego zasady wprowadzania ograniczeń lotów w części przestrzeni powietrznej na czas nie dłuższy niż 3 miesiące oraz sposób ich publikacji określa, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej oraz ministrami właściwymi do spraw wewnętrznych i środowiska. Obecny przepis wymienia wśród uzgadniających także ministra właściwego do spraw klimatu, a ograniczenia wprowadzają według niego instytucje zapewniające służby ruchu lotniczego, nie „państwowy organ zarządzania ruchem lotniczym”.",
+  "text": "Zgodnie z art. 119 ust. 4 pkt 2 Prawa lotniczego zasady wprowadzania ograniczeń lotów w części przestrzeni powietrznej na czas nie dłuższy niż 3 miesiące oraz sposób ich publikacji określa, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej i ministrami właściwymi m.in. do spraw wewnętrznych oraz środowiska. Obecny przepis wymienia wśród uzgadniających także ministra właściwego do spraw klimatu, a ograniczenia wprowadzają według niego instytucje zapewniające służby ruchu lotniczego, nie „państwowy organ zarządzania ruchem lotniczym”.",
   "refs": [
    {
     "src": "PL-PRAWO-LOTNICZE",
@@ -305,7 +305,7 @@
   "disputeNote": null,
   "sameAs": null,
   "basis": "outdated",
-  "basisNote": "Rozporządzenie z 11 czerwca 2010 r. utraciło moc na mocy rozporządzenia z 5 marca 2019 r. Obecnie nad parkami narodowymi wyznaczono strefy R (§ 3 ust. 1 pkt 5 i załącznik nr 3), z zakazem lotów statków powietrznych z napędem do górnej granicy określonej osobno dla każdej strefy, a nie jedną wysokością 1000 m."
+  "basisNote": "Rozporządzenie z 11 czerwca 2010 r. utraciło moc. Według rozporządzenia z 5 marca 2019 r. nad parkami narodowymi są strefy R (§ 3 ust. 1 pkt 5, załącznik nr 3) z zakazem lotów statków z napędem do górnej granicy określonej dla każdej strefy, a nie jedna wysokość 1000 m."
  },
  {
   "key": "PL010-0243#3b832f11",
@@ -326,7 +326,7 @@
   "disputeNote": null,
   "sameAs": null,
   "basis": "outdated",
-  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Obecnie tę samą wysokość wymaga § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r.: nad miastami powyżej 25 000 do 50 000 mieszkańców samoloty z silnikami innymi niż tłokowe nie mogą lecieć niżej niż 1000 m nad poziomem terenu."
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Tę samą wysokość podaje dziś § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r.: nad miastami powyżej 25 000 do 50 000 mieszkańców samoloty z silnikami innymi niż tłokowe lecą nie niżej niż 1000 m nad terenem."
  },
  {
   "key": "PL010-0243#808177a8",
@@ -420,7 +420,7 @@
   "disputeNote": null,
   "sameAs": null,
   "basis": "outdated",
-  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Obecnie § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r. wymaga nad miastami powyżej 25 000 do 50 000 mieszkańców co najmniej 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych, a 1000 m dla samolotów z innymi silnikami."
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r. wymaga nad miastami powyżej 25 000 do 50 000 mieszkańców 500 m nad terenem dla śmigłowców i samolotów tłokowych, a 1000 m dla samolotów z innymi silnikami."
  },
  {
   "key": "PL010-0245#4ae2e2e4",
@@ -485,7 +485,7 @@
   "disputeNote": null,
   "sameAs": null,
   "basis": "outdated",
-  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Obecnie § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. zabrania samolotom z silnikami innymi niż tłokowe lotów nad miastami powyżej 25 000 mieszkańców niżej niż 1000 m nad poziomem terenu, a nad miastami powyżej 100 000 mieszkańców niżej niż 1500 m."
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. zabrania samolotom z silnikami innymi niż tłokowe lotów nad miastami powyżej 25 000 mieszkańców niżej niż 1000 m nad terenem, a powyżej 100 000 – niżej niż 1500 m."
  },
  {
   "key": "PL010-0246#22a37308",
@@ -530,7 +530,7 @@
   "disputeNote": null,
   "sameAs": null,
   "basis": "outdated",
-  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Obecnie § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. także liczy minimalne wysokości lotów nad miastami od poziomu terenu, np. 500 m dla śmigłowców i samolotów tłokowych nad miastami powyżej 25 000 do 50 000 mieszkańców."
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. także liczy minimalne wysokości nad miastami od poziomu terenu, np. 500 m dla śmigłowców i samolotów tłokowych nad miastami powyżej 25 000 do 50 000 mieszkańców."
  },
  {
   "key": "PL010-0247#54dc8471",
