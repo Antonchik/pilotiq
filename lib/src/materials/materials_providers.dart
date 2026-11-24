@@ -108,7 +108,9 @@ final explanationForQuestionProvider =
             : [for (final r in explanation.refs) materials.refLabel(r)],
         disputeNote: locked ? null : explanation?.disputeNote,
         outdated: outdatedNote != null,
-        outdatedNote: locked || outdatedNote == null || outdatedNote.isEmpty
+        // What changed is Premium content even when the explanation of the
+        // same key is in the free sample.
+        outdatedNote: !isPremium || outdatedNote == null || outdatedNote.isEmpty
             ? null
             : outdatedNote,
         locked: locked,

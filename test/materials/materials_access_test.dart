@@ -97,7 +97,8 @@ void main() {
     expect(premium.locked, isFalse);
     expect(premium.outdatedNote, contains('§ 31'));
 
-    // PPL(A) links the outdated key too; the free three are unchanged.
+    // PPL(A) links the outdated key too and AL01 lists it first; the free
+    // three are unchanged (unfiltered, PL010-0003 would be the 4th).
     final c = container();
     expect(await lockedOf(c, Licence.ppla, ['PL010-0003', 'PL010-0004']), {
       'PL010-0003': false,
@@ -109,6 +110,23 @@ void main() {
       ))!.outdated,
       isTrue,
     );
+  });
+
+  test('a key with an explanation and an outdated note: a free user gets the '
+      'free explanation and the mark, never the note', () async {
+    final free = (await container().read(
+      explanationForQuestionProvider((Licence.pplh, 'PL010-0009')).future,
+    ))!;
+    expect(free.locked, isFalse);
+    expect(free.hasExplanation, isTrue);
+    expect(free.text, isNotEmpty);
+    expect(free.outdated, isTrue);
+    expect(free.outdatedNote, isNull);
+
+    final premium = (await container(premium: true).read(
+      explanationForQuestionProvider((Licence.pplh, 'PL010-0009')).future,
+    ))!;
+    expect(premium.outdatedNote, 'Notatka o zmianie przepisów dla K9.');
   });
 
   test('premium sees every explanation', () async {

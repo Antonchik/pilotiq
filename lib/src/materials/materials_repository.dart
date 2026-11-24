@@ -76,7 +76,11 @@ class MaterialsRepository {
     final path = materialsAssetPath(subject);
     try {
       final json = await _bundle.loadString(path, cache: false);
-      return await _parser(json, subject);
+      final materials = await _parser(json, subject);
+      for (final w in materials.warnings) {
+        _log('materials: $path: $w');
+      }
+      return materials;
     } on Object catch (e) {
       _log('materials: $path not available ($e)');
       return null;

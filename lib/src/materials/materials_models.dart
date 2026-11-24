@@ -129,6 +129,7 @@ class SubjectMaterials {
     required this.explanations,
     required this.links,
     this.outdated = const {},
+    this.warnings = const [],
   });
 
   final SubjectId subject;
@@ -150,6 +151,10 @@ class SubjectMaterials {
   /// in no topic order, so they never take a place of the free sample.
   final Map<String, String> outdated;
 
+  /// Problems of optional parts that were skipped while parsing (the
+  /// repository logs them); the rest of the materials is still shown.
+  final List<String> warnings;
+
   /// Nothing to show (an empty pilot asset).
   bool get isEmpty =>
       explanations.isEmpty &&
@@ -169,7 +174,8 @@ class SubjectMaterials {
 
   /// 0-based position of [key] in its topic, counted only over the keys that
   /// have a question in the bank of [licence]; `null` when the key is in no
-  /// topic or not in the licence.
+  /// topic or not in the licence. An outdated key without an explanation
+  /// never takes a place of the free sample, even if a topic lists it.
   int? indexInTopic(Licence licence, String key) {
     final index = _indexCache.putIfAbsent(licence, () {
       final present = (links[licence] ?? const {}).values.toSet();
@@ -177,7 +183,9 @@ class SubjectMaterials {
       for (final t in topics) {
         var i = 0;
         for (final k in t.order) {
-          if (present.contains(k)) result[k] = i++;
+          final outdatedOnly =
+              outdated.containsKey(k) && !explanations.containsKey(k);
+          if (present.contains(k) && !outdatedOnly) result[k] = i++;
         }
       }
       return result;
@@ -265,14 +273,25 @@ class SubjectMaterials {
       };
     }
     // Optional (added to schema 1 later): older assets have no `outdated`.
+    // A malformed field or entry is skipped with a warning: it must not take
+    // the other materials of the subject down with it.
+    final warnings = <String>[];
     final rawOutdated = json['outdated'] ?? const {};
-    if (rawOutdated is! Map) throw const FormatException('Invalid outdated');
     final outdated = <String, String>{};
-    for (final e in rawOutdated.entries) {
-      final v = e.value;
-      if (e.key is! String) throw FormatException('Invalid outdated ${e.key}');
-      final note = v is Map ? v['note'] : null;
-      outdated[e.key as String] = note is String ? note : '';
+    if (rawOutdated is! Map) {
+      warnings.add('outdated ignored: not an object');
+    } else {
+      for (final e in rawOutdated.entries) {
+        final v = e.value;
+        final note = v is Map ? v['note'] : null;
+        if (e.key is! String ||
+            v is! Map ||
+            (note != null && note is! String)) {
+          warnings.add('outdated entry ${e.key} ignored: malformed');
+          continue;
+        }
+        outdated[e.key as String] = (note as String?) ?? '';
+      }
     }
     final legal = json['legalStateAsOf'];
     return SubjectMaterials(
@@ -284,6 +303,7 @@ class SubjectMaterials {
       explanations: Map.unmodifiable(explanations),
       links: Map.unmodifiable(links),
       outdated: Map.unmodifiable(outdated),
+      warnings: List.unmodifiable(warnings),
     );
   }
 

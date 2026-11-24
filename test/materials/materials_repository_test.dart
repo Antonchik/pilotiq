@@ -28,7 +28,7 @@ void main() {
       expect(m.topics.first.sections.map((s) => s.id), ['AL01-1', 'AL01-2']);
       expect(m.topics.first.title('en'), 'Licences and ratings');
       expect(m.topics.first.title('pl'), 'Licencje i uprawnienia');
-      expect(m.explanations, hasLength(7));
+      expect(m.explanations, hasLength(8));
       expect(m.explanations[k6]!.status, MaterialStatus.disputed);
       expect(m.explanations[k6]!.disputeNote, isNotNull);
       expect(m.keyOf(Licence.ppla, 'PL010-0001'), k1);
@@ -64,10 +64,52 @@ void main() {
     test('outdated keys: parsed, linked, outside the topic orders', () {
       expect(m.outdated, {
         k7: 'Uchylony § 31 rozporządzenia z 2003 r.; obecnie NCO.GEN.105.',
+        k9: 'Notatka o zmianie przepisów dla K9.',
       });
       expect(m.keyOf(Licence.pplh, 'PL010-0002'), k7);
       expect(m.explanations.containsKey(k7), isFalse);
+      // K7 is listed first in AL01 but has no explanation: no place in the
+      // free sample, K1 stays the first one.
+      expect(m.topics.first.order.first, k7);
       expect(m.indexInTopic(Licence.ppla, k7), isNull);
+      expect(m.indexInTopic(Licence.ppla, k1), 0);
+      // K9 has an explanation as well: it counts like any other.
+      expect(m.indexInTopic(Licence.pplh, k9), 1);
+    });
+
+    test('a malformed "outdated" is skipped with a warning, the rest of the '
+        'materials stays', () {
+      final json = jsonDecode(fixtureJson()) as Map<String, dynamic>;
+      json['outdated'] = ['not', 'an', 'object'];
+      final broken = parseMaterials(jsonEncode(json));
+      expect(broken.outdated, isEmpty);
+      expect(broken.explanations, hasLength(8));
+      expect(broken.warnings.single, contains('outdated'));
+
+      json['outdated'] = {
+        k7: {'note': 'ok'},
+        k9: 'not an object',
+        k1: {'note': 42},
+      };
+      final partly = parseMaterials(jsonEncode(json));
+      expect(partly.outdated, {k7: 'ok'});
+      expect(partly.warnings, hasLength(2));
+      expect(m.warnings, isEmpty);
+    });
+
+    test('the repository logs a malformed "outdated" and keeps the '
+        'materials', () async {
+      final json = jsonDecode(fixtureJson()) as Map<String, dynamic>;
+      json['outdated'] = 'broken';
+      final logs = <String>[];
+      final repo = materialsRepository(
+        MaterialsBundle(jsonEncode(json)),
+        logs: logs,
+      );
+      final loaded = await repo.load(SubjectId.airLaw);
+      expect(loaded, isNotNull);
+      expect(loaded!.explanations, hasLength(8));
+      expect(logs.single, contains('outdated'));
     });
 
     test('an asset without "outdated" still parses', () {
@@ -86,7 +128,7 @@ void main() {
         '"status": "verified"',
         '"status": "draft"',
       );
-      expect(parseMaterials(json).explanations, hasLength(6));
+      expect(parseMaterials(json).explanations, hasLength(7));
     });
 
     test('another subject or schema is rejected', () {
