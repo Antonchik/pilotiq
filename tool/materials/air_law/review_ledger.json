@@ -1215,6 +1215,14 @@
   "textSha": "c5f5a37db68c69b7",
   "verdict": "PASS"
  },
+ "PL010-0249#fb6097ab": {
+  "date": "2026-11-24",
+  "note": "Klucz (Policja / administracja publiczna) dosłownie w art. 137 ust. 4 PL; rozszerzenie na uczestnika, świadka przymusowego lądowania i znalazcę zgodne z przepisem; dystraktory nie są adresatami.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "719ec805c8a1e3ab",
+  "verdict": "PASS"
+ },
  "PL010-0250#b1421fef": {
   "date": "2026-11-24",
   "note": "Jak 0020#315617a8: wariant z «posiadającymi licencję»; tekst to wyraźnie obejmuje.",
@@ -1623,12 +1631,92 @@
   "textSha": "aec521c9ccf96759",
   "verdict": "PASS"
  },
+ "PL010-0317#a71d4a5a": {
+  "date": "2026-11-24",
+  "note": "Klucz (służby bezpieczeństwa i porządku publicznego, mogące udzielić pomocy) = art. 137 ust. 4 PL; zdanie o jednej z grup adresatów trafne.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "29cf274a475984b7",
+  "verdict": "PASS"
+ },
+ "PL010-0318#9bf1770f": {
+  "date": "2026-11-24",
+  "note": "Klucz (jednostki ochrony przeciwpożarowej) dosłownie w art. 137 ust. 4 PL („w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy”).",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "f136a0001b6d488d",
+  "verdict": "PASS"
+ },
+ "PL010-0319#6fc250a2": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 137 ust. 4 PL dla świadka przymusowego lądowania poza lotniskiem; dystraktory nie są adresatami.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "d48caec7595eb0ed",
+  "verdict": "PASS"
+ },
+ "PL010-0320#43dbfa97": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 137 ust. 4 PL (służby bezpieczeństwa i porządku publicznego); poprawnie.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "771d49deed19bfec",
+  "verdict": "PASS"
+ },
+ "PL010-0322#02c11389": {
+  "date": "2026-11-24",
+  "note": "Nie sporne: art. 137 ust. 4 PL wymienia „inne służby bezpieczeństwa i porządku publicznego” katalogiem otwartym; tekst uczciwie zaznacza, że straży miejskiej przepis nie wymienia z nazwy i że to kwalifikacja klucza (bez faktu spoza korpusu). Pozostałe odpowiedzi (Prezes ULC, ubezpieczyciel, minister) nie są adresatami.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "cd9acf01d1a864ef",
+  "verdict": "PASS"
+ },
+ "PL010-0322#d19cfdd6": {
+  "date": "2026-11-24",
+  "note": "„Wszystkie odpowiedzi są prawidłowe” – trzy grupy adresatów dosłownie w art. 137 ust. 4 PL.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "9bec1a73230d00e8",
+  "verdict": "PASS"
+ },
+ "PL010-0323#32bd8779": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 137 ust. 4 PL dla znalazcy porzuconego statku/szczątków.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "27997113740a9b13",
+  "verdict": "PASS"
+ },
+ "PL010-0324#36ffb996": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 137 ust. 4 PL; poprawnie.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "195f72fc3f0ce49d",
+  "verdict": "PASS"
+ },
+ "PL010-0325#0df5f2cf": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 137 ust. 4 PL („w szczególności jednostki ochrony przeciwpożarowej”).",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "3c79a0e913a87622",
+  "verdict": "PASS"
+ },
  "PL010-0326#ee8656a3": {
   "date": "2026-11-24",
   "note": "Nie sporne. Wartość klucza «5 godzin jako pilot dowódca» = SFCL.160(a)(1); żadna inna odpowiedź (4/7/10 h) nie ma oparcia. Niepełność dotyczy treści pytania (pomija 15 startów, 2 loty szkoleniowe i alternatywę FE(S)), nie klucza: 5 h PIC nadal spełnia wymóg godzinowy, a tekst uczciwie uzupełnia pozostałe warunki z (a)(1)(i)-(ii) i (a)(2). Wszystkie cytaty w kotwicach.",
   "portion": "P12",
   "round": 1,
   "textSha": "80734e6fe1a468a3",
+  "verdict": "PASS"
+ },
+ "PL010-0327#ffde589b": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 17 ust. 1 PL (cytat i lokator dokładne); dystraktory poprawnie odrzucone. Treść identyczna z wzorcem STYLE §6.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "83e94c432ce9538f",
   "verdict": "PASS"
  },
  "PL010-0328#4f2e637e": {
@@ -2799,6 +2887,94 @@
   "textSha": "cc698bc3f868dd1d",
   "verdict": "PASS"
  },
+ "PL099-0001#627b8b92": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 134 ust. 1 PL (badanie okoliczności i przyczyn, cel zapobiegawczy) + art. 2 pkt 14 rozp. 996/2010 (zalecenia dotyczące bezpieczeństwa); pułapka o winie poparta zdaniem „Komisje nie orzekają co do winy i odpowiedzialności”. Utożsamienie zaleceń dotyczących bezpieczeństwa z „profilaktycznymi” z klucza – dopuszczalne.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "ac538fe8950442ca",
+  "verdict": "PASS"
+ },
+ "PL099-0004#0d5127d8": {
+  "date": "2026-11-24",
+  "note": "Klucz „lotnicza łączność radiotelefoniczna w niebezpieczeństwie” poprawny (art. 4a ust. 1, SERA.14095(d)(1)), ale SERA.14095(d) wymienia też: (d)(3) „wspólny kanał łączności … między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze” oraz (d)(5) „łączności między jednostką ratunkową a statkiem powietrznym biorącym udział w operacjach poszukiwawczo-ratowniczych” (w EAR SERA: survival craft). Dystraktory „łączność z lądem w akcjach SAR” i „z tratwami ratunkowymi” są więc też zgodne z przepisem → wpis sporny, brak disputeNote. Poprawka: dodać disputeNote np. „Pkt SERA.14095 lit. d) ppkt 3 i 5 rozporządzenia 923/2012 przewidują użycie 121,500 MHz także do łączności ze służbami naziemnymi w operacjach poszukiwawczo-ratowniczych oraz z jednostką ratunkową, więc odpowiedzi o SAR i tratwach też mają oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” + refs SERA.14095(d)(3) i (d)(5) z cytatami. Dotyczy też sameAs PL102-0051.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "8f6ca1ababac0924",
+  "verdict": "FIX"
+ },
+ "PL099-0009#b7fe727e": {
+  "date": "2026-11-24",
+  "note": "Nie sporne: art. 135 ust. 2 PL – inne incydenty bada użytkownik pod nadzorem Komisji, chyba że Przewodniczący zdecyduje o badaniu przez Komisję; ust. 1 – Przewodniczący najpierw kwalifikuje zdarzenie. „Po decyzji PKBWL” to rozsądny odczyt kwalifikacji + braku przejęcia; klucz pełniejszy niż „Tak”. Lokatory i cytaty zgodne.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "c978eb9d358dd06e",
+  "verdict": "PASS"
+ },
+ "PL099-0010#ff343973": {
+  "date": "2026-11-24",
+  "note": "Sporne słusznie: klucz „Nie” = art. 135 ust. 2 PL (wypadek statku rejestrowego bada Komisja), ale art. 135 ust. 2a (badanie wypadku statku MTOM ≤ 2250 kg przekazane innemu podmiotowi, prowadzone pod nadzorem Komisji) i ust. 4 (statek spoza rejestru: raport końcowy przygotowuje użytkownik pod nadzorem Komisji) czynią obronną odpowiedź „Tak, ale pod nadzorem PKBWL”. disputeNote poprawny (376 zn.), punkty w refs. Drobna uwaga bez wpływu: „tylko inne incydenty” odnosi się do schematu ust. 2.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "60e1ae815eba2e75",
+  "verdict": "DISPUTED"
+ },
+ "PL099-0011#512d95b7": {
+  "date": "2026-11-24",
+  "note": "Sporne słusznie: art. 134 ust. 5 PL / art. 2 pkt 7 rozp. 996/2010 – incydent nie wymaga uszkodzenia, ale przy uszkodzeniu spełniającym art. 134 ust. 2 pkt 2 (trwałość konstrukcji + poważny remont/wymiana elementu) zderzenie z ptakiem jest wypadkiem, więc „bez względu na konsekwencje” jest sprzeczne z definicją. disputeNote poprawny, art. 134 ust. 2 pkt 2 w refs.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "e970a96287d01dfd",
+  "verdict": "DISPUTED"
+ },
+ "PL099-0022#aaa2df9d": {
+  "date": "2026-11-24",
+  "note": "Sporne słusznie: art. 4 ust. 6 lit. a rozp. 376/2014 – pilot dowódca zgłasza przez system organizacji (ust. 2) „lub — alternatywnie —” przez system państwa członkowskiego (ust. 3); art. 135a ust. 1 PL: system z art. 4 ust. 3 obsługuje Komisja. Klucz nadal poprawny, ale „PKBWL” też zgodne z przepisami (dla pilota GA bez organizacji to jedyna droga). Zbliżenia = art. 4 ust. 1 lit. c ppkt (i). disputeNote poprawny, wszystkie punkty w refs.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "dc30792dc62a8a1e",
+  "verdict": "DISPUTED"
+ },
+ "PL099-0023#56573da8": {
+  "date": "2026-11-24",
+  "note": "Klucz = SERA.14095(a)(2) + definicja sytuacji zagrożenia (a)(1)(i); pułapka PAN PAN poparta (a)(1)(ii). 3 zdania, 573 zn.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "df4dc214f4880d0e",
+  "verdict": "PASS"
+ },
+ "PL099-0025#024cafbe": {
+  "date": "2026-11-24",
+  "note": "Klucz 121,5 MHz = SERA.14080(b) (nasłuch stacji lotniczych) i AIP GEN 3.6 pkt 5; pułapka 2182 kHz poparta tym samym punktem AIP. Lokatory najdokładniejsze (GEN 3.6 pkt 5 bez podkotwic).",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "77ef13ac2d2b1fe8",
+  "verdict": "PASS"
+ },
+ "PL099-0051#1b7ba0eb": {
+  "date": "2026-11-24",
+  "note": "Jedynym źródłem jest CAT.GEN.MPA.105(d)(2) z załącznika IV rozp. 965/2012 – „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO [CZĘŚĆ CAT]”. Pytanie dotyczy pilota PPL; część NCO (NCO.GEN.105, obowiązki pilota dowódcy) nie zawiera obowiązku raportu o zderzeniu z ptakiem (sprawdzono: w 965/2012 słowo „ptak” występuje tylko w CAT.GEN.MPA.105(d)). Tekst podaje przepis CAT jako ogólny – fakt ponad źródło. Poprawka: (1) zdanie 1: „Zgodnie z pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012, dotyczącym operacji zarobkowego transportu lotniczego (część CAT), dowódca …”; dodać ref EU-965-2012 „załącznik IV” z quote „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO”; (2) disputeNote uzupełnić: przepis dotyczy tylko części CAT, a część NCO (operacje niezarobkowe) nie przewiduje takiego raportu; nawet w CAT raport pisemny wymagany jest tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Status po poprawce – sporny.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "c2730b66c7302a00",
+  "verdict": "FIX"
+ },
+ "PL099-0074#9b6f9c4c": {
+  "date": "2026-11-24",
+  "note": "Klucz „Nie” = tabela S14-1 w SERA.14005: (a) MAYDAY, (b) PAN PAN, (c) znajdowanie kierunku. Lokator nadrzędny SERA.14005 zaakceptowany ze względu na znaną wadę kotwic (wiersze tabeli jako (b)…(f)); cytaty zgodne z korpusem.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "08e3c5a69da65fdf",
+  "verdict": "PASS"
+ },
+ "PL099-0079#cfe733ba": {
+  "date": "2026-11-24",
+  "note": "72 h poprawne (art. 135a ust. 3 PL, art. 4 ust. 8 rozp. 376/2014), ale zdanie 1 przypisuje art. 135a ust. 2 ogólny obowiązek zgłaszania Komisji, a przepis dotyczy tylko „statków powietrznych nieobjętych przepisami rozporządzenia nr 376/2014/UE”. Poprawka: „Zgodnie z art. 135a ust. 3 Prawa lotniczego zgłoszenia zdarzenia lotniczego Komisji dokonuje się każdym dostępnym środkiem łączności niezwłocznie, jednak nie później niż 72 godziny od jego zaistnienia; dla statków nieobjętych rozporządzeniem 376/2014 obowiązek ten mają m.in. użytkownik statku powietrznego, instytucja zapewniająca służby żeglugi powietrznej i zarządzający lotniskiem (art. 135a ust. 2).” Zdanie o art. 4 ust. 8 rozp. 376/2014 zostawić.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "fa57d88a1ffaa1cb",
+  "verdict": "FIX"
+ },
  "PL099-0082#7e61b8ba": {
   "date": "2026-11-24",
   "note": "Klucz = cel z art. 115 ust. 1 (bezpieczeństwo lotu oraz bezpieczeństwo i porządek na pokładzie) + pkt 1; pułapka wynika z treści przepisu.",
@@ -2813,6 +2989,14 @@
   "portion": "P25",
   "round": 2,
   "textSha": "cc0880d8c125e66b",
+  "verdict": "PASS"
+ },
+ "PL099-0088#8a07a254": {
+  "date": "2026-11-24",
+  "note": "Klucz wynika z SERA.14095(a)(1)(i),(a)(2) i dodatku 1 pkt 1.1.1 („wszelkich środków, będących w jego dyspozycji”); parafraza „pozwala” zgodna z „nie zabrania”. Dystraktory bez potrzeby komentarza.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "021c35a960128f29",
   "verdict": "PASS"
  },
  "PL099-0092#a74def59": {
@@ -2837,6 +3021,38 @@
   "portion": "P25",
   "round": 1,
   "textSha": "77686335798f2fc3",
+  "verdict": "PASS"
+ },
+ "PL102-0039#4dae563b": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: pytanie i odpowiedzi jak w PL099-0022#aaa2df9d (różnica tylko w kropkach na końcu odpowiedzi); sporność dziedziczona po oryginale.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "bf435e37753b4d4c",
+  "verdict": "PASS"
+ },
+ "PL102-0046#8f833f6c": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0074#9b6f9c4c (różnica wielkości liter).",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "0e93d234b507874b",
+  "verdict": "PASS"
+ },
+ "PL102-0048#96cde93d": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0025#024cafbe.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "3a446f33117af9f7",
+  "verdict": "PASS"
+ },
+ "PL102-0051#6d850997": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0004#0d5127d8 (wielkość liter, brak kropek). Uwaga: oryginał ma FIX (brak disputeNote) – status sporny przejdzie po poprawce oryginału.",
+  "portion": "P29",
+  "round": 1,
+  "textSha": "2935482cdbe160b1",
   "verdict": "PASS"
  }
 }

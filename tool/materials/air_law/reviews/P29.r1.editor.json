@@ -1,0 +1,137 @@
+[
+ {
+  "key": "PL010-0327#ffde589b",
+  "verdict": "PASS",
+  "note": "Klucz = art. 17 ust. 1 PL (cytat i lokator dokładne); dystraktory poprawnie odrzucone. Treść identyczna z wzorcem STYLE §6."
+ },
+ {
+  "key": "PL010-0249#fb6097ab",
+  "verdict": "PASS",
+  "note": "Klucz (Policja / administracja publiczna) dosłownie w art. 137 ust. 4 PL; rozszerzenie na uczestnika, świadka przymusowego lądowania i znalazcę zgodne z przepisem; dystraktory nie są adresatami."
+ },
+ {
+  "key": "PL010-0317#a71d4a5a",
+  "verdict": "PASS",
+  "note": "Klucz (służby bezpieczeństwa i porządku publicznego, mogące udzielić pomocy) = art. 137 ust. 4 PL; zdanie o jednej z grup adresatów trafne."
+ },
+ {
+  "key": "PL099-0001#627b8b92",
+  "verdict": "PASS",
+  "note": "Klucz = art. 134 ust. 1 PL (badanie okoliczności i przyczyn, cel zapobiegawczy) + art. 2 pkt 14 rozp. 996/2010 (zalecenia dotyczące bezpieczeństwa); pułapka o winie poparta zdaniem „Komisje nie orzekają co do winy i odpowiedzialności”. Utożsamienie zaleceń dotyczących bezpieczeństwa z „profilaktycznymi” z klucza – dopuszczalne."
+ },
+ {
+  "key": "PL099-0009#b7fe727e",
+  "verdict": "PASS",
+  "note": "Nie sporne: art. 135 ust. 2 PL – inne incydenty bada użytkownik pod nadzorem Komisji, chyba że Przewodniczący zdecyduje o badaniu przez Komisję; ust. 1 – Przewodniczący najpierw kwalifikuje zdarzenie. „Po decyzji PKBWL” to rozsądny odczyt kwalifikacji + braku przejęcia; klucz pełniejszy niż „Tak”. Lokatory i cytaty zgodne."
+ },
+ {
+  "key": "PL099-0079#cfe733ba",
+  "verdict": "FIX",
+  "note": "72 h poprawne (art. 135a ust. 3 PL, art. 4 ust. 8 rozp. 376/2014), ale zdanie 1 przypisuje art. 135a ust. 2 ogólny obowiązek zgłaszania Komisji, a przepis dotyczy tylko „statków powietrznych nieobjętych przepisami rozporządzenia nr 376/2014/UE”. Poprawka: „Zgodnie z art. 135a ust. 3 Prawa lotniczego zgłoszenia zdarzenia lotniczego Komisji dokonuje się każdym dostępnym środkiem łączności niezwłocznie, jednak nie później niż 72 godziny od jego zaistnienia; dla statków nieobjętych rozporządzeniem 376/2014 obowiązek ten mają m.in. użytkownik statku powietrznego, instytucja zapewniająca służby żeglugi powietrznej i zarządzający lotniskiem (art. 135a ust. 2).” Zdanie o art. 4 ust. 8 rozp. 376/2014 zostawić."
+ },
+ {
+  "key": "PL099-0010#ff343973",
+  "verdict": "DISPUTED",
+  "note": "Sporne słusznie: klucz „Nie” = art. 135 ust. 2 PL (wypadek statku rejestrowego bada Komisja), ale art. 135 ust. 2a (badanie wypadku statku MTOM ≤ 2250 kg przekazane innemu podmiotowi, prowadzone pod nadzorem Komisji) i ust. 4 (statek spoza rejestru: raport końcowy przygotowuje użytkownik pod nadzorem Komisji) czynią obronną odpowiedź „Tak, ale pod nadzorem PKBWL”. disputeNote poprawny (376 zn.), punkty w refs. Drobna uwaga bez wpływu: „tylko inne incydenty” odnosi się do schematu ust. 2."
+ },
+ {
+  "key": "PL099-0011#512d95b7",
+  "verdict": "DISPUTED",
+  "note": "Sporne słusznie: art. 134 ust. 5 PL / art. 2 pkt 7 rozp. 996/2010 – incydent nie wymaga uszkodzenia, ale przy uszkodzeniu spełniającym art. 134 ust. 2 pkt 2 (trwałość konstrukcji + poważny remont/wymiana elementu) zderzenie z ptakiem jest wypadkiem, więc „bez względu na konsekwencje” jest sprzeczne z definicją. disputeNote poprawny, art. 134 ust. 2 pkt 2 w refs."
+ },
+ {
+  "key": "PL099-0022#aaa2df9d",
+  "verdict": "DISPUTED",
+  "note": "Sporne słusznie: art. 4 ust. 6 lit. a rozp. 376/2014 – pilot dowódca zgłasza przez system organizacji (ust. 2) „lub — alternatywnie —” przez system państwa członkowskiego (ust. 3); art. 135a ust. 1 PL: system z art. 4 ust. 3 obsługuje Komisja. Klucz nadal poprawny, ale „PKBWL” też zgodne z przepisami (dla pilota GA bez organizacji to jedyna droga). Zbliżenia = art. 4 ust. 1 lit. c ppkt (i). disputeNote poprawny, wszystkie punkty w refs."
+ },
+ {
+  "key": "PL099-0051#1b7ba0eb",
+  "verdict": "FIX",
+  "note": "Jedynym źródłem jest CAT.GEN.MPA.105(d)(2) z załącznika IV rozp. 965/2012 – „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO [CZĘŚĆ CAT]”. Pytanie dotyczy pilota PPL; część NCO (NCO.GEN.105, obowiązki pilota dowódcy) nie zawiera obowiązku raportu o zderzeniu z ptakiem (sprawdzono: w 965/2012 słowo „ptak” występuje tylko w CAT.GEN.MPA.105(d)). Tekst podaje przepis CAT jako ogólny – fakt ponad źródło. Poprawka: (1) zdanie 1: „Zgodnie z pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012, dotyczącym operacji zarobkowego transportu lotniczego (część CAT), dowódca …”; dodać ref EU-965-2012 „załącznik IV” z quote „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO”; (2) disputeNote uzupełnić: przepis dotyczy tylko części CAT, a część NCO (operacje niezarobkowe) nie przewiduje takiego raportu; nawet w CAT raport pisemny wymagany jest tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Status po poprawce – sporny."
+ },
+ {
+  "key": "PL102-0039#4dae563b",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: pytanie i odpowiedzi jak w PL099-0022#aaa2df9d (różnica tylko w kropkach na końcu odpowiedzi); sporność dziedziczona po oryginale."
+ },
+ {
+  "key": "PL010-0318#9bf1770f",
+  "verdict": "PASS",
+  "note": "Klucz (jednostki ochrony przeciwpożarowej) dosłownie w art. 137 ust. 4 PL („w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy”)."
+ },
+ {
+  "key": "PL010-0319#6fc250a2",
+  "verdict": "PASS",
+  "note": "Klucz = art. 137 ust. 4 PL dla świadka przymusowego lądowania poza lotniskiem; dystraktory nie są adresatami."
+ },
+ {
+  "key": "PL010-0320#43dbfa97",
+  "verdict": "PASS",
+  "note": "Klucz = art. 137 ust. 4 PL (służby bezpieczeństwa i porządku publicznego); poprawnie."
+ },
+ {
+  "key": "PL010-0322#02c11389",
+  "verdict": "PASS",
+  "note": "Nie sporne: art. 137 ust. 4 PL wymienia „inne służby bezpieczeństwa i porządku publicznego” katalogiem otwartym; tekst uczciwie zaznacza, że straży miejskiej przepis nie wymienia z nazwy i że to kwalifikacja klucza (bez faktu spoza korpusu). Pozostałe odpowiedzi (Prezes ULC, ubezpieczyciel, minister) nie są adresatami."
+ },
+ {
+  "key": "PL010-0322#d19cfdd6",
+  "verdict": "PASS",
+  "note": "„Wszystkie odpowiedzi są prawidłowe” – trzy grupy adresatów dosłownie w art. 137 ust. 4 PL."
+ },
+ {
+  "key": "PL010-0323#32bd8779",
+  "verdict": "PASS",
+  "note": "Klucz = art. 137 ust. 4 PL dla znalazcy porzuconego statku/szczątków."
+ },
+ {
+  "key": "PL010-0324#36ffb996",
+  "verdict": "PASS",
+  "note": "Klucz = art. 137 ust. 4 PL; poprawnie."
+ },
+ {
+  "key": "PL010-0325#0df5f2cf",
+  "verdict": "PASS",
+  "note": "Klucz = art. 137 ust. 4 PL („w szczególności jednostki ochrony przeciwpożarowej”)."
+ },
+ {
+  "key": "PL099-0004#0d5127d8",
+  "verdict": "FIX",
+  "note": "Klucz „lotnicza łączność radiotelefoniczna w niebezpieczeństwie” poprawny (art. 4a ust. 1, SERA.14095(d)(1)), ale SERA.14095(d) wymienia też: (d)(3) „wspólny kanał łączności … między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze” oraz (d)(5) „łączności między jednostką ratunkową a statkiem powietrznym biorącym udział w operacjach poszukiwawczo-ratowniczych” (w EAR SERA: survival craft). Dystraktory „łączność z lądem w akcjach SAR” i „z tratwami ratunkowymi” są więc też zgodne z przepisem → wpis sporny, brak disputeNote. Poprawka: dodać disputeNote np. „Pkt SERA.14095 lit. d) ppkt 3 i 5 rozporządzenia 923/2012 przewidują użycie 121,500 MHz także do łączności ze służbami naziemnymi w operacjach poszukiwawczo-ratowniczych oraz z jednostką ratunkową, więc odpowiedzi o SAR i tratwach też mają oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” + refs SERA.14095(d)(3) i (d)(5) z cytatami. Dotyczy też sameAs PL102-0051."
+ },
+ {
+  "key": "PL099-0023#56573da8",
+  "verdict": "PASS",
+  "note": "Klucz = SERA.14095(a)(2) + definicja sytuacji zagrożenia (a)(1)(i); pułapka PAN PAN poparta (a)(1)(ii). 3 zdania, 573 zn."
+ },
+ {
+  "key": "PL099-0025#024cafbe",
+  "verdict": "PASS",
+  "note": "Klucz 121,5 MHz = SERA.14080(b) (nasłuch stacji lotniczych) i AIP GEN 3.6 pkt 5; pułapka 2182 kHz poparta tym samym punktem AIP. Lokatory najdokładniejsze (GEN 3.6 pkt 5 bez podkotwic)."
+ },
+ {
+  "key": "PL099-0074#9b6f9c4c",
+  "verdict": "PASS",
+  "note": "Klucz „Nie” = tabela S14-1 w SERA.14005: (a) MAYDAY, (b) PAN PAN, (c) znajdowanie kierunku. Lokator nadrzędny SERA.14005 zaakceptowany ze względu na znaną wadę kotwic (wiersze tabeli jako (b)…(f)); cytaty zgodne z korpusem."
+ },
+ {
+  "key": "PL099-0088#8a07a254",
+  "verdict": "PASS",
+  "note": "Klucz wynika z SERA.14095(a)(1)(i),(a)(2) i dodatku 1 pkt 1.1.1 („wszelkich środków, będących w jego dyspozycji”); parafraza „pozwala” zgodna z „nie zabrania”. Dystraktory bez potrzeby komentarza."
+ },
+ {
+  "key": "PL102-0046#8f833f6c",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0074#9b6f9c4c (różnica wielkości liter)."
+ },
+ {
+  "key": "PL102-0048#96cde93d",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0025#024cafbe."
+ },
+ {
+  "key": "PL102-0051#6d850997",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0004#0d5127d8 (wielkość liter, brak kropek). Uwaga: oryginał ma FIX (brak disputeNote) – status sporny przejdzie po poprawce oryginału."
+ }
+]
