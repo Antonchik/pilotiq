@@ -566,7 +566,7 @@ _DEF_RE = re.compile(r"^(\d{1,3})([a-z]?)\.\s+[‘']")
 # a heading-like line of a change log ("... New Issue 1, Amdt 16 ED Decision 2022/012/R", "... Changed 1/12 EDD 2019/019/R")
 _CHANGELOG_RE = re.compile(
     r"(?:(?:New|Changed|Renumbered|Deleted|Amdt|Moved|Issue \d|\d+/\d+)[^\n]*\b(?:ED Decision|EDD)\s+\d{4}/\d+(?:/[A-Z])?\s*$)"
-    r"|(?:\b(?:New(?: point)?|Changed|Deleted|Renumbered|Moved)\s+(?:Reg\.|N/a|Regulation|ED Decision|EDD)\b)")
+    r"|(?:\b(?:New(?: point)?|Changed|Deleted|Renumbered|Moved)\s+(?:Reg\.|N/a|Regulation|ED Decision|EDD)(?=\s|$))")
 _TABLE_NOTE_RE = re.compile(r"^\(\*+\)")
 _ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
 _BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+\b.*|Appendix \d+ to .*|"
@@ -614,6 +614,8 @@ MIN_BODY = 25
 def _heading_rejected(rows, flags, idx):
     """Table-of-contents entry (dot leaders, trailing page number), change-log row or cross-reference list item."""
     line = rows[idx][1]
+    if idx and re.search(r"(?:&|\band|,)$", rows[idx - 1][1]):
+        return True   # second line of a wrapped heading ("AMC1 X Title &" / "ARO.RAMP.130 Other title")
     if any(_TOC_LINE.search(rows[j][1]) for j in range(idx, min(idx + 4, len(rows)))):
         return True
     if _PAGE_NO_TAIL.search(line):
