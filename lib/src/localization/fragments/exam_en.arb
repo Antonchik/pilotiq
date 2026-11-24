@@ -546,5 +546,9 @@
   "examLeaveTimeoutLostBody": "Time is up, but the result could not be saved yet. If you leave, it will be calculated from the saved answers when you open the exam again. Your latest answers were not saved and will not count.",
   "@examLeaveTimeoutLostBody": {
     "description": "Leave dialog while the ending is not stored"
+  },
+  "examClockPersistError": "The time of your exam could not be saved on this device. Your answers are saved.",
+  "@examClockPersistError": {
+    "description": "Banner when only the time of the running exam could not be stored"
   }
 }

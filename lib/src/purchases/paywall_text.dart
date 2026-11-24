@@ -45,6 +45,7 @@ String subscriptionPriceText(AppLocalizations l, PaywallPackage p) {
 
 /// Name of the plan.
 String planName(AppLocalizations l, PaywallPackage p) {
+  if (p.isPrepaid) return l.paywallPlanPrepaid(durationText(l, p.period!));
   if (!p.isSubscription) {
     return p.kind == PackageKind.lifetime
         ? l.paywallPlanLifetime
@@ -57,6 +58,8 @@ String planName(AppLocalizations l, PaywallPackage p) {
 /// Price line of the plan.
 String planPriceText(AppLocalizations l, PaywallPackage p) => p.isSubscription
     ? subscriptionPriceText(l, p)
+    : p.isPrepaid
+    ? l.paywallPrepaidPrice(p.priceString)
     : l.paywallLifetimePrice(p.priceString);
 
 /// The introductory offer line, or null when the store has none for the user.

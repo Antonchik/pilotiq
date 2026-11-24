@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:pilotiq/src/notifications/providers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/bank/licence_provider.dart';
@@ -214,6 +217,8 @@ class PracticeController extends AsyncNotifier<PracticeState> {
     ref.invalidate(
       subjectStatsProvider((licence: args.licence, subject: args.subject)),
     );
+    // The answer may have reached the daily goal: update the reminders.
+    unawaited(ref.read(reminderCoordinatorProvider.notifier).checkProgress());
     final latest = state.value;
     if (latest == null) return;
     state = AsyncData(latest.copyWith(saved: {...latest.saved, qid}));

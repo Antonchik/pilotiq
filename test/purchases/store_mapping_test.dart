@@ -261,7 +261,7 @@ void main() {
   });
 
   group('prepaid plans', () {
-    test('do not renew: no period, no renewal, no trial', () {
+    test('do not renew: the access period is kept, no renewal, no trial', () {
       final p = mapPackage(
         _package(
           _product(
@@ -286,7 +286,8 @@ void main() {
         platform: TargetPlatform.android,
       );
       expect(p.isSubscription, isFalse);
-      expect(p.period, isNull);
+      expect(p.isPrepaid, isTrue);
+      expect(p.period, const BillingPeriod(BillingUnit.month, 3));
       expect(p.introOffer, isNull);
     });
   });

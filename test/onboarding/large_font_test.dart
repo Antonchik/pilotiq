@@ -50,8 +50,9 @@ void main() {
     });
   }
 
-  /// Runs [body] (which opens and closes the standard date picker); layout
-  /// overflows reported meanwhile are tolerated at scale 3.0 only.
+  /// Runs [body] (which opens and closes the standard date or time picker);
+  /// layout overflows are tolerated at scale 3.0 only, and only while such a
+  /// framework dialog is open. An overflow of our own screen still fails.
   Future<void> withDatePicker(
     double scale,
     Future<void> Function() body,
@@ -59,7 +60,10 @@ void main() {
     final previous = FlutterError.onError;
     if (scale >= 3.0) {
       FlutterError.onError = (details) {
-        if (details.exceptionAsString().contains('overflowed')) {
+        final pickerOpen =
+            find.byType(DatePickerDialog).evaluate().isNotEmpty ||
+            find.byType(TimePickerDialog).evaluate().isNotEmpty;
+        if (pickerOpen && details.exceptionAsString().contains('overflowed')) {
           return;
         }
         previous?.call(details);
@@ -186,12 +190,13 @@ void main() {
         child: ProviderScope(
           overrides: [
             paywallOpenerProvider.overrideWithValue(
-              (context, trigger) => Navigator.of(context).push<void>(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (_) => PaywallScreen(trigger: trigger),
-                ),
-              ),
+              (context, trigger, {explicit = false}) =>
+                  Navigator.of(context).push<void>(
+                    MaterialPageRoute(
+                      fullscreenDialog: true,
+                      builder: (_) => PaywallScreen(trigger: trigger),
+                    ),
+                  ),
             ),
           ],
           child: const MyApp(),
@@ -710,11 +715,12 @@ void main() {
               child: ProviderScope(
                 overrides: [
                   paywallOpenerProvider.overrideWithValue(
-                    (context, trigger) => Navigator.of(context).push<void>(
-                      MaterialPageRoute(
-                        builder: (_) => PaywallScreen(trigger: trigger),
-                      ),
-                    ),
+                    (context, trigger, {explicit = false}) =>
+                        Navigator.of(context).push<void>(
+                          MaterialPageRoute(
+                            builder: (_) => PaywallScreen(trigger: trigger),
+                          ),
+                        ),
                   ),
                 ],
                 child: const MyApp(),
@@ -1007,6 +1013,93 @@ void main() {
             tap: false,
           );
         });
+      }
+    }
+  }
+
+  // Landscape orientation and the dark theme, for the tabs "Subjects" and
+  // "Today" and the start-up error screen.
+  const landscape = [Size(640, 320), Size(740, 360)];
+  for (final lang in languages) {
+    for (final scale in const [1.3, 2.0]) {
+      for (final dark in const [false, true]) {
+        for (final size in [...landscape, const Size(360, 740)]) {
+          if (!dark && size.width < size.height) continue; // portrait: matrix
+          final name =
+              '$lang x$scale ${size.width.toInt()}x${size.height.toInt()}'
+              '${dark ? ' dark' : ''}';
+
+          void variant(
+            String title,
+            Future<void> Function(WidgetTester tester) body,
+          ) {
+            testWidgets('$title: $name', (tester) async {
+              tester.view.physicalSize = size;
+              tester.view.devicePixelRatio = 1;
+              tester.platformDispatcher.textScaleFactorTestValue = scale;
+              tester.platformDispatcher.localesTestValue = [Locale(lang)];
+              tester.platformDispatcher.platformBrightnessTestValue = dark
+                  ? Brightness.dark
+                  : Brightness.light;
+              addTearDown(() {
+                tester.view.reset();
+                tester.platformDispatcher.clearAllTestValues();
+              });
+              await body(tester);
+            });
+          }
+
+          variant('start-up error screen', (tester) async {
+            await tester.pumpWidget(
+              PilotiqRoot(initialize: () async => throw StateError('x')),
+            );
+            await tester.pumpAndSettle();
+            await reach(tester, find.byKey(const Key('startup_retry')));
+          });
+
+          variant('subjects tab', (tester) async {
+            final h = AppHarness();
+            await h.seedConfig();
+            await pumpApp(tester, h);
+            await reach(tester, find.byKey(const Key('tab_subjects')));
+            await reach(
+              tester,
+              find.byKey(const Key('question_language')),
+              tap: false,
+            );
+            await reach(
+              tester,
+              find.byKey(const Key('subject_meteorology')),
+              tap: false,
+            );
+            await reach(tester, find.byKey(const Key('subject_air_law')));
+          });
+
+          variant('today tab', (tester) async {
+            final h = AppHarness();
+            await h.seedConfig();
+            await pumpApp(tester, h);
+            for (final key in [
+              'dashboard_exam',
+              'dashboard_goal',
+              'dashboard_due',
+              'dashboard_last_exam',
+            ]) {
+              // Short landscape screens: scroll the list itself.
+              await tester.scrollUntilVisible(
+                find.byKey(Key(key)),
+                60,
+                scrollable: find
+                    .descendant(
+                      of: find.byType(RefreshIndicator),
+                      matching: find.byType(Scrollable),
+                    )
+                    .first,
+              );
+              await reach(tester, find.byKey(Key(key)), tap: false);
+            }
+          });
+        }
       }
     }
   }

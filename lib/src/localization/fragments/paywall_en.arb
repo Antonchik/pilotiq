@@ -326,5 +326,23 @@
   "paywallSettingsRestored": "Premium restored",
   "@paywallSettingsRestored": {
     "description": "Snack bar after a successful restore"
+  },
+  "paywallPlanPrepaid": "{duration} of access",
+  "@paywallPlanPrepaid": {
+    "description": "Name of a prepaid plan (one-time payment for a period)",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallPrepaidPrice": "{price} · one-time payment, no renewal",
+  "@paywallPrepaidPrice": {
+    "description": "Price line of a prepaid plan; price comes from the store",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
   }
 }

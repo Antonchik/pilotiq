@@ -72,7 +72,8 @@ class PaywallPackage {
   final PackageKind kind;
   final String priceString;
 
-  /// Billing period of a subscription as reported by the store.
+  /// Billing period of a subscription as reported by the store; for a prepaid
+  /// plan (not a subscription) the length of the access it pays for.
   final BillingPeriod? period;
 
   /// Introductory offer the user can actually get, if any. Null means that
@@ -87,6 +88,10 @@ class PaywallPackage {
 
   /// A subscription renews automatically; anything else is a one-time payment.
   bool get isSubscription => _isSubscription ?? kind != PackageKind.lifetime;
+
+  /// A one-time payment for access of a limited [period] (Google Play
+  /// prepaid plan): neither a subscription nor lifetime.
+  bool get isPrepaid => !isSubscription && period != null;
 }
 
 /// Premium entitlement as last known by the purchase service.

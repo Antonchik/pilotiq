@@ -26,6 +26,9 @@ abstract class CachedPurchaseService
   EntitlementState _current = EntitlementState.free;
   CachedEntitlement _cached = const CachedEntitlement();
   DateTime? _persistedSeen;
+
+  /// Time of the latest answer of the backend, the one clock that is right.
+  DateTime? _lastServerTime;
   Timer? _timer;
   bool _disposed = false;
   bool _observing = false;
@@ -35,6 +38,30 @@ abstract class CachedPurchaseService
 
   /// Shortest wait before an expired period is checked again.
   static const Duration _minRecheck = Duration(minutes: 5);
+
+  /// Shortest wait while the device clock runs ahead of the backend (the
+  /// backend says the period is still on, the device says it is over).
+  static const Duration _clockAheadRecheck = Duration(hours: 1);
+
+  /// How long to wait before checking a period that ends at [end]. By the
+  /// device clock ([now]) it is [end] minus now, but not less than five
+  /// minutes. If the device says the period is over while the backend's last
+  /// answer ([serverTime]) says it is not, the clock is ahead: the wait then
+  /// counts from the backend's time and is at least an hour, so the backend
+  /// is not asked every few minutes for as long as the clock is wrong.
+  @visibleForTesting
+  static Duration recheckDelay({
+    required DateTime end,
+    required DateTime now,
+    DateTime? serverTime,
+  }) {
+    if (serverTime != null && !now.isBefore(end) && serverTime.isBefore(end)) {
+      final wait = end.difference(serverTime);
+      return wait < _clockAheadRecheck ? _clockAheadRecheck : wait;
+    }
+    final wait = end.difference(now);
+    return wait < _minRecheck ? _minRecheck : wait;
+  }
 
   @override
   Stream<EntitlementState> get entitlement => _controller.stream;
@@ -86,14 +113,7 @@ abstract class CachedPurchaseService
   void applyServer(EntitlementState state, {DateTime? serverTime}) {
     _applied++;
     final seen = serverTime ?? _bumpSeen();
-    if (serverTime != null) {
-      _cached = CachedEntitlement(
-        isPremium: _cached.isPremium,
-        expiresAt: _cached.expiresAt,
-        lastSeenAt: serverTime,
-        syncedOnce: _cached.syncedOnce,
-      );
-    }
+    if (serverTime != null) _lastServerTime = serverTime;
     _cached = CachedEntitlement(
       isPremium: state.isPremium,
       expiresAt: state.isPremium ? state.expiresAt : null,
@@ -164,8 +184,11 @@ abstract class CachedPurchaseService
     _timer = null;
     final end = state.expiresAt;
     if (_disposed || !state.isPremium || end == null) return;
-    var wait = end.difference(_clock.now());
-    if (wait < _minRecheck) wait = _minRecheck;
+    final wait = recheckDelay(
+      end: end,
+      now: _clock.now(),
+      serverTime: _lastServerTime,
+    );
     _timer = Timer(wait, () {
       _timer = null;
       onPeriodEnded().catchError((Object e) {

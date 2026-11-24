@@ -541,6 +541,24 @@ class AppLocalizationsPl extends AppLocalizations {
       'Treści pytań podano w takiej postaci, w jakiej opublikował je ULC.';
 
   @override
+  String get recoveryNoticeTitle => 'Zapisane dane były uszkodzone';
+
+  @override
+  String get recoveryNoticeRestored =>
+      'Część zapisanych danych została uszkodzona. Odczytywalną część przywrócono.';
+
+  @override
+  String get recoveryNoticeReset =>
+      'Część zapisanych danych została uszkodzona i musiała zostać wyzerowana.';
+
+  @override
+  String get recoveryNoticeBackup =>
+      'Kopia zapasowa uszkodzonego pliku została zapisana na tym urządzeniu.';
+
+  @override
+  String get recoveryNoticeOk => 'OK';
+
+  @override
   String get examScreenTitle => 'Symulacja egzaminu';
 
   @override
@@ -973,7 +991,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get examLeaveNotMarkedBody =>
-      'Nie udało się zapisać zakończenia egzaminu, ale odpowiedzi są zapisane. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas nadal płynie.';
+      'Nie udało się zapisać zakończenia egzaminu, ale odpowiedzi są zapisane. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas będzie nadal płynął.';
 
   @override
   String get examLeaveContinueLostBody =>
@@ -986,6 +1004,10 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get examLeaveTimeoutLostBody =>
       'Czas minął, ale nie udało się jeszcze zapisać wyniku. Jeśli wyjdziesz, zostanie obliczony z zapisanych odpowiedzi przy następnym otwarciu egzaminu. Ostatnie odpowiedzi nie zostały zapisane i nie zostaną uwzględnione.';
+
+  @override
+  String get examClockPersistError =>
+      'Nie udało się zapisać czasu egzaminu na tym urządzeniu. Odpowiedzi są zapisane.';
 
   @override
   String get reminderChannelName => 'Przypomnienia o nauce';
@@ -1413,6 +1435,16 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get paywallSettingsRestored => 'Premium przywrócone';
+
+  @override
+  String paywallPlanPrepaid(String duration) {
+    return 'Dostęp na $duration';
+  }
+
+  @override
+  String paywallPrepaidPrice(String price) {
+    return '$price · płatność jednorazowa, bez odnowienia';
+  }
 
   @override
   String practiceProgress(int current, int total) {

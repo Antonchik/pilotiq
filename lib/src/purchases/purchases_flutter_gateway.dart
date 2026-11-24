@@ -107,7 +107,7 @@ PaywallPackage mapPackage(
 }) {
   final product = package.storeProduct;
   // A prepaid plan (Google Play) is paid once and does not renew: it is
-  // shown as a one-time payment, without the auto-renewal text.
+  // shown as a one-time payment for a period, without the auto-renewal text.
   final prepaid = product.defaultOption?.isPrepaid ?? false;
   final subscription =
       !prepaid &&
@@ -124,6 +124,8 @@ PaywallPackage mapPackage(
     priceString: product.priceString,
     period: subscription
         ? BillingPeriod.tryParseIso(product.subscriptionPeriod)
+        : prepaid
+        ? _prepaidPeriod(product)
         : null,
     introOffer: subscription
         ? mapIntroOffer(product, platform: platform, eligibility: eligibility)
@@ -131,6 +133,19 @@ PaywallPackage mapPackage(
     title: product.title,
     isSubscription: subscription,
   );
+}
+
+/// How long a prepaid plan gives access: the period of its (only) pricing
+/// phase, else of the option, else of the product. Null when none is a plain
+/// period the paywall can name.
+BillingPeriod? _prepaidPeriod(rc.StoreProduct product) {
+  final option = product.defaultOption;
+  final period = option?.fullPricePhase?.billingPeriod ?? option?.billingPeriod;
+  final unit = period == null ? null : _unit(period.unit);
+  if (period != null && unit != null && period.value > 0) {
+    return BillingPeriod(unit, period.value);
+  }
+  return BillingPeriod.tryParseIso(product.subscriptionPeriod);
 }
 
 /// Packages of the current offering; empty when there is none.

@@ -89,13 +89,20 @@ class FlakyRepository extends ProgressRepository {
     await super.saveAttempt(attempt);
   }
 
+  /// The next write of the unfinished attempt (the one made while this is
+  /// set) waits for it, after the failure flags were checked.
+  Completer<void>? inProgressGate;
+
   @override
-  Future<void> saveInProgressAttempt(InProgressAttempt attempt) {
+  Future<void> saveInProgressAttempt(InProgressAttempt attempt) async {
     if (failInProgressAlways) throw StateError('disk full');
     if (failInProgressSaves > 0) {
       failInProgressSaves--;
       throw StateError('disk full');
     }
+    final gate = inProgressGate;
+    inProgressGate = null;
+    await gate?.future;
     return super.saveInProgressAttempt(attempt);
   }
 
@@ -179,7 +186,11 @@ class ExamHarness {
           ),
           clockProvider.overrideWithValue(Clock(() => now)),
           randomProvider.overrideWithValue(Random(7)),
-          paywallOpenerProvider.overrideWithValue((context, trigger) async {
+          paywallOpenerProvider.overrideWithValue((
+            context,
+            trigger, {
+            explicit = false,
+          }) async {
             paywalls.add(trigger);
           }),
         ],

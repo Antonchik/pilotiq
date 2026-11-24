@@ -523,6 +523,24 @@ class AppLocalizationsEn extends AppLocalizations {
       'Question texts are given as published by ULC.';
 
   @override
+  String get recoveryNoticeTitle => 'Saved data was damaged';
+
+  @override
+  String get recoveryNoticeRestored =>
+      'Part of your saved data was damaged. The readable part was restored.';
+
+  @override
+  String get recoveryNoticeReset =>
+      'Part of your saved data was damaged and had to be reset.';
+
+  @override
+  String get recoveryNoticeBackup =>
+      'A backup copy of the damaged file was saved on this device.';
+
+  @override
+  String get recoveryNoticeOk => 'OK';
+
+  @override
   String get examScreenTitle => 'Exam simulation';
 
   @override
@@ -952,6 +970,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Time is up, but the result could not be saved yet. If you leave, it will be calculated from the saved answers when you open the exam again. Your latest answers were not saved and will not count.';
 
   @override
+  String get examClockPersistError =>
+      'The time of your exam could not be saved on this device. Your answers are saved.';
+
+  @override
   String get reminderChannelName => 'Study reminders';
 
   @override
@@ -1349,6 +1371,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywallSettingsRestored => 'Premium restored';
+
+  @override
+  String paywallPlanPrepaid(String duration) {
+    return '$duration of access';
+  }
+
+  @override
+  String paywallPrepaidPrice(String price) {
+    return '$price · one-time payment, no renewal';
+  }
 
   @override
   String practiceProgress(int current, int total) {

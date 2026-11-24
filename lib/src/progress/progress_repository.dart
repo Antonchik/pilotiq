@@ -413,7 +413,27 @@ class ProgressRepository {
   Future<QuestionProgress?> progressOf(Licence licence, String qid) async =>
       _readProgress((await _box(progressBoxName(licence))).get(qid));
 
-  Future<Map<String, QuestionProgress>> allProgress(Licence licence) async {
+  final Map<Licence, Future<Map<String, QuestionProgress>>> _reading = {};
+
+  /// All progress records of [licence]. Reads that overlap in time (the cards
+  /// of the subject list ask at the same moment) share one pass over the box;
+  /// a read that starts after it finished reads again, so nothing is cached.
+  Future<Map<String, QuestionProgress>> allProgress(Licence licence) {
+    final running = _reading[licence];
+    if (running != null) return running;
+    final read = _readAllProgress(licence);
+    _reading[licence] = read;
+    void done() {
+      if (identical(_reading[licence], read)) _reading.remove(licence);
+    }
+
+    read.then<void>((_) => done(), onError: (Object _) => done());
+    return read;
+  }
+
+  Future<Map<String, QuestionProgress>> _readAllProgress(
+    Licence licence,
+  ) async {
     final box = await _box(progressBoxName(licence));
     final result = <String, QuestionProgress>{};
     for (final v in box.values) {

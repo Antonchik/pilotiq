@@ -183,7 +183,9 @@ class DashboardData {
     var answeredToday = 0;
     final all = dailyStats.toList();
     for (final s in all) {
-      if (s.date == dayKey) answeredToday = s.answered;
+      // Learning and exam answers both count towards the daily goal (the
+      // free learning limit looks at `answered` only, elsewhere).
+      if (s.date == dayKey) answeredToday = s.activity;
     }
 
     ExamAttempt? last;

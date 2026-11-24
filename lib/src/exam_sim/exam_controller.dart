@@ -1,3 +1,5 @@
+import 'package:pilotiq/src/notifications/providers.dart';
+
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -295,6 +297,7 @@ class ExamState {
     this.markerStored = false,
     this.attemptStored = false,
     this.persistFailed = false,
+    this.clockFailed = false,
     this.startFailed = false,
     this.finishFailed = false,
     this.attempt,
@@ -327,7 +330,13 @@ class ExamState {
   /// the attempt itself is stored (only counting answers is left).
   final bool markerStored;
   final bool attemptStored;
+
+  /// The latest answers and flags could not be stored.
   final bool persistFailed;
+
+  /// Only the periodic storing of the clock failed; the answers and flags
+  /// are stored (see [persistFailed]).
+  final bool clockFailed;
   final bool startFailed;
   final bool finishFailed;
 
@@ -363,6 +372,7 @@ class ExamState {
     Set<String>? flagged,
     int? index,
     bool? persistFailed,
+    bool? clockFailed,
     bool? startFailed,
     bool? finishFailed,
     ExamAttempt? attempt,
@@ -384,6 +394,7 @@ class ExamState {
     markerStored: markerStored ?? this.markerStored,
     attemptStored: attemptStored ?? this.attemptStored,
     persistFailed: persistFailed ?? this.persistFailed,
+    clockFailed: clockFailed ?? this.clockFailed,
     startFailed: startFailed ?? this.startFailed,
     finishFailed: finishFailed ?? this.finishFailed,
     attempt: attempt ?? this.attempt,
@@ -448,6 +459,7 @@ class ExamController extends AsyncNotifier<ExamState> {
   Future<void>? _persistFuture;
   bool _persisting = false;
   bool _persistAgain = false;
+  bool _answersDirty = false;
   bool _starting = false;
   late Map<String, Question> _byId;
 
@@ -580,7 +592,12 @@ class ExamController extends AsyncNotifier<ExamState> {
       index: firstOpen < 0 ? 0 : firstOpen,
       startedAt: stored.startedAt,
       clockBox: ExamClockBox(
-        stored.closing != null ? stored.clock : stored.clock.advance(_now),
+        // Same rule as when the attempt is closed by the scan
+        // ([ExamFinalizer.buildAttempt]): a closing record without a stored
+        // clock reading runs up to now.
+        stored.closing != null && stored.lastSeenAt != null
+            ? stored.clock
+            : stored.clock.advance(_now),
       ),
       durationSec: stored.durationSec,
     );
@@ -644,6 +661,8 @@ class ExamController extends AsyncNotifier<ExamState> {
     final key = (licence: args.licence, subject: args.subject);
     ref.invalidate(subjectStatsProvider(key));
     ref.invalidate(examStatusProvider(key));
+    // Counted exam answers are activity of the day: update the reminders.
+    unawaited(ref.read(reminderCoordinatorProvider.notifier).checkProgress());
   }
 
   // Start / resume -------------------------------------------------------------
@@ -797,6 +816,7 @@ class ExamController extends AsyncNotifier<ExamState> {
         answers: {...s.answers, q.id: shuffled.canonicalIndexAt(position)},
       ),
     );
+    _answersDirty = true;
     _persist();
   }
 
@@ -807,6 +827,7 @@ class ExamController extends AsyncNotifier<ExamState> {
     final flagged = {...s.flagged};
     if (!flagged.remove(q.id)) flagged.add(q.id);
     state = AsyncData(s.copyWith(flagged: flagged));
+    _answersDirty = true;
     _persist();
   }
 
@@ -854,12 +875,18 @@ class ExamController extends AsyncNotifier<ExamState> {
         _persistAgain = false;
         final s = state.value;
         if (s == null || s.phase != ExamPhase.running || !ref.mounted) break;
+        // Does this save carry answers or flags that are not stored yet?
+        final carriesAnswers = _answersDirty;
+        _answersDirty = false;
         try {
           await _repo.saveInProgressAttempt(_snapshot(_tick(s)));
           _mark(persistFailed: false);
         } on Object catch (e) {
           debugPrint('Could not store the exam progress: $e');
-          _mark(persistFailed: true);
+          if (carriesAnswers) _answersDirty = true;
+          // A failure of the periodic clock save alone says nothing about
+          // the answers: they were stored by the saves that followed them.
+          _mark(persistFailed: _answersDirty, clockFailed: !_answersDirty);
         }
       } while (_persistAgain);
     } finally {
@@ -867,10 +894,16 @@ class ExamController extends AsyncNotifier<ExamState> {
     }
   }
 
-  void _mark({required bool persistFailed}) {
+  void _mark({required bool persistFailed, bool clockFailed = false}) {
     final s = state.value;
-    if (!ref.mounted || s == null || s.persistFailed == persistFailed) return;
-    state = AsyncData(s.copyWith(persistFailed: persistFailed));
+    if (!ref.mounted ||
+        s == null ||
+        (s.persistFailed == persistFailed && s.clockFailed == clockFailed)) {
+      return;
+    }
+    state = AsyncData(
+      s.copyWith(persistFailed: persistFailed, clockFailed: clockFailed),
+    );
   }
 
   void retryPersist() => _persist();
@@ -899,22 +932,32 @@ class ExamController extends AsyncNotifier<ExamState> {
       await flushProgress();
       return;
     }
-    if (s.phase != ExamPhase.finishing ||
-        s.attemptStored ||
-        s.markerStored ||
-        !s.persistFailed) {
+    if (s.phase != ExamPhase.finishing || s.attemptStored || s.markerStored) {
       return;
     }
+    // Answers known to be stored need no second write (and a failing one
+    // would say nothing about them).
+    if (!s.persistFailed && !_answersDirty) return;
     try {
       await _persistFuture;
     } on Object {
       // not important here
     }
+    // Store the latest state again. Besides a failed save this also covers a
+    // save that was still running (or queued) when the exam went into
+    // "finishing" and so never carried the last answers: the loop stops once
+    // the exam is no longer running, [_answersDirty] remembers them. What the
+    // dialog tells follows the outcome of this save.
+    final latest = state.value;
+    if (latest == null) return;
     try {
-      await _repo.saveInProgressAttempt(_snapshot(s));
+      _answersDirty = false;
+      await _repo.saveInProgressAttempt(_snapshot(latest));
       _mark(persistFailed: false);
     } on Object catch (e) {
       debugPrint('Could not store the exam progress: $e');
+      _answersDirty = true;
+      _mark(persistFailed: true);
     }
   }
 

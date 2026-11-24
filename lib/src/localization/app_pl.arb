@@ -445,6 +445,26 @@
   "@aboutQuestionsNote": {
     "description": "Questions are not reworded"
   },
+  "recoveryNoticeTitle": "Zapisane dane były uszkodzone",
+  "@recoveryNoticeTitle": {
+    "description": "Title of the one-time notice shown after damaged progress data was recovered"
+  },
+  "recoveryNoticeRestored": "Część zapisanych danych została uszkodzona. Odczytywalną część przywrócono.",
+  "@recoveryNoticeRestored": {
+    "description": "Recovery notice: the file was truncated and the rest kept"
+  },
+  "recoveryNoticeReset": "Część zapisanych danych została uszkodzona i musiała zostać wyzerowana.",
+  "@recoveryNoticeReset": {
+    "description": "Recovery notice: some data could not be read and was reset to empty"
+  },
+  "recoveryNoticeBackup": "Kopia zapasowa uszkodzonego pliku została zapisana na tym urządzeniu.",
+  "@recoveryNoticeBackup": {
+    "description": "Recovery notice: a backup copy exists"
+  },
+  "recoveryNoticeOk": "OK",
+  "@recoveryNoticeOk": {
+    "description": "Button that closes the recovery notice"
+  },
   "examScreenTitle": "Symulacja egzaminu",
   "@examScreenTitle": {
     "description": "Title of the exam simulation screen"
@@ -977,7 +997,7 @@
   "@examLeaveResultSavedBody": {
     "description": "Leave dialog: the result is stored, only counting is left"
   },
-  "examLeaveNotMarkedBody": "Nie udało się zapisać zakończenia egzaminu, ale odpowiedzi są zapisane. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas nadal płynie.",
+  "examLeaveNotMarkedBody": "Nie udało się zapisać zakończenia egzaminu, ale odpowiedzi są zapisane. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas będzie nadal płynął.",
   "@examLeaveNotMarkedBody": {
     "description": "Leave dialog: nothing about the ending is stored"
   },
@@ -992,6 +1012,10 @@
   "examLeaveTimeoutLostBody": "Czas minął, ale nie udało się jeszcze zapisać wyniku. Jeśli wyjdziesz, zostanie obliczony z zapisanych odpowiedzi przy następnym otwarciu egzaminu. Ostatnie odpowiedzi nie zostały zapisane i nie zostaną uwzględnione.",
   "@examLeaveTimeoutLostBody": {
     "description": "Leave dialog while the ending is not stored"
+  },
+  "examClockPersistError": "Nie udało się zapisać czasu egzaminu na tym urządzeniu. Odpowiedzi są zapisane.",
+  "@examClockPersistError": {
+    "description": "Banner when only the time of the running exam could not be stored"
   },
   "reminderChannelName": "Przypomnienia o nauce",
   "@reminderChannelName": {
@@ -1449,6 +1473,24 @@
   "paywallSettingsRestored": "Premium przywrócone",
   "@paywallSettingsRestored": {
     "description": "Snack bar after a successful restore"
+  },
+  "paywallPlanPrepaid": "Dostęp na {duration}",
+  "@paywallPlanPrepaid": {
+    "description": "Name of a prepaid plan (one-time payment for a period)",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallPrepaidPrice": "{price} · płatność jednorazowa, bez odnowienia",
+  "@paywallPrepaidPrice": {
+    "description": "Price line of a prepaid plan; price comes from the store",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "practiceProgress": "{current} / {total}",
   "practiceFinishSession": "Zakończ sesję",

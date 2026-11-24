@@ -25,11 +25,14 @@ extension PaywallTriggerRules on PaywallTrigger {
 /// show the paywall.
 const int paywallMinAnswers = 10;
 
-/// Function that actually shows the paywall; overridden in tests.
+/// Function that actually shows the paywall; overridden in tests. [explicit]
+/// is true when the user pressed a button (the "not too early" rule of the
+/// automatic triggers then does not apply).
 typedef PaywallOpener = Future<void> Function(
   BuildContext context,
-  PaywallTrigger trigger,
-);
+  PaywallTrigger trigger, {
+  bool explicit,
+});
 
 /// Number of answers given so far, learning and exam simulations together.
 Future<int> _totalAnswers(Ref ref) async {
@@ -47,10 +50,6 @@ final paywallLogProvider = Provider<void Function(String message)>(
 /// Only one paywall is open at a time.
 class _PaywallGate {
   bool open = false;
-
-  /// Set by [openPaywall] for the very next call of the opener: the user
-  /// pressed a button, so the "not too early" rule does not apply.
-  bool explicit = false;
 }
 
 final _paywallGateProvider = Provider<_PaywallGate>((ref) => _PaywallGate());
@@ -62,12 +61,10 @@ final paywallOpenerProvider = Provider<PaywallOpener>(realPaywallOpener);
 /// Builds the real opener (also used by tests that put it back inside a scope
 /// that has a recorder).
 PaywallOpener realPaywallOpener(Ref ref) {
-  return (context, trigger) async {
+  return (context, trigger, {explicit = false}) async {
     final log = ref.read(paywallLogProvider);
     log('paywall: trigger ${trigger.name}');
     final gate = ref.read(_paywallGateProvider);
-    final explicit = gate.explicit;
-    gate.explicit = false;
     if (gate.open) return;
     if (trigger.isAutomatic && !explicit) {
       var answers = 0;
@@ -113,6 +110,9 @@ Future<void> openPaywall(
   bool explicit = false,
 }) {
   final container = ProviderScope.containerOf(context, listen: false);
-  container.read(_paywallGateProvider).explicit = explicit;
-  return container.read(paywallOpenerProvider)(context, trigger);
+  return container.read(paywallOpenerProvider)(
+    context,
+    trigger,
+    explicit: explicit,
+  );
 }

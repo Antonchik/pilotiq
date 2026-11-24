@@ -7,6 +7,7 @@ import 'package:pilotiq/src/dashboard/dashboard_data.dart';
 import 'package:pilotiq/src/dashboard/dashboard_providers.dart';
 import 'package:pilotiq/src/domain/access_policy.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/progress/progress_repository.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
@@ -63,13 +64,58 @@ class DashboardScreen extends ConsumerWidget {
   }
 }
 
-class _DashboardBody extends ConsumerWidget {
+class _DashboardBody extends ConsumerStatefulWidget {
   const _DashboardBody({required this.data});
 
   final DashboardData data;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<_DashboardBody> createState() => _DashboardBodyState();
+}
+
+class _DashboardBodyState extends ConsumerState<_DashboardBody> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _tellAboutRecovery());
+  }
+
+  /// One-time notice that damaged data was recovered (the repository records
+  /// it while opening the boxes); the events are cleared once it is shown.
+  Future<void> _tellAboutRecovery() async {
+    final events = ProgressRepository.recoveryEvents;
+    if (events.isEmpty || !mounted) return;
+    ProgressRepository.clearRecoveryEvents();
+    final local = AppLocalizations.of(context)!;
+    final reset = events.any((e) => e.reset);
+    final backup = events.any((e) => e.backupPath != null);
+    await showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        key: const Key('recovery_notice'),
+        title: Text(local.recoveryNoticeTitle),
+        content: SingleChildScrollView(
+          child: Text(
+            [
+              reset ? local.recoveryNoticeReset : local.recoveryNoticeRestored,
+              if (backup) local.recoveryNoticeBackup,
+            ].join(' '),
+          ),
+        ),
+        actions: [
+          TextButton(
+            key: const Key('recovery_notice_ok'),
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(local.recoveryNoticeOk),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final data = widget.data;
     final isPremium = ref.watch(isPremiumProvider);
     return RefreshIndicator(
       onRefresh: () async => ref.invalidate(dashboardProvider),

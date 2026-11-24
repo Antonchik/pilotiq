@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:pilotiq/src/notifications/providers.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/bank/question_bank_repository.dart';
@@ -48,6 +51,7 @@ final examSweepProvider = FutureProvider<int>((ref) async {
     // Whatever is open (subject screen) shows the new state.
     ref.invalidate(examStatusProvider);
     ref.invalidate(subjectStatsProvider);
+    unawaited(ref.read(reminderCoordinatorProvider.notifier).checkProgress());
   }
   return closed;
 });

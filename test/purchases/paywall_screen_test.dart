@@ -76,6 +76,42 @@ void main() {
       );
     });
 
+    for (final (locale, name, price, note) in [
+      (
+        const Locale('en'),
+        '3 months of access',
+        'PLN 49,99 · one-time payment, no renewal',
+        'Lifetime is a one-time payment',
+      ),
+      (
+        const Locale('pl'),
+        'Dostęp na 3 miesiące',
+        'PLN 49,99 · płatność jednorazowa, bez odnowienia',
+        'Dostęp na zawsze to płatność jednorazowa',
+      ),
+    ]) {
+      testWidgets('a prepaid plan keeps its period and has no lifetime note '
+          '(${locale.languageCode})', (tester) async {
+        final service = FakePurchaseService(
+          offering: const [
+            PaywallPackage(
+              id: 'prepaid',
+              kind: PackageKind.other,
+              priceString: 'PLN 49,99',
+              period: BillingPeriod(BillingUnit.month, 3),
+              isSubscription: false,
+            ),
+          ],
+        );
+        await PaywallHost(service: service, locale: locale).open(tester);
+
+        expect(find.text(name), findsOneWidget);
+        expect(find.text(price), findsOneWidget);
+        expect(find.textContaining(note), findsNothing);
+        expect(_key('paywall_one_time_notice'), findsNothing);
+      });
+    }
+
     testWidgets('a trial is mentioned only for the plan that has one', (
       tester,
     ) async {
@@ -248,15 +284,30 @@ void main() {
       expect(_key('paywall_restore_none'), findsOneWidget);
     });
 
-    testWidgets('a failing restore in the error state offers Try again', (
+    testWidgets('a failing restore with an empty offering says so', (
       tester,
     ) async {
       final service = FakePurchaseService(offering: const [])
         ..restoreError = const PurchaseException(PurchaseFailureKind.store);
       await PaywallHost(service: service).open(tester);
+      expect(_key('paywall_empty'), findsOneWidget);
       await tester.tap(_key('paywall_restore'));
       await tester.pumpAndSettle();
       expect(_key('paywall_action_error'), findsOneWidget);
+    });
+
+    testWidgets('a failing restore in the error state offers Try again', (
+      tester,
+    ) async {
+      final service = storeLike()
+        ..offeringError = const PurchaseException(PurchaseFailureKind.network)
+        ..restoreError = const PurchaseException(PurchaseFailureKind.store);
+      await PaywallHost(service: service).open(tester);
+      expect(_key('paywall_error'), findsOneWidget);
+      await tester.tap(_key('paywall_restore'));
+      await tester.pumpAndSettle();
+      expect(_key('paywall_action_error'), findsOneWidget);
+      expect(service.restoreCalls, 1);
     });
 
     testWidgets('not offered in a build without store keys', (tester) async {

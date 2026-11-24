@@ -141,7 +141,11 @@ void main() {
           ),
           clockProvider.overrideWithValue(Clock(() => clockNow)),
           randomProvider.overrideWithValue(_NoShuffleRandom()),
-          paywallOpenerProvider.overrideWithValue((context, trigger) async {
+          paywallOpenerProvider.overrideWithValue((
+            context,
+            trigger, {
+            explicit = false,
+          }) async {
             paywalls.add(trigger);
           }),
         ],

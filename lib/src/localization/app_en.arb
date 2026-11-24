@@ -656,6 +656,26 @@
   "@aboutQuestionsNote": {
     "description": "Questions are not reworded"
   },
+  "recoveryNoticeTitle": "Saved data was damaged",
+  "@recoveryNoticeTitle": {
+    "description": "Title of the one-time notice shown after damaged progress data was recovered"
+  },
+  "recoveryNoticeRestored": "Part of your saved data was damaged. The readable part was restored.",
+  "@recoveryNoticeRestored": {
+    "description": "Recovery notice: the file was truncated and the rest kept"
+  },
+  "recoveryNoticeReset": "Part of your saved data was damaged and had to be reset.",
+  "@recoveryNoticeReset": {
+    "description": "Recovery notice: some data could not be read and was reset to empty"
+  },
+  "recoveryNoticeBackup": "A backup copy of the damaged file was saved on this device.",
+  "@recoveryNoticeBackup": {
+    "description": "Recovery notice: a backup copy exists"
+  },
+  "recoveryNoticeOk": "OK",
+  "@recoveryNoticeOk": {
+    "description": "Button that closes the recovery notice"
+  },
   "examScreenTitle": "Exam simulation",
   "@examScreenTitle": {
     "description": "Title of the exam simulation screen"
@@ -1204,6 +1224,10 @@
   "@examLeaveTimeoutLostBody": {
     "description": "Leave dialog while the ending is not stored"
   },
+  "examClockPersistError": "The time of your exam could not be saved on this device. Your answers are saved.",
+  "@examClockPersistError": {
+    "description": "Banner when only the time of the running exam could not be stored"
+  },
   "reminderChannelName": "Study reminders",
   "@reminderChannelName": {
     "description": "Android notification channel name"
@@ -1660,6 +1684,24 @@
   "paywallSettingsRestored": "Premium restored",
   "@paywallSettingsRestored": {
     "description": "Snack bar after a successful restore"
+  },
+  "paywallPlanPrepaid": "{duration} of access",
+  "@paywallPlanPrepaid": {
+    "description": "Name of a prepaid plan (one-time payment for a period)",
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallPrepaidPrice": "{price} · one-time payment, no renewal",
+  "@paywallPrepaidPrice": {
+    "description": "Price line of a prepaid plan; price comes from the store",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
   },
   "practiceProgress": "{current} / {total}",
   "@practiceProgress": {

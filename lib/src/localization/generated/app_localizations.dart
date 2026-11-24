@@ -932,6 +932,36 @@ abstract class AppLocalizations {
   /// **'Question texts are given as published by ULC.'**
   String get aboutQuestionsNote;
 
+  /// Title of the one-time notice shown after damaged progress data was recovered
+  ///
+  /// In en, this message translates to:
+  /// **'Saved data was damaged'**
+  String get recoveryNoticeTitle;
+
+  /// Recovery notice: the file was truncated and the rest kept
+  ///
+  /// In en, this message translates to:
+  /// **'Part of your saved data was damaged. The readable part was restored.'**
+  String get recoveryNoticeRestored;
+
+  /// Recovery notice: some data could not be read and was reset to empty
+  ///
+  /// In en, this message translates to:
+  /// **'Part of your saved data was damaged and had to be reset.'**
+  String get recoveryNoticeReset;
+
+  /// Recovery notice: a backup copy exists
+  ///
+  /// In en, this message translates to:
+  /// **'A backup copy of the damaged file was saved on this device.'**
+  String get recoveryNoticeBackup;
+
+  /// Button that closes the recovery notice
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get recoveryNoticeOk;
+
   /// Title of the exam simulation screen
   ///
   /// In en, this message translates to:
@@ -1544,6 +1574,12 @@ abstract class AppLocalizations {
   /// **'Time is up, but the result could not be saved yet. If you leave, it will be calculated from the saved answers when you open the exam again. Your latest answers were not saved and will not count.'**
   String get examLeaveTimeoutLostBody;
 
+  /// Banner when only the time of the running exam could not be stored
+  ///
+  /// In en, this message translates to:
+  /// **'The time of your exam could not be saved on this device. Your answers are saved.'**
+  String get examClockPersistError;
+
   /// Android notification channel name
   ///
   /// In en, this message translates to:
@@ -2083,6 +2119,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Premium restored'**
   String get paywallSettingsRestored;
+
+  /// Name of a prepaid plan (one-time payment for a period)
+  ///
+  /// In en, this message translates to:
+  /// **'{duration} of access'**
+  String paywallPlanPrepaid(String duration);
+
+  /// Price line of a prepaid plan; price comes from the store
+  ///
+  /// In en, this message translates to:
+  /// **'{price} · one-time payment, no renewal'**
+  String paywallPrepaidPrice(String price);
 
   /// Position in the session
   ///

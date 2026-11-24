@@ -223,17 +223,17 @@ class ReminderCoordinator extends Notifier<ReminderStatus> {
   static Object _relevant(UserSettings s) =>
       (s.reminderTime, s.examDate, s.dailyGoal, s.licence);
 
-  /// Cheap check (one box read) that the host runs while the app is open:
-  /// when the daily goal has been reached (or lost) since the last plan, the
-  /// schedule is rebuilt, so today's reminder disappears at once. Needs no
-  /// hook in the screens that record answers.
+  /// Cheap check (one box read), called after an answer was stored (practice,
+  /// finished exam): when the daily goal has been reached (or lost) since the
+  /// last plan, the schedule is rebuilt, so today's reminder disappears at
+  /// once. There is no timer: the app and the screens call it by event.
   Future<void> checkProgress() async {
     try {
       final settings = ref.read(userSettingsProvider).value;
       if (settings?.reminderTime == null) return;
       final now = ref.read(clockProvider).now();
       final answered =
-          (await ref.read(progressRepositoryProvider).dailyStat(now)).answered;
+          (await ref.read(progressRepositoryProvider).dailyStat(now)).activity;
       if (!ref.mounted) return;
       final goal = settings!.dailyGoal;
       if ((answered >= goal) != (_answeredAtPlan >= goal)) {
@@ -285,7 +285,7 @@ class ReminderCoordinator extends Notifier<ReminderStatus> {
       }
 
       final now = clock.now();
-      final answered = (await repository.dailyStat(now)).answered;
+      final answered = (await repository.dailyStat(now)).activity;
       _answeredAtPlan = answered;
       if (!ref.mounted) return;
       var due = 0;

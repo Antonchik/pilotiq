@@ -531,7 +531,7 @@
   "@examLeaveResultSavedBody": {
     "description": "Leave dialog: the result is stored, only counting is left"
   },
-  "examLeaveNotMarkedBody": "Nie udało się zapisać zakończenia egzaminu, ale odpowiedzi są zapisane. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas nadal płynie.",
+  "examLeaveNotMarkedBody": "Nie udało się zapisać zakończenia egzaminu, ale odpowiedzi są zapisane. Jeśli wyjdziesz, egzamin będzie można kontynuować, a czas będzie nadal płynął.",
   "@examLeaveNotMarkedBody": {
     "description": "Leave dialog: nothing about the ending is stored"
   },
@@ -546,5 +546,9 @@
   "examLeaveTimeoutLostBody": "Czas minął, ale nie udało się jeszcze zapisać wyniku. Jeśli wyjdziesz, zostanie obliczony z zapisanych odpowiedzi przy następnym otwarciu egzaminu. Ostatnie odpowiedzi nie zostały zapisane i nie zostaną uwzględnione.",
   "@examLeaveTimeoutLostBody": {
     "description": "Leave dialog while the ending is not stored"
+  },
+  "examClockPersistError": "Nie udało się zapisać czasu egzaminu na tym urządzeniu. Odpowiedzi są zapisane.",
+  "@examClockPersistError": {
+    "description": "Banner when only the time of the running exam could not be stored"
   }
 }

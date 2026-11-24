@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:clock/clock.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_ce/hive.dart';
+import 'package:pilotiq/src/purchases/cached_purchase_service.dart';
 import 'package:pilotiq/src/purchases/entitlement_cache.dart';
 import 'package:pilotiq/src/purchases/purchase_bootstrap.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
@@ -149,6 +150,51 @@ void main() {
       // What the timer does when the period ends.
       await service.onPeriodEnded();
       expect(gateway.getEntitlementCalls, calls + 1);
+    });
+  });
+
+  group('recheck timer', () {
+    final end = DateTime.utc(2026, 11, 24, 12);
+
+    test('a period that ends later is awaited until its end', () {
+      expect(
+        CachedPurchaseService.recheckDelay(
+          end: end,
+          now: end.subtract(const Duration(days: 2)),
+        ),
+        const Duration(days: 2),
+      );
+    });
+
+    test('a period that just ended is asked again after five minutes', () {
+      expect(
+        CachedPurchaseService.recheckDelay(
+          end: end,
+          now: end.add(const Duration(seconds: 10)),
+        ),
+        const Duration(minutes: 5),
+      );
+    });
+
+    test('a device clock ahead of the backend is not asked every five '
+        'minutes', () {
+      // The device says the period is over, the backend's answer (a day ago)
+      // says it ends in 3 days.
+      final wait = CachedPurchaseService.recheckDelay(
+        end: end,
+        now: end.add(const Duration(days: 1)),
+        serverTime: end.subtract(const Duration(days: 3)),
+      );
+      expect(wait, greaterThanOrEqualTo(const Duration(hours: 1)));
+      // And a backend answer just before the end still waits an hour.
+      expect(
+        CachedPurchaseService.recheckDelay(
+          end: end,
+          now: end.add(const Duration(days: 1)),
+          serverTime: end.subtract(const Duration(minutes: 1)),
+        ),
+        const Duration(hours: 1),
+      );
     });
   });
 

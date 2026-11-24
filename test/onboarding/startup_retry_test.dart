@@ -6,6 +6,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:pilotiq/src/app.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 
+import '../bank/memory_hive.dart';
+
 void main() {
   testWidgets('a retry shows the loading indicator and cannot run twice', (
     tester,
@@ -51,7 +53,13 @@ void main() {
 
   testWidgets('a successful retry shows the app', (tester) async {
     var calls = 0;
-    final container = ProviderContainer();
+    final container = ProviderContainer(
+      overrides: [
+        progressRepositoryProvider.overrideWithValue(
+          memoryProgressRepository(),
+        ),
+      ],
+    );
     await tester.pumpWidget(
       PilotiqRoot(
         initialize: () async {
@@ -63,8 +71,7 @@ void main() {
     );
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(const Key('startup_retry')));
-    await tester.pump();
-    await tester.pump();
+    await tester.pumpAndSettle();
 
     expect(calls, 2);
     expect(find.byKey(const Key('startup_retry')), findsNothing);

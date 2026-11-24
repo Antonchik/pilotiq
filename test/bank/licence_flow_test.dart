@@ -59,7 +59,11 @@ void main() {
           questionBankRepositoryProvider.overrideWithValue(
             fakeBankRepository(),
           ),
-          paywallOpenerProvider.overrideWithValue((context, trigger) async {
+          paywallOpenerProvider.overrideWithValue((
+            context,
+            trigger, {
+            explicit = false,
+          }) async {
             paywalls.add(trigger);
           }),
           // Deterministic answer order: keeps every answer at its position.

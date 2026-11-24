@@ -77,7 +77,11 @@ class AppHarness {
         progressRepositoryProvider.overrideWithValue(repository),
     questionBankRepositoryProvider.overrideWithValue(bank),
     clockProvider.overrideWithValue(clock ?? Clock.fixed(now)),
-    paywallOpenerProvider.overrideWithValue((context, trigger) async {
+    paywallOpenerProvider.overrideWithValue((
+      context,
+      trigger, {
+      explicit = false,
+    }) async {
       paywalls.add(trigger);
     }),
   ];

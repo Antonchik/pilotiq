@@ -176,7 +176,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
         : calendarDaysBetween(ref.watch(clockProvider).now(), examDate);
     final (title, subtitle) = _headline(local);
     final subscriptions = _packages.where((p) => p.isSubscription);
-    final hasLifetime = _packages.any((p) => !p.isSubscription);
+    final hasLifetime = _packages.any((p) => p.kind == PackageKind.lifetime);
     final hasTrial = subscriptions.any((p) => p.introOffer?.isFree ?? false);
     final showTerms = _phase == _Phase.ready;
     return ListView(

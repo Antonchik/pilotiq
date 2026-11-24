@@ -224,6 +224,26 @@ List<Question> spreadVariants(List<Question> questions) {
   var possible = _canSpread(counts, rest.length, null);
   while (rest.isNotEmpty) {
     final last = result.isEmpty ? null : result.last.number;
+    // The two largest counts of this step (one pass over the numbers): what
+    // is left after taking a question is spreadable when its own NUMER, one
+    // less, fits [remaining ~/ 2] and the largest of the others fits
+    // [(remaining + 1) ~/ 2]. This is [_canSpread] without trying every
+    // number for every candidate.
+    String? topNumber;
+    var top = 0;
+    var second = 0;
+    if (possible) {
+      for (final e in counts.entries) {
+        if (e.value > top) {
+          second = top;
+          top = e.value;
+          topNumber = e.key;
+        } else if (e.value > second) {
+          second = e.value;
+        }
+      }
+    }
+    final remaining = rest.length - 1;
     var pick = -1;
     var firstOther = -1;
     for (var i = 0; i < rest.length; i++) {
@@ -231,10 +251,9 @@ List<Question> spreadVariants(List<Question> questions) {
       if (number == last) continue;
       if (firstOther < 0) firstOther = i;
       if (!possible) break;
-      counts[number] = counts[number]! - 1;
-      final ok = _canSpread(counts, rest.length - 1, number);
-      counts[number] = counts[number]! + 1;
-      if (ok) {
+      final others = number == topNumber ? second : top;
+      if (counts[number]! - 1 <= remaining ~/ 2 &&
+          others <= (remaining + 1) ~/ 2) {
         pick = i;
         break;
       }

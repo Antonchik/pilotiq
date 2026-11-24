@@ -677,6 +677,12 @@ class _RunningView extends ConsumerWidget {
                     text: local.examPersistError,
                     onRetry: controller.retryPersist,
                   )
+                : state.clockFailed
+                ? _ErrorBox(
+                    key: const Key('exam_clock_persist_error'),
+                    text: local.examClockPersistError,
+                    onRetry: controller.retryPersist,
+                  )
                 : null,
           ),
         ),
