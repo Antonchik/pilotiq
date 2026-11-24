@@ -741,12 +741,18 @@ def _prune_outside(anchors):
         changed = False
         for key in list(anchors):
             m = re.match(r"^(.+)\([a-z0-9]+\)$", key)
-            if not m or m.group(1) not in anchors:
+            if not m:
+                continue
+            if m.group(1) not in anchors:
+                if key in anchors and re.match(r"^((AMC|GM|CS)\d* )?[A-Z]", key):
+                    del anchors[key]   # its parent was pruned (a reused number elsewhere): drop the orphan too
+                    changed = True
                 continue
             ps, pe = anchors[m.group(1)]
             s, e = anchors[key]
             if not (ps <= s and e <= pe):
-                del anchors[key]
+                for k in [k for k in anchors if k == key or k.startswith(key + "(")]:
+                    del anchors[k]   # together with its own sub-points
                 changed = True
     return anchors
 
@@ -1137,7 +1143,7 @@ def eureg_anchors(text, extras=()):
                     spans.append(_Span(key, start, 4))
             continue
         if mode == "annex":
-            if "annexpoints" in extras:
+            if "annexpoints" in extras and annex is not None and mode == "annex":
                 mpt = _APP_ROW_RE.match(line)
                 if mpt and not _RULE_RE.match(line):
                     key = ("%s pkt %s" % (annex_key, mpt.group(1))) if annex_key else None
