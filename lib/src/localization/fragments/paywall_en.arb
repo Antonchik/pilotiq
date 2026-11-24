@@ -1,0 +1,314 @@
+{
+  "paywallClose": "Close",
+  "@paywallClose": {
+    "description": "Tooltip of the close button of the paywall"
+  },
+  "paywallTitleDailyLimit": "Today's free limit is used up",
+  "@paywallTitleDailyLimit": {
+    "description": "Paywall title when the daily free limit is used up"
+  },
+  "paywallSubtitleDailyLimit": "{count, plural, one{Free access includes {count} answer per day. Premium has no daily limit.} other{Free access includes {count} answers per day. Premium has no daily limit.}}",
+  "@paywallSubtitleDailyLimit": {
+    "description": "Paywall subtitle for the daily limit; count is the free daily limit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTitleExamLimit": "The free simulation is used",
+  "@paywallTitleExamLimit": {
+    "description": "Paywall title when the free simulation of a subject is used"
+  },
+  "paywallSubtitleExamLimit": "{count, plural, one{Free access includes {count} simulation per subject. Premium gives unlimited simulations with history and topic breakdown.} other{Free access includes {count} simulations per subject. Premium gives unlimited simulations with history and topic breakdown.}}",
+  "@paywallSubtitleExamLimit": {
+    "description": "Paywall subtitle for the simulation limit; count is the free simulations per subject",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTitleLocked": "This feature is part of Premium",
+  "@paywallTitleLocked": {
+    "description": "Paywall title for a locked feature"
+  },
+  "paywallSubtitleLocked": "My mistakes and spaced repetition help you return to the questions you still get wrong.",
+  "@paywallSubtitleLocked": {
+    "description": "Paywall subtitle for a locked feature"
+  },
+  "paywallTitleResults": "Topic breakdown is part of Premium",
+  "@paywallTitleResults": {
+    "description": "Paywall title opened from the exam result"
+  },
+  "paywallSubtitleResults": "See where you lose points, review every answer and train the questions you missed.",
+  "@paywallSubtitleResults": {
+    "description": "Paywall subtitle opened from the exam result"
+  },
+  "paywallTitleProfile": "Pilotiq Premium",
+  "@paywallTitleProfile": {
+    "description": "Paywall title opened from the profile"
+  },
+  "paywallSubtitleProfile": "Study without limits and see where you stand in each subject.",
+  "@paywallSubtitleProfile": {
+    "description": "Paywall subtitle opened from the profile"
+  },
+  "paywallBenefitsTitle": "With Premium",
+  "@paywallBenefitsTitle": {
+    "description": "Heading of the list of Premium benefits"
+  },
+  "paywallBenefitUnlimited": "{count, plural, one{Practice without a daily limit (free: {count} answer a day)} other{Practice without a daily limit (free: {count} answers a day)}}",
+  "@paywallBenefitUnlimited": {
+    "description": "Benefit: no daily limit; count is the free daily limit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBenefitSimulations": "Unlimited exam simulations with history and topic breakdown (free: {count} per subject)",
+  "@paywallBenefitSimulations": {
+    "description": "Benefit: unlimited simulations; count is the free simulations per subject",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBenefitMistakes": "My mistakes: train the questions you got wrong",
+  "@paywallBenefitMistakes": {
+    "description": "Benefit: my mistakes"
+  },
+  "paywallBenefitReview": "Spaced repetition of the questions due for review",
+  "@paywallBenefitReview": {
+    "description": "Benefit: spaced repetition"
+  },
+  "paywallBenefitReadiness": "Detailed readiness by subject (approximate)",
+  "@paywallBenefitReadiness": {
+    "description": "Benefit: readiness by subject"
+  },
+  "paywallChoosePlan": "Choose a plan",
+  "@paywallChoosePlan": {
+    "description": "Heading above the plans"
+  },
+  "paywallBestChoice": "Best choice",
+  "@paywallBestChoice": {
+    "description": "Label of the lifetime plan"
+  },
+  "paywallPlanLifetime": "Lifetime",
+  "@paywallPlanLifetime": {
+    "description": "Name of the one-time lifetime plan"
+  },
+  "paywallLifetimePrice": "{price} · one-time payment",
+  "@paywallLifetimePrice": {
+    "description": "Price line of the lifetime plan; price comes from the store",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallDurationDay": "{count, plural, one{{count} day} other{{count} days}}",
+  "@paywallDurationDay": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallDurationWeek": "{count, plural, one{{count} week} other{{count} weeks}}",
+  "@paywallDurationWeek": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallDurationMonth": "{count, plural, one{{count} month} other{{count} months}}",
+  "@paywallDurationMonth": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallDurationYear": "{count, plural, one{{count} year} other{{count} years}}",
+  "@paywallDurationYear": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallPerDay": "day",
+  "@paywallPerDay": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPerWeek": "week",
+  "@paywallPerWeek": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPerMonth": "month",
+  "@paywallPerMonth": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPerYear": "year",
+  "@paywallPerYear": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPricePer": "{price} / {period}",
+  "@paywallPricePer": {
+    "description": "Price per period, for example \"PLN 24,99 / month\"; both parts come from the store data",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      },
+      "period": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallIntroFree": "{trial} free, then {price}",
+  "@paywallIntroFree": {
+    "description": "Free trial line; trial is a length such as \"3 days\"; price is the price after the trial",
+    "placeholders": {
+      "trial": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallIntroPaid": "{period}: {introPrice}, then {price}",
+  "@paywallIntroPaid": {
+    "description": "Reduced-price introductory period line",
+    "placeholders": {
+      "period": {
+        "type": "String"
+      },
+      "introPrice": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallContinue": "Continue",
+  "@paywallContinue": {
+    "description": "Button that buys the selected plan"
+  },
+  "paywallRestore": "Restore purchases",
+  "@paywallRestore": {
+    "description": "Button that restores purchases"
+  },
+  "paywallRenewalNotice": "Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your App Store or Google Play account. To avoid the next charge, cancel in your account settings in the store at least 24 hours before the current period ends.",
+  "@paywallRenewalNotice": {
+    "description": "Auto-renewal and cancellation terms of subscriptions"
+  },
+  "paywallTrialNotice": "A free trial becomes a paid subscription at the price shown unless you cancel before it ends.",
+  "@paywallTrialNotice": {
+    "description": "Terms of a free trial"
+  },
+  "paywallOneTimeNotice": "Lifetime is a one-time payment: it does not renew and is not a subscription.",
+  "@paywallOneTimeNotice": {
+    "description": "Terms of the lifetime plan"
+  },
+  "paywallLoading": "Loading plans…",
+  "@paywallLoading": {
+    "description": "Shown while the plans load"
+  },
+  "paywallErrorNetwork": "No connection. Check your internet and try again.",
+  "@paywallErrorNetwork": {
+    "description": "Error: no connection"
+  },
+  "paywallErrorStore": "The store could not complete the request. Please try again later.",
+  "@paywallErrorStore": {
+    "description": "Error: the store reported a problem"
+  },
+  "paywallErrorUnknown": "Something went wrong. Please try again.",
+  "@paywallErrorUnknown": {
+    "description": "Error: anything else"
+  },
+  "paywallEmpty": "No plans are available right now. Please try again later.",
+  "@paywallEmpty": {
+    "description": "The store has no plans to offer"
+  },
+  "paywallUnavailable": "Purchases are not available in this build of the app.",
+  "@paywallUnavailable": {
+    "description": "Build without store keys"
+  },
+  "paywallRetry": "Try again",
+  "@paywallRetry": {
+    "description": "Retry button"
+  },
+  "paywallPurchasing": "Processing the purchase…",
+  "@paywallPurchasing": {
+    "description": "Shown while a purchase is processed"
+  },
+  "paywallPending": "Your purchase is waiting for approval (for example Ask to Buy or a delayed payment). Premium unlocks as soon as it is approved.",
+  "@paywallPending": {
+    "description": "Purchase waits for approval"
+  },
+  "paywallNotActivated": "The payment went through, but Premium is not active yet. Try \"Restore purchases\" in a moment.",
+  "@paywallNotActivated": {
+    "description": "Payment went through but Premium is not active"
+  },
+  "paywallRestoreNone": "No active purchases were found for this store account.",
+  "@paywallRestoreNone": {
+    "description": "Restore found nothing"
+  },
+  "paywallThanksTitle": "Thank you!",
+  "@paywallThanksTitle": {
+    "description": "Shown after a successful purchase"
+  },
+  "paywallThanksBody": "Premium is unlocked. You can go back to what you were doing.",
+  "@paywallThanksBody": {
+    "description": "Shown after a successful purchase"
+  },
+  "paywallAlreadyTitle": "Premium is active",
+  "@paywallAlreadyTitle": {
+    "description": "Shown when the paywall opens and Premium is already active"
+  },
+  "paywallAlreadyBody": "All features are unlocked.",
+  "@paywallAlreadyBody": {
+    "description": "Shown when Premium is already active"
+  },
+  "paywallSemSelected": "selected",
+  "@paywallSemSelected": {
+    "description": "Accessibility: the plan is selected"
+  },
+  "paywallSemNotSelected": "not selected",
+  "@paywallSemNotSelected": {
+    "description": "Accessibility: the plan is not selected"
+  },
+  "paywallSettingsSection": "Purchases",
+  "@paywallSettingsSection": {
+    "description": "Settings section title"
+  },
+  "paywallSettingsRestoreTitle": "Restore purchases",
+  "@paywallSettingsRestoreTitle": {
+    "description": "Settings: restore purchases"
+  },
+  "paywallSettingsRestoreSubtitle": "Get Premium back after reinstalling the app or on a new phone.",
+  "@paywallSettingsRestoreSubtitle": {
+    "description": "Settings: restore purchases, explanation"
+  },
+  "paywallSettingsUnavailable": "Not available in this build of the app.",
+  "@paywallSettingsUnavailable": {
+    "description": "Settings: restore is not possible in this build"
+  },
+  "paywallSettingsManage": "To cancel or change a subscription, open your App Store or Google Play account settings.",
+  "@paywallSettingsManage": {
+    "description": "Settings: how to cancel a subscription"
+  },
+  "paywallSettingsRestored": "Premium restored",
+  "@paywallSettingsRestored": {
+    "description": "Snack bar after a successful restore"
+  }
+}

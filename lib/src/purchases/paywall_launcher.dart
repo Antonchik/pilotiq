@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:pilotiq/src/localization/generated/app_localizations.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:pilotiq/src/progress/providers.dart';
+import 'package:pilotiq/src/purchases/paywall_screen.dart';
 
 /// Why the paywall is being opened.
 enum PaywallTrigger {
@@ -12,22 +12,73 @@ enum PaywallTrigger {
   profile,
 }
 
+extension PaywallTriggerRules on PaywallTrigger {
+  /// Opened by the app itself when the user hits a limit. These wait until
+  /// the user has answered [paywallMinAnswers] questions in total. The other
+  /// triggers are an explicit action (profile, a locked feature, the result
+  /// teaser) and always open the paywall.
+  bool get isAutomatic =>
+      this == PaywallTrigger.dailyLimit || this == PaywallTrigger.examLimit;
+}
+
+/// Answers in total (all days, all licences) before an automatic trigger may
+/// show the paywall.
+const int paywallMinAnswers = 10;
+
 /// Function that actually shows the paywall; overridden in tests.
-typedef PaywallOpener = Future<void> Function(
-  BuildContext context,
-  PaywallTrigger trigger,
-);
+typedef PaywallOpener =
+    Future<void> Function(BuildContext context, PaywallTrigger trigger);
 
-const _termsUrl = 'https://antonchik.github.io/pilotiq_tos/';
-const _privacyUrl =
-    'https://www.termsfeed.com/live/da031152-c5f9-4dd0-a4e6-42d78de414ae';
+/// Number of answers given so far, learning and exam simulations together.
+Future<int> _totalAnswers(Ref ref) async {
+  final stats = await ref.read(progressRepositoryProvider).dailyStats();
+  return stats.fold<int>(0, (sum, s) => sum + s.activity);
+}
 
-final paywallOpenerProvider = Provider<PaywallOpener>(
-  (ref) =>
-      (context, trigger) => Navigator.of(context).push<void>(
-        MaterialPageRoute(builder: (_) => PaywallStubScreen(trigger: trigger)),
-      ),
-);
+/// Only one paywall is open at a time.
+class _PaywallGate {
+  bool open = false;
+}
+
+final _paywallGateProvider = Provider<_PaywallGate>((ref) => _PaywallGate());
+
+/// The real opener: logs the trigger, applies the "not too early" rule to
+/// automatic triggers and pushes [PaywallScreen].
+final paywallOpenerProvider = Provider<PaywallOpener>((ref) {
+  return (context, trigger) async {
+    debugPrint('paywall: trigger ${trigger.name}');
+    final gate = ref.read(_paywallGateProvider);
+    if (gate.open) return;
+    if (trigger.isAutomatic) {
+      var answers = 0;
+      try {
+        answers = await _totalAnswers(ref);
+      } on Object catch (e) {
+        debugPrint('paywall: the answer count is unknown ($e); not shown');
+        return;
+      }
+      if (answers < paywallMinAnswers) {
+        debugPrint(
+          'paywall: ${trigger.name} not shown yet ($answers of '
+          '$paywallMinAnswers answers)',
+        );
+        return;
+      }
+      if (!context.mounted || gate.open) return;
+    }
+    gate.open = true;
+    try {
+      await Navigator.of(context).push<void>(
+        MaterialPageRoute(
+          fullscreenDialog: true,
+          builder: (_) => PaywallScreen(trigger: trigger),
+        ),
+      );
+    } finally {
+      gate.open = false;
+    }
+  };
+});
 
 /// The single entry point for showing the paywall.
 Future<void> openPaywall(
@@ -36,61 +87,4 @@ Future<void> openPaywall(
 }) {
   final container = ProviderScope.containerOf(context, listen: false);
   return container.read(paywallOpenerProvider)(context, trigger);
-}
-
-/// Temporary paywall screen, replaced by the real one in the paywall step.
-class PaywallStubScreen extends StatelessWidget {
-  const PaywallStubScreen({super.key, required this.trigger});
-
-  final PaywallTrigger trigger;
-
-  Future<void> _open(String url) =>
-      launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
-
-  @override
-  Widget build(BuildContext context) {
-    final local = AppLocalizations.of(context)!;
-    return Scaffold(
-      appBar: AppBar(title: Text(local.premiumTitle)),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              local.goPremiumLabel,
-              style: Theme.of(context).textTheme.headlineSmall,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16),
-            ListTile(
-              leading: const Icon(Icons.new_releases_outlined),
-              title: Text(local.allExamsAccessLabel),
-            ),
-            ListTile(
-              leading: const Icon(Icons.subject),
-              title: Text(local.allSubjectsAccessLabel),
-            ),
-            const SizedBox(height: 16),
-            Text(local.paywallStubMessage, textAlign: TextAlign.center),
-            const Spacer(),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 8,
-              children: [
-                TextButton(
-                  onPressed: () => _open(_termsUrl),
-                  child: Text(local.termsOfServiceLabel),
-                ),
-                TextButton(
-                  onPressed: () => _open(_privacyUrl),
-                  child: Text(local.privacyPolicyLabel),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }

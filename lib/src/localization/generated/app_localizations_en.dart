@@ -1073,6 +1073,276 @@ class AppLocalizationsEn extends AppLocalizations {
       'Notifications are not allowed. You can turn the reminders on later in Profile.';
 
   @override
+  String get paywallClose => 'Close';
+
+  @override
+  String get paywallTitleDailyLimit => 'Today\'s free limit is used up';
+
+  @override
+  String paywallSubtitleDailyLimit(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Free access includes $count answers per day. Premium has no daily limit.',
+      one:
+          'Free access includes $count answer per day. Premium has no daily limit.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallTitleExamLimit => 'The free simulation is used';
+
+  @override
+  String paywallSubtitleExamLimit(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Free access includes $count simulations per subject. Premium gives unlimited simulations with history and topic breakdown.',
+      one:
+          'Free access includes $count simulation per subject. Premium gives unlimited simulations with history and topic breakdown.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallTitleLocked => 'This feature is part of Premium';
+
+  @override
+  String get paywallSubtitleLocked =>
+      'My mistakes and spaced repetition help you return to the questions you still get wrong.';
+
+  @override
+  String get paywallTitleResults => 'Topic breakdown is part of Premium';
+
+  @override
+  String get paywallSubtitleResults =>
+      'See where you lose points, review every answer and train the questions you missed.';
+
+  @override
+  String get paywallTitleProfile => 'Pilotiq Premium';
+
+  @override
+  String get paywallSubtitleProfile =>
+      'Study without limits and see where you stand in each subject.';
+
+  @override
+  String get paywallBenefitsTitle => 'With Premium';
+
+  @override
+  String paywallBenefitUnlimited(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Practice without a daily limit (free: $count answers a day)',
+      one: 'Practice without a daily limit (free: $count answer a day)',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallBenefitSimulations(int count) {
+    return 'Unlimited exam simulations with history and topic breakdown (free: $count per subject)';
+  }
+
+  @override
+  String get paywallBenefitMistakes =>
+      'My mistakes: train the questions you got wrong';
+
+  @override
+  String get paywallBenefitReview =>
+      'Spaced repetition of the questions due for review';
+
+  @override
+  String get paywallBenefitReadiness =>
+      'Detailed readiness by subject (approximate)';
+
+  @override
+  String get paywallChoosePlan => 'Choose a plan';
+
+  @override
+  String get paywallBestChoice => 'Best choice';
+
+  @override
+  String get paywallPlanLifetime => 'Lifetime';
+
+  @override
+  String paywallLifetimePrice(String price) {
+    return '$price · one-time payment';
+  }
+
+  @override
+  String paywallDurationDay(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '$count day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallDurationWeek(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count weeks',
+      one: '$count week',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallDurationMonth(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count months',
+      one: '$count month',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String paywallDurationYear(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count years',
+      one: '$count year',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallPerDay => 'day';
+
+  @override
+  String get paywallPerWeek => 'week';
+
+  @override
+  String get paywallPerMonth => 'month';
+
+  @override
+  String get paywallPerYear => 'year';
+
+  @override
+  String paywallPricePer(String price, String period) {
+    return '$price / $period';
+  }
+
+  @override
+  String paywallIntroFree(String trial, String price) {
+    return '$trial free, then $price';
+  }
+
+  @override
+  String paywallIntroPaid(String period, String introPrice, String price) {
+    return '$period: $introPrice, then $price';
+  }
+
+  @override
+  String get paywallContinue => 'Continue';
+
+  @override
+  String get paywallRestore => 'Restore purchases';
+
+  @override
+  String get paywallRenewalNotice =>
+      'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your App Store or Google Play account. To avoid the next charge, cancel in your account settings in the store at least 24 hours before the current period ends.';
+
+  @override
+  String get paywallTrialNotice =>
+      'A free trial becomes a paid subscription at the price shown unless you cancel before it ends.';
+
+  @override
+  String get paywallOneTimeNotice =>
+      'Lifetime is a one-time payment: it does not renew and is not a subscription.';
+
+  @override
+  String get paywallLoading => 'Loading plans…';
+
+  @override
+  String get paywallErrorNetwork =>
+      'No connection. Check your internet and try again.';
+
+  @override
+  String get paywallErrorStore =>
+      'The store could not complete the request. Please try again later.';
+
+  @override
+  String get paywallErrorUnknown => 'Something went wrong. Please try again.';
+
+  @override
+  String get paywallEmpty =>
+      'No plans are available right now. Please try again later.';
+
+  @override
+  String get paywallUnavailable =>
+      'Purchases are not available in this build of the app.';
+
+  @override
+  String get paywallRetry => 'Try again';
+
+  @override
+  String get paywallPurchasing => 'Processing the purchase…';
+
+  @override
+  String get paywallPending =>
+      'Your purchase is waiting for approval (for example Ask to Buy or a delayed payment). Premium unlocks as soon as it is approved.';
+
+  @override
+  String get paywallNotActivated =>
+      'The payment went through, but Premium is not active yet. Try \"Restore purchases\" in a moment.';
+
+  @override
+  String get paywallRestoreNone =>
+      'No active purchases were found for this store account.';
+
+  @override
+  String get paywallThanksTitle => 'Thank you!';
+
+  @override
+  String get paywallThanksBody =>
+      'Premium is unlocked. You can go back to what you were doing.';
+
+  @override
+  String get paywallAlreadyTitle => 'Premium is active';
+
+  @override
+  String get paywallAlreadyBody => 'All features are unlocked.';
+
+  @override
+  String get paywallSemSelected => 'selected';
+
+  @override
+  String get paywallSemNotSelected => 'not selected';
+
+  @override
+  String get paywallSettingsSection => 'Purchases';
+
+  @override
+  String get paywallSettingsRestoreTitle => 'Restore purchases';
+
+  @override
+  String get paywallSettingsRestoreSubtitle =>
+      'Get Premium back after reinstalling the app or on a new phone.';
+
+  @override
+  String get paywallSettingsUnavailable =>
+      'Not available in this build of the app.';
+
+  @override
+  String get paywallSettingsManage =>
+      'To cancel or change a subscription, open your App Store or Google Play account settings.';
+
+  @override
+  String get paywallSettingsRestored => 'Premium restored';
+
+  @override
   String practiceProgress(int current, int total) {
     return '$current / $total';
   }

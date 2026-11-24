@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:clock/clock.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:pilotiq/src/purchases/entitlement_cache.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
@@ -16,9 +15,8 @@ import 'package:pilotiq/src/purchases/purchase_service.dart';
 abstract class CachedPurchaseService
     with WidgetsBindingObserver
     implements PurchaseService {
-  CachedPurchaseService({EntitlementCache? cache, Clock? clock})
-    : _cache = cache,
-      _clock = clock ?? const Clock();
+  CachedPurchaseService({this._cache, Clock? clock})
+    : _clock = clock ?? const Clock();
 
   final EntitlementCache? _cache;
   final Clock _clock;

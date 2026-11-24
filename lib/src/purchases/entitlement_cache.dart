@@ -53,9 +53,14 @@ EntitlementState evaluateCachedEntitlement(
 /// Moments are UTC strings (see `stored_time.dart`). A failing box never
 /// throws into the app: callers log and carry on with what they have in
 /// memory.
+///
+/// The default opener never lets Hive repair a damaged file: that is done by
+/// the progress repository, which first keeps a backup copy. If the box cannot
+/// be opened here, the cache stays empty and is tried again at the next use.
 class EntitlementCache {
   EntitlementCache({Future<Box<dynamic>> Function()? openBox})
-    : _open = openBox ?? (() => Hive.openBox<dynamic>('config'));
+    : _open =
+          openBox ?? (() => Hive.openBox<dynamic>('config', crashRecovery: false));
 
   static const String premiumKey = 'rcPremium';
   static const String expiresAtKey = 'rcExpiresAt';

@@ -1724,6 +1724,366 @@ abstract class AppLocalizations {
   /// **'Notifications are not allowed. You can turn the reminders on later in Profile.'**
   String get onboardingRemindersDenied;
 
+  /// Tooltip of the close button of the paywall
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get paywallClose;
+
+  /// Paywall title when the daily free limit is used up
+  ///
+  /// In en, this message translates to:
+  /// **'Today\'s free limit is used up'**
+  String get paywallTitleDailyLimit;
+
+  /// Paywall subtitle for the daily limit; count is the free daily limit
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{Free access includes {count} answer per day. Premium has no daily limit.} other{Free access includes {count} answers per day. Premium has no daily limit.}}'**
+  String paywallSubtitleDailyLimit(int count);
+
+  /// Paywall title when the free simulation of a subject is used
+  ///
+  /// In en, this message translates to:
+  /// **'The free simulation is used'**
+  String get paywallTitleExamLimit;
+
+  /// Paywall subtitle for the simulation limit; count is the free simulations per subject
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{Free access includes {count} simulation per subject. Premium gives unlimited simulations with history and topic breakdown.} other{Free access includes {count} simulations per subject. Premium gives unlimited simulations with history and topic breakdown.}}'**
+  String paywallSubtitleExamLimit(int count);
+
+  /// Paywall title for a locked feature
+  ///
+  /// In en, this message translates to:
+  /// **'This feature is part of Premium'**
+  String get paywallTitleLocked;
+
+  /// Paywall subtitle for a locked feature
+  ///
+  /// In en, this message translates to:
+  /// **'My mistakes and spaced repetition help you return to the questions you still get wrong.'**
+  String get paywallSubtitleLocked;
+
+  /// Paywall title opened from the exam result
+  ///
+  /// In en, this message translates to:
+  /// **'Topic breakdown is part of Premium'**
+  String get paywallTitleResults;
+
+  /// Paywall subtitle opened from the exam result
+  ///
+  /// In en, this message translates to:
+  /// **'See where you lose points, review every answer and train the questions you missed.'**
+  String get paywallSubtitleResults;
+
+  /// Paywall title opened from the profile
+  ///
+  /// In en, this message translates to:
+  /// **'Pilotiq Premium'**
+  String get paywallTitleProfile;
+
+  /// Paywall subtitle opened from the profile
+  ///
+  /// In en, this message translates to:
+  /// **'Study without limits and see where you stand in each subject.'**
+  String get paywallSubtitleProfile;
+
+  /// Heading of the list of Premium benefits
+  ///
+  /// In en, this message translates to:
+  /// **'With Premium'**
+  String get paywallBenefitsTitle;
+
+  /// Benefit: no daily limit; count is the free daily limit
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{Practice without a daily limit (free: {count} answer a day)} other{Practice without a daily limit (free: {count} answers a day)}}'**
+  String paywallBenefitUnlimited(int count);
+
+  /// Benefit: unlimited simulations; count is the free simulations per subject
+  ///
+  /// In en, this message translates to:
+  /// **'Unlimited exam simulations with history and topic breakdown (free: {count} per subject)'**
+  String paywallBenefitSimulations(int count);
+
+  /// Benefit: my mistakes
+  ///
+  /// In en, this message translates to:
+  /// **'My mistakes: train the questions you got wrong'**
+  String get paywallBenefitMistakes;
+
+  /// Benefit: spaced repetition
+  ///
+  /// In en, this message translates to:
+  /// **'Spaced repetition of the questions due for review'**
+  String get paywallBenefitReview;
+
+  /// Benefit: readiness by subject
+  ///
+  /// In en, this message translates to:
+  /// **'Detailed readiness by subject (approximate)'**
+  String get paywallBenefitReadiness;
+
+  /// Heading above the plans
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a plan'**
+  String get paywallChoosePlan;
+
+  /// Label of the lifetime plan
+  ///
+  /// In en, this message translates to:
+  /// **'Best choice'**
+  String get paywallBestChoice;
+
+  /// Name of the one-time lifetime plan
+  ///
+  /// In en, this message translates to:
+  /// **'Lifetime'**
+  String get paywallPlanLifetime;
+
+  /// Price line of the lifetime plan; price comes from the store
+  ///
+  /// In en, this message translates to:
+  /// **'{price} · one-time payment'**
+  String paywallLifetimePrice(String price);
+
+  /// Length of a period, for example "3 months"
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} day} other{{count} days}}'**
+  String paywallDurationDay(int count);
+
+  /// Length of a period, for example "3 months"
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} week} other{{count} weeks}}'**
+  String paywallDurationWeek(int count);
+
+  /// Length of a period, for example "3 months"
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} month} other{{count} months}}'**
+  String paywallDurationMonth(int count);
+
+  /// Length of a period, for example "3 months"
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} year} other{{count} years}}'**
+  String paywallDurationYear(int count);
+
+  /// Single unit after the slash in a price, for example "/ month"
+  ///
+  /// In en, this message translates to:
+  /// **'day'**
+  String get paywallPerDay;
+
+  /// Single unit after the slash in a price, for example "/ month"
+  ///
+  /// In en, this message translates to:
+  /// **'week'**
+  String get paywallPerWeek;
+
+  /// Single unit after the slash in a price, for example "/ month"
+  ///
+  /// In en, this message translates to:
+  /// **'month'**
+  String get paywallPerMonth;
+
+  /// Single unit after the slash in a price, for example "/ month"
+  ///
+  /// In en, this message translates to:
+  /// **'year'**
+  String get paywallPerYear;
+
+  /// Price per period, for example "PLN 24,99 / month"; both parts come from the store data
+  ///
+  /// In en, this message translates to:
+  /// **'{price} / {period}'**
+  String paywallPricePer(String price, String period);
+
+  /// Free trial line; trial is a length such as "3 days"; price is the price after the trial
+  ///
+  /// In en, this message translates to:
+  /// **'{trial} free, then {price}'**
+  String paywallIntroFree(String trial, String price);
+
+  /// Reduced-price introductory period line
+  ///
+  /// In en, this message translates to:
+  /// **'{period}: {introPrice}, then {price}'**
+  String paywallIntroPaid(String period, String introPrice, String price);
+
+  /// Button that buys the selected plan
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get paywallContinue;
+
+  /// Button that restores purchases
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases'**
+  String get paywallRestore;
+
+  /// Auto-renewal and cancellation terms of subscriptions
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions renew automatically for the same period at the price shown until you cancel. Payment is charged to your App Store or Google Play account. To avoid the next charge, cancel in your account settings in the store at least 24 hours before the current period ends.'**
+  String get paywallRenewalNotice;
+
+  /// Terms of a free trial
+  ///
+  /// In en, this message translates to:
+  /// **'A free trial becomes a paid subscription at the price shown unless you cancel before it ends.'**
+  String get paywallTrialNotice;
+
+  /// Terms of the lifetime plan
+  ///
+  /// In en, this message translates to:
+  /// **'Lifetime is a one-time payment: it does not renew and is not a subscription.'**
+  String get paywallOneTimeNotice;
+
+  /// Shown while the plans load
+  ///
+  /// In en, this message translates to:
+  /// **'Loading plans…'**
+  String get paywallLoading;
+
+  /// Error: no connection
+  ///
+  /// In en, this message translates to:
+  /// **'No connection. Check your internet and try again.'**
+  String get paywallErrorNetwork;
+
+  /// Error: the store reported a problem
+  ///
+  /// In en, this message translates to:
+  /// **'The store could not complete the request. Please try again later.'**
+  String get paywallErrorStore;
+
+  /// Error: anything else
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get paywallErrorUnknown;
+
+  /// The store has no plans to offer
+  ///
+  /// In en, this message translates to:
+  /// **'No plans are available right now. Please try again later.'**
+  String get paywallEmpty;
+
+  /// Build without store keys
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases are not available in this build of the app.'**
+  String get paywallUnavailable;
+
+  /// Retry button
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get paywallRetry;
+
+  /// Shown while a purchase is processed
+  ///
+  /// In en, this message translates to:
+  /// **'Processing the purchase…'**
+  String get paywallPurchasing;
+
+  /// Purchase waits for approval
+  ///
+  /// In en, this message translates to:
+  /// **'Your purchase is waiting for approval (for example Ask to Buy or a delayed payment). Premium unlocks as soon as it is approved.'**
+  String get paywallPending;
+
+  /// Payment went through but Premium is not active
+  ///
+  /// In en, this message translates to:
+  /// **'The payment went through, but Premium is not active yet. Try \"Restore purchases\" in a moment.'**
+  String get paywallNotActivated;
+
+  /// Restore found nothing
+  ///
+  /// In en, this message translates to:
+  /// **'No active purchases were found for this store account.'**
+  String get paywallRestoreNone;
+
+  /// Shown after a successful purchase
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you!'**
+  String get paywallThanksTitle;
+
+  /// Shown after a successful purchase
+  ///
+  /// In en, this message translates to:
+  /// **'Premium is unlocked. You can go back to what you were doing.'**
+  String get paywallThanksBody;
+
+  /// Shown when the paywall opens and Premium is already active
+  ///
+  /// In en, this message translates to:
+  /// **'Premium is active'**
+  String get paywallAlreadyTitle;
+
+  /// Shown when Premium is already active
+  ///
+  /// In en, this message translates to:
+  /// **'All features are unlocked.'**
+  String get paywallAlreadyBody;
+
+  /// Accessibility: the plan is selected
+  ///
+  /// In en, this message translates to:
+  /// **'selected'**
+  String get paywallSemSelected;
+
+  /// Accessibility: the plan is not selected
+  ///
+  /// In en, this message translates to:
+  /// **'not selected'**
+  String get paywallSemNotSelected;
+
+  /// Settings section title
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases'**
+  String get paywallSettingsSection;
+
+  /// Settings: restore purchases
+  ///
+  /// In en, this message translates to:
+  /// **'Restore purchases'**
+  String get paywallSettingsRestoreTitle;
+
+  /// Settings: restore purchases, explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Get Premium back after reinstalling the app or on a new phone.'**
+  String get paywallSettingsRestoreSubtitle;
+
+  /// Settings: restore is not possible in this build
+  ///
+  /// In en, this message translates to:
+  /// **'Not available in this build of the app.'**
+  String get paywallSettingsUnavailable;
+
+  /// Settings: how to cancel a subscription
+  ///
+  /// In en, this message translates to:
+  /// **'To cancel or change a subscription, open your App Store or Google Play account settings.'**
+  String get paywallSettingsManage;
+
+  /// Snack bar after a successful restore
+  ///
+  /// In en, this message translates to:
+  /// **'Premium restored'**
+  String get paywallSettingsRestored;
+
   /// Position in the session
   ///
   /// In en, this message translates to:

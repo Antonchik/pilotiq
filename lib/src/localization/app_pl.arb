@@ -1111,6 +1111,318 @@
   "@onboardingRemindersDenied": {
     "description": "Onboarding: permission was refused"
   },
+  "paywallClose": "Zamknij",
+  "@paywallClose": {
+    "description": "Tooltip of the close button of the paywall"
+  },
+  "paywallTitleDailyLimit": "Dzisiejszy limit bezpłatnych odpowiedzi wykorzystany",
+  "@paywallTitleDailyLimit": {
+    "description": "Paywall title when the daily free limit is used up"
+  },
+  "paywallSubtitleDailyLimit": "{count, plural, one{Wersja bezpłatna to {count} odpowiedź dziennie. Premium nie ma dziennego limitu.} few{Wersja bezpłatna to {count} odpowiedzi dziennie. Premium nie ma dziennego limitu.} many{Wersja bezpłatna to {count} odpowiedzi dziennie. Premium nie ma dziennego limitu.} other{Wersja bezpłatna to {count} odpowiedzi dziennie. Premium nie ma dziennego limitu.}}",
+  "@paywallSubtitleDailyLimit": {
+    "description": "Paywall subtitle for the daily limit; count is the free daily limit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTitleExamLimit": "Bezpłatna symulacja wykorzystana",
+  "@paywallTitleExamLimit": {
+    "description": "Paywall title when the free simulation of a subject is used"
+  },
+  "paywallSubtitleExamLimit": "{count, plural, one{Wersja bezpłatna to {count} symulacja na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.} few{Wersja bezpłatna to {count} symulacje na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.} many{Wersja bezpłatna to {count} symulacji na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.} other{Wersja bezpłatna to {count} symulacji na przedmiot. Premium daje nielimitowane symulacje z historią i analizą tematów.}}",
+  "@paywallSubtitleExamLimit": {
+    "description": "Paywall subtitle for the simulation limit; count is the free simulations per subject",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallTitleLocked": "Ta funkcja jest częścią Premium",
+  "@paywallTitleLocked": {
+    "description": "Paywall title for a locked feature"
+  },
+  "paywallSubtitleLocked": "Moje błędy i powtórki w odstępach pomagają wracać do pytań, z którymi nadal masz problem.",
+  "@paywallSubtitleLocked": {
+    "description": "Paywall subtitle for a locked feature"
+  },
+  "paywallTitleResults": "Analiza tematów jest częścią Premium",
+  "@paywallTitleResults": {
+    "description": "Paywall title opened from the exam result"
+  },
+  "paywallSubtitleResults": "Zobacz, gdzie tracisz punkty, przejrzyj każdą odpowiedź i ćwicz pytania, które sprawiły kłopot.",
+  "@paywallSubtitleResults": {
+    "description": "Paywall subtitle opened from the exam result"
+  },
+  "paywallTitleProfile": "Pilotiq Premium",
+  "@paywallTitleProfile": {
+    "description": "Paywall title opened from the profile"
+  },
+  "paywallSubtitleProfile": "Ucz się bez limitów i sprawdzaj, jak stoisz z każdym przedmiotem.",
+  "@paywallSubtitleProfile": {
+    "description": "Paywall subtitle opened from the profile"
+  },
+  "paywallBenefitsTitle": "W Premium",
+  "@paywallBenefitsTitle": {
+    "description": "Heading of the list of Premium benefits"
+  },
+  "paywallBenefitUnlimited": "{count, plural, one{Nauka bez dziennego limitu (bezpłatnie: {count} odpowiedź dziennie)} few{Nauka bez dziennego limitu (bezpłatnie: {count} odpowiedzi dziennie)} many{Nauka bez dziennego limitu (bezpłatnie: {count} odpowiedzi dziennie)} other{Nauka bez dziennego limitu (bezpłatnie: {count} odpowiedzi dziennie)}}",
+  "@paywallBenefitUnlimited": {
+    "description": "Benefit: no daily limit; count is the free daily limit",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBenefitSimulations": "Nielimitowane symulacje egzaminu z historią i analizą tematów (bezpłatnie: {count} na przedmiot)",
+  "@paywallBenefitSimulations": {
+    "description": "Benefit: unlimited simulations; count is the free simulations per subject",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBenefitMistakes": "Moje błędy: ćwicz pytania, w których popełniono błąd",
+  "@paywallBenefitMistakes": {
+    "description": "Benefit: my mistakes"
+  },
+  "paywallBenefitReview": "Powtórki w odstępach dla pytań do powtórzenia",
+  "@paywallBenefitReview": {
+    "description": "Benefit: spaced repetition"
+  },
+  "paywallBenefitReadiness": "Szczegółowa gotowość z każdego przedmiotu (orientacyjnie)",
+  "@paywallBenefitReadiness": {
+    "description": "Benefit: readiness by subject"
+  },
+  "paywallChoosePlan": "Wybierz plan",
+  "@paywallChoosePlan": {
+    "description": "Heading above the plans"
+  },
+  "paywallBestChoice": "Najlepszy wybór",
+  "@paywallBestChoice": {
+    "description": "Label of the lifetime plan"
+  },
+  "paywallPlanLifetime": "Na zawsze",
+  "@paywallPlanLifetime": {
+    "description": "Name of the one-time lifetime plan"
+  },
+  "paywallLifetimePrice": "{price} · płatność jednorazowa",
+  "@paywallLifetimePrice": {
+    "description": "Price line of the lifetime plan; price comes from the store",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallDurationDay": "{count, plural, one{{count} dzień} few{{count} dni} many{{count} dni} other{{count} dnia}}",
+  "@paywallDurationDay": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallDurationWeek": "{count, plural, one{{count} tydzień} few{{count} tygodnie} many{{count} tygodni} other{{count} tygodnia}}",
+  "@paywallDurationWeek": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallDurationMonth": "{count, plural, one{{count} miesiąc} few{{count} miesiące} many{{count} miesięcy} other{{count} miesiąca}}",
+  "@paywallDurationMonth": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallDurationYear": "{count, plural, one{{count} rok} few{{count} lata} many{{count} lat} other{{count} roku}}",
+  "@paywallDurationYear": {
+    "description": "Length of a period, for example \"3 months\"",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallPerDay": "dzień",
+  "@paywallPerDay": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPerWeek": "tydzień",
+  "@paywallPerWeek": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPerMonth": "miesiąc",
+  "@paywallPerMonth": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPerYear": "rok",
+  "@paywallPerYear": {
+    "description": "Single unit after the slash in a price, for example \"/ month\""
+  },
+  "paywallPricePer": "{price} / {period}",
+  "@paywallPricePer": {
+    "description": "Price per period, for example \"PLN 24,99 / month\"; both parts come from the store data",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      },
+      "period": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallIntroFree": "{trial} za darmo, potem {price}",
+  "@paywallIntroFree": {
+    "description": "Free trial line; trial is a length such as \"3 days\"; price is the price after the trial",
+    "placeholders": {
+      "trial": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallIntroPaid": "{period}: {introPrice}, potem {price}",
+  "@paywallIntroPaid": {
+    "description": "Reduced-price introductory period line",
+    "placeholders": {
+      "period": {
+        "type": "String"
+      },
+      "introPrice": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywallContinue": "Kontynuuj",
+  "@paywallContinue": {
+    "description": "Button that buys the selected plan"
+  },
+  "paywallRestore": "Przywróć zakupy",
+  "@paywallRestore": {
+    "description": "Button that restores purchases"
+  },
+  "paywallRenewalNotice": "Subskrypcje odnawiają się automatycznie na ten sam okres w pokazanej cenie, dopóki ich nie anulujesz. Płatność jest pobierana z Twojego konta App Store lub Google Play. Aby uniknąć kolejnej opłaty, anuluj subskrypcję w ustawieniach konta w sklepie co najmniej 24 godziny przed końcem bieżącego okresu.",
+  "@paywallRenewalNotice": {
+    "description": "Auto-renewal and cancellation terms of subscriptions"
+  },
+  "paywallTrialNotice": "Bezpłatny okres próbny zamienia się w płatną subskrypcję w pokazanej cenie, jeśli nie anulujesz jej przed jego końcem.",
+  "@paywallTrialNotice": {
+    "description": "Terms of a free trial"
+  },
+  "paywallOneTimeNotice": "Dostęp na zawsze to płatność jednorazowa: nie odnawia się i nie jest subskrypcją.",
+  "@paywallOneTimeNotice": {
+    "description": "Terms of the lifetime plan"
+  },
+  "paywallLoading": "Wczytywanie planów…",
+  "@paywallLoading": {
+    "description": "Shown while the plans load"
+  },
+  "paywallErrorNetwork": "Brak połączenia. Sprawdź internet i spróbuj ponownie.",
+  "@paywallErrorNetwork": {
+    "description": "Error: no connection"
+  },
+  "paywallErrorStore": "Sklep nie mógł zrealizować żądania. Spróbuj ponownie później.",
+  "@paywallErrorStore": {
+    "description": "Error: the store reported a problem"
+  },
+  "paywallErrorUnknown": "Coś poszło nie tak. Spróbuj ponownie.",
+  "@paywallErrorUnknown": {
+    "description": "Error: anything else"
+  },
+  "paywallEmpty": "Obecnie brak dostępnych planów. Spróbuj ponownie później.",
+  "@paywallEmpty": {
+    "description": "The store has no plans to offer"
+  },
+  "paywallUnavailable": "Zakupy nie są dostępne w tej wersji aplikacji.",
+  "@paywallUnavailable": {
+    "description": "Build without store keys"
+  },
+  "paywallRetry": "Spróbuj ponownie",
+  "@paywallRetry": {
+    "description": "Retry button"
+  },
+  "paywallPurchasing": "Przetwarzanie zakupu…",
+  "@paywallPurchasing": {
+    "description": "Shown while a purchase is processed"
+  },
+  "paywallPending": "Zakup czeka na zatwierdzenie (np. Poproś o zakup lub opóźniona płatność). Premium odblokuje się po zatwierdzeniu.",
+  "@paywallPending": {
+    "description": "Purchase waits for approval"
+  },
+  "paywallNotActivated": "Płatność przeszła, ale Premium nie jest jeszcze aktywne. Za chwilę użyj opcji „Przywróć zakupy”.",
+  "@paywallNotActivated": {
+    "description": "Payment went through but Premium is not active"
+  },
+  "paywallRestoreNone": "Nie znaleziono aktywnych zakupów na tym koncie sklepu.",
+  "@paywallRestoreNone": {
+    "description": "Restore found nothing"
+  },
+  "paywallThanksTitle": "Dziękujemy!",
+  "@paywallThanksTitle": {
+    "description": "Shown after a successful purchase"
+  },
+  "paywallThanksBody": "Premium jest odblokowane. Możesz wrócić do tego, co robisz.",
+  "@paywallThanksBody": {
+    "description": "Shown after a successful purchase"
+  },
+  "paywallAlreadyTitle": "Premium jest aktywne",
+  "@paywallAlreadyTitle": {
+    "description": "Shown when the paywall opens and Premium is already active"
+  },
+  "paywallAlreadyBody": "Wszystkie funkcje są odblokowane.",
+  "@paywallAlreadyBody": {
+    "description": "Shown when Premium is already active"
+  },
+  "paywallSemSelected": "wybrany",
+  "@paywallSemSelected": {
+    "description": "Accessibility: the plan is selected"
+  },
+  "paywallSemNotSelected": "niewybrany",
+  "@paywallSemNotSelected": {
+    "description": "Accessibility: the plan is not selected"
+  },
+  "paywallSettingsSection": "Zakupy",
+  "@paywallSettingsSection": {
+    "description": "Settings section title"
+  },
+  "paywallSettingsRestoreTitle": "Przywróć zakupy",
+  "@paywallSettingsRestoreTitle": {
+    "description": "Settings: restore purchases"
+  },
+  "paywallSettingsRestoreSubtitle": "Odzyskaj Premium po ponownej instalacji lub na nowym telefonie.",
+  "@paywallSettingsRestoreSubtitle": {
+    "description": "Settings: restore purchases, explanation"
+  },
+  "paywallSettingsUnavailable": "Niedostępne w tej wersji aplikacji.",
+  "@paywallSettingsUnavailable": {
+    "description": "Settings: restore is not possible in this build"
+  },
+  "paywallSettingsManage": "Aby anulować lub zmienić subskrypcję, otwórz ustawienia konta App Store lub Google Play.",
+  "@paywallSettingsManage": {
+    "description": "Settings: how to cancel a subscription"
+  },
+  "paywallSettingsRestored": "Premium przywrócone",
+  "@paywallSettingsRestored": {
+    "description": "Snack bar after a successful restore"
+  },
   "practiceProgress": "{current} / {total}",
   "practiceFinishSession": "Zakończ sesję",
   "practiceLastQuestionButton": "Zakończ",

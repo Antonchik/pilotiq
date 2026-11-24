@@ -10,10 +10,10 @@ import 'package:pilotiq/src/purchases/purchases_gateway.dart';
 /// truth; the cache only stands in while the backend cannot be reached.
 class RevenueCatPurchaseService extends CachedPurchaseService {
   RevenueCatPurchaseService({
-    required PurchasesGateway gateway,
+    required this._gateway,
     super.cache,
     super.clock,
-  }) : _gateway = gateway;
+  });
 
   final PurchasesGateway _gateway;
   StreamSubscription<ServerEntitlement>? _updates;

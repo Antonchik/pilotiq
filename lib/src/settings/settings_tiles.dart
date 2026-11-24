@@ -7,6 +7,7 @@ import 'package:pilotiq/src/notifications/providers.dart';
 import 'package:pilotiq/src/notifications/reminder_settings_tile.dart';
 import 'package:pilotiq/src/progress/providers.dart';
 import 'package:pilotiq/src/progress/user_settings.dart';
+import 'package:pilotiq/src/purchases/purchases_settings_section.dart';
 
 /// Daily goals offered in the settings and in the onboarding.
 const List<int> dailyGoalChoices = [10, 20, 40];
@@ -84,13 +85,12 @@ class RemindersSettingsSlot extends ConsumerWidget {
   }
 }
 
-/// Slot for the purchases section ("Restore purchases"). The paywall step
-/// fills it in.
+/// The purchases section ("Restore purchases", how to cancel).
 class PurchasesSettingsSlot extends StatelessWidget {
   const PurchasesSettingsSlot({super.key});
 
   @override
-  Widget build(BuildContext context) => const SizedBox.shrink();
+  Widget build(BuildContext context) => const PurchasesSettingsSection();
 }
 
 class LicenceTile extends ConsumerWidget {

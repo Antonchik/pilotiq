@@ -65,8 +65,8 @@ class PaywallPackage {
     this.period,
     this.introOffer,
     this.title,
-    bool? isSubscription,
-  }) : _isSubscription = isSubscription;
+    this._isSubscription,
+  });
 
   final String id;
   final PackageKind kind;

@@ -6,6 +6,8 @@ import 'package:pilotiq/src/localization/generated/app_localizations.dart';
 import 'package:pilotiq/src/notifications/reminder_host.dart';
 import 'package:pilotiq/src/progress/legacy_migration.dart';
 import 'package:pilotiq/src/progress/providers.dart';
+import 'package:pilotiq/src/purchases/purchase_bootstrap.dart';
+import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/routes.dart';
 import 'package:pilotiq/src/theme.dart';
 
@@ -45,14 +47,25 @@ Future<MigrationOutcome> runStartupMigration(
   return outcome;
 }
 
-/// Opens Hive, runs the migration and returns the container the app runs in.
+/// Opens Hive, starts the purchases, runs the migration and returns the
+/// container the app runs in. Purchases never fail the start (without keys or
+/// if the store SDK cannot start the app runs without purchases).
 Future<ProviderContainer> initializeApp() async {
   await Hive.initFlutter();
-  final container = ProviderContainer();
+  final purchases = await createPurchaseService();
+  final container = ProviderContainer(
+    overrides: [
+      purchaseServiceProvider.overrideWith((ref) {
+        ref.onDispose(purchases.dispose);
+        return purchases;
+      }),
+    ],
+  );
   try {
     await runStartupMigration(container);
   } on Object {
     container.dispose();
+    purchases.dispose();
     rethrow;
   }
   return container;
