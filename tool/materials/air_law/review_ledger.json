@@ -2593,11 +2593,11 @@
  },
  "PL010-0434#52a1b469": {
   "date": "2026-11-24",
-  "note": "Klucz 60 min poprawny (ENR 1.10 pkt 4.8 lit. d) i f) – sprawdzone w korpusie). Zdanie 2 pomija zastrzeżenie z SERA.4001(d): „O ile właściwy organ nie określi krótszego okresu czasu dla krajowych lotów VFR” – a pytanie dotyczy właśnie krajowego VFR, a AIP lit. c) jest takim skróceniem. Poprawka: zastąpić zdania 2–3 jednym: „Pkt SERA.4001 lit. d) ppkt 3 rozporządzenia 923/2012 wymaga złożenia planu lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego, co najmniej 60 minut przed odlotem, o ile właściwy organ nie określi krótszego okresu dla krajowych lotów VFR; AIP Polska skraca ten okres do 30 minut tylko dla lotów VFR w całości w przestrzeni niekontrolowanej (lit. c)).” i dodać do refs SERA.4001(d) quote „O ile właściwy organ nie określi krótszego okresu czasu dla krajowych lotów VFR”. Pilnować ≤700 znaków.",
+  "note": "Poprawka wprowadzona: zastrzeżenie SERA.4001(d) dla krajowych lotów VFR z quote w refs; skrócenie do 30 min tylko dla przestrzeni niekontrolowanej (ENR 1.10 pkt 4.8 lit. c)). 2 zdania, 638 znaków, cytaty zgodne z korpusem.",
   "portion": "P18",
-  "round": 1,
-  "textSha": "1ecd725b8b9d0315",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "766b44a932f2e11d",
+  "verdict": "PASS"
  },
  "PL010-0435#75ca6812": {
   "date": "2026-11-24",
@@ -3105,11 +3105,11 @@
  },
  "PL010-0512#7d9a7d4c": {
   "date": "2026-11-24",
-  "note": "Nie outdated i nie sporne: klucz (ACC Warszawa jako organ ATS pełniący rolę punktu alarmowego, art. 140a ust. 7) pozostaje jedyną obroną odpowiedzią wg aktualnego prawa; zmienia się tylko przesłanka pytania (ośrodek cywilno-wojskowy, art. 140a ust. 5 pkt 1; podośrodki ARSC są wojskowe wg GEN 3.6). Poprawka: słowo „obecnie” sugeruje wcześniejszy stan prawny, którego korpus nie potwierdza. Zastąpić ostatnie zdanie: „Według art. 140a ust. 5 pkt 1 i ust. 7 alarm trafia do cywilno-wojskowego ośrodka koordynacji poszukiwania i ratownictwa lotniczego, a nie do organu wyłącznie wojskowego, jak zakłada pytanie.”",
+  "note": "Usunięto «obecnie»; ostatnie zdanie opiera się na art. 140a ust. 5 pkt 1 i ust. 7 bez twierdzeń o wcześniejszym stanie prawnym. 3 zdania, 643 znaki, cytaty zgodne.",
   "portion": "P18",
-  "round": 1,
-  "textSha": "5f981b59d6875def",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "39169f005102de0c",
+  "verdict": "PASS"
  },
  "PL010-0514#2e030923": {
   "date": "2026-11-24",
