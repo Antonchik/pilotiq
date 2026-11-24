@@ -132,6 +132,136 @@ class RuleAnchorsTest(unittest.TestCase):
         self.assertEqual({"art. 1", "art. 1 ust. 1", "art. 1 ust. 2", "art. 2"}, set(a))
 
 
+class StatuteFootnoteAndAnnexTest(unittest.TestCase):
+    FM = ec.FUTURE_MARK
+
+    def anchors(self, body):
+        text = "\n".join(ec.clean_lines(("Art. 1. Start.\n" + body).split("\n"))) + "\n"
+        return text, ec.statute_anchors(text)
+
+    def test_future_redaction_is_not_anchored_and_does_not_extend_the_current_one(self):
+        text, a = self.anchors(
+            "Art. 43. 1. First.\n"
+            "Art. 44. 1. Current first paragraph.\n2. Current second.\n"
+            "Art. 44.%s 1. Future first paragraph.\n2. Future second.\n"
+            "Art. 45. Next article.\n" % self.FM)
+        self.assertEqual(["art. 1", "art. 43", "art. 43 ust. 1", "art. 44", "art. 44 ust. 1", "art. 44 ust. 2",
+                          "art. 45"], list(a))
+        self.assertNotIn("Future", anchor_text(text, a, "art. 44"))
+        self.assertTrue(anchor_text(text, a, "art. 44 ust. 2").startswith("2. Current second."))
+
+    def test_future_paragraph_keeps_the_numbering_for_the_next_one(self):
+        text, a = self.anchors(
+            "Art. 67c. 1. One.\n2. %s Future two.\n2a. Two a.\n3. Three.\n"
+            "1) pkt one;\n2) pkt two;\n2) %s pkt two future;\n3) pkt three;\n" % (self.FM, self.FM))
+        for key in ("art. 67c ust. 1", "art. 67c ust. 2a", "art. 67c ust. 3", "art. 67c ust. 3 pkt 1",
+                    "art. 67c ust. 3 pkt 2", "art. 67c ust. 3 pkt 3"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("art. 67c ust. 2", a)
+        self.assertNotIn("Future", anchor_text(text, a, "art. 67c ust. 3 pkt 1"))
+
+    def test_unnumbered_first_paragraph_and_glued_number(self):
+        _, a = self.anchors("Art. 201. Single paragraph text.\n2. (uchylony)\n3. (uchylony)\n"
+                            "Art. 156c. 1. A.\n2. B.\n3. C.\n4. D.\n5.Prezes Urzedu decyduje.\n")
+        self.assertIn("art. 201 ust. 2", a)
+        self.assertIn("art. 201 ust. 3", a)
+        self.assertNotIn("art. 201 ust. 1", a)
+        self.assertIn("art. 156c ust. 5", a)
+
+    def test_annex_has_its_own_anchors_and_ends_the_last_article(self):
+        text, a = self.anchors(
+            "Art. 232. Last article.\nZałącznik nr 1\nWysokość kary\n1. Naruszenie\n1.1. Szczegół\n"
+            "215 535\nZałącznik nr 5a\n1. Opłata\n")
+        self.assertEqual(["art. 1", "art. 232", "załącznik 1", "załącznik 1 pkt 1", "załącznik 1 pkt 1.1",
+                          "załącznik 5a", "załącznik 5a pkt 1"], list(a))
+        self.assertNotIn("Załącznik", anchor_text(text, a, "art. 232"))
+        self.assertNotIn("Naruszenie", anchor_text(text, a, "załącznik 5a"))
+
+
+class SejmPdfFootnoteTest(unittest.TestCase):
+    def test_superscript_marks_are_removed_and_future_redaction_marked(self):
+        # (size, text) segments per line; footnotes at 6 pt
+        content = [
+            "BT 72 760 Td /F1 10 Tf (Art. 44.) Tj /F1 6.5 Tf (27\\)) Tj /F1 10 Tf ( 1. Current paragraph text here.) Tj ET",
+            "BT 72 740 Td /F1 10 Tf (Art. 44.) Tj /F1 6.5 Tf (28\\)) Tj /F1 10 Tf ( 1. Future paragraph text here.) Tj ET",
+            "BT 72 100 Td /F1 6 Tf (27\\) W tym brzmieniu obowiazuje do wejscia w zycie zmiany, o ktorej mowa w odnosniku 28.) Tj ET",
+            "BT 72 90 Td /F1 6 Tf (28\\) Ze zmiana wprowadzona przez art. 3 ustawy.) Tj ET",
+        ]
+        stream = "\n".join(content).encode("latin-1")
+        objs = [
+            b"<< /Type /Catalog /Pages 2 0 R >>",
+            b"<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+            b"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Contents 4 0 R "
+            b"/Resources << /Font << /F1 5 0 R >> >> >>",
+            b"<< /Length %d >>\nstream\n" % len(stream) + stream + b"\nendstream",
+            b"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        ]
+        out = bytearray(b"%PDF-1.4\n")
+        offs = []
+        for i, o in enumerate(objs, 1):
+            offs.append(len(out))
+            out += b"%d 0 obj\n" % i + o + b"\nendobj\n"
+        xref = len(out)
+        out += b"xref\n0 %d\n0000000000 65535 f \n" % (len(objs) + 1)
+        for o in offs:
+            out += b"%010d 00000 n \n" % o
+        out += b"trailer\n<< /Size %d /Root 1 0 R >>\nstartxref\n%d\n%%%%EOF\n" % (len(objs) + 1, xref)
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "x.pdf"
+            path.write_bytes(bytes(out))
+            lines = ec.clean_lines(ec.read_pdf_lines(str(path), "sejm"))
+        self.assertEqual(2, len(lines), lines)
+        self.assertTrue(lines[0].startswith("Art. 44. 1. Current paragraph"), lines[0])
+        self.assertNotIn(ec.FUTURE_MARK, lines[0])
+        self.assertIn(ec.FUTURE_MARK, lines[1])
+        self.assertNotIn("27)", " ".join(lines))
+
+
+class EarExtrasTest(unittest.TestCase):
+    def setUp(self):
+        self.text = read_fix("sera_ext_sample.txt")
+        self.a = ec.rule_anchors(self.text, "easa", ("article", "appendix"))
+
+    def test_articles_and_definitions(self):
+        for key in ("Article 1", "Article 1(1)", "Article 1(2)", "Article 2", "Article 2(1)", "Article 2(3)",
+                    "Article 2(5)", "Article 2(5a)", "GM1 Article 2(12)", "Article 3", "Article 3(1)"):
+            self.assertIn(key, self.a, key)
+        self.assertNotIn("Article 10", self.a)  # table-of-contents entry wrapped over three lines
+        self.assertTrue(anchor_text(self.text, self.a, "Article 2(5)").startswith("5. ‘aerial work’"))
+        self.assertNotIn("GM1", anchor_text(self.text, self.a, "Article 2"))
+
+    def test_gm_to_article_definition(self):
+        self.assertIn("GM1 Article 2(12)", self.a)
+        self.assertIn("GM1 Article 2", self.a)
+        self.assertNotIn("Article 3", anchor_text(self.text, self.a, "GM1 Article 2(12)"))
+
+    def test_multi_rule_heading_and_parent_union(self):
+        self.assertIn("AMC1 FCL.210", self.a)
+        self.assertIn("AMC1 FCL.215", self.a)
+        self.assertEqual(self.a["AMC1 FCL.210"], self.a["AMC1 FCL.215"])
+        s, e = self.a["AMC1 SERA.5005"]
+        for key in ("AMC1 SERA.5005(f)", "AMC1 SERA.5005(b)"):
+            self.assertTrue(s <= self.a[key][0] and self.a[key][1] <= e, key)
+
+    def test_table_footnote_paragraph_is_not_a_subpoint(self):
+        self.assertIn("SERA.5001", self.a)
+        self.assertNotIn("SERA.5001(a)", self.a)
+
+    def test_gm_to_other_block_ends_the_previous_one(self):
+        self.assertNotIn("Text of GM", anchor_text(self.text, self.a, "AMC1 SERA.5005(b)"))
+
+    def test_appendices(self):
+        for key in ("Appendix 1", "Appendix 1 pkt 1", "Appendix 1 pkt 1.1", "Appendix 1 pkt 1.1.1",
+                    "Appendix 1 pkt 1.2", "Appendix 2", "Appendix 2 pkt 1"):
+            self.assertIn(key, self.a, key)
+        self.assertNotIn("Appendix 1 pkt 215", self.a)
+        self.assertNotIn("Balloons", anchor_text(self.text, self.a, "Appendix 1"))
+
+    def test_extras_are_off_by_default(self):
+        plain = ec.rule_anchors(self.text, "easa")
+        self.assertFalse([k for k in plain if k.startswith(("Article", "Appendix", "GM1 Article"))])
+
+
 class AipAndHtmlTest(unittest.TestCase):
     def test_html_to_text_and_anchors(self):
         path = FIX / "aip_sample.html"

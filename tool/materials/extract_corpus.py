@@ -92,8 +92,8 @@ def dehyphenate(lines):
 
 _ANNEX_HEAD = re.compile(r"^Załącznik nr \d+[a-z]?$")
 _FOOT_START = re.compile(r"^(\d+)\)\s+(.*)$")
-_FUTURE_PAIR_OLD = re.compile(r"^(W tym brzmieniu obowiązuje|Wprowadzenie do wyliczenia w tym brzmieniu|"
-                              r"Obowiązuje do wejścia)")
+_FUTURE_PAIR_OLD = re.compile(r"^(W tym brzmieniu obowi.zuje|Wprowadzenie do wyliczenia w tym brzmieniu|"
+                              r"Obowi.zuje do wejścia)")
 _FUTURE_NEW = re.compile(r"^(Ze zmianą wprowadzoną|Wprowadzenie do wyliczenia ze zmianą|Wejdzie w życie)")
 
 
@@ -452,11 +452,13 @@ _RULE_RE = re.compile(r"^(%s)(?:\s+(\S.*))?$" % _RULE_ID)
 _AMC_FULL_RE = re.compile(r"^((?:AMC|GM)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_ID_PAREN, _ID_PAREN))
 _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
 _ART_EAR_RE = re.compile(r"^Article (\d+[a-z]?) \S")
+_GM_ART_RE = re.compile(r"^((?:AMC|GM)\d*) (?:to )?Article (\d+[a-z]?(?:\(\d+[a-z]?\))?)(?=\s)")
+_GM_OTHER_RE = re.compile(r"^(?:AMC|GM)\d*\s+(?:and (?:AMC|GM)\d*\s+)?to\s")
 _APPENDIX_RE = re.compile(r"^APPENDIX (\d+) \S")
 _APP_ROW_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){0,4})\.\s+\S")
 _PARA_RE = re.compile(r"^\(([a-z]{1,4}|\d{1,2}|[A-Z])\)\s*\S")
-_PARA_NUM_RE = re.compile(r"^(\d{1,2})\.\s+\S")
-_DEF_RE = re.compile(r"^(\d{1,3})\.\s+[‘']")
+_PARA_NUM_RE = re.compile(r"^(\d{1,3})\.\s+\S")
+_DEF_RE = re.compile(r"^(\d{1,3})([a-z]?)\.\s+[‘']")
 _TABLE_NOTE_RE = re.compile(r"^\(\*+\)")
 _ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
 _BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+\b.*|Appendix \d+ to .*|"
@@ -560,8 +562,8 @@ def rule_anchors(text, kind, extras=()):
 
     rows = _line_offsets(text)
     for idx, (start, line) in enumerate(rows):
-        if _TOC_LINE.search(line) or (idx + 1 < len(rows) and _TOC_LINE.search(rows[idx + 1][1])):
-            continue  # table-of-contents entry (dot leaders, possibly on the wrapped second line)
+        if any(_TOC_LINE.search(rows[j][1]) for j in range(idx, min(idx + 4, len(rows)))):
+            continue  # table-of-contents entry (dot leaders, possibly on a wrapped later line)
         mm = _AMC_FULL_RE.match(line)
         is_head = bool(mm or _RULE_RE.match(line))
         if _PAGE_NO_TAIL.search(line) and is_head:
@@ -591,6 +593,30 @@ def rule_anchors(text, kind, extras=()):
                 spans.append(art)
                 art_last = None
             continue
+        if _GM_OTHER_RE.match(line) and not _GM_ART_RE.match(line):
+            end_app(start)
+            end_all(start)   # "GM1 to Appendix 4", "GM1 to AMC1 SERA.8005(c)": text of another block
+            continue
+        mg = _GM_ART_RE.match(line) if art_extra else None
+        if mg:
+            end_app(start)
+            end_all(start)
+            key = "%s Article %s" % (mg.group(1), mg.group(2))
+            if key not in have:
+                have.add(key)
+                sp = _Span(key, start, 1)
+                spans.append(sp)
+                group = [sp]
+                state = _ParaState()
+                base = key
+                anc = key
+                while True:
+                    mpar = re.match(r"^(.+)\([a-z0-9]+\)$", anc)
+                    if not mpar:
+                        break
+                    anc = mpar.group(1)
+                    children.setdefault(anc, []).append(sp)
+            continue
         if mm and kind in ("easa", "eu_reg"):
             end_app(start)
             end_all(start)
@@ -605,10 +631,13 @@ def rule_anchors(text, kind, extras=()):
                     sp = _Span(f, start, 1)
                     spans.append(sp)
                     group.append(sp)
-                    mpar = re.match(r"^(.*\S)(\([a-z0-9]+\))+$", f)
-                    if mpar:
-                        parent = re.sub(r"(\([a-z0-9]+\))+$", "", f)
-                        children.setdefault(parent, []).append(sp)
+                    anc = f
+                    while True:
+                        mpar = re.match(r"^(.+)\([a-z0-9]+\)$", anc)
+                        if not mpar:
+                            break
+                        anc = mpar.group(1)
+                        children.setdefault(anc, []).append(sp)
                 state = _ParaState()
                 base = new[0]
             continue
@@ -657,6 +686,16 @@ def rule_anchors(text, kind, extras=()):
             if kind == "eu_reg" or art_extra:
                 mn = _PARA_NUM_RE.match(line)
                 md = _DEF_RE.match(line)
+                if md and md.group(2) and art_last is not None and int(md.group(1)) == art_last \
+                        and kind != "eu_reg":
+                    key = "%s(%s%s)" % (art.key, md.group(1), md.group(2))
+                    for sp in spans:
+                        if sp.level == 8 and sp.end is None:
+                            sp.end = start
+                    if key not in have:
+                        have.add(key)
+                        spans.append(_Span(key, start, 8))
+                    continue
                 if mn:
                     num = int(mn.group(1))
                     ok = (art_last is None and num == 1) or (art_last is not None and num == art_last + 1)
@@ -673,11 +712,20 @@ def rule_anchors(text, kind, extras=()):
                             spans.append(_Span(key, start, 8))
     end_all(len(text))
     end_app(len(text))
+    by_key = {sp.key: sp for sp in spans}
     for parent, kids in children.items():
+        lo = min(k.start for k in kids)
+        hi = max(k.end if k.end is not None else len(text) for k in kids)
         if parent not in have:
             have.add(parent)
-            spans.append(_Span(parent, min(k.start for k in kids), 1))
-            spans[-1].end = max(k.end if k.end is not None else len(text) for k in kids)
+            sp = _Span(parent, lo, 1)
+            sp.end = hi
+            spans.append(sp)
+        else:
+            # a real heading "AMC1 X" and later separate headings "AMC1 X(b)": the parent covers its children
+            sp = by_key[parent]
+            sp.start = min(sp.start, lo)
+            sp.end = max(sp.end if sp.end is not None else len(text), hi)
     return _finish(spans, len(text))
 
 

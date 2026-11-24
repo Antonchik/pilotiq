@@ -1,0 +1,46 @@
+Contents
+Article 10 Amendments to Regulations (EC) No 730/2006, (EC) No
+1794/2006 and Implementing Regulation (EU) No
+1035/2011 ........................................................ 40
+Article 1 Subject matter and scope
+Regulation (EU) 2023/1772
+1. The objective of this Regulation is to establish the common rules.
+2. This Regulation shall apply to:
+(a) aircraft;
+Article 2 Definitions
+For the purpose of this Regulation the following definitions shall apply:
+1. ‘accuracy’ means a degree of conformance;
+3. ‘advisory airspace’ means an airspace of defined dimensions;
+5. ‘aerial work’ means an aircraft operation;
+5a. ‘extra’ means something;
+GM1 Article 2(12) Aerial work
+ED Decision 2020/007/R
+GENERAL
+(a) Unlike aerial work, specialised operations do not include search and rescue;
+Article 3 Compliance
+Regulation (EU) 2016/1185
+1. Member States shall comply.
+SERA.5001 VMC visibility and distance from cloud minima
+Regulation (EU) 2016/1185
+Table S5-1 (*)
+(*) When the height of the transition altitude is lower than 3 050 m.
+(***) When so prescribed by the competent authority:
+(a) flight visibilities reduced to not less than 1 500 m may be permitted;
+AMC1 FCL.210; FCL.215 Training course and theoretical knowledge examination
+(a) Training course syllabus.
+AMC1 SERA.5005(f) Visual flight rules
+Text f.
+AMC1 SERA.5005(b) Visual flight rules
+Text b.
+GM1 to Appendix 4 ATS airspace classes
+Text of GM to the appendix.
+APPENDIX 1 SIGNALS
+Regulation (EU) 2024/1111
+1. DISTRESS AND URGENCY SIGNALS
+1.1. General
+1.1.1. Notwithstanding the provisions.
+1.2. Distress signals
+Table row 215 535
+APPENDIX 2 UNMANNED FREE BALLOONS
+Regulation (EU) 2024/404
+1. Balloons shall be operated.
