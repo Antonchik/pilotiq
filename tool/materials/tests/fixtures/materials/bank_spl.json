@@ -1,0 +1,36 @@
+{
+ "schema": 2,
+ "licence": "spl",
+ "source": {},
+ "questions": [
+  {
+   "id": "PL010-0001",
+   "number": "PL010-0001",
+   "topic": "PL010",
+   "subject": "air_law",
+   "q": {
+    "pl": "Kto odpowiada za lot?",
+    "en": "EN Kto odpowiada za lot?"
+   },
+   "a": [
+    {
+     "pl": "Prawda",
+     "en": "EN Prawda"
+    },
+    {
+     "pl": "Nigdy",
+     "en": "EN Nigdy"
+    },
+    {
+     "pl": "Fałsz",
+     "en": "EN Fałsz"
+    },
+    {
+     "pl": "Może",
+     "en": "EN Może"
+    }
+   ],
+   "correct": 0
+  }
+ ]
+}

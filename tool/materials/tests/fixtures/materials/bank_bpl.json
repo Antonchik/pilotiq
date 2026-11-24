@@ -1,0 +1,36 @@
+{
+ "schema": 2,
+ "licence": "bpl",
+ "source": {},
+ "questions": [
+  {
+   "id": "PL010-1001",
+   "number": "PL010-1001",
+   "topic": "PL010",
+   "subject": "air_law",
+   "q": {
+    "pl": "Tylko BPL?",
+    "en": "EN Tylko BPL?"
+   },
+   "a": [
+    {
+     "pl": "Prawda",
+     "en": "EN Prawda"
+    },
+    {
+     "pl": "Fałsz",
+     "en": "EN Fałsz"
+    },
+    {
+     "pl": "Może",
+     "en": "EN Może"
+    },
+    {
+     "pl": "Nigdy",
+     "en": "EN Nigdy"
+    }
+   ],
+   "correct": 0
+  }
+ ]
+}

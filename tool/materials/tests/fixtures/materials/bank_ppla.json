@@ -1,0 +1,94 @@
+{
+ "schema": 2,
+ "licence": "ppla",
+ "source": {},
+ "questions": [
+  {
+   "id": "PL010-0001~aaaaaa",
+   "number": "PL010-0001",
+   "topic": "PL010",
+   "subject": "air_law",
+   "q": {
+    "pl": "Kto odpowiada za lot?",
+    "en": "EN Kto odpowiada za lot?"
+   },
+   "a": [
+    {
+     "pl": "Prawda",
+     "en": "EN Prawda"
+    },
+    {
+     "pl": "Fałsz",
+     "en": "EN Fałsz"
+    },
+    {
+     "pl": "Może",
+     "en": "EN Może"
+    },
+    {
+     "pl": "Nigdy",
+     "en": "EN Nigdy"
+    }
+   ],
+   "correct": 0
+  },
+  {
+   "id": "PL010-0002",
+   "number": "PL010-0002",
+   "topic": "PL010",
+   "subject": "air_law",
+   "q": {
+    "pl": "Jaka jest wysokość <sub>x</sub>?",
+    "en": "EN Jaka jest wysokość <sub>x</sub>?"
+   },
+   "a": [
+    {
+     "pl": "100 m",
+     "en": "EN 100 m"
+    },
+    {
+     "pl": "200 m",
+     "en": "EN 200 m"
+    },
+    {
+     "pl": "300 m",
+     "en": "EN 300 m"
+    },
+    {
+     "pl": "400 m",
+     "en": "EN 400 m"
+    }
+   ],
+   "correct": 0
+  },
+  {
+   "id": "MET-1",
+   "number": "PL040-0001",
+   "topic": "PL040",
+   "subject": "meteorology",
+   "q": {
+    "pl": "Inny",
+    "en": "EN Inny"
+   },
+   "a": [
+    {
+     "pl": "a",
+     "en": "EN a"
+    },
+    {
+     "pl": "b",
+     "en": "EN b"
+    },
+    {
+     "pl": "c",
+     "en": "EN c"
+    },
+    {
+     "pl": "d",
+     "en": "EN d"
+    }
+   ],
+   "correct": 0
+  }
+ ]
+}

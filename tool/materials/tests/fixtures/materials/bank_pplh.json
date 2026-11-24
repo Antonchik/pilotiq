@@ -1,0 +1,65 @@
+{
+ "schema": 2,
+ "licence": "pplh",
+ "source": {},
+ "questions": [
+  {
+   "id": "PL010-0001~bbbbbb",
+   "number": "PL010-0001",
+   "topic": "PL010",
+   "subject": "air_law",
+   "q": {
+    "pl": "  KTO odpowiada   za LOT?",
+    "en": "EN   KTO odpowiada   za LOT?"
+   },
+   "a": [
+    {
+     "pl": "Prawda ",
+     "en": "EN Prawda "
+    },
+    {
+     "pl": "Fałsz",
+     "en": "EN Fałsz"
+    },
+    {
+     "pl": "Może",
+     "en": "EN Może"
+    },
+    {
+     "pl": "Nigdy",
+     "en": "EN Nigdy"
+    }
+   ],
+   "correct": 0
+  },
+  {
+   "id": "PL010-0003",
+   "number": "PL010-0003",
+   "topic": "PL010",
+   "subject": "air_law",
+   "q": {
+    "pl": "Trzecie pytanie?",
+    "en": null
+   },
+   "a": [
+    {
+     "pl": "Prawda",
+     "en": null
+    },
+    {
+     "pl": "Fałsz",
+     "en": null
+    },
+    {
+     "pl": "Może",
+     "en": null
+    },
+    {
+     "pl": "Nigdy",
+     "en": null
+    }
+   ],
+   "correct": 0
+  }
+ ]
+}
