@@ -31,6 +31,14 @@
   "textSha": "05ed7f4e035f4b6c",
   "verdict": "PASS"
  },
+ "PL010-0003#feb9a6a3": {
+  "date": "2026-11-24",
+  "note": "Seria błysków czerwonych w locie = „Lotnisko nie jest bezpieczne, nie lądować” (AP1-1); SERA.3301(a) poprawnie zacytowany. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote. Literówki korpusu („tatku”) nie cytowane.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "8e0718d376e02524",
+  "verdict": "PASS"
+ },
  "PL010-0013#002b1634": {
   "date": "2026-11-24",
   "note": "Klucz 600 m = SERA.5005(f)(1); wyjątek z SERA.5005(f); pułapka (300 m to wysokość, nie promień) zgodna z przepisem.",
@@ -205,6 +213,30 @@
   "portion": "P14",
   "round": 1,
   "textSha": "1356b9a67b2ef246",
+  "verdict": "PASS"
+ },
+ "PL010-0052#1d7f97fc": {
+  "date": "2026-11-24",
+  "note": "Ciągłe zielone w locie = „Zezwala się lądować” (AP1-1). Wątpliwość: AFIS nie wydaje zezwoleń (SERA.8015 lit. eb) ppkt 5 — w kotwicach błędnie jako SERA.8015(e)(6)(iii) — oraz ATS.TR.125 lit. b) 2017/373 odróżniają „zezwolenie na lądowanie” od „informacji o dostępności drogi startowej do lądowania na lotniskach AFIS”), ale to niedokładność przesłanki pytania, nie sprzeczność klucza: jedynym sygnałem o znaczeniu „zezwala się lądować” jest ciągłe zielone, żadna inna odpowiedź nie jest obronna. Inaczej niż w P01 0438 (VFR w klasie A — przesłanka niemożliwa) → disputeNote niepotrzebny. Cytat „Zezwala się starować” to dosłowna literówka korpusu — dopuszczalne w quote; w text poprawnie nie powtórzona. Trap zgodny z tabelą.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "6f0b83ce99b7e373",
+  "verdict": "PASS"
+ },
+ "PL010-0053#96adbe92": {
+  "date": "2026-11-24",
+  "note": "Seria błysków czerwonych w locie; pułapki (białe = lądować i kołować do płyty postojowej, ciągłe zielone = zezwolenie) zgodne z AP1-1 i odpowiadają dystraktorom. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "7883db262915c817",
+  "verdict": "PASS"
+ },
+ "PL010-0054#578e8f54": {
+  "date": "2026-11-24",
+  "note": "Ciągłe zielone w locie = „Zezwala się lądować”; pułapka zgodna z AP1-1. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "f21ac5d27dd21d03",
   "verdict": "PASS"
  },
  "PL010-0062#3f1ad0c5": {
@@ -719,6 +751,30 @@
   "textSha": "b42f9838692f4c18",
   "verdict": "PASS"
  },
+ "PL010-0179#08a0068a": {
+  "date": "2026-11-24",
+  "note": "Seria błysków zielonych w locie = „Wracać do lądowania” = nakaz powrotu do lądowania; pułapka zgodna z tabelą. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "296dedb297ef1f98",
+  "verdict": "PASS"
+ },
+ "PL010-0179#6b04ef69": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w literówce dystraktora („czerwony”/„czerwonych”), pytanie i klucz identyczne; pułapka oryginału nie dotyczy tego dystraktora.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "bfd59b72d8771e6f",
+  "verdict": "PASS"
+ },
+ "PL010-0187#d6728b02": {
+  "date": "2026-11-24",
+  "note": "Seria błysków zielonych w locie = „Wracać do lądowania”; pułapka (ciągłe zielone, seria czerwonych) zgodna z AP1-1. Sygnał nadany z miejsca kierowania lotami — zgodne z nagłówkiem tabeli.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "ab36bb6f7cf43a25",
+  "verdict": "PASS"
+ },
  "PL010-0199#cc409812": {
   "date": "2026-11-24",
   "note": "Art. 96 ust. 3 + art. 21 ust. 2 pkt 2 (cytat dosłowny, dalszy ciąg punktu o ustawie o transporcie materiałów niebezpiecznych słusznie pominięty).",
@@ -805,6 +861,22 @@
   "portion": "P14",
   "round": 1,
   "textSha": "be9fb5da7e4fb7ad",
+  "verdict": "PASS"
+ },
+ "PL010-0222#fe56b5e8": {
+  "date": "2026-11-24",
+  "note": "Seria błysków białych w locie = „Lądować na tym lotnisku i kołować do płyty postojowej”; pułapka zgodna z tabelą. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "349882028af6a489",
+  "verdict": "PASS"
+ },
+ "PL010-0223#dfb21faf": {
+  "date": "2026-11-24",
+  "note": "Ciągłe czerwone w locie = „Dać pierwszeństwo drogi … i kontynuować krążenie”; pułapka zgodna. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "80e00d104bdbd9b6",
   "verdict": "PASS"
  },
  "PL010-0226#1a030b4b": {
@@ -1247,6 +1319,22 @@
   "textSha": "1b0169ffb1b3d7a3",
   "verdict": "PASS"
  },
+ "PL010-0352#a60b9a4c": {
+  "date": "2026-11-24",
+  "note": "Klucz 2000 = § 11 pkt 2 rozp. MI z 17.07.2020 (cytat dosłowny, akt obowiązujący) i SERA.13005(b)(2); pułapki 7000 (§ 11 pkt 1) i 7600 (SERA.13005(a)(2)) zgodne. Lokatory najwęższe.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "2812b6ac0f77aed8",
+  "verdict": "PASS"
+ },
+ "PL010-0352#f17e2f41": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w brzmieniu dystraktora („Każdy dowolny kod w modzie.” / „Każdy dowolny kod.”), którego pułapka oryginału nie omawia; pytanie i klucz identyczne.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "c64c1a2377248130",
+  "verdict": "PASS"
+ },
  "PL010-0356#5678e240": {
   "date": "2026-11-24",
   "note": "Klucz 150 m = SERA.5005(f)(2); wyjątki z (f), pułapka 300 m z (f)(1). Zastrzeżenie o lotnictwie państwowym w pytaniu nie wymaga komentarza.",
@@ -1349,6 +1437,30 @@
   "portion": "P04",
   "round": 1,
   "textSha": "3ceaa99bca5f8cf7",
+  "verdict": "PASS"
+ },
+ "PL010-0389#39c051b7": {
+  "date": "2026-11-24",
+  "note": "Seria błysków białych w locie; pułapka (ciągłe zielone / ciągłe czerwone) zgodna z AP1-1 i odpowiada dystraktorom.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "83dfc9e35c1b1946",
+  "verdict": "PASS"
+ },
+ "PL010-0390#e6e5f5fe": {
+  "date": "2026-11-24",
+  "note": "Ciągłe czerwone w locie; pułapka (seria czerwonych = nie lądować) zgodna z AP1-1.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "96cfd24fd74feec2",
+  "verdict": "PASS"
+ },
+ "PL010-0394#20df34ad": {
+  "date": "2026-11-24",
+  "note": "Klucz = GM1 SERA.11005 lit. b) ppkt 3 (EASA EN, sprawdzone w korpusie: „150 m (500 ft) … 300 m (1 000 ft) … 300 m (1 000 ft) … 600 m (2 000 ft)”, „if no applicable regional procedures”); powiązanie z SERA.8005(c)(1) (1 000 ft do FL 410 włącznie, 2 000 ft powyżej) jest poprawnym i jawnie oznaczonym wnioskowaniem („stąd”) — daje część „1000 ft powyżej FL 410”. Kod 7500 = SERA.11005 lit. aa) (brak podkotwicy, lokator SERA.11005 najwęższy). Drobne: GM mówi „should, whenever possible” — „leci” zamiast „powinien lecieć” akceptowalne. 3 zdania, 644 znaki.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "45eada4973ea7308",
   "verdict": "PASS"
  },
  "PL010-0403#22537431": {
@@ -1973,6 +2085,102 @@
   "portion": "P13",
   "round": 1,
   "textSha": "672752d172af300f",
+  "verdict": "PASS"
+ },
+ "PL010-0566#60598c74": {
+  "date": "2026-11-24",
+  "note": "Ciągłe czerwone na ziemi = „Zatrzymać się”; pułapka (seria czerwonych = kołować poza polem wzlotów) zgodna z AP1-1.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "f2dc3dcf98fcd9ef",
+  "verdict": "PASS"
+ },
+ "PL010-0567#e7947d9e": {
+  "date": "2026-11-24",
+  "note": "Seria błysków czerwonych na ziemi = „Kołować poza polem wzlotów będącym w użyciu”; pułapka zgodna z AP1-1.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "ab344e576d54d67f",
+  "verdict": "PASS"
+ },
+ "PL010-0568#cb6d47cf": {
+  "date": "2026-11-24",
+  "note": "Seria błysków białych na ziemi = „Wracać do punktu wyjściowego na lotnisku”; pułapka zgodna.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "cae685342aa7f20f",
+  "verdict": "PASS"
+ },
+ "PL010-0569#f8093bce": {
+  "date": "2026-11-24",
+  "note": "Seria błysków zielonych na ziemi = „Zezwala się kołować”; ciągłe zielone na ziemi = start (cytat z literówką korpusu „starować” — dosłownie, w text poprawnie „zezwolenie na start”).",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "080ab73e0079fc45",
+  "verdict": "PASS"
+ },
+ "PL010-0570#b0141dfb": {
+  "date": "2026-11-24",
+  "note": "Ciągłe zielone na ziemi = zezwolenie na start (w korpusie literówka „starować”, cytat dosłowny, text słusznie omija literówkę); pułapka zgodna.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "d50af10c80d6ce84",
+  "verdict": "PASS"
+ },
+ "PL010-0572#1432cd66": {
+  "date": "2026-11-24",
+  "note": "Klucz = definicja QFE w AIP GEN 2.2; ENR 1.7 pkt 1.4 dokłada „progu drogi startowej w użyciu” (słowa klucza); pułapka QNH zgodna z GEN 2.2 i odnosi się do dystraktora „odniesione do średniego poziomu morza”. Cytaty dosłowne z polskiej kolumny AIP. Pierwsze zdanie siłą rzeczy powtarza krótką definicję (nie da się jej sparafrazować bez utraty klucza) — dopuszczalne; drugie zdanie jest bliskie dosłownego brzmienia ENR 1.7 pkt 1.4 — przy następnej edycji można przeredagować, ale nie blokuje.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "6172c46106699e7c",
+  "verdict": "PASS"
+ },
+ "PL010-0573#75ecd392": {
+  "date": "2026-11-24",
+  "note": "FIX: treść główna poprawna (GEN 2.2 QNH; ATS.TR.130 lit. a) 2017/373 — cytat dosłowny), ale zdanie „Pułapka: ciśnienie … na poziomie lotniska lub na progu drogi startowej to QFE” nie odpowiada żadnemu dystraktorowi (wszystkie trzy mówią o ciśnieniu na poziomie morza) — pułapka bez pułapki w bezpłatnej witrynie. Usunąć to zdanie i ref GEN 2.2 QFE (zostają 2 zdania), albo zastąpić pułapką trafiającą w dystraktory i popartą źródłem, np. „Pułapka: QNH nie jest ciśnieniem zmierzonym na poziomie morza, lecz nastawieniem wysokościomierza, przy którym na ziemi wskazuje on wzniesienie miejsca (GEN 2.2, ATS.TR.130 lit. a)).”",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "dbe238b5afe4db49",
+  "verdict": "FIX"
+ },
+ "PL010-0584#69c9bb65": {
+  "date": "2026-11-24",
+  "note": "Seria błysków białych na ziemi = „Wracać do punktu wyjściowego”; pułapka (ciągłe czerwone = zatrzymać się, seria zielonych = kołować) zgodna i trafia w dystraktory.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "88d3939b6e4519c8",
+  "verdict": "PASS"
+ },
+ "PL010-0585#6296f1d5": {
+  "date": "2026-11-24",
+  "note": "Seria błysków czerwonych na ziemi = „Kołować poza polem wzlotów będącym w użyciu” (klucz ma „w użytku” zamiast „w użyciu” — to samo znaczenie). Pułapka o płycie postojowej (tylko seria białych w locie) zgodna z całą tabelą AP1-1.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "8cb8cab9ad43e57e",
+  "verdict": "PASS"
+ },
+ "PL010-0586#2b24784c": {
+  "date": "2026-11-24",
+  "note": "Seria błysków zielonych na ziemi = „Zezwala się kołować”; pułapka zgodna.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "9934fd5521847b6c",
+  "verdict": "PASS"
+ },
+ "PL010-0587#fe996417": {
+  "date": "2026-11-24",
+  "note": "Ciągłe czerwone na ziemi = „Zatrzymać się”; pułapka zgodna.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "0c9e0f51a62d4eb5",
+  "verdict": "PASS"
+ },
+ "PL010-0588#767cc98c": {
+  "date": "2026-11-24",
+  "note": "Ciągłe zielone na ziemi = start; pułapka (seria białych = powrót do punktu wyjściowego) zgodna.",
+  "portion": "P21",
+  "round": 1,
+  "textSha": "6158427c5328714d",
   "verdict": "PASS"
  },
  "PL010-1337#bbcc07b5": {
