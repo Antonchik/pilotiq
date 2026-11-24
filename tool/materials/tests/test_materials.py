@@ -392,13 +392,12 @@ class UnverifiedBasisTest(Base):
         self.assertEqual(self.errors(), [])
 
     def test_apply_review_still_works_for_ordinary_entries(self):
-        other = self.key_of("PL010-0050") if any(k.startswith("PL010-0050#") for k in self.inv()) else None
-        self.put_src("P01", [self.entry(), self.rec(self.k.replace(self.k, self.key_of("PL010-1001")))])
-        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}, {"key": self.key_of("PL010-1001"), "verdict": "PASS"}])
+        ordinary = self.key_of("PL010-1001")
+        self.put_src("P01", [self.entry(), self.rec(ordinary)])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}, {"key": ordinary, "verdict": "PASS"}])
         statuses = {r["key"]: r["status"] for r in m.read_json(self.ctx.src_dir / "P01.json")}
         self.assertEqual(statuses[self.k], "unverified")
-        self.assertEqual(statuses[self.key_of("PL010-1001")], "verified")
-        self.assertIsNone(other if False else None)
+        self.assertEqual(statuses[ordinary], "verified")
 
     def test_report_counts_bases_separately(self):
         k2 = self.key_of("PL010-1001")
