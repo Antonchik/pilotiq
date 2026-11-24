@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import io
 import json
 import shutil
@@ -45,7 +46,7 @@ class Base(unittest.TestCase):
         (self.ctx.corpus / "LAW.txt").write_text(CORPUS, encoding="utf-8")
         s1 = CORPUS.index("Art. 1.")
         s2 = CORPUS.index("Art. 2.")
-        jdump(self.ctx.anchors / "LAW.json", {"textSha": "x", "anchors": {
+        jdump(self.ctx.anchors / "LAW.json", {"textSha": hashlib.sha256(CORPUS.encode("utf-8")).hexdigest(), "anchors": {
             "art. 1": [s1, s2], "art. 2": [s2, len(CORPUS)], "art. 1 ust. 1": [s1, s2]}})
         jdump(self.ctx.ledger, {})
         self.run_cmd(m.cmd_inventory, stats=False)
@@ -369,6 +370,45 @@ class ApplyReviewTest(Base):
         self.assertIn("PASS 1 из 1", self.out)
         self.assertEqual(self.run_cmd(m.cmd_report, src="LAW"), 0)
         self.assertIn(self.k, self.out)
+
+
+class ReviewGapsTest(Base):
+    def setUp(self):
+        super().setUp()
+        self.k = self.key_of("PL010-0001")
+
+    def test_anchor_sha_mismatch_with_corpus(self):
+        self.put_src("P01", [self.rec(self.k)])
+        (self.ctx.corpus / "LAW.txt").write_text("X" * 120 + CORPUS, encoding="utf-8")
+        self.assertTrue(any("textSha" in e and "corpus" in e for e in self.validate().errors))
+        self.assertEqual([e for e in self.validate(no_corpus=True).errors if "corpus" in e], [])
+
+    def test_build_checks_ledger_verdict(self):
+        self.put_src("P01", [self.rec(self.k)])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "FIX"}])
+        path = self.ctx.src_dir / "P01.json"
+        data = m.read_json(path)
+        data[0]["status"] = "verified"  # ручная смена статуса
+        jdump(path, data)
+        ledger = m.read_json(self.ctx.ledger)
+        ledger[self.k]["textSha"] = m.content_sha(data[0], "explanation")
+        jdump(self.ctx.ledger, ledger)
+        self.assertEqual(self.build()["explanations"], {})
+        self.assertTrue(any("вердикт" in e for e in self.validate(no_corpus=True).errors))
+
+    def test_quote_required_for_published_quotable_source(self):
+        self.put_src("P01", [self.rec(self.k, status="verified", refs=[{"src": "LAW", "loc": "art. 1"}])])
+        self.assertTrue(any("quote обязателен" in e for e in self.validate(no_corpus=True).errors))
+
+    def test_warns_when_quote_in_child_anchor(self):
+        s1 = CORPUS.index("Art. 1.")
+        s2 = CORPUS.index("Statek")
+        jdump(self.ctx.anchors / "LAW.json", {"textSha": hashlib.sha256(CORPUS.encode("utf-8")).hexdigest(), "anchors": {
+            "art. 1": [s1, CORPUS.index("Art. 2.")], "art. 1 ust. 1": [s2, CORPUS.index("Art. 2.")]}})
+        self.put_src("P01", [self.rec(self.k)])
+        rep = self.validate()
+        self.assertEqual(rep.errors, [])
+        self.assertTrue(any("более точном пункте 'art. 1 ust. 1'" in w for w in rep.warnings))
 
 
 class SourcesTest(Base):
