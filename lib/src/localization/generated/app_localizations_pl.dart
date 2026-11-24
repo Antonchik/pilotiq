@@ -985,6 +985,98 @@ class AppLocalizationsPl extends AppLocalizations {
       'Nie udało się zapisać czasu egzaminu na tym urządzeniu. Odpowiedzi są zapisane.';
 
   @override
+  String get materialsTileTitle => 'Konspekty';
+
+  @override
+  String get materialsTileDescription =>
+      'Konspekty tematów z odwołaniami do przepisów';
+
+  @override
+  String get materialsTitle => 'Konspekty';
+
+  @override
+  String get materialsEmpty => 'Brak materiałów dla tego przedmiotu.';
+
+  @override
+  String get materialsDisclaimer =>
+      'Materiały nie zastępują szkolenia w ATO/DTO ani aktualnych przepisów.';
+
+  @override
+  String materialsLegalState(String date) {
+    return 'Stan prawny na $date';
+  }
+
+  @override
+  String get materialsPolishOnly => 'Materiały są dostępne tylko po polsku.';
+
+  @override
+  String materialsSectionCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count rozdziału',
+      many: '$count rozdziałów',
+      few: '$count rozdziały',
+      one: '$count rozdział',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get materialsUnlock => 'Odblokuj w Premium';
+
+  @override
+  String materialsSources(String refs) {
+    return 'Źródła: $refs';
+  }
+
+  @override
+  String get materialsDisputedTitle => 'Pytanie sporne';
+
+  @override
+  String get materialsDisputedExam =>
+      'Na egzaminie liczy się odpowiedź z klucza ULC.';
+
+  @override
+  String get materialsReportError => 'Zgłoś błąd';
+
+  @override
+  String get materialsReportDialogTitle => 'Zgłoś błąd w materiałach';
+
+  @override
+  String get materialsReportDialogBody =>
+      'Skopiuj ten tekst, dopisz opis błędu i wyślij go autorom aplikacji.';
+
+  @override
+  String get materialsReportCopy => 'Kopiuj';
+
+  @override
+  String get materialsReportCopied => 'Skopiowano';
+
+  @override
+  String get materialsReportClose => 'Zamknij';
+
+  @override
+  String get explanationTitle => 'Objaśnienie';
+
+  @override
+  String get explanationPolishOnly => 'Objaśnienie dostępne tylko po polsku';
+
+  @override
+  String get explanationLockedTitle => 'Objaśnienie dostępne w Premium';
+
+  @override
+  String get summaryLockedTitle => 'Ten rozdział jest dostępny w Premium';
+
+  @override
+  String summaryTopicQuestions(int count) {
+    return 'Pytania z tego tematu ($count)';
+  }
+
+  @override
+  String get aboutMaterialsTitle => 'Materiały do nauki';
+
+  @override
   String get reminderChannelName => 'Przypomnienia o nauce';
 
   @override
@@ -1420,6 +1512,30 @@ class AppLocalizationsPl extends AppLocalizations {
   String paywallPrepaidPrice(String price) {
     return '$price · płatność jednorazowa, bez odnowienia';
   }
+
+  @override
+  String get paywallTitleMaterials => 'Objaśnienia i konspekty — w Premium';
+
+  @override
+  String paywallSubtitleMaterials(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Bezpłatnie dostępne jest $count objaśnienia w każdym temacie i pierwszy rozdział każdego konspektu.',
+      many:
+          'Bezpłatnie dostępnych jest $count objaśnień w każdym temacie i pierwszy rozdział każdego konspektu.',
+      few:
+          'Bezpłatnie dostępne są $count objaśnienia w każdym temacie i pierwszy rozdział każdego konspektu.',
+      one:
+          'Bezpłatnie dostępne jest $count objaśnienie w każdym temacie i pierwszy rozdział każdego konspektu.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallBenefitMaterials =>
+      'Objaśnienia do pytań i konspekty (prawo lotnicze)';
 
   @override
   String practiceProgress(int current, int total) {

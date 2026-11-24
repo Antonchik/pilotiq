@@ -344,5 +344,22 @@
         "type": "String"
       }
     }
+  },
+  "paywallTitleMaterials": "Explanations and study notes are part of Premium",
+  "@paywallTitleMaterials": {
+    "description": "Paywall title when opened from a locked explanation or summary section"
+  },
+  "paywallSubtitleMaterials": "{count, plural, one{Free access opens {count} explanation per topic and the first section of every summary.} other{Free access opens {count} explanations per topic and the first section of every summary.}}",
+  "@paywallSubtitleMaterials": {
+    "description": "Paywall subtitle for the study materials; count is the free explanations per topic",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBenefitMaterials": "Explanations of the questions and study notes (air law)",
+  "@paywallBenefitMaterials": {
+    "description": "Benefit: explanations and study notes"
   }
 }

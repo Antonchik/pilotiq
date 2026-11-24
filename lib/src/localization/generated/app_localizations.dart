@@ -1532,6 +1532,150 @@ abstract class AppLocalizations {
   /// **'The time of your exam could not be saved on this device. Your answers are saved.'**
   String get examClockPersistError;
 
+  /// Subject screen tile opening the study notes of the subject
+  ///
+  /// In en, this message translates to:
+  /// **'Study notes'**
+  String get materialsTileTitle;
+
+  /// Description of the study notes tile
+  ///
+  /// In en, this message translates to:
+  /// **'Topic summaries with references to the regulations (in Polish)'**
+  String get materialsTileDescription;
+
+  /// Title of the study notes screen
+  ///
+  /// In en, this message translates to:
+  /// **'Study notes'**
+  String get materialsTitle;
+
+  /// Shown when a subject has no study materials (or they cannot be read)
+  ///
+  /// In en, this message translates to:
+  /// **'No study materials for this subject yet.'**
+  String get materialsEmpty;
+
+  /// Disclaimer of the study materials
+  ///
+  /// In en, this message translates to:
+  /// **'The materials do not replace training at an ATO/DTO or the current regulations.'**
+  String get materialsDisclaimer;
+
+  /// Date of the legal state the materials describe
+  ///
+  /// In en, this message translates to:
+  /// **'Legal state as of {date}'**
+  String materialsLegalState(String date);
+
+  /// Note that the study materials are only in Polish
+  ///
+  /// In en, this message translates to:
+  /// **'The study materials are available in Polish only.'**
+  String get materialsPolishOnly;
+
+  /// Number of sections of a topic summary
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{{count} section} other{{count} sections}}'**
+  String materialsSectionCount(int count);
+
+  /// Button of a locked explanation or summary section; opens the paywall
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock in Premium'**
+  String get materialsUnlock;
+
+  /// References of an explanation or a section
+  ///
+  /// In en, this message translates to:
+  /// **'Sources: {refs}'**
+  String materialsSources(String refs);
+
+  /// Title of the block of a disputed question
+  ///
+  /// In en, this message translates to:
+  /// **'Disputed question'**
+  String get materialsDisputedTitle;
+
+  /// Reminder in the block of a disputed question
+  ///
+  /// In en, this message translates to:
+  /// **'In the exam, the answer from the ULC key counts.'**
+  String get materialsDisputedExam;
+
+  /// Button to report an error in the study materials
+  ///
+  /// In en, this message translates to:
+  /// **'Report an error'**
+  String get materialsReportError;
+
+  /// Title of the dialog with the text of an error report
+  ///
+  /// In en, this message translates to:
+  /// **'Report an error in the materials'**
+  String get materialsReportDialogTitle;
+
+  /// Explanation in the dialog with the text of an error report
+  ///
+  /// In en, this message translates to:
+  /// **'Copy this text, add a description of the error and send it to the authors of the app.'**
+  String get materialsReportDialogBody;
+
+  /// Button that copies the text of an error report
+  ///
+  /// In en, this message translates to:
+  /// **'Copy'**
+  String get materialsReportCopy;
+
+  /// Confirmation that the report text was copied
+  ///
+  /// In en, this message translates to:
+  /// **'Copied'**
+  String get materialsReportCopied;
+
+  /// Button that closes the error report dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get materialsReportClose;
+
+  /// Title of the explanation panel under an answered question
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation'**
+  String get explanationTitle;
+
+  /// Note above an explanation when the questions are shown in English
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation available in Polish only'**
+  String get explanationPolishOnly;
+
+  /// Teaser of a locked explanation
+  ///
+  /// In en, this message translates to:
+  /// **'Explanation available in Premium'**
+  String get explanationLockedTitle;
+
+  /// Teaser of a locked summary section
+  ///
+  /// In en, this message translates to:
+  /// **'This section is available in Premium'**
+  String get summaryLockedTitle;
+
+  /// Button that opens practice with the questions of a summary section
+  ///
+  /// In en, this message translates to:
+  /// **'Questions of this topic ({count})'**
+  String summaryTopicQuestions(int count);
+
+  /// Heading of the study materials part of the About screen
+  ///
+  /// In en, this message translates to:
+  /// **'Study materials'**
+  String get aboutMaterialsTitle;
+
   /// Android notification channel name
   ///
   /// In en, this message translates to:
@@ -2083,6 +2227,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{price} · one-time payment, no renewal'**
   String paywallPrepaidPrice(String price);
+
+  /// Paywall title when opened from a locked explanation or summary section
+  ///
+  /// In en, this message translates to:
+  /// **'Explanations and study notes are part of Premium'**
+  String get paywallTitleMaterials;
+
+  /// Paywall subtitle for the study materials; count is the free explanations per topic
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, one{Free access opens {count} explanation per topic and the first section of every summary.} other{Free access opens {count} explanations per topic and the first section of every summary.}}'**
+  String paywallSubtitleMaterials(int count);
+
+  /// Benefit: explanations and study notes
+  ///
+  /// In en, this message translates to:
+  /// **'Explanations of the questions and study notes (air law)'**
+  String get paywallBenefitMaterials;
 
   /// Position in the session
   ///

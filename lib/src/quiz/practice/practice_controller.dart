@@ -21,6 +21,7 @@ class PracticeArgs {
     required this.mode,
     required this.questions,
     this.retryIds = const [],
+    this.title,
   });
 
   final Licence licence;
@@ -33,12 +34,17 @@ class PracticeArgs {
   /// Questions of a [PracticeMode.retry] session.
   final List<String> retryIds;
 
-  PracticeArgs retry(List<String> ids) => PracticeArgs(
+  /// Title of the screen instead of the one of [mode] (e.g. the questions of
+  /// a topic of the study notes).
+  final String? title;
+
+  PracticeArgs retry(List<String> ids, {String? title}) => PracticeArgs(
     licence: licence,
     subject: subject,
     mode: PracticeMode.retry,
     questions: questions,
     retryIds: ids,
+    title: title,
   );
 }
 

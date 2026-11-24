@@ -10,6 +10,9 @@ enum PaywallTrigger {
   examResults,
   lockedFeature,
   profile,
+
+  /// A locked explanation or summary section of the study materials.
+  materials,
 }
 
 extension PaywallTriggerRules on PaywallTrigger {

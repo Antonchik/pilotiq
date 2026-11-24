@@ -1009,6 +1009,122 @@
   "@examClockPersistError": {
     "description": "Banner when only the time of the running exam could not be stored"
   },
+  "materialsTileTitle": "Konspekty",
+  "@materialsTileTitle": {
+    "description": "Subject screen tile opening the study notes of the subject"
+  },
+  "materialsTileDescription": "Konspekty tematów z odwołaniami do przepisów",
+  "@materialsTileDescription": {
+    "description": "Description of the study notes tile"
+  },
+  "materialsTitle": "Konspekty",
+  "@materialsTitle": {
+    "description": "Title of the study notes screen"
+  },
+  "materialsEmpty": "Brak materiałów dla tego przedmiotu.",
+  "@materialsEmpty": {
+    "description": "Shown when a subject has no study materials (or they cannot be read)"
+  },
+  "materialsDisclaimer": "Materiały nie zastępują szkolenia w ATO/DTO ani aktualnych przepisów.",
+  "@materialsDisclaimer": {
+    "description": "Disclaimer of the study materials"
+  },
+  "materialsLegalState": "Stan prawny na {date}",
+  "@materialsLegalState": {
+    "description": "Date of the legal state the materials describe",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "materialsPolishOnly": "Materiały są dostępne tylko po polsku.",
+  "@materialsPolishOnly": {
+    "description": "Note that the study materials are only in Polish"
+  },
+  "materialsSectionCount": "{count, plural, one{{count} rozdział} few{{count} rozdziały} many{{count} rozdziałów} other{{count} rozdziału}}",
+  "@materialsSectionCount": {
+    "description": "Number of sections of a topic summary",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "materialsUnlock": "Odblokuj w Premium",
+  "@materialsUnlock": {
+    "description": "Button of a locked explanation or summary section; opens the paywall"
+  },
+  "materialsSources": "Źródła: {refs}",
+  "@materialsSources": {
+    "description": "References of an explanation or a section",
+    "placeholders": {
+      "refs": {
+        "type": "String"
+      }
+    }
+  },
+  "materialsDisputedTitle": "Pytanie sporne",
+  "@materialsDisputedTitle": {
+    "description": "Title of the block of a disputed question"
+  },
+  "materialsDisputedExam": "Na egzaminie liczy się odpowiedź z klucza ULC.",
+  "@materialsDisputedExam": {
+    "description": "Reminder in the block of a disputed question"
+  },
+  "materialsReportError": "Zgłoś błąd",
+  "@materialsReportError": {
+    "description": "Button to report an error in the study materials"
+  },
+  "materialsReportDialogTitle": "Zgłoś błąd w materiałach",
+  "@materialsReportDialogTitle": {
+    "description": "Title of the dialog with the text of an error report"
+  },
+  "materialsReportDialogBody": "Skopiuj ten tekst, dopisz opis błędu i wyślij go autorom aplikacji.",
+  "@materialsReportDialogBody": {
+    "description": "Explanation in the dialog with the text of an error report"
+  },
+  "materialsReportCopy": "Kopiuj",
+  "@materialsReportCopy": {
+    "description": "Button that copies the text of an error report"
+  },
+  "materialsReportCopied": "Skopiowano",
+  "@materialsReportCopied": {
+    "description": "Confirmation that the report text was copied"
+  },
+  "materialsReportClose": "Zamknij",
+  "@materialsReportClose": {
+    "description": "Button that closes the error report dialog"
+  },
+  "explanationTitle": "Objaśnienie",
+  "@explanationTitle": {
+    "description": "Title of the explanation panel under an answered question"
+  },
+  "explanationPolishOnly": "Objaśnienie dostępne tylko po polsku",
+  "@explanationPolishOnly": {
+    "description": "Note above an explanation when the questions are shown in English"
+  },
+  "explanationLockedTitle": "Objaśnienie dostępne w Premium",
+  "@explanationLockedTitle": {
+    "description": "Teaser of a locked explanation"
+  },
+  "summaryLockedTitle": "Ten rozdział jest dostępny w Premium",
+  "@summaryLockedTitle": {
+    "description": "Teaser of a locked summary section"
+  },
+  "summaryTopicQuestions": "Pytania z tego tematu ({count})",
+  "@summaryTopicQuestions": {
+    "description": "Button that opens practice with the questions of a summary section",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aboutMaterialsTitle": "Materiały do nauki",
+  "@aboutMaterialsTitle": {
+    "description": "Heading of the study materials part of the About screen"
+  },
   "reminderChannelName": "Przypomnienia o nauce",
   "@reminderChannelName": {
     "description": "Android notification channel name"
@@ -1483,6 +1599,23 @@
         "type": "String"
       }
     }
+  },
+  "paywallTitleMaterials": "Objaśnienia i konspekty — w Premium",
+  "@paywallTitleMaterials": {
+    "description": "Paywall title when opened from a locked explanation or summary section"
+  },
+  "paywallSubtitleMaterials": "{count, plural, one{Bezpłatnie dostępne jest {count} objaśnienie w każdym temacie i pierwszy rozdział każdego konspektu.} few{Bezpłatnie dostępne są {count} objaśnienia w każdym temacie i pierwszy rozdział każdego konspektu.} many{Bezpłatnie dostępnych jest {count} objaśnień w każdym temacie i pierwszy rozdział każdego konspektu.} other{Bezpłatnie dostępne jest {count} objaśnienia w każdym temacie i pierwszy rozdział każdego konspektu.}}",
+  "@paywallSubtitleMaterials": {
+    "description": "Paywall subtitle for the study materials; count is the free explanations per topic",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBenefitMaterials": "Objaśnienia do pytań i konspekty (prawo lotnicze)",
+  "@paywallBenefitMaterials": {
+    "description": "Benefit: explanations and study notes"
   },
   "practiceProgress": "{current} / {total}",
   "practiceFinishSession": "Zakończ sesję",

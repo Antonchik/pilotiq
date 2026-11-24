@@ -37,4 +37,24 @@ void main() {
       expect(f(true), isTrue);
     }
   });
+
+  test('free sees the first 3 explanations of a topic, premium all', () {
+    expect(AccessPolicy.freeExplanationsPerTopic, 3);
+    for (final i in [0, 1, 2]) {
+      expect(AccessPolicy.canSeeExplanation(false, i), isTrue);
+    }
+    expect(AccessPolicy.canSeeExplanation(false, 3), isFalse);
+    expect(AccessPolicy.canSeeExplanation(false, 40), isFalse);
+    expect(AccessPolicy.canSeeExplanation(false, null), isFalse);
+    expect(AccessPolicy.canSeeExplanation(true, 3), isTrue);
+    expect(AccessPolicy.canSeeExplanation(true, null), isTrue);
+  });
+
+  test('free sees the first summary section of a topic, premium all', () {
+    expect(AccessPolicy.freeSummarySectionsPerTopic, 1);
+    expect(AccessPolicy.canSeeSummarySection(false, 0), isTrue);
+    expect(AccessPolicy.canSeeSummarySection(false, 1), isFalse);
+    expect(AccessPolicy.canSeeSummarySection(true, 1), isTrue);
+    expect(AccessPolicy.canSeeSummarySection(true, 9), isTrue);
+  });
 }

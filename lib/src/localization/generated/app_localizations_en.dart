@@ -949,6 +949,97 @@ class AppLocalizationsEn extends AppLocalizations {
       'The time of your exam could not be saved on this device. Your answers are saved.';
 
   @override
+  String get materialsTileTitle => 'Study notes';
+
+  @override
+  String get materialsTileDescription =>
+      'Topic summaries with references to the regulations (in Polish)';
+
+  @override
+  String get materialsTitle => 'Study notes';
+
+  @override
+  String get materialsEmpty => 'No study materials for this subject yet.';
+
+  @override
+  String get materialsDisclaimer =>
+      'The materials do not replace training at an ATO/DTO or the current regulations.';
+
+  @override
+  String materialsLegalState(String date) {
+    return 'Legal state as of $date';
+  }
+
+  @override
+  String get materialsPolishOnly =>
+      'The study materials are available in Polish only.';
+
+  @override
+  String materialsSectionCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count sections',
+      one: '$count section',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get materialsUnlock => 'Unlock in Premium';
+
+  @override
+  String materialsSources(String refs) {
+    return 'Sources: $refs';
+  }
+
+  @override
+  String get materialsDisputedTitle => 'Disputed question';
+
+  @override
+  String get materialsDisputedExam =>
+      'In the exam, the answer from the ULC key counts.';
+
+  @override
+  String get materialsReportError => 'Report an error';
+
+  @override
+  String get materialsReportDialogTitle => 'Report an error in the materials';
+
+  @override
+  String get materialsReportDialogBody =>
+      'Copy this text, add a description of the error and send it to the authors of the app.';
+
+  @override
+  String get materialsReportCopy => 'Copy';
+
+  @override
+  String get materialsReportCopied => 'Copied';
+
+  @override
+  String get materialsReportClose => 'Close';
+
+  @override
+  String get explanationTitle => 'Explanation';
+
+  @override
+  String get explanationPolishOnly => 'Explanation available in Polish only';
+
+  @override
+  String get explanationLockedTitle => 'Explanation available in Premium';
+
+  @override
+  String get summaryLockedTitle => 'This section is available in Premium';
+
+  @override
+  String summaryTopicQuestions(int count) {
+    return 'Questions of this topic ($count)';
+  }
+
+  @override
+  String get aboutMaterialsTitle => 'Study materials';
+
+  @override
   String get reminderChannelName => 'Study reminders';
 
   @override
@@ -1356,6 +1447,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String paywallPrepaidPrice(String price) {
     return '$price · one-time payment, no renewal';
   }
+
+  @override
+  String get paywallTitleMaterials =>
+      'Explanations and study notes are part of Premium';
+
+  @override
+  String paywallSubtitleMaterials(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other:
+          'Free access opens $count explanations per topic and the first section of every summary.',
+      one:
+          'Free access opens $count explanation per topic and the first section of every summary.',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get paywallBenefitMaterials =>
+      'Explanations of the questions and study notes (air law)';
 
   @override
   String practiceProgress(int current, int total) {

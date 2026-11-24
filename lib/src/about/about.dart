@@ -7,6 +7,8 @@ import 'package:pilotiq/src/bank/licence_presentation.dart';
 import 'package:pilotiq/src/bank/question_bank_repository.dart';
 import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/materials/materials_disclaimer.dart';
+import 'package:pilotiq/src/materials/materials_providers.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 /// Package info is read from the platform once and then cached.
@@ -79,6 +81,16 @@ class AboutScreen extends ConsumerWidget {
           const SizedBox(height: 8),
           Text(local.aboutQuestionsNote, style: textTheme.bodySmall),
           const SizedBox(height: 24),
+          Semantics(
+            header: true,
+            child: Text(
+              local.aboutMaterialsTitle,
+              style: textTheme.titleMedium,
+            ),
+          ),
+          const SizedBox(height: 8),
+          const _MaterialsNote(),
+          const SizedBox(height: 24),
           Wrap(
             spacing: 8,
             children: [
@@ -122,6 +134,23 @@ class _BankSourceLine extends ConsumerWidget {
         ),
         key: Key('about_source_${licence.id}'),
       ),
+    );
+  }
+}
+
+/// Disclaimer of the study materials with the date of their legal state.
+/// The About screen is opened by the user, so reading the (small) materials
+/// asset here does not happen at start-up.
+class _MaterialsNote extends ConsumerWidget {
+  const _MaterialsNote();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final materials = ref.watch(materialsProvider(SubjectId.airLaw)).value;
+    return MaterialsDisclaimer(
+      key: const Key('about_materials'),
+      legalStateAsOf: materials?.legalStateAsOf,
+      polishOnlyNote: true,
     );
   }
 }

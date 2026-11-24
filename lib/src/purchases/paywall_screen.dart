@@ -255,6 +255,10 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
       l.paywallSubtitleResults,
     ),
     PaywallTrigger.profile => (l.paywallTitleProfile, l.paywallSubtitleProfile),
+    PaywallTrigger.materials => (
+      l.paywallTitleMaterials,
+      l.paywallSubtitleMaterials(AccessPolicy.freeExplanationsPerTopic),
+    ),
   };
 
   List<Widget> _buildPlans(BuildContext context, AppLocalizations local) {
@@ -402,6 +406,7 @@ class _Benefits extends StatelessWidget {
       local.paywallBenefitMistakes,
       local.paywallBenefitReview,
       local.paywallBenefitReadiness,
+      local.paywallBenefitMaterials,
     ];
     return Column(
       key: const Key('paywall_benefits'),

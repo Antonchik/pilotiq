@@ -4,7 +4,9 @@ import 'package:pilotiq/src/bank/bank_text.dart';
 import 'package:pilotiq/src/bank/licence_provider.dart';
 import 'package:pilotiq/src/bank/models.dart';
 import 'package:pilotiq/src/exam_sim/exam_controller.dart';
+import 'package:pilotiq/src/domain/catalog.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/materials/explanation_panel.dart';
 import 'package:pilotiq/src/progress/exam_attempt.dart';
 import 'package:pilotiq/src/progress/user_settings.dart';
 
@@ -99,6 +101,7 @@ class _ExamReviewScreenState extends ConsumerState<ExamReviewScreen> {
                         answer: widget.attempt.answers[ids[i]],
                         flagged: widget.attempt.flagged.contains(ids[i]),
                         requested: language,
+                        licence: widget.attempt.licence,
                       );
                     },
                   ),
@@ -118,6 +121,7 @@ class _ReviewItem extends StatelessWidget {
     required this.answer,
     required this.flagged,
     required this.requested,
+    required this.licence,
   });
 
   final int index;
@@ -126,6 +130,7 @@ class _ReviewItem extends StatelessWidget {
   final int? answer;
   final bool flagged;
   final QuestionLanguage requested;
+  final Licence licence;
 
   @override
   Widget build(BuildContext context) {
@@ -202,6 +207,11 @@ class _ReviewItem extends StatelessWidget {
               style: theme.textTheme.labelLarge,
             ),
             BankText(q.answers[q.correctIndex].resolve(lang)),
+            QuestionExplanation(
+              licence: licence,
+              questionId: q.id,
+              questionLanguage: lang,
+            ),
           ],
         ),
       ),

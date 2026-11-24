@@ -344,5 +344,22 @@
         "type": "String"
       }
     }
+  },
+  "paywallTitleMaterials": "Objaśnienia i konspekty — w Premium",
+  "@paywallTitleMaterials": {
+    "description": "Paywall title when opened from a locked explanation or summary section"
+  },
+  "paywallSubtitleMaterials": "{count, plural, one{Bezpłatnie dostępne jest {count} objaśnienie w każdym temacie i pierwszy rozdział każdego konspektu.} few{Bezpłatnie dostępne są {count} objaśnienia w każdym temacie i pierwszy rozdział każdego konspektu.} many{Bezpłatnie dostępnych jest {count} objaśnień w każdym temacie i pierwszy rozdział każdego konspektu.} other{Bezpłatnie dostępne jest {count} objaśnienia w każdym temacie i pierwszy rozdział każdego konspektu.}}",
+  "@paywallSubtitleMaterials": {
+    "description": "Paywall subtitle for the study materials; count is the free explanations per topic",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "paywallBenefitMaterials": "Objaśnienia do pytań i konspekty (prawo lotnicze)",
+  "@paywallBenefitMaterials": {
+    "description": "Benefit: explanations and study notes"
   }
 }

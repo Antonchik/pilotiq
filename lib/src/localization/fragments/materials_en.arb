@@ -1,0 +1,118 @@
+{
+  "materialsTileTitle": "Study notes",
+  "@materialsTileTitle": {
+    "description": "Subject screen tile opening the study notes of the subject"
+  },
+  "materialsTileDescription": "Topic summaries with references to the regulations (in Polish)",
+  "@materialsTileDescription": {
+    "description": "Description of the study notes tile"
+  },
+  "materialsTitle": "Study notes",
+  "@materialsTitle": {
+    "description": "Title of the study notes screen"
+  },
+  "materialsEmpty": "No study materials for this subject yet.",
+  "@materialsEmpty": {
+    "description": "Shown when a subject has no study materials (or they cannot be read)"
+  },
+  "materialsDisclaimer": "The materials do not replace training at an ATO/DTO or the current regulations.",
+  "@materialsDisclaimer": {
+    "description": "Disclaimer of the study materials"
+  },
+  "materialsLegalState": "Legal state as of {date}",
+  "@materialsLegalState": {
+    "description": "Date of the legal state the materials describe",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "materialsPolishOnly": "The study materials are available in Polish only.",
+  "@materialsPolishOnly": {
+    "description": "Note that the study materials are only in Polish"
+  },
+  "materialsSectionCount": "{count, plural, one{{count} section} other{{count} sections}}",
+  "@materialsSectionCount": {
+    "description": "Number of sections of a topic summary",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "materialsUnlock": "Unlock in Premium",
+  "@materialsUnlock": {
+    "description": "Button of a locked explanation or summary section; opens the paywall"
+  },
+  "materialsSources": "Sources: {refs}",
+  "@materialsSources": {
+    "description": "References of an explanation or a section",
+    "placeholders": {
+      "refs": {
+        "type": "String"
+      }
+    }
+  },
+  "materialsDisputedTitle": "Disputed question",
+  "@materialsDisputedTitle": {
+    "description": "Title of the block of a disputed question"
+  },
+  "materialsDisputedExam": "In the exam, the answer from the ULC key counts.",
+  "@materialsDisputedExam": {
+    "description": "Reminder in the block of a disputed question"
+  },
+  "materialsReportError": "Report an error",
+  "@materialsReportError": {
+    "description": "Button to report an error in the study materials"
+  },
+  "materialsReportDialogTitle": "Report an error in the materials",
+  "@materialsReportDialogTitle": {
+    "description": "Title of the dialog with the text of an error report"
+  },
+  "materialsReportDialogBody": "Copy this text, add a description of the error and send it to the authors of the app.",
+  "@materialsReportDialogBody": {
+    "description": "Explanation in the dialog with the text of an error report"
+  },
+  "materialsReportCopy": "Copy",
+  "@materialsReportCopy": {
+    "description": "Button that copies the text of an error report"
+  },
+  "materialsReportCopied": "Copied",
+  "@materialsReportCopied": {
+    "description": "Confirmation that the report text was copied"
+  },
+  "materialsReportClose": "Close",
+  "@materialsReportClose": {
+    "description": "Button that closes the error report dialog"
+  },
+  "explanationTitle": "Explanation",
+  "@explanationTitle": {
+    "description": "Title of the explanation panel under an answered question"
+  },
+  "explanationPolishOnly": "Explanation available in Polish only",
+  "@explanationPolishOnly": {
+    "description": "Note above an explanation when the questions are shown in English"
+  },
+  "explanationLockedTitle": "Explanation available in Premium",
+  "@explanationLockedTitle": {
+    "description": "Teaser of a locked explanation"
+  },
+  "summaryLockedTitle": "This section is available in Premium",
+  "@summaryLockedTitle": {
+    "description": "Teaser of a locked summary section"
+  },
+  "summaryTopicQuestions": "Questions of this topic ({count})",
+  "@summaryTopicQuestions": {
+    "description": "Button that opens practice with the questions of a summary section",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "aboutMaterialsTitle": "Study materials",
+  "@aboutMaterialsTitle": {
+    "description": "Heading of the study materials part of the About screen"
+  }
+}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pilotiq/src/domain/access_policy.dart';
 import 'package:pilotiq/src/localization/generated/app_localizations.dart';
+import 'package:pilotiq/src/materials/explanation_panel.dart';
 import 'package:pilotiq/src/purchases/paywall_launcher.dart';
 import 'package:pilotiq/src/purchases/purchase_service.dart';
 import 'package:pilotiq/src/quiz/practice/practice_controller.dart';
@@ -127,7 +128,7 @@ class _PracticeBody extends ConsumerWidget {
         state.current != null;
     return Scaffold(
       appBar: AppBar(
-        title: Text(practiceModeTitle(local, args.mode)),
+        title: Text(args.title ?? practiceModeTitle(local, args.mode)),
         actions: [
           if (inQuestion)
             IconButton(
@@ -233,6 +234,12 @@ class _PracticeBody extends ConsumerWidget {
             onAnswer: controller.answer,
             footer: state.currentUnsaved
                 ? _SaveError(onRetry: controller.retrySave)
+                : state.currentAnswered
+                ? QuestionExplanation(
+                    licence: args.licence,
+                    questionId: question.id,
+                    questionLanguage: question.displayLanguage(state.language),
+                  )
                 : null,
           ),
         ),

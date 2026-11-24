@@ -1,0 +1,205 @@
+{
+ "explanations": {
+  "PL010-0001#a1a1a1a1": {
+   "disputeNote": null,
+   "refs": [
+    {
+     "loc": "art. 128 ust. 1",
+     "src": "PL-PRAWO-LOTNICZE"
+    }
+   ],
+   "status": "verified",
+   "text": "Objaśnienie pierwsze. Odpowiedź wynika z przepisu."
+  },
+  "PL010-0003#c3c3c3c3": {
+   "disputeNote": null,
+   "refs": [
+    {
+     "loc": "art. 96 ust. 2",
+     "src": "PL-PRAWO-LOTNICZE"
+    }
+   ],
+   "status": "verified",
+   "text": "Objaśnienie trzecie. Krótko."
+  },
+  "PL010-0004#d4d4d4d4": {
+   "disputeNote": null,
+   "refs": [
+    {
+     "loc": "SERA.5005(a)",
+     "src": "EU-SERA"
+    }
+   ],
+   "status": "verified",
+   "text": "Objaśnienie czwarte. Dostępne w Premium."
+  },
+  "PL010-0005#e5e5e5e5": {
+   "disputeNote": null,
+   "refs": [
+    {
+     "loc": "SERA.5001",
+     "src": "EU-SERA"
+    }
+   ],
+   "status": "verified",
+   "text": "Objaśnienie piąte. Krótko."
+  },
+  "PL010-0006#f6f6f6f6": {
+   "disputeNote": null,
+   "refs": [
+    {
+     "loc": "SERA.3105",
+     "src": "EU-SERA"
+    }
+   ],
+   "status": "verified",
+   "text": "Objaśnienie szóste. Krótko."
+  },
+  "PL010-0010#b2b2b2b2": {
+   "disputeNote": null,
+   "refs": [
+    {
+     "loc": "art. 95",
+     "src": "PL-PRAWO-LOTNICZE"
+    }
+   ],
+   "status": "verified",
+   "text": "Objaśnienie drugie. Krótko."
+  },
+  "PL010-0441#0a0a0a0a": {
+   "disputeNote": "Według SERA.5005 poprawna może być inna odpowiedź.",
+   "refs": [
+    {
+     "loc": "SERA.5005(c)",
+     "src": "EU-SERA"
+    }
+   ],
+   "status": "disputed",
+   "text": "Objaśnienie sporne. Przepis mówi co innego niż klucz."
+  }
+ },
+ "lang": "pl",
+ "legalStateAsOf": "2026-10-01",
+ "links": {
+  "bpl": {},
+  "ppla": {
+   "PL010-0001": "PL010-0001#a1a1a1a1",
+   "PL010-0003": "PL010-0003#c3c3c3c3",
+   "PL010-0004": "PL010-0004#d4d4d4d4",
+   "PL010-0005": "PL010-0005#e5e5e5e5",
+   "PL010-0010": "PL010-0010#b2b2b2b2"
+  },
+  "pplh": {
+   "PL010-0001": "PL010-0441#0a0a0a0a",
+   "PL010-0003": "PL010-0003#c3c3c3c3",
+   "PL010-0004": "PL010-0004#d4d4d4d4"
+  },
+  "spl": {
+   "PL010-0003": "PL010-0003#c3c3c3c3",
+   "PL010-0004": "PL010-0004#d4d4d4d4",
+   "PL010-0005": "PL010-0005#e5e5e5e5",
+   "PL010-0006": "PL010-0006#f6f6f6f6"
+  }
+ },
+ "materialsVersion": "fx123456",
+ "schema": 1,
+ "sources": {
+  "EU-SERA": {
+   "kind": "eu_reg",
+   "title": "Rozporządzenie (UE) nr 923/2012 (SERA)",
+   "version": "2012/923"
+  },
+  "PL-PRAWO-LOTNICZE": {
+   "kind": "statute",
+   "title": "Prawo lotnicze",
+   "version": "Dz.U. 2025 poz. 1"
+  }
+ },
+ "subject": "air_law",
+ "topics": [
+  {
+   "id": "AL01",
+   "order": [
+    "PL010-0001#a1a1a1a1",
+    "PL010-0010#b2b2b2b2",
+    "PL010-0003#c3c3c3c3",
+    "PL010-0004#d4d4d4d4",
+    "PL010-0005#e5e5e5e5",
+    "PL010-0006#f6f6f6f6"
+   ],
+   "summary": {
+    "sections": [
+     {
+      "body": [
+       "Pierwszy akapit konspektu o licencjach.",
+       "- pierwszy punkt listy",
+       "- drugi punkt listy"
+      ],
+      "heading": "Licencja pilota",
+      "id": "AL01-1",
+      "questionKeys": [
+       "PL010-0001#a1a1a1a1",
+       "PL010-0003#c3c3c3c3"
+      ],
+      "refs": [
+       {
+        "loc": "art. 95 ust. 1",
+        "src": "PL-PRAWO-LOTNICZE"
+       }
+      ]
+     },
+     {
+      "body": [
+       "Treść drugiego rozdziału, dostępna w Premium."
+      ],
+      "heading": "Uprawnienia dodatkowe",
+      "id": "AL01-2",
+      "questionKeys": [
+       "PL010-0004#d4d4d4d4"
+      ],
+      "refs": [
+       {
+        "loc": "art. 96",
+        "src": "PL-PRAWO-LOTNICZE"
+       }
+      ]
+     }
+    ]
+   },
+   "title": {
+    "en": "Licences and ratings",
+    "pl": "Licencje i uprawnienia"
+   }
+  },
+  {
+   "id": "AL02",
+   "order": [
+    "PL010-0441#0a0a0a0a"
+   ],
+   "summary": {
+    "sections": [
+     {
+      "body": [
+       "Akapit o klasach przestrzeni powietrznej."
+      ],
+      "heading": "Klasy przestrzeni",
+      "id": "AL02-1",
+      "questionKeys": [
+       "PL010-0441#0a0a0a0a"
+      ],
+      "refs": [
+       {
+        "loc": "SERA.6001",
+        "src": "EU-SERA"
+       }
+      ]
+     }
+    ]
+   },
+   "title": {
+    "en": "Airspace",
+    "pl": "Przestrzeń powietrzna"
+   }
+  }
+ ]
+}
