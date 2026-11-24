@@ -259,6 +259,22 @@ def load_sources(ctx):
     return {s["id"]: s for s in data}
 
 
+def src_available(src):
+    """Источник скачан и есть в корпусе (status по умолчанию available)."""
+    return src.get("status", "available") != "unavailable"
+
+
+def src_quotable(src):
+    """Цитаты хранятся только для источников с allowQuote (по умолчанию нет у aip/easa)."""
+    default = src.get("kind") not in ("aip", "easa")
+    return bool(src.get("allowQuote", default))
+
+
+def refs_usable(rec, sources):
+    """Все ссылки записи указывают на доступные источники (иначе запись не выдаётся)."""
+    return all(r.get("src") in sources and src_available(sources[r["src"]]) for r in rec.get("refs") or [])
+
+
 def content_sha(rec, kind):
     """Хеш проверяемого содержимого. Любая правка меняет его и снимает запись с выдачи."""
     if kind == "section":
@@ -279,7 +295,8 @@ def is_published(rec, kind, ledger, id_):
 
 # ---------------------------------------------------------------- локаторы и якоря
 
-_N = r"\d+[a-z]?"
+# номер: 67, 67fa, 156zd, 87[1], 87[1a] (надстрочный индекс в квадратных скобках, как в anchors)
+_N = r"\d+(?:[a-z]{1,3}|\[\d+[a-z]{0,3}\][a-z]{0,3})?"
 LOC_STATUTE = re.compile(r"^art\. %s( ust\. %s)?( pkt %s)?$" % (_N, _N, _N))
 LOC_CONVENTION = re.compile(r"^(art\. %s( ust\. %s)?|załącznik \d+( pkt \d+(\.\d+)*)?)$" % (_N, _N), re.I)
 LOC_EUPARA = re.compile(r"^[A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
@@ -403,6 +420,9 @@ def check_refs(rep, label, rec, sources, store, status):
             if src not in sources:
                 rep.err("%s: src %r нет в sources.json" % (label, src))
                 continue
+            if not src_available(sources[src]):
+                rep.err("%s: источник %s недоступен (status=unavailable), ссылка невозможна" % (label, src))
+                continue
             if not loc_valid(sources[src].get("kind"), loc):
                 rep.err("%s: loc %r не проходит грамматику вида %s" % (label, loc, sources[src].get("kind")))
                 continue
@@ -418,7 +438,11 @@ def check_refs(rep, label, rec, sources, store, status):
                 if par not in anchors:
                     rep.err("%s: у якоря %r нет родительского %r в anchors/%s.json" % (label, loc, par, src))
                     ok = False
-        if (published or status == "draft") and quote and ok and store.use_corpus and src in sources:
+        if quote and src in sources and not src_quotable(sources[src]):
+            rep.err("%s: у источника %s цитаты запрещены (allowQuote=false), quote не хранится" % (label, src))
+            continue
+        if (published or status == "draft") and quote and ok and store.use_corpus and src in sources \
+                and src_available(sources[src]):
             at = store.anchor_text(src, loc)
             if at is None:
                 if published:
@@ -630,7 +654,7 @@ def build_asset_text(ctx):
     records = {r["key"]: r for _, r in load_src_records(ctx) if r.get("key")}
     alias = {}
     for key, r in sorted(records.items()):
-        if not is_published(r, "explanation", ledger, key):
+        if not is_published(r, "explanation", ledger, key) or not refs_usable(r, sources):
             continue
         if r.get("sameAs"):
             alias[key] = r["sameAs"]
@@ -646,7 +670,7 @@ def build_asset_text(ctx):
         for s in data.get("sections", []):
             st = s.get("status", data.get("status"))
             probe = dict(s, status=st)
-            if is_published(probe, "section", ledger, s.get("id")):
+            if is_published(probe, "section", ledger, s.get("id")) and refs_usable(s, sources):
                 sections_by_topic.setdefault(data.get("topic"), []).append({
                     "id": s["id"], "heading": s.get("heading", ""), "body": s.get("body", []),
                     "refs": clean_refs(s.get("refs")), "questionKeys": s.get("questionKeys", []),
@@ -678,7 +702,8 @@ def build_asset_text(ctx):
     for secs in sections_by_topic.values():
         for s in secs:
             used.update(x["src"] for x in s["refs"])
-    fetched = sorted(sources[s].get("fetched") for s in used if s in sources and sources[s].get("fetched"))
+    fetched = sorted((sources[s].get("legalState") or sources[s].get("fetched")) for s in used
+                     if s in sources and (sources[s].get("legalState") or sources[s].get("fetched")))
     asset = {
         "schema": ASSET_SCHEMA, "subject": SUBJECT, "lang": "pl",
         "legalStateAsOf": fetched[0] if fetched else None,

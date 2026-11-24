@@ -33,7 +33,14 @@ class Base(unittest.TestCase):
             shutil.copy(p, self.root / "assets" / "data" / p.name)
         self.ctx = m.Ctx(self.root)
         jdump(self.ctx.sources, [{"id": "LAW", "title_pl": "Prawo lotnicze", "kind": "statute",
-                                  "version": "Dz.U. test", "fetched": "2026-11-20"}])
+                                  "version": "Dz.U. test", "fetched": "2026-11-20", "legalState": "2026-09-16",
+                                  "status": "available", "allowQuote": True},
+                                 {"id": "UNAV", "title_pl": "Niedostępny", "kind": "eu_reg", "status": "unavailable",
+                                  "fetched": "", "allowQuote": True},
+                                 {"id": "REF", "title_pl": "Easy Access", "kind": "easa", "status": "available",
+                                  "fetched": "2026-11-24", "allowQuote": False, "lang": "en"}])
+        jdump(self.ctx.anchors / "REF.json", {"textSha": "y", "anchors": {"SERA.5005": [0, 5], "SERA.5005(a)": [0, 5]}})
+        jdump(self.ctx.anchors / "UNAV.json", {"textSha": "z", "anchors": {"SERA.5005": [0, 5]}})
         (self.ctx.corpus).mkdir(parents=True)
         (self.ctx.corpus / "LAW.txt").write_text(CORPUS, encoding="utf-8")
         s1 = CORPUS.index("Art. 1.")
@@ -159,7 +166,7 @@ class BuildTest(Base):
         self.assertEqual(a["explanations"][k]["status"], "verified")
         self.assertEqual(a["explanations"][k]["refs"], [{"src": "LAW", "loc": "art. 1"}])
         self.assertNotIn('"quote"', self.ctx.asset.read_text(encoding="utf-8"))
-        self.assertEqual(a["legalStateAsOf"], "2026-11-20")
+        self.assertEqual(a["legalStateAsOf"], "2026-09-16")
         self.assertEqual(self.validate(check_asset=True).errors, [])
 
     def test_build_twice_identical(self):
@@ -364,7 +371,62 @@ class ApplyReviewTest(Base):
         self.assertIn(self.k, self.out)
 
 
+class SourcesTest(Base):
+    def setUp(self):
+        super().setUp()
+        self.k = self.key_of("PL010-0001")
+
+    def test_unavailable_source_cannot_be_cited(self):
+        self.put_src("P01", [self.rec(self.k, status="verified", refs=[{"src": "UNAV", "loc": "SERA.5005"}])])
+        self.assertTrue(any("недоступен" in e for e in self.validate(no_corpus=True).errors))
+        self.ctx.ledger.write_text("{}")
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}])
+        self.assertEqual(self.build()["explanations"], {})
+
+    def test_reference_only_no_quote_anchor_checked(self):
+        ref = {"src": "REF", "loc": "SERA.5005(a)"}
+        self.put_src("P01", [self.rec(self.k, refs=[ref])])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}])
+        self.assertEqual(self.validate().errors, [])
+        a = self.build()
+        self.assertEqual(a["explanations"][self.k]["refs"], [ref])
+        self.assertEqual(a["legalStateAsOf"], "2026-11-24")
+        self.put_src("P01", [self.rec(self.k, status="verified", refs=[{"src": "REF", "loc": "SERA.5005(b)"}])])
+        self.assertTrue(any("якоря" in e for e in self.validate().errors))
+
+    def test_reference_only_quote_forbidden(self):
+        self.put_src("P01", [self.rec(self.k, refs=[{"src": "REF", "loc": "SERA.5005", "quote": "x"}])])
+        self.assertTrue(any("цитаты запрещены" in e for e in self.validate().errors))
+
+    def test_legal_state_preferred(self):
+        self.put_src("P01", [self.rec(self.k)])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}])
+        self.assertEqual(self.build()["legalStateAsOf"], "2026-09-16")
+
+
+class RealAnchorsTest(unittest.TestCase):
+    """Каждый ключ реальных anchors/*.json проходит грамматику своего вида (если файлы S1 есть)."""
+
+    def test_all_real_anchor_keys_valid(self):
+        mat = Path(__file__).resolve().parents[1]
+        sources = {s["id"]: s for s in json.loads((mat / "sources.json").read_text(encoding="utf-8"))} \
+            if (mat / "sources.json").exists() else {}
+        files = sorted((mat / "anchors").glob("*.json"))
+        if not files:
+            self.skipTest("нет anchors/ (корпус не собран)")
+        for f in files:
+            kind = sources[f.stem]["kind"]
+            bad = [k for k in json.loads(f.read_text(encoding="utf-8"))["anchors"] if not m.loc_valid(kind, k)]
+            self.assertEqual(bad[:5], [], f.name)
+
+
 class LocTest(unittest.TestCase):
+    def test_statute_numbers(self):
+        for loc in ("art. 67fa", "art. 156zd ust. 2", "art. 87[1]", "art. 87[1a] ust. 3 pkt 2", "art. 5 ust. 1a pkt 2b"):
+            self.assertTrue(m.loc_valid("statute", loc), loc)
+        for loc in ("art.", "art. 87[", "art. 87[]", "art. x1", "art. 5 pkt", "art. 5 ust. 1 ust. 2", "art 5", "art. 5; drop"):
+            self.assertFalse(m.loc_valid("statute", loc), loc)
+
     def test_grammar(self):
         self.assertTrue(m.loc_valid("statute", "art. 128 ust. 1 pkt 2"))
         self.assertFalse(m.loc_valid("statute", "SERA.5005"))
