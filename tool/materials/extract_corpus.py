@@ -45,6 +45,11 @@ SEJM_SUPERSCRIPT_MAX = 8.0
 # Marks text that belongs to a redaction which is not in force yet (see sejm_page_lines).
 FUTURE_MARK = "\u27e6PRZYSZŁA REDAKCJA\u27e7"
 
+# EU / EASA rule identifiers: SERA.5005, SERA.14095, FCL.205.A, NCO.GEN.105, MED.A.030, ORA.AeMC.215,
+# ARA.GEN.135A, 21.A.3A, 145.A.30, M.A.201, T.A.101
+_RULE_ID = (r"(?:[A-Z]{2,6}(?:\.[A-Za-z]{1,6})*\.\d{1,5}[A-Z]?(?:\.[A-Z])?"
+            r"|(?:\d{2,3}|[A-Z])\.[A-Z]\.\d{1,5}[A-Z]?)")
+
 _SPACES = re.compile(r"[ \t  -   ]+")
 _CTRL = re.compile(r"[\x00-\x08\x0b-\x1f\x7f​‌‍﻿]")
 _HYPHEN_END = re.compile(r"[^\W\d_]-$")
@@ -238,7 +243,7 @@ class _TextExtractor(html.parser.HTMLParser):
 # EUR-Lex / CELLAR consolidated XHTML: amendment-reference paragraphs and the table of contents are not text of the act
 _EURLEX_SKIP = re.compile(r"\b(modref|toc-\d+|arrow|superscript)\b")
 _AMEND_MARK = re.compile(r"[►▼◄](?:[A-Z]\d*[A-Z]?\d*)?")
-_LABEL_ONLY = re.compile(r"^(?:\(?[a-z]{1,4}\)|\(?\d{1,3}[a-z]?\)|\d{1,3}[a-z]?\.|[A-Z]{2,6}(?:\.[A-Za-z]{1,6})*\.\d{1,4}(?:\.[A-Z])?)$")
+_LABEL_ONLY = re.compile(r"^(?:\(?[a-z]{1,4}\)|\(?\d{1,3}[a-z]?\)|\d{1,3}[a-z]?\.|%s)$" % _RULE_ID)
 
 
 def read_html_lines(path, profile="html"):
@@ -250,11 +255,12 @@ def read_html_lines(path, profile="html"):
     p.close()
     lines = "".join(p.parts).split("\n")
     if profile == "eurlex_html":
+        lines = [re.sub(r"[—–-]{4,}", " ", ln) for ln in lines]
         lines = [re.sub(r"\s+([,;)]|\.(?=\s|$))", r"\1", re.sub(r"\(\s*\)", "", _AMEND_MARK.sub(" ", ln)))
                  for ln in lines]
         merged = []
         i = 0
-        lines = [clean_line(ln) for ln in lines]
+        lines = [re.sub(r"^(%s) ([A-Z])$" % _RULE_ID, r"\1\2", clean_line(ln)) for ln in lines]
         lines = [ln for ln in lines if ln]
         while i < len(lines):
             if _LABEL_ONLY.match(lines[i]) and i + 1 < len(lines):
@@ -325,6 +331,9 @@ _UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
 _DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
 _ANNEX_RE = re.compile(r"^Załącznik nr (\d+[a-z]?)$")
+_TABLE_RE = re.compile(r"^Tabela nr (\d+)$")
+_PART_RE = re.compile(r"^Część ([IVX]+[a-z]?)(?:\s.*)?$")
+_FOOTNOTES_RE = re.compile(r"^Przypisy:?$")
 _ROW_RE = re.compile(r"^(\d+(?:\.\d+){0,5})\.\s+\S")
 _NUM_SPLIT = re.compile(r"^(\d+)([a-z]*)$")
 _TOC_LINE = re.compile(r"\.{3,}\s*\d*\s*$")
@@ -350,14 +359,16 @@ def _next_ok(last, cur, first=(1,)):
     return cur[0] == last[0] and cur[1] > last[1]
 
 
-def statute_anchors(text):
+def statute_anchors(text, future_out=None):
     """Anchors for Polish statutes and conventions.
 
     art. N | art. N ust. N | art. N ust. N pkt N | art. N pkt N      (N as printed: 17a, 87[1], 156zd)
     załącznik N | załącznik N pkt L                                   (annex "Załącznik nr N"; L = Lp. of a table row, e.g. 1.1)
 
     Units that carry FUTURE_MARK are the redaction that is not binding yet (a later amendment replaces the
-    one in force); they get no anchor and are excluded from the ranges of the units in force.
+    one in force); they get no anchor. Their text ranges (from the marked heading to the next unit of the same
+    or a higher level) are appended to `future_out` as [start, end] and stored in anchors JSON as "future";
+    the validator masks them, so enclosing anchors cannot be used to quote the not-yet-binding text.
     """
     spans = []
     open_art = open_ust = open_pkt = None
@@ -366,11 +377,31 @@ def statute_anchors(text):
     started = False
     annex = None
     annex_rows = set()
+    tab = part = None
     dead_ust = False
+    fut_start = None
+    fut_level = 0
 
     def close(sp, at):
         if sp is not None and sp.end is None:
             sp.end = at
+
+    def close_future(at, level):
+        """A unit heading of the given level (0 = division / annex) ends a future-redaction range of >= its level."""
+        nonlocal fut_start
+        if fut_start is not None and level <= fut_level:
+            if future_out is not None and at > fut_start:
+                if future_out and future_out[-1][1] == fut_start:
+                    future_out[-1][1] = at
+                else:
+                    future_out.append([fut_start, at])
+            fut_start = None
+
+    def open_future(at, level):
+        nonlocal fut_start, fut_level
+        close_future(at, level)
+        if fut_start is None:
+            fut_start, fut_level = at, level
 
     def close_art_tree(at):
         for sp in (open_pkt, open_ust, open_art):
@@ -402,28 +433,54 @@ def statute_anchors(text):
             close_art_tree(start)
             open_art = open_ust = open_pkt = None
             cur_art = None
+            close_future(start, 0)
             close(annex, start)
             for sp in spans:
-                if sp.end is None and sp.level == 2:
+                if sp.end is None and sp.level >= 2:
                     sp.end = start
             annex = _Span("załącznik " + ma.group(1), start, 1)
             spans.append(annex)
             annex_rows = set()
+            tab = part = None
             started = True
             continue
         if annex is not None:
+            mt = _TABLE_RE.match(line)
+            mpart = _PART_RE.match(line)
+            if mt:
+                for sp in spans:
+                    if sp.end is None and sp.level >= 2:
+                        sp.end = start
+                tab = _Span("%s tabela %s" % (annex.key, mt.group(1)), start, 2)
+                spans.append(tab)
+                part = None
+                continue
+            if mpart:
+                for sp in spans:
+                    if sp.end is None and sp.level >= 3:
+                        sp.end = start
+                base_key = tab.key if tab is not None else annex.key
+                part = _Span("%s część %s" % (base_key, mpart.group(1)), start, 3)
+                spans.append(part)
+                continue
+            if _FOOTNOTES_RE.match(line):
+                for sp in spans:
+                    if sp.end is None and sp.level >= 4:
+                        sp.end = start
+                continue
             mr = _ROW_RE.match(line)
             if mr and not fut:
-                key = annex.key + " pkt " + mr.group(1)
+                ctx = part.key if part is not None else (tab.key if tab is not None else annex.key)
+                key = "%s pkt %s" % (ctx, mr.group(1))
                 if key not in annex_rows:
                     annex_rows.add(key)
-                    for sp in spans[::-1]:
-                        if sp.level == 2 and sp.end is None:
+                    for sp in spans:
+                        if sp.end is None and sp.level >= 4:
                             sp.end = start
-                            break
-                    spans.append(_Span(key, start, 2))
+                    spans.append(_Span(key, start, 4))
             continue
         if started and _DIV_RE.match(line):
+            close_future(start, 0)
             close_art_tree(start)
             open_art = open_ust = open_pkt = None
             cur_art = None
@@ -436,10 +493,12 @@ def statute_anchors(text):
                     continue
                 started = True
             if fut:
+                open_future(start, 1)
                 close_art_tree(start)
                 open_art = open_ust = open_pkt = None
                 cur_art = None
                 continue
+            close_future(start, 1)
             if any(sp.key == "art. " + token for sp in spans[-400:]):
                 m = None  # duplicate heading text: treat as ordinary text
             if m:
@@ -460,6 +519,7 @@ def statute_anchors(text):
         mu = _UST_RE.match(line)
         if mu and (fut or _next_ok(last_ust, _num_key(mu.group(1)), first=(1, 2))):
             if fut:
+                open_future(start, 2)
                 close(open_pkt, start)
                 close(open_ust, start)
                 open_pkt = open_ust = None
@@ -469,25 +529,27 @@ def statute_anchors(text):
                     last_ust = nk   # the unit exists in the numbering even though it is not in force yet
                     last_pkt = None
             else:
+                close_future(start, 2)
                 dead_ust = False
                 open_ust_span(mu.group(1), start)
             continue
         mp = _PKT_RE.match(line)
         if mp and not dead_ust and (fut or _next_ok(last_pkt, _num_key(mp.group(1)))):
             if fut:
+                open_future(start, 3)
                 close(open_pkt, start)
                 open_pkt = None
                 nk = _num_key(mp.group(1))
                 if _next_ok(last_pkt, nk):
                     last_pkt = nk
             else:
+                close_future(start, 3)
                 open_pkt_span(mp.group(1), start)
+    close_future(len(text), 0)
     return _finish(spans, len(text))
 
 
 # EU / EASA rule identifiers: SERA.5005, FCL.205.A, NCO.GEN.105, MED.A.030, BFCL.115, ORO.FC.100 ...
-_RULE_ID = (r"(?:[A-Z]{2,6}(?:\.[A-Za-z]{1,6})*\.\d{1,4}(?:\.[A-Z])?"
-            r"|(?:\d{2,3}|M)\.[A-Z]\.\d{1,4}[A-Z]?)")
 _ID_PAREN = r"%s(?:\([a-z0-9]+\))*" % _RULE_ID
 _RULE_RE = re.compile(r"^(%s)(?:\s+(\S.*))?$" % _RULE_ID)
 # "AMC1 SERA.5005(f) Title" and the multi-rule form "AMC1 FCL.210; FCL.215 Title"
@@ -502,11 +564,102 @@ _PARA_RE = re.compile(r"^\(([a-z]{1,4}|\d{1,2}|[A-Z])\)\s*\S")
 _PARA_NUM_RE = re.compile(r"^(\d{1,3})\.\s+\S")
 _DEF_RE = re.compile(r"^(\d{1,3})([a-z]?)\.\s+[‘']")
 # a heading-like line of a change log ("... New Issue 1, Amdt 16 ED Decision 2022/012/R", "... Changed 1/12 EDD 2019/019/R")
-_CHANGELOG_RE = re.compile(r"(?:New|Changed|Renumbered|Deleted|Amdt|Moved|Issue \d|\d+/\d+)[^\n]*\b(?:ED Decision|EDD)\s+\d{4}/\d+(?:/[A-Z])?\s*$")
+_CHANGELOG_RE = re.compile(
+    r"(?:(?:New|Changed|Renumbered|Deleted|Amdt|Moved|Issue \d|\d+/\d+)[^\n]*\b(?:ED Decision|EDD)\s+\d{4}/\d+(?:/[A-Z])?\s*$)"
+    r"|(?:\b(?:New(?: point)?|Changed|Deleted|Renumbered|Moved)\s+(?:Reg\.|N/a|Regulation|ED Decision|EDD)\b)")
 _TABLE_NOTE_RE = re.compile(r"^\(\*+\)")
 _ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
 _BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+\b.*|Appendix \d+ to .*|"
                           r"ANNEX( [IVX]+)?\b.*|ANEKS [IVX]+\b.*|Table of contents|Contents)$")
+
+
+_CHANGELOG_TITLE_RE = re.compile(r"^(?:Changed|Deleted|Renumbered|Moved|Amended)\b|^New\s+(?:Issue|Reg\.|N/a|\d)")
+
+
+def _heading_flags(rows):
+    """True for every line that looks like a rule / AMC / GM heading (title case not checked)."""
+    flags = []
+    for _, ln in rows:
+        m = _AMC_FULL_RE.match(ln)
+        if m:
+            flags.append(not ln[m.end():].strip()[:1].islower())
+            continue
+        m = _RULE_RE.match(ln)
+        flags.append(bool(m) and (m.group(2) is None or not m.group(2)[:1].islower()))
+    return flags
+
+
+def _toc_like(flags, i):
+    """A heading that sits in a run of three consecutive heading lines is a table of contents / changelog row."""
+    n = len(flags)
+    return bool((0 < i < n - 1 and flags[i - 1] and flags[i + 1])
+                or (i + 2 < n and flags[i + 1] and flags[i + 2])
+                or (i >= 2 and flags[i - 2] and flags[i - 1]))
+
+
+def _heading_key(line):
+    m = _AMC_FULL_RE.match(line)
+    if m:
+        return "%s %s" % (m.group(1), m.group(2).split(";")[0].strip())
+    m = _RULE_RE.match(line)
+    return m.group(1) if m else None
+
+
+_BODY_STOP_RE = re.compile(r"^\(?(?:PODCZĘŚĆ|PODSEKCJA|Podsekcja|SEKCJA|DZIAŁ|ROZDZIAŁ|ODDZIAŁ|TYTUŁ|ZAŁĄCZNIK|Dodatek|\[CZĘŚĆ|"
+                           r"SUBPART|SECTION|APPENDIX|Appendix|ANNEX)\b")
+_SOURCE_LINE_RE = re.compile(r"^(?:Regulation|ED Decision|Commission|Rozporządzenie|Decyzja)\b")
+MIN_BODY = 25
+
+
+def _heading_rejected(rows, flags, idx):
+    """Table-of-contents entry (dot leaders, trailing page number), change-log row or cross-reference list item."""
+    line = rows[idx][1]
+    if any(_TOC_LINE.search(rows[j][1]) for j in range(idx, min(idx + 4, len(rows)))):
+        return True
+    if _PAGE_NO_TAIL.search(line):
+        return True
+    return bool(any(_CHANGELOG_RE.search(rows[j][1]) for j in range(idx, min(idx + 3, len(rows))))
+                or (line.endswith(",") and idx + 1 < len(rows) and flags[idx + 1])
+                or (idx + 1 < len(rows) and flags[idx + 1] and rows[idx + 1][1].endswith(","))
+                or _changelog_title(line))
+
+
+def _loser_occurrences(rows, flags):
+    """Line indexes of repeated or empty headings that are not the real rule heading.
+
+    The same rule heading appears in a table of contents, in a change log and in the body. The real one is the
+    first occurrence followed by text (>= MIN_BODY characters, source lines such as "Regulation (EU) ..." not
+    counted) before the next heading or division line. A heading that never has a body gets no anchor."""
+    occ = {}
+    for i, (_, ln) in enumerate(rows):
+        if flags[i]:
+            key = _heading_key(ln)
+            if key:
+                occ.setdefault(key, []).append(i)
+
+    def body(i):
+        n = 0
+        for j in range(i + 1, min(i + 600, len(rows))):
+            ln = rows[j][1]
+            if flags[j] or _BODY_STOP_RE.match(ln):
+                break
+            if len(ln) >= 25 and not _SOURCE_LINE_RE.match(ln):   # short lines are wrapped table-of-contents titles
+                n += len(ln)
+        return n
+    losers = set()
+    for idxs in occ.values():
+        good = [i for i in idxs if not _heading_rejected(rows, flags, i) and body(i) >= MIN_BODY]
+        keep = good[0] if good else None
+        losers.update(i for i in idxs if i != keep)
+    return losers
+
+
+def _changelog_title(line):
+    m = _AMC_FULL_RE.match(line) or _RULE_RE.match(line)
+    if not m:
+        return False
+    rest = line[m.end(1):].strip() if _RULE_RE.match(line) and not _AMC_FULL_RE.match(line) else line[m.end():].strip()
+    return bool(_CHANGELOG_TITLE_RE.match(rest))
 
 
 class _ParaState:
@@ -622,13 +775,19 @@ def rule_anchors(text, kind, extras=()):
         app = None
 
     rows = _line_offsets(text)
+    flags = _heading_flags(rows)
+    losers = _loser_occurrences(rows, flags)
     for idx, (start, line) in enumerate(rows):
+        if idx in losers:
+            continue   # repeated heading of a table of contents / change log
         if any(_TOC_LINE.search(rows[j][1]) for j in range(idx, min(idx + 4, len(rows)))):
             continue  # table-of-contents entry (dot leaders, possibly on a wrapped later line)
-        if (_AMC_FULL_RE.match(line) or _RULE_RE.match(line)) and any(
-                _CHANGELOG_RE.search(rows[j][1]) or rows[j][1].endswith(",")
-                for j in range(idx, min(idx + 3, len(rows)))):
-            continue  # change log / cross-reference list, not a heading
+        if flags[idx] and (
+                any(_CHANGELOG_RE.search(rows[j][1]) for j in range(idx, min(idx + 3, len(rows))))
+                or (line.endswith(",") and idx + 1 < len(rows) and flags[idx + 1])
+                or (idx + 1 < len(rows) and flags[idx + 1] and rows[idx + 1][1].endswith(","))
+                or _changelog_title(line)):
+            continue  # change log / table of contents / cross-reference list, not a heading
         mm = _AMC_FULL_RE.match(line)
         if mm and line[mm.end():].strip()[:1].islower():
             mm = None   # running text that starts with a reference ("AMC1 ORO.GEN.200(b) should be used.")
@@ -674,7 +833,7 @@ def rule_anchors(text, kind, extras=()):
                 sp = _Span(key, start, 1)
                 spans.append(sp)
                 group = [sp]
-                state = _ParaState()
+                state = None   # paragraph numbering inside a GM/AMC is its own: no sub-keys
                 base = key
                 anc = key
                 while True:
@@ -705,7 +864,7 @@ def rule_anchors(text, kind, extras=()):
                             break
                         anc = mpar.group(1)
                         children.setdefault(anc, []).append(sp)
-                state = _ParaState()
+                state = None   # paragraph numbering inside a GM/AMC is its own: no sub-keys
                 base = new[0]
             continue
         mr = _RULE_RE.match(line)
@@ -873,7 +1032,12 @@ def eureg_anchors(text):
         spans.append(sp)
         return sp
 
-    for start, line in _line_offsets(text):
+    rows = _line_offsets(text)
+    flags = _heading_flags(rows)
+    losers = _loser_occurrences(rows, flags)
+    for idx, (start, line) in enumerate(rows):
+        if idx in losers and flags[idx] and mode == "annex":
+            continue   # repeated heading of an annex table of contents
         ma = _EU_ART_RE.match(line)
         if ma and mode in ("pre", "art"):
             close_art(start)
@@ -934,6 +1098,8 @@ def eureg_anchors(text):
         if mode == "annex":
             mr = _RULE_RE.match(line)
             if mr and (mr.group(2) is None or not mr.group(2)[:1].islower()):
+                if _changelog_title(line):
+                    continue
                 close_block(start)
                 block = add(mr.group(1), start, 2)
                 state = _ParaState()
@@ -1023,13 +1189,15 @@ def anchors_for(src, text):
     kind = src["kind"]
     extras = tuple(src.get("anchorExtras", ()))
     if kind in ("statute", "convention"):
-        return statute_anchors(text)
+        future = []
+        anchors = statute_anchors(text, future)
+        return anchors, future
     if kind == "eu_reg":
-        return eureg_anchors(text)
+        return eureg_anchors(text), []
     if kind == "easa":
-        return rule_anchors(text, kind, extras)
+        return rule_anchors(text, kind, extras), []
     if kind == "aip":
-        return aip_anchors(text)
+        return aip_anchors(text), []
     raise ExtractError("%s: unknown kind %r" % (src["id"], kind))
 
 
@@ -1041,11 +1209,14 @@ def write_text(path, text):
         f.write(text)
 
 
-def write_anchors(path, text_sha, anchors):
+def write_anchors(path, text_sha, anchors, future=()):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     rows = ",\n".join("    %s: [%d, %d]" % (json.dumps(k, ensure_ascii=False), s, e)
                       for k, (s, e) in anchors.items())
-    body = '{\n  "textSha": "%s",\n  "anchors": {\n%s\n  }\n}\n' % (text_sha, rows)
+    fut = ""
+    if future:
+        fut = ',\n  "future": [%s]' % ", ".join("[%d, %d]" % (a, b) for a, b in future)
+    body = '{\n  "textSha": "%s",\n  "anchors": {\n%s\n  }%s\n}\n' % (text_sha, rows, fut)
     with open(path, "w", encoding="utf-8", newline="\n") as f:
         f.write(body)
 
@@ -1056,9 +1227,9 @@ def extract_one(src, sources_dir, corpus_dir, anchors_dir):
         raise ExtractError("%s: %s not found (run fetch_sources.py first)" % (src["id"], path))
     text = build_corpus_text(src, path)
     sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
-    anchors = anchors_for(src, text)
+    anchors, future = anchors_for(src, text)
     write_text(os.path.join(corpus_dir, src["id"] + ".txt"), text)
-    write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors)
+    write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors, future)
     return src["id"], len(text), len(anchors)
 
 

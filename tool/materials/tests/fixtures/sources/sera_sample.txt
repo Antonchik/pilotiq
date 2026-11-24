@@ -16,8 +16,8 @@ aerodrome within a control zone:
 (2) when the ground visibility is less than 5 km.
 (c) Third paragraph.
 AMC1 SERA.5005(b) Visual flight rules
-Text of the AMC.
+Text of the acceptable means of compliance for point (b).
 GM1 SERA.5005 Visual flight rules
-Text of the GM.
+Text of the guidance material for the rule.
 SERA.5010 Special VFR in control zones
 (a) Special VFR flights may be authorised to operate within a control zone.

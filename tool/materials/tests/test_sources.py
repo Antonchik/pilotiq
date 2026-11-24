@@ -309,6 +309,113 @@ class EarExtrasTest(unittest.TestCase):
         self.assertFalse([k for k in plain if k.startswith(("Article", "Appendix", "GM1 Article"))])
 
 
+class RuleHeadingsTest(unittest.TestCase):
+    def test_five_digit_rule_ids(self):
+        text = ("SERA.14095 Phraseology for distress\nRegulation (EU) 2016/1185\n(a) Distress communications shall be made.\n"
+                "SERA.11015 Interception procedures\nRegulation (EU) 2016/1185\n(a) An intercepted aircraft shall comply.\n"
+                "ARA.GEN.135A Immediate reaction\nRegulation (EU) 2016/1185\n(a) The authority shall implement a system.\n")
+        a = ec.rule_anchors(text, "easa")
+        for key in ("SERA.14095", "SERA.14095(a)", "SERA.11015", "ARA.GEN.135A"):
+            self.assertIn(key, a, key)
+        a2 = ec.eureg_anchors("ZAŁĄCZNIK\n" + text)
+        self.assertIn("SERA.14095", a2)
+
+    def test_toc_changelog_and_body_occurrences(self):
+        text = ("Summary of changes\n"
+                "NCO.OP.160 Changed N/a Regulation (EU) 2021/2237\n"
+                "NCO.OP.165 Changed N/a Regulation (EU) 2021/2237\n"
+                "NCO.OP.170 New N/a Regulation (EU) 2021/2237\n"
+                "SPO.POL.110 New Reg. (EU) 2019/1384\n"
+                "Contents\nNCO.OP.160 Meteorological conditions\nNCO.OP.165 Fuel\n"
+                "NCO.OP.160 Meteorological conditions\nRegulation (EU) 2018/1042\n"
+                "(a) The pilot-in-command shall commence a VFR flight only if the weather permits.\n"
+                "NCO.OP.165 Fuel and oil\nRegulation (EU) 2018/1042\n(a) A pilot shall carry enough fuel for the flight.\n"
+                "SPO.POL.110 Mass and balance system\nRegulation (EU) 2019/1384\n(a) The operator shall establish mass and balance.\n")
+        a = ec.rule_anchors(text, "easa")
+        for key in ("NCO.OP.160", "NCO.OP.165", "SPO.POL.110"):
+            s, e = a[key]
+            self.assertIn("Regulation (EU) 20", text[s:e], key)
+            self.assertTrue(text[s:].startswith(key + " M") or text[s:].startswith(key + " F"), (key, text[s:s + 40]))
+        self.assertNotIn("NCO.OP.170", a)  # only ever in the change log
+
+    def test_polish_annex_toc_and_body(self):
+        text = ("ZAŁĄCZNIK I\nSPIS TREŚCI\n21.A.1\nZakres\n21.A.2\nPodejmowanie czynności\n(PODCZĘŚĆ C – NIE STOSUJE SIĘ)\n"
+                "PODCZĘŚĆ A\n21.A.1 Zakres\nNiniejsza podczęść określa ogólne prawa i obowiązki wnioskodawców.\n"
+                "21.A.2 Podejmowanie czynności\nCzynności i obowiązki, które mają być podjęte przez posiadacza certyfikatu.\n"
+                "21.A.3A System zgłaszania\nPosiadacz certyfikatu ustanawia system zgłaszania zdarzeń.\n")
+        a = ec.eureg_anchors(text)
+        for key in ("21.A.1", "21.A.2", "21.A.3A"):
+            s, e = a[key]
+            self.assertGreater(e - s, 60, key)
+            self.assertTrue(text[s:].startswith(key + " "), key)
+
+    def test_amc_and_gm_have_no_paragraph_subkeys(self):
+        text = ("SERA.5005 Visual flight rules\nRegulation (EU) 2024/404\n(a) The flight shall be conducted so that the conditions are met.\n"
+                "AMC1 SFCL.150(b) SPL privileges\nED Decision 2020/004/R\n(a) The training elements as per point SFCL.150(b)(1) should be covered.\n"
+                "(b) The second element of the training programme should be covered.\n")
+        a = ec.rule_anchors(text, "easa")
+        self.assertIn("SERA.5005(a)", a)
+        self.assertIn("AMC1 SFCL.150(b)", a)
+        self.assertFalse([k for k in a if k.startswith("AMC1 SFCL.150(b)(")], list(a))
+
+    def test_deleted_text_dashes_are_removed_from_cellar_text(self):
+        lines = ec.clean_lines(ec.read_html_lines(str(FIX / "eurlex_sample.html"), "eurlex_html"))
+        self.assertFalse([l for l in lines if "————" in l])
+        html_text = "<html><body><p class=\"norm\">a) tekst ————— koniec</p></body></html>"
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "x.html"
+            path.write_text(html_text, encoding="utf-8")
+            out = ec.clean_lines(ec.read_html_lines(str(path), "eurlex_html"))
+        self.assertEqual(["a) tekst koniec"], out)
+
+
+class StatuteFutureAndTablesTest(unittest.TestCase):
+    FM = ec.FUTURE_MARK
+
+    def test_future_ranges_are_recorded(self):
+        text = ("Art. 1. Start.\n"
+                "Art. 40. 1. Przepis o rejestrze:\n"
+                "1) a;\n2) b;\n3) c;\n4) d;\n"
+                "4a) statek podlega wpisowi, o którym mowa w art. 44 ust. 1 i 2;\n"
+                "4a) %s statek podlega wpisowi, o którym mowa w art. 44 ust. 1 albo art. 44a;\n"
+                "5) mimo zaistnienia okoliczności nie obowiązuje porozumienie.\n"
+                "Art. 41. Inny przepis.\n" % self.FM)
+        future = []
+        a = ec.statute_anchors(text, future)
+        self.assertEqual(1, len(future))
+        s, e = future[0]
+        self.assertTrue(text[s:].startswith("4a) " + self.FM))
+        self.assertTrue(text[e:].startswith("5) mimo"))
+        self.assertLessEqual(a["art. 40 ust. 1"][0], s)
+        self.assertGreaterEqual(a["art. 40 ust. 1"][1], e)   # the enclosing anchor contains it: the validator masks it
+        self.assertIn("art. 40 ust. 1 pkt 5", a)
+
+    def test_future_article_range_ends_at_next_article(self):
+        text = "Art. 1. Start.\nArt. 2. Jeden.\nArt. 3.%s Trzy przyszłe.\n1. Ust.\nArt. 4. Cztery.\n" % (" " + self.FM)
+        future = []
+        a = ec.statute_anchors(text, future)
+        self.assertNotIn("art. 3", a)
+        self.assertEqual([[text.index("Art. 3."), text.index("Art. 4.")]], future)
+
+    def test_annex_rows_are_keyed_by_table_and_part(self):
+        text = ("Art. 1. Start.\nZałącznik nr 6\nTabela nr 1\nCzęść III\n3.14. Inne certyfikaty\nopłata 2000\n"
+                "Tabela nr 2\nCzęść I Egzaminy\n3.14. Przeprowadzenie egzaminu teoretycznego\n5. Inny wiersz\n"
+                "Przypisy:\n1) objaśnienie\nTabela nr 3\nCzęść I\n5. Wiersz piąty\n")
+        a = ec.statute_anchors(text)
+        for key in ("załącznik 6", "załącznik 6 tabela 1", "załącznik 6 tabela 1 część III",
+                    "załącznik 6 tabela 1 część III pkt 3.14", "załącznik 6 tabela 2", "załącznik 6 tabela 2 część I",
+                    "załącznik 6 tabela 2 część I pkt 3.14", "załącznik 6 tabela 2 część I pkt 5",
+                    "załącznik 6 tabela 3 część I pkt 5"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("załącznik 6 pkt 3.14", a)
+        row = anchor_text(text, a, "załącznik 6 tabela 1 część III pkt 3.14")
+        self.assertIn("Inne certyfikaty", row)
+        self.assertNotIn("Egzaminy", row)
+        self.assertNotIn("egzaminu teoretycznego", row)
+        row2 = anchor_text(text, a, "załącznik 6 tabela 2 część I pkt 5")
+        self.assertNotIn("objaśnienie", row2)
+
+
 class AipAndHtmlTest(unittest.TestCase):
     def test_html_to_text_and_anchors(self):
         path = FIX / "aip_sample.html"

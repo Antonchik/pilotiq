@@ -411,6 +411,94 @@ class ReviewGapsTest(Base):
         self.assertTrue(any("более точном пункте 'art. 1 ust. 1'" in w for w in rep.warnings))
 
 
+class FutureEditionTest(Base):
+    """A not-yet-binding redaction must not be quotable even without copying the marker (anchors["future"])."""
+
+    TEXT = ("Art. 40. 1. Przepis o rejestrze:\n"
+            "4a) statek podlega wpisowi do rejestru, o którym mowa w art. 44 ust. 1 i 2;\n"
+            "4a) \u27e6PRZYSZŁA REDAKCJA\u27e7 statek podlega wpisowi do rejestru, o którym mowa w art. 44 ust. 1 albo art. 44a;\n"
+            "5) mimo zaistnienia odpowiednich okoliczności nie obowiązuje porozumienie.\n"
+            "Art. 41. Inny przepis.\n")
+
+    def setUp(self):
+        super().setUp()
+        self.k = self.key_of("PL010-0001")
+        (self.ctx.corpus / "LAW.txt").write_text(self.TEXT, encoding="utf-8")
+        fs = self.TEXT.index("4a) \u27e6")
+        fe = self.TEXT.index("5) mimo")
+        self.write_anchors(future=[[fs, fe]])
+
+    def write_anchors(self, future):
+        jdump(self.ctx.anchors / "LAW.json", {
+            "textSha": hashlib.sha256(self.TEXT.encode("utf-8")).hexdigest(),
+            "anchors": {"art. 40": [0, self.TEXT.index("Art. 41.")], "art. 40 ust. 1": [0, self.TEXT.index("Art. 41.")]},
+            "future": future})
+
+    def check(self, quote):
+        self.put_src("P01", [self.rec(self.k, refs=[{"src": "LAW", "loc": "art. 40 ust. 1", "quote": quote}])])
+        return self.validate().errors
+
+    def test_quote_of_the_future_pkt_without_marker_is_rejected(self):
+        errs = self.check("statek podlega wpisowi do rejestru, o którym mowa w art. 44 ust. 1 albo art. 44a")
+        self.assertTrue(any("quote не найден" in e for e in errs), errs)
+
+    def test_quote_of_the_text_in_force_is_accepted(self):
+        self.assertEqual(self.check("statek podlega wpisowi do rejestru, o którym mowa w art. 44 ust. 1 i 2"), [])
+
+    def test_quote_across_the_future_range_is_rejected(self):
+        errs = self.check("o którym mowa w art. 44 ust. 1 i 2; 4a) statek podlega wpisowi do rejestru, o którym mowa")
+        self.assertTrue(any("quote не найден" in e for e in errs), errs)
+
+    def test_same_words_in_text_in_force_still_match(self):
+        self.assertEqual(self.check("statek podlega wpisowi do rejestru"), [])
+
+    def test_without_future_ranges_old_behaviour(self):
+        self.write_anchors(future=[])
+        self.assertEqual(self.check("statek podlega wpisowi do rejestru, o którym mowa w art. 44 ust. 1 albo art. 44a"), [])
+
+
+class AnnexTableLocatorTest(Base):
+    """Annex 6 of Prawo lotnicze: row numbers restart in every table part, so rows are keyed by table and part."""
+
+    TEXT = ("Załącznik nr 6\nTabela nr 1\nCzęść III\n3.14. Inne certyfikaty i zaświadczenia\nopłata 2000\n"
+            "Tabela nr 2\nCzęść I Egzaminy\n3.14. Przeprowadzenie egzaminu teoretycznego kandydatów\n")
+
+    def setUp(self):
+        super().setUp()
+        self.k = self.key_of("PL010-0001")
+        (self.ctx.corpus / "LAW.txt").write_text(self.TEXT, encoding="utf-8")
+        t2 = self.TEXT.index("Tabela nr 2")
+        p1 = self.TEXT.index("3.14. Przeprowadzenie")
+        jdump(self.ctx.anchors / "LAW.json", {
+            "textSha": hashlib.sha256(self.TEXT.encode("utf-8")).hexdigest(),
+            "anchors": {"załącznik 6": [0, len(self.TEXT)],
+                        "załącznik 6 tabela 1": [14, t2],
+                        "załącznik 6 tabela 1 część III": [26, t2],
+                        "załącznik 6 tabela 1 część III pkt 3.14": [self.TEXT.index("3.14. Inne"), t2],
+                        "załącznik 6 tabela 2": [t2, len(self.TEXT)],
+                        "załącznik 6 tabela 2 część I": [t2 + 12, len(self.TEXT)],
+                        "załącznik 6 tabela 2 część I pkt 3.14": [p1, len(self.TEXT)]}})
+
+    def quote_in(self, loc, quote):
+        self.put_src("P01", [self.rec(self.k, refs=[{"src": "LAW", "loc": loc, "quote": quote}])])
+        return self.validate().errors
+
+    def test_locators_and_parents(self):
+        for loc in ("załącznik 6 tabela 2", "załącznik 6 tabela 2 część I", "załącznik 6 tabela 2 część IIIa pkt 3.14",
+                    "załącznik 6 część I pkt 1", "załącznik 6 tabela 2 pkt 1"):
+            self.assertTrue(m.loc_valid("statute", loc), loc)
+        for loc in ("załącznik 6 tabela", "załącznik 6 część", "załącznik 6 część i", "załącznik 6 tabela X"):
+            self.assertFalse(m.loc_valid("statute", loc), loc)
+        self.assertEqual(m.loc_parents("załącznik 6 tabela 2 część I pkt 3.14"),
+                         ["załącznik 6 tabela 2 część I", "załącznik 6 tabela 2", "załącznik 6"])
+
+    def test_exam_fee_row_is_only_valid_in_its_own_table(self):
+        q = "Przeprowadzenie egzaminu teoretycznego kandydatów"
+        self.assertEqual(self.quote_in("załącznik 6 tabela 2 część I pkt 3.14", q), [])
+        errs = self.quote_in("załącznik 6 tabela 1 część III pkt 3.14", q)
+        self.assertTrue(any("quote не найден" in e for e in errs), errs)
+
+
 class SourcesTest(Base):
     def setUp(self):
         super().setUp()

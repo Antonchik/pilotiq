@@ -29,11 +29,11 @@ Table S5-1 (*)
 AMC1 FCL.210; FCL.215 Training course and theoretical knowledge examination
 (a) Training course syllabus.
 AMC1 SERA.5005(f) Visual flight rules
-Text f.
+Text of the acceptable means of compliance for point (f).
 AMC1 SERA.5005(b) Visual flight rules
-Text b.
+Text of the acceptable means of compliance for point (b).
 GM1 to Appendix 4 ATS airspace classes
-Text of GM to the appendix.
+Text of the guidance material to the appendix of classes.
 APPENDIX 1 SIGNALS
 Regulation (EU) 2024/1111
 1. DISTRESS AND URGENCY SIGNALS

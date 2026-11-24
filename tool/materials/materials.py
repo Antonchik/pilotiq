@@ -299,7 +299,9 @@ def is_published(rec, kind, ledger, id_):
 # номер: 67, 67fa, 156zd, 87[1], 87[1a] (надстрочный индекс в квадратных скобках, как в anchors)
 _N = r"\d+(?:[a-z]{1,3}|\[\d+[a-z]{0,3}\][a-z]{0,3})?"
 _L = r"\d+(?:\.\d+)*"  # номер строки таблицы / позиции: 1, 1.1, 3.14
-LOC_STATUTE = re.compile(r"^(art\. %s( ust\. %s)?( pkt %s)?|załącznik \d+[a-z]?( pkt %s)?)$" % (_N, _N, _N, _L))
+# załącznik 6, załącznik 6 tabela 2, załącznik 6 tabela 2 część I, załącznik 6 tabela 2 część I pkt 3.14
+LOC_STATUTE = re.compile(r"^(art\. %s( ust\. %s)?( pkt %s)?|załącznik \d+[a-z]?( tabela \d+)?( część [IVX]+[a-z]?)?( pkt %s)?)$"
+                         % (_N, _N, _N, _L))
 LOC_CONVENTION = re.compile(r"^(art\. %s( ust\. %s)?|załącznik \d+( pkt \d+(\.\d+)*)?)$" % (_N, _N), re.I)
 # правила: FCL.205.A, SERA.5005(b)(1)(i), MED.A.030, ORA.AeMC.215, M.A.201; Part 21/145/66/147: 21.A.3A, 145.A.30
 LOC_EUPARA = re.compile(r"^([A-Z][A-Za-z]*|\d{2,3})(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
@@ -333,7 +335,7 @@ def loc_parents(loc):
     out = []
     cur = loc
     while True:
-        m = re.match(r"^(.*\S)\s+(pkt|ust\.|dodatek)\s+\S+$", cur)
+        m = re.match(r"^(.*\S)\s+(pkt|ust\.|dodatek|część|tabela)\s+\S+$", cur)
         if m:
             cur = m.group(1)
         else:
@@ -383,6 +385,24 @@ class AnchorStore:
             return None
         return hashlib.sha256(text.encode("utf-8")).hexdigest() == a.get("textSha")
 
+    def masked_text(self, src, s, e):
+        """corpus[s:e] with the not-yet-binding (future-edition) ranges listed in anchors["future"] replaced by U+FFFC,
+        so that a quote can match only text in force (also when it does not contain the marker itself)."""
+        text = self.corpus(src)
+        a = self.anchors(src) or {}
+        out = []
+        pos = s
+        for fs, fe in sorted(a.get("future", [])):
+            if fe <= s or fs >= e:
+                continue
+            fs, fe = max(fs, s), min(fe, e)
+            if fs > pos:
+                out.append(text[pos:fs])
+            out.append("\ufffc")
+            pos = fe
+        out.append(text[pos:e])
+        return "".join(out)
+
     def descendant_with_quote(self, src, loc, quote):
         """Самый узкий дочерний якорь loc, целиком содержащий quote (или None)."""
         a = self.anchors(src)
@@ -393,7 +413,7 @@ class AnchorStore:
         best = None
         for k, (s, e) in a.get("anchors", {}).items():
             if k != loc and (k.startswith(loc + " ") or k.startswith(loc + "(")) and (best is None or e - s < best[1]):
-                if q in norm_quote(text[s:e]):
+                if q in norm_quote(self.masked_text(src, s, e)):
                     best = (k, e - s)
         return best[0] if best else None
 
@@ -404,7 +424,7 @@ class AnchorStore:
         if a is None or text is None or loc not in a.get("anchors", {}):
             return None
         s, e = a["anchors"][loc]
-        return norm_quote(text[s:e])
+        return norm_quote(self.masked_text(src, s, e))
 
 
 # ---------------------------------------------------------------- предложения
