@@ -1,0 +1,473 @@
+[
+ {
+  "key": "PL010-0084#0e6612bd",
+  "status": "draft",
+  "text": "Zgodnie z pkt MED.A.020 lit. b) ppkt 1 rozporządzenia 1178/2011 (Part-MED) posiadacz orzeczenia lekarskiego, który został poddany operacji chirurgicznej, bez zbędnej zwłoki i przed skorzystaniem z przywilejów licencji zasięga porady lotniczo-lekarskiej. Centrum medycyny lotniczej lub lekarz, u którego zasięga porady, ocenia jego sprawność i decyduje, czy może on wznowić korzystanie z przywilejów (lit. c)). Przepis nie przewiduje z tego powodu zawieszenia ani utraty licencji.",
+  "refs": [
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(b)",
+    "quote": "Ponadto posiadacze orzeczenia lekarskiego bez zbędnej zwłoki i przed skorzystaniem z przywilejów wynikających z ich licencji zasięgają porady lotniczo-lekarskiej"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(b)(1)",
+    "quote": "zostali poddani operacji chirurgicznej lub inwazyjnej procedurze medycznej"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(c)(1)",
+    "quote": "przeprowadza ocenę ich sprawności fizycznej i psychicznej i podejmuje decyzję w kwestii tego, czy są oni zdolni do wznowienia korzystania z przysługujących im przywilejów"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0084#5ad43359",
+  "status": "draft",
+  "text": "Zgodnie z pkt MED.A.020 lit. b) ppkt 1 rozporządzenia 1178/2011 (Part-MED) posiadacz orzeczenia lekarskiego, który został poddany operacji chirurgicznej lub inwazyjnej procedurze medycznej, bez zbędnej zwłoki i przed skorzystaniem z przywilejów licencji zasięga porady lotniczo-lekarskiej. Centrum medycyny lotniczej lub lekarz, u którego zasięga porady, ocenia jego sprawność i decyduje, czy może on wznowić korzystanie z przywilejów (lit. c)). Przepis nie przewiduje z tego powodu zawieszenia ani utraty licencji.",
+  "refs": [
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(b)",
+    "quote": "Ponadto posiadacze orzeczenia lekarskiego bez zbędnej zwłoki i przed skorzystaniem z przywilejów wynikających z ich licencji zasięgają porady lotniczo-lekarskiej"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(b)(1)",
+    "quote": "zostali poddani operacji chirurgicznej lub inwazyjnej procedurze medycznej"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(c)(1)",
+    "quote": "przeprowadza ocenę ich sprawności fizycznej i psychicznej i podejmuje decyzję w kwestii tego, czy są oni zdolni do wznowienia korzystania z przysługujących im przywilejów"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0085#bd9f8bd2",
+  "status": "draft",
+  "text": "Zgodnie z pkt MED.A.020 lit. b) ppkt 7 rozporządzenia 1178/2011 (Part-MED) posiadacz orzeczenia lekarskiego, który po raz pierwszy korzysta z soczewek korekcyjnych, bez zbędnej zwłoki i przed skorzystaniem z przywilejów licencji zasięga porady lotniczo-lekarskiej. Centrum medycyny lotniczej lub lekarz, u którego zasięga porady, ocenia jego sprawność i decyduje, czy może on wznowić korzystanie z przywilejów (lit. c)). Przepis nie przewiduje z tego powodu zawieszenia ani utraty licencji.",
+  "refs": [
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(b)",
+    "quote": "Ponadto posiadacze orzeczenia lekarskiego bez zbędnej zwłoki i przed skorzystaniem z przywilejów wynikających z ich licencji zasięgają porady lotniczo-lekarskiej"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(b)(7)",
+    "quote": "po raz pierwszy korzystają z soczewek korekcyjnych."
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(c)(1)",
+    "quote": "przeprowadza ocenę ich sprawności fizycznej i psychicznej i podejmuje decyzję w kwestii tego, czy są oni zdolni do wznowienia korzystania z przysługujących im przywilejów"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0251#a9120e12",
+  "status": "draft",
+  "text": "Zgodnie z art. 105 ust. 3 Prawa lotniczego członek personelu lotniczego, który jest świadomy utraty sprawności psychicznej lub fizycznej wymaganej do wykonywania swojej funkcji, jest obowiązany do natychmiastowego poddania się badaniom lotniczo-lekarskim. Podobnie pkt MED.A.020 lit. a) ppkt 1 rozporządzenia 1178/2011 zakazuje korzystania z przywilejów licencji, gdy posiadacz zdaje sobie sprawę z obniżenia sprawności, które może spowodować, że nie będzie w stanie bezpiecznie z nich korzystać. Obowiązek dotyczy więc pogorszenia sprawności wpływającego na bezpieczne wykonywanie czynności lotniczych, a nie pogorszenia bez takiego wpływu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 105 ust. 3",
+    "quote": "Członek personelu lotniczego i personelu pokładowego, który jest świadomy utraty sprawności psychicznej lub fizycznej wymaganej do wykonywania swojej funkcji, jest obowiązany do natychmiastowego poddania się badaniom"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.020(a)(1)",
+    "quote": "zdają sobie sprawę z obniżenia swojej sprawności fizycznej i psychicznej, mogącego spowodować, że nie będą w stanie bezpiecznie korzystać z tych przywilejów"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0030#a42ae0d0",
+  "status": "draft",
+  "text": "Zgodnie z art. 105 ust. 2 Prawa lotniczego członek personelu lotniczego nie może wykonywać lotów lub innych czynności lotniczych w przypadku utraty wymaganej sprawności psychicznej i fizycznej. Przepis nie przewiduje od tego zakazu wyjątków, w tym okresu przejściowego ani zezwolenia Prezesa ULC lub ministra.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 105 ust. 2",
+    "quote": "Członek personelu lotniczego oraz personelu pokładowego nie może wykonywać lotów lub innych czynności lotniczych w przypadku utraty wymaganej sprawności psychicznej i fizycznej."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0049#5774b3b6",
+  "status": "draft",
+  "text": "Zgodnie z art. 105 ust. 3 Prawa lotniczego członek personelu lotniczego, który jest świadomy utraty sprawności fizycznej lub psychicznej wymaganej do wykonywania swojej funkcji, jest obowiązany do natychmiastowego poddania się badaniom lotniczo-lekarskim. Przepis nie nakłada w takim przypadku obowiązku poinformowania Prezesa ULC ani ministra właściwego do spraw transportu.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 105 ust. 3",
+    "quote": "Członek personelu lotniczego i personelu pokładowego, który jest świadomy utraty sprawności psychicznej lub fizycznej wymaganej do wykonywania swojej funkcji, jest obowiązany do natychmiastowego poddania się badaniom"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0049#afac79a5",
+  "status": "draft",
+  "sameAs": "PL010-0049#5774b3b6"
+ },
+ {
+  "key": "PL010-0046#720ebceb",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 5",
+    "quote": "może zlecić przeprowadzenie dodatkowych badań przez lekarza posiadającego tytuł specjalisty lub specjalizację w dziedzinie medycyny związanej z przeprowadzanymi badaniami lotniczo-lekarskimi, który nie brał udziału w badaniach, na podstawie których wydano zaskarżone orzeczenie lotniczo-lekarskie"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 6",
+    "quote": "(uchylony)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Dawny art. 106 ust. 5–6 Prawa lotniczego (komisja powoływana przez Naczelnego Lekarza, bez specjalistów z zaskarżonych badań) zmieniono: ust. 6 uchylono, a ust. 5 pozwala Naczelnemu Lekarzowi zlecić dodatkowe badania lekarzowi specjaliście, który nie brał udziału w zaskarżonych badaniach."
+ },
+ {
+  "key": "PL010-0046#8fd8520a",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 5",
+    "quote": "może zlecić przeprowadzenie dodatkowych badań przez lekarza posiadającego tytuł specjalisty lub specjalizację w dziedzinie medycyny związanej z przeprowadzanymi badaniami lotniczo-lekarskimi, który nie brał udziału w badaniach, na podstawie których wydano zaskarżone orzeczenie lotniczo-lekarskie"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 6",
+    "quote": "(uchylony)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Dawny art. 106 ust. 5–6 Prawa lotniczego (komisja powoływana przez Naczelnego Lekarza, bez specjalistów z zaskarżonych badań) zmieniono: ust. 6 uchylono, a ust. 5 pozwala Naczelnemu Lekarzowi zlecić dodatkowe badania lekarzowi specjaliście, który nie brał udziału w zaskarżonych badaniach."
+ },
+ {
+  "key": "PL010-0046#bf94956a",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 5",
+    "quote": "może zlecić przeprowadzenie dodatkowych badań przez lekarza posiadającego tytuł specjalisty lub specjalizację w dziedzinie medycyny związanej z przeprowadzanymi badaniami lotniczo-lekarskimi, który nie brał udziału w badaniach, na podstawie których wydano zaskarżone orzeczenie lotniczo-lekarskie"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 6",
+    "quote": "(uchylony)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Dawny art. 106 ust. 5–6 Prawa lotniczego (komisja powoływana przez Naczelnego Lekarza, bez specjalistów z zaskarżonych badań) zmieniono: ust. 6 uchylono, a ust. 5 pozwala Naczelnemu Lekarzowi zlecić dodatkowe badania lekarzowi specjaliście, który nie brał udziału w zaskarżonych badaniach."
+ },
+ {
+  "key": "PL010-0050#5482a1de",
+  "status": "draft",
+  "text": "Zgodnie z art. 106 ust. 3 Prawa lotniczego od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza. Druga część klucza ULC opiera się na art. 106 ust. 4, według którego w przypadkach szczególnych prawo złożenia odwołania od takiego orzeczenia przysługuje także Prezesowi Urzędu Lotnictwa Cywilnego. Pozostałe odpowiedzi nie wynikają z przepisu: funkcje odwoławcze należą do zadań Naczelnego Lekarza (art. 107 ust. 1 pkt 1).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 3",
+    "quote": "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 4",
+    "quote": "W przypadkach szczególnych prawo złożenia odwołania od orzeczenia, o którym mowa w ust. 3, przysługuje także Prezesowi Urzędu."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 107 ust. 1 pkt 1",
+    "quote": "pełnienie funkcji odwoławczych od orzeczeń lotniczo-lekarskich wydawanych przez centra medycyny lotniczej oraz lekarzy orzeczników medycyny lotniczej"
+   }
+  ],
+  "disputeNote": "Według art. 106 ust. 4 Prawa lotniczego Prezes Urzędu w przypadkach szczególnych sam może złożyć odwołanie, a nie je rozpatruje; funkcje odwoławcze pełni Naczelny Lekarz (art. 106 ust. 3, art. 107 ust. 1 pkt 1). Odwołanie „do Prezesa ULC” nie ma więc oparcia w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0050#ce6170e3",
+  "status": "draft",
+  "text": "Zgodnie z art. 106 ust. 3 Prawa lotniczego od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza, czyli Naczelnego Lekarza Lotnictwa Cywilnego (art. 24 ust. 1). Pełnienie funkcji odwoławczych od tych orzeczeń należy do jego zadań (art. 107 ust. 1 pkt 1), więc odwołanie nie trafia do Prezesa ULC, ministra ani przewodniczącego komisji centrum. Aktualny przepis mówi o orzeczeniu wydanym przez samo centrum medycyny lotniczej, bez odrębnej komisji lekarskiej (art. 106 ust. 1 pkt 1, ust. 2 uchylony).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 3",
+    "quote": "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 24 ust. 1",
+    "quote": "W Urzędzie działa Naczelny Lekarz Lotnictwa Cywilnego, zwany dalej „Naczelnym Lekarzem”"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 107 ust. 1 pkt 1",
+    "quote": "pełnienie funkcji odwoławczych od orzeczeń lotniczo-lekarskich wydawanych przez centra medycyny lotniczej oraz lekarzy orzeczników medycyny lotniczej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 1 pkt 1",
+    "quote": "centra medycyny lotniczej;"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 2",
+    "quote": "(uchylony)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0051#88d53fc0",
+  "status": "draft",
+  "text": "Zgodnie z art. 106 ust. 3 Prawa lotniczego od orzeczenia lotniczo-lekarskiego wydanego przez lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza. Druga część klucza ULC opiera się na art. 106 ust. 4, według którego w przypadkach szczególnych prawo złożenia odwołania od takiego orzeczenia przysługuje także Prezesowi Urzędu Lotnictwa Cywilnego. Pozostałe odpowiedzi nie wynikają z przepisu: funkcje odwoławcze należą do zadań Naczelnego Lekarza (art. 107 ust. 1 pkt 1).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 3",
+    "quote": "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 4",
+    "quote": "W przypadkach szczególnych prawo złożenia odwołania od orzeczenia, o którym mowa w ust. 3, przysługuje także Prezesowi Urzędu."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 107 ust. 1 pkt 1",
+    "quote": "pełnienie funkcji odwoławczych od orzeczeń lotniczo-lekarskich wydawanych przez centra medycyny lotniczej oraz lekarzy orzeczników medycyny lotniczej"
+   }
+  ],
+  "disputeNote": "Według art. 106 ust. 4 Prawa lotniczego Prezes Urzędu w przypadkach szczególnych sam może złożyć odwołanie, a nie je rozpatruje; funkcje odwoławcze pełni Naczelny Lekarz (art. 106 ust. 3, art. 107 ust. 1 pkt 1). Odwołanie „do Prezesa ULC” nie ma więc oparcia w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0051#fd588f0e",
+  "status": "draft",
+  "text": "Zgodnie z art. 106 ust. 3 Prawa lotniczego od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia. Do postępowania w sprawie odwołania stosuje się odpowiednio przepisy Kodeksu postępowania administracyjnego.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 3",
+    "quote": "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 3",
+    "quote": "Do postępowania w sprawie odwołania stosuje się odpowiednio przepisy ustawy z dnia 14 czerwca 1960 r. – Kodeks postępowania administracyjnego."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0070#357b7578",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 5",
+    "quote": "może zlecić przeprowadzenie dodatkowych badań przez lekarza posiadającego tytuł specjalisty lub specjalizację w dziedzinie medycyny związanej z przeprowadzanymi badaniami lotniczo-lekarskimi, który nie brał udziału w badaniach, na podstawie których wydano zaskarżone orzeczenie lotniczo-lekarskie"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 5",
+    "quote": "Naczelny Lekarz nie jest związany wynikiem badań dodatkowych."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 107 ust. 1 pkt 1",
+    "quote": "pełnienie funkcji odwoławczych od orzeczeń lotniczo-lekarskich wydawanych przez centra medycyny lotniczej oraz lekarzy orzeczników medycyny lotniczej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Dawny art. 106 ust. 5 Prawa lotniczego nakazywał Naczelnemu Lekarzowi powołać komisję lekarzy specjalistów; obecnie może on zlecić dodatkowe badania lekarzowi specjaliście i nie jest związany ich wynikiem (art. 106 ust. 5), a funkcje odwoławcze należą do jego zadań (art. 107 ust. 1 pkt 1)."
+ },
+ {
+  "key": "PL010-0217#0313bb42",
+  "status": "draft",
+  "text": "Zgodnie z art. 106 ust. 3 Prawa lotniczego od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia. Ten sam termin dotyczy odwołania od orzeczenia lekarza orzecznika medycyny lotniczej.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 3",
+    "quote": "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0217#98288b12",
+  "status": "draft",
+  "sameAs": "PL010-0217#0313bb42"
+ },
+ {
+  "key": "PL010-0218#5cae4536",
+  "status": "draft",
+  "sameAs": "PL010-0218#b09c751b"
+ },
+ {
+  "key": "PL010-0218#b09c751b",
+  "status": "draft",
+  "text": "Zgodnie z art. 106 ust. 3 Prawa lotniczego od orzeczenia lotniczo-lekarskiego wydanego przez lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia. Ten sam termin dotyczy odwołania od orzeczenia centrum medycyny lotniczej.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 106 ust. 3",
+    "quote": "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0252#000fa095",
+  "status": "draft",
+  "text": "Zgodnie z art. 105 ust. 4 Prawa lotniczego badania lotniczo-lekarskie przeprowadzane są odpłatnie, a ich koszty ponosi pracodawca. Przepis nie uzależnia odpłatności od miejsca przeprowadzenia badań ani od wieku badanego.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 105 ust. 4",
+    "quote": "Badania lotniczo-lekarskie przeprowadzane są odpłatnie. Koszty tych badań ponosi pracodawca."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0304#57dc8d03",
+  "status": "draft",
+  "text": "Zgodnie z art. 109 ust. 4 Prawa lotniczego Prezes Urzędu Lotnictwa Cywilnego prowadzi listę centrów medycyny lotniczej, która zawiera karty ewidencyjne tych centrów. Prezes ULC wpisuje centrum na listę po uzyskaniu przez nie certyfikatu centrum medycyny lotniczej (art. 109 ust. 5). Pułapka: Naczelny Lekarz nie prowadzi listy, lecz wnioskuje do Prezesa ULC o skreślenie centrum z listy (art. 109 ust. 8).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 109 ust. 4",
+    "quote": "Prezes Urzędu prowadzi listę centrów medycyny lotniczej, która zawiera karty ewidencyjne centrów medycyny lotniczej."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 109 ust. 5",
+    "quote": "Prezes Urzędu wpisuje centrum medycyny lotniczej na listę centrów medycyny lotniczej po uzyskaniu przez nie certyfikatu centrum medycyny lotniczej."
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 109 ust. 8",
+    "quote": "Naczelny Lekarz wnioskuje do Prezesa Urzędu o skreślenie centrum medycyny lotniczej z listy centrów medycyny lotniczej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0305#57dc8d03",
+  "status": "draft",
+  "sameAs": "PL010-0304#57dc8d03"
+ },
+ {
+  "key": "PL010-0306#ab89293e",
+  "status": "draft",
+  "text": "Zgodnie z art. 108 ust. 13 Prawa lotniczego Prezes Urzędu Lotnictwa Cywilnego prowadzi listę lekarzy orzeczników medycyny lotniczej; lista ta jest jawna. Pułapka: Naczelny Lekarz wnioskuje do Prezesa ULC o wydanie lekarzowi certyfikatu lub upoważnienia (art. 107 ust. 1 pkt 4 i 5), ale listy nie prowadzi.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 108 ust. 13",
+    "quote": "Prezes Urzędu prowadzi listę lekarzy orzeczników medycyny lotniczej. Lista lekarzy orzeczników medycyny lotniczej jest jawna"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 107 ust. 1 pkt 4",
+    "quote": "wnioskowanie do Prezesa Urzędu o wydanie lekarzowi orzecznikowi medycyny lotniczej certyfikatu"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 107 ust. 1 pkt 5",
+    "quote": "wnioskowanie do Prezesa Urzędu o wydanie, cofnięcie albo zawieszenie lekarzowi orzecznikowi medycyny lotniczej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0374#3dbad0dc",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "EU-1178-2011",
+    "loc": "FCL.600",
+    "quote": "mogą być wykonywane tylko przez posiadaczy licencji PPL, CPL, MPL oraz ATPL, którzy posiadają uprawnienie IR odpowiednie dla danej kategorii statku powietrznego"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.030(c)(2)",
+    "quote": "wynikających z licencji pilota turystycznego (PPL) lub licencji pilota wiatrakowców (GPL), pilot musi posiadać przynajmniej ważne orzeczenie lekarskie 2. klasy"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.030(e)",
+    "quote": "Jeżeli licencja PPL jest uzupełniana o uprawnienie do wykonywania lotów według wskazań przyrządów lub podstawowe uprawnienie do wykonywania lotów według wskazań przyrządów, posiadacz licencji przechodzi badanie słuchu metodą audiometrii tonalnej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Pytanie dotyczy dawnych przepisów krajowych (licencja pilota samolotowego turystycznego, klasy orzeczeń). Obecnie posiadacz PPL może mieć uprawnienie IR (FCL.600), jeśli ma orzeczenie co najmniej klasy 2 (MED.A.030 lit. c) ppkt 2) i przejdzie audiometrię tonalną (MED.A.030 lit. e))."
+ },
+ {
+  "key": "PL010-0375#f5a4c078",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "EU-1178-2011",
+    "loc": "FCL.600",
+    "quote": "mogą być wykonywane tylko przez posiadaczy licencji PPL, CPL, MPL oraz ATPL, którzy posiadają uprawnienie IR odpowiednie dla danej kategorii statku powietrznego"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.030(c)(2)",
+    "quote": "wynikających z licencji pilota turystycznego (PPL) lub licencji pilota wiatrakowców (GPL), pilot musi posiadać przynajmniej ważne orzeczenie lekarskie 2. klasy"
+   },
+   {
+    "src": "EU-1178-2011",
+    "loc": "MED.A.030(e)",
+    "quote": "Jeżeli licencja PPL jest uzupełniana o uprawnienie do wykonywania lotów według wskazań przyrządów lub podstawowe uprawnienie do wykonywania lotów według wskazań przyrządów, posiadacz licencji przechodzi badanie słuchu metodą audiometrii tonalnej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Pytanie dotyczy dawnych przepisów krajowych (licencja pilota samolotowego turystycznego, klasy orzeczeń). Obecnie posiadacz PPL może mieć uprawnienie IR (FCL.600), jeśli ma orzeczenie co najmniej klasy 2 (MED.A.030 lit. c) ppkt 2) i przejdzie audiometrię tonalną (MED.A.030 lit. e))."
+ }
+]
