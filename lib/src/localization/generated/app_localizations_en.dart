@@ -1040,6 +1040,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get aboutMaterialsTitle => 'Study materials';
 
   @override
+  String get materialsOutdatedTitle => 'Outdated regulations';
+
+  @override
+  String get materialsOutdatedBody =>
+      'The question is based on outdated regulations. If it appears in the exam, the answer from the ULC key counts.';
+
+  @override
+  String get materialsOutdatedLocked =>
+      'What changed in the regulations is described in Premium.';
+
+  @override
   String get reminderChannelName => 'Study reminders';
 
   @override

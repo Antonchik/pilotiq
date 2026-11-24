@@ -1312,6 +1312,18 @@
   "@aboutMaterialsTitle": {
     "description": "Heading of the study materials part of the About screen"
   },
+  "materialsOutdatedTitle": "Outdated regulations",
+  "@materialsOutdatedTitle": {
+    "description": "Header of the mark of a question based on repealed norms"
+  },
+  "materialsOutdatedBody": "The question is based on outdated regulations. If it appears in the exam, the answer from the ULC key counts.",
+  "@materialsOutdatedBody": {
+    "description": "Text of the mark of a question based on repealed norms; shown to every user"
+  },
+  "materialsOutdatedLocked": "What changed in the regulations is described in Premium.",
+  "@materialsOutdatedLocked": {
+    "description": "Teaser of the Premium note of an outdated question"
+  },
   "reminderChannelName": "Study reminders",
   "@reminderChannelName": {
     "description": "Android notification channel name"

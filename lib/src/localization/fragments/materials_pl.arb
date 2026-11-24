@@ -114,5 +114,17 @@
   "aboutMaterialsTitle": "Materiały do nauki",
   "@aboutMaterialsTitle": {
     "description": "Heading of the study materials part of the About screen"
+  },
+  "materialsOutdatedTitle": "Nieaktualne przepisy",
+  "@materialsOutdatedTitle": {
+    "description": "Header of the mark of a question based on repealed norms"
+  },
+  "materialsOutdatedBody": "Pytanie opiera się na nieaktualnych przepisach. Jeśli pojawi się na egzaminie, liczy się odpowiedź z klucza ULC.",
+  "@materialsOutdatedBody": {
+    "description": "Text of the mark of a question based on repealed norms; shown to every user"
+  },
+  "materialsOutdatedLocked": "Opis zmian w przepisach jest dostępny w Premium.",
+  "@materialsOutdatedLocked": {
+    "description": "Teaser of the Premium note of an outdated question"
   }
 }

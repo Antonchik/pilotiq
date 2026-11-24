@@ -1077,6 +1077,17 @@ class AppLocalizationsPl extends AppLocalizations {
   String get aboutMaterialsTitle => 'Materiały do nauki';
 
   @override
+  String get materialsOutdatedTitle => 'Nieaktualne przepisy';
+
+  @override
+  String get materialsOutdatedBody =>
+      'Pytanie opiera się na nieaktualnych przepisach. Jeśli pojawi się na egzaminie, liczy się odpowiedź z klucza ULC.';
+
+  @override
+  String get materialsOutdatedLocked =>
+      'Opis zmian w przepisach jest dostępny w Premium.';
+
+  @override
   String get reminderChannelName => 'Przypomnienia o nauce';
 
   @override

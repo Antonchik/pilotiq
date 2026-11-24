@@ -73,40 +73,59 @@ class ExplanationPanel extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Semantics(
-            header: true,
-            child: Row(
-              children: [
-                Icon(
-                  view.locked ? Icons.lock_outline : Icons.menu_book_outlined,
-                  size: 20,
-                  color: scheme.primary,
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    view.locked
-                        ? local.explanationLockedTitle
-                        : local.explanationTitle,
-                    key: const Key('explanation_title'),
-                    style: theme.textTheme.titleSmall,
+          if (view.outdated) _OutdatedBlock(note: view.outdatedNote),
+          if (view.hasExplanation) ...[
+            Semantics(
+              header: true,
+              child: Row(
+                children: [
+                  Icon(
+                    view.locked ? Icons.lock_outline : Icons.menu_book_outlined,
+                    size: 20,
+                    color: scheme.primary,
                   ),
-                ),
-              ],
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      view.locked
+                          ? local.explanationLockedTitle
+                          : local.explanationTitle,
+                      key: const Key('explanation_title'),
+                      style: theme.textTheme.titleSmall,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          if (polishOnly)
+            if (polishOnly)
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  local.explanationPolishOnly,
+                  key: const Key('explanation_polish_only'),
+                  style: theme.textTheme.bodySmall,
+                ),
+              ),
+            const SizedBox(height: 8),
+          ] else if (polishOnly && view.outdatedNote != null)
             Padding(
-              padding: const EdgeInsets.only(top: 4),
+              padding: const EdgeInsets.only(bottom: 4),
               child: Text(
                 local.explanationPolishOnly,
                 key: const Key('explanation_polish_only'),
                 style: theme.textTheme.bodySmall,
               ),
             ),
-          const SizedBox(height: 8),
           if (view.locked) ...[
             if (view.disputed) const _DisputedBlock(),
+            if (!view.hasExplanation)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: Text(
+                  local.materialsOutdatedLocked,
+                  key: const Key('explanation_outdated_locked'),
+                ),
+              ),
             FilledButton.tonal(
               key: const Key('explanation_unlock'),
               onPressed: () => openPaywall(
@@ -118,11 +137,12 @@ class ExplanationPanel extends StatelessWidget {
             ),
           ] else ...[
             if (view.disputed) _DisputedBlock(note: note),
-            Text(
-              view.text,
-              key: const Key('explanation_text'),
-              style: theme.textTheme.bodyMedium,
-            ),
+            if (view.hasExplanation)
+              Text(
+                view.text,
+                key: const Key('explanation_text'),
+                style: theme.textTheme.bodyMedium,
+              ),
             if (view.refs.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.only(top: 6),
@@ -210,6 +230,70 @@ class _DisputedBlock extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// "Nieaktualne przepisy": the question is based on repealed norms; the ULC
+/// key still counts in the exam. Shown to every user; [note] (what changed)
+/// is Premium content and is null for a free user.
+class _OutdatedBlock extends StatelessWidget {
+  const _OutdatedBlock({this.note});
+
+  final String? note;
+
+  @override
+  Widget build(BuildContext context) {
+    final local = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final note = this.note;
+    final color = scheme.onSecondaryContainer;
+    return Container(
+      key: const Key('explanation_outdated'),
+      width: double.infinity,
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: scheme.secondaryContainer,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Semantics(
+            header: true,
+            child: Row(
+              children: [
+                Icon(Icons.history_edu_outlined, size: 20, color: color),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    local.materialsOutdatedTitle,
+                    key: const Key('explanation_outdated_title'),
+                    style: theme.textTheme.titleSmall?.copyWith(color: color),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            local.materialsOutdatedBody,
+            key: const Key('explanation_outdated_body'),
+            style: TextStyle(color: color),
+          ),
+          if (note != null)
+            Padding(
+              padding: const EdgeInsets.only(top: 4),
+              child: Text(
+                note,
+                key: const Key('explanation_outdated_note'),
+                style: TextStyle(color: color, fontStyle: FontStyle.italic),
+              ),
+            ),
         ],
       ),
     );

@@ -1676,6 +1676,24 @@ abstract class AppLocalizations {
   /// **'Study materials'**
   String get aboutMaterialsTitle;
 
+  /// Header of the mark of a question based on repealed norms
+  ///
+  /// In en, this message translates to:
+  /// **'Outdated regulations'**
+  String get materialsOutdatedTitle;
+
+  /// Text of the mark of a question based on repealed norms; shown to every user
+  ///
+  /// In en, this message translates to:
+  /// **'The question is based on outdated regulations. If it appears in the exam, the answer from the ULC key counts.'**
+  String get materialsOutdatedBody;
+
+  /// Teaser of the Premium note of an outdated question
+  ///
+  /// In en, this message translates to:
+  /// **'What changed in the regulations is described in Premium.'**
+  String get materialsOutdatedLocked;
+
   /// Android notification channel name
   ///
   /// In en, this message translates to:

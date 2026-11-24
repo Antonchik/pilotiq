@@ -68,8 +68,8 @@ class ExplanationView {
   bool get hasExplanation => status != null;
 }
 
-/// The explanation of question `questionId` of `licence`, or `null` when it
-/// has none (no panel then). Whether it is locked follows
+/// The explanation of question `questionId` of `licence` and/or its mark
+/// "based on repealed norms", or `null` when it has neither (no panel then). Whether it is locked follows
 /// [AccessPolicy.canSeeExplanation] with the position of the question in its
 /// topic among the questions of the licence.
 final explanationForQuestionProvider =
@@ -92,7 +92,7 @@ final explanationForQuestionProvider =
       // An outdated question without an explanation is in no topic order:
       // its note is Premium only and it takes no place of the free sample.
       final locked = explanation == null
-          ? !isPremium
+          ? !isPremium && outdatedNote!.isNotEmpty
           : !AccessPolicy.canSeeExplanation(
               isPremium,
               materials.indexInTopic(licence, key),
