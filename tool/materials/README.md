@@ -60,8 +60,10 @@
 **Reference-only источники (EASA, AIP):** машинно проверяется только существование якоря, смысл по тексту корпуса обязан сверить editor
 (цитат там нет). `legalStateAsOf` = `legalState` источника, иначе `fetched`.
 
-Дополнительные формы: statute `załącznik N[ pkt L]`; eu_reg `art. N[ ust. K][ pkt M]`, `załącznik [R]`, `dodatek N`, `załącznik R dodatek N`, любое из них с `pkt L`, правила `21.A.3A`, `M.A.201`, `ORA.AeMC.215`; easa `Article N(M)`, `GMn Article N(M)`, `Appendix N[ pkt L]`.
-`quote` с маркером `⟦PRZYSZŁA REDAKCJA⟧` (текст будущей редакции акта) отвергается.
+Дополнительные формы: statute `załącznik N[ tabela T][ część R][ pkt L]`; eu_reg `art. N[ ust. K][ pkt M]`, `załącznik [R]`, `dodatek N`, `załącznik R dodatek N`, любое из них с `pkt L`, правила `21.A.3A`, `M.A.201`, `ORA.AeMC.215`; easa `Article N(M)`, `GMn Article N(M)`, `Appendix N[ pkt L]`.
+`quote` с маркером `⟦PRZYSZŁA REDAKCJA⟧` (текст будущей редакции акта) отвергается. Диапазоны будущих редакций extractor записывает в `anchors/<id>.json` в поле `"future": [[start, end], ...]`; при проверке `quote` эти диапазоны внутри якоря заменяются заглушкой, поэтому процитировать недействующий текст нельзя и без маркера (даже через охватывающий якорь).
+
+Строки таблиц приложения 6 Prawa lotniczego адресуются как `załącznik 6 tabela T część R pkt L` (нумерация строк в каждой части начинается заново). Внутри AMC/GM EASA отдельных подъякорей нет (`AMC1 X(b)` и `GM1 X` — только заголовки блоков); на подъякоря внутри программ экзаменов (SYLLABUS) ссылаться нельзя.
 `loc` и все его родители (`art. 5 ust. 2 pkt 3` → `art. 5 ust. 2` → `art. 5`; `SERA.5005(a)(1)` → `SERA.5005(a)` → `SERA.5005`) должны быть в `anchors/<src>.json`.
 
 ## Команды

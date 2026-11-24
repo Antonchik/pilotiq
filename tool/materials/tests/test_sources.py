@@ -390,6 +390,20 @@ class StatuteFutureAndTablesTest(unittest.TestCase):
         self.assertGreaterEqual(a["art. 40 ust. 1"][1], e)   # the enclosing anchor contains it: the validator masks it
         self.assertIn("art. 40 ust. 1 pkt 5", a)
 
+    def test_marked_letter_and_dash_items_are_future_ranges_too(self):
+        text = ("Art. 1. Start.\nArt. 2. 1. Zakres:\na) pierwszy w mocy;\nb) %s przyszły literowy\nciąg dalszy przyszłego;\n"
+                "c) trzeci w mocy;\n– %s przyszły z kreską;\n– w mocy z kreską.\nArt. 3. Dalej.\n" % (self.FM, self.FM))
+        future = []
+        ec.statute_anchors(text, future)
+        covered = [text[s:e] for s, e in future]
+        self.assertEqual(2, len(covered), covered)
+        self.assertIn("ciąg dalszy przyszłego;", covered[0])
+        self.assertNotIn("trzeci w mocy", covered[0])
+        self.assertIn("przyszły z kreską", covered[1])
+        self.assertNotIn("w mocy z kreską", covered[1])
+        marks = [i for i in range(len(text)) if text.startswith(self.FM, i)]
+        self.assertTrue(all(any(s <= i < e for s, e in future) for i in marks))
+
     def test_future_article_range_ends_at_next_article(self):
         text = "Art. 1. Start.\nArt. 2. Jeden.\nArt. 3.%s Trzy przyszłe.\n1. Ust.\nArt. 4. Cztery.\n" % (" " + self.FM)
         future = []
