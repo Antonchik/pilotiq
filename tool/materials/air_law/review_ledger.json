@@ -87,6 +87,14 @@
   "textSha": "7f63a9778fa41ff8",
   "verdict": "PASS"
  },
+ "PL010-0028#38f25a0d": {
+  "date": "2026-11-24",
+  "note": "Poprawka zastosowana dosłownie: disputeNote nie twierdzi już, że „Wszystkie odpowiedzi” są obronne; obronna tylko odpowiedź o AFM, poparta NCO.GEN.105(a)(4)(vi) (w refs). Tekst (art. 122 ust. 1, dosłownie; zastrzeżenie „polecenia” vs „instrukcje wykonawcze”) bez zmian i poprawny. Klucz sprzeczny z aktualną normą → disputed.",
+  "portion": "P05",
+  "round": 3,
+  "textSha": "92b9e3ed643f6b47",
+  "verdict": "DISPUTED"
+ },
  "PL010-0030#a42ae0d0": {
   "date": "2026-11-24",
   "note": "Art. 105 ust. 2 dosłownie; brak wyjątków w przepisie — poprawnie.",
