@@ -193,27 +193,27 @@
  },
  "PL010-0102#d315ac19": {
   "date": "2026-11-24",
-  "note": "Brak sporności tam, gdzie jest: wersja 2002 art. 96 ust. 1 pkt 2 wymagała tylko „pełnej zdolności do czynności prawnych”, a aktualna dopuszcza osobę małoletnią za zgodą opiekunów prawnych – więc dystraktor „Osobie, która nie ma pełnej zdolności do czynności prawnych” obecnie też ma oparcie w przepisie (klucz nadal poprawny → reguła: disputed). Zdanie „Pułapka: przepis wymaga pełnej zdolności … albo, u osoby małoletniej, zgody opiekunów” przeczy samo sobie jako pułapka. Poprawka: usunąć zdanie „Pułapka…”, dodać disputeNote: „Aktualny art. 96 ust. 1 pkt 2 Prawa lotniczego dopuszcza wydanie licencji osobie małoletniej, która uzyskała zgodę opiekunów prawnych, więc odpowiedź o braku pełnej zdolności do czynności prawnych też ma oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” (ref art. 96 ust. 1 pkt 2 już jest).",
+  "note": "Poprawione: usunięta sprzeczna „Pułapka”; disputeNote zgodny z art. 96 ust. 1 pkt 2 (małoletni za zgodą opiekunów; w wersji 2002 tylko pełna zdolność), punkt jest w refs. Klucz (art. 96 ust. 1 pkt 4) nadal poprawny.",
   "portion": "P04",
-  "round": 1,
-  "textSha": "3acdea55c55b0211",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "15ce088b0ca5a93f",
+  "verdict": "DISPUTED"
  },
  "PL010-0103#5c608e2d": {
   "date": "2026-11-24",
-  "note": "Jak 0102#d315ac19: dystraktor „Osobie, która posiada ograniczoną zdolność do czynności prawnych” obecnie ma oparcie w art. 96 ust. 1 pkt 2 (małoletni za zgodą opiekunów; w wersji 2002 tylko pełna zdolność), a „Pułapka” twierdzi odwrotnie. Poprawka: usunąć zdanie „Pułapka…”, dodać disputeNote: „Aktualny art. 96 ust. 1 pkt 2 Prawa lotniczego dopuszcza wydanie licencji osobie małoletniej za zgodą opiekunów prawnych, więc brak pełnej zdolności do czynności prawnych nie wyklucza licencji, a odpowiedź o ograniczonej zdolności też może być prawdziwa. Na egzaminie ULC zaliczana jest odpowiedź z klucza.”",
+  "note": "Poprawione: tekst bez pułapki, klucz = art. 96 ust. 1 pkt 1; disputeNote (ograniczona zdolność – małoletni za zgodą, art. 96 ust. 1 pkt 2) poprawny, pkt w refs.",
   "portion": "P04",
-  "round": 1,
-  "textSha": "9b01fc25aa1b105b",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "2798fa170438b149",
+  "verdict": "DISPUTED"
  },
  "PL010-0103#e4cd44fb": {
   "date": "2026-11-24",
-  "note": "sameAs niewłaściwy: inne dystraktory („Żadna z odpowiedzi…”, „Osobie która została skazana prawomocnym wyrokiem”), a ten ostatni po uchyleniu art. 96 ust. 1 pkt 3 (w 2002: „nie była skazana prawomocnym wyrokiem”) też ma oparcie w przepisie – wykluczają tylko przypadki z art. 96 ust. 1a i pkt 1. Poprawka: osobny zapis z tekstem jak 0103#5c608e2d (po poprawce) i disputeNote obejmującym oba dystraktory: ograniczona zdolność (art. 96 ust. 1 pkt 2, małoletni za zgodą) oraz to, że art. 96 ust. 1 nie zawiera już warunku niekaralności (pkt 3 uchylony); refs: art. 96 ust. 1 pkt 2, art. 96 ust. 1 pkt 3 („3) (uchylony)”), art. 96 ust. 1a.",
+  "note": "Osobny zapis zamiast sameAs; disputeNote obejmuje oba dystraktory: art. 96 ust. 1 pkt 2 (małoletni) oraz uchylony pkt 3 i zakres art. 96 ust. 1a (środek zapobiegawczy lub wyrokowy zakaz prowadzenia pojazdów – zgodne z pełnym tekstem ust. 1a). Wszystkie punkty w refs.",
   "portion": "P04",
-  "round": 1,
-  "textSha": "f16f44bd800faf8a",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "0855fd3d56190dfc",
+  "verdict": "DISPUTED"
  },
  "PL010-0104#d67f3d1c": {
   "date": "2026-11-24",
@@ -233,19 +233,19 @@
  },
  "PL010-0106#d1571dcf": {
   "date": "2026-11-24",
-  "note": "Dystraktor „Osobie która została skazana prawomocnym wyrokiem”: warunek niekaralności (art. 96 ust. 1 pkt 3 w wersji 2002) uchylono – autor sam z tego powodu oznaczył 0101#4413c718 i 0105#72bd8671 jako outdated – więc obecnie ta odpowiedź też ma oparcie w przepisie (z wyjątkiem przypadków art. 96 ust. 1a). Klucz nadal poprawny → disputed. Poprawka: dodać disputeNote, np. „Art. 96 ust. 1 Prawa lotniczego nie zawiera już warunku niekaralności (pkt 3 uchylony), a art. 96 ust. 1a wyklucza tylko osoby objęte środkiem zapobiegawczym lub zakazem prowadzenia pojazdów, więc skazanie samo w sobie nie wyklucza licencji. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” i dodać refs art. 96 ust. 1 pkt 3 oraz art. 96 ust. 1a.",
+  "note": "disputeNote dodany: pkt 3 uchylony, art. 96 ust. 1a wyklucza tylko osoby objęte środkiem zapobiegawczym lub zakazem prowadzenia pojazdów – zgodne z korpusem; refs pkt 3 i ust. 1a dodane. Pułapka (pkt 1, prawa publiczne) poprawna.",
   "portion": "P04",
-  "round": 1,
-  "textSha": "a8d6c0bce175aef3",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "c307aeb24c77a1da",
+  "verdict": "DISPUTED"
  },
  "PL010-0106#f8178b1d": {
   "date": "2026-11-24",
-  "note": "sameAs do 0106#d1571dcf przestaje pasować: oryginał po poprawce będzie sporny z powodu dystraktora „skazana prawomocnym wyrokiem”, którego tu nie ma (tu: „orzeczenie lotniczo-lekarskie klasy 3”), a sameAs dziedziczy sporność. Poprawka: osobny zapis z obecnym tekstem 0106#d1571dcf (bez disputeNote) albo odwrócić relację (ten klucz – 4 licencje – jako oryginał, d1571dcf jako osobny zapis sporny).",
+  "note": "Osobny zapis bez disputeNote – słusznie, brak dystraktora o skazaniu; tekst i refs jak w oryginale, pułapka pkt 1 poprawna, „orzeczenie klasy 3” niesporne.",
   "portion": "P04",
-  "round": 1,
-  "textSha": "7e6350b1c8fecdee",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "a8d6c0bce175aef3",
+  "verdict": "PASS"
  },
  "PL010-0107#49beba6b": {
   "date": "2026-11-24",

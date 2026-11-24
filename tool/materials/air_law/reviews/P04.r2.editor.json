@@ -1,0 +1,7 @@
+[
+ {"key":"PL010-0102#d315ac19","verdict":"DISPUTED","note":"Poprawione: usunięta sprzeczna „Pułapka”; disputeNote zgodny z art. 96 ust. 1 pkt 2 (małoletni za zgodą opiekunów; w wersji 2002 tylko pełna zdolność), punkt jest w refs. Klucz (art. 96 ust. 1 pkt 4) nadal poprawny."},
+ {"key":"PL010-0103#5c608e2d","verdict":"DISPUTED","note":"Poprawione: tekst bez pułapki, klucz = art. 96 ust. 1 pkt 1; disputeNote (ograniczona zdolność – małoletni za zgodą, art. 96 ust. 1 pkt 2) poprawny, pkt w refs."},
+ {"key":"PL010-0103#e4cd44fb","verdict":"DISPUTED","note":"Osobny zapis zamiast sameAs; disputeNote obejmuje oba dystraktory: art. 96 ust. 1 pkt 2 (małoletni) oraz uchylony pkt 3 i zakres art. 96 ust. 1a (środek zapobiegawczy lub wyrokowy zakaz prowadzenia pojazdów – zgodne z pełnym tekstem ust. 1a). Wszystkie punkty w refs."},
+ {"key":"PL010-0106#d1571dcf","verdict":"DISPUTED","note":"disputeNote dodany: pkt 3 uchylony, art. 96 ust. 1a wyklucza tylko osoby objęte środkiem zapobiegawczym lub zakazem prowadzenia pojazdów – zgodne z korpusem; refs pkt 3 i ust. 1a dodane. Pułapka (pkt 1, prawa publiczne) poprawna."},
+ {"key":"PL010-0106#f8178b1d","verdict":"PASS","note":"Osobny zapis bez disputeNote – słusznie, brak dystraktora o skazaniu; tekst i refs jak w oryginale, pułapka pkt 1 poprawna, „orzeczenie klasy 3” niesporne."}
+]
