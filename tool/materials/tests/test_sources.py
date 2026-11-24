@@ -126,10 +126,57 @@ class RuleAnchorsTest(unittest.TestCase):
         s, _ = self.a["SERA.5005"]
         self.assertGreater(s, self.text.index("SECTION 5"))
 
-    def test_eu_regulation_articles(self):
-        text = "Artykuł 1\nPrzedmiot\n1. Pierwszy ustęp.\n2. Drugi ustęp.\nArtykuł 2\nDefinicje\n"
-        a = ec.rule_anchors(text, "eu_reg")
-        self.assertEqual({"art. 1", "art. 1 ust. 1", "art. 1 ust. 2", "art. 2"}, set(a))
+
+
+class EuPolishAnchorsTest(unittest.TestCase):
+    def setUp(self):
+        self.text = read_fix("eu_pl_sample.txt")
+        self.a = ec.eureg_anchors(self.text)
+
+    def test_articles_paragraphs_points_and_definitions(self):
+        for key in ("art. 1", "art. 1 ust. 1", "art. 1 ust. 2", "art. 2", "art. 2 pkt 1", "art. 2 pkt 3",
+                    "art. 2 pkt 4", "art. 3", "art. 3 ust. 1", "art. 3 ust. 1 pkt 1", "art. 3 ust. 1 pkt 2",
+                    "art. 3 ust. 2"):
+            self.assertIn(key, self.a, key)
+        self.assertNotIn("art. 2 ust. 1", self.a)
+        self.assertTrue(anchor_text(self.text, self.a, "art. 2 pkt 3").startswith("3) „lotnisko”"))
+        self.assertNotIn("Artykuł 3", anchor_text(self.text, self.a, "art. 2 pkt 4"))
+
+    def test_annex_rules_and_paragraphs(self):
+        for key in ("załącznik", "SERA.5005", "SERA.5005(a)", "SERA.5005(b)", "SERA.5005(b)(1)", "SERA.5005(b)(2)",
+                    "SERA.5005(c)(1)", "SERA.5005(c)(3)", "SERA.5005(c)(3)(i)", "SERA.5005(c)(3)(ii)",
+                    "SERA.5010", "SERA.5010(a)", "załącznik II", "FCL.205.A", "FCL.205.A(a)"):
+            self.assertIn(key, self.a, key)
+        rule = anchor_text(self.text, self.a, "SERA.5005")
+        self.assertIn("(ii) przepisy nie mają zastosowania;", rule)
+        self.assertNotIn("SERA.5010 Lot", rule)
+        # a rule reference at the start of a running-text line is not a heading
+        self.assertEqual(1, [k for k in self.a].count("SERA.5010"))
+        self.assertNotIn("jest cytowane", anchor_text(self.text, self.a, "SERA.5010(a)"))
+
+    def test_appendices(self):
+        for key in ("dodatek 1", "dodatek 1 pkt 1", "dodatek 1 pkt 1.1", "dodatek 1 pkt 1.2", "dodatek 2",
+                    "dodatek 2 pkt 1", "załącznik II dodatek 1", "załącznik II dodatek 1 pkt 1"):
+            self.assertIn(key, self.a, key)
+        self.assertNotIn("dodatek 1 pkt 215", self.a)
+        self.assertNotIn("Balony", anchor_text(self.text, self.a, "dodatek 1"))
+        # the annex covers its appendices, the next annex starts a new range
+        annex = anchor_text(self.text, self.a, "załącznik")
+        self.assertIn("Dodatek 2", annex)
+        self.assertNotIn("FCL.205.A", annex)
+
+    def test_eurlex_xhtml_text(self):
+        lines = ec.clean_lines(ec.read_html_lines(str(FIX / "eurlex_sample.html"), "eurlex_html"))
+        text = "\n".join(lines)
+        self.assertNotIn("spis treści", text)
+        self.assertNotIn("▼", text)
+        self.assertNotIn("►", text)
+        self.assertNotIn("◄", text)
+        self.assertIn("1. Bez uszczerbku dla rozporządzenia (UE) 2020/723, obowiązują zasady.", lines)
+        self.assertIn("1) „dokładność” oznacza zgodność;", lines)
+        self.assertIn("SERA.5005 Przepisy lotu", lines)
+        self.assertIn("Klasa", lines)
+        self.assertIn("Dokument ten służy wyłącznie do celów informacyjnych.", lines)
 
 
 class StatuteFootnoteAndAnnexTest(unittest.TestCase):
@@ -398,6 +445,101 @@ class FetchSourcesTest(unittest.TestCase):
         code, out = self.run_main("--pin")
         self.assertEqual(fs.EXIT_ERROR, code, out)
         self.assertFalse((self.sdir / "T1" / "T1.pdf").exists())
+
+
+class CellarFetchTest(unittest.TestCase):
+    """CELLAR mode against a local fake of publications.europa.eu (SPARQL + 303 content negotiation)."""
+
+    def setUp(self):
+        import http.server
+        import threading
+        outer = self
+        self.latest = "02012R0923-20250501"
+        self.seen = []
+
+        class Handler(http.server.BaseHTTPRequestHandler):
+            def log_message(self, *args):
+                pass
+
+            def do_GET(self):
+                outer.seen.append((self.path, self.headers.get("Accept"), self.headers.get("Accept-Language")))
+                port = self.server.server_address[1]
+                if self.path.startswith("/sparql"):
+                    body = json.dumps({"results": {"bindings": [{"c": {"value": outer.latest}}]}}).encode()
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/sparql-results+json")
+                elif self.path.startswith("/resource/celex/"):
+                    celex = self.path.rsplit("/", 1)[1]
+                    self.send_response(303)
+                    self.send_header("Location", "http://127.0.0.1:%d/doc/%s" % (port, celex))
+                    body = b""
+                else:
+                    celex = self.path.rsplit("/", 1)[1]
+                    body = ('<?xml version="1.0"?><html><body><p>Artykuł 1 %s</p></body></html>' % celex).encode()
+                    self.send_response(200)
+                    self.send_header("Content-Type", "application/xhtml+xml")
+                self.send_header("Content-Length", str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+
+        self.server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        threading.Thread(target=self.server.serve_forever, daemon=True).start()
+        self.addCleanup(self.server.server_close)
+        self.addCleanup(self.server.shutdown)
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.dir = pathlib.Path(self.tmp.name)
+        port = self.server.server_address[1]
+        self.sj = self.dir / "sources.json"
+        self.sj.write_text(json.dumps([{
+            "id": "EU-T", "kind": "eu_reg", "lang": "pl", "status": "available", "format": "html",
+            "url": "http://x/", "sha256": "", "fetched": "",
+            "fetch": {"mode": "cellar", "base": "2012R0923", "lang": "pol",
+                      "sparql": "http://127.0.0.1:%d/sparql" % port,
+                      "resource": "http://127.0.0.1:%d/resource/celex/" % port}}]), encoding="utf-8")
+
+    def run_main(self, *args):
+        out = []
+        code = fs.main(list(args) + ["--sources-json", str(self.sj), "--sources-dir", str(self.dir / "sources")],
+                       out=out.append)
+        return code, out
+
+    def test_pin_follows_303_and_records_celex(self):
+        code, out = self.run_main("--pin")
+        self.assertEqual(0, code, out)
+        rec = json.loads(self.sj.read_text(encoding="utf-8"))[0]
+        self.assertEqual("02012R0923-20250501", rec["celex"])
+        self.assertEqual("2025-05-01", rec["legalState"])
+        self.assertTrue(rec["url"].endswith("/resource/celex/02012R0923-20250501"))
+        data = (self.dir / "sources" / "EU-T" / "EU-T.html").read_bytes()
+        self.assertEqual(hashlib.sha256(data).hexdigest(), rec["sha256"])
+        self.assertIn("Artykuł 1 02012R0923-20250501".encode(), data)
+        doc_calls = [c for c in self.seen if c[0].startswith("/resource/celex/")]
+        self.assertEqual(("application/xhtml+xml", "pol"), doc_calls[0][1:])
+
+    def test_check_reports_newer_consolidated_version(self):
+        self.assertEqual(0, self.run_main("--pin")[0])
+        code, out = self.run_main("--check")
+        self.assertEqual(0, code, out)
+        self.latest = "02012R0923-20260101"
+        code, out = self.run_main("--check")
+        self.assertEqual(fs.EXIT_CHANGED, code)
+        self.assertTrue(any("newer consolidated version" in line for line in out), out)
+
+    def test_pinned_celex_is_downloaded_even_when_a_newer_one_exists(self):
+        self.assertEqual(0, self.run_main("--pin")[0])
+        (self.dir / "sources" / "EU-T" / "EU-T.html").unlink()
+        self.latest = "02012R0923-20260101"
+        code, out = self.run_main()
+        self.assertEqual(0, code, out)
+        self.assertIn(b"02012R0923-20250501", (self.dir / "sources" / "EU-T" / "EU-T.html").read_bytes())
+
+    def test_html_challenge_page_is_rejected(self):
+        self.assertTrue(fs.is_cellar(json.loads(self.sj.read_text())[0]))
+        bad = self.dir / "bad.html"
+        bad.write_bytes(b"\x00\x01 binary")
+        with self.assertRaises(fs.FetchError):
+            fs.check_magic({"format": "html", "url": "u"}, str(bad))
 
 
 class RealSourcesJsonTest(unittest.TestCase):

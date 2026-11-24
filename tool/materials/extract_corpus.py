@@ -195,41 +195,81 @@ class _TextExtractor(html.parser.HTMLParser):
              "section", "article", "header", "footer", "pre", "blockquote", "dd", "dt", "dl", "hr"}
     SKIP = {"script", "style", "head", "noscript", "template"}
 
-    def __init__(self):
+    def __init__(self, skip_classes=None):
         super().__init__(convert_charrefs=True)
         self.parts = []
         self._skip = 0
+        self._skip_classes = skip_classes
+        self._skip_tag = None   # element (tag name) whose subtree is skipped because of its class
+        self._skip_depth = 0
 
     def handle_starttag(self, tag, attrs):
+        if self._skip_tag is not None:
+            if tag == self._skip_tag:
+                self._skip_depth += 1
+            return
+        if self._skip_classes is not None:
+            cls = dict(attrs).get("class") or ""
+            if self._skip_classes.search(cls):
+                self._skip_tag, self._skip_depth = tag, 1
+                return
         if tag in self.SKIP:
             self._skip += 1
         elif tag in self.BLOCK or tag in ("td", "th"):
             self.parts.append("\n" if tag not in ("td", "th") else " ")
 
     def handle_endtag(self, tag):
+        if self._skip_tag is not None:
+            if tag == self._skip_tag:
+                self._skip_depth -= 1
+                if self._skip_depth == 0:
+                    self._skip_tag = None
+            return
         if tag in self.SKIP:
             self._skip = max(0, self._skip - 1)
         elif tag in self.BLOCK:
             self.parts.append("\n")
 
     def handle_data(self, data):
-        if not self._skip:
-            self.parts.append(data)
+        if not self._skip and self._skip_tag is None:
+            self.parts.append(re.sub(r"\s+", " ", data))
 
 
-def read_html_lines(path):
+# EUR-Lex / CELLAR consolidated XHTML: amendment-reference paragraphs and the table of contents are not text of the act
+_EURLEX_SKIP = re.compile(r"\b(modref|toc-\d+|arrow|superscript)\b")
+_AMEND_MARK = re.compile(r"[►▼◄](?:[A-Z]\d*[A-Z]?\d*)?")
+_LABEL_ONLY = re.compile(r"^(?:\(?[a-z]{1,4}\)|\(?\d{1,3}[a-z]?\)|\d{1,3}[a-z]?\.|[A-Z]{2,6}(?:\.[A-Za-z]{1,6})*\.\d{1,4}(?:\.[A-Z])?)$")
+
+
+def read_html_lines(path, profile="html"):
     with open(path, "rb") as f:
         raw = f.read()
     text = raw.decode("utf-8", errors="replace")
-    p = _TextExtractor()
+    p = _TextExtractor(_EURLEX_SKIP if profile == "eurlex_html" else None)
     p.feed(text)
     p.close()
-    return "".join(p.parts).split("\n")
+    lines = "".join(p.parts).split("\n")
+    if profile == "eurlex_html":
+        lines = [re.sub(r"\s+([,;)]|\.(?=\s|$))", r"\1", re.sub(r"\(\s*\)", "", _AMEND_MARK.sub(" ", ln)))
+                 for ln in lines]
+        merged = []
+        i = 0
+        lines = [clean_line(ln) for ln in lines]
+        lines = [ln for ln in lines if ln]
+        while i < len(lines):
+            if _LABEL_ONLY.match(lines[i]) and i + 1 < len(lines):
+                merged.append(lines[i] + " " + lines[i + 1])
+                i += 2
+            else:
+                merged.append(lines[i])
+                i += 1
+        lines = merged
+    return lines
 
 
 def profile_for(src):
     if src["format"] == "html":
-        return "html"
+        return "eurlex_html" if src["kind"] == "eu_reg" else "html"
     return {"easa": "easa", "eu_reg": "eurlex"}.get(src["kind"], "sejm")
 
 
@@ -238,7 +278,7 @@ def build_corpus_text(src, path):
     if src["format"] == "pdf":
         lines = read_pdf_lines(path, profile)
     elif src["format"] == "html":
-        lines = read_html_lines(path)
+        lines = read_html_lines(path, profile)
     else:
         raise ExtractError("%s: unsupported format %r" % (src["id"], src["format"]))
     lines = clean_lines(lines)
@@ -250,10 +290,11 @@ def build_corpus_text(src, path):
 # --------------------------------------------------------------------------- anchors
 
 class _Span:
-    __slots__ = ("key", "start", "end", "level")
+    __slots__ = ("key", "start", "end", "level", "dummy")
 
     def __init__(self, key, start, level):
         self.key, self.start, self.level, self.end = key, start, level, None
+        self.dummy = False
 
 
 def _line_offsets(text):
@@ -445,7 +486,8 @@ def statute_anchors(text):
 
 
 # EU / EASA rule identifiers: SERA.5005, FCL.205.A, NCO.GEN.105, MED.A.030, BFCL.115, ORO.FC.100 ...
-_RULE_ID = r"[A-Z]{2,6}(?:\.[A-Z]{1,6})*\.\d{1,4}(?:\.[A-Z])?"
+_RULE_ID = (r"(?:[A-Z]{2,6}(?:\.[A-Za-z]{1,6})*\.\d{1,4}(?:\.[A-Z])?"
+            r"|(?:\d{2,3}|M)\.[A-Z]\.\d{1,4}[A-Z]?)")
 _ID_PAREN = r"%s(?:\([a-z0-9]+\))*" % _RULE_ID
 _RULE_RE = re.compile(r"^(%s)(?:\s+(\S.*))?$" % _RULE_ID)
 # "AMC1 SERA.5005(f) Title" and the multi-rule form "AMC1 FCL.210; FCL.215 Title"
@@ -510,6 +552,23 @@ class _ParaState:
 
     def key_suffix(self):
         return "".join("(%s)" % k for k in self.keys if k is not None)
+
+
+def _prune_outside(anchors):
+    """Drop sub-point anchors that do not lie inside their parent anchor (a reused number elsewhere)."""
+    changed = True
+    while changed:
+        changed = False
+        for key in list(anchors):
+            m = re.match(r"^(.+)\([a-z0-9]+\)$", key)
+            if not m or m.group(1) not in anchors:
+                continue
+            ps, pe = anchors[m.group(1)]
+            s, e = anchors[key]
+            if not (ps <= s and e <= pe):
+                del anchors[key]
+                changed = True
+    return anchors
 
 
 def rule_anchors(text, kind, extras=()):
@@ -684,11 +743,13 @@ def rule_anchors(text, kind, extras=()):
                         para.pop(lv).end = start
                     state.accept(token, level)
                     key = base + state.key_suffix()
-                    if key not in have:
+                    sp = _Span(key, start, 1 + level)
+                    # a key that already belongs to another block (or whose parent point does) is not anchored
+                    sp.dummy = key in have or any(para[l].dummy for l in para if l < level)
+                    if not sp.dummy:
                         have.add(key)
-                        sp = _Span(key, start, 1 + level)
                         spans.append(sp)
-                        para[level] = sp
+                    para[level] = sp
                     continue
         if art is not None:
             if kind == "eu_reg" or art_extra:
@@ -744,6 +805,182 @@ def rule_anchors(text, kind, extras=()):
                 sp.start = min(sp.start, min(k.start for k in near))
                 sp.end = max(pend, max(k.end if k.end is not None else len(text) for k in near))
     spans = [sp for sp in spans if sp.key not in drop]
+    return _prune_outside(_finish(spans, len(text)))
+
+
+_EU_ART_RE = re.compile(r"^Artykuł (\d+[a-z]?)$")
+_EU_ANNEX_RE = re.compile(r"^ZAŁĄCZNIK(?: ([IVXLC]+))?$")
+_EU_APP_RE = re.compile(r"^Dodatek (\d+)(?: do załącznika ([IVXLC]+).*)?$")
+_EU_BOUNDARY_RE = re.compile(r"^(?:PODCZĘŚĆ|SEKCJA|DZIAŁ|ROZDZIAŁ|ODDZIAŁ|TYTUŁ|\[CZĘŚĆ) \S")
+_EU_PARA_RE = re.compile(r"^(?:\(([ivx]{1,5})\)|([a-z])\)|(\d{1,2})\))\s*\S")
+_EU_UST_RE = re.compile(r"^(\d{1,3})\.\s+\S")
+_EU_PKT_RE = re.compile(r"^(\d{1,3}[a-z]?)\)\s*\S")
+
+
+def _gap_ok(last, cur, maxgap=3):
+    """Numbering that may skip a few numbers (repealed or removed points): cur > last, at most maxgap ahead."""
+    if cur is None:
+        return False
+    if last is None:
+        return cur[1] == "" and cur[0] <= maxgap
+    if cur[0] == last[0]:
+        return cur[1] > last[1]
+    return last[0] < cur[0] <= last[0] + maxgap and cur[1] == ""
+
+
+def eureg_anchors(text):
+    """Anchors for Polish consolidated EU regulations (EUR-Lex / CELLAR XHTML text).
+
+    art. N | art. N ust. K | art. N pkt K | art. N ust. K pkt M       (Artykuł N; K = "K." paragraph, M = "M)" point or definition)
+    załącznik [I] | dodatek N | załącznik I dodatek N | ... pkt 1.2.1    (annex; appendix; numbered row of an appendix)
+    SERA.5005 | FCL.205.A | MED.A.030 | SERA.5005(a)(1)(i)             (rule of an annex and its paragraphs a) 1) (i))
+    """
+    spans = []
+    have = set()
+    art = ust = pkt = None
+    last_ust = last_pkt = None
+    annex = None
+    annex_key = ""          # "" for a bare "ZAŁĄCZNIK"
+    app = None
+    app_rows = set()
+    block = None
+    state = None
+    para = {}
+    mode = "pre"
+
+    def close(sp, at):
+        if sp is not None and sp.end is None:
+            sp.end = at
+
+    def close_block(at):
+        nonlocal block, state, para
+        close(block, at)
+        for sp in para.values():
+            close(sp, at)
+        block, state, para = None, None, {}
+
+    def close_art(at):
+        nonlocal art, ust, pkt
+        for sp in (pkt, ust, art):
+            close(sp, at)
+        art = ust = pkt = None
+
+    def add(key, start, level):
+        if key in have:
+            return None
+        have.add(key)
+        sp = _Span(key, start, level)
+        spans.append(sp)
+        return sp
+
+    for start, line in _line_offsets(text):
+        ma = _EU_ART_RE.match(line)
+        if ma and mode in ("pre", "art"):
+            close_art(start)
+            mode = "art"
+            art = add("art. " + ma.group(1), start, 1)
+            last_ust = last_pkt = None
+            continue
+        mx = _EU_ANNEX_RE.match(line)
+        if mx:
+            close_art(start)
+            close_block(start)
+            close(app, start)
+            close(annex, start)
+            for sp in spans:
+                if sp.level == 4 and sp.end is None:
+                    sp.end = start
+            app = None
+            mode = "annex"
+            annex_key = "załącznik" + (" " + mx.group(1) if mx.group(1) else "")
+            annex = add(annex_key, start, 1)
+            continue
+        if mode in ("annex", "app"):
+            mp = _EU_APP_RE.match(line)
+            if mp:
+                close_block(start)
+                close(app, start)
+                for sp in spans:
+                    if sp.level == 4 and sp.end is None:
+                        sp.end = start
+                ak = ("załącznik " + mp.group(2)) if mp.group(2) else annex_key
+                key = ("%s dodatek %s" % (ak, mp.group(1))) if ak and ak != "załącznik" else "dodatek " + mp.group(1)
+                app = add(key, start, 1)
+                app_rows = set()
+                mode = "app"
+                continue
+            if _EU_BOUNDARY_RE.match(line):
+                close_block(start)
+                if mode == "app":
+                    close(app, start)
+                    for sp in spans:
+                        if sp.level == 4 and sp.end is None:
+                            sp.end = start
+                    app = None
+                    mode = "annex"
+                continue
+        if mode == "app" and app is not None:
+            mr = _APP_ROW_RE.match(line)
+            if mr:
+                key = app.key + " pkt " + mr.group(1)
+                if key not in app_rows:
+                    app_rows.add(key)
+                    for sp in spans:
+                        if sp.level == 4 and sp.end is None:
+                            sp.end = start
+                    have.add(key)
+                    spans.append(_Span(key, start, 4))
+            continue
+        if mode == "annex":
+            mr = _RULE_RE.match(line)
+            if mr and (mr.group(2) is None or not mr.group(2)[:1].islower()):
+                close_block(start)
+                block = add(mr.group(1), start, 2)
+                state = _ParaState()
+                continue
+            if block is not None and state is not None:
+                mq = _EU_PARA_RE.match(line)
+                if mq:
+                    token = mq.group(1) or mq.group(2) or mq.group(3)
+                    level = state.classify(token)
+                    if level is not None:
+                        for lv in [l for l in para if l >= level]:
+                            close(para.pop(lv), start)
+                        state.accept(token, level)
+                        key = block.key + state.key_suffix()
+                        sp = _Span(key, start, 2 + level)
+                        sp.dummy = key in have
+                        if not sp.dummy:
+                            have.add(key)
+                            spans.append(sp)
+                        para[level] = sp
+            continue
+        if mode == "art" and art is not None:
+            mu = _EU_UST_RE.match(line)
+            if mu:
+                nk = _num_key(mu.group(1))
+                if _next_ok(last_ust, nk):
+                    close(pkt, start)
+                    close(ust, start)
+                    pkt = None
+                    last_pkt = None
+                    ust = add("%s ust. %s" % (art.key, mu.group(1)), start, 2)
+                    last_ust = nk
+                    continue
+            mk = _EU_PKT_RE.match(line)
+            if mk:
+                nk = _num_key(mk.group(1))
+                if _gap_ok(last_pkt, nk):
+                    close(pkt, start)
+                    pkt = add("%s pkt %s" % ((ust or art).key, mk.group(1)), start, 3)
+                    last_pkt = nk
+    close_block(len(text))
+    close_art(len(text))
+    close(app, len(text))
+    close(annex, len(text))
+    for sp in spans:
+        if sp.end is None:
+            sp.end = len(text)
     return _finish(spans, len(text))
 
 
@@ -787,7 +1024,9 @@ def anchors_for(src, text):
     extras = tuple(src.get("anchorExtras", ()))
     if kind in ("statute", "convention"):
         return statute_anchors(text)
-    if kind in ("eu_reg", "easa"):
+    if kind == "eu_reg":
+        return eureg_anchors(text)
+    if kind == "easa":
         return rule_anchors(text, kind, extras)
     if kind == "aip":
         return aip_anchors(text)

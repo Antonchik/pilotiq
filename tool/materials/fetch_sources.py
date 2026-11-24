@@ -13,16 +13,24 @@ A source without a pinned sha256 is refused unless --pin is given; with --pin th
 size and fetch date are written into sources.json. A pinned source whose downloaded
 bytes do not match the pin is never written to sources/ and the run exits non-zero.
 Sources with status != "available" are skipped (they are listed as unavailable).
+
+CELLAR mode (official Polish consolidated EU regulations, no EUR-Lex WAF): a source with
+  "fetch": {"mode": "cellar", "base": "2012R0923"}
+resolves the newest consolidated CELEX "0<base>-YYYYMMDD" with SPARQL on publications.europa.eu, then downloads
+https://publications.europa.eu/resource/celex/<CELEX> as XHTML (Accept-Language from fetch.lang, default pol).
+The pinned CELEX is what gets downloaded (reproducible); --check also reports a newer consolidated CELEX.
 """
 import argparse
 import datetime
 import hashlib
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
 import urllib.error
+import urllib.parse
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -70,13 +78,66 @@ def sha256_file(path):
     return h.hexdigest()
 
 
-def download(url, dest):
+class _UpgradeRedirect(urllib.request.HTTPRedirectHandler):
+    """publications.europa.eu answers 303 with http:// locations; the agent proxy only tunnels https."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        parts = urllib.parse.urlsplit(newurl)
+        if parts.scheme == "http" and parts.hostname and parts.hostname.endswith("europa.eu"):
+            newurl = urllib.parse.urlunsplit(("https",) + tuple(parts)[1:])
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+_OPENER = urllib.request.build_opener(_UpgradeRedirect())
+
+CELLAR_SPARQL = "https://publications.europa.eu/webapi/rdf/sparql"
+CELLAR_RESOURCE = "https://publications.europa.eu/resource/celex/"
+_CELEX_RE = re.compile(r"^0\d{4}[A-Z]\d{4}-\d{8}$")
+
+
+def is_cellar(src):
+    return (src.get("fetch") or {}).get("mode") == "cellar"
+
+
+def resolve_latest_celex(src):
+    """Newest consolidated CELEX ("0<base>-YYYYMMDD") of the source's regulation, via SPARQL."""
+    cfg = src["fetch"]
+    endpoint = cfg.get("sparql", CELLAR_SPARQL)
+    query = ('SELECT ?c WHERE { ?w <http://publications.europa.eu/ontology/cdm#resource_legal_id_celex> ?c . '
+             'FILTER(STRSTARTS(STR(?c),"0%s-")) } ORDER BY DESC(?c) LIMIT 1' % cfg["base"])
+    url = endpoint + "?" + urllib.parse.urlencode({"query": query})
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT,
+                                               "Accept": "application/sparql-results+json"})
+    try:
+        with _OPENER.open(req, timeout=TIMEOUT) as resp:
+            rows = json.loads(resp.read().decode("utf-8"))["results"]["bindings"]
+    except (urllib.error.URLError, OSError, ValueError, KeyError) as e:
+        raise FetchError("%s: SPARQL lookup failed: %s" % (endpoint, e))
+    if not rows or not _CELEX_RE.match(rows[0]["c"]["value"]):
+        raise FetchError("%s: no consolidated CELEX for base %s" % (endpoint, cfg["base"]))
+    return rows[0]["c"]["value"]
+
+
+def cellar_url(src, celex):
+    return src["fetch"].get("resource", CELLAR_RESOURCE) + celex
+
+
+def cellar_headers(src):
+    return {"Accept": "application/xhtml+xml", "Accept-Language": src["fetch"].get("lang", "pol")}
+
+
+def celex_date(celex):
+    d = celex.rsplit("-", 1)[1]
+    return "%s-%s-%s" % (d[:4], d[4:6], d[6:])
+
+
+def download(url, dest, headers=None):
     """Download url to dest (single attempt). Returns (sha256, size)."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req = urllib.request.Request(url, headers=dict({"User-Agent": USER_AGENT}, **(headers or {})))
     h = hashlib.sha256()
     size = 0
     try:
-        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+        with _OPENER.open(req, timeout=TIMEOUT) as resp:
             status = getattr(resp, "status", None)
             if status not in (None, 200):
                 raise FetchError("%s: HTTP %s (expected 200; an anti-bot challenge answers 202 "
@@ -107,6 +168,11 @@ def check_magic(src, path):
         head = f.read(8)
     if src["format"] == "pdf" and not head.startswith(b"%PDF"):
         raise FetchError("%s: not a PDF (first bytes %r)" % (src["url"], head))
+    if src["format"] == "html":
+        with open(path, "rb") as f:
+            start = f.read(4096).lower()
+        if b"<html" not in start and b"<!doctype" not in start and b"<?xml" not in start:
+            raise FetchError("%s: not an HTML/XHTML document (first bytes %r)" % (src["url"], head))
 
 
 def selected(sources, ids):
@@ -121,6 +187,16 @@ def selected(sources, ids):
 
 def is_available(src):
     return src.get("status", "available") == "available"
+
+
+def resolve_download(src, pin):
+    """(url, headers, celex) to download. CELLAR sources use the pinned CELEX; an unpinned one the latest."""
+    if not is_cellar(src):
+        return src["url"], None, None
+    celex = src.get("celex") if src.get("sha256") else None
+    if not celex:
+        celex = resolve_latest_celex(src)   # unpinned: without --pin the caller refuses to keep the file
+    return cellar_url(src, celex), cellar_headers(src), celex
 
 
 def cmd_fetch(sources, chosen, sources_json, sources_dir, pin, out):
@@ -139,7 +215,8 @@ def cmd_fetch(sources, chosen, sources_json, sources_dir, pin, out):
         os.makedirs(os.path.dirname(dest), exist_ok=True)
         part = dest + ".part"
         try:
-            digest, size = download(src["url"], part)
+            url, headers, celex = resolve_download(src, pin)
+            digest, size = download(url, part, headers)
             check_magic(src, part)
         except FetchError as e:
             _unlink(part)
@@ -162,6 +239,10 @@ def cmd_fetch(sources, chosen, sources_json, sources_dir, pin, out):
             src["sha256"] = digest
             src["bytes"] = size
             src["fetched"] = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+            if celex:
+                src["celex"] = celex
+                src["url"] = url
+                src["legalState"] = celex_date(celex)
             changed_json = True
             out("PINNED   %s sha256=%s bytes=%d" % (sid, digest, size))
         else:
@@ -187,7 +268,14 @@ def cmd_check(chosen, out):
                 continue
             part = os.path.join(tmpdir, sid)
             try:
-                digest, _ = download(src["url"], part)
+                url, headers, celex = resolve_download(src, False)
+                if is_cellar(src):
+                    latest = resolve_latest_celex(src)
+                    if latest != src.get("celex"):
+                        out("CHANGED  %s: a newer consolidated version exists: %s (pinned %s); "
+                            "re-verify affected entries" % (sid, latest, src.get("celex")))
+                        code = max(code, EXIT_CHANGED)
+                digest, _ = download(url, part, headers)
             except FetchError as e:
                 out("ERROR    %s: %s" % (sid, e))
                 code = max(code, EXIT_CHANGED)
