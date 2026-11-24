@@ -401,11 +401,11 @@
  },
  "PL010-0056#00b19b3f": {
   "date": "2026-11-24",
-  "note": "Treść zgodna z korpusem (art. 2 pkt 36 rozporządzenia 923/2012; załącznik XI dodatek 1 sekcja I lit. b) ppkt 2 rozporządzenia 2017/373: „nie mniejszej niż 200 m (700 ft)… chyba że właściwy organ postanowi inaczej”; draft słuszny, norma istnieje). Ale pierwsze zdanie nie odpowiada na pytanie (STYLE §1 pkt 2) – 200 m pojawia się dopiero w zdaniu 2–3. Poprawka: zacząć od «Zgodnie z załącznikiem XI do rozporządzenia 2017/373 (dodatek 1, sekcja I lit. b) ppkt 2) dolną granicę obszaru kontrolowanego ustala się na wysokości względnej nie mniejszej niż 200 m (700 ft) nad powierzchnią ziemi lub wody, chyba że właściwy organ postanowi inaczej.», potem «Droga lotnicza jest obszarem kontrolowanym lub jego częścią ustanowioną w postaci korytarza (art. 2 pkt 36 rozporządzenia 923/2012), więc jej dolna granica nie powinna leżeć niżej niż 200 m nad terenem.» Loc «załącznik XI» (rodzic) akceptowalny do czasu naprawy kotwicy dodatku 1.",
+  "note": "Poprawione: pierwsze zdanie podaje regułę 200 m (700 ft) z załącznika XI dodatek 1 sekcja I lit. b) ppkt 2 rozporządzenia 2017/373 z zastrzeżeniem „chyba że właściwy organ postanowi inaczej”; wniosek dla drogi lotniczej z art. 2 pkt 36 rozporządzenia 923/2012. 2 zdania, cytaty zgodne.",
   "portion": "P15",
-  "round": 1,
-  "textSha": "d31a6fccff95f976",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "e90af9d0d29a5626",
+  "verdict": "PASS"
  },
  "PL010-0056#3d580d89": {
   "date": "2026-11-24",
@@ -417,11 +417,11 @@
  },
  "PL010-0057#3039404c": {
   "date": "2026-11-24",
-  "note": "Klucz (na powierzchni terenu) = art. 2 pkt 61 rozporządzenia 923/2012 i załącznik I pkt 154 rozporządzenia 2017/373 – poprawnie. W pułapce «200 m nad powierzchnią ziemi to najniższa dopuszczalna dolna granica obszaru kontrolowanego» przesadza: przepis dodaje „chyba że właściwy organ postanowi inaczej”, więc 200 m nie jest bezwzględnym minimum. Poprawka: «Pułapka: 200 m nad powierzchnią ziemi to wymagana co do zasady najniższa dolna granica obszaru kontrolowanego (CTA), a nie strefy kontrolowanej lotniska (załącznik XI do rozporządzenia 2017/373).»",
+  "note": "Poprawione: pułapka «wymagana co do zasady najniższa dolna granica» zgodna z zastrzeżeniem załącznika XI; klucz z art. 2 pkt 61 rozporządzenia 923/2012 i załącznika I pkt 154 rozporządzenia 2017/373.",
   "portion": "P15",
-  "round": 1,
-  "textSha": "6b3fcc36652cf3e3",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "864df9c5f32ecdd3",
+  "verdict": "PASS"
  },
  "PL010-0057#5e31e759": {
   "date": "2026-11-24",
@@ -433,11 +433,11 @@
  },
  "PL010-0058#0f272edc": {
   "date": "2026-11-24",
-  "note": "Treść zgodna z korpusem (załącznik I pkt 239 i załącznik XI dodatek 1 sekcja I lit. b) ppkt 2 rozporządzenia 2017/373; art. 2 pkt 61 rozporządzenia 923/2012); draft słuszny. Pierwsze zdanie to definicja TMA, a nie odpowiedź (STYLE §1 pkt 2). Poprawka: zacząć od «Zgodnie z załącznikiem XI do rozporządzenia 2017/373 (dodatek 1, sekcja I lit. b) ppkt 2) dolną granicę obszaru kontrolowanego, a więc także TMA, ustala się na wysokości względnej nie mniejszej niż 200 m (700 ft) nad powierzchnią ziemi lub wody, chyba że właściwy organ postanowi inaczej.», a definicję TMA (załącznik I pkt 239) przenieść do zdania drugiego; pułapka bez zmian.",
+  "note": "Poprawione: pierwsze zdanie to reguła 200 m dla obszaru kontrolowanego (a więc TMA), definicja TMA (załącznik I pkt 239) w zdaniu drugim, pułapka CTR z art. 2 pkt 61 rozporządzenia 923/2012. 619 znaków, 3 zdania.",
   "portion": "P15",
-  "round": 1,
-  "textSha": "e9dd7a1ce7e3a1f4",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "9e87b2647d9a1f50",
+  "verdict": "PASS"
  },
  "PL010-0058#968171df": {
   "date": "2026-11-24",
@@ -557,6 +557,30 @@
   "portion": "P05",
   "round": 1,
   "textSha": "f19551ead30fad38",
+  "verdict": "PASS"
+ },
+ "PL010-0080#287c81dc": {
+  "date": "2026-11-24",
+  "note": "SERA.6001(a)(3) i (a)(4): „W przypadku wszystkich lotów obowiązuje zezwolenie ATC” (klasy C i D); CTR i TMA w przestrzeni kontrolowanej (§ 4 ust. 1 pkt 1 i 2); AIP ENR 1.4 przypis **** sparafrazowany (A, B, E, F niestosowane), więc przestrzeń kontrolowana to C lub D – wniosek uprawniony. Klucz wynika z przepisów, draft słuszny.",
+  "portion": "P15",
+  "round": 2,
+  "textSha": "e7d1e7803261b163",
+  "verdict": "PASS"
+ },
+ "PL010-0081#be12eaee": {
+  "date": "2026-11-24",
+  "note": "§ 16 ust. 5 (korzystanie z ATZ po uzgodnieniu z podmiotem uprawnionym) i § 5 ust. 1 pkt 2 dosłownie; wniosek o omijaniu poza granicą ATZ uprawniony. Drobiazg stylistyczny (nie wymaga rundy): spójnik «ale» w «pytanie używa dawnego określenia organu, ale przepisy nie podają odległości» łączy niezwiązane myśli – można zastąpić średnikiem lub «a».",
+  "portion": "P15",
+  "round": 2,
+  "textSha": "abb43597d0cd09de",
+  "verdict": "PASS"
+ },
+ "PL010-0082#3ed1178e": {
+  "date": "2026-11-24",
+  "note": "§ 16 ust. 4 i 5 oraz § 5 ust. 1 pkt 3 dosłownie; wniosek o omijaniu poza granicą MATZ uprawniony, dystraktory z odległościami bez oparcia w przepisach.",
+  "portion": "P15",
+  "round": 2,
+  "textSha": "51c1d72627950690",
   "verdict": "PASS"
  },
  "PL010-0083#63e1284c": {
@@ -1225,19 +1249,19 @@
  },
  "PL010-0194#49cd0b71": {
   "date": "2026-11-24",
-  "note": "Merytorycznie poprawne: w ENR 1.4 klasy A, B, E, F mają przypis **** (nieużywane w FIR Warszawa), C, D, G – bez; niesklasyfikowana przestrzeń z § 5 ust. 1 pkt 3 i 4. Ale tekst zawiera dosłowny cytat AIP «Klasa nie stosowana w FIR Warszawa», a cytaty AIP mogą być tylko w quote (do aplikacji nie trafiają; tekst ma parafrazować). Poprawka: «…klasy A, B, E i F oznaczono w tabeli jako niestosowane w FIR Warszawa, więc…». Loc przypisu (ENR 1.4 klasa G) – znana luka kotwic, akceptowalne.",
+  "note": "Cytat AIP usunięty z tekstu (parafraza «oznaczono jako niestosowane»); przypis przeniesiony na nową kotwicę ENR 1.4 przypis **** – cytat w niej mieści się, kotwica 75 znaków zawiera tylko przypis. § 5 ust. 1 pkt 3 i 4 zgodne.",
   "portion": "P15",
-  "round": 1,
-  "textSha": "2bea2f60c764e0f4",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "e31276449c8431b0",
+  "verdict": "PASS"
  },
  "PL010-0194#61f73ddd": {
   "date": "2026-11-24",
-  "note": "Jak 0194#49cd0b71: usunąć dosłowny cytat AIP «Klasa nie stosowana w FIR Warszawa» z tekstu i sparafrazować («oznaczono jako niestosowane w FIR Warszawa»). Brak D w kluczu nie czyni go spornym ani nieaktualnym: wszystkie wymienione elementy (C, G, niesklasyfikowana) są prawdziwe, a każdy dystraktor zawiera klasę nieużywaną (A, B, E lub F); żaden dystraktor nie stał się poprawny – status draft bez disputeNote słuszny, ostatnie zdanie o klasie D zgodne z ENR 1.4.",
+  "note": "Jak 0194#49cd0b71: parafraza AIP, kotwica ENR 1.4 przypis **** poprawna; brak D w kluczu omówiony bez sporu, zgodnie z ENR 1.4 klasa D.",
   "portion": "P15",
-  "round": 1,
-  "textSha": "2b653aff0888563d",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "4340c80579cfec82",
+  "verdict": "PASS"
  },
  "PL010-0199#cc409812": {
   "date": "2026-11-24",
