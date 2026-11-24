@@ -576,6 +576,7 @@ _CHANGELOG_RE = re.compile(
     r"|(?:\b(?:New(?: point)?|Changed|Deleted|Renumbered|Moved)\s+(?:Reg\.|N/a|Regulation|ED Decision|EDD)(?=\s|$))")
 _TABLE_NOTE_RE = re.compile(r"^\(\*+\)")
 _ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
+_AMC_ITEM_RE = re.compile(r"^\((\d+|[a-z])\)\s+\S")
 _EXAM_SECTION_RE = re.compile(r"^SECTION (\d+[A-Z]?):")   # skill-test sections inside an AMC: "SECTION 2A: WINCH OR CAR LAUNCH"
 _BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+(?![A-Za-z0-9:])(?!\s*:).*|Appendix \d+ to .*|"
                           r"ANNEX( [IVX]+)?\b.*|ANEKS [IVX]+\b.*|Table of contents|Contents)$")
@@ -771,6 +772,7 @@ def rule_anchors(text, kind, extras=()):
     """
     spans = []
     have = set()
+    series, intro = {}, {}
     group = []          # spans of the current heading (all end together)
     para = {}           # level -> open paragraph span
     state = None
@@ -942,15 +944,30 @@ def rule_anchors(text, kind, extras=()):
                     spans.append(_Span(key, start, 9))
             continue
         me = _EXAM_SECTION_RE.match(line)
-        if me and group and group[0].key.startswith(("AMC", "GM")):
-            for sp in spans:
-                if sp.level == 7 and sp.end is None:
-                    sp.end = start
-            key = "%s SECTION %s" % (group[0].key, me.group(1))
-            if key not in have:
-                have.add(key)
-                spans.append(_Span(key, start, 7))
-            continue
+        if group and group[0].key.startswith(("AMC", "GM")):
+            gk = group[0].key
+            mi = _AMC_ITEM_RE.match(line)
+            if mi and not me:
+                for sp in spans:
+                    if sp.level == 7 and sp.end is None:
+                        sp.end = start      # "(2) ... skill test for the issue of ... in a TMG:" is not part of the last SECTION
+                if mi.group(1).isdigit():
+                    intro[gk] = int(mi.group(1))
+            if me:
+                for sp in spans:
+                    if sp.level == 7 and sp.end is None:
+                        sp.end = start
+                ser = series.setdefault(gk, [1, set()])
+                if me.group(1) in ser[1]:
+                    # the exam sections start over (second table: TMG, gas balloon ...): a series of its own
+                    ser[0] = max(ser[0] + 1, intro.get(gk, 0))
+                    ser[1] = set()
+                ser[1].add(me.group(1))
+                key = "%s SECTION %s" % (gk, me.group(1)) if ser[0] == 1 else "%s (%d) SECTION %s" % (gk, ser[0], me.group(1))
+                if key not in have:
+                    have.add(key)
+                    spans.append(_Span(key, start, 7))
+                continue
         if state is not None and group:
             if _TABLE_NOTE_RE.match(line):
                 state.frozen = True
