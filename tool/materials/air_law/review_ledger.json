@@ -31,12 +31,44 @@
   "textSha": "05ed7f4e035f4b6c",
   "verdict": "PASS"
  },
+ "PL010-0002#6b5604c8": {
+  "date": "2026-11-24",
+  "note": "Klucz łączy oba obowiązki z art. 114 ust. 1; dystraktory jednoskładnikowe słusznie opisane jako niepełne (wzorzec „najpełniejszej odpowiedzi”, nie sporne). Brzmienie art. 114 bez zmian od 2002 r.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "ac9be2d824ced796",
+  "verdict": "PASS"
+ },
+ "PL010-0002#9d0e919e": {
+  "date": "2026-11-24",
+  "note": "Wszystkie trzy odpowiedzi (przepisy, bezpieczeństwo statku, osób i rzeczy) mieszczą się w art. 114 ust. 1.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "fc76199e6d7af27b",
+  "verdict": "PASS"
+ },
  "PL010-0003#feb9a6a3": {
   "date": "2026-11-24",
   "note": "Seria błysków czerwonych w locie = „Lotnisko nie jest bezpieczne, nie lądować” (AP1-1); SERA.3301(a) poprawnie zacytowany. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote. Literówki korpusu („tatku”) nie cytowane.",
   "portion": "P21",
   "round": 1,
   "textSha": "8e0718d376e02524",
+  "verdict": "PASS"
+ },
+ "PL010-0005#c72c8490": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 117 ust. 2; okoliczność z pytania poprawnie przypisana do art. 117 ust. 1. Pułapka (zgoda Prezesa ULC/ministra) wynika z tego, że ust. 2 podaje jedyną przesłankę ustania – dopuszczalna. Osobny wpis zamiast sameAs uzasadniony (inna okoliczność w pytaniu, tekst ją powtarza).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "751fb8013a03d5b7",
+  "verdict": "PASS"
+ },
+ "PL010-0006#cba17406": {
+  "date": "2026-11-24",
+  "note": "Jak 0005; okoliczność „inna katastrofa lub klęska żywiołowa” z art. 117 ust. 1. Osobny wpis zasadny.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "454abab8df262441",
   "verdict": "PASS"
  },
  "PL010-0010#09662156": {
@@ -111,12 +143,52 @@
   "textSha": "92b9e3ed643f6b47",
   "verdict": "DISPUTED"
  },
+ "PL010-0029#29389dba": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 115 ust. 4 (oba warunki łącznie); cytat zgodny z korpusem.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "ee0d5b0dac7158e8",
+  "verdict": "PASS"
+ },
  "PL010-0030#a42ae0d0": {
   "date": "2026-11-24",
   "note": "Art. 105 ust. 2 dosłownie; brak wyjątków w przepisie — poprawnie.",
   "portion": "P14",
   "round": 1,
   "textSha": "eb6ac3093456197b",
+  "verdict": "PASS"
+ },
+ "PL010-0031#b800333f": {
+  "date": "2026-11-24",
+  "note": "Klucz = zastrzeżenie z art. 117 ust. 1; „Tak, ma obowiązek” jest niepełne, a nie sporne (art. 117 bez zmian od 2002 r.). Pułapka o terytorium bez zwierzchności – wniosek z braku takiego warunku w przepisie, dopuszczalny. Dwa refs do art. 117 ust. 1 z różnymi cytatami są w porządku (łączny cytat przekroczyłby 300 znaków).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "f29b499266b9664e",
+  "verdict": "PASS"
+ },
+ "PL010-0032#9b73857a": {
+  "date": "2026-11-24",
+  "note": "Jak 0031, okoliczność „spostrzegł statek… w niebezpieczeństwie”. Pułapka powtarza słowa dystraktora („sygnał”) – akceptowalne.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "e61819f2f07b21ce",
+  "verdict": "PASS"
+ },
+ "PL010-0033#57003795": {
+  "date": "2026-11-24",
+  "note": "Jak 0031, okoliczność „zauważył inną katastrofę lub klęskę żywiołową”.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "5d8afb26db969a04",
+  "verdict": "PASS"
+ },
+ "PL010-0034#99ff9ae9": {
+  "date": "2026-11-24",
+  "note": "Jak 0031, okoliczność „osoba na morzu w niebezpieczeństwie utraty życia”.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "8cccf57e63822b9b",
   "verdict": "PASS"
  },
  "PL010-0035#764b04e1": {
@@ -141,6 +213,14 @@
   "portion": "P05",
   "round": 2,
   "textSha": "f287e1fc7e4ae3c1",
+  "verdict": "PASS"
+ },
+ "PL010-0039#02d04295": {
+  "date": "2026-11-24",
+  "note": "Klucz „Tak, zawsze” = art. 113 ust. 2 (każdy lot z załogą, nie tylko komercyjny); pułapka (wyznaczenie, nie najwyższe kwalifikacje) i jednoosobowa załoga z art. 113 ust. 3 zgodne z korpusem.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "46583326e309a882",
   "verdict": "PASS"
  },
  "PL010-0040#bad3da1f": {
@@ -397,6 +477,30 @@
   "portion": "P05",
   "round": 1,
   "textSha": "e780aadb8bf6ab14",
+  "verdict": "PASS"
+ },
+ "PL010-0093#733abf57": {
+  "date": "2026-11-24",
+  "note": "Jak 0005, okoliczność „otrzymał sygnał… statkowi powietrznemu lub morskiemu”.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "ccbb572d50bdce75",
+  "verdict": "PASS"
+ },
+ "PL010-0093#a029ad90": {
+  "date": "2026-11-24",
+  "note": "Jak 0093#733abf57; wariant pytania bez „statku morskiego”, tekst dopasowany – osobny wpis dopuszczalny (sameAs też byłby obronny).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "d8d3a002a3c09e56",
+  "verdict": "PASS"
+ },
+ "PL010-0094#62ecf2e6": {
+  "date": "2026-11-24",
+  "note": "Jak 0005, okoliczność „osoba na morzu”.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "ce04f0f1f19f81b3",
   "verdict": "PASS"
  },
  "PL010-0096#1f167277": {
@@ -671,6 +775,14 @@
   "textSha": "9f0ea093aad57db8",
   "verdict": "PASS"
  },
+ "PL010-0131#d827a7b2": {
+  "date": "2026-11-24",
+  "note": "Klucz dosłownie = art. 113 ust. 1; zdanie o użytkowniku poparte art. 2 pkt 3 (cytat zgodny z korpusem).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "40dc0087d946ab9a",
+  "verdict": "PASS"
+ },
  "PL010-0132#e7228480": {
   "date": "2026-11-24",
   "note": "Pytanie opiera się na uchylonym przepisie, nie na sporze z aktualną normą: korpus ma tylko „art. 106 ust. 2 (uchylony)”, a w obowiązujących przepisach (art. 106 ust. 1, ORA.AeMC.210) nie ma pojęcia komisji lekarskiej, która badałaby „w imieniu centrum”; pytanie nie ma poprawnej odpowiedzi według aktualnego prawa. Zdanie „Na tym składzie opiera się odpowiedź z klucza ULC” jest nieuprawnione (klucz pochodzi z dawnego art. 106 ust. 2, a nie z ORA.AeMC.210). Zgodnie z decyzją właściciela i precedensem P03 (art. 27 ust. 3 pkt 5 uchylony → outdated): zmienić na status \"unverified\", basis \"outdated\", text \"\", disputeNote null; refs zostawić (art. 106 ust. 1 pkt 1, art. 106 ust. 2 „(uchylony)”, ORA.AeMC.210(a)(1)–(3)); usunąć art. 106 ust. 3. basisNote np.: „Art. 106 ust. 2 Prawa lotniczego (komisja lekarska centrum medycyny lotniczej) jest uchylony; badania przeprowadzają i orzeczenia wydają centra medycyny lotniczej i lekarze orzecznicy (art. 106 ust. 1), a personel centrum określa pkt ORA.AeMC.210 lit. a) rozporządzenia 1178/2011.”",
@@ -821,6 +933,22 @@
   "portion": "P21",
   "round": 1,
   "textSha": "ab36bb6f7cf43a25",
+  "verdict": "PASS"
+ },
+ "PL010-0193#44defe31": {
+  "date": "2026-11-24",
+  "note": "„Oba stwierdzenia są prawdziwe” = art. 115 ust. 1 pkt 1 i 2.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "66e87a73e2c5f227",
+  "verdict": "PASS"
+ },
+ "PL010-0193#bc6b7ad3": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 115 ust. 1 pkt 1 i 2; pułapka (polecenia wszystkim osobom, nie tylko załodze) poparta ust. 1 pkt 2 i ust. 2. Cytat wprowadzenia ust. 1 leży w ust. 1 poza pkt – lokator prawidłowy.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "66d2f54424863a43",
   "verdict": "PASS"
  },
  "PL010-0199#cc409812": {
@@ -975,6 +1103,22 @@
   "textSha": "80e00d104bdbd9b6",
   "verdict": "PASS"
  },
+ "PL010-0225#2d52c258": {
+  "date": "2026-11-24",
+  "note": "Klucz dosłownie = art. 114 ust. 2; pułapka (statek, poczta) zgodna z przepisem.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "dc1794c9ebd91f47",
+  "verdict": "PASS"
+ },
+ "PL010-0225#cdc7f9c3": {
+  "date": "2026-11-24",
+  "note": "sameAs dopuszczalny (STYLE §5): różni się tylko 4. dystraktor (meta-odpowiedź „Żadna z odpowiedzi…” zamiast „Powiadomić Prezesa ULC”), pułapka oryginału go nie dotyczy, a klucz jest poprawny, więc meta-odpowiedź nie jest obronna.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "585fcb6a13c57136",
+  "verdict": "PASS"
+ },
  "PL010-0226#1a030b4b": {
   "date": "2026-11-24",
   "note": "Zgodne z FCL.025(c)(1) i (c)(1)(i). Ostrzeżenie validate akceptowalne: zdanie zamykające „Okresy podane w ppkt (i) i (ii) liczy się…” należy do pkt (c)(1) (odnosi się do (i) i (ii)), a extractor dołączył je do zakresu (iii); loc FCL.025(c)(1) jest merytorycznie poprawny, (iii) byłby błędny.",
@@ -1021,6 +1165,38 @@
   "portion": "P06",
   "round": 2,
   "textSha": "968f6bb0212711e9",
+  "verdict": "PASS"
+ },
+ "PL010-0233#e0106952": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 114 ust. 3 (przymusowe lądowanie; trzy podmioty).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "30a8be27a0773f0a",
+  "verdict": "PASS"
+ },
+ "PL010-0233#fddc43f6": {
+  "date": "2026-11-24",
+  "note": "Trzy odpowiedzi = trzy podmioty z art. 114 ust. 3.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "aa13f1d2a55c492b",
+  "verdict": "PASS"
+ },
+ "PL010-0234#44779739": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 114 ust. 3 (uszkodzenie statku).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "4534cb1335f7db49",
+  "verdict": "PASS"
+ },
+ "PL010-0234#bfd5bc53": {
+  "date": "2026-11-24",
+  "note": "Trzy odpowiedzi = trzy podmioty z art. 114 ust. 3.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "1094337950ee12f7",
   "verdict": "PASS"
  },
  "PL010-0239#aee8b1f2": {
@@ -1085,6 +1261,38 @@
   "portion": "P17",
   "round": 1,
   "textSha": "3cac7f3f6710c0ff",
+  "verdict": "PASS"
+ },
+ "PL010-0255#ddf3f027": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 115 ust. 3 pkt 1 (osoby niewykonujące poleceń albo zagrażające bezpieczeństwu lotu lub porządkowi). Dodane w nowelizacji „z zastrzeżeniem ust. 4a” (Straż Graniczna, gdy dowódca nie może decydować) nie czyni żadnego dystraktora poprawnym.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "132cd9e4635e9f5a",
+  "verdict": "PASS"
+ },
+ "PL010-0255#e9163d05": {
+  "date": "2026-11-24",
+  "note": "Trzy odpowiedzi = art. 115 ust. 3 pkt 1 (dwie grupy osób) i pkt 2 (zatrzymanie osoby podejrzanej o przestępstwo).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "12b277f6e66c611e",
+  "verdict": "PASS"
+ },
+ "PL010-0256#15c5b027": {
+  "date": "2026-11-24",
+  "note": "Klucz = art. 115 ust. 3 pkt 1 + pkt 2 (osoba zagrażająca porządkowi/bezpieczeństwu lotu); cytaty zgodne z korpusem.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "2be710ea28c840f9",
+  "verdict": "PASS"
+ },
+ "PL010-0256#bcc24d06": {
+  "date": "2026-11-24",
+  "note": "Wszystkie trzy odpowiedzi mieszczą się w art. 115 ust. 3 pkt 1–2.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "5a75a665ca68eb94",
   "verdict": "PASS"
  },
  "PL010-0257#d24341aa": {
@@ -1597,6 +1805,38 @@
   "portion": "P21",
   "round": 1,
   "textSha": "96cfd24fd74feec2",
+  "verdict": "PASS"
+ },
+ "PL010-0392#5cb2858f": {
+  "date": "2026-11-24",
+  "note": "Klucz = pełny art. 115 ust. 3 pkt 1 i 2; dystraktory z „tylko” niepełne.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "63ac8a0926133cd3",
+  "verdict": "PASS"
+ },
+ "PL010-0392#e9163d05": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczny odcisk (pytanie i odpowiedzi) jak 0255#e9163d05.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "8fa93cc77aad730c",
+  "verdict": "PASS"
+ },
+ "PL010-0393#3fe2bfe4": {
+  "date": "2026-11-24",
+  "note": "Klucz łączy uprawnienia z art. 115 ust. 3 pkt 1 i 2; pozostałe odpowiedzi częściowe – wzorzec najpełniejszej odpowiedzi, nie sporne.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "cd3ebb10e892560f",
+  "verdict": "PASS"
+ },
+ "PL010-0393#bcc24d06": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczny odcisk jak 0256#bcc24d06.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "25c9c3d8ff2f49c2",
   "verdict": "PASS"
  },
  "PL010-0394#20df34ad": {
@@ -2557,6 +2797,46 @@
   "portion": "P06",
   "round": 1,
   "textSha": "cc698bc3f868dd1d",
+  "verdict": "PASS"
+ },
+ "PL099-0082#7e61b8ba": {
+  "date": "2026-11-24",
+  "note": "Klucz = cel z art. 115 ust. 1 (bezpieczeństwo lotu oraz bezpieczeństwo i porządek na pokładzie) + pkt 1; pułapka wynika z treści przepisu.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "03129d1bd870d295",
+  "verdict": "PASS"
+ },
+ "PL099-0087#f368e5d5": {
+  "date": "2026-11-24",
+  "note": "Dwie nieścisłości w pułapce: (1) „za cenę naruszenia przepisów” – art. 117 nic nie mówi o naruszaniu przepisów, więc to fakt spoza źródła; (2) „bezpieczeństwem własnego statku i osób na pokładzie” zawęża przepis, który mówi o „powierzonego mu statku powietrznego, pasażerów, załogi lub innych osób”. Poprawka drugiego zdania: „Pułapka: przepis nakazuje udzielić pomocy tylko w zakresie, w jakim nie naraża to powierzonego statku powietrznego, pasażerów, załogi lub innych osób, więc nie wymaga użycia „wszelkich środków”, a samo powiadomienie służb nie wyczerpuje obowiązku pomocy.” (ostatni człon można pominąć). Klucz poprawny, art. 117 bez zmian od 2002 r.; sameAs PL102-0035 pozostaje ważny po poprawce.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "551603b8fad98e02",
+  "verdict": "FIX"
+ },
+ "PL099-0092#a74def59": {
+  "date": "2026-11-24",
+  "note": "Pułapka przypisuje pkt SERA.2010 lit. a) treść, której on nie ma: przepis mówi o odpowiedzialności pilota dowódcy „za użytkowanie statku powietrznego zgodnie z przepisami niniejszego rozporządzenia”, nie za bezpieczeństwo. Poprawka trzeciego zdania: „Pułapka: odpowiedzialność tę przepisy nakładają na dowódcę, a nie na całą załogę ani kontrolera ruchu lotniczego; pkt SERA.2010 lit. a) rozporządzenia 923/2012 dodaje, że pilot dowódca odpowiada za użytkowanie statku powietrznego zgodnie z przepisami niezależnie od tego, czy osobiście go pilotuje.” (albo usunąć wzmiankę o SERA.2010 i ten ref). Reszta poprawna: „dowódca załogi” z pytania słusznie utożsamiony z dowódcą statku powietrznego (art. 113 ust. 2, art. 114 ust. 1); NCO.GEN.105(a)(1) zgodny z korpusem; klucz nie jest sporny.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "5421da5b5ae58ed2",
+  "verdict": "FIX"
+ },
+ "PL102-0021#25232f08": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: pytanie i odpowiedzi identyczne z PL099-0082#7e61b8ba (różnica tylko „..” w odpowiedzi A).",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "48cf8c0c7404b85d",
+  "verdict": "PASS"
+ },
+ "PL102-0035#f368e5d5": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: identyczny odcisk (pytanie i odpowiedzi) jak PL099-0087#f368e5d5; pozostaje ważny po poprawce pułapki oryginału.",
+  "portion": "P25",
+  "round": 1,
+  "textSha": "77686335798f2fc3",
   "verdict": "PASS"
  }
 }
