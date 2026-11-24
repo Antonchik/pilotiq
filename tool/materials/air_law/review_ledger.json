@@ -505,91 +505,91 @@
  },
  "PL010-0267#5122fa42": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 1 (PRE-FLIGHT OPERATIONS AND DEPARTURE: inspection, documentation, flight planning, mass and balance, pre-take-off checks) potwierdza tekst. Dystraktor «napełnianie powłoki» to egzamin balonowy – nie wymaga komentarza. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 1» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "00c4bdb23a302a75",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "9ac83b35142971da",
+  "verdict": "PASS"
  },
  "PL010-0268#f5ac6f10": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 3 a «Maintain straight flight: attitude and speed control» – «kontrola położenia» to poprawny odpowiednik «attitude»; tekst uczciwie zaznacza, że klucz ULC mówi «kontrola wysokości». Nie sporne: to ten sam punkt programu (rozbieżność tłumaczenia), żadna inna odpowiedź nie jest obronna. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 3» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "59c31aefed69eb78",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "6648d84e0c846269",
+  "verdict": "PASS"
  },
  "PL010-0269#64f8c599": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 3 d «Flight at high angle of attack (critically low air speed)» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 3» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "bff29e52d7b20727",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "3093a023621e3628",
+  "verdict": "PASS"
  },
  "PL010-0270#06ae6c63": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 2B f «Correct release from tow»; uwaga o pełnym wykonaniu co najmniej jednej metody startu leży w kotwicy «AMC1 SFCL.145 SECTION 1» (Note for SECTION 2A-2C) – dodać też tę kotwicę albo zostawić rodzica dla tego zdania. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 2B» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "99b53ff72089b26f",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "dc6fa9e898e3d43e",
+  "verdict": "PASS"
  },
  "PL010-0271#197febdc": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 2B AEROTOW LAUNCH; wzmianka o starcie za wyciągarką/samochodem i z własnym napędem – dodać «AMC1 SFCL.145 SECTION 2A» i «AMC1 SFCL.145 SECTION 2C». Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 2B» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "81f3277c6adfeef2",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "b106557b88039709",
+  "verdict": "PASS"
  },
  "PL010-0272#cfe9ba07": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 a «Aerodrome circuit joining procedure» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "656738e803994959",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "48820b855a2b66f0",
+  "verdict": "PASS"
  },
  "PL010-0273#db8582f6": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 b «Collision avoidance: look-out procedures»; zdanie o obserwacji we wszystkich sekcjach opiera się na nocie przed sekcją 1, która jest tylko w rodzicu «AMC1 SFCL.145» – tę kotwicę zostawić obok sekcji 4. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG; rodzic zostawiony dla noty o obserwacji we wszystkich sekcjach); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "57cd73857ac661bd",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "47211740dc867edb",
+  "verdict": "PASS"
  },
  "PL010-0274#64398428": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 c «Pre-landing checks» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "0e56b8e915a68b74",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "95f787c7b98699fc",
+  "verdict": "PASS"
  },
  "PL010-0275#1a395835": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 f «Crosswind landing if suitable conditions are available» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "39b13a7045e5485b",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "56f2701a05e88a6e",
+  "verdict": "PASS"
  },
  "PL010-0276#da70ebd9": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 4 e «Precision landing (simulation of out-landing and short field)» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 4» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "c4006e92cab88e3b",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "e1a1b910c50653f1",
+  "verdict": "PASS"
  },
  "PL010-0277#fbd53beb": {
   "date": "2026-11-24",
-  "note": "Treść poprawna, klucz wyjaśniony. Sekcja 3 f «Spin avoidance and recovery» potwierdza tekst. Poprawka lokatora: w anchors/EASA-EAR-SAILPLANE.json są już kotwice sekcji egzaminu (commit 4da0894), więc najwęższy lokator to «AMC1 SFCL.145 SECTION 3» zamiast samego «AMC1 SFCL.145» (bez quote). Pułapka o sekcji procedur anormalnych i awaryjnych tylko w egzaminie na TMG wymaga ref «AMC1 SFCL.145 SECTION 5» (kotwica SECTION 5 to tabela TMG; SECTION 1–4 to tabela szybowcowa). Tekstu zmieniać nie trzeba.",
+  "note": "Runda 2: lokatory poprawione na kotwice sekcji AMC1 SFCL.145 (właściwa sekcja tabeli szybowcowej + SECTION 5 dla zdania o TMG); tekst bez zmian, każde twierdzenie poparte treścią kotwic.",
   "portion": "P12",
-  "round": 1,
-  "textSha": "45ab3005f323c525",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "15c82b75741c155e",
+  "verdict": "PASS"
  },
  "PL010-0278#368cbbc1": {
   "date": "2026-11-24",
