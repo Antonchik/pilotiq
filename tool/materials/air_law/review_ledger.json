@@ -113,11 +113,11 @@
  },
  "PL010-0038#be7cea85": {
   "date": "2026-11-24",
-  "note": "Tekst pomija istotne zawężenie art. 96 ust. 5a: dotyczy on licencji z UE/Szwajcarii/EFTA tylko „w zakresie nieobjętym przepisami rozporządzenia nr 1178/2001/UE [sic] dla specjalności personelu lotniczego, o których mowa w art. 94 ust. 6 pkt 1, 3 i 5” (cytat pomija ten fragment, tekst uogólnia na wszystkie licencje). Ponadto „Pozostałe licencje … wymagają uznania (art. 96 ust. 5)” jest za szerokie – ust. 5 zastrzega ust. 5b. Poprawka: w 1. zdaniu po „Europejskim Obszarze Gospodarczym” dodać „– w zakresie nieobjętym unijnymi przepisami o licencjonowaniu (rozporządzenie 1178/2011) –”, z dodatkowym refem art. 96 ust. 5a, quote „w zakresie nieobjętym przepisami rozporządzenia nr 1178/2001/UE dla specjalności personelu lotniczego”; 2. zdanie: „Inne licencje wydane przez organ państwa obcego wymagają uznania przez Prezesa Urzędu (art. 96 ust. 5), z wyjątkami z art. 96 ust. 5b, a nie zgody ministra.” + ref art. 96 ust. 5b („Nie wymaga uznania przez Prezesa Urzędu licencja:”). Klucz nadal ma oparcie w ust. 5a – nie sporny.",
+  "note": "Poprawione: zakres art. 96 ust. 5a (poza rozporządzeniem 1178/2011) dodany z cytatem dosłownym (w akcie literówka „1178/2001/UE”, tekst słusznie podaje 1178/2011), drugie zdanie z zastrzeżeniem ust. 5b, ust. 5b w refs. Klucz ma oparcie w ust. 5a, nie sporny. 2 zdania.",
   "portion": "P05",
-  "round": 1,
-  "textSha": "f017b1455b27d833",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "f287e1fc7e4ae3c1",
+  "verdict": "PASS"
  },
  "PL010-0040#bad3da1f": {
   "date": "2026-11-24",
@@ -1721,11 +1721,11 @@
  },
  "PL010-0468#31cfb564": {
   "date": "2026-11-24",
-  "note": "Spór nieuzasadniony: dystraktor „10 h przy szkoleniu na samolotach wielosilnikowych tłokowych” nie opisuje możliwego szkolenia PPL(A), bo FCL.720.A(a)(1): „Osoba ubiegająca się o wydanie pierwszego uprawnienia na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową, musi wykonać co najmniej 70 godzin lotu jako pilot dowódca na samolotach.” Klucz (SEP) jest więc jedyną zgodną odpowiedzią. Poprawka: disputeNote = null; drugie zdanie zastąpić: „Pułapka: wariant z samolotami wielosilnikowymi tłokowymi nie pasuje do kandydata na PPL(A), bo pierwsze uprawnienie na klasę samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca na samolotach (pkt FCL.720.A lit. a) pkt 1).” i dodać ref EU-1178-2011 / FCL.720.A(a)(1) z powyższym quote.",
+  "note": "Poprawka wprowadzona: disputeNote = null, pułapka oparta na FCL.720.A(a)(1) (quote dosłowny, 70 godzin jako pilot dowódca); FCL.210.A(a)(2) potwierdza 10 h. 2 zdania, 436 znaków, validate bez błędów.",
   "portion": "P08",
-  "round": 1,
-  "textSha": "eda5d74fcac4a516",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "f119534bedc6a95c",
+  "verdict": "PASS"
  },
  "PL010-0468#6afb94dc": {
   "date": "2026-11-24",
@@ -1945,11 +1945,11 @@
  },
  "PL010-0539#a1cc18b0": {
   "date": "2026-11-24",
-  "note": "Locator/treść nieprecyzyjne: pytanie dotyczy ogólnie „licencji pilota wiatrakowcowego”, a tekst wskazuje art. 94 ust. 6 pkt 1 lit. k, czyli tylko „pilot wiatrakowcowy zawodowy”. Poprawka: w tekście „którą wymienia art. 94 ust. 6 pkt 1 lit. j i k Prawa lotniczego”, a quote refu art. 94 ust. 6 pkt 1 zmienić na „j) pilot wiatrakowcowy turystyczny, k) pilot wiatrakowcowy zawodowy,” (dosłownie w korpusie, dwa sąsiednie wiersze). Merytorycznie (FCL.210.A(d), wyłączenie lit. a) pkt 2) bez zastrzeżeń.",
+  "note": "Poprawka wprowadzona: art. 94 ust. 6 pkt 1 lit. j i k, quote dwóch wierszy zgodny z korpusem; merytorycznie FCL.210.A(d) bez zmian. 3 zdania, 511 znaków, validate bez błędów.",
   "portion": "P08",
-  "round": 1,
-  "textSha": "bb001757e214bda8",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "4f03422b0ca05ff0",
+  "verdict": "PASS"
  },
  "PL010-0542#1ecad0aa": {
   "date": "2026-11-24",

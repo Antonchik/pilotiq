@@ -1,0 +1,4 @@
+[
+ {"key":"PL010-0468#31cfb564","verdict":"PASS","note":"Poprawka wprowadzona: disputeNote = null, pułapka oparta na FCL.720.A(a)(1) (quote dosłowny, 70 godzin jako pilot dowódca); FCL.210.A(a)(2) potwierdza 10 h. 2 zdania, 436 znaków, validate bez błędów."},
+ {"key":"PL010-0539#a1cc18b0","verdict":"PASS","note":"Poprawka wprowadzona: art. 94 ust. 6 pkt 1 lit. j i k, quote dwóch wierszy zgodny z korpusem; merytorycznie FCL.210.A(d) bez zmian. 3 zdania, 511 znaków, validate bez błędów."}
+]
