@@ -1031,6 +1031,22 @@
   "textSha": "b19abd1d7fff0907",
   "verdict": "PASS"
  },
+ "PL010-0374#3dbad0dc": {
+  "date": "2026-11-24",
+  "note": "Klucz (klasa 1 lub „rozszerzona” klasa 2) wyjaśniony przez MED.A.030(c)(2) („przynajmniej … 2. klasy”, więc klasa 1 też wystarcza) i (e) (audiometria tonalna według wytycznych dla 1. klasy przy IR do PPL). Cytaty dosłowne, 3 zdania, zastrzeżenie o dawnej terminologii trafne. Sporne słusznie: „Tak.” także obronne wg FCL.600; disputeNote poprawny, FCL.600 i MED.A.030 w refs.",
+  "portion": "P14",
+  "round": 2,
+  "textSha": "2bfb3b48bacc0bf5",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0375#f5a4c078": {
+  "date": "2026-11-24",
+  "note": "Klucz (klasa 2 ze stwierdzeniem braku przeciwwskazań do IFR) = MED.A.030(c)(2) + (e) (audiometria tonalna wg wytycznych 1. klasy). Cytaty dosłowne, 3 zdania, 623 znaki. Sporne słusznie: „Tak.” także obronne wg FCL.600; disputeNote poprawny, punkty w refs.",
+  "portion": "P14",
+  "round": 2,
+  "textSha": "911669884edb9561",
+  "verdict": "DISPUTED"
+ },
  "PL010-0376#2a6ddae1": {
   "date": "2026-11-24",
   "note": "Sporność obronna. Prawo wynika z art. 27 ust. 3 pkt 3, ale ust. 5 (i ust. 7 przy kontrolach niezapowiedzianych) wymaga oprócz legitymacji także upoważnienia Prezesa Urzędu, więc „tylko po okazaniu legitymacji” jest niepełne. Dystraktor „za zgodą Prezesa” też ma częściowe oparcie w przepisie (upoważnienie wydaje Prezes). disputeNote poprawny, punkty w refs. Pułapka o kopiach zgodna z pkt 3.",
