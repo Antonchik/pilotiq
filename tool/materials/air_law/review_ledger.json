@@ -2897,11 +2897,11 @@
  },
  "PL099-0004#0d5127d8": {
   "date": "2026-11-24",
-  "note": "Klucz „lotnicza łączność radiotelefoniczna w niebezpieczeństwie” poprawny (art. 4a ust. 1, SERA.14095(d)(1)), ale SERA.14095(d) wymienia też: (d)(3) „wspólny kanał łączności … między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze” oraz (d)(5) „łączności między jednostką ratunkową a statkiem powietrznym biorącym udział w operacjach poszukiwawczo-ratowniczych” (w EAR SERA: survival craft). Dystraktory „łączność z lądem w akcjach SAR” i „z tratwami ratunkowymi” są więc też zgodne z przepisem → wpis sporny, brak disputeNote. Poprawka: dodać disputeNote np. „Pkt SERA.14095 lit. d) ppkt 3 i 5 rozporządzenia 923/2012 przewidują użycie 121,500 MHz także do łączności ze służbami naziemnymi w operacjach poszukiwawczo-ratowniczych oraz z jednostką ratunkową, więc odpowiedzi o SAR i tratwach też mają oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” + refs SERA.14095(d)(3) i (d)(5) z cytatami. Dotyczy też sameAs PL102-0051.",
+  "note": "Poprawione: disputeNote (312 zn.) z SERA.14095(d)(3) (służby naziemne w operacjach poszukiwawczo-ratowniczych) i (d)(5) (jednostka ratunkowa – w EAR SERA survival craft) – oba w refs, cytaty zgodne z korpusem. Klucz nadal oparty na art. 4a ust. 1 i (d)(1). Sporność przechodzi na sameAs PL102-0051#6d850997.",
   "portion": "P29",
-  "round": 1,
-  "textSha": "8f6ca1ababac0924",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "2c901ea80e04871b",
+  "verdict": "DISPUTED"
  },
  "PL099-0009#b7fe727e": {
   "date": "2026-11-24",
@@ -2953,11 +2953,11 @@
  },
  "PL099-0051#1b7ba0eb": {
   "date": "2026-11-24",
-  "note": "Jedynym źródłem jest CAT.GEN.MPA.105(d)(2) z załącznika IV rozp. 965/2012 – „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO [CZĘŚĆ CAT]”. Pytanie dotyczy pilota PPL; część NCO (NCO.GEN.105, obowiązki pilota dowódcy) nie zawiera obowiązku raportu o zderzeniu z ptakiem (sprawdzono: w 965/2012 słowo „ptak” występuje tylko w CAT.GEN.MPA.105(d)). Tekst podaje przepis CAT jako ogólny – fakt ponad źródło. Poprawka: (1) zdanie 1: „Zgodnie z pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012, dotyczącym operacji zarobkowego transportu lotniczego (część CAT), dowódca …”; dodać ref EU-965-2012 „załącznik IV” z quote „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO”; (2) disputeNote uzupełnić: przepis dotyczy tylko części CAT, a część NCO (operacje niezarobkowe) nie przewiduje takiego raportu; nawet w CAT raport pisemny wymagany jest tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Status po poprawce – sporny.",
+  "note": "Poprawione: tekst wskazuje część CAT (ref załącznik IV „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO”), disputeNote (351 zn.) trafnie podaje, że część NCO nie przewiduje raportu o zderzeniu z ptakiem (w 965/2012 tylko CAT.GEN.MPA.105(d)), a w CAT raport tylko przy znaczących uszkodzeniach/awarii systemu; punkty w refs.",
   "portion": "P29",
-  "round": 1,
-  "textSha": "c2730b66c7302a00",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "6b98ca0f4ca2b819",
+  "verdict": "DISPUTED"
  },
  "PL099-0074#9b6f9c4c": {
   "date": "2026-11-24",
@@ -2969,11 +2969,11 @@
  },
  "PL099-0079#cfe733ba": {
   "date": "2026-11-24",
-  "note": "72 h poprawne (art. 135a ust. 3 PL, art. 4 ust. 8 rozp. 376/2014), ale zdanie 1 przypisuje art. 135a ust. 2 ogólny obowiązek zgłaszania Komisji, a przepis dotyczy tylko „statków powietrznych nieobjętych przepisami rozporządzenia nr 376/2014/UE”. Poprawka: „Zgodnie z art. 135a ust. 3 Prawa lotniczego zgłoszenia zdarzenia lotniczego Komisji dokonuje się każdym dostępnym środkiem łączności niezwłocznie, jednak nie później niż 72 godziny od jego zaistnienia; dla statków nieobjętych rozporządzeniem 376/2014 obowiązek ten mają m.in. użytkownik statku powietrznego, instytucja zapewniająca służby żeglugi powietrznej i zarządzający lotniskiem (art. 135a ust. 2).” Zdanie o art. 4 ust. 8 rozp. 376/2014 zostawić.",
+  "note": "Poprawione: 72 h oparte na art. 135a ust. 3 PL (dotyczy każdego zgłoszenia Komisji), krąg podmiotów z ust. 2 z zastrzeżeniem „statków nieobjętych rozporządzeniem 376/2014”, poparty cytatem; art. 4 ust. 8 rozp. 376/2014 poprawnie odniesiony do właściwego organu. 2 zdania, 539 zn.",
   "portion": "P29",
-  "round": 1,
-  "textSha": "fa57d88a1ffaa1cb",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "08cd9b5427dd7461",
+  "verdict": "PASS"
  },
  "PL099-0082#7e61b8ba": {
   "date": "2026-11-24",

@@ -1,0 +1,5 @@
+[
+ {"key":"PL099-0079#cfe733ba","verdict":"PASS","note":"Poprawione: 72 h oparte na art. 135a ust. 3 PL (dotyczy każdego zgłoszenia Komisji), krąg podmiotów z ust. 2 z zastrzeżeniem „statków nieobjętych rozporządzeniem 376/2014”, poparty cytatem; art. 4 ust. 8 rozp. 376/2014 poprawnie odniesiony do właściwego organu. 2 zdania, 539 zn."},
+ {"key":"PL099-0051#1b7ba0eb","verdict":"DISPUTED","note":"Poprawione: tekst wskazuje część CAT (ref załącznik IV „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO”), disputeNote (351 zn.) trafnie podaje, że część NCO nie przewiduje raportu o zderzeniu z ptakiem (w 965/2012 tylko CAT.GEN.MPA.105(d)), a w CAT raport tylko przy znaczących uszkodzeniach/awarii systemu; punkty w refs."},
+ {"key":"PL099-0004#0d5127d8","verdict":"DISPUTED","note":"Poprawione: disputeNote (312 zn.) z SERA.14095(d)(3) (służby naziemne w operacjach poszukiwawczo-ratowniczych) i (d)(5) (jednostka ratunkowa – w EAR SERA survival craft) – oba w refs, cytaty zgodne z korpusem. Klucz nadal oparty na art. 4a ust. 1 i (d)(1). Sporność przechodzi na sameAs PL102-0051#6d850997."}
+]
