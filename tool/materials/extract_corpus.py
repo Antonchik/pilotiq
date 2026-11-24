@@ -459,6 +459,8 @@ _APP_ROW_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){0,4})\.\s+\S")
 _PARA_RE = re.compile(r"^\(([a-z]{1,4}|\d{1,2}|[A-Z])\)\s*\S")
 _PARA_NUM_RE = re.compile(r"^(\d{1,3})\.\s+\S")
 _DEF_RE = re.compile(r"^(\d{1,3})([a-z]?)\.\s+[‘']")
+# a heading-like line of a change log ("... New Issue 1, Amdt 16 ED Decision 2022/012/R", "... Changed 1/12 EDD 2019/019/R")
+_CHANGELOG_RE = re.compile(r"(?:New|Changed|Renumbered|Deleted|Amdt|Moved|Issue \d|\d+/\d+)[^\n]*\b(?:ED Decision|EDD)\s+\d{4}/\d+(?:/[A-Z])?\s*$")
 _TABLE_NOTE_RE = re.compile(r"^\(\*+\)")
 _ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii", "xiii", "xiv", "xv"]
 _BOUNDARY_RE = re.compile(r"^(SUBPART [A-Z]\b.*|SECTION \d+\b.*|Appendix \d+ to .*|"
@@ -564,7 +566,13 @@ def rule_anchors(text, kind, extras=()):
     for idx, (start, line) in enumerate(rows):
         if any(_TOC_LINE.search(rows[j][1]) for j in range(idx, min(idx + 4, len(rows)))):
             continue  # table-of-contents entry (dot leaders, possibly on a wrapped later line)
+        if (_AMC_FULL_RE.match(line) or _RULE_RE.match(line)) and any(
+                _CHANGELOG_RE.search(rows[j][1]) or rows[j][1].endswith(",")
+                for j in range(idx, min(idx + 3, len(rows)))):
+            continue  # change log / cross-reference list, not a heading
         mm = _AMC_FULL_RE.match(line)
+        if mm and line[mm.end():].strip()[:1].islower():
+            mm = None   # running text that starts with a reference ("AMC1 ORO.GEN.200(b) should be used.")
         is_head = bool(mm or _RULE_RE.match(line))
         if _PAGE_NO_TAIL.search(line) and is_head:
             continue  # table-of-contents entry whose dot leaders were lost
@@ -713,6 +721,7 @@ def rule_anchors(text, kind, extras=()):
     end_all(len(text))
     end_app(len(text))
     by_key = {sp.key: sp for sp in spans}
+    drop = set()
     for parent, kids in children.items():
         lo = min(k.start for k in kids)
         hi = max(k.end if k.end is not None else len(text) for k in kids)
@@ -723,9 +732,18 @@ def rule_anchors(text, kind, extras=()):
             spans.append(sp)
         else:
             # a real heading "AMC1 X" and later separate headings "AMC1 X(b)": the parent covers its children
+            # when they are close; a far-away child is a different item with a reused number: it is dropped
             sp = by_key[parent]
-            sp.start = min(sp.start, lo)
-            sp.end = max(sp.end if sp.end is not None else len(text), hi)
+            pend = sp.end if sp.end is not None else len(text)
+            near = [k for k in kids if k.start >= sp.start and (k.end or len(text)) <= pend
+                    or abs(k.start - pend) <= 20000]
+            for k in kids:
+                if k not in near:
+                    drop.update(x.key for x in spans if x.key.startswith(k.key))
+            if near:
+                sp.start = min(sp.start, min(k.start for k in near))
+                sp.end = max(pend, max(k.end if k.end is not None else len(text) for k in near))
+    spans = [sp for sp in spans if sp.key not in drop]
     return _finish(spans, len(text))
 
 
