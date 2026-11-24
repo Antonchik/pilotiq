@@ -1975,6 +1975,14 @@
   "textSha": "6d01c20597978982",
   "verdict": "PASS"
  },
+ "PL010-0409#8db45283": {
+  "date": "2026-11-24",
+  "note": "Klucz = definicja „Discrete code” w rozdz. 1 Doc 4444 („last two digits not being 00”); 8.5.2.2.7 potwierdza przydział kodu dyskretnego przy potrzebie indywidualnej identyfikacji. Brak definicji w polskich aktach korpusu (szukano „dyskretn”), więc Doc 4444 (reference-only, bez quote) jest właściwy. Pułapka trafia w dystraktory 3–4.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "5294323bf0c53869",
+  "verdict": "PASS"
+ },
  "PL010-0410#3e3178d4": {
   "date": "2026-11-24",
   "note": "Poprawione: ref AIP GEN 3.3 pkt 3 lit. d (ogólny przepis o organie AFIS w przestrzeni niekontrolowanej), quote w kotwicy, bez uogólnienia ATZ EPBY.",
@@ -2511,12 +2519,60 @@
   "textSha": "6f38fb0817466d6c",
   "verdict": "PASS"
  },
+ "PL010-0526#f455eacb": {
+  "date": "2026-11-24",
+  "note": "Uwaga do 1.4.15 w Appendix 1 to AMC1 SERA.14001 i Doc 4444 12.3.4.15: LONG FINAL przy podejściu wprost 15 km (8 NM); FINAL 7 km (4 NM) — sprawdzone w korpusie EN. Bez quote (easa/reference-only) — poprawnie.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "bc1c473a7f79499f",
+  "verdict": "PASS"
+ },
+ "PL010-0527#bedfbcb0": {
+  "date": "2026-11-24",
+  "note": "Ta sama uwaga: LONG FINAL po zakręcie na prostą w odległości > 7 km (4 NM) — zgodne z korpusem; pułapka 15 km = podejście wprost.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "ca545f527d9106c9",
+  "verdict": "PASS"
+ },
+ "PL010-0528#a3ecc301": {
+  "date": "2026-11-24",
+  "note": "„In both cases a report FINAL is required at 7 km (4 NM)” — zgodne; pułapka poprawna.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "3c33e226152355a1",
+  "verdict": "PASS"
+ },
+ "PL010-0529#cc717cc5": {
+  "date": "2026-11-24",
+  "note": "FINAL przy podejściu wprost też 7 km (4 NM) — klucz 4 NM zgodny z uwagą; pułapka poprawna.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "0cbe87be7d4a8436",
+  "verdict": "PASS"
+ },
  "PL010-0530#8e378916": {
   "date": "2026-11-24",
   "note": "Klucz „przeszkód” = SERA.5005(c)(5)(i)(ii) i ENR 1.2 pkt 7 ppkt 4 (najwyższa przeszkoda w promieniu 8 km). ENR 1.2 pkt 7 nie ma podkotwic – lokator najdokładniejszy możliwy.",
   "portion": "P01",
   "round": 1,
   "textSha": "a72398241ae7b7de",
+  "verdict": "PASS"
+ },
+ "PL010-0531#4cb3313b": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: wariant rawMixed (PL+EN) tego samego pytania, te same odpowiedzi i klucz.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "9e4f9aa4f15b0636",
+  "verdict": "PASS"
+ },
+ "PL010-0531#8709a759": {
+  "date": "2026-11-24",
+  "note": "2017/373 zał. I pkt 72 i zał. III dodatek 1 pkt 4 (wpis „MSA: … którego środkiem jest pomoc radionawigacyjna” w kotwicy) — dosłownie; GEN 2.2 MSA = „Minimalna sektorowa wysokość bezwzględna”. Tekst poprawnie przypisuje „pomoc radionawigacyjną” katalogowi danych (pkt 72 mówi o punkcie nawigacyjnym/ARP/HRP). Pułapka trafia w dystraktory.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "90fbeba8c1e81776",
   "verdict": "PASS"
  },
  "PL010-0534#085740df": {
@@ -2605,6 +2661,70 @@
   "portion": "P13",
   "round": 1,
   "textSha": "672752d172af300f",
+  "verdict": "PASS"
+ },
+ "PL010-0560#4c789a86": {
+  "date": "2026-11-24",
+  "note": "art. 2 pkt 93 (poziom) dosłownie; pułapka: dystraktory to warianty definicji FL z art. 2 pkt 78.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "7aa06dc03896837e",
+  "verdict": "PASS"
+ },
+ "PL010-0560#5bf85430": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w podwójnej kropce w odpowiedzi z klucza.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "c26c64e9b7faaa6c",
+  "verdict": "PASS"
+ },
+ "PL010-0561#58aed3e6": {
+  "date": "2026-11-24",
+  "note": "Merytorycznie poprawne (art. 2 pkt 78, „określonymi przedziałami ciśnienia”), ale zdanie pułapki jest dwuznaczne/błędne składniowo: „poziomy lotu oddzielają od siebie przedziały ciśnienia” czyta się jako „poziomy rozdzielają przedziały ciśnienia”. Zamienić na: „Pułapka: poziomy lotu są oddzielone od siebie określonymi przedziałami ciśnienia, a nie różnicami wysokości.”",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "8f52cde0da5a5352",
+  "verdict": "FIX"
+ },
+ "PL010-0562#47df032f": {
+  "date": "2026-11-24",
+  "note": "art. 2 pkt 135 dosłownie; pułapka z art. 2 pkt 134 trafia w dystraktor 4. Dystraktor „z QNH na STD na poziomie przejściowym” jest błędny (AIP ENR 1.7 pkt 2.6.2/2.6.5: przy zniżaniu na poziomie przejściowym STD→QNH, przy wznoszeniu QNH→STD na wysokości przejściowej) → nie sporne.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "6845a0c0c292cc85",
+  "verdict": "PASS"
+ },
+ "PL010-0563#112904fb": {
+  "date": "2026-11-24",
+  "note": "art. 2 pkt 63 dosłownie; pułapka z art. 2 pkt 93.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "7d793a9f42919768",
+  "verdict": "PASS"
+ },
+ "PL010-0563#819b6d58": {
+  "date": "2026-11-24",
+  "note": "sameAs poprawny: różnica tylko w podwójnej kropce w dystraktorze.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "27e1e83b159cbbe8",
+  "verdict": "PASS"
+ },
+ "PL010-0564#5d257974": {
+  "date": "2026-11-24",
+  "note": "SERA.3110(a) dosłownie; pułapka z SERA.3110(b).",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "85ddb477034f4c88",
+  "verdict": "PASS"
+ },
+ "PL010-0565#7bea1d61": {
+  "date": "2026-11-24",
+  "note": "SERA.3110(b)/(a) dosłownie; pułapka z SERA.8015 lit. eb) ppkt 1 (tekst eb) leży w korpusie wewnątrz kotwicy SERA.8015(e)(6) — znana luka ekstraktora, lokator rodzica SERA.8015 akceptowany jak w P21; ostrzeżenie validate fałszywe).",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "98033f8e7e1c1827",
   "verdict": "PASS"
  },
  "PL010-0566#60598c74": {
@@ -2741,6 +2861,86 @@
   "portion": "P21",
   "round": 1,
   "textSha": "6158427c5328714d",
+  "verdict": "PASS"
+ },
+ "PL010-0590#f17e46db": {
+  "date": "2026-11-24",
+  "note": "Klucz QNH = ENR 1.7 pkt 1.2, cytaty dosłowne, pułapka OK. Ale zdanie 2 uogólnia: pkt 1.2.2 stanowi, że w klasie G pod segmentami TMA/MTMA z dolną granicą ≤6500 ft obowiązuje QNH głównego lotniska tego TMA/MTMA, nie regionalne. Zamienić zdanie 2 na: „W przestrzeni niekontrolowanej jest to co do zasady QNH regionu nastawiania wysokościomierzy (pkt 1.2.1), a pod niskimi segmentami TMA/MTMA – QNH głównego lotniska tego rejonu (pkt 1.2.2).” i dodać ref AIP-PL „ENR 1.7 pkt 1.2.2” z quote „obowiązuje nastawienie wysokościomierza na ciśnienie QNH głównego lotniska kontrolowanego”. (Długość ok. 650 zn.)",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "0e52a61f04e8b95f",
+  "verdict": "FIX"
+ },
+ "PL010-0601#b73edcc4": {
+  "date": "2026-11-24",
+  "note": "Wniosek „grubość > 0” wynika z art. 2 pkt 135 („najniższy poziom lotu … powyżej wysokości bezwzględnej przejściowej”) i definicji warstwy (2017/373 zał. I pkt 247). Dane FIR Warszawa (6500 ft; jeden TL FL080/FL090 zależnie od ciśnienia — ENR 1.7 pkt 2.6.1, 3.1, 3.1.1) zgodne z AIP; trzecie zdanie to dopuszczalny wniosek z tych punktów. Brak przepisu o minimalnej grubości 150/300 m w korpusie → dystraktory nieobronne, nie sporne.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "a4195a82ffc4fb6a",
+  "verdict": "PASS"
+ },
+ "PL010-0614#17448f58": {
+  "date": "2026-11-24",
+  "note": "SERA.11015(b)(4): „wybiera mod A kod 7700, chyba że otrzymał inne polecenie…” — dosłownie; pułapki 7500/7600 z SERA.13005(a)(2)-(3). Lokatory najwęższe.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "d878f98eb44bcf9b",
+  "verdict": "PASS"
+ },
+ "PL010-0615#dcc5e54d": {
+  "date": "2026-11-24",
+  "note": "SERA.13005(a)(3) „co do zasady kod 7500” + SERA.11005 lit. aa) (brak podkotwicy aa) — lokator SERA.11005 poprawny). Pułapka o 7700 „w zastępstwie, gdy uzasadniają to okoliczności” wiernie oddaje drugie zdanie (a)(3); 7700 jest wyjątkiem, nie równorzędną odpowiedzią na pytanie o kod HIJACK → nie sporne.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "6eb6557a7546e3cc",
+  "verdict": "PASS"
+ },
+ "PL010-0624#45f080f1": {
+  "date": "2026-11-24",
+  "note": "SERA.13005(a)(2) i SERA.14083(c)(2) (kod 7600) — dosłownie; pułapki z (a)(1) i (a)(3).",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "7a995ac36fe529f8",
+  "verdict": "PASS"
+ },
+ "PL010-0625#543a322b": {
+  "date": "2026-11-24",
+  "note": "SERA.13005(a)(1) + dodatek 1 pkt 1.2.1 lit. f) (7700 jako sygnał zagrożenia, „poważne i nieuniknione niebezpieczeństwo”) — zgodne z korpusem.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "511360f9d4536dc5",
+  "verdict": "PASS"
+ },
+ "PL010-0628#3056ac80": {
+  "date": "2026-11-24",
+  "note": "2017/373 zał. I pkt 247 dosłownie; SERA.8015 eb) ppkt 1 poprawnie (lokator rodzica — znana luka ekstraktora).",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "8fe85a5fe2c202bb",
+  "verdict": "PASS"
+ },
+ "PL010-0633#aed382c4": {
+  "date": "2026-11-24",
+  "note": "§ 11 pkt 1 rozp. MI 2020: brak instrukcji ATS → VFR 7000 (zgodnie z przyjętym P21 0352); SERA.13001(a) poprawnie oddane; pułapka 2000 = IFR (§ 11 pkt 2). Krajowy przepis jest „innym kodem określonym przez właściwy organ” w rozumieniu SERA.13005(b)(2), więc brak sprzeczności.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "9a5d8323fe880151",
+  "verdict": "PASS"
+ },
+ "PL010-0637#9325b5b6": {
+  "date": "2026-11-24",
+  "note": "Sporne potwierdzone: art. 2 pkt 134 mówi tylko o „wysokościach bezwzględnych” (klucz dodaje „względna lub”, co tekst uczciwie tłumaczy przez SERA.8015 eb) ppkt 5 — QFE, wysokość nad poziomem lotniska), a dystraktor „wysokość, na której pilot przestawia wysokościomierz z QNH na STD” jest w FIR Warszawa prawdziwy wg AIP ENR 1.7 pkt 2.6.5 (dystraktor STD→QNH pozostaje błędny — przy zniżaniu zmiana na poziomie przejściowym, pkt 2.6.2). Reguła „ключ верен, но стал верным и другой вариант” → disputed. disputeNote (385 zn.) poprawny, punkty w refs, formuła o kluczu obecna.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "7b0bbf9eb34de0ce",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0638#029a64e1": {
+  "date": "2026-11-24",
+  "note": "art. 2 pkt 134 + ENR 1.7 pkt 1.2 i 2.6.5 — dosłownie. Inaczej niż 0637: jedyny dystraktor o QNH→STD jest tu kwalifikowany jako „wysokość względna”, co jest błędne (pytanie: 6500 ft AMSL), więc pułapka uzasadniona i brak sporności.",
+  "portion": "P22",
+  "round": 1,
+  "textSha": "927aa118dbf61a2b",
   "verdict": "PASS"
  },
  "PL010-1337#bbcc07b5": {
