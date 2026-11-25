@@ -95,7 +95,7 @@ def dehyphenate(lines):
 
 # --------------------------------------------------------------------------- readers
 
-_ANNEX_HEAD = re.compile(r"^Załącznik nr \d+[a-z]?(?:\d{0,2}\))?$")
+_ANNEX_HEAD = re.compile(r"^[Zz]ałącznik nr \d+[a-z]?(?:\d{0,2}\))?$")
 _FOOT_START = re.compile(r"^(\d+)\)\s+(.*)$")
 _FUTURE_PAIR_OLD = re.compile(r"^(W tym brzmieniu obowi.zuje|Wprowadzenie do wyliczenia w tym brzmieniu|"
                               r"Obowi.zuje do wejścia)")
@@ -167,6 +167,14 @@ def sejm_page_lines(page, carry=frozenset()):
     return out, carry_out
 
 
+_ROTATED_ANNEX_RE = re.compile(r"[Zz]ałącznik\s+nr\s+(\d+?[a-z]?)(?:\d{1,2}\))?(?=\s|$)")
+
+
+def _mostly_rotated(page):
+    chars = page.chars
+    return len(chars) > 200 and sum(1 for c in chars if not c.get("upright", True)) > 0.7 * len(chars)
+
+
 def read_pdf_lines(path, profile):
     import pdfplumber  # imported lazily: only needed for PDF sources
 
@@ -183,6 +191,12 @@ def read_pdf_lines(path, profile):
             if profile == "easa":
                 box = (0, EAR_HEADER_Y, page.width, min(EAR_FOOTER_Y, page.height))
                 page_lines = (page.crop(box).extract_text() or "").split("\n")
+            elif profile == "sejm" and _mostly_rotated(page):
+                # a rotated specimen page (licence forms): its text comes out mirrored, word by word; only the annex heading
+                # "załącznik nr 219)" is recovered, the form text itself is not part of the corpus
+                parts = [ln["text"][::-1] for ln in reversed(page.extract_text_lines())]
+                mh = _ROTATED_ANNEX_RE.search(" ".join(parts))
+                page_lines = ["Załącznik nr " + mh.group(1)] if mh else []
             elif profile == "sejm":
                 page_lines, carry = sejm_page_lines(page, carry)
             else:
@@ -330,7 +344,7 @@ _ART_RE = re.compile(r"^(Art\.|§)\s*(%s)\.(?:\s+(.*))?$" % _ART_ID)   # "Art. 5
 _UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
 _DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
-_ANNEX_RE = re.compile(r"^Załącznik nr (\d+?[a-z]?)(?:\d{1,2}\))?$")   # "Załącznik nr 219)" = annex 2 with footnote 19)
+_ANNEX_RE = re.compile(r"^[Zz]ałącznik nr (\d+?[a-z]?)(?:\d{1,2}\))?$")   # "Załącznik nr 219)" = annex 2 with footnote 19)
 _TAIL_RE = re.compile(r"^[–-]\s+podlega(?:ją)?\b")
 _LIT_RE = re.compile(r"^([a-z]{1,2})\)\s*\S")
 _ITEM_RE = re.compile(r"^(?:[a-z]\)|–|-|\d+[a-z]?\)|\d+[a-z]?\.|Art\.)\s")
