@@ -596,7 +596,7 @@ def statute_anchors(text, future_out=None):
 
 # EU / EASA rule identifiers: SERA.5005, FCL.205.A, NCO.GEN.105, MED.A.030, BFCL.115, ORO.FC.100 ...
 _ID_PAREN = r"%s(?:\([a-z0-9]+\))*" % _RULE_ID
-_RULE_RE = re.compile(r"^(%s)(?:\s+(\S.*))?$" % _RULE_ID)
+_RULE_RE = re.compile(r"^(%s)\.?(?:\s+(\S.*))?$" % _RULE_ID)   # "SERA.7001. Przepisy ogólne" (full stop after the number)
 # "AMC1 SERA.5005(f) Title" and the multi-rule form "AMC1 FCL.210; FCL.215 Title"
 _AMC_FULL_RE = re.compile(r"^((?:AMC|GM|CS)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_ID_PAREN, _ID_PAREN))
 _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
@@ -745,6 +745,17 @@ class _ParaState:
                 return 2 if int(token) == 1 else None          # the first item is always 1
             nxt = self.l2 + 1
             return 2 if nxt <= int(token) <= nxt + self.GAP else None
+        if token.islower() and len(token) == 2 and token not in _ROMAN:
+            # inserted points "ea) eb)" after "e)", "aa) ab)" before "b)"
+            x, y = token
+            lst = self.l1
+            if lst is None:
+                return 1 if token == "aa" else None
+            if len(lst) == 1 and x == lst and y == "a":
+                return 1
+            if len(lst) == 2 and x == lst[0] and ord(y) == ord(lst[1]) + 1:
+                return 1
+            return None
         if token.islower():
             if self.keys[1] is not None and token in _ROMAN:
                 if self.l3 is None:
@@ -755,9 +766,11 @@ class _ParaState:
                     if base is not None and base <= _ROMAN.index(token) <= base + self.GAP:
                         return 3
             if len(token) == 1:
-                base = 0 if self.l1 is None else ord(self.l1) - ord("a") + 1
+                base = 0 if self.l1 is None else ord(self.l1[0]) - ord("a") + 1
                 if ord(token) - ord("a") == base:   # letters: no gaps (a stray "(g)" line must not shift the list)
                     return 1
+                if self.l1 is None and ord(token) - ord("a") <= 2:
+                    return 1                        # a rule whose points (a) and (b) were deleted starts with (c)
         return None
 
     def accept(self, token, level):
@@ -1090,7 +1103,8 @@ _EU_APP_RE = re.compile(r"^Dodatek (\d+)(?: do załącznika ([IVXLC]+).*)?$")
 _EU_BOUNDARY_RE = re.compile(r"^(?:PODCZĘŚĆ|SEKCJA|DZIAŁ|ROZDZIAŁ|ODDZIAŁ|TYTUŁ|\[CZĘŚĆ) \S")
 _EU_SEKCJA_RE = re.compile(r"^SEKCJA ([IVX]+)$")
 _APP_PARA_RE = re.compile(r"^(?:([a-z])|(\d{1,2})|([ivx]{1,5}))\)\s*\S")   # a) / 1) / ii) as printed in the appendix text
-_EU_PARA_RE = re.compile(r"^(?:\(([ivx]{1,5})\)|([a-z])\)|(\d{1,2})\))\s*\S")
+_EU_PARA_RE = re.compile(r"^(?:\(([ivx]{1,5})\)|([a-z]{1,2})\)|(\d{1,2})\))\s*\S")
+_EU_TABLE_RE = re.compile(r"^Tabela [A-Z]*\d+(?:-\d+)?$")
 _EU_UST_RE = re.compile(r"^(\d{1,3})\.\s+\S")
 _DODATEK_UP_RE = re.compile(r"^(?:DODATEK|Dodatek) \d+-?[A-Z]?\d*\b")
 _NUM_HEAD_NODOT_RE = re.compile(r"^(\d{1,2}(?:\.\d{1,3}){1,2})\s+[A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻ ,/()–-]{5,}$")   # "6.5 ZATWIERDZENI PRZEWOŹNICY DROGOWI"
@@ -1129,6 +1143,7 @@ def eureg_anchors(text, extras=()):
     state = None
     para = {}
     mode = "pre"
+    in_table = False
     last_ch, pts_on, pt_last = 0, False, {}
 
     def close(sp, at):
@@ -1306,11 +1321,20 @@ def eureg_anchors(text, extras=()):
                 if _changelog_title(line):
                     continue
                 close_block(start)
+                in_table = False
                 block = add(mr.group(1), start, 2)
                 state = _ParaState()
                 continue
+            if _EU_TABLE_RE.match(line):
+                in_table = True     # "Tabela S14-1": its rows "a) ... b) ..." are not points of the rule
             if block is not None and state is not None:
                 mq = _EU_PARA_RE.match(line)
+                if mq and in_table:
+                    nxt = rows[idx + 1][1] if idx + 1 < len(rows) else ""
+                    if _EU_PARA_RE.match(nxt) or _RULE_RE.match(nxt) or _EU_BOUNDARY_RE.match(nxt):
+                        in_table = False    # a real paragraph is followed by the next one; a table row by its signal cell
+                    else:
+                        mq = None
                 if mq:
                     token = mq.group(1) or mq.group(2) or mq.group(3)
                     level = state.classify(token)
