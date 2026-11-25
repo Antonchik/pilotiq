@@ -227,14 +227,14 @@
       "status": "draft",
       "heading": "Separacja w klasach przestrzeni powietrznej",
       "body": [
-        "Pkt SERA.6001 lit. a) rozporządzenia 923/2012 określa, które loty kontrola ruchu lotniczego separuje:",
+        "Pkt SERA.6001 lit. a) rozporządzenia 923/2012 określa separację i służby w poszczególnych klasach:",
         "- klasa A – tylko loty IFR, wszystkie z zapewnieniem służby kontroli ruchu lotniczego i w separacji, czyli IFR od IFR;",
         "- klasa C – IFR od IFR i od VFR oraz VFR od IFR; loty VFR między sobą nie są separowane, otrzymują na żądanie informacje o ruchu innych lotów VFR i rady dla zapobieżenia kolizji;",
         "- klasa D – IFR od IFR; loty IFR otrzymują na żądanie informacje o ruchu VFR i rady dla zapobieżenia kolizji;",
         "- klasa E – IFR od IFR; informacje o ruchu wszystkim lotom, o ile jest to możliwe;",
         "- klasa F – lotom IFR zapewnia się służbę doradczą ruchu lotniczego, która w miarę możliwości separuje loty IFR, a wszystkim lotom na żądanie służbę informacji powietrznej;",
         "- klasa G – loty IFR i VFR otrzymują na żądanie tylko służbę informacji powietrznej, a dodatek 4 nie przewiduje separacji.",
-        "Służba informacji powietrznej udziela wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów (art. 2 pkt 77), więc ani w klasie F, ani w klasie G nie ma obowiązku separowania statków powietrznych."
+        "Służba informacji powietrznej udziela wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów (art. 2 pkt 77), więc służba informacji powietrznej ani w klasie F, ani w klasie G nie ma obowiązku separowania statków powietrznych."
       ],
       "refs": [
         {
@@ -384,9 +384,9 @@
       "heading": "Służba alarmowa oraz poszukiwanie i ratownictwo",
       "body": [
         "Służba alarmowa to służba ustanowiona w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz współdziałania z nimi w razie potrzeby (art. 2 pkt 37 rozporządzenia 923/2012). Do zakresu działania służby poszukiwania i ratownictwa lotniczego (ASAR) należy poszukiwanie i ratowanie statków powietrznych w niebezpieczeństwie oraz udzielanie pomocy załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych (art. 140a ust. 1 Prawa lotniczego).",
-        "- Rolę punktów alarmowych pełnią organy instytucji zapewniających służby ruchu lotniczego, które przekazują informacje o zagrożeniu do cywilno-wojskowego ośrodka koordynacji poszukiwania i ratownictwa lotniczego (art. 140a ust. 7); takim organem jest ośrodek kontroli obszaru, w Polsce ACC Warszawa (AIP Polska, GEN 2.4).",
+        "- Rolę punktów alarmowych pełnią organy instytucji zapewniających służby ruchu lotniczego, które przekazują informacje o zagrożeniu do cywilno-wojskowego ośrodka koordynacji poszukiwania i ratownictwa lotniczego (art. 140a ust. 7); jednym z takich organów jest ośrodek kontroli obszaru, w Polsce ACC Warszawa (AIP Polska, GEN 2.4).",
         "- Gdy statek powietrzny nie zgłosi się w ciągu 30 minut po najpóźniejszym z czasów: przewidywanym czasie przylotu lub ostatnio potwierdzonym spodziewanym czasie podejścia, informacje o nim przekazuje się użytkownikom i dowódcom zainteresowanych statków powietrznych. O wznowieniu normalnych operacji albo innym działaniu decydują dowódcy statków powietrznych oraz użytkownicy lub ich wyznaczeni przedstawiciele (ICAO Doc 4444, pkt 15.3.10).",
-        "Zbieranie i publikowanie informacji lotniczych należy do służby informacji lotniczej, a nie do ASAR."
+        "Zapewnianie informacji i danych lotniczych należy do służby informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803), a nie do ASAR."
       ],
       "refs": [
         {
@@ -508,7 +508,7 @@
         "Nazwy są podobne, ale oznaczają dwie różne służby:",
         "- służba informacji lotniczej (AIS) – służba utworzona w określonym obszarze, odpowiedzialna za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej (art. 2 pkt 2 rozporządzenia 2024/2803); należy do służb żeglugi powietrznej, ale nie do służb ruchu lotniczego (art. 2 pkt 5);",
         "- służba informacji powietrznej – służba ruchu lotniczego udzielająca wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów (art. 2 pkt 77 rozporządzenia 923/2012), zapewniana przez organy służb ruchu lotniczego (pkt SERA.9001 lit. a)).",
-        "W Polsce służbę informacji lotniczej zapewnia Polska Agencja Żeglugi Powietrznej (AIP Polska, GEN 3.1); jej produktami są m.in. Zbiór Informacji Lotniczych (AIP) ze zmianami i suplementami oraz depesze NOTAM. Celem AIS jest więc zbieranie i publikowanie informacji lotniczych.",
+        "W Polsce służbę informacji lotniczej zapewnia Polska Agencja Żeglugi Powietrznej (AIP Polska, GEN 3.1); jej produktami są m.in. Zbiór Informacji Lotniczych (AIP) ze zmianami i suplementami oraz depesze NOTAM. AIS zapewnia więc i publikuje informacje lotnicze, co klucz ULC nazywa ich zbieraniem i publikowaniem.",
         "Klucz ULC w pytaniu „W jakim celu ustanowiono służbę informacji lotniczej?” przyjmuje udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów; aktualny przepis tak definiuje służbę informacji powietrznej."
       ],
       "refs": [
@@ -702,8 +702,7 @@
       "heading": "Terminy przedstawienia planu lotu przed odlotem",
       "body": [
         "Pkt SERA.4001 lit. d) rozporządzenia 923/2012 wymaga złożenia planu lotu z przelotem nad granicami międzynarodowymi lub lotu ze służbą kontroli ruchu lotniczego albo doradczą co najmniej 60 minut przed odlotem, o ile właściwy organ nie określi krótszego okresu dla krajowych lotów VFR. AIP Polska (ENR 1.10 pkt 4.8) podaje terminy liczone od EOBT, czyli przewidywanego czasu odblokowania:",
-        "- lot VFR w całości lub w części w przestrzeni kontrolowanej albo z planowanym wlotem w nią – co najmniej 1 godzina;",
-        "- lot VFR z przekroczeniem granicy FIR Warszawa – co najmniej 1 godzina;",
+        "- lot VFR w całości lub w części w przestrzeni kontrolowanej, z planowanym wlotem w nią albo z przekroczeniem granicy FIR Warszawa – co najmniej 1 godzina;",
         "- lot VFR w całości w przestrzeni niekontrolowanej – co najmniej 30 minut (plan jest wymagany m.in. dla lotów, którym ma być zapewniona służba informacji powietrznej i służba alarmowa, pkt 4.5);",
         "- lot IFR niepodlegający regulacjom ATFM – co najmniej 1 godzina, a podlegający regulacjom ATFM w strefie IFPZ – co najmniej 3 godziny.",
         "Lot VFR do CTR lub TMA klasy C wymaga planu lotu i zezwolenia ATC (pkt SERA.6001 lit. a) ppkt 3, SERA.4001 lit. b) ppkt 1); samo pozostawanie w VMC nie wystarcza.",

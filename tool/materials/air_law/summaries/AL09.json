@@ -113,12 +113,12 @@
       "status": "draft",
       "heading": "Obszar kontrolowany, TMA i CTR",
       "body": [
-        "Skróty według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, definicje według art. 2 rozporządzenia 923/2012 i załącznika I do rozporządzenia 2017/373:",
+        "Skróty według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, definicje według rozporządzeń 923/2012 (art. 2) i 2017/373 (załącznik I):",
         "- CTA (Control Area) – obszar kontrolowany, czyli kontrolowana przestrzeń powietrzna rozciągająca się w górę od określonej granicy nad ziemią;",
         "- TMA (Terminal Control Area) – rejon kontrolowany lotniska, obszar kontrolowany ustanawiany zazwyczaj u zbiegu dróg lotniczych w pobliżu jednego lub kilku dużych lotnisk;",
-        "- CTR (Control Zone) – strefa kontrolowana lotniska, rozciągająca się od powierzchni ziemi do określonej górnej granicy; MCTR to strefa kontrolowana lotniska wojskowego.",
-        "Dolna granica CTR leży więc na powierzchni terenu. Dolną granicę obszaru kontrolowanego, a więc także TMA i drogi lotniczej (obszaru kontrolowanego w postaci korytarza), ustala się co najmniej 200 m (700 ft) nad ziemią lub wodą, chyba że właściwy organ postanowi inaczej (załącznik XI do rozporządzenia 2017/373).",
-        "W klasie C wszystkie loty są wykonywane z zapewnieniem służby kontroli ruchu lotniczego i z ciągłą łącznością foniczną powietrze-ziemia, a w klasach C i D każdy lot wymaga zezwolenia ATC (SERA.6001 lit. a) ppkt 3 i 4). Bez zezwolenia lot VFR omija więc czynne lotnisko kontrolowane poza granicą jego CTR lub TMA."
+        "- CTR (Control Zone) – strefa kontrolowana lotniska, rozciągająca się od powierzchni ziemi (terenu) do określonej górnej granicy.",
+        "Dolną granicę obszaru kontrolowanego, a więc także TMA i drogi lotniczej (obszaru kontrolowanego w postaci korytarza), ustala się co najmniej 200 m (700 ft) nad ziemią lub wodą, chyba że właściwy organ postanowi inaczej (załącznik XI do rozporządzenia 2017/373).",
+        "W klasie C wszystkie loty są wykonywane z zapewnieniem służby kontroli ruchu lotniczego i z ciągłą łącznością foniczną powietrze-ziemia, a w klasach C i D każdy lot wymaga zezwolenia ATC (SERA.6001 lit. a) ppkt 3 i 4). W FIR Warszawa klasy A, B i E nie są stosowane (AIP Polska, ENR 1.4), więc CTR i TMA mają klasę C lub D i bez zezwolenia lot VFR omija czynne lotnisko kontrolowane poza granicą jego CTR lub TMA."
       ],
       "refs": [
         {
@@ -152,11 +152,6 @@
           "quote": "„strefa kontrolowana lotniska” oznacza kontrolowaną przestrzeń powietrzną rozciągającą się od powierzchni ziemi do określonej górnej granicy"
         },
         {
-          "src": "PL-ROZP-STRUKTURA-2019",
-          "loc": "§ 2 pkt 29",
-          "quote": "MCTR – (Military CTR) strefę kontrolowaną lotniska wojskowego"
-        },
-        {
           "src": "EU-2017-373",
           "loc": "załącznik XI dodatek 1 sekcja I(b)(2)",
           "quote": "Dolną granicę obszaru kontrolowanego ustala się na wysokości względnej nie mniejszej niż 200 m (700 ft) nad powierzchnią ziemi lub wody, chyba że właściwy organ postanowi inaczej."
@@ -185,6 +180,26 @@
           "src": "EU-923-2012",
           "loc": "SERA.6001(a)(4)",
           "quote": "W przypadku wszystkich lotów obowiązuje zezwolenie ATC."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 przypis ****",
+          "quote": "**** - Klasa nie stosowana w FIR Warszawa."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa A",
+          "quote": "A**** Tylko IFR"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa B",
+          "quote": "B**** IFR Wszystkim"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa E",
+          "quote": "E**** IFR IFR od IFR"
         }
       ],
       "questionKeys": [
@@ -343,7 +358,7 @@
         "- ATM (Air Traffic Management) – zarządzanie ruchem lotniczym: ogół działań polegających na zapewnianiu służb ruchu lotniczego, zarządzaniu przepływem ruchu lotniczego i przestrzenią powietrzną (pkt 10);",
         "- AMC Polska (Airspace Management Cell) – komórka zarządzania przestrzenią powietrzną, cywilno-wojskowa komórka odpowiedzialna za zarządzanie i alokację elastycznych elementów struktury przestrzeni (pkt 4); klucz ULC nazywa ją ośrodkiem zarządzania przestrzenią powietrzną;",
         "- AUP (Airspace Use Plan) – plan użytkowania przestrzeni powietrznej o statusie NOTAM, wydawany przez AMC Polska (pkt 13).",
-        "Nie należy ich mylić z ATFM (Air Traffic Flow Management), czyli zarządzaniem przepływem ruchu lotniczego (pkt 8),",
+        "Nie należy ich mylić z ATFM (Air Traffic Flow Management), czyli zarządzaniem przepływem ruchu lotniczego (pkt 8).",
         "ADIZ (Air Defense Identification Zone) to strefa identyfikacji obrony powietrznej (pkt 1), wydzielana w FIR Warszawa (§ 7 pkt 1). Ograniczenia lotów w strefach ADIZ wprowadza rozporządzenie Ministra Infrastruktury w sprawie zakazów lub ograniczeń lotów (§ 3 ust. 1 pkt 6); według załącznika nr 4 do tego rozporządzenia strefy ADIZ ciągną się wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą, każda o szerokości 15 km w głąb terytorium Polski."
       ],
       "refs": [
@@ -437,7 +452,7 @@
       "status": "draft",
       "heading": "Elastyczne elementy przestrzeni: TSA, TRA, TFR, MRT, CBA",
       "body": [
-        "Według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej (te same rozwinięcia podaje AIP Polska, GEN 2.2):",
+        "Według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej (TSA, TRA i MRT tak samo rozwija AIP Polska, GEN 2.2):",
         "- TSA (Temporary Segregated Area) – strefa czasowo wydzielona; w danym czasie może z niej korzystać wyłącznie jeden podmiot uprawniony (pkt 46, § 18 ust. 1);",
         "- TRA (Temporary Reserved Area) – strefa czasowo rezerwowana (pkt 45); podejmowanie działań w TRA wymaga rezerwacji w AMC Polska (AIP Polska, ENR 5.2.1);",
         "- TFR (TSA or TRA Feeding Route) – trasa lotnicza umożliwiająca lot do TSA albo TRA i przelot między tymi strefami; inne loty nie mogą być w niej wykonywane (pkt 42, § 9 ust. 7);",
@@ -506,6 +521,11 @@
           "src": "PL-ROZP-STRUKTURA-2019",
           "loc": "§ 16 ust. 3",
           "quote": "Korzystanie z TSA, TRA, CBA, MRT oraz TFR wymaga uprzedniego uzyskania rezerwacji"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 MRT",
+          "quote": "Trasa lotnictwa wojskowego"
         }
       ],
       "questionKeys": [
@@ -639,7 +659,7 @@
       "heading": "Port lotniczy i zarządzający lotniskiem",
       "body": [
         "Prawo lotnicze (art. 2) definiuje:",
-        "- zarządzającego lotniskiem – podmiot wpisany jako zarządzający do rejestru lotnisk cywilnych (pkt 7); do rejestru wpisuje się jako zarządzającego zakładającego lotnisko albo, na jego wniosek, inny podmiot (art. 59 ust. 6);",
+        "- zarządzającego lotniskiem – podmiot wpisany jako zarządzający do rejestru lotnisk cywilnych (pkt 7); do rejestru wpisuje się jako zarządzającego m.in. zakładającego lotnisko albo, na jego wniosek, inny podmiot (art. 59 ust. 6);",
         "- port lotniczy – lotnisko użytku publicznego wykorzystywane do lotów handlowych (pkt 17);",
         "- lot handlowy – lot związany z lądowaniem handlowym (pkt 9), czyli lądowaniem w celu zabrania lub pozostawienia pasażerów, bagażu, towarów lub poczty przewożonych odpłatnie (pkt 8).",
         "O tym, kto jest zarządzającym, decyduje wpis do rejestru, a nie pobieranie opłat za start i lądowanie ani sprawowanie nadzoru nad lotniskiem. Samo posiadanie zarządzającego nie wyróżnia portu lotniczego, bo zarządzającego ma każde lotnisko wpisane do rejestru; port lotniczy wyróżniają użytek publiczny i loty handlowe."
