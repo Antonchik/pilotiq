@@ -7055,6 +7055,14 @@
   "textSha": "cb50bcd173000295",
   "verdict": "PASS"
  },
+ "PL010-1559#af2fad09": {
+  "date": "2026-11-25",
+  "note": "Zał. 11 pkt 2.11.5.2: „Boczne granice strefy kontrolowanej lotniska sięgają co najmniej 9,3 km (5 NM) od środka danego lotniska…” – klucz potwierdzony, jedna wersja przepisu (brak dat). Rozp. 2017/373 zał. XI dodatek 1 sekcja I lit. c) zawiera tylko ppkt 1–2 bez odległości, więc nie ma sprzeczności z prawem UE: Załącznik 11 uzupełnia normę UE i jest poprawną podstawą klucza. Lokatory najwęższe, cytaty dosłowne, 2 zdania.",
+  "portion": "ANX",
+  "round": 1,
+  "textSha": "4ec2f5d83eb45ae3",
+  "verdict": "PASS"
+ },
  "PL010-1560#db25d3ed": {
   "date": "2026-11-24",
   "note": "ATO lub DTO = SFCL.130(a), BFCL.130, FCL.210(a); definicja ATO art. 2 pkt 16; AHAC/POA/CTO zgodne z objaśnieniami w załączniku nr 6 (pkt 1, 10, 7). Załącznik 6 nie ma węższego kotwiczenia definicji – lokator najwęższy możliwy.",
@@ -7359,6 +7367,22 @@
   "textSha": "d1c012ab558705f4",
   "verdict": "PASS"
  },
+ "PL099-0058#fcf59a16": {
+  "date": "2026-11-25",
+  "note": "Tekst poprawnie wyjaśnia klucz z dodatku pkt 3.1 lit. b (nocą – dwukrotne włączenie i wyłączenie świateł lądowania lub nawigacyjnych); różnica „kilkakrotne”/„dwukrotne” nie przeczy normie i jedno zdanie wystarcza. Sporność potwierdzona: pkt 5.6.4 każe sygnalizować zrozumienie znaku na ziemi „w sposób podany w punkcie 5.6.3” (zrzucenie urządzenia łączności lub informacji w formie wydruku), a sygnał wizualny dopiero „gdy nie jest to możliwe” – dystraktor „Zrzucenie meldunku potwierdzającego” też jest zgodny z przepisem. 5.6.3–5.6.4 mają jedną wersję (bez dat). disputeNote poprawny (371 znaków), punkty 5.6.3 i 5.6.4 w refs.",
+  "portion": "ANX",
+  "round": 1,
+  "textSha": "d2abea8043340bda",
+  "verdict": "DISPUTED"
+ },
+ "PL099-0059#c379600a": {
+  "date": "2026-11-25",
+  "note": "Klucz = dodatek pkt 3.1 lit. a (w dzień przechylanie ze skrzydła na skrzydło); pkt 3.2 poprawnie użyty. Sporność jak w PL099-0058#fcf59a16: wg pkt 5.6.4 podstawowym sposobem potwierdzenia jest sposób z pkt 5.6.3 (zrzucenie informacji), więc dystraktor „Zrzucenie meldunku potwierdzającego” też jest zgodny z przepisem. disputeNote poprawny, punkty w refs. 3 zdania.",
+  "portion": "ANX",
+  "round": 1,
+  "textSha": "8be7ae8317be1b85",
+  "verdict": "DISPUTED"
+ },
  "PL099-0062#b3518057": {
   "date": "2026-11-25",
   "note": "NCO.OP.175(a) dosłownie odpowiada kluczowi („nie wpłyną ujemnie na bezpieczeństwo startu i odlotu”).",
@@ -7381,6 +7405,22 @@
   "portion": "P27",
   "round": 1,
   "textSha": "bcc7ac2a0a56f52e",
+  "verdict": "PASS"
+ },
+ "PL099-0070#3c7c3ff1": {
+  "date": "2026-11-25",
+  "note": "Zał. 12 dodatek pkt 1.1 lit. a–c (okrążanie co najmniej raz, przecinanie kursu blisko przed jednostką na małej wysokości, przyjęcie kursu) odpowiada kluczowi; pkt 5.6.5 – sygnał wizualny, gdy brak łączności radiowej; pułapka „za rufą” = pkt 1.2. Dodatek obowiązuje bez dat (pkt 5.8.1 odsyła do niego bez ograniczenia czasowego). Drobna uwaga bez wymogu poprawki: przechylanie ze skrzydła na skrzydło to jeden z trzech wariantów lit. b (obok zmiany obrotów silnika i skoku śmigła). 3 zdania, 687 znaków.",
+  "portion": "ANX",
+  "round": 1,
+  "textSha": "3e92159f5b33da79",
+  "verdict": "PASS"
+ },
+ "PL099-0071#62832022": {
+  "date": "2026-11-25",
+  "note": "Sprawdzone na obrazie PDF s. 26 (Dz. Urz. ULC 2025 poz. 31, Dodatek APP-2): tabela 2.1, poz. 2 „Potrzebna pomoc medyczna” – symbol X; poz. 3 „Nie lub Odmowa” – symbol N (poz. 1 V, 4 Y, 5 strzałka). Cytaty podpisów dosłowne z korpusu, opis kształtów zgodny z obrazem. 3 zdania.",
+  "portion": "ANX",
+  "round": 1,
+  "textSha": "5682061560700f08",
   "verdict": "PASS"
  },
  "PL099-0072#8d8a3d1a": {
@@ -7709,6 +7749,14 @@
   "portion": "P02",
   "round": 1,
   "textSha": "58e3bc60576eae0d",
+  "verdict": "PASS"
+ },
+ "PL102-0061#38c95623": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: pytanie identyczne z PL099-0071#62832022, odpowiedzi różnią się tylko wielką literą i kropką; pułapka (odpowiedź negatywna) dotyczy tego samego dystraktora.",
+  "portion": "ANX",
+  "round": 1,
+  "textSha": "253bb5c0e9e946a6",
   "verdict": "PASS"
  },
  "PL102-0063#774ff4ab": {
