@@ -1,0 +1,221 @@
+{
+  "topic": "AL15",
+  "sections": [
+    {
+      "id": "AL15-1",
+      "status": "draft",
+      "heading": "Odpowiedzialność za szkody spowodowane ruchem statków",
+      "body": [
+        "Odpowiedzialność za szkody spowodowane ruchem statków powietrznych podlega przepisom prawa cywilnego o odpowiedzialności za szkody wyrządzone przy posługiwaniu się mechanicznymi środkami komunikacji poruszanymi za pomocą sił przyrody (art. 206 ust. 1 Prawa lotniczego). Nie są to przepisy prawa karnego ani administracyjnego.",
+        "Odpowiedzialność ta nie powstaje, jeżeli szkoda wynikła z samego faktu przelotu statku powietrznego odbywającego się zgodnie z obowiązującymi przepisami (art. 206 ust. 2). Wyłączenie obejmuje tylko przelot zgodny z przepisami. Do odpowiedzialności przewoźnika lotniczego za szkody powstałe przy przewozie lotniczym stosuje się przepisy rozdziału 2 (art. 206 ust. 3).",
+        "Kto odpowiada (art. 207 ust. 1 i 2):",
+        "- osoba eksploatująca statek powietrzny;",
+        "- za osobę eksploatującą uważa się tę, która używała statku w czasie spowodowania szkody.",
+        "Decyduje więc używanie statku w chwili szkody, a odpowiedź „nawet jeżeli nie używała go w czasie spowodowania szkody” przeczy tej definicji. Art. 207 nie wskazuje jako odpowiedzialnych ubezpieczyciela ani właściciela jako takiego. Szczególne przypadki osoby eksploatującej (wpis do rejestru, przekazanie statku, bezprawne użycie) omawia następna część konspektu."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 206 ust. 1",
+          "quote": "Odpowiedzialność za szkody spowodowane ruchem statków powietrznych podlega przepisom prawa cywilnego o odpowiedzialności za szkody wyrządzone przy posługiwaniu się mechanicznymi środkami komunikacji poruszanymi za pomocą sił przyrody"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 206 ust. 2",
+          "quote": "Odpowiedzialność, o której mowa w ust. 1, nie powstaje, jeżeli szkoda wynikła z samego faktu przelotu statku powietrznego odbywającego się zgodnie z obowiązującymi przepisami."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 206 ust. 3",
+          "quote": "Do odpowiedzialności przewoźnika lotniczego za szkody powstałe przy przewozie lotniczym stosuje się przepisy rozdziału 2."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 1",
+          "quote": "Odpowiedzialność za szkody, o których mowa w art. 206, ponosi osoba eksploatująca statek powietrzny."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 2",
+          "quote": "Za osobę eksploatującą statek powietrzny uważa się osobę, która go używała w czasie spowodowania szkody."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0428#497af734",
+        "PL010-0303#a15ffd4e",
+        "PL010-0499#63ebcb0e",
+        "PL010-0499#8d845b55",
+        "PL010-0346#3694eff7",
+        "PL010-0346#a3492a50"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL15-2",
+      "status": "draft",
+      "heading": "Rejestr, przekazanie statku i bezprawne użycie",
+      "body": [
+        "Art. 207 Prawa lotniczego precyzuje, kogo uważa się za osobę eksploatującą i kto odpowiada obok niej:",
+        "- osobę wpisaną do rejestru statków jako użytkownika uważa się za eksploatującą i odpowiedzialną za szkodę, chyba że udowodni, że eksploatującą w danym czasie była inna osoba (ust. 5); ciężar dowodu spoczywa na niej;",
+        "- osobę, która przekazała prawo używania statku innej osobie, uważa się za eksploatującą tylko wtedy, gdy zachowała prawo decydowania w sprawach wykonywania lotu (ust. 3);",
+        "- za używającą statek uważa się osobę, która używa go sama albo przez osoby za nią działające, choćby przekroczyły udzielone im uprawnienia (ust. 4);",
+        "- odpowiedzialność ponosi również osoba, która bezprawnie używa statku; solidarnie z nią odpowiadają osoby z ust. 1–5, chyba że użycie statku nastąpiło bez ich winy (ust. 6);",
+        "- solidarnie z osobami z ust. 1–6 odpowiadają osoby, z których winy szkoda powstała (ust. 7).",
+        "Błędne odpowiedzi w pytaniach ULC zwykle odwracają te warunki: „nawet jeżeli udowodni”, „nawet jeżeli nie zachowała prawa decydowania”. Klucz ULC w jednym z pytań łączy ust. 6 z ust. 2: odpowiada ten, kto bezprawnie eksploatuje statek w czasie spowodowania szkody. Art. 207 nie przewiduje solidarnej odpowiedzialności pasażerów jako takich."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 5",
+          "quote": "Osobę wpisaną do rejestru statków jako użytkownika uważa się za osobę eksploatującą statek powietrzny i ponoszącą odpowiedzialność za szkodę, chyba że udowodni, że eksploatującą w danym czasie była inna osoba."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 3",
+          "quote": "Osobę, która przekazała prawo używania statku powietrznego innej osobie, uważa się za eksploatującą statek powietrzny, jeżeli zachowała prawo decydowania w sprawach wykonywania lotu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 4",
+          "quote": "Za używającą statek powietrzny uważa się osobę, która używa go bądź sama, bądź przez osoby za nią działające, choćby przekroczyły udzielone im uprawnienia."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 6",
+          "quote": "Odpowiedzialność za szkody ponosi również osoba, która bezprawnie używa statku powietrznego; solidarnie z nią odpowiedzialność ponoszą osoby określone w ust. 1–5, chyba że użycie statku powietrznego nastąpiło bez ich winy."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 7",
+          "quote": "Solidarnie z osobami określonymi w ust. 1–6 odpowiadają osoby, z których winy szkoda powstała."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 207 ust. 2",
+          "quote": "Za osobę eksploatującą statek powietrzny uważa się osobę, która go używała w czasie spowodowania szkody."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0303#4d31e791",
+        "PL010-0500#165b96e8",
+        "PL010-0500#838017dd",
+        "PL010-0504#52e70515",
+        "PL010-0504#da38054e",
+        "PL010-0505#875df351",
+        "PL010-0505#ab8fbc2f",
+        "PL010-0304#4235d859",
+        "PL010-0501#0a859e5d",
+        "PL010-0501#406114e9",
+        "PL010-0502#bc260424",
+        "PL010-0502#cc4a1d31",
+        "PL010-0503#63d6f655",
+        "PL010-0506#47f87807",
+        "PL010-0506#e47ac7c7"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL15-3",
+      "status": "draft",
+      "heading": "Prawo właściwe dla roszczeń o szkody",
+      "body": [
+        "Prawo właściwe dla zobowiązania ze zdarzenia niebędącego czynnością prawną określa rozporządzenie (WE) nr 864/2007 („Rzym II”), do którego odsyła art. 33 ustawy – Prawo prywatne międzynarodowe. Zasada ogólna dla czynów niedozwolonych (art. 4 rozporządzenia Rzym II):",
+        "- prawem właściwym jest prawo państwa, w którym powstaje szkoda, niezależnie od tego, w jakim państwie miało miejsce zdarzenie powodujące szkodę (ust. 1);",
+        "- jeżeli osoba, której przypisuje się odpowiedzialność, i poszkodowany mają w chwili powstania szkody miejsce zwykłego pobytu w tym samym państwie, stosuje się prawo tego państwa (ust. 2);",
+        "- jeżeli czyn pozostaje w znacznie ściślejszym związku z innym państwem, stosuje się prawo tego innego państwa (ust. 3).",
+        "Przy szkodach wyrządzonych osobom i mieniu poza statkiem powietrznym oraz przy zderzeniu statków na obszarze danego państwa daje to prawo państwa, na którego obszarze zdarzenie nastąpiło. Prawo właściwe nie zależy od państwa rejestracji statku winnego lub niewinnego ani od państwa sądu.",
+        "Art. 12 Prawa lotniczego jest uchylony. Pytania ULC o prawo sądu, wspólną przynależność państwową czy pomoc udzieloną statkowi powietrznemu opierają się na dawnych przepisach i nie są tu omawiane."
+      ],
+      "refs": [
+        {
+          "src": "PL-PPM-2011",
+          "loc": "art. 33",
+          "quote": "Prawo właściwe dla zobowiązania ze zdarzenia niebędącego czynnością prawną określa rozporządzenie (WE) nr 864/2007/WE"
+        },
+        {
+          "src": "EU-864-2007",
+          "loc": "art. 4 ust. 1",
+          "quote": "prawem właściwym dla zobowiązania pozaumownego wynikającego z czynu niedozwolonego jest prawo państwa, w którym powstaje szkoda, niezależnie od tego, w jakim państwie miało miejsce zdarzenie powodujące szkodę"
+        },
+        {
+          "src": "EU-864-2007",
+          "loc": "art. 4 ust. 2",
+          "quote": "w przypadku gdy osoba, której przypisuje się odpowiedzialność i poszkodowany mają, w chwili powstania szkody, miejsce zwykłego pobytu w tym samym państwie, stosuje się prawo tego państwa"
+        },
+        {
+          "src": "EU-864-2007",
+          "loc": "art. 4 ust. 3",
+          "quote": "Jeżeli ze wszystkich okoliczności sprawy wyraźnie wynika, że czyn niedozwolony pozostaje w znacznie ściślejszym związku z państwem innym niż państwo wskazane w ust. 1 lub 2, stosuje się prawo tego innego państwa."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 12",
+          "quote": "(uchylony)"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0454#cfe42ec0",
+        "PL010-0455#b7b5fce3"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL15-4",
+      "status": "draft",
+      "heading": "Przepisy karne Prawa lotniczego",
+      "body": [
+        "Polską ustawę karną stosuje się do obywateli polskich i cudzoziemców, którzy popełnili za granicą przestępstwo lub wykroczenie przeciwko przepisom, o których mowa w art. 8 Prawa lotniczego (art. 9 pkt 2). Art. 8 stanowi, że lot i manewrowanie statku powietrznego odbywają się zgodnie z przepisami obowiązującymi w granicach danego terytorium, a na obszarze niepodlegającym zwierzchnictwu żadnego państwa – zgodnie z przepisami międzynarodowymi. Przepis obejmuje obie grupy sprawców, a nie tylko jedną z nich.",
+        "Kary w art. 210 i 211 Prawa lotniczego:",
+        "- karze grzywny podlega m.in. ten, kto wbrew art. 158, będąc użytkownikiem statku powietrznego lub działając za osobę prawną będącą takim użytkownikiem, narusza obowiązki w zakresie bezpiecznej eksploatacji statków powietrznych (art. 210 ust. 1 pkt 10); orzekanie następuje w trybie przepisów o postępowaniu w sprawach o wykroczenia (art. 210 ust. 4);",
+        "- grzywnie, karze ograniczenia wolności lub pozbawienia wolności do roku podlega m.in. ten, kto wykonuje lot statkiem powietrznym nieposiadającym wymaganej zdatności do lotów (art. 211 ust. 1 pkt 1)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 9",
+          "quote": "Polską ustawę karną stosuje się do obywateli polskich i cudzoziemców, którzy popełnili za granicą:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 9 pkt 2",
+          "quote": "przestępstwo lub wykroczenie przeciwko przepisom, o których mowa w art. 8"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 8",
+          "quote": "Lot i manewrowanie statku powietrznego odbywają się zgodnie z przepisami obowiązującymi w granicach danego terytorium, a na obszarze niepodlegającym zwierzchnictwu żadnego państwa – zgodnie z przepisami międzynarodowymi."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 210 ust. 1 pkt 10",
+          "quote": "wbrew art. 158 ustawy, będąc użytkownikiem statku powietrznego lub działając za osobę prawną będącą takim użytkownikiem, narusza obowiązki w zakresie bezpiecznej eksploatacji statków powietrznych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 210 ust. 1",
+          "quote": "– podlega karze grzywny."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 210 ust. 4",
+          "quote": "W przypadkach określonych w ust. 1–3 orzekanie następuje w trybie przepisów o postępowaniu w sprawach o wykroczenia."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 211 ust. 1 pkt 1",
+          "quote": "wykonuje lot przy użyciu statku powietrznego nieposiadającego wymaganej zdatności do lotów"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 211 ust. 1",
+          "quote": "– podlega grzywnie, karze ograniczenia wolności lub pozbawienia wolności do roku."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0626#58a57219",
+        "PL099-0041#53193328"
+      ],
+      "disputeNote": null
+    }
+  ]
+}

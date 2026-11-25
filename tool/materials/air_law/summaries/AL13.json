@@ -1,0 +1,297 @@
+{
+  "topic": "AL13",
+  "sections": [
+    {
+      "id": "AL13-1",
+      "status": "draft",
+      "heading": "Dostępność polskiej przestrzeni powietrznej",
+      "body": [
+        "Polska przestrzeń powietrzna jest dostępna na równych prawach dla wszystkich jej użytkowników (art. 119 ust. 1 Prawa lotniczego). Przepis nie daje pierwszeństwa żadnej grupie statków powietrznych i nie ogranicza równych praw do użytkowników polskich.",
+        "Swoboda lotów cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych, w tym uchwał organizacji międzynarodowych. Podstawą ograniczenia nie jest więc sama decyzja Prezesa ULC, Prezydenta RP ani Ministra Obrony Narodowej.",
+        "Dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na (art. 119 ust. 3):",
+        "- obronność państwa;",
+        "- bezpieczeństwo publiczne;",
+        "- ochronę przyrody (w odpowiedziach ULC ujętą jako ochrona środowiska);",
+        "- bezpieczeństwo ruchu lotniczego.",
+        "Warunki pogodowe nie są przesłanką takiego ograniczenia. Kto i w jakiej formie wprowadza zakazy, jak wyglądają zakazy lotów nad miastami i parkami narodowymi oraz kiedy organy mogą wezwać statek do lądowania, omawiają kolejne części konspektu."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 1",
+          "quote": "Polska przestrzeń powietrzna jest dostępna na równych prawach dla wszystkich jej użytkowników, a swoboda lotów w niej cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 3",
+          "quote": "Dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0004#9cb08255",
+        "PL010-0164#2fe1de9a",
+        "PL010-0188#d12c7188",
+        "PL010-0004#809f9cbb",
+        "PL010-0164#5ca7e0eb",
+        "PL010-0188#ad4d889e"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL13-2",
+      "status": "draft",
+      "heading": "Kto wprowadza zakazy i ograniczenia lotów",
+      "body": [
+        "Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na (art. 119 ust. 2 Prawa lotniczego):",
+        "- ważny interes polityki zagranicznej RP;",
+        "- względy obronności i bezpieczeństwa RP;",
+        "- ważny interes gospodarczy RP;",
+        "- zobowiązania RP z umów międzynarodowych, zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ.",
+        "Formą jest rozporządzenie, nie zarządzenie, decyzja ani publikacja w Dzienniku Urzędowym ULC. Gospodarka rolna i leśna, służba zdrowia, reklama oraz poszukiwanie i ratownictwo to potrzeby, dla których art. 123 ust. 2 dopuszcza zrzuty, a nie przesłanki zakazów.",
+        "Minister właściwy do spraw transportu, w porozumieniu z Ministrem Obrony Narodowej i ministrami właściwymi do spraw klimatu, wewnętrznych oraz środowiska, w drodze rozporządzeń (art. 119 ust. 4):",
+        "- może wprowadzić zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące;",
+        "- określa zasady, na jakich instytucje zapewniające służby ruchu lotniczego wprowadzają ograniczenia lotów w części przestrzeni na czas nie dłuższy niż 3 miesiące, i sposób ich publikacji.",
+        "Minister może też ograniczyć lub zakazać lotów statków niespełniających wymogów ochrony przed hałasem (art. 119 ust. 5). Odpowiedzi ULC pomijają ministra do spraw klimatu i mówią o „państwowym organie zarządzania ruchem lotniczym”, a obecny przepis – o instytucjach zapewniających służby ruchu lotniczego."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 2",
+          "quote": "Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 2 pkt 1",
+          "quote": "ważny interes polityki zagranicznej Rzeczypospolitej Polskiej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 2 pkt 2",
+          "quote": "względy obronności i bezpieczeństwa Rzeczypospolitej Polskiej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 2 pkt 3",
+          "quote": "ważny interes gospodarczy Rzeczypospolitej Polskiej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 2 pkt 4",
+          "quote": "zobowiązania Rzeczypospolitej Polskiej wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2",
+          "quote": "Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 3",
+          "quote": "służby zdrowia"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 4",
+          "quote": "poszukiwania i ratownictwa"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 6",
+          "quote": "reklamy"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 7",
+          "quote": "gospodarki rolnej i leśnej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 4",
+          "quote": "Minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej, ministrami właściwymi do spraw klimatu, wewnętrznych oraz środowiska, w drodze rozporządzeń"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 4 pkt 1",
+          "quote": "może wprowadzić zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 4 pkt 2",
+          "quote": "określi zasady wprowadzania przez instytucje zapewniające służby ruchu lotniczego ograniczeń lotów w części przestrzeni powietrznej, których czas trwania nie będzie dłuższy niż 3 miesiące, oraz sposób publikacji tych ograniczeń"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 119 ust. 5",
+          "quote": "wprowadzić ograniczenia lub zakazy lotów dla statków powietrznych niespełniających wymogów ochrony środowiska w zakresie ochrony przed hałasem"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0574#a58ca725",
+        "PL010-0574#257d28ca",
+        "PL010-0575#21fa30b8",
+        "PL010-0575#ed152e3c",
+        "PL010-0602#3ef571be",
+        "PL010-0007#4770af24",
+        "PL010-0007#75da7961",
+        "PL010-0007#d367756c",
+        "PL010-0127#2bc84d70",
+        "PL010-0127#61f18628",
+        "PL010-0310#f72d1895",
+        "PL010-0312#9aab0b48",
+        "PL010-0312#e46f8838"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL13-3",
+      "status": "draft",
+      "heading": "Loty nad miastami i parkami narodowymi",
+      "body": [
+        "Rozporządzenie Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące zabrania lotów nad miastami poniżej wysokości nad poziomem terenu (§ 3 ust. 1 pkt 2):",
+        "- powyżej 25 000 do 50 000 mieszkańców: 500 m dla śmigłowców i samolotów tłokowych, 1000 m dla samolotów wyposażonych w inne silniki;",
+        "- powyżej 50 000 do 100 000 mieszkańców: 1000 m;",
+        "- powyżej 100 000 mieszkańców: 1500 m;",
+        "- miasto stołeczne Warszawa: 2000 m.",
+        "Wysokości liczy się nad poziomem terenu (GND, § 2 pkt 10), a nie nad średnim poziomem morza (AMSL) ani od wierzchołków przeszkód. Pytania ULC mówią o „strefie R”, lecz loty nad miastami ogranicza odrębny zakaz, a strefy R określa załącznik nr 3.",
+        "Nad parkami narodowymi i rezerwatami przyrody zabrania się lotów statkami z napędem poniżej wysokości względnych podanych przez instytucje zapewniające służby ruchu lotniczego (art. 124 ust. 1 Prawa lotniczego), a nad parkami wyznaczono strefy R (AIP Polska, ENR 1.10 pkt 3.9.3). Lot nad parkiem na odpowiedniej wysokości jest więc dozwolony.",
+        "Klucz ULC w pytaniu o śmigłowiec lub samolot z silnikiem innym niż tłokowy nad miastem od 25 000 do 50 000 mieszkańców przyjmuje 500 m; aktualny przepis wymaga od takiego samolotu 1000 m."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 2",
+          "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 2 lit. a",
+          "quote": "o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 2 lit. a",
+          "quote": "mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 2 lit. b",
+          "quote": "o liczbie mieszkańców powyżej 50 000 do 100 000 – na wysokości mniejszej niż 1000 m nad poziomem terenu"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 2 lit. c",
+          "quote": "o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 2 lit. d",
+          "quote": "miasta stołecznego Warszawy – na wysokości mniejszej niż 2000 m nad poziomem terenu"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 2 pkt 10",
+          "quote": "GND – (Ground) poziom terenu"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 2 pkt 5",
+          "quote": "AMSL – (Above Mean Sea Level) nad średnim poziomem morza"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 5",
+          "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 124 ust. 1",
+          "quote": "Zabrania się wykonywania lotów statkami powietrznymi z napędem nad obszarami parków narodowych i rezerwatów przyrody poniżej wysokości względnych podanych przez instytucje zapewniające służby ruchu lotniczego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.9.3",
+          "quote": "stref ograniczonych (R) wyznaczonych nad parkami narodowymi"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0243#808177a8",
+        "PL010-0244#5810ba89",
+        "PL010-0244#e370aaec",
+        "PL010-0245#4ae2e2e4",
+        "PL010-0246#22a37308",
+        "PL010-0247#54dc8471",
+        "PL099-0008#bd18648f"
+      ],
+      "disputeNote": "Według § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r. samoloty wyposażone w silniki inne niż tłokowe nie mogą lecieć nad miastami od 25 000 do 50 000 mieszkańców niżej niż 1000 m nad poziomem terenu, więc dla samolotu z pytania właściwa byłaby odpowiedź 1000 m. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL13-4",
+      "status": "draft",
+      "heading": "Polecenia organów i wezwanie do lądowania",
+      "body": [
+        "Użytkownik polskiej przestrzeni powietrznej jest obowiązany do niezwłocznego wykonywania poleceń (art. 122 ust. 1 Prawa lotniczego):",
+        "- instytucji zapewniających służby ruchu lotniczego;",
+        "- cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego;",
+        "- organów dowodzenia obroną powietrzną;",
+        "- a także poleceń przekazanych mu przez wojskowe statki powietrzne.",
+        "Organy te mogą wezwać cywilny statek powietrzny do zmiany kierunku lub wysokości lotu, do lądowania na wskazanym lotnisku albo do wykonania innych poleceń przywracających stan zgodny z prawem (art. 122 ust. 2), gdy statek leci wbrew zakazom lub ograniczeniom wprowadzonym na podstawie art. 119 ust. 2, 4 lub 5 albo zakazowi z art. 119a, lub gdy istnieją uzasadnione obawy, że jest używany do działań sprzecznych z prawem.",
+        "Wykonywanie tych przepisów nie może naruszać bezpieczeństwa osób na pokładzie (art. 122 ust. 3), stąd odpowiedź „Tak, ale bez narażania na niebezpieczeństwo osób”. Wezwanie nie wymaga zgody Prezesa ULC ani ministra. Podstawą nie są: pogorszenie warunków meteorologicznych poniżej minimów, brak opłaty nawigacyjnej, miejsce rejestracji statku ani choroba osoby na pokładzie. Odpowiedzi ULC używają dawnych nazw organów („państwowy organ zarządzania ruchem lotniczym”, „właściwe organy wojskowe”)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 1",
+          "quote": "jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego, a także organów dowodzenia obroną powietrzną, jak również poleceń przekazanych mu przez wojskowe statki powietrzne"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 2",
+          "quote": "w przypadku gdy cywilny statek powietrzny wykonuje lot wbrew zakazom lub ograniczeniom, o których mowa w przepisach wydanych na podstawie art. 119 ust. 2, 4 lub 5, zakazowi, o którym mowa w art. 119a"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 2",
+          "quote": "lub gdy istnieją uzasadnione obawy, że cywilny statek powietrzny jest używany do działań sprzecznych z prawem, mogą wezwać statek do:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 2 pkt 1",
+          "quote": "odpowiedniej zmiany kierunku lub wysokości lotu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 2 pkt 2",
+          "quote": "lądowania na wskazanym przez ten organ lotnisku"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 2 pkt 3",
+          "quote": "wykonania innych poleceń, mających na celu przywrócenie stanu zgodnego z prawem"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 3",
+          "quote": "Wykonywanie przepisów ust. 1 i 2 nie może naruszać bezpieczeństwa osób będących na pokładzie statku powietrznego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0041#eb6afb3c",
+        "PL010-0045#02eb9763",
+        "PL010-0045#34b063f5",
+        "PL010-0128#8f48360d",
+        "PL010-0128#0798a652",
+        "PL010-0294#3511c5ec",
+        "PL010-0295#3576cca2",
+        "PL010-0296#961f776a",
+        "PL010-0296#97a1fbeb",
+        "PL010-0297#2746deab",
+        "PL010-0297#bca9a0b9",
+        "PL010-0476#97a1fbeb",
+        "PL010-0476#b2ed7e8b",
+        "PL010-0477#040e6301",
+        "PL010-0477#bca9a0b9"
+      ],
+      "disputeNote": null
+    }
+  ]
+}
