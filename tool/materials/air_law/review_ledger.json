@@ -543,6 +543,22 @@
   "textSha": "141ab36ad1c95c19",
   "verdict": "PASS"
  },
+ "PL010-0065#adc07f82": {
+  "date": "2026-11-25",
+  "note": "Klucz UTC = SERA.3401(a); przepis nie rozróżnia ruchu kontrolowanego i niekontrolowanego.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "ab0a1a3bf7252cc5",
+  "verdict": "PASS"
+ },
+ "PL010-0071#b3ef6324": {
+  "date": "2026-11-25",
+  "note": "AIP GEN 3.3 pkt 3 wymienia FIS, służbę alarmową i ATC w przestrzeni kontrolowanej; powiązania SERA.8001(a)/(b), SERA.9001(a)(1), SERA.10001(a)(1) poprawne.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "79d33f60cc1d6f38",
+  "verdict": "PASS"
+ },
  "PL010-0071#d13b854e": {
   "date": "2026-11-24",
   "note": "Klucz CTA = § 4 ust. 1 pkt 1; CTR i TRA/CBA z § 4 ust. 1 pkt 2 i 3, pułapka ATZ/MATZ z § 5 ust. 1 pkt 2 i 3 – zgodne z korpusem. Dystraktor «CTA i TSA» nie zyskuje oparcia: TSA nie ma w § 4 ust. 1, a § 5 ust. 1 pkt 4 zalicza ją do przestrzeni niekontrolowanej; § 9 ust. 4 (TSA może być klasyfikowana jak przestrzeń kontrolowana) to niespójność aktu, a nie podstawa do sporu. 3 zdania.",
@@ -1439,6 +1455,14 @@
   "textSha": "4340c80579cfec82",
   "verdict": "PASS"
  },
+ "PL010-0195#a6abe391": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 121 ust. 1 pkt 1–3 Prawa lotniczego; zaliczenie FIS/ALRS/ATC do służb ruchu lotniczego i ANS zgodne z art. 2 pkt 10 i pkt 5 rozporządzenia 2024/2803.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "7520fd72f5160614",
+  "verdict": "PASS"
+ },
  "PL010-0195#db2ebae9": {
   "date": "2026-11-24",
   "note": "Klucz = art. 121 ust. 1 pkt 1–3 Prawa lotniczego dosłownie; art. 2 pkt 9 rozp. 2024/2803 potwierdza. Uwaga: topics.json ma ten klucz w gaps.noSource – źródło jest w korpusie.",
@@ -1645,6 +1669,14 @@
   "portion": "P21",
   "round": 1,
   "textSha": "80e00d104bdbd9b6",
+  "verdict": "PASS"
+ },
+ "PL010-0224#41c9ad34": {
+  "date": "2026-11-25",
+  "note": "AIP GEN 3.3 pkt 3 (ACC WARSZAWA, organy FIS, organ AFIS) i pkt 1.4–1.5 (AFIS EPBY, EPSY) potwierdzają klucz „FIS, AFIS oraz ACC”.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "8fd1940a6b5dc77a",
   "verdict": "PASS"
  },
  "PL010-0225#2d52c258": {
@@ -2543,6 +2575,14 @@
   "textSha": "9200ab181906ab70",
   "verdict": "PASS"
  },
+ "PL010-0365#4d65e6d8": {
+  "date": "2026-11-25",
+  "note": "Polska definicja (art. 2 pkt 38) nie zawiera uwagi, ale GM1 Article 2(38) w korpusie EASA-EAR-SERA brzmi dosłownie „The aerodrome from which a flight departs may also be an en-route or a destination alternate aerodrome for that flight” – wystarcza, ref easa bez quote poprawny. Opcjonalnie: ta sama uwaga jest w definicjach ICAO Doc 4444 (Destination alternate, Note).",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "2a46f55a47068578",
+  "verdict": "PASS"
+ },
  "PL010-0367#f5f25476": {
   "date": "2026-11-24",
   "note": "Klucz = art. 155 ust. 1 (inspekcja i sprawdzenie dokumentów przez Prezesa Urzędu). Brak zależności od zgody wynika z ust. 4, a ust. 2 („podlegają inspekcji”) też go wspiera.",
@@ -2597,6 +2637,14 @@
   "portion": "P18",
   "round": 1,
   "textSha": "faa1f716acd3a16d",
+  "verdict": "PASS"
+ },
+ "PL010-0382#d98de423": {
+  "date": "2026-11-25",
+  "note": "Art. 127 ust. 4 (certyfikacja przez Prezesa Urzędu) i ust. 2 (wyznaczenie przez ministra) zgodne z tekstem; wniosek „certyfikat jest podstawą działania” uprawniony.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "c4bae37cd38c40a4",
   "verdict": "PASS"
  },
  "PL010-0385#3452b84a": {
@@ -2671,12 +2719,36 @@
   "textSha": "45eada4973ea7308",
   "verdict": "PASS"
  },
+ "PL010-0397#c3c4ff37": {
+  "date": "2026-11-25",
+  "note": "Klucz = SERA.8020(b)(1) („natychmiast zmienia się kurs, aby jak najprędzej wejść ponownie na linię drogi”). Pułapka (3/7 minut, zezwolenie na zmianę trasy) zgodna z przepisem.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "cdeab5748207292c",
+  "verdict": "PASS"
+ },
  "PL010-0398#4a7bfa3f": {
   "date": "2026-11-24",
   "note": "Klucz (niezwłocznie podać poprawiony czas) zgodny z SERA.8020(b)(4): próg 2 minuty, różnica > 3 min go przekracza; przesłanka pytania («trzy minuty») pochodzi ze starych przepisów, ale odpowiedź pozostaje prawidłowa — nie outdated, nie sporne. Pułapka (powiadomienie, nie zmiana prędkości/trasy) zgodna z ppkt 4.",
   "portion": "P17",
   "round": 1,
   "textSha": "41d583d6dc5ca31b",
+  "verdict": "PASS"
+ },
+ "PL010-0399#f1407309": {
+  "date": "2026-11-25",
+  "note": "Sporne słusznie: działanie z klucza (powiadomienie organu ATS) = SERA.8020(b)(3), ale aktualny próg to „co najmniej plus/minus 0,02 Macha lub co najmniej plus/minus 19 km/h (10 kt) prędkości rzeczywistej”, a nie 5% z treści pytania (np. przy TAS 100 kt 5% = 5 kt, poniżej progu). Ponieważ kluczem jest czynność, a nie wartość progu (inaczej niż w 0395#c745c3c9 z P17 → outdated), kwalifikacja disputed, nie outdated, jest właściwa. disputeNote poprawny, punkt w refs.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "869d1c5266ab2ba1",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0402#7dbf50d2": {
+  "date": "2026-11-25",
+  "note": "Definicja z art. 2 pkt 52 rozporządzenia 923/2012; sposób określenia granicy (znaczący punkt, lotnisko lub granica przestrzeni kontrolowanej) sprawdzony w ICAO Doc 4444 pkt 4.5.7.1.1 (EN) – parafraza wierna, bez cytatu (reference-only), zgodnie z praktyką P18/P20/P22.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "8ab32991d7f214c9",
   "verdict": "PASS"
  },
  "PL010-0403#22537431": {
@@ -2727,6 +2799,14 @@
   "textSha": "e2e46d5723474dba",
   "verdict": "PASS"
  },
+ "PL010-0411#3d5f9a58": {
+  "date": "2026-11-25",
+  "note": "Sporne słusznie: AIP ENR 1.10 pkt 6.1 UWAGA 2 podaje 30 minut dla lotu kontrolowanego (klucz) i 1 godzinę dla lotu niekontrolowanego, więc „60 min.” też ma oparcie; AIP nie używa pojęcia „ważności” planu. Cytaty z polskiej kolumny, locator najwęższy (brak podjakorów uwag). disputeNote poprawny.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "a2122d5683d02dca",
+  "verdict": "DISPUTED"
+ },
  "PL010-0412#0dbffc6f": {
   "date": "2026-11-24",
   "note": "FCL.045(a) i (b) dosłownie; klucz (orzeczenie + dokument ze zdjęciem) kompletny, warianty „tylko” słusznie odrzucone.",
@@ -2741,6 +2821,22 @@
   "portion": "P18",
   "round": 1,
   "textSha": "482bc4c9878663c9",
+  "verdict": "PASS"
+ },
+ "PL010-0414#4a61008b": {
+  "date": "2026-11-25",
+  "note": "Klucz = AIP ENR 1.10 pkt 3.6.4.1 („N – a następnie cztery cyfry … w węzłach (np. N0485)”); pułapka M/K z tego samego punktu.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "ab319f4b6036a144",
+  "verdict": "PASS"
+ },
+ "PL010-0414#fd9708dd": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różnica tylko w dystraktorze „Kilometry na godzinę km / h.”; pułapka oryginału (K = km/h) go obejmuje.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "394c651d6109bb5f",
   "verdict": "PASS"
  },
  "PL010-0425#9575bd85": {
@@ -2781,6 +2877,46 @@
   "portion": "P28",
   "round": 1,
   "textSha": "8df9c2465771aec4",
+  "verdict": "PASS"
+ },
+ "PL010-0429#d3694b1a": {
+  "date": "2026-11-25",
+  "note": "Klucz poprawny (ENR 1.10 pkt 4.8 lit. d): 1 godzina przed EOBT; SERA.4001(d)(3) 60 minut). Błąd w pułapce: „30 minut AIP dopuszcza tylko dla lotów VFR w całości w przestrzeni niekontrolowanej” – pkt 4.8 lit. g) podaje też 30 minut przed EOBT dla zastępczych planów lotu (RFP), więc „tylko” jest nieprawdziwe. Poprawka: „Pułapka: 30 minut dotyczy lotów VFR zaplanowanych w całości w przestrzeni niekontrolowanej (lit. c)), a 10 minut planu lotu składanego podczas lotu (SERA.4001 lit. d) ppkt 4).” Przy okazji można skrócić zdanie o SERA (616 znaków, blisko limitu).",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "0a7574fa9051bd62",
+  "verdict": "FIX"
+ },
+ "PL010-0430#219a77cc": {
+  "date": "2026-11-25",
+  "note": "Klucz = SERA.4001(d)(4)(ii) (10 minut przed przybyciem do punktu przecięcia drogi lotniczej); pułapka 60 minut z (d)(3).",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "e843090d9293dcf8",
+  "verdict": "PASS"
+ },
+ "PL010-0431#29600c46": {
+  "date": "2026-11-25",
+  "note": "Klucz = SERA.4001(d)(4)(i) (punkt wejścia do obszaru kontrolowanego); pułapka z (d)(3).",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "85786a50a53eb25d",
+  "verdict": "PASS"
+ },
+ "PL010-0432#e26650a3": {
+  "date": "2026-11-25",
+  "note": "Klucz = SERA.4001(d)(4)(ii); pułapka: terminy od EOBT (ppkt 1–2) i od odlotu (ppkt 3) dotyczą planu składanego przed lotem – zgodne z (d).",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "c1f05f699473e615",
+  "verdict": "PASS"
+ },
+ "PL010-0433#8860ac9b": {
+  "date": "2026-11-25",
+  "note": "Klucz = SERA.4001(d)(4)(i); pułapka jak w 0432, zgodna z (d)(1)–(3).",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "8c4ad5e37089e359",
   "verdict": "PASS"
  },
  "PL010-0434#52a1b469": {
@@ -3183,6 +3319,22 @@
   "textSha": "7663d57b69515685",
   "verdict": "PASS"
  },
+ "PL010-0472#5403c78a": {
+  "date": "2026-11-25",
+  "note": "Sporne słusznie: 60 minut = SERA.4001(d)(3) i ENR 1.10 pkt 4.8 lit. b), d)–f), ale pkt 4.8 lit. c) dopuszcza 30 minut przed EOBT dla lotu VFR w całości w przestrzeni niekontrolowanej (SERA.4001(d) pozwala właściwemu organowi ustalić krótszy okres dla krajowych lotów VFR), więc „30 min.” też jest obronne. Pułapka 3 godziny (lit. a)) zgodna. disputeNote poprawny, punkt w refs.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "7595ddbcc79be0c1",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0472#96ac0085": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różnica tylko w spacji przed „?”.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "e0eab2ac60eb3ba7",
+  "verdict": "PASS"
+ },
  "PL010-0473#c96c1aeb": {
   "date": "2026-11-24",
   "note": "Klucz 15 min = ENR 1.10 pkt 5.1.3.1 dosłownie; DLA/CHG pkt 5.1.2; 30 min pkt 5.1.3.2 (wartość spoza opcji, ale poparta i pomocna).",
@@ -3455,6 +3607,14 @@
   "textSha": "39169f005102de0c",
   "verdict": "PASS"
  },
+ "PL010-0513#89556111": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 2 pkt 59 rozporządzenia 923/2012; pułapka (klasa E – zezwolenie tylko dla IFR, klasa G – bez zezwolenia) zgodna z SERA.6001(a)(5) i (a)(7).",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "decbeccf456e06c0",
+  "verdict": "PASS"
+ },
  "PL010-0514#2e030923": {
   "date": "2026-11-24",
   "note": "Klucz 450 m = SERA.5005(b)(1) i ENR 1.2 pkt 6 a); uzupełnienie o (b)(2) poprawne.",
@@ -3685,6 +3845,70 @@
   "portion": "P13",
   "round": 1,
   "textSha": "672752d172af300f",
+  "verdict": "PASS"
+ },
+ "PL010-0545#dbc84777": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.1 (I – cały lot IFR); pułapka (V; X i N jako druga litera – rodzaj lotu, pkt 3.2/3.2.2) zgodna.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "b566c36157529d34",
+  "verdict": "PASS"
+ },
+ "PL010-0546#3ae0eeb4": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.2 (X – lot innego rodzaju niż S, N, G, M) oraz RMK/ w polu 18; pułapka I z pkt 3.2.1.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "e48cfc35bf2fbf86",
+  "verdict": "PASS"
+ },
+ "PL010-0547#dd0d55be": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.2 (G); O i W rzeczywiście nie występują w wykazie S/N/G/M/X.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "cce9105700737878",
+  "verdict": "PASS"
+ },
+ "PL010-0548#b1448ffd": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.2 (N); pułapka S/X oraz V z pkt 3.2.1 zgodna.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "52114e05d09f1162",
+  "verdict": "PASS"
+ },
+ "PL010-0549#05cb8f55": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.2 (S); R nie występuje w wykazie.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "9dc3abc466352c91",
+  "verdict": "PASS"
+ },
+ "PL010-0550#6af10690": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.1 (V); pułapka I oraz N/S z pkt 3.2.2 zgodna.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "ca72124eb4cd3ed2",
+  "verdict": "PASS"
+ },
+ "PL010-0552#f1b6bbd1": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.1 (Y – najpierw IFR, potem zmiana przepisów); pułapka Z/I/X zgodna.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "100201400cf15efe",
+  "verdict": "PASS"
+ },
+ "PL010-0553#6cea4450": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.2.1 (Z – najpierw VFR); pułapka Y/V/I zgodna.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "d7a5ed744087acf9",
   "verdict": "PASS"
  },
  "PL010-0554#a05beff0": {
@@ -3951,6 +4175,14 @@
   "textSha": "6158427c5328714d",
   "verdict": "PASS"
  },
+ "PL010-0589#c67cd8d3": {
+  "date": "2026-11-25",
+  "note": "Klucz (plan lotu + zezwolenie ATC) = SERA.6001(a)(3) („W przypadku wszystkich lotów obowiązuje zezwolenie ATC”) i SERA.4001(b)(1), potwierdzone ENR 1.10 pkt 4.5 lit. b). Pułapka to jedno zdanie oparte na SERA.8001(b) – dopuszczalne; 3 zdania, 582 znaki.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "6a25cdc517715a39",
+  "verdict": "PASS"
+ },
  "PL010-0590#f17e46db": {
   "date": "2026-11-24",
   "note": "Zdanie 2 poprawione: pkt 1.2.1 (QNH regionalne co do zasady) i pkt 1.2.2 (pod niskimi TMA/MTMA QNH głównego lotniska) — zgodne z AIP, cytat 1.2.2 dosłowny, 651 zn. Ref pkt 1.2.1 zostaje (tekst go przywołuje); drugi quote 1.2.1 („Wartość ciśnienia QNH podaje właściwy organ ATS.”) już niewykorzystany — można usunąć przy następnej edycji, nie blokuje.",
@@ -4029,6 +4261,14 @@
   "portion": "P23",
   "round": 1,
   "textSha": "7f0a9cb56d64824d",
+  "verdict": "PASS"
+ },
+ "PL010-0610#e69c3be2": {
+  "date": "2026-11-25",
+  "note": "Klucz = ENR 1.10 pkt 3.6.4.2 („A – … wysokości bezwzględnej w setkach stóp (np. A030)”); pułapka S/M z tego samego punktu.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "a0e7abb3ffb6d3f7",
   "verdict": "PASS"
  },
  "PL010-0611#3f7716b4": {
@@ -4245,6 +4485,14 @@
   "portion": "P05",
   "round": 1,
   "textSha": "39df70ce6b8210c7",
+  "verdict": "PASS"
+ },
+ "PL010-1553#6b517e18": {
+  "date": "2026-11-25",
+  "note": "SERA.4020(e)(1)–(5) wymienia pięć elementów; klucz obejmuje dwa pierwsze i jest jedyną odpowiedzią zawierającą wyłącznie elementy meldunku w zakresie szerszym niż sam znak rozpoznawczy – tekst uczciwie to mówi. Nie sporne: dystraktor „Znak rozpoznawczy” jest podzbiorem klucza, a pozostałe nie należą do meldunku.",
+  "portion": "P19",
+  "round": 1,
+  "textSha": "10a91dc029755789",
   "verdict": "PASS"
  },
  "PL010-1554#8ed701f5": {
