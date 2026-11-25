@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL03-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Personel lotniczy, licencja i świadectwo kwalifikacji",
       "body": [
         "Członkiem personelu lotniczego jest osoba, która posiada ważną licencję lub świadectwo kwalifikacji i jest wpisana do państwowego rejestru personelu lotniczego lub innego odpowiedniego rejestru prowadzonego zgodnie z odrębnymi przepisami (art. 94 ust. 2 pkt 1 Prawa lotniczego). Członkiem personelu lotniczego jest więc np. posiadacz licencji pilota turystycznego (PPL) z części FCL rozporządzenia 1178/2011.",
@@ -60,7 +60,7 @@
     },
     {
       "id": "AL03-2",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Kto może wykonywać loty i czynności lotnicze",
       "body": [
         "Do wykonywania lotów i innych czynności lotniczych są uprawnieni wyłącznie członkowie personelu lotniczego, członkowie personelu pokładowego, o których mowa w art. 2 pkt 11 rozporządzenia 1178/2011, oraz inne osoby wymienione w art. 94 ust. 1 Prawa lotniczego, m.in. osoby uczestniczące w szkoleniu lotniczym prowadzonym zgodnie z przepisami wydanymi na podstawie art. 104. Samo przebywanie na pokładzie statku powietrznego ani w kabinie załogi takiego uprawnienia nie daje.",
@@ -338,7 +338,7 @@
     },
     {
       "id": "AL03-6",
-      "status": "draft",
+      "status": "verified",
       "heading": "Prezes ULC i decyzje w sprawach licencji",
       "body": [
         "Prezes Urzędu Lotnictwa Cywilnego wydaje, zmienia, zawiesza, przywraca, cofa lub wznawia ważność licencji, świadectw kwalifikacji i uprawnień do nich wpisywanych, a także je uznaje, zawiesza uznanie, przywraca uznanie albo cofa uznanie – w drodze decyzji administracyjnej (art. 96 ust. 3 Prawa lotniczego). Wydawanie decyzji administracyjnych w sprawach określonych w ustawie należy do zadań Prezesa Urzędu (art. 21 ust. 2 pkt 2).",
@@ -386,7 +386,7 @@
     },
     {
       "id": "AL03-7",
-      "status": "draft",
+      "status": "verified",
       "heading": "Uznawanie licencji wydanych za granicą",
       "body": [
         "Licencja wydana lub potwierdzona przez właściwy organ państwa obcego wymaga uznania przez Prezesa Urzędu (art. 96 ust. 5 Prawa lotniczego). Art. 96 ust. 5b wymienia licencje obce, które takiego uznania nie wymagają. Za ważną uważa się więc licencję wydaną przez Prezesa ULC albo licencję wydaną przez właściwy organ obcego państwa i uznaną przez Prezesa ULC, chyba że uznanie nie jest wymagane.",
@@ -429,7 +429,7 @@
     },
     {
       "id": "AL03-8",
-      "status": "draft",
+      "status": "verified",
       "heading": "Od czego zależy ważność licencji",
       "body": [
         "Ważność licencji jest uzależniona od dwóch warunków (art. 98 ust. 2 Prawa lotniczego):",
@@ -476,7 +476,7 @@
     },
     {
       "id": "AL03-9",
-      "status": "draft",
+      "status": "verified",
       "heading": "Dokumenty, które pilot ma przy sobie",
       "body": [
         "W trakcie korzystania z przywilejów wynikających z licencji pilot musi mieć zawsze przy sobie ważną licencję i ważne orzeczenie lekarskie (FCL.045 lit. a) rozporządzenia 1178/2011), a także dokument identyfikacyjny ze zdjęciem (lit. b)). Zapis czasu lotu okazuje bez zbędnej zwłoki na żądanie uprawnionego przedstawiciela właściwego organu (lit. c)).",
@@ -557,7 +557,7 @@
     },
     {
       "id": "AL03-10",
-      "status": "draft",
+      "status": "verified",
       "heading": "Kiedy powstrzymać się od czynności lotniczych",
       "body": [
         "Członek personelu lotniczego oraz personelu pokładowego nie może wykonywać lotów lub innych czynności lotniczych w przypadku utraty wymaganej sprawności psychicznej i fizycznej (art. 105 ust. 2 Prawa lotniczego). Według pkt MED.A.020 lit. a) rozporządzenia 1178/2011 posiadacze licencji nie korzystają z jej przywilejów, a uczniowie-piloci nie wykonują samodzielnych lotów, gdy:",
@@ -608,7 +608,7 @@
     },
     {
       "id": "AL03-11",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Polecenia służb ruchu lotniczego i instrukcja użytkowania w locie",
       "body": [
         "Użytkownik polskiej przestrzeni powietrznej jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego (art. 122 ust. 1 Prawa lotniczego). Na tym obowiązku opiera się klucz ULC w pytaniu, do czego członek personelu lotniczego ma obowiązek stosować się podczas czynności lotniczych: do instrukcji wykonawczych organów służb ruchu lotniczego.",
@@ -639,7 +639,7 @@
     },
     {
       "id": "AL03-12",
-      "status": "draft",
+      "status": "verified",
       "heading": "Egzamin państwowy",
       "body": [
         "Warunkiem uzyskania licencji jest pozytywny wynik egzaminu państwowego składającego się z części teoretycznej lub praktycznej, złożonego przed komisją egzaminacyjną (art. 99 ust. 1 Prawa lotniczego); licencja może być wydana osobie, która taki wynik uzyskała (art. 96 ust. 1 pkt 7). Przed egzaminem praktycznym w celu wydania licencji osoba wnioskująca musi zdać wymagany egzamin z wiedzy teoretycznej (FCL.030 lit. a) rozporządzenia 1178/2011), więc do licencji potrzebne są oba egzaminy.",

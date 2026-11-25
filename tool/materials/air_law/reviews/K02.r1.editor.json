@@ -1,0 +1,117 @@
+[
+ {
+  "key": "AL03-1",
+  "verdict": "PASS",
+  "note": "Art. 94 ust. 2 pkt 1, ust. 3, ust. 4, art. 95 ust. 1, art. 95g ust. 1 PL, FCL.025(b)(4) i art. 2 pkt 11 rozp. 1178/2011 zgodne z korpusem. Spójne z verified PL010-0027/0047/0119/0120. Działa jako samodzielny bezpłatny przegląd; 152 słowa; questionKeys poprawne."
+ },
+ {
+  "key": "AL03-2",
+  "verdict": "DISPUTED",
+  "note": "Art. 94 ust. 1, art. 97 ust. 1 pkt 1, pkt 2 lit. a–b i ust. 2 zgodne z korpusem. Zdanie o kluczu neutralne; disputeNote identyczny co do treści z disputed PL010-0125#b99bd9f8, 0126#a1174e7b, 0126#e2be34a7, ma formułę o kluczu. Uwaga nieblokująca: disputeNote wymienia art. 2 pkt 11 rozp. 1178/2011, który jest tylko w treści cytatu art. 94 ust. 1; można dodać ref jak w AL03-1. 163 słowa."
+ },
+ {
+  "key": "AL03-3",
+  "verdict": "FIX",
+  "note": "Treść zgodna z art. 94 ust. 6 pkt 1 lit. b, c, i, j, m, o, q–s, pkt 3–5, art. 95 ust. 2 i art. 2 pkt 4 rozp. 2018/395. Błąd w disputeNote: w spornych pytaniach PL010-0491#85063041 i 0492#ee529e21 nie ma odpowiedzi „Żadna z odpowiedzi” (warianty z nią, 0491#e90da926 i 0492#d0d6e09f, są verified i mają ją w kluczu), więc „przepisowi odpowiada raczej „Żadna z odpowiedzi”” jest nieprawdziwe i za mocne. Zastąpić disputeNote tekstem: „Art. 94 ust. 6 pkt 1 Prawa lotniczego (lit. a–s) nie obejmuje dyspozytora lotniczego ani kontrolera ruchu lotniczego, wymienionych osobno w pkt 5 i 4, więc według przepisu żadna z odpowiedzi podanych w tych dwóch pytaniach nie wskazuje członka załogi statku powietrznego. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” Po poprawce sekcja do DISPUTED."
+ },
+ {
+  "key": "AL03-4",
+  "verdict": "FIX",
+  "note": "Warunki z art. 96 ust. 1 pkt 1, 2, 4–7, ust. 2 pkt 4 i MED.A.030(c)(2),(5) zgodne z korpusem. Nieprecyzyjne zdanie o art. 96 ust. 1a: „osobie objętej środkiem zapobiegawczym albo prawomocnym zakazem prowadzenia pojazdów” brzmi jak każdy środek zapobiegawczy, a przepis dotyczy tylko środka polegającego na powstrzymaniu się od prowadzenia pojazdów mechanicznych (lub w ruchu powietrznym) i sądowego zakazu prowadzenia pojazdów mechanicznych. Ponadto zdanie „Odpowiedź opisująca osobę, która nie spełnia jednego z łącznych warunków, jest błędna.” w sekcji bez disputeNote, która zawiera disputed klucze 0102#d315ac19, 0103#5c608e2d, 0103#e4cd44fb, 0106#d1571dcf, 0108#83bd2f1f, sugeruje, że odpowiedzi o ograniczonej zdolności i o skazaniu są błędne według przepisu. Zastąpić ostatni akapit tekstem: „Licencji nie wydaje się też – w okresie obowiązywania środka lub zakazu – osobie, wobec której prokurator zastosował środek zapobiegawczy polegający na obowiązku powstrzymania się od prowadzenia pojazdów mechanicznych, ani osobie, wobec której sąd prawomocnie orzekł zakaz prowadzenia pojazdów mechanicznych (art. 96 ust. 1a). Klucz ULC nazywa orzeczenie dawnym określeniem „o braku przeciwwskazań”.” (195 słów) i dodać ref {\"src\":\"PL-PRAWO-LOTNICZE\",\"loc\":\"art. 96 ust. 1a\",\"quote\":\"Licencja nie może być wydana osobie, w stosunku do której prokurator postanowił zastosować środek zapobiegawczy polegający na obowiązku powstrzymania się od prowadzenia wszelkiego rodzaju pojazdów mechanicznych\"}. Opcjonalnie: usunąć pięć disputed kluczy z questionKeys tej sekcji (pokrywa je AL03-5)."
+ },
+ {
+  "key": "AL03-5",
+  "verdict": "FIX",
+  "note": "Art. 96 ust. 1 pkt 1, 2, 3 (uchylony) i ust. 1a (obie części, sprawdzone) zgodne z korpusem; disputeNote zgodny z disputed P04/P05, punkty w refs, formuła o kluczu jest. Ostatnie zdanie za mocne: „aktualny przepis sam w sobie nie wyklucza w tych przypadkach wydania licencji” – pkt 2 wymaga pełnej zdolności do czynności prawnych i dopuszcza wyjątek tylko dla małoletniego za zgodą opiekunów, więc pełnoletniej osoby z ograniczoną zdolnością przepis nie obejmuje. Zastąpić ostatni akapit tekstem: „Klucz ULC w pytaniach o wiek, prawa publiczne oraz szkolenie i egzamin państwowy traktuje odpowiedzi o osobie z ograniczoną zdolnością do czynności prawnych lub o osobie skazanej prawomocnym wyrokiem jako błędne; aktualny przepis dopuszcza jednak licencję dla małoletniego za zgodą opiekunów prawnych, a samo skazanie jej nie wyklucza.” Po poprawce sekcja do DISPUTED."
+ },
+ {
+  "key": "AL03-6",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 3 i 4, art. 21 ust. 2 pkt 2, art. 95 ust. 4 PL i FCL.015(a) zgodne z korpusem. Spójne z verified PL010-0040/0076/0077/0133/0199. 148 słów."
+ },
+ {
+  "key": "AL03-7",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 5, 5a, 5b zgodne z korpusem i z verified PL010-0038/0062. Uwaga nieblokująca: zdanie „Za ważną uważa się więc licencję wydaną przez Prezesa ULC albo … uznaną…, chyba że uznanie nie jest wymagane” to niemal dosłownie art. 94 ust. 5 PL; można dodać ref {\"src\":\"PL-PRAWO-LOTNICZE\",\"loc\":\"art. 94 ust. 5\",\"quote\":\"jest licencja wydana przez Prezesa Urzędu lub licencja wydana przez właściwy organ obcego państwa i uznana przez Prezesa Urzędu, chyba że jej uznanie nie jest wymagane\"}. 133 słowa."
+ },
+ {
+  "key": "AL03-8",
+  "verdict": "PASS",
+  "note": "Art. 98 ust. 2 i 3 PL oraz FCL.040 zgodne z korpusem; spójne z verified PL010-0163/0170/0171. 125 słów."
+ },
+ {
+  "key": "AL03-9",
+  "verdict": "PASS",
+  "note": "FCL.045(a)–(c), § 3 ust. 1 pkt 1 i § 38 ust. 2 pkt 1–3 rozp. w sprawie licencjonowania, SFCL.045(a) i BFCL.045(a) zgodne z korpusem; spójne z verified PL010-0412/1552. Uwaga nieblokująca: SFCL/BFCL.045(a) wymieniają też czwarty dokument (dane z książki lotów) – zdanie „te same trzy dokumenty … wymieniają” nie jest fałszywe, ale można dopisać „m.in.”. 146 słów."
+ },
+ {
+  "key": "AL03-10",
+  "verdict": "PASS",
+  "note": "Art. 105 ust. 2 PL, MED.A.020(a)(1)–(2), SERA.2020 i art. 2 pkt 104 rozp. 923/2012 zgodne z korpusem; spójne z verified PL010-0026/0084/0085/0362. 162 słowa."
+ },
+ {
+  "key": "AL03-11",
+  "verdict": "DISPUTED",
+  "note": "Art. 122 ust. 1 PL i NCO.GEN.105(a)(4)(vi) zgodne z korpusem. Sekcja mała (131 słów, jeden klucz disputed PL010-0028#38f25a0d) – w granicach 80–200, dopuszczalna. Zdanie o kluczu neutralne, disputeNote identyczny z P05, punkt NCO.GEN.105(a)(4)(vi) w refs, formuła o kluczu jest."
+ },
+ {
+  "key": "AL03-12",
+  "verdict": "PASS",
+  "note": "Art. 99 ust. 1 i 5, art. 96 ust. 1 pkt 7 PL, FCL.030(a), SFCL/BFCL.135(a), 145(a), 145(c) zgodne z korpusem; spójne z verified PL010-0035/0036/1545/0105. 144 słowa."
+ },
+ {
+  "key": "AL04-1",
+  "verdict": "PASS",
+  "note": "Art. 96 ust. 3 i 6 PL, § 11 ust. 2 pkt 1–2 i § 12 ust. 1 rozp. w sprawie licencjonowania zgodne z korpusem; spójne z verified PL010-0042/0064. Działa jako samodzielny bezpłatny przegląd zawieszenia; 132 słowa."
+ },
+ {
+  "key": "AL04-2",
+  "verdict": "PASS",
+  "note": "§ 12 ust. 1, 2 i 3 (ust. 2–3 – nowe fakty, sprawdzone dosłownie), § 11 ust. 2 pkt 2 i art. 96 ust. 3 pkt 1 zgodne z korpusem; spójne z verified PL010-0092/0293. 137 słów."
+ },
+ {
+  "key": "AL04-3",
+  "verdict": "FIX",
+  "note": "Wszystkie przesłanki z art. 100 ust. 1 pkt 1–5, ARA.FCL.250(a)(1),(2),(4),(5),(6) i FCL.070(a) zgodne z korpusem, ale sekcja przedstawia art. 100 ust. 1 jako główną podstawę bez zakresu, a § 11 ust. 1 pkt 1 rozp. w sprawie licencjonowania stanowi, że dla licencji z § 3 ust. 1 pkt 1 i ust. 2 (PPL, SPL, BPL, LAPL) zawieszenie albo cofnięcie „następuje w przypadkach określonych w przepisach FCL.070 … oraz ARA.FCL.250”, a art. 100 ustawy – dla licencji z § 3 ust. 1 pkt 2 i 3 (pkt 2). Dla czytelnika PPL to istotne pominięcie. Także „Brak opłaty lotniczej ani obywatelstwo nie są…” – niepoprawne „ani” bez pierwszego przeczenia. Zastąpić body tekstem (181 słów): [\"Dla licencji PPL, SPL, BPL i LAPL zawieszenie albo cofnięcie licencji następuje w przypadkach określonych w pkt FCL.070 i ARA.FCL.250 rozporządzenia 1178/2011 (§ 11 ust. 1 pkt 1 rozporządzenia w sprawie licencjonowania personelu lotniczego). Pkt ARA.FCL.250 lit. a) wymienia m.in.:\", \"- uzyskanie licencji poprzez sfałszowanie przedłożonych dokumentów dowodowych (ppkt 1);\", \"- sfałszowanie dziennika pokładowego oraz rejestrów w licencji (ppkt 2);\", \"- korzystanie z przywilejów pod wpływem alkoholu lub narkotyków (ppkt 4);\", \"- niespełnienie obowiązujących wymagań operacyjnych (ppkt 5);\", \"- udowodnienie nadużycia lub nielegalnego wykorzystania certyfikatu (ppkt 6; klucz ULC mówi o „upoważnieniu”).\", \"Według pkt FCL.070 lit. a) licencję można zawiesić lub cofnąć także wtedy, gdy pilot nie spełnia wymagań części FCL lub części medycznej.\", \"Podobne przesłanki wymienia art. 100 ust. 1 Prawa lotniczego, który rozporządzenie stosuje do licencji z § 3 ust. 1 pkt 2 i 3, np. PPL(AG) (§ 11 ust. 1 pkt 2): sfałszowanie dokumentów lub zapisów w licencji, utrata wymaganych kwalifikacji, zagrażanie bezpieczeństwu ruchu lotniczego oraz czynności lotnicze pod wpływem alkoholu lub środków odurzających (pkt 1–5). Ani brak opłaty lotniczej, ani obywatelstwo nie są przesłankami zawieszenia lub cofnięcia.\"]. Dodać refs: {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 11 ust. 1 pkt 1\",\"quote\":\"następuje w przypadkach określonych w przepisach FCL.070 załącznika I oraz ARA.FCL.250 sekcja II załącznika VI do rozporządzenia nr 1178/2011\"}, {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 11 ust. 1 pkt 2\",\"quote\":\"następuje w przypadkach określonych w art. 100 ustawy\"}, {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 3 ust. 1 pkt 1\",\"quote\":\"PPL(A), CPL(A), ATPL(A), MPL, PPL(H), CPL(H), ATPL(H), SPL, PPL(AS), CPL(AS), BPL;\"}, {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 3 ust. 2\",\"quote\":\"Przepisy rozporządzenia stosuje się również do LAPL(A), LAPL(B), LAPL(H) i LAPL(S)\"}, {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 3 ust. 1 pkt 3\",\"quote\":\"PPL(AG), CPL(AG).\"}; pozostałe refs bez zmian. Tekst nie przeczy verified PL010-0211…0216/1563/1564 (art. 100 ust. 1 nadal jest cytowany jako brzmienie ustawy)."
+ },
+ {
+  "key": "AL04-4",
+  "verdict": "PASS",
+  "note": "Art. 100 ust. 1 pkt 5, ust. 3 (oba zdania) i ust. 4 PL oraz ARA.FCL.250(a)(4) zgodne z korpusem; zdanie o braku PKBWL w art. 100 – jak w verified PL010-0230/0231. Opis art. 100 ust. 3–4 jest poprawnym brzmieniem ustawy (tymczasowe zawieszenie i zatrzymanie; § 11 ust. 3 rozporządzenia też odsyła do zatrzymania „zgodnie z przepisami art. 100 ustawy”). 148 słów."
+ },
+ {
+  "key": "AL04-5",
+  "verdict": "FIX",
+  "note": "FCL.070(b), SFCL.070(b), BFCL.070(b), art. 96 ust. 3 pkt 1 i art. 100 ust. 3 zgodne z korpusem. Brakuje przepisu, z którego niemal dosłownie pochodzi klucz ULC PL010-0176/0177 („za pokwitowaniem … chyba że licencja została już uprzednio zatrzymana”): § 11 ust. 3 rozp. w sprawie licencjonowania; obecny wywód z samego art. 100 ust. 3 jest tylko pośredni. Zastąpić punkt „- Zastrzeżenie „chyba że licencja została już uprzednio zatrzymana” wiąże się z art. 100 ust. 3: Prezes Urzędu może zawiesić licencję i zatrzymać ją na czas postępowania.” tekstem: „- Według § 11 ust. 3 rozporządzenia w sprawie licencjonowania personelu lotniczego osoba, której licencja lub uprawnienie zostały cofnięte albo zawieszone i zatrzymane zgodnie z art. 100 ustawy, niezwłocznie przekazuje dokument licencji za pokwitowaniem Prezesowi Urzędu, chyba że licencja została już uprzednio zatrzymana przez Prezesa Urzędu lub inny właściwy organ. Zatrzymanie licencji na czas postępowania przewiduje art. 100 ust. 3.” (161 słów) i dodać ref {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 11 ust. 3\",\"quote\":\"niezwłocznie przekazuje dokument licencji, za pokwitowaniem, Prezesowi Urzędu, chyba że licencja została już uprzednio zatrzymana przez Prezesa Urzędu lub inny właściwy organ\"}. Spójne z verified wyjaśnieniami (one też wiążą zastrzeżenie z art. 100 ust. 3)."
+ },
+ {
+  "key": "AL04-6",
+  "verdict": "PASS",
+  "note": "§ 10 ust. 1 pkt 1, 3, 5, 6, 8, ust. 2, 3 i 5 pkt 2 zgodne z korpusem; spójne z verified PL010-0091/0196/0197/0198. 134 słowa."
+ },
+ {
+  "key": "AL04-7",
+  "verdict": "PASS",
+  "note": "Art. 102 PL, § 43 ust. 1 pkt 1–2 i ust. 2 pkt 1–3 (pkt 1–2 – nowe fakty, sprawdzone dosłownie: 3 lata po roku śmierci, 10 lat po roku uznania za zmarłego) zgodne z korpusem; spójne z verified PL010-0291/0292. 126 słów."
+ },
+ {
+  "key": "AL04-8",
+  "verdict": "FIX",
+  "note": "§ 31 (Part-FCL z uwzględnieniem tylko § 32, 34 i 35 – poprawnie, bez § 33), § 3 ust. 1 pkt 1 i ust. 2, § 32 ust. 1 pkt 2, 3, 5, § 34 ust. 2, art. 99 ust. 1 i 2 oraz art. 26a ust. 1 pkt 5 PL zgodne z korpusem. Dwie poprawki w ostatnim zdaniu: (1) „dawniej „Lotnicza Komisja Egzaminacyjna”” – fakt historyczny bez źródła w korpusie; (2) „w zależności od wariantu” nie mówi, który wariant jest który, a w kluczach PL010-0112#12b21234, 0115#249116a6, 0116#65a3f975, 0117#d1eefb72, 0118#9470cfc0 „Prezes ULC” jest dystraktorem obok komisji. Zastąpić zdanie „Dlatego w zależności od wariantu pytania klucz ULC wskazuje komisję egzaminacyjną (dawniej „Lotnicza Komisja Egzaminacyjna”) albo Prezesa ULC.” tekstem: „Dlatego klucz ULC wskazuje komisję egzaminacyjną („Komisja Egzaminacyjna”, „Lotnicza Komisja Egzaminacyjna”), gdy jest ona wśród odpowiedzi – wtedy „Prezes ULC” jest odpowiedzią błędną; w wariantach bez komisji klucz wskazuje Prezesa ULC.” (181 słów). Oba zestawy verified kluczy są wtedy opisane spójnie."
+ },
+ {
+  "key": "AL04-9",
+  "verdict": "PASS",
+  "note": "FCL.1030(b)(1) (oba zdania) i (b)(3)(ii) zgodne z korpusem; spójne z verified PL010-0338 (0617 sameAs). Poprawnie nie użyto § 33 ust. 3 rozp. w sprawie licencjonowania („protokół egzaminacyjny”), bo § 31 kieruje licencje Part-FCL tylko do § 32, 34 i 35. Opis klucza jako wcześniejszej terminologii neutralny. 115 słów."
+ },
+ {
+  "key": "AL04-10",
+  "verdict": "PASS",
+  "note": "§ 9 ust. 1 i 2 (ust. 1 – nowy fakt, zgodny dosłownie), art. 96 ust. 1 pkt 5–6 i art. 98 ust. 2 PL zgodne z korpusem; spójne z verified PL010-0345. 142 słowa."
+ },
+ {
+  "key": "AL04-11",
+  "verdict": "DISPUTED",
+  "note": "Art. 26a ust. 1 pkt 4–5, ust. 6 pkt 1, ust. 7, art. 26h ust. 3 PL i § 10 ust. 2 rozp. w sprawie licencjonowania zgodne z korpusem (art. 26a poza zakresami przyszłej redakcji). Zdanie o kluczu neutralne; disputeNote identyczny z disputed PL010-0603#c424caf0, wszystkie punkty w refs, formuła o kluczu jest. 142 słowa."
+ }
+]
