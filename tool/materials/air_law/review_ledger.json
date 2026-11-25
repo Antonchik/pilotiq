@@ -423,6 +423,14 @@
   "textSha": "ef0b53f630960949",
   "verdict": "PASS"
  },
+ "PL010-0041#79102d63": {
+  "date": "2026-11-25",
+  "note": "ORA.ATO.110(a): «Musi być wyznaczony kierownik szkolenia…» — klucz ATO potwierdzony; DTO.GEN.210(a)(2) poprawne uzupełnienie, nie podważa klucza (DTO nie ma wśród odpowiedzi). Cytaty dosłowne, 2 zdania, 313 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "0b887abbe863ee60",
+  "verdict": "PASS"
+ },
  "PL010-0041#eb6afb3c": {
   "date": "2026-11-25",
   "note": "Art. 122 ust. 1 sparafrazowany wiernie; zdanie o innych nazwach organów w odpowiedziach ULC (państwowy organ zarządzania ruchem lotniczym, właściwe organy wojskowe) uczciwe i nie wykracza poza źródło. Zmiana nazewnictwa nie podważa klucza.",
@@ -895,6 +903,14 @@
   "textSha": "e9b2e32b102877fe",
   "verdict": "PASS"
  },
+ "PL010-0088#c249f947": {
+  "date": "2026-11-25",
+  "note": "FCL.725(a) zdanie 1 = klucz; wyjątek DTO (SEP, TMG, jednosilnikowe śmigłowce) wiernie oddany ze zdania 2 tego punktu. DTO nie ma wśród odpowiedzi — klucz niesporny. 356 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "4c4427677a0b3c25",
+  "verdict": "PASS"
+ },
  "PL010-0089#12519f67": {
   "date": "2026-11-25",
   "note": "Zdanie 2 zastąpione zgodnie z r1; ref § 31 dodany. Klucz = § 33 ust. 1 pkt 2, zakres (załącznik nr 3) poprawnie zawężony. 588 zn.",
@@ -902,6 +918,14 @@
   "round": 2,
   "textSha": "76c54a4d74cdbfae",
   "verdict": "PASS"
+ },
+ "PL010-0089#6d74eb81": {
+  "date": "2026-11-25",
+  "note": "Merytorycznie zgodne z FCL.740(b)(1)(i)/(ii) i (b)(2). Język: «ukończa je w tej organizacji» — forma niepoprawna (ukończyć → ukończy / imperf. ukańcza). Zamienić na «…musi je ukończyć w tej organizacji (ppkt 2)», jak w akcie («musi ukończyć szkolenie odświeżające w tej organizacji»). Reszta bez zmian; opcjonalnie: ppkt (iii) dopuszcza też instruktora dla SEP/TMG wygasłych ≤3 lata — tekst tego nie przeczy, nie blokuje.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "ac857760edc86e53",
+  "verdict": "FIX"
  },
  "PL010-0091#0aba6593": {
   "date": "2026-11-25",
@@ -3295,6 +3319,22 @@
   "textSha": "9200ab181906ab70",
   "verdict": "PASS"
  },
+ "PL010-0363#5945c899": {
+  "date": "2026-11-25",
+  "note": "Klucz «Tak» oparty na art. 160 ust. 3 pkt 2 PL (certyfikacji podlega szkolenie do licencji niezależnie od tego, kto je prowadzi) — tekst trafnie to oddaje. Sporność potwierdzona: art. 10a ust. 1 akapit drugi 1178/2011 («…bez konieczności uzyskania takiego zatwierdzenia, jeżeli przedłożyły… deklarację…») i DTO.GEN.110(a)/DTO.GEN.115(a) — organizacja niebędąca ATO/ośrodkiem może szkolić m.in. do PPL(A) bez certyfikacji, więc «Nie» jest obronne; wg reguły rozgraniczenia (klucz nadal częściowo prawdziwy, inna odpowiedź stała się prawdziwa po wprowadzeniu Part-DTO) → disputed, nie outdated. disputeNote 332 zn., wszystkie punkty w refs, zawiera formułę o kluczu ULC. Uwaga techniczna: anchor «art. 10a ust. 1» obejmuje też ust. 5–6 (artefakt parsera), cytat leży w ust. 1 — OK.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "ac399996e2f4b9c3",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0364#448d9b0d": {
+  "date": "2026-11-25",
+  "note": "art. 160 ust. 3 pkt 2 PL + § 27 LIC; brak progu masy / ograniczenia do śmigłowców zgodny z treścią przepisów. Pytanie dotyczy ośrodka (certyfikowanego), więc wyjątek DTO nie ma znaczenia. 457 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "93cc6856622ccd09",
+  "verdict": "PASS"
+ },
  "PL010-0365#4d65e6d8": {
   "date": "2026-11-25",
   "note": "Polska definicja (art. 2 pkt 38) nie zawiera uwagi, ale GM1 Article 2(38) w korpusie EASA-EAR-SERA brzmi dosłownie „The aerodrome from which a flight departs may also be an en-route or a destination alternate aerodrome for that flight” – wystarcza, ref easa bez quote poprawny. Opcjonalnie: ta sama uwaga jest w definicjach ICAO Doc 4444 (Destination alternate, Note).",
@@ -3309,6 +3349,78 @@
   "portion": "P03",
   "round": 1,
   "textSha": "b19abd1d7fff0907",
+  "verdict": "PASS"
+ },
+ "PL010-0368#103c0a55": {
+  "date": "2026-11-25",
+  "note": "Wniosek z braku zakazu jest uprawniony: art. 96 ust. 2 PL wiąże wiek z «uzyskaniem licencji» przez «osobę ubiegającą się o nią», FCL.200 — z wnioskiem o PPL (17 lat), a FCL.020(b) dopuszcza samodzielny lot już od 16 lat, czyli szkolenie przed osiągnięciem wieku licencyjnego; w korpusie (LIC § 24–25, zał. 3) brak minimalnego wieku do rozpoczęcia szkolenia teoretycznego. Klucz «Tak» potwierdzony, cytaty dosłowne. 543 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "4142ea2d4c32d2a7",
+  "verdict": "PASS"
+ },
+ "PL010-0369#4b752410": {
+  "date": "2026-11-25",
+  "note": "Klucz «Nie» poprawny; przesłanka «niezarobkowo» pochodzi z dawnego reżimu, ale odpowiedź pozostaje prawdziwa według obecnych przepisów (art. 160 ust. 3 pkt 2 nie rozróżnia szkolenia zarobkowego), więc draft, nie outdated — spójne z P11 0592. Błąd: cytat i zdanie 2 ucinają art. 161 ust. 3 przed zastrzeżeniem «jeżeli przepisy Unii Europejskiej nie stanowią inaczej», a dla ATO (banki PPL(A)/(H)) przepisy UE stanowią inaczej: ORA.GEN.135(a) — certyfikat zachowuje ważność, dopóki organizacja spełnia wymagania i nie został zwrócony ani cofnięty (nie «na czas oznaczony»). Zastąpić zdanie 2: «Według art. 161 ust. 3 certyfikat wydaje się na czas oznaczony, jeżeli przepisy Unii Europejskiej nie stanowią inaczej, a certyfikat ATO zachowuje ważność tylko pod warunkami z pkt ORA.GEN.135 lit. a) rozporządzenia 1178/2011; po utracie ważności certyfikatu organizacja nie może więc prowadzić szkolenia.» Ref art. 161 ust. 3: cytat pełnego ustępu (z «jeżeli przepisy Unii Europejskiej nie stanowią inaczej»); dodać ref EU-1178-2011 «ORA.GEN.135(a)», quote «Certyfikat organizacji zachowuje ważność pod warunkiem, że:». Tekst po zmianie ~650 zn., 3 zdania.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "50bc870e687419e4",
+  "verdict": "FIX"
+ },
+ "PL010-0369#bb2004ee": {
+  "date": "2026-11-25",
+  "note": "art. 160 ust. 1 + ust. 3 pkt 2 i art. 161 ust. 2 («…oraz termin, na jaki certyfikat jest wydawany») — wierne brzmieniu, bez ucinania zastrzeżeń. Nieblokujące, dla spójności z 0369#4b752410: można dodać ORA.GEN.135(a) (ważność certyfikatu ATO zależy od warunków, nie od terminu).",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "054d63bc9687b855",
+  "verdict": "PASS"
+ },
+ "PL010-0370#28df25f9": {
+  "date": "2026-11-25",
+  "note": "Klucz «Nie» poprawny (art. 161 ust. 2 i 8 PL, ORA.GEN.125); przesłanka «niezarobkowo» — jak w 0369, draft uzasadniony. Błąd: «certyfikacji podlega każde szkolenie do licencji» jest sprzeczne z art. 10a ust. 1 akapit drugi 1178/2011 i DTO.GEN.110/115 (szkolenia DTO na podstawie deklaracji, bez certyfikacji) oraz z disputeNote 0363#5945c899 tej samej porcji. Zamienić na: «…a art. 160 ust. 3 pkt 2 obejmuje szkolenie do licencji bez rozróżnienia na zarobkowe i niezarobkowe.» Refs bez zmian.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "3be029b2ac2be702",
+  "verdict": "FIX"
+ },
+ "PL010-0370#9f98e2d6": {
+  "date": "2026-11-25",
+  "note": "art. 161 ust. 2 (zakres w certyfikacie), ust. 8 (rozszerzenie decyzją), ORA.GEN.125 — klucz «Nie» i odrzucenie wariantu 14 dni poprawne. 483 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "ebeceec549262a75",
+  "verdict": "PASS"
+ },
+ "PL010-0372#318ac315": {
+  "date": "2026-11-25",
+  "note": "Jak 0369#4b752410: zdanie 2 i cytat art. 161 ust. 3 ucinają «jeżeli przepisy Unii Europejskiej nie stanowią inaczej». Dla krajowego ośrodka (certyfikat CTO, zał. 6 pkt 7 PL) termin obowiązuje, ale § 27 i art. 160 ust. 3 pkt 2 obejmują też ATO, którego certyfikat wg ORA.GEN.135(a) nie jest terminowy. Zastąpić zdanie 2: «Według art. 161 ust. 3 certyfikat wydaje się na czas oznaczony, jeżeli przepisy Unii Europejskiej nie stanowią inaczej (dla ATO ważność zależy od warunków z pkt ORA.GEN.135 lit. a) rozporządzenia 1178/2011), a po utracie ważności certyfikatu ośrodek nie może prowadzić szkolenia.» Pełny cytat ust. 3 i ref ORA.GEN.135(a) jak w 0369#4b752410; pilnować ≤700 zn. (obecnie 568 — ewentualnie skrócić zdanie 3 do «Przepisy nie przewidują zgody Prezesa ULC, ministra ani 14-dniowego okresu przejściowego.»).",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "f23e732fed9e04b7",
+  "verdict": "FIX"
+ },
+ "PL010-0372#4cb3d0ad": {
+  "date": "2026-11-25",
+  "note": "sameAs 0372#318ac315 dopuszczalne: CTO wg zał. 6 pkt 7 Prawa lotniczego to certyfikat ośrodka szkolenia do licencji krajowych, czyli ośrodek z § 27 LIC — pytanie i odpowiedzi identyczne poza nazwą podmiotu. Zależność: po FIX oryginału objaśnienie (z zastrzeżeniem UE) nadal pasuje bez zmian.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "052e3ba38adc221a",
+  "verdict": "PASS"
+ },
+ "PL010-0373#5116e95c": {
+  "date": "2026-11-25",
+  "note": "§ 27 LIC («w zakresie objętym posiadanym certyfikatem») + art. 161 ust. 8 PL — klucz «Nie» i odrzucenie wariantu 14 dni poprawne. 480 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "648286f665f509c4",
+  "verdict": "PASS"
+ },
+ "PL010-0373#6e91354d": {
+  "date": "2026-11-25",
+  "note": "sameAs 0373#5116e95c dopuszczalne (CTO = certyfikowany ośrodek szkolenia, zał. 6 pkt 7 PL; te same odpowiedzi i klucz).",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "ee0d81de9ad1e756",
   "verdict": "PASS"
  },
  "PL010-0374#3dbad0dc": {
@@ -3365,6 +3477,22 @@
   "portion": "P19",
   "round": 1,
   "textSha": "c4bae37cd38c40a4",
+  "verdict": "PASS"
+ },
+ "PL010-0383#bb4b5763": {
+  "date": "2026-11-25",
+  "note": "Zał. 3 pkt 1.1.26 LIC (cel: nabycie umiejętności praktycznego wykonywania czynności lotniczych) = klucz; dopisanie FNL i FEL wynika wprost z § 22 pkt 2 i nie przeczy kluczowi («dla pilotów wszystkich specjalności» jest prawdziwe, przepis obejmuje dodatkowo FNL/FEL) — nie sporne. Pułapka (§ 22 pkt 4, pkt 1.1.29) w jednym zdaniu, poparta refs. Nieblokujące: «w zw. z § 3 ust. 1 pkt 1» — pełniej «pkt 1 i 3 oraz ust. 2» (PPL(AG), LAPL), jak w cytacie § 22 pkt 2. Loc «załącznik 3 pkt 1.1» to najwęższy istniejący anchor.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "3ec6045dfc2b496f",
+  "verdict": "PASS"
+ },
+ "PL010-0384#e37a02f6": {
+  "date": "2026-11-25",
+  "note": "Zał. 3 pkt 1.1.29 = klucz; § 22 pkt 1 «w celu uzyskania licencji, o których mowa w § 3» + § 3 ust. 1 pkt 2 (FNL, FEL, FDL, MML) potwierdzają «dla wszystkich specjalności»; pułapka 1.1.26 poprawna. 476 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "4a39fe183d428fe9",
   "verdict": "PASS"
  },
  "PL010-0385#3452b84a": {
@@ -3462,6 +3590,22 @@
   "round": 1,
   "textSha": "869d1c5266ab2ba1",
   "verdict": "DISPUTED"
+ },
+ "PL010-0400#90cc73c5": {
+  "date": "2026-11-25",
+  "note": "§ 26 ust. 1 i § 27 LIC (ośrodek z certyfikatem z art. 160 ust. 3 pkt 2 PL) + FCL.210(a)/FCL.025(a)(2) dla PPL (ATO lub DTO) — oba reżimy poprawnie zestawione, tekst nie twierdzi, że DTO ma certyfikat. Wątpliwość writera: dystraktor «każda organizacja, która zgłosi chęć do Prezesa ULC» nie staje się prawidłowy przez deklarację DTO — DTO.GEN.110/115 ograniczają zakres szkoleń i wymagają spełnienia wymagań załącznika VIII, a nie samego zgłoszenia «każdej organizacji»; klucz niesporny. Nieblokujące: skrót «CTO» z klucza zdefiniowany jest w zał. 6 pkt 7 Prawa lotniczego (loc «załącznik 6») — certyfikat do szkolenia do licencji krajowych (PPL(AG), CPL(AG), FNL, FEL, FDL), a dla załóg Part-FCL pkt 3a «ATO»; można dodać, jeśli zmieści się w 4 zdaniach.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "eab1351e9dd91e0e",
+  "verdict": "PASS"
+ },
+ "PL010-0400#91fcac65": {
+  "date": "2026-11-25",
+  "note": "sameAs 0400#90cc73c5 dopuszczalne: to samo pytanie, klucz «W ośrodkach szkolenia lotniczego» (bez «/organizacjach (CTO)»), D «Wszystkie odpowiedzi…» zamiast «W ULC»; tekst oryginału nie omawia dystraktorów, więc pasuje bez zmian.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "119a3e8f1dcbe6d5",
+  "verdict": "PASS"
  },
  "PL010-0402#7dbf50d2": {
   "date": "2026-11-25",
@@ -5399,6 +5543,14 @@
   "textSha": "599fccd4b09de2b9",
   "verdict": "DISPUTED"
  },
+ "PL010-0604#f21de2b8": {
+  "date": "2026-11-25",
+  "note": "ORA.GEN.105(a)(1)(i) + art. 161 ust. 1 PL → certyfikat Prezesa ULC; pułapka EASA = ORA.GEN.105(a)(1)(ii) (państwo trzecie) wiernie oddana. Wątpliwość writera: «certyfikat EASA» jest prawdziwy tylko dla ATO z państw trzecich, co istniało od pierwotnego brzmienia ORA — pytanie egzaminu ULC dotyczy organizacji w Polsce, pułapka wyjaśnia różnicę; nie sporne. 523 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "bbdd8d5484b1b550",
+  "verdict": "PASS"
+ },
  "PL010-0610#e69c3be2": {
   "date": "2026-11-25",
   "note": "Klucz = ENR 1.10 pkt 3.6.4.2 („A – … wysokości bezwzględnej w setkach stóp (np. A030)”); pułapka S/M z tego samego punktu.",
@@ -5535,6 +5687,38 @@
   "textSha": "927aa118dbf61a2b",
   "verdict": "PASS"
  },
+ "PL010-0639#3ec404bf": {
+  "date": "2026-11-25",
+  "note": "§ 22 pkt 1, 2, 3 = trzy wymienione odpowiedzi → «Wszystkie odpowiedzi są prawidłowe»; «m.in.» poprawnie sygnalizuje pkt 4; FDL/MML dla pkt 3 zgodne z anchorem.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "9d0704c51ac7c85d",
+  "verdict": "PASS"
+ },
+ "PL010-0639#deedcc94": {
+  "date": "2026-11-25",
+  "note": "§ 22 pkt 1–4 LIC (stosuje się do PPL(A)/PPL(H) — § 3 ust. 1 pkt 1; rozdział o szkoleniu nie wyłącza licencji Part-FCL, w przeciwieństwie do sprawdzenia kwalifikacji z § 31) + FCL.210(b) jako podstawa unijna dla PPL. Klucz «teoretyczne i praktyczne» potwierdzony. 416 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "2b79a0928c034ac5",
+  "verdict": "PASS"
+ },
+ "PL010-0640#bbced045": {
+  "date": "2026-11-25",
+  "note": "§ 22 pkt 1, 2, 4 = trzy odpowiedzi (w tym «szkolenie uzupełniające szkolenia praktycznego» = pkt 4, nadzorowana praktyka do uprawnień instruktorskich do licencji z § 3 ust. 1 pkt 2 i 3) → «Wszystkie». Osobny wpis zamiast sameAs słuszny (inna odpowiedź D). 472 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "904048ad4c7eddd4",
+  "verdict": "PASS"
+ },
+ "PL010-0640#fe8bfe32": {
+  "date": "2026-11-25",
+  "note": "sameAs 0639#deedcc94 dopuszczalne: to samo pytanie bez «do uzyskania licencji lub uprawnienia», te same cztery odpowiedzi (inna kolejność, literówka «językowe .»), ten sam klucz.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "ae347c5ec823fb2f",
+  "verdict": "PASS"
+ },
  "PL010-1337#bbcc07b5": {
   "date": "2026-11-24",
   "note": "Sporne: klucz 600 m AMSL dopuszczalny tylko nad nisko położonym terenem; nad terenem >350 m 1250 m AMSL też jest < 900 m AGL. Sprzeczność z 0441#b323e4a1 (tam 600 m AMSL jest dystraktorem) potwierdza sporność.",
@@ -5599,6 +5783,14 @@
   "textSha": "40afecc830f7403a",
   "verdict": "PASS"
  },
+ "PL010-1541#eb5e5cb6": {
+  "date": "2026-11-25",
+  "note": "ORA.ATO.130(a) dosłownie odpowiada treści pytania → ATO; ORA.ATO.105(a)(2) poprawne uzupełnienie. 406 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "bcd0856a976239b5",
+  "verdict": "PASS"
+ },
  "PL010-1543#cacf0d8c": {
   "date": "2026-11-24",
   "note": "Czteroliterowy wskaźnik: ENR 1.10 pkt 3.5.1, dodatek 6 pkt 2.2 (rubryka 13 – sprawdzone w tekście kotwicy; węższej kotwicy brak), Doc 4444 def. Location indicator, przykład EPWW (GEN 2.4).",
@@ -5645,6 +5837,14 @@
   "portion": "P09",
   "round": 1,
   "textSha": "d774e5f91e36e0b3",
+  "verdict": "PASS"
+ },
+ "PL010-1549#aa7d7e08": {
+  "date": "2026-11-25",
+  "note": "SFCL.135(b)(3), BFCL.135(b)(3) («Rekomendacja ATO lub DTO jest ważna 12 miesięcy») — właściwe dla banków SPL/BPL; FCL.025(a)(3) zgodne. Zdanie 3 poparte cytatem SFCL. 450 zn.",
+  "portion": "P10",
+  "round": 1,
+  "textSha": "415fcf35880c884f",
   "verdict": "PASS"
  },
  "PL010-1550#43edacd4": {
