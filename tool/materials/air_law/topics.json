@@ -720,7 +720,7 @@
    "PL-PRAWO-LOTNICZE",
    "EASA-EAR-SERA"
   ],
-  "complete": true,
+  "complete": false,
   "gaps": {
    "noSource": [
     "PL010-0056#00b19b3f",
@@ -1463,7 +1463,7 @@
    "EU-923-2012",
    "EU-965-2012"
   ],
-  "complete": true,
+  "complete": false,
   "gaps": {
    "noSource": [
     "PL099-0022#aaa2df9d",
