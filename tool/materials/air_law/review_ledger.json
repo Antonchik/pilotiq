@@ -271,6 +271,134 @@
   "textSha": "2654f83ece0a375a",
   "verdict": "PASS"
  },
+ "AL05-1": {
+  "date": "2026-11-25",
+  "note": "Sprawdzone z korpusem: FCL.200 (17 lat PPL), art. 96 ust. 2 pkt 4–6 PL (17/18/21), FCL.400.A i FCL.915(a) (18 lat), § 2 pkt 9 rozp. licencjonowanie, FCL.025(b)(4) (LAPL), FCL.205.A(a) i (b)(1)–(2) – wynagrodzenie tylko z przywilejami instruktora/egzaminatora, „m.in.” obejmuje też ppkt 3. Zgodne z verified objaśnieniami PL010-0229/0407/0408/0426/0425/1548; klucze trafne. Dobrze działa jako bezpłatny przegląd podtematu; 160 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "2d8ec28ba6047210",
+  "verdict": "PASS"
+ },
+ "AL05-2": {
+  "date": "2026-11-25",
+  "note": "FCL.025(a)(2)–(3), (b)(1) 75 % bez punktów karnych, (b)(2) 18 miesięcy od końca miesiąca pierwszego podejścia, (c)(1)(i)/(ii) 24/36 miesięcy liczone od dnia zdania egzaminu („zgodnie z lit. b) pkt 2”) – wszystko w tekście kotwic. Kontrast z dniem pierwszego podejścia wynika z (b)(2). Zgodne z PL010-0226#1a030b4b; 145 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "adf9701e3edc2a39",
+  "verdict": "PASS"
+ },
+ "AL05-3": {
+  "date": "2026-11-25",
+  "note": "Zdanie „Wariant z samolotami wielosilnikowymi tłokowymi nie pasuje do kandydata na PPL(A) …” sformułowane ogólnie przeczy kluczowi PL010-0467#3b832689 (verified, w questionKeys tej sekcji): tam poprawna polska odpowiedź to właśnie „25 godzin … na samolotach … wielosilnikowych tłokowych” (objaśnienie 0467 to odnotowuje). Pułapka 70 h (FCL.720.A(a)(1)) dotyczy tylko pytania o lot samodzielny (PL010-0468#31cfb564). Gotowy tekst – zastąpić dwa ostatnie akapity body: [\"Przepis nie wskazuje klasy samolotu, więc klasa wymieniona w pytaniu nie zmienia tych minimów.\", \"Typowe pułapki: 10 godzin to cały czas samodzielnego lotu pod nadzorem, a 5 godzin tylko jego część nawigacyjna; lądowanie na jednym lotnisku nie wystarcza nawet przy przelocie na 270 km. W pytaniu o lot samodzielny wariant z samolotami wielosilnikowymi tłokowymi odpada, bo pierwsze uprawnienie na klasę samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca (pkt FCL.720.A lit. a) pkt 1); w pytaniu o 25 godzin z instruktorem polska wersja klucza ULC wymienia jednak tę klasę i decyduje liczba godzin.\"] (ok. 198 słów; refs bez zmian). Reszta (FCL.210.A(a), (a)(1), (a)(2)) zgodna z korpusem.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "d1a4b89d5f80b627",
+  "verdict": "FIX"
+ },
+ "AL05-4": {
+  "date": "2026-11-25",
+  "note": "FCL.210.A(d) (10 %, do 10 h, bez balonów, nie obejmuje lit. a) pkt 2), FCL.210.A(c)(1)–(2) (24 h TMG, 15 h), FCL.010 (lista kategorii „na przykład”), art. 94 ust. 6 pkt 1 lit. j/k, § 4 ust. 1 pkt 5 rozp. o świadectwach – zgodne. Wiatrakowiec: FCL.010 go nie wymienia, ale sekcja uczciwie pisze „klucz ULC stosuje tę samą zasadę”, tak jak verified PL010-0535/0539 – dopuszczalne. 188 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "8b423425f1ff7c06",
+  "verdict": "PASS"
+ },
+ "AL05-5": {
+  "date": "2026-11-25",
+  "note": "FCL.810(a)(1) (DTO/ATO, 6 miesięcy) i (a)(1)(i)–(ii): wykłady teoretyczne, 5 h nocą, w tym 3 h z instruktorem, 1 h nawigacji, lot 50 km (27 NM), 5 startów i 5 lądowań z pełnym zatrzymaniem – dosłownie w korpusie. Zgodne z verified PL010-0403…0406; 153 słowa.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "20711f430a9c94e9",
+  "verdict": "PASS"
+ },
+ "AL05-6": {
+  "date": "2026-11-25",
+  "note": "FCL.700(a), § 7 ust. 4 i § 3 ust. 1 pkt 1 rozp. licencjonowanie, art. 2 pkt 8c (SEP, silnik tłokowy), FCL.740.A(b)(4) (lądowe i wodne SEP), FCL.740.A(b)(1) (TMG), FCL.710(c)(1)(iii) (MEP wymaga uprawnienia na klasę), FCL.720.A(c) (ograniczony typ, FL 200), FCL.720.A(a)(1) (70 h) – zgodne. FCL.725(b)(5) jako dowód istnienia klasy wodnych samolotów wielosilnikowych z załogą jednoosobową: słaby, ale poprawny (to jedyne miejsce w korpusie z tą nazwą; ten sam ref w verified PL010-0419), sformułowanie „część FCL wymienia też” jest ścisłe. Ujęcie FL 200 zgodne z verified PL010-0422. 176 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "5d0710f9dbc865d7",
+  "verdict": "PASS"
+ },
+ "AL05-7": {
+  "date": "2026-11-25",
+  "note": "FCL.810(a)(1), FCL.600, FCL.805(a), § 48 (wpis FCL.800/805 przez Prezesa ULC – zdanie odnosi się tylko do holowania, poprawnie), FCL.625(d) (7 lat), zał. 3 pkt 4.1 (agro, gaśnicze, ciężar podwieszony – potwierdzenie w dokumencie praktyki) – zgodne. Powtórzenie 13 kluczy z AL05-6 dopuszczalne: STYLE §7 wymaga tylko pokrycia ≥1 raz, a pułapka AGRO/gaśnicze, potrzebna do tych pytań, stoi właśnie tu. 184 słowa.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "e62d99a407a1a19b",
+  "verdict": "PASS"
+ },
+ "AL05-8": {
+  "date": "2026-11-25",
+  "note": "FCL.740(a)(1) (1 rok / 2 lata SE, wcześniejsze przedłużenie – od daty kontroli), FCL.740.A(a)(1) (3 miesiące, ME), FCL.740.H(a)(1)(ii), FCL.740.A(b)(1)(i), FCL.740.A(c), FCL.740(b) – zgodne. „Jedną z dróg” trafnie oddaje „lub” przed ppkt (ii) (12 h w 12 miesiącach). Objaśnienie PL010-0088#330b34e9 nie jest nieścisłe (mówi o terminie kontroli umiejętności), tylko pomija drogę (ii) – bez potrzeby poprawki. 170 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "7cf42f217145f47b",
+  "verdict": "PASS"
+ },
+ "AL05-9": {
+  "date": "2026-11-25",
+  "note": "§ 31, § 33 ust. 1 pkt 1–2 i ust. 2 rozp. licencjonowanie, § 66 ust. 1 i 2 rozp. egzaminy – zgodne z korpusem (brak przyszłej redakcji). Klucz PL010-0229#0ba29b76 (wznowienie liczone od upływu poprzedniej ważności) przeczy § 66 ust. 1 (od ostatniego dnia miesiąca egzaminu praktycznego); sekcja ujmuje to neutralnie formułą „Klucz ULC … przyjmuje …; aktualny § 66 ust. 1 …”, disputeNote poprawny, § 66 ust. 1 w refs, zgodne z disputed objaśnieniem P09. Klucze 0087#0876ed9a, 0089, 0226#c1389f4e trafne. 177 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "f6da07b02e02184d",
+  "verdict": "DISPUTED"
+ },
+ "AL06-1": {
+  "date": "2026-11-25",
+  "note": "FCL.210(a), art. 2 pkt 16 i pkt 24 (DTO „na podstawie deklaracji” – dosłownie w kotwicy), § 26 ust. 1, § 27, ORA.GEN.105(a)(1)(i), art. 161 ust. 1 PL, ORA.ATO.110(a), DTO.GEN.210(a)(2), FCL.025(a)(2)–(3) – zgodne. Zgodne z verified PL010-0041/0400/0604/0544/1549. Dobry bezpłatny przegląd podtematu; 191 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "4444a3f6527bd887",
+  "verdict": "PASS"
+ },
+ "AL06-2": {
+  "date": "2026-11-25",
+  "note": "§ 22 pkt 1–4 i zał. 3 pkt 1.1.26/1.1.29 rozp. licencjonowanie, FCL.210(b) – zgodne z korpusem i z verified PL010-0639/0640/0383/0384. 170 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "7fd63995f2d2bc49",
+  "verdict": "PASS"
+ },
+ "AL06-3": {
+  "date": "2026-11-25",
+  "note": "Art. 160 ust. 1 i ust. 3 pkt 2, art. 161 ust. 2 i 8 PL, ORA.GEN.125, zał. 6 pkt 6a (ATCO TO) – zgodne. Jedyny problem: „skrót CAPTO to dawne oznaczenie takiej organizacji” – fakt historyczny spoza korpusu (CAPTO nie występuje w żadnym pliku corpus/*.txt). Gotowy tekst ostatniego akapitu: \"Szkolenie kandydatów na kontrolerów ruchu lotniczego prowadzi organizacja z certyfikatem ATCO TO (załącznik nr 6 do Prawa lotniczego, pkt 6a). Skrót CAPTO z odpowiedzi w kluczu ULC nie występuje w aktualnych przepisach, które taką organizację oznaczają skrótem ATCO TO.\" (refs bez zmian).",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "3994e84606525822",
+  "verdict": "FIX"
+ },
+ "AL06-4": {
+  "date": "2026-11-25",
+  "note": "Art. 10a ust. 1 akapit pierwszy/drugi, DTO.GEN.115(a), DTO.GEN.110(a)(1), FCL.725(a), FCL.740(b)(1)(i)–(ii) i (b)(2), art. 160 ust. 3 pkt 2 PL – zgodne z korpusem. Klucz PL010-0363#5945c899 („Tak”) oparty na art. 160 ust. 3 pkt 2, a art. 10a ust. 1 akapit drugi dopuszcza szkolenie DTO bez zatwierdzenia na podstawie deklaracji; sekcja ujmuje to neutralnie, disputeNote poprawny, punkty w refs, zgodne z disputed objaśnieniem P10. Klucze 0088#c249f947 i 0089#6d74eb81 trafne. 188 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "42064adab32befa0",
+  "verdict": "DISPUTED"
+ },
+ "AL06-5": {
+  "date": "2026-11-25",
+  "note": "Art. 96 ust. 2 i pkt 4 PL, FCL.200, FCL.020(b) (16 lat przed pierwszym lotem samodzielnym), ORA.ATO.145(a), § 25 ust. 1–3 i § 3 ust. 1 pkt 2–3 (FNL…, PPL(AG)) – zgodne. Zgodne z verified PL010-0368/0508/0509. 156 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "ca95f7dc0152629f",
+  "verdict": "PASS"
+ },
+ "AL06-6": {
+  "date": "2026-11-25",
+  "note": "§ 28 ust. 1 pkt 1 lit. a–d i pkt 2–4, § 26 ust. 1, ORA.ATO.130(a), ORA.ATO.105(a)(2) – zgodne z korpusem i z verified PL010-0592…0595, 1541. „m.in.” dobrze pomija wariant instrukcji dla ośrodków mechaników. 168 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "008c84ce348118cd",
+  "verdict": "PASS"
+ },
+ "AL06-7": {
+  "date": "2026-11-25",
+  "note": "§ 23, art. 31 ust. 1 pkt 1–3 PL, ORA.ATO.135(a), (b)(1), art. 2 pkt 20 (FSTD, FFS, FTD), ORA.ATO.140 – zgodne z korpusem i z verified PL010-0313/0532/0038/0594#9e00d9eb/0593. 166 słów.",
+  "portion": "K03",
+  "round": 1,
+  "textSha": "b25b9613af4dd120",
+  "verdict": "PASS"
+ },
  "AL07-1": {
   "date": "2026-11-25",
   "note": "Wiek 16 lat = SFCL.120 i art. 96 ust. 2 pkt 1; 14 lat i nadzór FI(S) = SFCL.125(a)/(b); ATO/DTO = SFCL.130(a); pułapki 17/21 lat = art. 96 ust. 2 pkt 4 i 6; 18 lat = SFCL.115(a)(3)(i). Zestawienie «jednej licencji» z SFCL.001 i dwóch specjalności z art. 94 ust. 6 pkt 1 nie jest sprzeczne: SFCL.001 dotyczy tylko SPL na poziomie UE, art. 94 ust. 6 wymienia krajowe specjalności (pilot szybowcowy rekreacyjny, pilot szybowcowy), a pilota szybowcowego zawodowego nie ma w żadnym z aktów. Brzmienie zgodne z verified PL010-0258. Działa jako bezpłatny przegląd; 166 słów; questionKeys poprawne.",
@@ -465,11 +593,11 @@
  },
  "AL11-8": {
   "date": "2026-11-25",
-  "note": "Lista „Pilot wykonuje go:” jest niepełna: pomija warunek SERA.5010 lit. b) ppkt 3 (IAS 140 kt lub mniej), co sugeruje, że wymagania są tylko dwa. Brak minimów udzielenia zezwolenia SVFR (SERA.5010 lit. c): 1500 m/800 m przy ziemi, pułap 180 m) – sam w sobie nie jest błędem, ale przy dodaniu ppkt 3 warto je dać (zgodne z basisNote outdated 0515#19516f9d). Gotowy body (195 słów): [\"Bez zezwolenia organu kontroli ruchu lotniczego w lotach VFR nie startuje się ani nie ląduje na lotnisku znajdującym się w strefie kontrolowanej, ani nie wchodzi się do strefy ruchu lotniskowego lub w krąg nadlotniskowy, gdy (pkt SERA.5005 lit. b) rozporządzenia 923/2012; AIP Polska, ENR 1.2 pkt 6):\", \"- pułap chmur jest niższy niż 450 m (1 500 ft) lub\", \"- widzialność przy ziemi jest mniejsza niż 5 km.\", \"W strefie kontrolowanej może być też dozwolony lot specjalny VFR, pod warunkiem uzyskania zezwolenia ATC (SERA.5010). Pilot wykonuje go:\", \"- z dala od chmur i z widzialnością terenu;\", \"- przy widzialności w locie nie mniejszej niż 1500 m (1,5 km), a w przypadku śmigłowców nie mniejszej niż 800 m;\", \"- z prędkością przyrządową (IAS) 140 kt lub mniejszą (lit. b) ppkt 3).\", \"ATC nie udziela specjalnego zezwolenia VFR na start, lądowanie ani wejście w krąg nadlotniskowy, gdy widzialność przy ziemi jest mniejsza niż 1500 m (dla śmigłowców 800 m) lub pułap chmur jest niższy niż 180 m (600 ft) (lit. c)).\", \"W FIR Warszawa loty specjalne VFR wykonuje się wyłącznie w ciągu dnia (AIP ENR 1.2 pkt 14). Minimum 5 km dotyczy zwykłego lotu VFR (tabela S5-1).\"]. Dodać refs: {EU-923-2012, SERA.5010(b)(3), quote: \"lot jest wykonywany z prędkością przyrządową (IAS) 140 kts lub mniejszą\"}, {EU-923-2012, SERA.5010(c), quote: \"organ kontroli ruchu lotniczego nie udziela statkowi powietrznemu specjalnego zezwolenia w lotach VFR na start ani na lądowanie\"}, {EU-923-2012, SERA.5010(c)(1), quote: \"widzialność przy ziemi jest mniejsza niż 1 500 m, a w przypadku śmigłowców – mniejsza niż 800 m\"}, {EU-923-2012, SERA.5010(c)(2), quote: \"pułap chmur jest niższy niż 180 m (600 ft).\"}. Reszta (SERA.5005 lit. b), ENR 1.2 pkt 6 i 14, SERA.5010 lit. b) ppkt 1–2) sprawdzona i poprawna.",
+  "note": "Poprawka wprowadzona zgodnie z r1: dodano SERA.5010 lit. b) ppkt 3 (IAS 140 kt) i minima lit. c) (1500 m/800 m przy ziemi, pułap 180 m); refs SERA.5010(b)(3), (c), (c)(1), (c)(2) z cytatami zgodnymi z korpusem. 195 słów. Zgodne z verified 0514/0515 i basisNote outdated 0515#19516f9d.",
   "portion": "K06",
-  "round": 1,
-  "textSha": "1d742e74744912e0",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "738dbb7c8a54dbbd",
+  "verdict": "PASS"
  },
  "AL11-9": {
   "date": "2026-11-25",
@@ -481,11 +609,11 @@
  },
  "AL12-1": {
   "date": "2026-11-25",
-  "note": "Tabela AP1-1 (dodatek 1 pkt 3.1.1) i SERA.3301 lit. a) zgodne, wszystkie 21 kluczy verified. Do poprawy w sekcji bezpłatnej: (1) zdanie „W pytaniach ULC stosuje się je, gdy nie ma łączności radiowej: …” to twierdzenie normatywne bez źródła i opis pytań ULC – zastąpić zdaniem z SERA.14083 lit. c) ppkt 1; (2) „Łatwo pomylić” – ocena, zastąpić neutralnym. Gotowe teksty: body[0] = \"Tabela AP1-1 w pkt 3.1.1 dodatku 1 do rozporządzenia 923/2012 podaje sygnały świetlne kierowane z kontroli lotniska do statku powietrznego. Przy awarii łączności radiowej statek powietrzny w ruchu lotniskowym na lotnisku kontrolowanym śledzi instrukcje wydawane za pomocą sygnałów wzrokowych (SERA.14083 lit. c) ppkt 1). Pilot dowódca, który zauważył lub odebrał sygnał, podejmuje działania wynikające z jego znaczenia (SERA.3301 lit. a)). Ten sam sygnał znaczy co innego w locie i na ziemi:\"; ostatni akapit = \"Światło ciągłe i seria błysków tego samego koloru znaczą co innego: ciągłe zielone zezwala na lądowanie lub start, a błyski zielone każą wracać do lądowania albo zezwalają na kołowanie.\" Dodać ref {EU-923-2012, SERA.14083(c)(1), quote: \"statek powietrzny uczestniczący w ruchu lotniskowym na lotnisku kontrolowanym śledzi sytuację pod kątem instrukcji, jakie mogą być wydawane za pomocą sygnałów wzrokowych\"}. Po zmianie 199 słów.",
+  "note": "Zdanie o pytaniach ULC zastąpione treścią SERA.14083 lit. c) ppkt 1 (ref z cytatem zgodnym z korpusem), „Łatwo pomylić” zastąpione neutralnym sformułowaniem. Tabela AP1-1 bez zmian i poprawna. 199 słów; sekcja nadaje się jako bezpłatny przegląd.",
   "portion": "K06",
-  "round": 1,
-  "textSha": "f0cbb98b4c5edf09",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "52b6188381e88313",
+  "verdict": "PASS"
  },
  "AL12-2": {
   "date": "2026-11-25",
@@ -521,11 +649,11 @@
  },
  "AL12-6": {
   "date": "2026-11-25",
-  "note": "Definicje (art. 2 pkt 134, 135; zał. I pkt 247 rozp. 2017/373), SERA.8015 lit. eb) ppkt 1 i 5 (węższe anchory poprawne) oraz AIP ENR 1.7 pkt 1.2, 2.6.1, 2.6.5, 3.1, 3.1.1 sprawdzone, parafraza AIP poprawna, disputeNote = disputed 0637#9325b5b6. Problem: ostatni akapit przedstawia jako rozbieżność słowo „względna” w kluczu („przyjmuje …; art. 2 pkt 134 mówi tylko o wysokościach bezwzględnych”), a zaakceptowany wpis 0637 mówi, że klucz oddaje definicję z art. 2 pkt 134, a wysokość względną dopuszcza SERA.8015 lit. eb) ppkt 5; spór dotyczy tylko odpowiedzi QNH→STD. Gotowy tekst ostatniego akapitu (body 190 słów): \"Klucz ULC w pytaniu o definicję wysokości przejściowej oddaje art. 2 pkt 134, a wysokość względną dopuszcza pkt SERA.8015 lit. eb) ppkt 5 przy podejściu z QFE. Według AIP (ENR 1.7 pkt 2.6.5) wysokość przejściową opisuje też odpowiedź o przestawieniu wysokościomierza z QNH na STD.\" disputeNote i refs bez zmian; po poprawce sekcja do DISPUTED.",
+  "note": "Ostatni akapit zgodny z disputed 0637#9325b5b6: klucz oddaje art. 2 pkt 134, wysokość względną dopuszcza SERA.8015 lit. eb) ppkt 5 przy podejściu z QFE, spór dotyczy odpowiedzi QNH→STD (AIP ENR 1.7 pkt 2.6.5). disputeNote bez zmian, jego punkty są w refs. 190 słów.",
   "portion": "K06",
-  "round": 1,
-  "textSha": "03b0252d4b635d11",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "9c6c953de56d664e",
+  "verdict": "DISPUTED"
  },
  "AL12-7": {
   "date": "2026-11-25",

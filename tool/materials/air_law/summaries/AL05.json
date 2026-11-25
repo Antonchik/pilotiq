@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL05-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Licencja PPL: wiek kandydata i przywileje",
       "body": [
         "Wymagania dla licencji pilota turystycznego (PPL) określa część FCL rozporządzenia 1178/2011, a wiek dla poszczególnych specjalności personelu lotniczego podaje także Prawo lotnicze. Rozporządzenie w sprawie licencjonowania personelu lotniczego nazywa PPL(A) licencją pilota samolotowego turystycznego. W części FCL skrót LAPL oznacza licencję pilota lekkich statków powietrznych.",
@@ -89,7 +89,7 @@
     },
     {
       "id": "AL05-2",
-      "status": "draft",
+      "status": "verified",
       "heading": "Egzamin z wiedzy teoretycznej: zaliczenie i ważność wyniku",
       "body": [
         "Do egzaminu z wiedzy teoretycznej kandydat przystępuje tylko z zaświadczeniem DTO lub ATO odpowiedzialnej za jego szkolenie, wydanym po zadowalającym ukończeniu kursu z zakresu wiedzy teoretycznej. Zaświadczenie zachowuje ważność przez 12 miesięcy (pkt FCL.025 lit. a) ppkt 2 i 3 rozporządzenia 1178/2011).",
@@ -198,7 +198,7 @@
     },
     {
       "id": "AL05-4",
-      "status": "draft",
+      "status": "verified",
       "heading": "Zaliczenie czasu lotu z licencji na inną kategorię",
       "body": [
         "Kandydat do licencji PPL(A), który posiada licencję pilota na inną kategorię statku powietrznego, z wyjątkiem balonów, uzyskuje zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy tego statku powietrznego, nie więcej niż 10 godzin (pkt FCL.210.A lit. d) rozporządzenia 1178/2011). Zaliczenie w żadnym przypadku nie obejmuje wymaganego czasu samodzielnego lotu pod nadzorem (lit. a) pkt 2).",
@@ -263,7 +263,7 @@
     },
     {
       "id": "AL05-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Uprawnienie do lotów VFR w nocy",
       "body": [
         "Aby korzystać z przywilejów licencji LAPL lub PPL na samoloty, motoszybowce turystyczne lub sterowce w warunkach VFR w nocy, kandydat musi ukończyć szkolenie w DTO lub ATO w okresie nieprzekraczającym 6 miesięcy (pkt FCL.810 lit. a) ppkt 1 rozporządzenia 1178/2011). Szkolenie obejmuje wykłady z wiedzy teoretycznej oraz:",
@@ -307,7 +307,7 @@
     },
     {
       "id": "AL05-6",
-      "status": "draft",
+      "status": "verified",
       "heading": "Uprawnienia na klasę i typ samolotu w licencji PPL(A)",
       "body": [
         "Posiadacz licencji pilota wykonuje czynności pilota statku powietrznego tylko wtedy, gdy ma ważne uprawnienie na odpowiednią klasę lub typ (pkt FCL.700 lit. a) rozporządzenia 1178/2011). Zakresy wpisów uprawnień do PPL(A) określa część FCL (§ 7 ust. 4 rozporządzenia w sprawie licencjonowania personelu lotniczego). Do PPL(A) można wpisać m.in.:",
@@ -398,7 +398,7 @@
     },
     {
       "id": "AL05-7",
-      "status": "draft",
+      "status": "verified",
       "heading": "Uprawnienia dodatkowe: loty nocne, IR, holowanie",
       "body": [
         "Poza uprawnieniami na klasę i typ do licencji PPL(A) wpisuje się m.in.:",
@@ -465,7 +465,7 @@
     },
     {
       "id": "AL05-8",
-      "status": "draft",
+      "status": "verified",
       "heading": "Ważność i przedłużanie uprawnień na klasę lub typ",
       "body": [
         "Okres ważności uprawnień na klasę lub typ statku powietrznego wynosi 1 rok. Wyjątkiem są uprawnienia na klasę jednosilnikowych statków powietrznych z załogą jednoosobową, np. SEP, ważne 2 lata, o ile dane dotyczące zgodności operacyjnej nie stanowią inaczej (pkt FCL.740 lit. a) ppkt 1 rozporządzenia 1178/2011).",
@@ -521,7 +521,7 @@
     },
     {
       "id": "AL05-9",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Uprawnienia krajowe i data ważności po przedłużeniu lub wznowieniu",
       "body": [
         "Sprawdzenie kwalifikacji do licencji Part-FCL, np. PPL(A), odbywa się według części FCL (§ 31 rozporządzenia w sprawie licencjonowania personelu lotniczego). Dla uprawnień, których ważność określa załącznik nr 3 do tego rozporządzenia, sprawdzenie w celu przedłużenia przeprowadza się w okresie ważności uprawnienia, jednak (§ 33 ust. 1):",

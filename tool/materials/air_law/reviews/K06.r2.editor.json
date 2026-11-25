@@ -1,0 +1,5 @@
+[
+ {"key":"AL11-8","verdict":"PASS","note":"Poprawka wprowadzona zgodnie z r1: dodano SERA.5010 lit. b) ppkt 3 (IAS 140 kt) i minima lit. c) (1500 m/800 m przy ziemi, pułap 180 m); refs SERA.5010(b)(3), (c), (c)(1), (c)(2) z cytatami zgodnymi z korpusem. 195 słów. Zgodne z verified 0514/0515 i basisNote outdated 0515#19516f9d."},
+ {"key":"AL12-1","verdict":"PASS","note":"Zdanie o pytaniach ULC zastąpione treścią SERA.14083 lit. c) ppkt 1 (ref z cytatem zgodnym z korpusem), „Łatwo pomylić” zastąpione neutralnym sformułowaniem. Tabela AP1-1 bez zmian i poprawna. 199 słów; sekcja nadaje się jako bezpłatny przegląd."},
+ {"key":"AL12-6","verdict":"DISPUTED","note":"Ostatni akapit zgodny z disputed 0637#9325b5b6: klucz oddaje art. 2 pkt 134, wysokość względną dopuszcza SERA.8015 lit. eb) ppkt 5 przy podejściu z QFE, spór dotyczy odpowiedzi QNH→STD (AIP ENR 1.7 pkt 2.6.5). disputeNote bez zmian, jego punkty są w refs. 190 słów."}
+]

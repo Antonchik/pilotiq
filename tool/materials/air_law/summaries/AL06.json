@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL06-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Gdzie prowadzi się szkolenie lotnicze: ATO, DTO, ośrodek szkolenia",
       "body": [
         "Osoba ubiegająca się o licencję PPL musi ukończyć szkolenie w ATO lub DTO (pkt FCL.210 lit. a) rozporządzenia 1178/2011):",
@@ -83,7 +83,7 @@
     },
     {
       "id": "AL06-2",
-      "status": "draft",
+      "status": "verified",
       "heading": "Rodzaje szkolenia lotniczego",
       "body": [
         "Szkolenie lotnicze składa się z (§ 22 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
@@ -211,7 +211,7 @@
     },
     {
       "id": "AL06-4",
-      "status": "draft",
+      "status": "disputed",
       "heading": "ATO i DTO: zatwierdzenie, deklaracja i szkolenie do uprawnień",
       "body": [
         "Organizacje szkolące pilotów co do zasady muszą uzyskać zatwierdzenie właściwego organu (art. 10a ust. 1 akapit pierwszy rozporządzenia 1178/2011). Organizacja z głównym miejscem działalności w państwie członkowskim może jednak prowadzić szkolenia wymienione w pkt DTO.GEN.110 bez zatwierdzenia, jeżeli przedłożyła właściwemu organowi deklarację (akapit drugi, pkt DTO.GEN.115 lit. a)). DTO może prowadzić m.in. szkolenie teoretyczne do LAPL(A) i PPL(A) (pkt DTO.GEN.110 lit. a) ppkt 1).",
@@ -291,7 +291,7 @@
     },
     {
       "id": "AL06-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Wymagania wobec uczestnika szkolenia i kto je sprawdza",
       "body": [
         "Wymagania w zakresie wieku z art. 96 ust. 2 Prawa lotniczego musi spełnić osoba ubiegająca się o licencję (pilot turystyczny: 17 lat), są więc warunkiem uzyskania licencji, a nie rozpoczęcia szkolenia. Rozporządzenie 1178/2011 także wiąże 17 lat z wnioskiem o licencję PPL (pkt FCL.200), a od ucznia-pilota wymaga ukończenia 16 lat dopiero przed pierwszym samodzielnym lotem (pkt FCL.020 lit. b)). Organizacja szkoleniowa może więc dopuścić do szkolenia teoretycznego kandydata, który nie ma jeszcze wieku wymaganego do licencji.",
@@ -361,7 +361,7 @@
     },
     {
       "id": "AL06-6",
-      "status": "draft",
+      "status": "verified",
       "heading": "Instrukcje, kadra i baza dydaktyczna",
       "body": [
         "Szkolenie lotnicze prowadzi się (§ 28 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
@@ -456,7 +456,7 @@
     },
     {
       "id": "AL06-7",
-      "status": "draft",
+      "status": "verified",
       "heading": "Statki powietrzne, FSTD i lotniska w szkoleniu",
       "body": [
         "Szkolenie praktyczne na ziemi i w locie prowadzi się na statkach powietrznych spełniających wymagania art. 31 ust. 1 Prawa lotniczego lub na polskich państwowych statkach powietrznych, które odpowiadają rodzajowi i zakresowi szkolenia (§ 23 rozporządzenia w sprawie licencjonowania personelu lotniczego). Art. 31 ust. 1 dopuszcza do lotów cywilne statki powietrzne:",

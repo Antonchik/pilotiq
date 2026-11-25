@@ -979,7 +979,7 @@
    "AIP-PL",
    "EASA-EAR-SERA"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0153#6f1bc953",
@@ -1057,7 +1057,7 @@
    "AIP-PL",
    "EASA-EAR-SERA"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0394#20df34ad",
