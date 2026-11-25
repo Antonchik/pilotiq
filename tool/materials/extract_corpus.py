@@ -600,6 +600,7 @@ _RULE_RE = re.compile(r"^(%s)\.?(?:\s+(\S.*))?$" % _RULE_ID)   # "SERA.7001. Prz
 # "AMC1 SERA.5005(f) Title" and the multi-rule form "AMC1 FCL.210; FCL.215 Title"
 _AMC_FULL_RE = re.compile(r"^((?:AMC|GM|CS)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_ID_PAREN, _ID_PAREN))
 _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
+_ANNEX_DEFS_RE = re.compile(r"^ANNEX ([IVX]+) — DEFINITIONS$")
 _ART_EAR_RE = re.compile(r"^Article (\d+[a-z]?) \S")
 _GM_ART_RE = re.compile(r"^((?:AMC|GM)\d*) (?:to )?Article (\d+[a-z]?(?:\(\d+[a-z]?\))?)(?=\s)")
 _GM_OTHER_RE = re.compile(r"^(?:AMC|GM)\d*\s+(?:and (?:AMC|GM)\d*\s+)?to\s")
@@ -721,6 +722,15 @@ def _changelog_title(line):
         return False
     rest = line[m.end(1):].strip() if _RULE_RE.match(line) and not _AMC_FULL_RE.match(line) else line[m.end():].strip()
     return bool(_CHANGELOG_TITLE_RE.match(rest))
+
+
+def _closing_sentence(rows, idx, line, para):
+    """A sentence that refers back to the list above ("Okresy podane w ppkt (i) i (ii) liczy się ...", "The periods in
+    paragraphs (i) and (ii) shall ...") closes the last (i)/(ii) item: it belongs to the point that owns the list."""
+    if 3 not in para or idx == 0 or not rows[idx - 1][1].rstrip().endswith("."):
+        return False
+    return bool(re.match(r"^[A-ZĄĆĘŁŃÓŚŹŻ]", line) and re.search(r"\((?:[ivx]{1,4}|[a-z]|\d)\)", line[:90])
+                and not re.match(r"^\(", line))
 
 
 class _ParaState:
@@ -897,6 +907,18 @@ def rule_anchors(text, kind, extras=()):
                 group = [sp]
             state = None
             continue
+        mad = _ANNEX_DEFS_RE.match(line) if (art_extra and kind == "easa") else None
+        if mad:
+            # "ANNEX I — DEFINITIONS": numbered like an article, Annex I(12) = definition (12)
+            end_all(start)
+            end_app(start)
+            key = "Annex " + mad.group(1)
+            if key not in have:
+                have.add(key)
+                art = _Span(key, start, 1)
+                spans.append(art)
+                art_last = None
+            continue
         if _BOUNDARY_RE.match(line):
             end_all(start)
             end_app(start)
@@ -1021,6 +1043,8 @@ def rule_anchors(text, kind, extras=()):
                     spans.append(_Span(key, start, 7))
                 continue
         if state is not None and group:
+            if _closing_sentence(rows, idx, line, para):
+                para.pop(3).end = start
             if _TABLE_NOTE_RE.match(line):
                 state.frozen = True
             mp = _PARA_RE.match(line)
@@ -1325,6 +1349,8 @@ def eureg_anchors(text, extras=()):
                 block = add(mr.group(1), start, 2)
                 state = _ParaState()
                 continue
+            if block is not None and state is not None and _closing_sentence(rows, idx, line, para):
+                para.pop(3).end = start
             if _EU_TABLE_RE.match(line):
                 in_table = True     # "Tabela S14-1": its rows "a) ... b) ..." are not points of the rule
             if block is not None and state is not None:

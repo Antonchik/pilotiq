@@ -818,7 +818,10 @@
     "landing_url": "https://www.easa.europa.eu/en/document-library/easy-access-rules/easy-access-rules-aerodromes",
     "terms_url": "https://www.easa.europa.eu/en/copyright-disclaimer",
     "terms_note": "EASA: 'Reproduction is authorised, provided the source is acknowledged, save where otherwise stated.' Plan treats EASA as reference-only (no quotes in the app).",
-    "bytes": 18241604
+    "bytes": 18241604,
+    "anchorExtras": [
+      "article"
+    ]
   },
   {
     "status": "available",

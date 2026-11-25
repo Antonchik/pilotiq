@@ -22,6 +22,7 @@ PUBLISHED = ("verified", "disputed")
 BASES = ("no-source", "aip-missing", "outdated")
 # outdated: вопрос опирается на отменённую норму; объяснения нет (text пуст), basisNote = что отменено и чем заменено;
 # такая запись попадает в ассет отдельным списком "outdated" (приложение показывает пометку всем), см. README
+INTERNAL_PREFIX = re.compile(r"^\s*[a-z][a-z0-9-]*:\s")   # "old-licence: ..." and similar machine categories must not reach the user
 MAX_OUTDATED_NOTE = 300
 VERDICT_STATUS_OK = {"verified": "PASS", "disputed": "DISPUTED"}
 MAX_TEXT = 700
@@ -270,8 +271,8 @@ def src_available(src):
 
 
 def src_quotable(src):
-    """Цитаты хранятся только для источников с allowQuote (по умолчанию нет у aip/easa)."""
-    default = src.get("kind") not in ("aip", "easa")
+    """Цитаты хранятся только для источников с allowQuote (по умолчанию нет у aip/easa/icao/itu)."""
+    default = src.get("kind") not in ("aip", "easa", "icao", "itu")
     return bool(src.get("allowQuote", default))
 
 
@@ -321,7 +322,7 @@ LOC_EASA = re.compile(r"^((AMC|GM|CS)\d* )?[A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?(\
 LOC_ICAO = re.compile(r"^(Article \d+( bis| ter| quater)?(\([a-z]\))?|Chapter \d+|Appendix \d+|pkt \d+(\.\d+)+|def [A-Z][^\n]{0,90})$")
 # ITU Radio Regulations: Appendix 18, Appendix 18 channel 06, Appendix 18 channel AIS1, Appendix 18 note f
 LOC_ITU = re.compile(r"^Appendix \d+( channel (\d{2,4}|AIS\d|ASM\d)| note [a-z]{1,2})?$")
-LOC_EASA_ART = re.compile(r"^(GM\d* )?Article \d+[a-z]?(\([0-9a-z]+\))*$")
+LOC_EASA_ART = re.compile(r"^((GM\d* )?Article \d+[a-z]?|Annex [IVX]+)(\([0-9a-z]+\))*$")
 LOC_EASA_APP = re.compile(r"^Appendix \d+( pkt %s| to (AMC|GM)\d* [A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*)?$" % _L)
 FUTURE_MARK = "PRZYSZŁA REDAKCJA"
 
@@ -543,7 +544,7 @@ def check_refs(rep, label, rec, sources, store, status):
                 continue
             at = store.anchor_text(src, loc)
             if at is None:
-                if published:
+                if strict:
                     rep.err("%s: нет корпуса/якоря для проверки quote (%s, %s)" % (label, src, loc))
             elif norm_quote(quote) not in at:
                 rep.err("%s: quote не найден в тексте якоря %s %s" % (label, src, loc))
@@ -636,6 +637,10 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
                     if len(r.get("basisNote")) > MAX_OUTDATED_NOTE:
                         rep.err("%s: basisNote длиннее %d символов" % (label, MAX_OUTDATED_NOTE))
             text = r.get("text") or ""
+            for fld, val in (("text", text), ("basisNote", r.get("basisNote") or "")):
+                if INTERNAL_PREFIX.match(val):
+                    rep.err("%s: %s начинается со служебного префикса вида «xxx-yyy:» (%r); в ассет попадает как есть, уберите" % (
+                        label, fld, val[:30]))
             if status in ("draft",) + PUBLISHED or (status == "unverified" and basis == "no-source") \
                     or (status == "unverified" and basis == "aip-missing" and text.strip()):
                 n = count_sentences(text)
