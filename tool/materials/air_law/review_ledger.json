@@ -183,12 +183,52 @@
   "textSha": "18e7bf76a3c16214",
   "verdict": "PASS"
  },
+ "PL010-0014#4615bb7c": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 1, AIP GEN 2.2 ADIZ (forma «identyfikacyjna» – sparafrazowana, dopuszczalne), pułapki CBA (§ 2 pkt 15) i TFR (§ 2 pkt 42) zgodne z dystraktorami.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "3a32fe3e33c502bf",
+  "verdict": "PASS"
+ },
+ "PL010-0015#5c15787a": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 4 – akt mówi «komórka», tekst uczciwie zaznacza, że klucz używa słowa «ośrodek»; to różnica nazewnicza, nie spór (żaden dystraktor nie jest poprawny). AIP GEN 2.2 AMC, pułapki ATFM (§ 2 pkt 8) i AUP (§ 2 pkt 13) zgodne.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "6239e32e35ade659",
+  "verdict": "PASS"
+ },
+ "PL010-0016#4e382304": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 6, AIP GEN 2.2 «ARP 2» (kotwica istnieje, wpis PL); GM1 ADR.OPS.A.005 (EASA, bez quote – zgodnie z zasadą) mówi „near the initial or planned geometric centre of the aerodrome” – parafraza poprawna; pułapka z załącznika I pkt 5 rozporządzenia 2017/373 zgodna.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "85c27edaaa081c0c",
+  "verdict": "PASS"
+ },
+ "PL010-0017#d4610fa4": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 10 dosłownie (z treścią ATM), AIP GEN 2.2 ATM; pułapki AUP (§ 2 pkt 13) i TMA (§ 2 pkt 43) zgodne.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "aab45affbeeadad9",
+  "verdict": "PASS"
+ },
  "PL010-0018#5e11c975": {
   "date": "2026-11-24",
   "note": "§ 2 pkt 12, AIP GEN 2.2 ATZ (sparafrazowany), art. 2 pkt 11 rozporządzenia 923/2012; pułapka MATZ (§ 2 pkt 27) zgodna.",
   "portion": "P15",
   "round": 1,
   "textSha": "62f0e64efc5f7102",
+  "verdict": "PASS"
+ },
+ "PL010-0019#f858f276": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 13 („o statusie NOTAM wydawany przez AMC Polska”), AIP GEN 2.2 AUP; pułapki AMC Polska (§ 2 pkt 4) i MRT (§ 2 pkt 30) zgodne.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "c4f97d710ee92bf0",
   "verdict": "PASS"
  },
  "PL010-0020#315617a8": {
@@ -205,6 +245,14 @@
   "portion": "P13",
   "round": 1,
   "textSha": "aa63ea4bd6f71016",
+  "verdict": "PASS"
+ },
+ "PL010-0021#c98a9ca1": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 15 dosłownie, AIP GEN 2.2 CBA sparafrazowany («podobnie»); pułapki ADIZ (§ 2 pkt 1) i TFR (§ 2 pkt 42) zgodne.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "bd8b9709057b94f0",
   "verdict": "PASS"
  },
  "PL010-0022#2dd815c4": {
@@ -533,6 +581,22 @@
   "portion": "P15",
   "round": 1,
   "textSha": "a8ed3aaf43651193",
+  "verdict": "PASS"
+ },
+ "PL010-0059#43fc6b3b": {
+  "date": "2026-11-25",
+  "note": "Załącznik I pkt 5 i 46 rozporządzenia 2017/373, art. 2 pkt 92 rozporządzenia 923/2012 dosłownie; pułapka (najwyższy punkt pola wzlotów, nie całego lotniska ani próg) wynika z pkt 5.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "28f8e7f1a3eb0b78",
+  "verdict": "PASS"
+ },
+ "PL010-0059#570369b0": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różnica tylko w kropce «n.p.m..» w dystraktorze.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "c6eaa5683b57a37b",
   "verdict": "PASS"
  },
  "PL010-0062#3f1ad0c5": {
@@ -1215,12 +1279,44 @@
   "textSha": "8ccd53f0a46fa84f",
   "verdict": "PASS"
  },
+ "PL010-0154#be6d0021": {
+  "date": "2026-11-25",
+  "note": "Sporne: § 3 ust. 1 pkt 4 (zakaz tylko „w terminach aktywności tych stref opublikowanych w AUP i UUP”) i § 7 ust. 1 pkt 3 („na zlecenie albo za zgodą właściwego organu kierującego działaniami niebezpiecznymi w strefie D”), także załącznik nr 2 i AIP ENR 5.1 pkt 4.3.1 – nigdzie nie ma zezwolenia wojskowych służb ATS; klucz dodaje warunek sprzeczny z aktualną normą, żaden dystraktor nie jest poprawny. Tekst wyjaśnia oparcie klucza (nieaktywność), disputeNote (357 zn.) poprawny, wszystkie punkty w refs. 3 zdania.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "be70a95b15bcc4ff",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0155#340a4ccd": {
+  "date": "2026-11-25",
+  "note": "Sporne: pierwsza część klucza = art. 2 pkt 111 rozporządzenia 923/2012, ale wyjątek od zakazu w strefie R wymaga zlecenia albo zgody zarządzającego obiektem lub rejonem chronionym (§ 8 ust. 1 pkt 5; AIP ENR 5.1 pkt 4.4.1), a nie zezwolenia organu ATS; sprawdzono § 8 ust. 1–3 i tabele załącznika nr 3 – brak zgody ATS (jedyny ATS to uzgodnienie lotów wojskowych w ramach uroczystości, § 8 ust. 1 pkt 6 lit. a). disputeNote 399 zn. (≤400), punkty w refs. Drobiazg: «m.in.» trafnie, bo EP R40 SŁUPSK jest wyłączona z § 8 ust. 1.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "2936caeb4116a0cd",
+  "verdict": "DISPUTED"
+ },
+ "PL010-0156#f7e821a5": {
+  "date": "2026-11-25",
+  "note": "art. 2 pkt 103 rozporządzenia 923/2012, § 3 ust. 1 pkt 3, § 6 ust. 1 pkt 1 i 3 oraz AIP ENR 5.1 pkt 1.1 – zgodne z korpusem; wyjątki nie czynią klucza «Zabronione» spornym.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "52cea8ef88c32bd1",
+  "verdict": "PASS"
+ },
  "PL010-0157#1d2cf7d4": {
   "date": "2026-11-24",
   "note": "§ 2 pkt 27 i § 5 ust. 1 pkt 3 dosłownie; pułapka MCTR (§ 2 pkt 29) zgodna. 3 zdania.",
   "portion": "P15",
   "round": 1,
   "textSha": "0de002e9c8b1fe30",
+  "verdict": "PASS"
+ },
+ "PL010-0158#5a68b862": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 30, AIP GEN 2.2 MRT, § 10 ust. 1 (korytarz o określonych granicach); słowo «stała» z klucza nie występuje w akcie, ale tekst go nie twierdzi i żaden dystraktor nie jest poprawny – bez sporu. Pułapki TFR (§ 2 pkt 42) i MATZ (§ 2 pkt 27) zgodne.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "f9bc91cfa2d6df68",
   "verdict": "PASS"
  },
  "PL010-0159#65e698cb": {
@@ -1375,6 +1471,22 @@
   "textSha": "b42f9838692f4c18",
   "verdict": "PASS"
  },
+ "PL010-0178#240b0c3f": {
+  "date": "2026-11-25",
+  "note": "art. 2 pkt 96 rozporządzenia 923/2012 i załącznik I pkt 209 rozporządzenia 2017/373 – płyta w polu ruchu naziemnego; pułapki pole manewrowe (pkt 94, „wyłączając płyty”) i pole wzlotów (pkt 92) zgodne.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "6262d33142a438ef",
+  "verdict": "PASS"
+ },
+ "PL010-0178#8dfe4066": {
+  "date": "2026-11-25",
+  "note": "Sporne (reguła: klucz nadal poprawny, ale poprawny stał się także dystraktor): klucz = art. 2 pkt 42 rozporządzenia 923/2012, a odpowiedź «Część pola ruchu naziemnego» również jest prawdziwa wg art. 2 pkt 96 („składającą się z pola manewrowego i płyt(-y)”) – analogicznie do przyjętego 0072 w P15. Tekst wyjaśnia klucz, disputeNote 232 zn. poprawny, pkt 96 w refs.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "1e2897da8cb8816a",
+  "verdict": "DISPUTED"
+ },
  "PL010-0179#08a0068a": {
   "date": "2026-11-24",
   "note": "Seria błysków zielonych w locie = „Wracać do lądowania” = nakaz powrotu do lądowania; pułapka zgodna z tabelą. Klucz zgodny z tabelą AP1-1 (dodatek 1 pkt 3.1.1 do 923/2012); cytaty dosłowne, lokator najwęższy (brak podkotwic tabeli). Tabela dotyczy sygnałów „Z kontroli lotniska”, a pytanie mówi o informatorze AFIS — brak przepisu w korpusie, który by AFIS tego zabraniał lub nadawał sygnałom inne znaczenie; SERA.3301(a) wiąże pilota znaczeniem sygnału z dodatku 1 bez względu na nadawcę. Klucz nie jest sprzeczny z normą, inna odpowiedź nie jest obronna → bez disputeNote.",
@@ -1447,6 +1559,14 @@
   "textSha": "4a3c65cdad1b4847",
   "verdict": "PASS"
  },
+ "PL010-0189#1a79bbc4": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 42 i § 9 ust. 7 zgodne; pułapki MRT i ATZ zgodne. Drobiazg (bez rundy): «inne loty» w zdaniu 2 odsyła do § 9 ust. 6 (lot do TSA/TRA i przelot między nimi) – z kontekstu definicji zrozumiałe.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "1b0bb36b0618906f",
+  "verdict": "PASS"
+ },
  "PL010-0190#5ff32bdb": {
   "date": "2026-11-24",
   "note": "§ 2 pkt 43, AIP GEN 2.2 TMA (sparafrazowany), załącznik I pkt 239 rozporządzenia 2017/373; pułapka CTR (§ 2 pkt 18) i MCTR (§ 2 pkt 29) zgodna.",
@@ -1461,6 +1581,30 @@
   "portion": "P15",
   "round": 1,
   "textSha": "cf884cc78a20647b",
+  "verdict": "PASS"
+ },
+ "PL010-0191#0e246aa0": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 45, AIP GEN 2.2 TRA i ENR 5.2.1 TRA (rezerwacja w AMC Polska) zgodne; pułapka TSA (§ 2 pkt 46).",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "00f78c2981fb3ea8",
+  "verdict": "PASS"
+ },
+ "PL010-0191#c2291227": {
+  "date": "2026-11-25",
+  "note": "Spór słuszny (klucz «strefa czasowo wydzielona» sprzeczny z § 2 pkt 45 i GEN 2.2 TRA; disputeNote 360 zn. poprawny), ale zdanie 2 ma tezy bez oparcia w refs: (1) «elastycznymi elementami struktury przestrzeni» – cytat § 9 ust. 1 tego nie mówi, a akt nigdzie wprost nie zalicza TSA/TRA do elastycznych elementów; (2) «działania w każdej z nich wymagają rezerwacji» – w refs jest tylko ENR 5.2.1 TSA, brak TRA. Poprawka: «Obie strefy ustanawia się dla tych samych celów (§ 9 ust. 1), a korzystanie z każdej z nich wymaga uprzedniego uzyskania rezerwacji (§ 16 ust. 3).» + ref PL-ROZP-STRUKTURA-2019 «§ 16 ust. 3», quote „Korzystanie z TSA, TRA, CBA, MRT oraz TFR wymaga uprzedniego uzyskania rezerwacji”; ref ENR 5.2.1 TSA można usunąć. Po poprawce – DISPUTED.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "dabfdfe423a414be",
+  "verdict": "FIX"
+ },
+ "PL010-0192#ff128909": {
+  "date": "2026-11-25",
+  "note": "§ 2 pkt 46, AIP GEN 2.2 TSA, § 18 ust. 1 (jeden podmiot uprawniony) zgodne; pułapka TRA (§ 2 pkt 45).",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "bc1c7c6f6b53f6e7",
   "verdict": "PASS"
  },
  "PL010-0193#44defe31": {
@@ -2583,6 +2727,14 @@
   "textSha": "e870060782d47381",
   "verdict": "PASS"
  },
+ "PL010-0348#4ca4ba4c": {
+  "date": "2026-11-25",
+  "note": "Załącznik I pkt 177 rozporządzenia 2017/373 dosłownie; pytanie używa nieco innego sformułowania („w pobliżu lotniska” zamiast „w strefie podejścia i wznoszenia lub w strefie podejścia końcowego”), ale to ten sam termin i żaden dystraktor nie jest pojęciem z aktu – bez sporu. Szyk «lokalny ruch zasadniczy» omówiony; pułapka «ruch lotniskowy» (pkt 111) zgodna.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "89fa52fc3bb51f98",
+  "verdict": "PASS"
+ },
  "PL010-0350#1e07d083": {
   "date": "2026-11-24",
   "note": "Klucz 8 km na i powyżej 3050 m AMSL = tabela S5-1; pułapka 5 km poprawna.",
@@ -2653,6 +2805,14 @@
   "portion": "P18",
   "round": 1,
   "textSha": "1c72c443ac47e225",
+  "verdict": "PASS"
+ },
+ "PL010-0360#49e69e38": {
+  "date": "2026-11-25",
+  "note": "art. 2 pkt 17, 9 i 8 Prawa lotniczego dosłownie; pułapka z art. 2 pkt 7 (zarządzający = podmiot wpisany do rejestru) uprawniona.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "a45f52ca3dd643d5",
   "verdict": "PASS"
  },
  "PL010-0361#917d15cf": {
@@ -3495,6 +3655,22 @@
   "textSha": "26433a0539500a83",
   "verdict": "PASS"
  },
+ "PL010-0485#f7d15ad0": {
+  "date": "2026-11-25",
+  "note": "art. 2 pkt 7 i art. 59 ust. 6 pkt 1–2 Prawa lotniczego dosłownie; pułapka (opłaty, nadzór) zgodna z definicją.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "af669858bd663035",
+  "verdict": "PASS"
+ },
+ "PL010-0485#fe044557": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różnica tylko w interpunkcji «,.» na końcu odpowiedzi.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "87b1481fd1da1ac1",
+  "verdict": "PASS"
+ },
  "PL010-0486#15d692c1": {
   "date": "2026-11-24",
   "note": "Lit. b) pilot samolotowy turystyczny; pułapka art. 95 ust. 2 pkt 6 i 9 poprawna.",
@@ -4335,6 +4511,14 @@
   "textSha": "44a89869a71c82f3",
   "verdict": "PASS"
  },
+ "PL010-0591#1d24f33b": {
+  "date": "2026-11-25",
+  "note": "Załącznik nr 4: trzy strefy ADIZ (Obwód Kaliningradzki, Białoruś, Ukraina), każda 15 km w głąb terytorium RP – zgodne z tabelą; § 3 ust. 1 pkt 6 i § 7 pkt 1 rozporządzenia o strukturze zgodne. Cztery refs z tym samym loc (cytaty z rozbitej tabeli) – dopuszczalne, jak w innych przyjętych porcjach. 2 zdania.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "d4d26ea895e4a21d",
+  "verdict": "PASS"
+ },
  "PL010-0596#120b851e": {
   "date": "2026-11-24",
   "note": "Klucz 250 kt IAS = SERA.6001(a)(3)–(7) (C: loty VFR, D–G: wszystkie loty) i ENR 1.4; pułapka IAS/TAS poprawna. Cytat ENR 1.4 klasa C to pomieszane kolumny tabeli (ostrzeżenie walidatora oczekiwane), ale mieści „250 kt poniżej” z polskiej kolumny.",
@@ -4437,6 +4621,14 @@
   "portion": "P20",
   "round": 1,
   "textSha": "09515e58b6c292ab",
+  "verdict": "PASS"
+ },
+ "PL010-0613#99941d67": {
+  "date": "2026-11-25",
+  "note": "§ 11 ust. 2 („Nad wodami otwartymi Morza Bałtyckiego … wydziela się D”) i § 2 pkt 19; pułapka P/R nad obszarami lądowymi lub wodami terytorialnymi (art. 2 pkt 103 i 111) zgodna. 2 zdania.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "123b088377d98ce7",
   "verdict": "PASS"
  },
  "PL010-0614#17448f58": {
@@ -4645,6 +4837,14 @@
   "portion": "P03",
   "round": 1,
   "textSha": "b201182a1a35bb0e",
+  "verdict": "PASS"
+ },
+ "PL010-1555#a1f71978": {
+  "date": "2026-11-25",
+  "note": "Załącznik I pkt 87 rozporządzenia 2017/373 dosłownie, AIP GEN 2.2 RVR/VFR/FPL zgodne; pułapka VFR i FPL poparta refs.",
+  "portion": "P16",
+  "round": 1,
+  "textSha": "f8f8498d9eaed924",
   "verdict": "PASS"
  },
  "PL010-1560#db25d3ed": {
