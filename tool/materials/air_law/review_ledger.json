@@ -375,6 +375,22 @@
   "textSha": "1dff81711fd6345f",
   "verdict": "PASS"
  },
+ "PL010-0045#02eb9763": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 2 (lot wbrew zakazom/ograniczeniom) + pkt 2, 3 + ust. 3 («nie może naruszać bezpieczeństwa osób będących na pokładzie»). Pułapka (Prezes ULC, minister) zgodna z przepisem. Podział cytatu ust. 2 konieczny (fragment ciągły = 334 znaki > 300).",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "f29b9e60ca574c6b",
+  "verdict": "PASS"
+ },
+ "PL010-0045#34b063f5": {
+  "date": "2026-11-25",
+  "note": "Jak #02eb9763; pułapka «Nie, w żadnym przypadku» poprawna.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "5829feadb2c05022",
+  "verdict": "PASS"
+ },
  "PL010-0047#f4230c61": {
   "date": "2026-11-24",
   "note": "Definicja dosłownie z art. 94 ust. 3; art. 94 ust. 4 poprawnie. Klucz jednoznaczny.",
@@ -1037,6 +1053,22 @@
   "portion": "P23",
   "round": 1,
   "textSha": "27fe6fe7b28b5944",
+  "verdict": "PASS"
+ },
+ "PL010-0128#0798a652": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 1 i 2; zdanie o innym nazewnictwie w odpowiedziach ULC (państwowy organ zarządzania ruchem lotniczym — dawne brzmienie art. 122 ust. 1) uczciwe, spójne z przyjętym P23 PL010-0041#eb6afb3c. Klucz «Wszystkie» nie sporny.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "d2c6e6bf3626e05a",
+  "verdict": "PASS"
+ },
+ "PL010-0128#8f48360d": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 1 i 2: wezwać mogą organy z ust. 1, w tym «cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego»; klucz (cywilne oraz wojskowe) trafny, «tylko» w dystraktorach błędne; Prezesa ULC brak w katalogu.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "2e7b40da4e8c9de0",
   "verdict": "PASS"
  },
  "PL010-0129#446a12c0": {
@@ -2191,6 +2223,54 @@
   "textSha": "4d1f06c4eaeeaf06",
   "verdict": "PASS"
  },
+ "PL010-0294#3511c5ec": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 2: «uzasadnione obawy, że cywilny statek powietrzny jest używany do działań sprzecznych z prawem». Druga podstawa (art. 119 ust. 2, 4, 5, art. 119a) poprawnie. Pułapka poparta.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "fef2ea89d44b50b9",
+  "verdict": "PASS"
+ },
+ "PL010-0295#3576cca2": {
+  "date": "2026-11-25",
+  "note": "Jak 0294#3511c5ec; pułapka (rejestracja, opłata, chory na pokładzie) poparta brakiem tych podstaw w art. 122 ust. 2.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "7c368aa384401e7d",
+  "verdict": "PASS"
+ },
+ "PL010-0296#961f776a": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 2: lot wbrew zakazom lub ograniczeniom z przepisów wydanych na podstawie art. 119 ust. 2, 4 lub 5. Pułapka (meteo, opłata) poprawna.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "6ad9f00864407e84",
+  "verdict": "PASS"
+ },
+ "PL010-0296#97a1fbeb": {
+  "date": "2026-11-25",
+  "note": "Jak #961f776a; dystraktor «Żadna» błędny. Poprawne.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "2f952a9cab95e239",
+  "verdict": "PASS"
+ },
+ "PL010-0297#2746deab": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 2 — uzasadnione obawy działań sprzecznych z prawem. Poprawne.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "cf85172ba6ac7bbb",
+  "verdict": "PASS"
+ },
+ "PL010-0297#bca9a0b9": {
+  "date": "2026-11-25",
+  "note": "Jak #2746deab. Poprawne.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "0dde4ff594b303c5",
+  "verdict": "PASS"
+ },
  "PL010-0298#5a0017b5": {
   "date": "2026-11-24",
   "note": "Adresat zawiadomienia = Prezes Urzędu (art. 51 ust. 2).",
@@ -2277,6 +2357,30 @@
   "portion": "P14",
   "round": 1,
   "textSha": "f59d59dfebed83ae",
+  "verdict": "PASS"
+ },
+ "PL010-0310#f72d1895": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 5: minister w porozumieniu z ministrami do spraw klimatu i środowiska «może, w drodze rozporządzenia, wprowadzić ograniczenia lub zakazy lotów» dla statków niespełniających wymogów ochrony przed hałasem. Klucz «częściowy lub całkowity zakaz» to dosłowne pierwotne brzmienie art. 119 ust. 5 (Dz.U. 2002 nr 130 poz. 1112); obecne «ograniczenia lub zakazy» znaczy to samo — zmiana redakcyjna, klucz nadal trafny, nie sporny i nie outdated. Pułapka (uchwała; zakaz dla wszystkich statków) poparta. Dwa cytaty z ust. 5 — połączony fragment ma 310 znaków, podział konieczny.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "3c65d6315ca93204",
+  "verdict": "PASS"
+ },
+ "PL010-0312#9aab0b48": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 4 pkt 1 (>3 miesiące) + wstęp ust. 4; uwaga o pominiętym ministrze do spraw klimatu zgodna z P23 (0007/0127: klucz niepełny, nie błędny). Pułapka z pkt 2 poprawna.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "a4b024b819d3e9ee",
+  "verdict": "PASS"
+ },
+ "PL010-0312#e46f8838": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 4 pkt 1; pułapka z pkt 2. Cytaty i lokatory poprawne.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "38af81aa9dcf79cb",
   "verdict": "PASS"
  },
  "PL010-0315#3fcbf66c": {
@@ -3349,6 +3453,38 @@
   "portion": "P18",
   "round": 1,
   "textSha": "7928c5e599a9959a",
+  "verdict": "PASS"
+ },
+ "PL010-0476#97a1fbeb": {
+  "date": "2026-11-25",
+  "note": "sameAs PL010-0296#97a1fbeb: pytanie i wszystkie cztery odpowiedzi identyczne.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "8a875bd539fc481e",
+  "verdict": "PASS"
+ },
+ "PL010-0476#b2ed7e8b": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 2; pułapka (meteo, brak opłaty nawigacyjnej) poprawna.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "a27cc984f3c6fb01",
+  "verdict": "PASS"
+ },
+ "PL010-0477#040e6301": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 2 — uzasadnione obawy. Poprawne.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "cf85172ba6ac7bbb",
+  "verdict": "PASS"
+ },
+ "PL010-0477#bca9a0b9": {
+  "date": "2026-11-25",
+  "note": "sameAs PL010-0297#bca9a0b9: pytanie i wszystkie cztery odpowiedzi identyczne.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "2290ac1ff3f72d77",
   "verdict": "PASS"
  },
  "PL010-0484#b123db09": {
@@ -4574,6 +4710,14 @@
   "round": 2,
   "textSha": "2c901ea80e04871b",
   "verdict": "DISPUTED"
+ },
+ "PL099-0008#bd18648f": {
+  "date": "2026-11-25",
+  "note": "Art. 124 ust. 1 obecnie: zakaz «poniżej wysokości względnych podanych przez instytucje zapewniające służby ruchu lotniczego»; pierwotne brzmienie (2002) dosłownie «podanych przez państwowy organ zarządzania ruchem lotniczym» — zmieniła się tylko nazwa organu, treść normy ta sama, więc draft (nie outdated) słuszny, analogicznie do P23 0041. Dystraktor «na odpowiedniej wysokości» jest mniej precyzyjny, ale nie stał się trafny wskutek zmiany przepisu — wg reguły rozgraniczenia nie sporny, disputeNote zbędny. Strefy R nad parkami: § 3 ust. 1 pkt 5 + AIP ENR 1.10 pkt 3.9.3 (tylko fakt istnienia stref). 4 zdania, 653 znaki.",
+  "portion": "P24",
+  "round": 1,
+  "textSha": "8d3b0eca449c68f2",
+  "verdict": "PASS"
  },
  "PL099-0009#b7fe727e": {
   "date": "2026-11-24",

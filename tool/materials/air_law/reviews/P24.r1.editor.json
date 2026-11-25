@@ -1,0 +1,92 @@
+[
+ {
+  "key": "PL010-0310#f72d1895",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 5: minister w porozumieniu z ministrami do spraw klimatu i środowiska «może, w drodze rozporządzenia, wprowadzić ograniczenia lub zakazy lotów» dla statków niespełniających wymogów ochrony przed hałasem. Klucz «częściowy lub całkowity zakaz» to dosłowne pierwotne brzmienie art. 119 ust. 5 (Dz.U. 2002 nr 130 poz. 1112); obecne «ograniczenia lub zakazy» znaczy to samo — zmiana redakcyjna, klucz nadal trafny, nie sporny i nie outdated. Pułapka (uchwała; zakaz dla wszystkich statków) poparta. Dwa cytaty z ust. 5 — połączony fragment ma 310 znaków, podział konieczny."
+ },
+ {
+  "key": "PL010-0312#9aab0b48",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 4 pkt 1 (>3 miesiące) + wstęp ust. 4; uwaga o pominiętym ministrze do spraw klimatu zgodna z P23 (0007/0127: klucz niepełny, nie błędny). Pułapka z pkt 2 poprawna."
+ },
+ {
+  "key": "PL010-0312#e46f8838",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 4 pkt 1; pułapka z pkt 2. Cytaty i lokatory poprawne."
+ },
+ {
+  "key": "PL010-0045#02eb9763",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 2 (lot wbrew zakazom/ograniczeniom) + pkt 2, 3 + ust. 3 («nie może naruszać bezpieczeństwa osób będących na pokładzie»). Pułapka (Prezes ULC, minister) zgodna z przepisem. Podział cytatu ust. 2 konieczny (fragment ciągły = 334 znaki > 300)."
+ },
+ {
+  "key": "PL010-0045#34b063f5",
+  "verdict": "PASS",
+  "note": "Jak #02eb9763; pułapka «Nie, w żadnym przypadku» poprawna."
+ },
+ {
+  "key": "PL010-0128#8f48360d",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 1 i 2: wezwać mogą organy z ust. 1, w tym «cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego»; klucz (cywilne oraz wojskowe) trafny, «tylko» w dystraktorach błędne; Prezesa ULC brak w katalogu."
+ },
+ {
+  "key": "PL010-0128#0798a652",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 1 i 2; zdanie o innym nazewnictwie w odpowiedziach ULC (państwowy organ zarządzania ruchem lotniczym — dawne brzmienie art. 122 ust. 1) uczciwe, spójne z przyjętym P23 PL010-0041#eb6afb3c. Klucz «Wszystkie» nie sporny."
+ },
+ {
+  "key": "PL010-0294#3511c5ec",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 2: «uzasadnione obawy, że cywilny statek powietrzny jest używany do działań sprzecznych z prawem». Druga podstawa (art. 119 ust. 2, 4, 5, art. 119a) poprawnie. Pułapka poparta."
+ },
+ {
+  "key": "PL010-0295#3576cca2",
+  "verdict": "PASS",
+  "note": "Jak 0294#3511c5ec; pułapka (rejestracja, opłata, chory na pokładzie) poparta brakiem tych podstaw w art. 122 ust. 2."
+ },
+ {
+  "key": "PL010-0296#961f776a",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 2: lot wbrew zakazom lub ograniczeniom z przepisów wydanych na podstawie art. 119 ust. 2, 4 lub 5. Pułapka (meteo, opłata) poprawna."
+ },
+ {
+  "key": "PL010-0296#97a1fbeb",
+  "verdict": "PASS",
+  "note": "Jak #961f776a; dystraktor «Żadna» błędny. Poprawne."
+ },
+ {
+  "key": "PL010-0297#2746deab",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 2 — uzasadnione obawy działań sprzecznych z prawem. Poprawne."
+ },
+ {
+  "key": "PL010-0297#bca9a0b9",
+  "verdict": "PASS",
+  "note": "Jak #2746deab. Poprawne."
+ },
+ {
+  "key": "PL010-0476#97a1fbeb",
+  "verdict": "PASS",
+  "note": "sameAs PL010-0296#97a1fbeb: pytanie i wszystkie cztery odpowiedzi identyczne."
+ },
+ {
+  "key": "PL010-0476#b2ed7e8b",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 2; pułapka (meteo, brak opłaty nawigacyjnej) poprawna."
+ },
+ {
+  "key": "PL010-0477#040e6301",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 2 — uzasadnione obawy. Poprawne."
+ },
+ {
+  "key": "PL010-0477#bca9a0b9",
+  "verdict": "PASS",
+  "note": "sameAs PL010-0297#bca9a0b9: pytanie i wszystkie cztery odpowiedzi identyczne."
+ },
+ {
+  "key": "PL099-0008#bd18648f",
+  "verdict": "PASS",
+  "note": "Art. 124 ust. 1 obecnie: zakaz «poniżej wysokości względnych podanych przez instytucje zapewniające służby ruchu lotniczego»; pierwotne brzmienie (2002) dosłownie «podanych przez państwowy organ zarządzania ruchem lotniczym» — zmieniła się tylko nazwa organu, treść normy ta sama, więc draft (nie outdated) słuszny, analogicznie do P23 0041. Dystraktor «na odpowiedniej wysokości» jest mniej precyzyjny, ale nie stał się trafny wskutek zmiany przepisu — wg reguły rozgraniczenia nie sporny, disputeNote zbędny. Strefy R nad parkami: § 3 ust. 1 pkt 5 + AIP ENR 1.10 pkt 3.9.3 (tylko fakt istnienia stref). 4 zdania, 653 znaki."
+ }
+]
