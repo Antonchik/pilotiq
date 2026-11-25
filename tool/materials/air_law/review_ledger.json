@@ -145,8 +145,8 @@
  },
  "AL03-5": {
   "date": "2026-11-25",
-  "note": "FIX z rundy 1 wykonany: ostatnie zdanie mówi teraz tylko o małoletnim za zgodą opiekunów prawnych (art. 96 ust. 1 pkt 2) i o skazaniu (pkt 3 uchylony), bez nadmiernego uogólnienia na osoby z ograniczoną zdolnością. Zdanie o kluczu neutralne; disputeNote zgodny z disputed P04/P05, punkty w refs, formuła o kluczu jest. 142 słowa.",
-  "portion": "K02",
+  "note": "disputeNote zastąpiony tekstem z r1 (399 znaków), identyczny z PL010-0103#e4cd44fb; zgodny z art. 96 ust. 1 pkt 2, pkt 3 (uchylony) i ust. 1a, wszystkie punkty w refs sekcji, formuła o kluczu jest. Body bez zmian (sprawdzone w K02).",
+  "portion": "XFS",
   "round": 2,
   "textSha": "2fdf8d59bcf0c6d4",
   "verdict": "DISPUTED"
@@ -2169,11 +2169,11 @@
  },
  "PL010-0103#e4cd44fb": {
   "date": "2026-11-25",
-  "note": "Tekst i refs zgodne z art. 96 ust. 1, pkt 1–3 i ust. 1a. Błąd w disputeNote: „Odpowiedzi o ograniczonej zdolności i o skazaniu mają oparcie w przepisie” jest za mocne – pkt 2 dopuszcza wyjątek od pełnej zdolności tylko dla małoletniego za zgodą opiekunów prawnych; pełnoletniej osoby z ograniczoną zdolnością przepis nie obejmuje. Ponadto „środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych” pomija środek dotyczący pojazdów w ruchu powietrznym z ust. 1a. Zastąpić disputeNote tekstem (398 znaków): „Art. 96 ust. 1 Prawa lotniczego dopuszcza licencję małoletniego za zgodą opiekunów prawnych (pkt 2) i nie wymaga niekaralności (pkt 3 uchylony), a ust. 1a wyklucza tylko objętych środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów. Odpowiedzi o skazaniu i o ograniczonej zdolności małoletniego mają oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” Wszystkie punkty są już w refs. Po poprawce – DISPUTED.",
+  "note": "disputeNote zastąpiony dokładnie tekstem z r1 (399 znaków): wyjątek od pełnej zdolności zawężony do małoletniego za zgodą opiekunów (pkt 2), pkt 3 uchylony, ust. 1a opisany bez zawężenia do pojazdów mechanicznych. Punkty pkt 2, pkt 3, ust. 1a w refs, formuła o kluczu jest. Tekst bez zmian, zgodny z art. 96 ust. 1 pkt 1.",
   "portion": "XF",
-  "round": 1,
-  "textSha": "19cc5bd9041f4a1f",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "ce1710aa768e0a65",
+  "verdict": "DISPUTED"
  },
  "PL010-0104#d67f3d1c": {
   "date": "2026-11-24",
@@ -2193,11 +2193,11 @@
  },
  "PL010-0106#d1571dcf": {
   "date": "2026-11-25",
-  "note": "Tekst identyczny z verified 0106#f8178b1d, klucz (pkt 4) poprawny; DISPUTED uzasadniony (pkt 3 uchylony, skazanie samo nie wyklucza licencji). Nieprecyzyjne w disputeNote: „wyklucza tylko osoby objęte środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych” – art. 96 ust. 1a obejmuje też środek polegający na powstrzymaniu się od prowadzenia pojazdów w ruchu powietrznym, więc przy „tylko” zdanie jest węższe niż przepis. Zamienić fragment „objęte środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych lub prawomocnym zakazem ich prowadzenia” na „objęte środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów” (wynik 316 znaków; spójne z PL010-0108 i AL03-5). Po poprawce – DISPUTED.",
+  "note": "Poprawka z r1 wprowadzona dosłownie (316 znaków): „objęte środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów” – zgodne z art. 96 ust. 1a. Pkt 3 i ust. 1a w refs, formuła o kluczu jest.",
   "portion": "XF",
-  "round": 1,
-  "textSha": "fc6d11a6e312b292",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "6b6d0d1fc41a13b1",
+  "verdict": "DISPUTED"
  },
  "PL010-0106#f8178b1d": {
   "date": "2026-11-24",
@@ -2225,11 +2225,11 @@
  },
  "PL010-0108#83bd2f1f": {
   "date": "2026-11-25",
-  "note": "Tekst identyczny z verified 0108#f24a6257, pkt 1, 5, 6, 7 zgodne z korpusem; DISPUTED uzasadniony. Ta sama poprawka co w PL010-0106#d1571dcf: zamienić w disputeNote fragment „objęte środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych lub prawomocnym zakazem ich prowadzenia” na „objęte środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów” (wynik 348 znaków), bo art. 96 ust. 1a obejmuje też środek dotyczący pojazdów w ruchu powietrznym. Po poprawce – DISPUTED.",
+  "note": "Poprawka z r1 wprowadzona dosłownie (348 znaków), zgodna z art. 96 ust. 1a; pkt 3 i ust. 1a w refs, formuła o kluczu jest. Tekst bez zmian.",
   "portion": "XF",
-  "round": 1,
-  "textSha": "513b9232097eeed6",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "59d0f2bf1211dd83",
+  "verdict": "DISPUTED"
  },
  "PL010-0108#f24a6257": {
   "date": "2026-11-24",
@@ -3361,19 +3361,19 @@
  },
  "PL010-0230#3b2952f0": {
   "date": "2026-11-25",
-  "note": "Treść poprawna: ARA.FCL.250(a)(4), § 11 ust. 1 pkt 1, art. 100 ust. 1 pkt 5 i ust. 4 zgodne z korpusem; art. 100 ust. 4 opisany neutralnie („przepis nie wymienia wprost badania PKBWL”), bez twierdzenia o jego zakresie dla Part-FCL – wątpliwość writera (1) rozstrzygam: dopuszczalne. Brak refs dla twierdzenia „a dla licencji z § 3 ust. 1 pkt 2 i 3 tego rozporządzenia według art. 100 ust. 1 pkt 5” – ten podział wynika z § 11 ust. 1 pkt 2, którego nie ma w refs (jest tylko § 3 ust. 1 pkt 1 i 3). Dodać refs (tekst bez zmian, 696 znaków): {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 11 ust. 1 pkt 2\",\"quote\":\"następuje w przypadkach określonych w art. 100 ustawy\"} oraz {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 3 ust. 1 pkt 2\",\"quote\":\"FNL, FEL, FDL, MML;\"}. Uwaga nieblokująca: art. 100 ust. 4 ma dodatkowe przesłanki (uzasadniona obawa zagrożenia bezpieczeństwa lotów, organ nie zatrzymał dokumentu), pominięte z braku miejsca – dopuszczalne przy „może”.",
+  "note": "Dodano refs § 11 ust. 1 pkt 2 („następuje w przypadkach określonych w art. 100 ustawy”) i § 3 ust. 1 pkt 2 („FNL, FEL, FDL, MML;”) – oba dosłownie w korpusie PL-ROZP-LICENCJONOWANIE-2021; podział zakresów w tekście ma teraz pełne oparcie. Tekst bez zmian, 696 znaków.",
   "portion": "XF",
-  "round": 1,
-  "textSha": "10448441accb4eba",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "4fb2f9f3334faedd",
+  "verdict": "PASS"
  },
  "PL010-0231#c0b53fe6": {
   "date": "2026-11-25",
-  "note": "Jak PL010-0230#3b2952f0 (wariant „narkotyki”, treść poprawna, 698 znaków): dodać brakujące refs dla podziału zakresów (tekst bez zmian): {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 11 ust. 1 pkt 2\",\"quote\":\"następuje w przypadkach określonych w art. 100 ustawy\"} oraz {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 3 ust. 1 pkt 2\",\"quote\":\"FNL, FEL, FDL, MML;\"}.",
+  "note": "Jak PL010-0230#3b2952f0: brakujące refs § 11 ust. 1 pkt 2 i § 3 ust. 1 pkt 2 dodane, zgodne z korpusem. Tekst bez zmian, 698 znaków.",
   "portion": "XF",
-  "round": 1,
-  "textSha": "9a15c5cd1cb56c08",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "6fae08674f1912a1",
+  "verdict": "PASS"
  },
  "PL010-0232#7fcbbfdb": {
   "date": "2026-11-24",

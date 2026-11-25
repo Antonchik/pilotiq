@@ -1,0 +1,27 @@
+[
+ {
+  "key": "PL010-0103#e4cd44fb",
+  "verdict": "DISPUTED",
+  "note": "disputeNote zastąpiony dokładnie tekstem z r1 (399 znaków): wyjątek od pełnej zdolności zawężony do małoletniego za zgodą opiekunów (pkt 2), pkt 3 uchylony, ust. 1a opisany bez zawężenia do pojazdów mechanicznych. Punkty pkt 2, pkt 3, ust. 1a w refs, formuła o kluczu jest. Tekst bez zmian, zgodny z art. 96 ust. 1 pkt 1."
+ },
+ {
+  "key": "PL010-0106#d1571dcf",
+  "verdict": "DISPUTED",
+  "note": "Poprawka z r1 wprowadzona dosłownie (316 znaków): „objęte środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów” – zgodne z art. 96 ust. 1a. Pkt 3 i ust. 1a w refs, formuła o kluczu jest."
+ },
+ {
+  "key": "PL010-0108#83bd2f1f",
+  "verdict": "DISPUTED",
+  "note": "Poprawka z r1 wprowadzona dosłownie (348 znaków), zgodna z art. 96 ust. 1a; pkt 3 i ust. 1a w refs, formuła o kluczu jest. Tekst bez zmian."
+ },
+ {
+  "key": "PL010-0230#3b2952f0",
+  "verdict": "PASS",
+  "note": "Dodano refs § 11 ust. 1 pkt 2 („następuje w przypadkach określonych w art. 100 ustawy”) i § 3 ust. 1 pkt 2 („FNL, FEL, FDL, MML;”) – oba dosłownie w korpusie PL-ROZP-LICENCJONOWANIE-2021; podział zakresów w tekście ma teraz pełne oparcie. Tekst bez zmian, 696 znaków."
+ },
+ {
+  "key": "PL010-0231#c0b53fe6",
+  "verdict": "PASS",
+  "note": "Jak PL010-0230#3b2952f0: brakujące refs § 11 ust. 1 pkt 2 i § 3 ust. 1 pkt 2 dodane, zgodne z korpusem. Tekst bez zmian, 698 znaków."
+ }
+]
