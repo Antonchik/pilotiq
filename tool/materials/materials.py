@@ -322,6 +322,11 @@ LOC_EASA = re.compile(r"^((AMC|GM|CS)\d* )?[A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?(\
 LOC_ICAO = re.compile(r"^(Article \d+( bis| ter| quater)?(\([a-z]\))?|Chapter \d+|Appendix \d+|pkt \d+(\.\d+)+|def [A-Z][^\n]{0,90})$")
 # ITU Radio Regulations: Appendix 18, Appendix 18 channel 06, Appendix 18 channel AIS1, Appendix 18 note f
 LOC_ITU = re.compile(r"^Appendix \d+( channel (\d{2,4}|AIS\d|ASM\d)| note [a-z]{1,2})?$")
+# Polish ICAO Annex texts (Dz. Urz. ULC): rozdział 3, 3.1.2, 3.1.2 lit. a, definicja Faza alarmu, dodatek 1 pkt 2.1 lit. a,
+# dodatek pkt 2.1 (an unnumbered Appendix), załącznik A, załącznik A pkt 2.1, załącznik A sekcja 19a, tabela 3-1, tabela A4-1
+LOC_ICAO_PL = re.compile(r"^(obwieszczenie|przedmowa|rozdział \d+|\d+(\.\d+[a-z]?)+( lit\. [a-z])?|definicja [A-ZĄĆĘŁŃÓŚŹŻ][^\n]{0,120}|"
+                         r"(dodatek( \d+)?|załącznik [A-Z])( (pkt|sekcja) %s( lit\. [a-z])?)?|"
+                         r"tabela (?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2})?)$" % _L)
 LOC_EASA_ART = re.compile(r"^((GM\d* )?Article \d+[a-z]?|Annex [IVX]+)(\([0-9a-z]+\))*$")
 LOC_EASA_APP = re.compile(r"^Appendix \d+( pkt %s| to (AMC|GM)\d* [A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*)?$" % _L)
 FUTURE_MARK = "PRZYSZŁA REDAKCJA"
@@ -340,6 +345,8 @@ def loc_valid(kind, loc):
         return bool(LOC_ICAO.match(loc))
     if kind == "itu":
         return bool(LOC_ITU.match(loc))
+    if kind == "icao_pl":
+        return bool(LOC_ICAO_PL.match(loc))
     if kind == "easa":
         return bool(LOC_EASA.match(loc) or LOC_EASA_ART.match(loc) or LOC_EASA_APP.match(loc))
     return False
@@ -361,6 +368,13 @@ def loc_parents(loc):
         return [mi.group(1)]
     if re.match(r"^def [A-Z]", loc):
         return ["Chapter 1"]
+    mn = re.match(r"^(\d+(?:\.\d+[a-z]?)+)( lit\. [a-z])?$", loc)
+    if mn:   # Polish ICAO Annex: 3.1.2 lit. a -> 3.1.2 -> 3.1 -> rozdział 3
+        parts = mn.group(1).split(".")
+        return ([mn.group(1)] if mn.group(2) else []) + \
+            [".".join(parts[:n]) for n in range(len(parts) - 1, 1, -1)] + ["rozdział " + parts[0]]
+    if loc.startswith("definicja "):
+        return ["rozdział 1"]
     if re.match(r"^Appendix \d+ to (?:AMC|GM)", loc):
         return []   # EASA "Appendix 1 to AMC1 SERA.6005(c)" is a block of its own
     mt = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*) (?:klasa [A-G]|przypis \*{1,4}|[A-Z0-9][A-Z0-9/&.\-]{0,9}(?: \d{1,2})?)$", loc)

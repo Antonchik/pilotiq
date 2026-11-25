@@ -73,6 +73,12 @@ TODO (решение владельца позже, отдельным шаго�
 - `easa`: как `eu_reg`, с префиксом `AMC`/`GM`/`CS`; `AMC1 SFCL.145 SECTION 2A` (секции программы экзамена; вторая таблица того же AMC: `AMC1 SFCL.145 (2) SECTION 5`, цифра = номер абзаца `(2)` перед таблицей);
   `Article N(M)`, `Annex I(12)` (определения регламента), `Appendix N[ pkt L]`, `Appendix N to AMC1 …`;
 - `icao`: `Article 3 bis(a)`, `Chapter 5`, `pkt 5.4.2.1`, `def Aerodrome control service` (подопределения `def Risk of collision` — самостоятельные якоря, родитель обрезан до них), `Appendix N`; `itu`: `Appendix 18 channel 06`, `Appendix 18 note f`.
+- `icao_pl` (официальные польские тексты Załączników ICAO из Dz. Urz. ULC: `ICAO-ZAL-02`, `-11`, `-12`, `-14-I`, `-14-II`; цитаты разрешены):
+  `rozdział 3`, `3.1.2`, `3.1.2 lit. a` (родители `3.1.2` → `3.1` → `rozdział 3`; в 14-I также `2.6a.1`), `definicja Faza alarmu` (польский термин до скобки, родитель `rozdział 1`),
+  `dodatek 1`, `dodatek 1 pkt 2.1[ lit. a]` (Załącznik 12: `dodatek`, `dodatek pkt 2.1`), `załącznik A`, `załącznik A pkt 2.1`, `załącznik A sekcja 19a` (14-I),
+  `tabela 3-1`, `tabela A-1`, `tabela 2.1`, а также `obwieszczenie`, `przedmowa`. Номер, напечатанный дважды подряд (две версии «do 25 listopada 2026» / «od 26 listopada 2026»),
+  — один якорь на обе версии; термин, определённый дважды вразбивку, — первое определение. Рисунки и символы (сигналы Zał. 12 dodatek pkt 2.1–2.2, Zał. 2 dodatek 1 pkt 4–6, рисунки Zał. 14)
+  — изображения: в корпусе только подписи и описания (`fetch.files[].imageOnly` в `sources.json`); многоколоночные таблицы извлечены с перемешанным порядком слов в строках.
 
 Номера статей: `67`, `67fa`, `156zd`, `87[1]`, `87[1a]` (надстрочный индекс в квадратных скобках, как в `anchors/PL-PRAWO-LOTNICZE.json`).
 Источник со `status: "unavailable"` в `sources.json` процитировать нельзя: ссылка на него — ошибка `validate`, запись в ассет не идёт.
@@ -130,7 +136,7 @@ python3 tool/materials/materials.py validate
 
 ## Правило про `quote`
 Дословные цитаты хранятся только здесь, в `src/` и `summaries/`, для машинной проверки по корпусу. В ассет `build` их не кладёт
-(в `refs` ассета только `src` и `loc`). Источники `easa`, `icao`, `itu` — только ссылки и собственный пересказ.
+(в `refs` ассета только `src` и `loc`). Источники `easa`, `icao`, `itu` — только ссылки и собственный пересказ. Польские тексты Załączników (`icao_pl`) — urzędowy dokument (art. 4 pkt 2 ustawy o prawie autorskim), цитировать можно только их, не оригинал ICAO.
 
 ## Тесты
 `python3 -m unittest discover -s tool/materials/tests -p 'test_materials*.py'`

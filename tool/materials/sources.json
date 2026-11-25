@@ -1038,5 +1038,170 @@
     "sha256": "d6c7b7633eaec5490960f6f39b084a05ce8f2ea117fc5b751c5f933c25d3dddd",
     "bytes": 766640,
     "fetched": "2026-11-24"
+  },
+  {
+    "id": "ICAO-ZAL-02",
+    "title_pl": "Załącznik 2 do Konwencji chicagowskiej – Przepisy ruchu lotniczego (wydanie jedenaste, poprawki 1–48), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://dziennik.ulc.gov.pl/",
+    "format": "pdf",
+    "version": "Dz. Urz. ULC 2025 poz. 32 (obwieszczenie nr 11/2025 Prezesa ULC z 30.05.2025, ogłoszone 2.06.2025); Załącznik 2, wydanie jedenaste, poprawki 1–48; plik dostarczony przez właściciela [ПРОВЕРИТЬ владельцем: точный URL pozycji в Dzienniku ULC]",
+    "sha256": "12dab19f96e44f450d1e1a0de6867351fe517496de1ed86aa3aab384e8d68ea1",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2025-05-30",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-PL",
+      "files": [
+        {
+          "section": "Załącznik 2",
+          "file": "Zalacznik-02-2025.pdf",
+          "profile": "ulc-annex",
+          "lang": "pl",
+          "sha256": "bc18ca86b55b468d227f4882ab9769e9f060a4aa9732b3ab1c5b991fe8c73976",
+          "bytes": 3257746,
+          "imageOnly": "Grafika (w korpusie tylko podpisy i opisy): dodatek 1 pkt 4–6 – rysunki sygnałów manewrowania i ręcznych sygnałów (str. PDF 52–72; opisy znaczeń są tekstem); tabele sygnałów przechwytywania (dodatek 1 pkt 2.1, 2.3; tabela 2.1, tabela A-1) i tabela 3-1 – tekst wielokolumnowy, kolejność w wierszach zaburzona."
+        }
+      ]
+    },
+    "bytes": 3257746
+  },
+  {
+    "id": "ICAO-ZAL-11",
+    "title_pl": "Załącznik 11 do Konwencji chicagowskiej – Służby ruchu lotniczego (wydanie piętnaste, poprawki 1–53), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://dziennik.ulc.gov.pl/",
+    "format": "pdf",
+    "version": "Dz. Urz. ULC 2025 poz. 33 (obwieszczenie nr 12/2025 Prezesa ULC z 30.05.2025, ogłoszone 2.06.2025); Załącznik 11, wydanie piętnaste, poprawki 1–53; plik dostarczony przez właściciela [ПРОВЕРИТЬ владельцем: точный URL pozycji в Dzienniku ULC]",
+    "sha256": "9d42ae9ed66c97e065eb0b37bcb39046390b5cb19bb73d1048d4aa17bcf2ec05",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2025-05-30",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-PL",
+      "files": [
+        {
+          "section": "Załącznik 11",
+          "file": "Zalacznik-11-2025.pdf",
+          "profile": "ulc-annex",
+          "lang": "pl",
+          "sha256": "8918324e2d3215e1b3c7d523fc8ae9573cea596465b10deeb1cca14a380adcb4",
+          "bytes": 1956982,
+          "imageOnly": "Grafika: załącznik A – rysunki A-1…A-8 (str. PDF 111–116); dodatek 4 (klasy przestrzeni) – tabela jako tekst wielokolumnowy, kolejność w wierszach zaburzona."
+        }
+      ]
+    },
+    "bytes": 1956982
+  },
+  {
+    "id": "ICAO-ZAL-12",
+    "title_pl": "Załącznik 12 do Konwencji chicagowskiej – Poszukiwanie i ratownictwo (wydanie dziewiąte, lipiec 2024, poprawki 1–19), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://dziennik.ulc.gov.pl/",
+    "format": "pdf",
+    "version": "Dz. Urz. ULC 2025 poz. 31 (obwieszczenie nr 10/2025 Prezesa ULC z 26.05.2025, ogłoszone 27.05.2025); Załącznik 12, wydanie dziewiąte (lipiec 2024), poprawki 1–19; część przepisów w dwóch wersjach: do 25.11.2026 i od 26.11.2026; plik dostarczony przez właściciela [ПРОВЕРИТЬ владельцем: точный URL pozycji в Dzienniku ULC]",
+    "sha256": "d781edb379f84eaee819a61723add0b87fa0d18ef2c53e66aea4b66c943930d1",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2025-05-26",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-PL",
+      "files": [
+        {
+          "section": "Załącznik 12",
+          "file": "Zalacznik-12-2025.pdf",
+          "profile": "ulc-annex",
+          "lang": "pl",
+          "sha256": "d00767c1c39224a33d96b74ff4e3a4b13370cf85cc58295999b1e04e22db33c3",
+          "bytes": 1017148,
+          "imageOnly": "Grafika: dodatek pkt 2.1 i 2.2 – symbole wizualnego kodu ziemia-powietrze (12 małych obrazów, str. PDF 26); w korpusie tylko numery i znaczenia sygnałów, bez symboli."
+        }
+      ]
+    },
+    "bytes": 1017148
+  },
+  {
+    "id": "ICAO-ZAL-14-I",
+    "title_pl": "Załącznik 14 do Konwencji chicagowskiej – Lotniska, tom I Projektowanie i eksploatacja lotnisk (wydanie ósme, zmiany 1–16), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://dziennik.ulc.gov.pl/",
+    "format": "pdf",
+    "version": "Dz. Urz. ULC 2021 poz. 41 (obwieszczenie nr 17 Prezesa ULC z 2.07.2021); Załącznik 14 tom I, wydanie ósme, zmiany 1–16; plik dostarczony przez właściciela [ПРОВЕРИТЬ владельцем: точный URL pozycji в Dzienniku ULC]",
+    "sha256": "512b7ed801c076e2631540a52e90aa527029f171f33fec0d2b51015bac2a4a31",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2021-07-02",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-PL",
+      "files": [
+        {
+          "section": "Załącznik 14 tom I",
+          "file": "Zalacznik-14-I-2021.pdf",
+          "profile": "ulc-annex",
+          "lang": "pl",
+          "sha256": "638135137d28d691c0e900a2e3f3f84a3009bb5a9dadb451f20d67ae408ce12b",
+          "bytes": 13815888,
+          "imageOnly": "Grafika: ok. 100 rysunków (rozdz. 3–7, dodatki 1–5, załącznik A; załącznik B = tylko rysunek B-1); w korpusie podpisy 'Rysunek …' i opisy. Tabele wielokolumnowe (np. tabela 1-1, 3-1, 4-1, dodatek 2) – kolejność w wierszach zaburzona."
+        }
+      ]
+    },
+    "bytes": 13815888
+  },
+  {
+    "id": "ICAO-ZAL-14-II",
+    "title_pl": "Załącznik 14 do Konwencji chicagowskiej – Lotniska, tom II Lotniska dla śmigłowców (wydanie piąte, zmiany 1–9), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://dziennik.ulc.gov.pl/",
+    "format": "pdf",
+    "version": "Dz. Urz. ULC 2021 poz. 42 (obwieszczenie nr 18 Prezesa ULC z 2.07.2021); Załącznik 14 tom II, wydanie piąte, zmiany 1–9; plik dostarczony przez właściciela [ПРОВЕРИТЬ владельцем: точный URL pozycji в Dzienniku ULC]",
+    "sha256": "894569b47469d5ec927dc8913a703ea46c594415191bda699df6f5fd65a25bfa",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2021-07-02",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-PL",
+      "files": [
+        {
+          "section": "Załącznik 14 tom II",
+          "file": "Zalacznik-14-II-2021.pdf",
+          "profile": "ulc-annex",
+          "lang": "pl",
+          "sha256": "1a5720a3f7498cdbf3586aed0f8cd2dd54555936e9849194b20a00a81d92643c",
+          "bytes": 4382847,
+          "imageOnly": "Grafika: ok. 40 rysunków (rozdz. 3–5, dodatek 1); w korpusie podpisy i opisy. Tabele wielokolumnowe (tabela 4-1, A-1…A-4) – kolejność w wierszach zaburzona."
+        }
+      ]
+    },
+    "bytes": 4382847
   }
 ]

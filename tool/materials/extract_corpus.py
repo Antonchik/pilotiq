@@ -18,6 +18,7 @@ Locators (see plan "Общие соглашения"):
   eu_reg               : art. N | art. N ust. N | SERA.5005 | SERA.5005(a)(1) | FCL.205.A ...
   easa                 : SERA.5005 | SERA.5005(a)(1) | AMC1 SERA.5005(b) | GM1 FCL.205.A ...
   aip                  : GEN 1.2 | ENR 1.2 | ENR 1.2 pkt 2.1
+  icao_pl              : rozdział 3 | 3.1.2 | 3.1.2 lit. a | definicja Faza alarmu | dodatek 1 pkt 2.1 | załącznik A | tabela 3-1
 """
 import argparse
 import concurrent.futures
@@ -1802,7 +1803,323 @@ def itu_lines(path, cfg):
     return lines
 
 
-_OWNER_PROFILES = {"icao7300": icao7300_lines, "icao4444": icao4444_lines, "itu-rr": itu_lines}
+# --------------------------------------------------------------------------- Polish texts of ICAO Annexes (Dz. Urz. ULC)
+#
+# kind "icao_pl": the official Polish text of an Annex announced by the President of ULC (obwieszczenie in Dziennik Urzędowy
+# ULC), profile "ulc-annex". Page furniture is dropped by position: the Dziennik header (first line), the running header
+# ("Załącznik 2 Przepisy ruchu lotniczego Rozdział 3", second line) and the page footers ("ZAŁĄCZNIK 12 2-1",
+# "ZAŁĄCZNIK 14 ICAO — TOM I 25 8.11.2018", "Nr 15", "5.11.2020", "(iv)") at the bottom. Vertical (rotated) labels of
+# figures are dropped (their glyphs have a rotated text matrix). Figures and symbol tables are images in the PDF: only their
+# captions and the surrounding text are in the corpus.
+
+_ULC_DZIENNIK = re.compile(r"^Dziennik Urzędowy Urzędu Lotnictwa Cywilnego\s*[–-]\s*\d+\s*[–-]\s*Poz\. \d+$")
+_ULC_RUNNING = re.compile(r"^(?:Załącznik|ZAŁĄCZNIK) \d+\b.{0,80}?(?:Rozdział \d+|Dodatek(?: \d+)?|Przedmowa|Załącznik [A-Z]|"
+                          r"Spis treści|Wprowadzenie)$")
+_ULC_FOOTERS = (
+    re.compile(r"^ZAŁ[AĄ]CZNIK \d+(?: ICAO\s*[—–-]\s*TOM I{1,2})?(?: (?:APP|ATT)(?: ?[A-Z]?\d*)?[- ]?\d*| \(?[ivxl]+\)?|"
+               r" [A-Z]?\d+-\d+| \d{1,3})*(?: \d{1,2}\.\d{1,2}\.\d{4})?$"),
+    re.compile(r"^\d{1,3}(?: \d{1,2}\.{1,2}\d{1,2}\.{1,2}\d{4})?$"),
+    re.compile(r"^\d{1,2}\.\d{1,2}\.\d{4}$"),
+    re.compile(r"^Nr \d{1,2}$"),
+    re.compile(r"^\(?[ivxl]{1,6}\)$"),
+)
+_ULC_TOC = re.compile(r"\.{5,}")
+# Symbol-font glyphs that the PDF maps into the Private Use Area: U+F02D minus/dash, U+F0B0 degree, U+F02B plus, U+F03D
+# equals, U+F02A asterisk, U+F0B4 multiplication sign; U+F0BE is a table leader line and is dropped
+_ULC_SYMBOL = str.maketrans({"\uf02d": "\u2212", "\uf0b0": "\u00b0", "\uf02b": "+", "\uf03d": "=", "\uf02a": "*",
+                             "\uf0b4": "\u00d7", "\uf0be": " "})
+_ULC_BODY_START = re.compile(r"^ROZDZIAŁ 1(?:\.? [A-ZĄĆĘŁŃÓŚŹŻ ,–-]+)?$")
+
+
+def _ulc_rotated(obj):
+    if obj.get("object_type") != "char":
+        return False
+    m = obj.get("matrix") or (1, 0, 0, 1)
+    return abs(m[1]) > 0.1 or abs(m[2]) > 0.1
+
+
+def ulc_page_rows(rows):
+    """Body lines of one Dziennik Urzędowy ULC page (rows = cleaned text lines from the top): header, running header and
+    bottom footers dropped."""
+    rows = [r for r in rows if r]
+    if rows and _ULC_DZIENNIK.match(rows[0]):
+        rows = rows[1:]
+        if rows and _ULC_RUNNING.match(rows[0]):
+            rows = rows[1:]
+    while rows and any(p.match(rows[-1]) for p in _ULC_FOOTERS):
+        rows.pop()
+    return rows
+
+
+def ulc_dehyphenate(lines):
+    """Join a word broken at the end of a line. A compound ("poszukiwawczo-⏎ratownicze", "powietrze-⏎ziemia", "28-⏎dniowym")
+    keeps its hyphen; a syllable break ("wyda-⏎nia", "intensyw-⏎ności") loses it."""
+    out = []
+    i = 0
+    while i < len(lines):
+        cur = lines[i]
+        while i + 1 < len(lines) and re.search(r"\w-$", cur) and lines[i + 1][:1].islower():
+            keep = not re.search(r"[a-ząćęłńóśźż]-$", cur) or cur[-2] in "oe"
+            cur = (cur if keep else cur[:-1]) + lines[i + 1]
+            i += 1
+        out.append(cur)
+        i += 1
+    return out
+
+
+def ulc_annex_lines(path, cfg):
+    import pdfplumber
+
+    lines = []
+    body = False
+    with pdfplumber.open(path) as pdf:
+        for idx, page in enumerate(pdf.pages):
+            flat = page.filter(lambda o: not _ulc_rotated(o))
+            rows = ulc_page_rows([clean_line(ln["text"].translate(_ULC_SYMBOL)) for ln in flat.extract_text_lines()])
+            if idx == 0:
+                lines.append("== OBWIESZCZENIE ==")
+            elif idx == 1:
+                lines.append("== PRZEDMOWA ==")
+            for r in rows:
+                if not body and _ULC_BODY_START.match(r):
+                    body = True
+                if not body and _ULC_TOC.search(r):
+                    continue     # table of contents
+                lines.append(r)
+            page.flush_cache()
+    return ulc_dehyphenate(clean_lines(lines))
+
+
+_ULC_CHAPTER_RE = re.compile(r"^ROZDZIAŁ (\d{1,2})(?:\.?\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?\.?$")
+_ULC_APPENDIX_RE = re.compile(r"^DODATEK(?: (\d{1,2}))?\.?(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?$")
+_ULC_ATTACH_RE = re.compile(r"^ZAŁĄCZNIK ([A-Z])\.?(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?$")
+_ULC_NUM_RE = re.compile(r"^(\d{1,2}[a-z]?(?:\.\d{1,3}[a-z]?){0,6})(\.?)\s+[„\"(]?[A-ZĄĆĘŁŃÓŚŹŻ]")
+_ULC_SECTION_RE = re.compile(r"^Sekcja (\d{1,2}[a-z]?)\.?\s+[A-ZĄĆĘŁŃÓŚŹŻ]")   # Annex 14 Attachment A "Sekcja 19a …"
+_ULC_LIT_RE = re.compile(r"^([a-z])\)\s+\S")
+_ULC_TABLE_RE = re.compile(r"^Tabela ((?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2})?)(?:\*|\.|\s*$|\s+(?:\(c\.d\.\)|[A-ZĄĆĘŁŃÓŚŹŻ(„\"]))")
+# definitions in Chapter 1: "Faza alarmu (Alert phase). …", "Lotnisko (Aerodrome) − …", "IFR. Skrót …", "D. – …"
+_ULC_DEF_PAREN_RE = re.compile(r"^([A-ZĄĆĘŁŃÓŚŹŻ][^\s(.;:]*(?: (?:[A-Z]\.|[^\s(.;:][^\s.;:]*)){0,11}?)\d?\s\((?=[A-Za-z(])")
+_ULC_DEF_ABBR_RE = re.compile(r"^([A-Z][A-Z0-9/-]{0,11})\.\s+(?:[–—−-]\s+)?[A-ZĄĆĘŁŃÓŚŹŻa-z]")
+_ULC_DEF_TAIL_RE = re.compile(r"^\s*(?:\.|:|[–—−-]|†|\s[A-ZĄĆĘŁŃÓŚŹŻ]|\s+[a-z]\)\s)")
+_ULC_DEF_STRONG_TAIL_RE = re.compile(r"^\s*(?:\.|:|[–—−-]|†|\s+[a-z]\)\s)")
+_ULC_ENGLISH_RE = re.compile(r"^\([A-Za-z0-9 ,.'’/&+()\[\]–—−-]+\)$")
+
+
+def _ulc_paren_end(s, i):
+    """Index after the balanced group of parentheses starting at s[i] == "(" (or -1)."""
+    depth = 0
+    for j in range(i, len(s)):
+        if s[j] == "(":
+            depth += 1
+        elif s[j] == ")":
+            depth -= 1
+            if depth == 0:
+                return j + 1
+    return -1
+
+
+def _ulc_definition(line, nxt):
+    """(term, strong) for a line that starts a definition, else None. strong: the parenthesis holds only Latin (English)
+    text and is followed by ".", ":", a dash or a list "a)" (a definition even after a line without a full stop)."""
+    if line.startswith(("Uwaga", "Zalecenie", "Sytuacja")):
+        return None
+    m = _ULC_DEF_PAREN_RE.match(line)
+    if m:
+        s = line + " " + nxt
+        i = m.end() - 1
+        english = True
+        for _ in range(3):     # "(Current flight plan) (CPL).", "(CPL)-Current flight plan (CPL)."
+            j = _ulc_paren_end(s, i)
+            if j < 0:
+                return None
+            if s[i + 1:i + 5] == "Doc ":
+                return None     # a wrapped reference "PANS-OPS (Doc 8168)."
+            english = english and bool(_ULC_ENGLISH_RE.match(s[i:j]))
+            rest = s[j:]
+            mm = re.match(r"^\s*(?:[-–] ?[A-Za-z][^()]*)?\(", rest)
+            if mm and not _ULC_DEF_TAIL_RE.match(rest):
+                i = j + mm.end() - 1
+                continue
+            if _ULC_DEF_TAIL_RE.match(rest):
+                return m.group(1).strip(), english and bool(_ULC_DEF_STRONG_TAIL_RE.match(rest))
+            return None
+        return None
+    m = _ULC_DEF_ABBR_RE.match(line)
+    if m:
+        return m.group(1), False
+    return None
+
+
+def _ulc_comp(tok):
+    m = re.match(r"^(\d+)([a-z]?)$", tok)
+    return (int(m.group(1)), m.group(2))
+
+
+def _ulc_seq_ok(last, cur):
+    """Paragraph numbering may go down one level (…+".1"), go on at any level (+1…+3, or 19 -> 19a), or repeat the current
+    number or one of its ancestors (a second version of the same provision, "do 25 listopada 2026" / "od 26 listopada 2026").
+    Components are (number, letter) pairs."""
+    if cur == last + ((1, ""),) or cur == last[:len(cur)] and len(cur) <= len(last):
+        return True
+    k = len(cur)
+    if not (0 < k <= len(last) and cur[:-1] == last[:k - 1]):
+        return False
+    (n1, s1), (n2, s2) = last[k - 1], cur[-1]
+    return (n2 == n1 and s2 > s1) or (0 < n2 - n1 <= 3 and s2 in ("", "a"))
+
+
+def ulc_annex_anchors(text):
+    """Anchors of a Polish ICAO Annex text (profile ulc-annex):
+    `obwieszczenie`, `przedmowa`, `rozdział 3`, `3.1.2`, `3.1.2 lit. a`, `definicja Faza alarmu` (Chapter 1),
+    `dodatek 1`, `dodatek 1 pkt 2.1`, `dodatek 1 pkt 2.1 lit. a` (an unnumbered Appendix: `dodatek`, `dodatek pkt 2.1`),
+    `załącznik A`, `załącznik A pkt 2.1`, `załącznik A sekcja 19a` (Annex 14), `tabela 3-1`, `tabela A-1`.
+    A number printed twice in a row (two versions of a provision with dates of application) is one anchor covering both."""
+    rows = _line_offsets(text)
+    total = len(text)
+    ev = []   # (start, type, key, extra)
+    chapter = None
+    container = None     # ("rozdział", "3") | ("dodatek", "1"|"") | ("załącznik", "A")
+    last = ()
+    lit = None
+    para = None
+    defs_on = False
+    prev_struct = False
+    body = False
+    for ri, (start, line) in enumerate(rows):
+        if line == "== OBWIESZCZENIE ==":
+            ev.append((start, "front", "obwieszczenie", None))
+            continue
+        if line == "== PRZEDMOWA ==":
+            ev.append((start, "front", "przedmowa", None))
+            continue
+        if not body:
+            if not _ULC_BODY_START.match(line):
+                continue
+            body = True
+        nxt = rows[ri + 1][1] if ri + 1 < len(rows) else ""
+        prev = rows[ri - 1][1] if ri else ""
+        mc = _ULC_CHAPTER_RE.match(line)
+        ma = _ULC_APPENDIX_RE.match(line)
+        mt = _ULC_ATTACH_RE.match(line)
+        new = None
+        if mc and (chapter is None or 0 < int(mc.group(1)) - chapter <= 2) and (container is None or container[0] == "rozdział"):
+            chapter = int(mc.group(1))
+            new = ("rozdział", mc.group(1))
+        elif ma and (container is None or container[0] == "rozdział" or
+                     (container[0] == "dodatek" and container[1] and ma.group(1) and 0 < int(ma.group(1)) - int(container[1]) <= 2)):
+            new = ("dodatek", ma.group(1) or "")
+        elif mt and container is not None and (container[0] != "załącznik" or 0 < ord(mt.group(1)) - ord(container[1]) <= 2):
+            new = ("załącznik", mt.group(1))
+        if new:
+            container = new
+            key = "rozdział %s" % new[1] if new[0] == "rozdział" else (" ".join(new).strip())
+            ev.append((start, "container", key, None))
+            last = ((int(new[1]), ""),) if new[0] == "rozdział" else ()
+            lit = para = None
+            defs_on = new == ("rozdział", "1") and "DEFINICJE" in line
+            prev_struct = True
+            continue
+        if container is None:
+            continue
+        mtab = _ULC_TABLE_RE.match(line)
+        if mtab:
+            ev.append((start, "table", "tabela %s" % mtab.group(1), None))
+            continue
+        mn = _ULC_NUM_RE.match(line)
+        msec = _ULC_SECTION_RE.match(line) if container[0] != "rozdział" else None
+        if mn or msec:
+            num = (msec or mn).group(1)
+            cur = tuple(_ulc_comp(x) for x in num.split("."))
+            ok = _ulc_seq_ok(last, cur)
+            if container[0] == "rozdział":
+                ok = ok and len(cur) >= 2 and cur[0] == (chapter, "")
+            elif len(cur) == 1 and not msec:
+                ok = ok and mn.group(2) == "."
+            if ok:
+                if container[0] == "rozdział" and chapter == 1:
+                    defs_on = defs_on and len(cur) > 2 or (cur == ((1, ""), (1, "")) and "Definicje" in line)
+                cname = " ".join(container).strip()
+                if container[0] == "rozdział":
+                    key = num
+                elif msec:
+                    key = "%s sekcja %s" % (cname, num)
+                else:
+                    key = "%s pkt %s" % (cname, num)
+                ev.append((start, "para", key, cur))
+                last = cur
+                para = key
+                lit = None
+                prev_struct = True
+                continue
+        was_struct, prev_struct = prev_struct, False
+        if defs_on:
+            term = None
+            d = _ulc_definition(line, nxt)
+            if d and (d[1] or was_struct or not prev or prev.rstrip()[-1:] in ".:;)" or prev.startswith("== ")):
+                term = d[0]
+            if term:
+                term = re.sub(r"(?<=[^\W\d_])\d$", "", term).strip()   # footnote mark "statku powietrznego1"
+                term = re.sub(r"[\s†*]+$", "", term)                      # version marks "RPAS) †", "RPAS) ††"
+                if term.count(")") > term.count("("):
+                    term = term.replace(")", "").strip()
+                ev.append((start, "def", "definicja %s" % term, None))
+            continue
+        ml = _ULC_LIT_RE.match(line)
+        if ml and para is not None:
+            exp = "a" if lit is None else chr(ord(lit) + 1)
+            if ml.group(1) == exp:
+                ev.append((start, "lit", "%s lit. %s" % (para, exp), None))
+                lit = exp
+    # ends: a container ends at the next container; a paragraph at the next paragraph that is not its descendant (or the
+    # container end); a lit. at the next lit., paragraph or container; a definition / table at the next structural line
+    spans = []
+    for i, (s, typ, key, cur) in enumerate(ev):
+        end = total
+        for s2, typ2, key2, cur2 in ev[i + 1:]:
+            if typ == "front":
+                if typ2 in ("front", "container"):
+                    end = s2
+                    break
+            elif typ2 == "container" or typ2 == "front":
+                end = s2
+                break
+            elif typ == "container":
+                continue
+            elif typ == "para":
+                if typ2 == "para" and cur2[:len(cur)] != cur or (typ2 == "para" and cur2 == cur):
+                    end = s2
+                    break
+            elif typ == "lit":
+                if typ2 in ("lit", "para"):
+                    end = s2
+                    break
+            elif typ2 in ("para", "def", "table"):
+                end = s2
+                break
+        spans.append((key, s, end))
+    out = {}
+    prev_def = None
+    for key, s, e in spans:
+        if key.startswith("definicja "):
+            again, prev_def = key in out and prev_def == key, key
+            if key in out and not again:
+                continue     # a term defined twice far apart (Annex 2: "Bieżący plan lotu"): the first definition
+        if key in out:
+            out[key] = [min(out[key][0], s), max(out[key][1], e)]
+        else:
+            out[key] = [s, e]
+    # synthetic ancestors of chapter paragraphs (3.1.2 for 3.1.2.1) as the union of their children
+    for key in sorted([k for k in out if re.match(r"^\d+(?:\.\d+)+$", k)], key=lambda k: [int(x) for x in k.split(".")]):
+        parts = key.split(".")
+        for n in range(len(parts) - 1, 1, -1):
+            parent = ".".join(parts[:n])
+            if parent not in out:
+                kids = [v for k, v in out.items() if k.startswith(parent + ".") and re.match(r"^[\d.]+$", k)]
+                out[parent] = [min(v[0] for v in kids), max(v[1] for v in kids)]
+    return dict(sorted(out.items(), key=lambda kv: (kv[1][0], -kv[1][1], kv[0])))
+
+
+_OWNER_PROFILES = {"icao7300": icao7300_lines, "icao4444": icao4444_lines, "itu-rr": itu_lines, "ulc-annex": ulc_annex_lines}
 
 
 def build_owner_corpus(src, sources_dir):
@@ -1970,6 +2287,13 @@ def write_anchors(path, text_sha, anchors, future=(), langs=None):
 
 
 def extract_one(src, sources_dir, corpus_dir, anchors_dir):
+    if (src.get("fetch") or {}).get("mode") == "manual" and src["kind"] == "icao_pl":
+        text, cfg = build_owner_corpus(src, sources_dir)
+        sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        anchors = ulc_annex_anchors(text)
+        write_text(os.path.join(corpus_dir, src["id"] + ".txt"), text)
+        write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors)
+        return src["id"], len(text), len(anchors)
     if (src.get("fetch") or {}).get("mode") == "manual" and src["kind"] in ("icao", "itu"):
         text, cfg = build_owner_corpus(src, sources_dir)
         sha = hashlib.sha256(text.encode("utf-8")).hexdigest()

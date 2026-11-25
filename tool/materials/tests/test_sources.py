@@ -986,6 +986,77 @@ class OwnerDocumentsTest(unittest.TestCase):
         self.assertIn("search and rescue", text[slice(*a["Appendix 18 note f"])])
 
 
+class UlcAnnexTest(unittest.TestCase):
+    """Polish texts of ICAO Annexes from Dziennik Urzędowy ULC (kind icao_pl, profile ulc-annex)."""
+
+    TEXT = ("== OBWIESZCZENIE ==\nOBWIESZCZENIE NR 10/2025\n== PRZEDMOWA ==\nSPIS TREŚCI\nPRZEDMOWA\n"
+            "ROZDZIAŁ 1. DEFINICJE\nPoniższe terminy mają następujące znaczenie:\n"
+            "Faza alarmu (Alert phase). Sytuacja, w której istnieje obawa o bezpieczeństwo statku powietrznego\n"
+            "i znajdujących się na nim osób.\n"
+            "Lotnisko (Aerodrome) − Powierzchnia na ziemi lub wodzie\n"
+            "2 Ma zastosowanie od dnia 28 listopada 2024\n"
+            "Wodowanie (Ditching). Przymusowe lądowanie statku powietrznego na wodzie.\n"
+            "IFR. Skrót oznaczający przepisy wykonywania lotów według wskazań przyrządów.\n"
+            "ROZDZIAŁ 2. ORGANIZACJA\n2.1 Służby poszukiwania i ratownictwa\n"
+            "2.1.1 Umawiające się Państwa ustanawiają służby poszukiwania\ni ratownictwa, zgodnie z\n"
+            "2.5 metra (8 stóp) długości.\n"
+            "2.1.2 Każdy ośrodek posiada środki łączności z:\na) organem służby ruchu lotniczego;\n"
+            "b) podośrodkami koordynacji ratownictwa;\nd) radiostacjami brzegowymi.\n"
+            "2.1.3 Treść.\n2.1.3.1 Szczegół.\nTabela 2-1. Minimalne odległości\n1 2 3\n"
+            "5.6.2.1 Pierwszy numer spoza rozdziału.\n"
+            "2.2. Do 25 listopada 2026 pierwsza wersja.\n2.2 Od 26 listopada 2026 druga wersja.\n"
+            "DODATEK. SYGNAŁY\n1. Sygnały stosowane do porozumiewania się\n1.1. Następujące manewry:\n"
+            "a) okrążanie jednostki;\nb) przecinanie kursu.\n"
+            "ZAŁĄCZNIK A. WSKAZÓWKI\nSekcja 1 Metoda ACN\n1.1 Operacje\nSekcja 1a Metoda ACR\n1a.1 Operacje z obciążeniem\n")
+
+    def test_anchors(self):
+        a = ec.ulc_annex_anchors(self.TEXT)
+        t = self.TEXT
+        for key in ("obwieszczenie", "przedmowa", "rozdział 1", "definicja Faza alarmu", "definicja Lotnisko",
+                    "definicja Wodowanie", "definicja IFR", "rozdział 2", "2.1", "2.1.1", "2.1.2", "2.1.2 lit. a",
+                    "2.1.2 lit. b", "2.1.3", "2.1.3.1", "tabela 2-1", "2.2", "dodatek", "dodatek pkt 1", "dodatek pkt 1.1",
+                    "dodatek pkt 1.1 lit. a", "załącznik A", "załącznik A sekcja 1", "załącznik A pkt 1.1",
+                    "załącznik A sekcja 1a", "załącznik A pkt 1a.1"):
+            self.assertIn(key, a, key)
+        import materials as m
+        for key in a:
+            self.assertTrue(m.loc_valid("icao_pl", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+        self.assertNotIn("2.5", a)                       # a wrapped measurement is not a paragraph
+        self.assertNotIn("5.6.2.1", a)                   # a number of another chapter
+        self.assertNotIn("2.1.2 lit. d", a)              # letters must follow a, b, c …
+        self.assertIn("i znajdujących się", t[slice(*a["definicja Faza alarmu"])])
+        self.assertIn("2.5 metra", t[slice(*a["2.1.1"])])
+        self.assertIn("2.1.3.1 Szczegół", t[slice(*a["2.1.3"])])     # a paragraph includes its sub-paragraphs
+        s, e = a["2.2"]
+        self.assertIn("pierwsza wersja", t[s:e])          # two dated versions of one provision: one anchor
+        self.assertIn("druga wersja", t[s:e])
+        self.assertNotIn("DODATEK", t[s:e])
+
+    def test_page_furniture_and_hyphenation(self):
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 13 – Poz. 31",
+                "Załącznik 12 – Poszukiwanie i ratownictwo Rozdział 2", "2.3.2 Zalecenie.– Treść", "ZAŁĄCZNIK 12 2-1"]
+        self.assertEqual(["2.3.2 Zalecenie.– Treść"], ec.ulc_page_rows(rows))
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 25 – Poz. 41", "Treść", "ZAŁĄCZNIK 14 ICAO — TOM I 1 8.11.2018",
+                "5.11.2020", "3 8.11.2018", "Nr 15"]
+        self.assertEqual(["Treść"], ec.ulc_page_rows(rows))
+        self.assertEqual(["jednostki poszukiwawczo-ratownicze", "wydania"],
+                         ec.ulc_dehyphenate(["jednostki poszukiwawczo-", "ratownicze", "wyda-", "nia"]))
+
+    def test_locators(self):
+        import materials as m
+        self.assertEqual(["3.1.2", "3.1", "rozdział 3"], m.loc_parents("3.1.2 lit. a"))
+        self.assertEqual(["2.6a", "rozdział 2"], m.loc_parents("2.6a.2"))     # Annex 14 vol. I "2.6a"
+        self.assertEqual(["rozdział 1"], m.loc_parents("definicja Faza alarmu"))
+        self.assertEqual(["dodatek 1 pkt 2.1", "dodatek 1"], m.loc_parents("dodatek 1 pkt 2.1 lit. a"))
+        for loc in ("rozdział 3", "3.1.2 lit. a", "dodatek pkt 2.1", "załącznik A sekcja 19a", "tabela A4-1", "tabela 2.1"):
+            self.assertTrue(m.loc_valid("icao_pl", loc), loc)
+        for loc in ("pkt 3.1", "art. 5", "3", "Chapter 1"):
+            self.assertFalse(m.loc_valid("icao_pl", loc), loc)
+        self.assertTrue(m.src_quotable({"kind": "icao_pl"}))
+
+
 class ReviewSrc2R1Test(unittest.TestCase):
     """M-SRC2-r1: wrapped cross-references, annex numbering, SECTION series, lit., two-letter points, closing sentences."""
 
@@ -1157,7 +1228,7 @@ class RealSourcesJsonTest(unittest.TestCase):
             for k in ("id", "title_pl", "kind", "url", "format", "version", "sha256", "fetched",
                       "reuse", "allowQuote"):
                 self.assertIn(k, s, "%s lacks %s" % (s.get("id"), k))
-            self.assertIn(s["kind"], ("statute", "eu_reg", "convention", "aip", "easa", "icao", "itu"))
+            self.assertIn(s["kind"], ("statute", "eu_reg", "convention", "aip", "easa", "icao", "itu", "icao_pl"))
             self.assertIn(s["reuse"], ("public-domain", "eu-reuse", "reference-only"))
             if s["kind"] in ("aip", "easa") and (s.get("fetch") or {}).get("mode") != "manual":
                 self.assertFalse(s["allowQuote"], s["id"])
