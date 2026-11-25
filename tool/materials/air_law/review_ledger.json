@@ -4753,11 +4753,11 @@
  },
  "PL099-0012#fa91d8e5": {
   "date": "2026-11-25",
-  "note": "Klucz 156,3 MHz poprawnie oparty na ITU RR App. 18 (kanał 06 = 156.300; uwaga f): kanał 06 może być używany przez stacje pokładowe statków powietrznych do SAR) – kotwice istnieją, treść sprawdzona. Ale zdanie-pułapka o 121,5 MHz jest sprzeczne z pkt SERA.14095 lit. d) ppkt 3: 121,500 MHz to wspólny kanał między statkami powietrznymi „a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze” (EAR: „surface services”, co obejmuje jednostki pływające; por. też ppkt 5 – jednostka ratunkowa/survival craft). Odpowiedź 121,5 MHz jest więc obronna – jak w zaakceptowanym P29 PL099-0004 → wpis sporny. Poprawka: (1) usunąć zdanie „Pułapka: 121,5 MHz …” (ewentualnie zastąpić: „Uwaga f) wymienia również kanały 16 (156,800 MHz) i 70 (156,525 MHz), których nie ma wśród odpowiedzi.”); (2) dodać disputeNote: „Pkt SERA.14095 lit. d) ppkt 3 rozporządzenia 923/2012 przewiduje użycie 121,500 MHz jako wspólnego kanału łączności statków powietrznych ze służbami naziemnymi (w wersji angielskiej: surface services, a więc także z jednostkami pływającymi) zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze, więc odpowiedź 121,5 MHz też ma oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.”; (3) refs: EU-923-2012 SERA.14095(d)(3) z quote „między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze” oraz EASA-EAR-SERA SERA.14095(d)(3) (bez quote); ref art. 4a ust. 1 można zostawić tylko, jeśli zostaje w tekście. Spór przechodzi na sameAs PL102-0050.",
+  "note": "Poprawione: pułapka o 121,5 MHz usunięta, zamiast niej zdanie o kanałach 16 i 70 z uwagi f) App. 18 (zgodne z korpusem). disputeNote (391 zn.) trafnie wskazuje SERA.14095(d)(3) – służby naziemne / surface services w operacjach SAR; ref EU-923-2012 SERA.14095(d)(3) z cytatem zgodnym z korpusem i EASA-EAR-SERA SERA.14095(d)(3) bez quote. Klucz 156,3 MHz nadal oparty na App. 18 kanał 06 i uwadze f). Spór przechodzi na sameAs PL102-0050#fd7739ec. 3 zdania, 537 zn.",
   "portion": "P30",
-  "round": 1,
-  "textSha": "1040cbf063101aa2",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "6fb8fb29690a8210",
+  "verdict": "DISPUTED"
  },
  "PL099-0013#a7c09dcc": {
   "date": "2026-11-25",
@@ -4817,11 +4817,11 @@
  },
  "PL099-0033#9667a50b": {
   "date": "2026-11-25",
-  "note": "Klucz zgodny z AMC1 ADR.OPS.B.080(a)(1): „Red or yellowish green colour should preferably be used for marking emergency vehicles and yellow colour for service vehicles”. Terminologia: „pojazdy uprzywilejowane” to termin prawa o ruchu drogowym, nie odpowiednik „emergency vehicles”; „preferencyjnie” – niezręczne i wzmacnia zalecenie AMC do nakazu („oznacza się”). Poprawka zdania 1: „Zgodnie z AMC1 ADR.OPS.B.080(a) do rozporządzenia 139/2014 (EASA) pojazdy ratownicze na lotnisku, w tym ratowniczo-gaśnicze, zaleca się oznaczać przede wszystkim kolorem czerwonym lub żółtozielonym, a pojazdy obsługi – kolorem żółtym.” W pułapce „przepis dopuszcza” → „zalecenie dopuszcza”. Reszta bez zmian.",
+  "note": "Poprawione zgodnie z uwagą: „pojazdy ratownicze … zaleca się oznaczać przede wszystkim” = „emergency vehicles … should preferably” w AMC1 ADR.OPS.B.080(a)(1); pułapka „zalecenie dopuszcza dwa kolory”. 3 zdania, 379 zn.",
   "portion": "P30",
-  "round": 1,
-  "textSha": "aca7286e46cfa5e5",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "990042aceb29f077",
+  "verdict": "PASS"
  },
  "PL099-0034#73f7420d": {
   "date": "2026-11-25",
