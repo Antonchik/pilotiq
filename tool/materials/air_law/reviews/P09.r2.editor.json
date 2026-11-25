@@ -1,0 +1,42 @@
+[
+ {
+  "key": "PL010-0087#0876ed9a",
+  "verdict": "PASS",
+  "note": "Poprawka r1 wprowadzona dosłownie: podstawa FCL.740.A(a)(1)/FCL.740.H(a)(1)(ii), § 33 tylko jako analog dla uprawnień krajowych z zastrzeżeniem § 31; refs (§ 31, § 3 ust. 1 pkt 1, FCL.740(a)(1), FCL.740(b)) zgodne z anchorami. 691 zn., 3 zdania."
+ },
+ {
+  "key": "PL010-0089#12519f67",
+  "verdict": "PASS",
+  "note": "Zdanie 2 zastąpione zgodnie z r1; ref § 31 dodany. Klucz = § 33 ust. 1 pkt 2, zakres (załącznik nr 3) poprawnie zawężony. 588 zn."
+ },
+ {
+  "key": "PL010-0537#4f8f9764",
+  "verdict": "PASS",
+  "note": "Dodana pułapka FCL.210.A(c)(1)/(c)(2) (24 h TMG, 15 h szkolenia na samolotach) z refs; klucz wg lit. d). 669 zn., 4 zdania."
+ },
+ {
+  "key": "PL010-0418#8821ca06",
+  "verdict": "PASS",
+  "note": "«wymaga wykonania co najmniej 70 godzin lotu jako pilot dowódca na samolotach» — zgodne z FCL.720.A(a)(1). 668 zn."
+ },
+ {
+  "key": "PL010-0419#026d9232",
+  "verdict": "PASS",
+  "note": "Jak 0418#8821ca06; poprawka wprowadzona. 686 zn."
+ },
+ {
+  "key": "PL010-0422#1df33f43",
+  "verdict": "PASS",
+  "note": "FCL.720.A(c): uprawnienie na typ samolotu z załogą wieloosobową z ograniczonymi przywilejami (drugi pilot zastępujący podczas przelotu powyżej FL 200) — tekst podaje węższy, dokładny zakres zamiast ogólnego «ograniczone do czynności drugiego pilota» z klucza, bez sprzeczności. FCL.205.A(a) (PIC lub drugi pilot w operacjach niekomercyjnych) i § 7 ust. 4 LIC wiążą to z PPL(A); część FCL nie zakazuje wpisu uprawnienia na typ do PPL(A). Pułapka AGRO jak w serii. Opcjonalnie (nieblokujące): ref FCL.700(a) «ważne uprawnienia na odpowiednią klasę lub typ» dla członu «na każdy typ». 691 zn., 3 zdania."
+ },
+ {
+  "key": "PL010-0422#d35d9b6e",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: różni się tylko 4. dystraktor («Wszystkie odpowiedzi są prawidłowe» zamiast «chmurowe»), który pułapka AGRO/gaśnicze obala tak samo."
+ },
+ {
+  "key": "PL010-0229#0ba29b76",
+  "verdict": "DISPUTED",
+  "note": "Spór rzeczywisty: § 66 ust. 1 EGZAMINY — przy wznowieniu datę ważności liczy się od ostatniego dnia miesiąca, w którym przeprowadzono egzamin praktyczny, a klucz wiąże ją z upływem poprzedniego okresu (co odpowiada § 66 ust. 2 dla przedłużenia). Tekst uczciwie wyjaśnia źródło klucza (analogia z § 66 ust. 2) bez «ULC się myli»; disputeNote (≤400 zn.) nazywa § 66 ust. 1, który jest w refs, i zawiera formułę o odpowiedzi z klucza. Drobiazg nieblokujący: «czyli od sprawdzenia kwalifikacji» to uproszczenie (koniec miesiąca egzaminu)."
+ }
+]
