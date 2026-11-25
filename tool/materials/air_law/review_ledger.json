@@ -4711,6 +4711,14 @@
   "textSha": "2c901ea80e04871b",
   "verdict": "DISPUTED"
  },
+ "PL099-0005#7a23adec": {
+  "date": "2026-11-25",
+  "note": "Klucz 123,1 MHz = art. 3f ust. 2 lit. a) pkt 2 rozp. 2017/373 („częstotliwość pomocnicza do celów operacji poszukiwawczo-ratunkowych (123,1 MHz)”) obok pkt 1 (121,5 MHz); § 13 pkt 1 rozp. SAR 2015 (123,100 MHz podstawowa dla statków SAR) zgodny. Lokatory pkt 1/pkt 2 to najdokładniejsze kotwice (w akcie ust. 2 lit. a) pkt 1–2; tekst poprawnie pisze „lit. a)”). Cytaty zgodne. 2 zdania, 513 zn.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "e4db7d57f6135739",
+  "verdict": "PASS"
+ },
  "PL099-0008#bd18648f": {
   "date": "2026-11-25",
   "note": "Art. 124 ust. 1 obecnie: zakaz «poniżej wysokości względnych podanych przez instytucje zapewniające służby ruchu lotniczego»; pierwotne brzmienie (2002) dosłownie «podanych przez państwowy organ zarządzania ruchem lotniczym» — zmieniła się tylko nazwa organu, treść normy ta sama, więc draft (nie outdated) słuszny, analogicznie do P23 0041. Dystraktor «na odpowiedniej wysokości» jest mniej precyzyjny, ale nie stał się trafny wskutek zmiany przepisu — wg reguły rozgraniczenia nie sporny, disputeNote zbędny. Strefy R nad parkami: § 3 ust. 1 pkt 5 + AIP ENR 1.10 pkt 3.9.3 (tylko fakt istnienia stref). 4 zdania, 653 znaki.",
@@ -4743,6 +4751,22 @@
   "textSha": "e970a96287d01dfd",
   "verdict": "DISPUTED"
  },
+ "PL099-0012#fa91d8e5": {
+  "date": "2026-11-25",
+  "note": "Klucz 156,3 MHz poprawnie oparty na ITU RR App. 18 (kanał 06 = 156.300; uwaga f): kanał 06 może być używany przez stacje pokładowe statków powietrznych do SAR) – kotwice istnieją, treść sprawdzona. Ale zdanie-pułapka o 121,5 MHz jest sprzeczne z pkt SERA.14095 lit. d) ppkt 3: 121,500 MHz to wspólny kanał między statkami powietrznymi „a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze” (EAR: „surface services”, co obejmuje jednostki pływające; por. też ppkt 5 – jednostka ratunkowa/survival craft). Odpowiedź 121,5 MHz jest więc obronna – jak w zaakceptowanym P29 PL099-0004 → wpis sporny. Poprawka: (1) usunąć zdanie „Pułapka: 121,5 MHz …” (ewentualnie zastąpić: „Uwaga f) wymienia również kanały 16 (156,800 MHz) i 70 (156,525 MHz), których nie ma wśród odpowiedzi.”); (2) dodać disputeNote: „Pkt SERA.14095 lit. d) ppkt 3 rozporządzenia 923/2012 przewiduje użycie 121,500 MHz jako wspólnego kanału łączności statków powietrznych ze służbami naziemnymi (w wersji angielskiej: surface services, a więc także z jednostkami pływającymi) zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze, więc odpowiedź 121,5 MHz też ma oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.”; (3) refs: EU-923-2012 SERA.14095(d)(3) z quote „między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze” oraz EASA-EAR-SERA SERA.14095(d)(3) (bez quote); ref art. 4a ust. 1 można zostawić tylko, jeśli zostaje w tekście. Spór przechodzi na sameAs PL102-0050.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "1040cbf063101aa2",
+  "verdict": "FIX"
+ },
+ "PL099-0013#a7c09dcc": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 157 ust. 1 PKE (świadectwo operatora urządzeń radiowych w służbie radiokomunikacyjnej lotniczej) + art. 158 ust. 7 (egzamin – komisja z art. 99 Prawa lotniczego); cytaty zgodne. Sprawdzono akty zmieniające PKE (Dz.U. 2025 poz. 637, 820; 2026 poz. 252, 815, 1296 wg ELI): zmieniają art. 337, 43, 40, 42, 419 – art. 157 i 158 nie były zmieniane, tekst pierwotny aktualny w tym zakresie. Pułapka o obywatelstwie zgodna z art. 157. 3 zdania, 575 zn.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "d24595221295b96e",
+  "verdict": "PASS"
+ },
  "PL099-0015#1aea0d31": {
   "date": "2026-11-25",
   "note": "Brak przepisu wprost o urządzeniach naziemnych; tekst uczciwie przedstawia klucz jako zastosowanie zasady NCO.GEN.105(d) („Klucz stosuje tę zasadę…”), nie przypisując przepisowi treści, której nie ma. Dopuszczalne; w korpusie brak bliższej normy (SERA.12005 dotyczy meteorologii).",
@@ -4757,6 +4781,14 @@
   "portion": "P27",
   "round": 1,
   "textSha": "24253cf9667443c4",
+  "verdict": "PASS"
+ },
+ "PL099-0021#8798162a": {
+  "date": "2026-11-25",
+  "note": "AIP GEN 3.6 pkt 5 (Cospas-Sarsat wykrywa ELT na 406 MHz) i NCO.IDE.A.170(b) (121,5 i 406 MHz) – cytaty zgodne; tekst uczciwie zaznacza uproszczenie klucza („nadajnik ratowniczy SARSAT”); MLS/TLS/RVSM poprawnie odrzucone. 4 zdania, 504 zn.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "5905a14d4ea4a33c",
   "verdict": "PASS"
  },
  "PL099-0022#aaa2df9d": {
@@ -4782,6 +4814,14 @@
   "round": 1,
   "textSha": "77ef13ac2d2b1fe8",
   "verdict": "PASS"
+ },
+ "PL099-0033#9667a50b": {
+  "date": "2026-11-25",
+  "note": "Klucz zgodny z AMC1 ADR.OPS.B.080(a)(1): „Red or yellowish green colour should preferably be used for marking emergency vehicles and yellow colour for service vehicles”. Terminologia: „pojazdy uprzywilejowane” to termin prawa o ruchu drogowym, nie odpowiednik „emergency vehicles”; „preferencyjnie” – niezręczne i wzmacnia zalecenie AMC do nakazu („oznacza się”). Poprawka zdania 1: „Zgodnie z AMC1 ADR.OPS.B.080(a) do rozporządzenia 139/2014 (EASA) pojazdy ratownicze na lotnisku, w tym ratowniczo-gaśnicze, zaleca się oznaczać przede wszystkim kolorem czerwonym lub żółtozielonym, a pojazdy obsługi – kolorem żółtym.” W pułapce „przepis dopuszcza” → „zalecenie dopuszcza”. Reszta bez zmian.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "aca7286e46cfa5e5",
+  "verdict": "FIX"
  },
  "PL099-0034#73f7420d": {
   "date": "2026-11-25",
@@ -4991,6 +5031,14 @@
   "textSha": "58171bd5aac388e0",
   "verdict": "PASS"
  },
+ "PL099-0084#56dfd853": {
+  "date": "2026-11-25",
+  "note": "Klucz wynika z SERA.14095(b)(1): depesza MAYDAY w relacji powietrze-ziemia na używanej częstotliwości, adresowana do organu ATS ((ii)(A)), z zamiarem pilota dowódcy ((D)) i aktualną pozycją ((E)); kwalifikacja opuszczenia statku w powietrzu jako sytuacji zagrożenia wg definicji (a)(1)(i) – zastosowanie przepisu, nie fakt spoza źródła. Nie wymaga basis no-source. Opcjonalnie: dodać ref SERA.14095(b)(1)(ii) z quote „nazwa organu ATS, do którego depesza jest adresowana”, który najlepiej wiąże klucz z „organem ruchu lotniczego”. 3 zdania, 557 zn.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "796d837b5dc75627",
+  "verdict": "PASS"
+ },
  "PL099-0086#d8733033": {
   "date": "2026-11-24",
   "note": "Klucz = SERA.10005 lit. b) (w łączności ATS powietrze-ziemia nie wspomina się o charakterze sytuacji, z wyjątkiem opisanym w przepisie); pułapka z lit. a) z jej własnym zastrzeżeniem „z wyjątkiem sytuacji przewidzianych w lit. b)” – trafna.",
@@ -5031,6 +5079,14 @@
   "textSha": "5607e656bd2ae6a2",
   "verdict": "PASS"
  },
+ "PL099-0093#d53f6bf6": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(a)(4)(iii) (pilot dowódca upewnia się, że wymagane wyposażenie jest na pokładzie i działa), SAO.GEN.130(d)(3) (szybowce; nagłówek „Obowiązki pilota dowódcy”) i NCO.IDE.A.100(e) (wyposażenie awaryjne łatwo dostępne) – cytaty i lokatory zgodne. 3 zdania, 549 zn.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "98b7a341aef78d8d",
+  "verdict": "PASS"
+ },
  "PL099-0094#1ce7b659": {
   "date": "2026-11-25",
   "note": "NCO.GEN.105(a)(4)(i) i (iii) – dowódca upewnia się przed lotem o zdatności i działaniu wymaganych przyrządów; przypisanie sprawdzenia wysokościomierza dowódcy uzasadnione.",
@@ -5061,6 +5117,14 @@
   "portion": "P27",
   "round": 2,
   "textSha": "ab877ff89b3df839",
+  "verdict": "PASS"
+ },
+ "PL099-0099#fb312950": {
+  "date": "2026-11-25",
+  "note": "NCO.IDE.A.145(b)(1) i NCO.IDE.H.145(b)(1) „łatwo dostępna do użytku” – klucz; pułapka (zamknięta kasetka, kabina załogi) to bezpośredni wniosek z wymogu dostępności. Cytaty zgodne. 3 zdania, 471 zn.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "67dd8416c57fa075",
   "verdict": "PASS"
  },
  "PL099-0100#33e15656": {
@@ -5127,6 +5191,14 @@
   "textSha": "bf435e37753b4d4c",
   "verdict": "PASS"
  },
+ "PL102-0045#4000913a": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: pytanie i odpowiedzi identyczne z PL099-0013#a7c09dcc (różnica wielkości liter i kropek).",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "5c565dbaa976d6f8",
+  "verdict": "PASS"
+ },
  "PL102-0046#8f833f6c": {
   "date": "2026-11-24",
   "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0074#9b6f9c4c (różnica wielkości liter).",
@@ -5143,6 +5215,22 @@
   "textSha": "3a446f33117af9f7",
   "verdict": "PASS"
  },
+ "PL102-0049#7f37dfe5": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0005#7a23adec (bez kropek).",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "0656e71f86568b52",
+  "verdict": "PASS"
+ },
+ "PL102-0050#fd7739ec": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0012#fa91d8e5. Uwaga: oryginał ma FIX (disputeNote) – status sporny przejdzie po poprawce oryginału.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "b21a84fd6e56f7e2",
+  "verdict": "PASS"
+ },
  "PL102-0051#6d850997": {
   "date": "2026-11-24",
   "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0004#0d5127d8 (wielkość liter, brak kropek). Uwaga: oryginał ma FIX (brak disputeNote) – status sporny przejdzie po poprawce oryginału.",
@@ -5157,6 +5245,30 @@
   "portion": "P27",
   "round": 1,
   "textSha": "67b56b2006c335c0",
+  "verdict": "PASS"
+ },
+ "PL102-0053#5967a041": {
+  "date": "2026-11-25",
+  "note": "Pytanie SPL: NCO.GEN.105(a)(4)(iii) + NCO.IDE.A.145(a)/(b)(2) dla samolotów, a dla szybowców ogólny obowiązek z SAO.GEN.130(d)(3) – tekst nie twierdzi, że szybowiec musi mieć apteczkę (część SAO tego nie wymaga), więc bez faktu ponad źródło. Cytaty zgodne. 3 zdania, 553 zn.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "c8e52c28711f60cb",
+  "verdict": "PASS"
+ },
+ "PL102-0054#cd03302e": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0093#d53f6bf6 (wielkość liter, kropki).",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "1ab62f97f2a3f4b1",
+  "verdict": "PASS"
+ },
+ "PL102-0055#53d70212": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi jak PL099-0099#fb312950.",
+  "portion": "P30",
+  "round": 1,
+  "textSha": "b260c776ed747edd",
   "verdict": "PASS"
  },
  "PL102-0063#774ff4ab": {
