@@ -1084,13 +1084,14 @@ class ReviewSrc2R1Test(unittest.TestCase):
                          m.loc_parents("załącznik XI dodatek 1 sekcja I(a)(2)"))
 
     def test_rule_heading_with_full_stop_two_letter_points_and_first_letter_c(self):
-        text = ("SERA.7001. Przepisy ogólne\na) Pierwszy punkt;\nb) drugi punkt.\n"
-                "SERA.8015 Zezwolenia\ne) Potwierdzenie przez powtórzenie:\n(i) zezwolenia ATC;\nea) Zmiany zezwolenia\neb) Zezwolenie dotyczące\n"
-                "(i) zniżanie;\nec) Zezwolenia warunkowe\nf) Dalszy punkt\n"
-                "SERA.11001 Przepisy ogólne\nc) W sytuacji awaryjnej organy ATS udzielają pomocy.\nd) Późniejsze działania.\n"
-                "SERA.11005 Bezprawna ingerencja\naa) Statek stara się ustawić transponder.\nab) Pilot dowódca podejmuje starania.\nb) Organy ATS spełniają żądania.\n")
+        text = ("ZAŁĄCZNIK\nSERA.7001. Przepisy ogólne\na) Pierwszy punkt dotyczy celów służb ruchu lotniczego;\nb) drugi punkt dotyczy zapobiegania kolizjom.\n"
+                "SERA.8015 Zezwolenia kontroli ruchu lotniczego\na) Pierwszy punkt zezwoleń;\nb) drugi punkt zezwoleń;\nc) trzeci punkt zezwoleń;\nd) czwarty punkt zezwoleń;\ne) Potwierdzenie przez powtórzenie zezwoleń i instrukcji:\n1) zezwolenia ATC:\n(i) zezwolenia na lot;\n"
+                "ea) Zmiany zezwolenia dotyczące trasy lub poziomu lotu\neb) Zezwolenie dotyczące ustawienia wysokościomierza\n"
+                "(i) zniżanie do poziomu pośredniego;\nec) Zezwolenia warunkowe wydawane przez kontrolera\nf) Dalszy punkt tego przepisu w tekście\n"
+                "SERA.11001 Przepisy ogólne\nc) W sytuacji awaryjnej organy ATS udzielają pomocy i dają pierwszeństwo.\nd) Późniejsze działania ATC muszą się opierać na zamiarach pilota.\n"
+                "SERA.11005 Bezprawna ingerencja\naa) Statek powietrzny stara się ustawić transponder na kod 7500.\nab) Pilot dowódca podejmuje starania o jak najszybsze lądowanie.\nb) Organy ATS niezwłocznie spełniają żądania statku powietrznego.\n")
         a = ec.eureg_anchors(text, ())
-        for key in ("SERA.7001", "SERA.7001(a)", "SERA.8015(e)", "SERA.8015(e)(i)", "SERA.8015(ea)", "SERA.8015(eb)", "SERA.8015(eb)(i)",
+        for key in ("SERA.7001", "SERA.7001(a)", "SERA.8015(e)", "SERA.8015(e)(1)(i)", "SERA.8015(ea)", "SERA.8015(eb)", "SERA.8015(eb)(1)(i)",
                     "SERA.8015(ec)", "SERA.8015(f)", "SERA.11001(c)", "SERA.11001(d)", "SERA.11005(aa)", "SERA.11005(ab)", "SERA.11005(b)"):
             self.assertIn(key, a, key)
         self.assertNotIn("Zmiany zezwolenia", text[slice(*a["SERA.8015(e)"])])
@@ -1098,28 +1099,28 @@ class ReviewSrc2R1Test(unittest.TestCase):
         self.assertTrue(m.loc_valid("eu_reg", "SERA.8015(ea)"))
 
     def test_table_rows_are_not_points_and_closing_sentence_belongs_to_the_parent(self):
-        text = ("SERA.14005 Kategorie\na) Kategorie zgodne z tabelą S14-1.\nTabela S14-1\nKategoria depesz\n"
+        text = ("ZAŁĄCZNIK\nSERA.14005 Kategorie depesz\na) Kategorie depesz obsługiwanych przez ruchomą służbę lotniczą są zgodne z tabelą S14-1.\nTabela S14-1\nKategoria depesz\n"
                 "a) Wezwanie w sytuacji zagrożenia\nMAYDAY\nb) Depesze pilne\nPAN PAN\nc) Komunikaty\n—\n"
-                "b) Depesze o sytuacji zagrożenia należy traktować zgodnie z przepisami.\nc) Depesze pilne należy traktować inaczej.\n"
-                "FCL.025 Egzaminy\n1) Wynik ważny przez okres:\n(i) 24 miesięcy;\n(ii) 36 miesięcy; lub\n(iii) bez ograniczeń czasowych.\n"
-                "Okresy podane w ppkt (i) i (ii) liczy się od dnia egzaminu.\n2) Wynik ATPL pozostaje ważny.\n")
+                "b) Depesze o sytuacji zagrożenia należy traktować zgodnie z przepisami SERA.14095.\nc) Depesze pilne należy traktować inaczej niż pozostałe.\n"
+                "FCL.025 Egzaminy teoretyczne\na) Egzamin teoretyczny ważny jest przez okres wskazany poniżej.\n1) Wynik ważny przez okres:\n(i) 24 miesięcy dla pierwszego uprawnienia;\n(ii) 36 miesięcy dla drugiego uprawnienia; lub\n(iii) bez ograniczeń czasowych.\n"
+                "Okresy podane w ppkt (i) i (ii) liczy się od dnia egzaminu.\n2) Wynik ATPL pozostaje ważny przez siedem lat.\n")
         a = ec.eureg_anchors(text, ())
         self.assertIn("Wezwanie", text[slice(*a["SERA.14005(a)"])])
         self.assertIn("Depesze o sytuacji", text[slice(*a["SERA.14005(b)"])])
         self.assertNotIn("Wezwanie", text[slice(*a["SERA.14005(b)"])])
         self.assertNotIn("PAN PAN", text[slice(*a["SERA.14005(b)"])])
-        self.assertIn("Okresy podane", text[slice(*a["FCL.025(1)"])])
-        self.assertNotIn("Okresy podane", text[slice(*a["FCL.025(1)(iii)"])])
+        self.assertIn("Okresy podane", text[slice(*a["FCL.025(a)(1)"])])
+        self.assertNotIn("Okresy podane", text[slice(*a["FCL.025(a)(1)(iii)"])])
 
     def test_statute_lit_sanction_tail_and_annex_heading_with_footnote(self):
-        text = ("Art. 210. 1. Kto:\n1) pierwsze;\n2) drugie, w tym:\na) litera a;\nb) litera b;\nea) nie jest literą;\n"
+        text = ("Art. 1. 1. Kto:\n1) pierwsze;\n2) drugie, w tym:\na) litera a;\nb) litera b;\nea) nie jest literą;\n"
                 "3) trzecie\n– podlega karze grzywny.\n2. Ust drugi.\nZałącznik nr 2\nZałącznik nr 2\nWiersz\n"
                 "Załącznik nr 35)\nZałącznik nr 2\nDane\n")
         a = ec.statute_anchors(text)
-        for key in ("art. 210 ust. 1 pkt 2 lit. a", "art. 210 ust. 1 pkt 2 lit. b", "załącznik 2", "załącznik 3"):
+        for key in ("art. 1 ust. 1 pkt 2 lit. a", "art. 1 ust. 1 pkt 2 lit. b", "załącznik 2", "załącznik 3"):
             self.assertIn(key, a, key)
-        self.assertNotIn("art. 210 ust. 1 pkt 2 lit. ea", a)
-        self.assertNotIn("podlega", text[slice(*a["art. 210 ust. 1 pkt 3"])])
+        self.assertNotIn("art. 1 ust. 1 pkt 2 lit. ea", a)
+        self.assertNotIn("podlega", text[slice(*a["art. 1 ust. 1 pkt 3"])])
         self.assertIn("Dane", text[slice(*a["załącznik 3"])])
         import materials as m
         self.assertTrue(m.loc_valid("statute", "art. 5 ust. 1 pkt 2 lit. ea"))
@@ -1138,7 +1139,7 @@ class ReviewSrc2R1Test(unittest.TestCase):
         text = ("Article 2 Definitions\nRegulation (EU) No 139/2014\n(1) 'aerodrome’ means a defined area;\n(2) 'aeroplane’ means an aircraft;\n"
                 "ANNEX I — DEFINITIONS\nRegulation (EU) 2024/1400\n(1) ‘Acceptable Means of Compliance (AMC)’ means standards;\n"
                 "(4) ‘aerodrome equipment’ means equipment;\n(4a) ‘[aerodrome] traffic density’ means movements;\n(5) ‘aeronautical data’ means a representation;\n"
-                "ANNEX II — AUTHORITY REQUIREMENTS\nADR.AR.A.001 Scope\n(a) This Annex applies.\n")
+                "ANNEX II — AUTHORITY REQUIREMENTS\nADR.AR.A.001 Scope\nRegulation (EU) 139/2014\n(a) This Annex applies to the authority of each Member State.\n")
         a = ec.rule_anchors(text, "easa", ("article",))
         for key in ("Article 2", "Article 2(1)", "Article 2(2)", "Annex I", "Annex I(1)", "Annex I(4)", "Annex I(4a)", "Annex I(5)", "ADR.AR.A.001"):
             self.assertIn(key, a, key)

@@ -371,14 +371,14 @@ def loc_parents(loc):
         parts = ma.group(2).split(".")
         return ["%s pkt %s" % (ma.group(1), ".".join(parts[:n])) for n in range(len(parts) - 1, 0, -1)] + [ma.group(1)]
     while True:
-        m = re.match(r"^(.*\S)\s+(pkt|ust\.|dodatek|część|tabela|sekcja)\s+\S+$", cur)
-        if m:
-            cur = m.group(1)
-        else:
-            m2 = re.match(r"^(.+)(\([a-z0-9]+\))$", cur)
-            if not m2:
-                break
+        m2 = re.match(r"^(.+)(\([a-z0-9]+\))$", cur)
+        if m2:
             cur = m2.group(1)
+        else:
+            m = re.match(r"^(.*\S)\s+(pkt|ust\.|dodatek|część|tabela|sekcja|lit\.)\s+\S+$", cur)
+            if not m:
+                break
+            cur = m.group(1)
         out.append(cur)
     return out
 
