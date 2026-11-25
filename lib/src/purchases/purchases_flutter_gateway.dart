@@ -275,13 +275,6 @@ class PurchasesFlutterGateway implements PurchasesGateway {
   );
 
   @override
-  Future<ServerEntitlement> sync() => _guard(
-    () async => mapCustomerInfo(
-      (await rc.Purchases.syncPurchasesForResult()).customerInfo,
-    ),
-  );
-
-  @override
   void dispose() {
     rc.Purchases.removeCustomerInfoUpdateListener(_onCustomerInfo);
     _updates.close();

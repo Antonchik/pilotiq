@@ -27,7 +27,4 @@ class DisabledPurchaseService extends CachedPurchaseService {
   @override
   Future<EntitlementState> restore() =>
       Future.error(const PurchaseException(PurchaseFailureKind.unavailable));
-
-  @override
-  Future<void> syncOnce() async {}
 }

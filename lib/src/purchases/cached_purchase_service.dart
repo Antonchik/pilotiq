@@ -69,10 +69,6 @@ abstract class CachedPurchaseService
   @override
   EntitlementState get current => _current;
 
-  /// Whether the one-time synchronisation has already succeeded.
-  @protected
-  bool get syncedOnceDone => _cached.syncedOnce;
-
   @protected
   DateTime get now => _clock.now();
 
@@ -118,26 +114,10 @@ abstract class CachedPurchaseService
       isPremium: state.isPremium,
       expiresAt: state.isPremium ? state.expiresAt : null,
       lastSeenAt: seen,
-      syncedOnce: _cached.syncedOnce,
     );
     _persistedSeen = seen;
     _publish(state);
     _guarded(() => _cache?.writeEntitlement(state, seen));
-  }
-
-  @protected
-  Future<void> markSyncedOnce() async {
-    _cached = CachedEntitlement(
-      isPremium: _cached.isPremium,
-      expiresAt: _cached.expiresAt,
-      lastSeenAt: _cached.lastSeenAt,
-      syncedOnce: true,
-    );
-    try {
-      await _cache?.markSyncedOnce();
-    } on Object catch (e) {
-      debugPrint('Saving the purchase sync flag failed: $e');
-    }
   }
 
   /// Called when a cached period has run out: ask the backend again. The base
@@ -155,7 +135,6 @@ abstract class CachedPurchaseService
       isPremium: _cached.isPremium,
       expiresAt: _cached.expiresAt,
       lastSeenAt: seen,
-      syncedOnce: _cached.syncedOnce,
     );
     final written = _persistedSeen;
     if (written == null || seen.difference(written) >= _seenWriteInterval) {

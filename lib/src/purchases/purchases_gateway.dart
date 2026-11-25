@@ -46,8 +46,5 @@ abstract class PurchasesGateway {
 
   Future<ServerEntitlement> restore();
 
-  /// `syncPurchases`: sends the purchases of the store account to the backend.
-  Future<ServerEntitlement> sync();
-
   void dispose();
 }

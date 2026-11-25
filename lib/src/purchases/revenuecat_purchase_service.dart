@@ -16,8 +16,8 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
   Future<void>? _warmUp;
 
   /// Reads the cache, starts listening for backend updates and, in the
-  /// background, refreshes the entitlement and runs the one-time sync. Does not
-  /// wait for the network: the app starts with what the cache allows.
+  /// background, refreshes the entitlement. Does not wait for the network: the
+  /// app starts with what the cache allows.
   Future<void> start() async {
     await loadCache();
     _updates = _gateway.updates.listen(
@@ -25,18 +25,13 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
       onError: (Object e) => debugPrint('Entitlement update failed: $e'),
     );
     observeLifecycle();
-    _warmUp = _backgroundStart();
+    _warmUp = refresh();
     _warmUp!.ignore();
   }
 
-  /// Completes when the background refresh and sync of [start] are done.
+  /// Completes when the background refresh of [start] is done.
   @visibleForTesting
   Future<void> get backgroundStart => _warmUp ?? Future<void>.value();
-
-  Future<void> _backgroundStart() async {
-    await syncOnce();
-    await refresh();
-  }
 
   @override
   bool get isAvailable => true;
@@ -101,19 +96,6 @@ class RevenueCatPurchaseService extends CachedPurchaseService {
     final state = answer.toState();
     applyServer(state, serverTime: answer.serverTime);
     return state;
-  }
-
-  @override
-  Future<void> syncOnce() async {
-    if (syncedOnceDone) return;
-    try {
-      final answer = await _gateway.sync();
-      applyServer(answer.toState(), serverTime: answer.serverTime);
-      await markSyncedOnce();
-    } on Object catch (e) {
-      // Not marked: the next start tries again.
-      debugPrint('One-time purchase sync failed, will retry next start: $e');
-    }
   }
 
   @override

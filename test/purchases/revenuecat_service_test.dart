@@ -265,6 +265,8 @@ void main() {
     test('moments are stored as UTC strings', () async {
       gateway.entitlement = until(DateTime.utc(2026, 12, 31, 8));
       await launch();
+      // The cache is written in the background; let the write finish.
+      await pumpEventQueue();
       final box = Hive.box<dynamic>('config');
       expect(
         box.get(EntitlementCache.expiresAtKey),
@@ -272,43 +274,6 @@ void main() {
       );
       expect(box.get(EntitlementCache.lastSeenKey), endsWith('Z'));
     });
-  });
-
-  group('one-time synchronisation of earlier purchases', () {
-    test('syncPurchases runs exactly once over two launches', () async {
-      gateway.entitlement = _premium;
-      await launch();
-      expect(gateway.syncCalls, 1);
-      await launch();
-      expect(gateway.syncCalls, 1);
-    });
-
-    test('a failed sync is repeated at the next launch', () async {
-      gateway.failure = const PurchaseException(PurchaseFailureKind.network);
-      await launch();
-      expect(gateway.syncCalls, 1);
-
-      gateway.failure = null;
-      gateway.entitlement = _premium;
-      final second = await launch();
-      expect(gateway.syncCalls, 2);
-      expect(second.current.isPremium, isTrue);
-
-      await launch();
-      expect(gateway.syncCalls, 2);
-    });
-
-    test(
-      'a subscriber of the old version gets Premium without buying',
-      () async {
-        // The backend does not know the store purchase until the sync.
-        gateway.entitlement = _free;
-        gateway.entitlementAfterSync = until(now.add(const Duration(days: 20)));
-        final service = await launch();
-        expect(service.current.isPremium, isTrue);
-        expect(gateway.syncCalls, 1);
-      },
-    );
   });
 
   group('purchase, restore, offering', () {
@@ -466,7 +431,6 @@ void main() {
           service.purchase('x'),
           throwsA(isA<PurchaseException>()),
         );
-        await service.syncOnce();
       },
     );
 

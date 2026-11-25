@@ -205,10 +205,6 @@ abstract class PurchaseService {
   /// [PurchaseException] on a failure.
   Future<EntitlementState> restore();
 
-  /// One-time silent synchronisation of purchases made before the update.
-  /// Repeated on the next start if it failed.
-  Future<void> syncOnce();
-
   /// Releases streams, timers and listeners.
   void dispose();
 }

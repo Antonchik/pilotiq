@@ -10,7 +10,7 @@ import 'package:pilotiq/src/purchases/revenuecat_purchase_service.dart';
 /// Creates the purchase service of the app. Never throws and never waits for
 /// the network: without a key, or if the store SDK cannot start, the app runs
 /// with [DisabledPurchaseService] (cached Premium still counts); otherwise the
-/// refresh and the one-time sync of purchases continue in the background.
+/// refresh of the entitlement continues in the background.
 Future<PurchaseService> createPurchaseService({
   String? apiKey,
   EntitlementCache? cache,

@@ -112,7 +112,6 @@ class FakePurchaseService implements PurchaseService {
   final List<String> purchasedIds = [];
   int refreshCalls = 0;
   int restoreCalls = 0;
-  int syncOnceCalls = 0;
   int offeringCalls = 0;
   bool disposed = false;
 
@@ -166,11 +165,6 @@ class FakePurchaseService implements PurchaseService {
       setEntitlement(const EntitlementState(isPremium: true));
     }
     return _current;
-  }
-
-  @override
-  Future<void> syncOnce() async {
-    syncOnceCalls++;
   }
 
   @override

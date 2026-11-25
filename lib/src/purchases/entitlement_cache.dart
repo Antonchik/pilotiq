@@ -8,7 +8,6 @@ class CachedEntitlement {
     this.isPremium = false,
     this.expiresAt,
     this.lastSeenAt,
-    this.syncedOnce = false,
   });
 
   final bool isPremium;
@@ -21,10 +20,6 @@ class CachedEntitlement {
   /// protection against a device clock that is turned back (see
   /// [evaluateCachedEntitlement]).
   final DateTime? lastSeenAt;
-
-  /// The one-time silent `syncPurchases` of the first start after the update
-  /// has succeeded.
-  final bool syncedOnce;
 }
 
 /// Entitlement the app may assume without asking the server (offline, server
@@ -49,7 +44,7 @@ EntitlementState evaluateCachedEntitlement(
   return EntitlementState(isPremium: true, expiresAt: end);
 }
 
-/// Last known entitlement and the migration flag, stored in the `config` box.
+/// Last known entitlement, stored in the `config` box.
 /// Moments are UTC strings (see `stored_time.dart`). A failing box never
 /// throws into the app: callers log and carry on with what they have in
 /// memory.
@@ -66,7 +61,6 @@ class EntitlementCache {
   static const String premiumKey = 'rcPremium';
   static const String expiresAtKey = 'rcExpiresAt';
   static const String lastSeenKey = 'rcLastSeenAt';
-  static const String syncedOnceKey = 'rcSyncedOnce';
 
   final Future<Box<dynamic>> Function() _open;
   Future<Box<dynamic>>? _box;
@@ -86,7 +80,6 @@ class EntitlementCache {
       isPremium: box.get(premiumKey) == true,
       expiresAt: decodeMoment(box.get(expiresAtKey)),
       lastSeenAt: decodeMoment(box.get(lastSeenKey)),
-      syncedOnce: box.get(syncedOnceKey) == true,
     );
   }
 
@@ -105,10 +98,5 @@ class EntitlementCache {
   Future<void> writeLastSeen(DateTime seenAt) async {
     final box = await _config();
     await box.put(lastSeenKey, encodeMoment(seenAt));
-  }
-
-  Future<void> markSyncedOnce() async {
-    final box = await _config();
-    await box.put(syncedOnceKey, true);
   }
 }

@@ -14,10 +14,6 @@ class FakeGateway implements PurchasesGateway {
   /// Thrown by every call while set (the network is down).
   PurchaseException? failure;
 
-  /// What the backend knows after `syncPurchases` (it learns the store
-  /// purchase of the user then).
-  ServerEntitlement? entitlementAfterSync;
-
   /// While set, [getEntitlement] waits for it (a slow answer).
   Completer<void>? entitlementGate;
 
@@ -27,7 +23,6 @@ class FakeGateway implements PurchasesGateway {
   );
 
   int getEntitlementCalls = 0;
-  int syncCalls = 0;
   int restoreCalls = 0;
   final List<String> purchases = [];
   bool disposed = false;
@@ -68,14 +63,6 @@ class FakeGateway implements PurchasesGateway {
   Future<ServerEntitlement> restore() async {
     restoreCalls++;
     _check();
-    return entitlement;
-  }
-
-  @override
-  Future<ServerEntitlement> sync() async {
-    syncCalls++;
-    _check();
-    entitlement = entitlementAfterSync ?? entitlement;
     return entitlement;
   }
 
