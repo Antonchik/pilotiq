@@ -201,7 +201,7 @@
         "PL010-0492#ee529e21",
         "PL010-0492#d0d6e09f"
       ],
-      "disputeNote": "Art. 94 ust. 6 pkt 1 Prawa lotniczego (lit. a–s) nie obejmuje dyspozytora lotniczego ani kontrolera ruchu lotniczego, wymienionych osobno w pkt 5 i 4, więc w pytaniach o skład załóg przepisowi odpowiada raczej „Żadna z odpowiedzi”. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+      "disputeNote": "Art. 94 ust. 6 pkt 1 Prawa lotniczego (lit. a–s) nie obejmuje dyspozytora lotniczego ani kontrolera ruchu lotniczego, wymienionych osobno w pkt 5 i 4, więc według przepisu żadna z odpowiedzi podanych w tych dwóch pytaniach nie wskazuje członka załogi statku powietrznego. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
       "id": "AL03-4",
@@ -214,7 +214,7 @@
         "- spełnia wymogi w zakresie wieku i wykształcenia (pkt 4); pilot turystyczny musi mieć ukończone 17 lat (art. 96 ust. 2 pkt 4);",
         "- odpowiada wymaganiom w zakresie sprawności psychicznej i fizycznej, potwierdzonym orzeczeniem o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych (pkt 5); do PPL wymagane jest co najmniej orzeczenie lekarskie klasy 2, a do CPL, MPL i ATPL klasy 1 (MED.A.030 lit. c) ppkt 2 i 5 rozporządzenia 1178/2011);",
         "- spełnia wymagania dotyczące ukończenia szkolenia lotniczego, praktyki lotniczej oraz posiadanej wiedzy i umiejętności (pkt 6) i uzyskała pozytywny wynik z egzaminu państwowego (pkt 7).",
-        "Licencji nie wydaje się osobie objętej środkiem zapobiegawczym albo prawomocnym zakazem prowadzenia pojazdów, w okresie obowiązywania tego środka lub zakazu (art. 96 ust. 1a). Klucz ULC nazywa orzeczenie dawnym określeniem „o braku przeciwwskazań”. Odpowiedź opisująca osobę, która nie spełnia jednego z łącznych warunków, jest błędna."
+        "Licencji nie wydaje się też – w okresie obowiązywania środka lub zakazu – osobie, wobec której prokurator zastosował środek zapobiegawczy polegający na obowiązku powstrzymania się od prowadzenia pojazdów mechanicznych, ani osobie, wobec której sąd prawomocnie orzekł zakaz prowadzenia pojazdów mechanicznych (art. 96 ust. 1a). Klucz ULC nazywa orzeczenie dawnym określeniem „o braku przeciwwskazań”."
       ],
       "refs": [
         {
@@ -270,6 +270,11 @@
         {
           "src": "PL-PRAWO-LOTNICZE",
           "loc": "art. 96 ust. 1a",
+          "quote": "Licencja nie może być wydana osobie, w stosunku do której prokurator postanowił zastosować środek zapobiegawczy polegający na obowiązku powstrzymania się od prowadzenia wszelkiego rodzaju pojazdów mechanicznych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1a",
           "quote": "albo w stosunku do której prawomocnym wyrokiem sądu orzeczono zakaz prowadzenia pojazdów mechanicznych, w okresie obowiązywania tego środka lub zakazu."
         }
       ],
@@ -303,7 +308,7 @@
         "- warunek niekaralności nie obowiązuje: art. 96 ust. 1 pkt 3 jest uchylony;",
         "- art. 96 ust. 1a wyklucza wydanie licencji tylko osobie objętej środkiem zapobiegawczym polegającym na obowiązku powstrzymania się od prowadzenia pojazdów albo prawomocnym zakazem prowadzenia pojazdów mechanicznych, w okresie jego obowiązywania;",
         "- nadal obowiązuje warunek korzystania w pełni z praw publicznych (pkt 1).",
-        "Klucz ULC w pytaniach o wiek, prawa publiczne oraz szkolenie i egzamin państwowy traktuje odpowiedzi o osobie z ograniczoną zdolnością do czynności prawnych lub o osobie skazanej prawomocnym wyrokiem jako błędne; aktualny przepis sam w sobie nie wyklucza w tych przypadkach wydania licencji."
+        "Klucz ULC w pytaniach o wiek, prawa publiczne oraz szkolenie i egzamin państwowy traktuje odpowiedzi o osobie z ograniczoną zdolnością do czynności prawnych lub o osobie skazanej prawomocnym wyrokiem jako błędne; aktualny przepis dopuszcza jednak licencję dla małoletniego za zgodą opiekunów prawnych, a samo skazanie jej nie wyklucza."
       ],
       "refs": [
         {

@@ -102,13 +102,14 @@
       "status": "draft",
       "heading": "Przesłanki cofnięcia lub zawieszenia licencji",
       "body": [
-        "Art. 100 ust. 1 Prawa lotniczego pozwala cofnąć albo zawiesić licencję lub wynikające z niej uprawnienia w przypadku stwierdzenia, że członek personelu lotniczego:",
-        "- uzyskał licencję lub uprawnienia w oparciu o sfałszowane dokumenty (pkt 1);",
-        "- sfałszował zapisy w licencji (pkt 2);",
-        "- utracił kwalifikacje wymagane do wykonywania określonych czynności lotniczych (pkt 3);",
-        "- wykonując czynności lotnicze, do których uprawnia go licencja, zagraża bezpieczeństwu ruchu lotniczego (pkt 4);",
-        "- wykonywał czynności lotnicze pod wpływem alkoholu lub środków odurzających (pkt 5).",
-        "Pkt ARA.FCL.250 lit. a) rozporządzenia 1178/2011 wymienia okoliczności, w których właściwy organ musi ograniczyć, zawiesić lub cofnąć licencję pilota, m.in. sfałszowanie przedłożonych dokumentów dowodowych, dziennika pokładowego lub rejestrów w licencji, korzystanie z przywilejów pod wpływem alkoholu lub narkotyków, niespełnienie obowiązujących wymagań operacyjnych oraz udowodnienie nadużycia lub nielegalnego wykorzystania certyfikatu (klucz ULC mówi o „upoważnieniu”). Według pkt FCL.070 lit. a) licencję można zawiesić lub cofnąć także wtedy, gdy pilot nie spełnia wymagań części FCL lub części medycznej. Brak opłaty lotniczej ani obywatelstwo nie są takimi przesłankami."
+        "Dla licencji PPL, SPL, BPL i LAPL zawieszenie albo cofnięcie licencji następuje w przypadkach określonych w pkt FCL.070 i ARA.FCL.250 rozporządzenia 1178/2011 (§ 11 ust. 1 pkt 1 rozporządzenia w sprawie licencjonowania personelu lotniczego). Pkt ARA.FCL.250 lit. a) wymienia m.in.:",
+        "- uzyskanie licencji poprzez sfałszowanie przedłożonych dokumentów dowodowych (ppkt 1);",
+        "- sfałszowanie dziennika pokładowego oraz rejestrów w licencji (ppkt 2);",
+        "- korzystanie z przywilejów pod wpływem alkoholu lub narkotyków (ppkt 4);",
+        "- niespełnienie obowiązujących wymagań operacyjnych (ppkt 5);",
+        "- udowodnienie nadużycia lub nielegalnego wykorzystania certyfikatu (ppkt 6; klucz ULC mówi o „upoważnieniu”).",
+        "Według pkt FCL.070 lit. a) licencję można zawiesić lub cofnąć także wtedy, gdy pilot nie spełnia wymagań części FCL lub części medycznej.",
+        "Podobne przesłanki wymienia art. 100 ust. 1 Prawa lotniczego, który rozporządzenie stosuje do licencji z § 3 ust. 1 pkt 2 i 3, np. PPL(AG) (§ 11 ust. 1 pkt 2): sfałszowanie dokumentów lub zapisów w licencji, utrata wymaganych kwalifikacji, zagrażanie bezpieczeństwu ruchu lotniczego oraz czynności lotnicze pod wpływem alkoholu lub środków odurzających (pkt 1–5). Ani brak opłaty lotniczej, ani obywatelstwo nie są przesłankami zawieszenia lub cofnięcia."
       ],
       "refs": [
         {
@@ -175,6 +176,31 @@
           "src": "EU-1178-2011",
           "loc": "FCL.070(a)",
           "quote": "mogą być ograniczane, zawieszane lub cofane przez właściwy organ w przypadku gdy pilot nie spełnia wymagań niniejszej części, części medycznej lub stosownych wymogów operacyjnych"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 1 pkt 1",
+          "quote": "następuje w przypadkach określonych w przepisach FCL.070 załącznika I oraz ARA.FCL.250 sekcja II załącznika VI do rozporządzenia nr 1178/2011"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 1 pkt 2",
+          "quote": "następuje w przypadkach określonych w art. 100 ustawy"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 1 pkt 1",
+          "quote": "PPL(A), CPL(A), ATPL(A), MPL, PPL(H), CPL(H), ATPL(H), SPL, PPL(AS), CPL(AS), BPL;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 2",
+          "quote": "Przepisy rozporządzenia stosuje się również do LAPL(A), LAPL(B), LAPL(H) i LAPL(S)"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 1 pkt 3",
+          "quote": "PPL(AG), CPL(AG)."
         }
       ],
       "questionKeys": [
@@ -243,7 +269,7 @@
       "body": [
         "W przypadku zawieszenia lub cofnięcia licencji pilot niezwłocznie zwraca swoją licencję właściwemu organowi (FCL.070 lit. b) rozporządzenia 1178/2011). Posiadacze licencji SPL i BPL zwracają licencję niezwłocznie w przypadku ograniczenia, zawieszenia lub cofnięcia licencji, przywileju, uprawnienia lub certyfikatu (SFCL.070 lit. b) rozporządzenia 2018/1976, BFCL.070 lit. b) rozporządzenia 2018/395).",
         "- W Polsce licencje i wpisane do nich uprawnienia zawiesza i cofa Prezes Urzędu Lotnictwa Cywilnego (art. 96 ust. 3 Prawa lotniczego), dlatego licencję przekazuje się jemu.",
-        "- Zastrzeżenie „chyba że licencja została już uprzednio zatrzymana” wiąże się z art. 100 ust. 3: Prezes Urzędu może zawiesić licencję i zatrzymać ją na czas postępowania.",
+        "- Według § 11 ust. 3 rozporządzenia w sprawie licencjonowania personelu lotniczego osoba, której licencja lub uprawnienie zostały cofnięte albo zawieszone i zatrzymane zgodnie z art. 100 ustawy, niezwłocznie przekazuje dokument licencji za pokwitowaniem Prezesowi Urzędu, chyba że licencja została już uprzednio zatrzymana przez Prezesa Urzędu lub inny właściwy organ. Zatrzymanie licencji na czas postępowania przewiduje art. 100 ust. 3.",
         "- Przy zawieszeniu samego uprawnienia zwrot licencji przewidują wprost pkt SFCL.070 lit. b) i BFCL.070 lit. b); pkt FCL.070 lit. b) mówi o zawieszeniu lub cofnięciu licencji."
       ],
       "refs": [
@@ -271,6 +297,11 @@
           "src": "PL-PRAWO-LOTNICZE",
           "loc": "art. 100 ust. 3",
           "quote": "Prezes Urzędu może zawiesić licencję i zatrzymać ją na czas trwania postępowania administracyjnego w przedmiocie zawieszenia albo cofnięcia licencji."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 3",
+          "quote": "niezwłocznie przekazuje dokument licencji, za pokwitowaniem, Prezesowi Urzędu, chyba że licencja została już uprzednio zatrzymana przez Prezesa Urzędu lub inny właściwy organ"
         }
       ],
       "questionKeys": [
@@ -421,7 +452,7 @@
         "- przed wydaniem licencji lub uprawnienia (pkt 2);",
         "- w celu przedłużenia albo wznowienia ważności uprawnienia (pkt 3);",
         "- jeżeli licencję zawieszono z powodu uzasadnionego przypuszczenia, że członek personelu lotniczego nie posiada wymaganej wiedzy lub umiejętności, w szczególności w wyniku badania wypadku albo incydentu lotniczego lub wykonywania czynności nadzoru lotniczego (pkt 5).",
-        "W tych przypadkach sprawdzenia dokonuje się w formie egzaminu teoretycznego lub egzaminu praktycznego (§ 34 ust. 2), a egzamin państwowy składa się przed komisją egzaminacyjną (art. 99 ust. 1 Prawa lotniczego). Członków komisji powołuje Prezes Urzędu (art. 99 ust. 2), a Prawo lotnicze mówi o egzaminach przeprowadzanych przez Prezesa Urzędu (art. 26a ust. 1 pkt 5). Dlatego w zależności od wariantu pytania klucz ULC wskazuje komisję egzaminacyjną (dawniej „Lotnicza Komisja Egzaminacyjna”) albo Prezesa ULC."
+        "W tych przypadkach sprawdzenia dokonuje się w formie egzaminu teoretycznego lub egzaminu praktycznego (§ 34 ust. 2), a egzamin państwowy składa się przed komisją egzaminacyjną (art. 99 ust. 1 Prawa lotniczego). Członków komisji powołuje Prezes Urzędu (art. 99 ust. 2), a Prawo lotnicze mówi o egzaminach przeprowadzanych przez Prezesa Urzędu (art. 26a ust. 1 pkt 5). Dlatego klucz ULC wskazuje komisję egzaminacyjną („Komisja Egzaminacyjna”, „Lotnicza Komisja Egzaminacyjna”), gdy jest ona wśród odpowiedzi – wtedy „Prezes ULC” jest odpowiedzią błędną; w wariantach bez komisji klucz wskazuje Prezesa ULC."
       ],
       "refs": [
         {

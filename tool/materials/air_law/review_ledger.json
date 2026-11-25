@@ -423,6 +423,38 @@
   "textSha": "05ed7f4e035f4b6c",
   "verdict": "PASS"
  },
+ "AL13-1": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 1 i ust. 3 PL – dosłownie w korpusie; brzmienie zgodne z verified PL010-0164/0188/0004 (w tym «ochrona przyrody» vs «ochrona środowiska» w odpowiedziach ULC, warunki pogodowe jako pułapka). «Nie jest więc sama decyzja Prezesa ULC…» – wniosek z «wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego». questionKeys: wszystkie verified, trafne. Działa jako bezpłatny przegląd podtematu. 145 słów.",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "e7994d7085551bab",
+  "verdict": "PASS"
+ },
+ "AL13-2": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 2 pkt 1–4, ust. 4 pkt 1–2 i art. 123 ust. 2 zgodne z korpusem i z verified PL010-0574/0575/0602/0007/0127/0312; zdanie o «państwowym organie zarządzania ruchem lotniczym» neutralne (jak verified 0127). Brak: zdanie o art. 119 ust. 5 nie podaje formy aktu, a właśnie ją rozstrzyga PL010-0310 (rozporządzenie vs uchwała) – sekcja w obecnym brzmieniu na ten klucz nie odpowiada. Zastąpić ostatni akapit body w całości tekstem: «Także w drodze rozporządzenia minister może ograniczyć lub zakazać lotów statków niespełniających wymogów ochrony przed hałasem (art. 119 ust. 5). Odpowiedzi ULC pomijają ministra do spraw klimatu i mówią o „państwowym organie zarządzania ruchem lotniczym” zamiast o instytucjach zapewniających służby ruchu lotniczego.» Po zmianie 200 słów (bez myślników i znaków «–»), refs i questionKeys bez zmian (cytat art. 119 ust. 5 już obejmuje «wymogów ochrony środowiska w zakresie ochrony przed hałasem»; forma «w drodze rozporządzenia» jest w tekście kotwicy).",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "15eb7abcd29101b3",
+  "verdict": "FIX"
+ },
+ "AL13-3": {
+  "date": "2026-11-25",
+  "note": "§ 3 ust. 1 pkt 2 lit. a–d, § 2 pkt 5 i 10, § 3 ust. 1 pkt 5 rozporządzenia z 5 marca 2019 r., art. 124 ust. 1 PL i AIP ENR 1.10 pkt 3.9.3 (parafraza, krótki cytat) – zgodne z korpusem; zdanie sporne w formule STYLE §7, disputeNote = P23 PL010-0244#e370aaec (323 znaki, lit. a w refs, formuła o kluczu obecna) – poprawne. Błąd: zdanie «Lot nad parkiem na odpowiedniej wysokości jest więc dozwolony.» powtarza dosłownie BŁĘDNĄ odpowiedź z PL099-0008 («…na odpowiedniej wysokości»); klucz ULC i verified PL099-0008 mówią o wysokości ustalonej przez organ ruchu lotniczego. Poprawka (2 zmiany, liczba słów bez zmian = 199): (1) w akapicie 7 body zamienić to zdanie na «Lot nad parkiem jest więc dozwolony na wysokości podanej przez te instytucje.»; (2) w pierwszym akapicie usunąć powtórzone «nad poziomem terenu»: «…zabrania lotów nad miastami poniżej wysokości (§ 3 ust. 1 pkt 2):» (poziom terenu wyjaśnia akapit «Wysokości liczy się nad poziomem terenu…»). disputeNote, refs i questionKeys bez zmian; po poprawce sekcja do DISPUTED.",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "8e5ca8e103daf001",
+  "verdict": "FIX"
+ },
+ "AL13-4": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 1, ust. 2 (w tym pkt 1 – nowy fakt, dosłownie w korpusie), pkt 2–3 i ust. 3 PL zgodne; spójne z verified PL010-0041/0045/0128/0294–0297/0476/0477. Jedno twierdzenie ponad źródło: «Odpowiedzi ULC używają dawnych nazw organów» – korpus nie mówi, że to dawne nazwy (verified 0041/0128 piszą neutralnie «innych nazw niż obecny przepis»). Zamienić «używają dawnych nazw organów» na «używają innych nazw organów niż obecny przepis» (176 słów). Reszta bez zmian.",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "7398568edad2c75c",
+  "verdict": "FIX"
+ },
  "AL14-1": {
   "date": "2026-11-25",
   "note": "Treść zgodna z art. 113 ust. 1–3, art. 114 ust. 1, art. 2 pkt 3 Prawa lotniczego, NCO.GEN.105(a)(1) i SERA.2010(a); 189 słów. Działa jako samodzielny, bezpłatny przegląd podtematu. „Także w lotach niekomercyjnych” to dopuszczalny wniosek z „lot z załogą” (zgodny z verified PL010-0039#02d04295). questionKeys poprawne.",
@@ -549,6 +581,38 @@
   "portion": "K08",
   "round": 1,
   "textSha": "1c524fe155b84d85",
+  "verdict": "PASS"
+ },
+ "AL15-1": {
+  "date": "2026-11-25",
+  "note": "Art. 206 ust. 1–3 i art. 207 ust. 1–2 PL – dosłownie w korpusie (art. 206 ust. 3 – nowy fakt, zgodny). Spójne z verified PL010-0428/0303#a15ffd4e/0499/0346 (w tym «nawet jeżeli nie używała go» jako pułapka, brak ubezpieczyciela/właściciela). questionKeys trafne. Działa jako bezpłatny przegląd. 162 słowa.",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "3d6c2a72670fcd91",
+  "verdict": "PASS"
+ },
+ "AL15-2": {
+  "date": "2026-11-25",
+  "note": "Art. 207 ust. 2–7 PL – dosłownie w korpusie; «tylko wtedy», «ciężar dowodu», połączenie ust. 6 z ust. 2 przez klucz ULC i brak solidarnej odpowiedzialności pasażerów – jak w verified PL010-0303#4d31e791/0500/0304/0502. Wszystkie 15 kluczy verified i odpowiadają treści sekcji. 186 słów.",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "c9694fcf5dac6336",
+  "verdict": "PASS"
+ },
+ "AL15-3": {
+  "date": "2026-11-25",
+  "note": "Art. 33 PPM i art. 4 ust. 1–3 Rzym II zgodne z korpusem; parafraza ust. 3 skraca «ze wszystkich okoliczności sprawy wyraźnie wynika», sens zachowany (verified 0455 używa tego samego skrótu). Art. 12 PL w korpusie: «Art. 12. (uchylony)» – stwierdzenie poprawne; zdanie o pytaniach opartych na dawnych przepisach zgodne z wpisami outdated PL010-0456–0461/0629–0631 (basisNote: uchylony art. 12), te klucze słusznie poza questionKeys. Spójne z verified PL010-0454/0455. 172 słowa.",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "d025c3d6f25a9685",
+  "verdict": "PASS"
+ },
+ "AL15-4": {
+  "date": "2026-11-25",
+  "note": "Art. 8 (w tym druga połowa – dosłownie w korpusie), art. 9 pkt 2, art. 210 ust. 1 pkt 10, ust. 4 i art. 211 ust. 1 pkt 1 PL zgodne; spójne z verified PL010-0626 i PL099-0041. Cytat «– podlega karze grzywny.» przy loc «art. 210 ust. 1»: w korpusie ten ogon leży w kotwicy art. 210 ust. 1 (pkt 15 = tylko «15) (uchylony)»), więc lokator jest poprawny i najwęższy – dopuszczalny, jak w verified PL099-0041; analogicznie «art. 211 ust. 1». 158 słów.",
+  "portion": "K07",
+  "round": 1,
+  "textSha": "0a2e0c349cbe141d",
   "verdict": "PASS"
  },
  "AL16-1": {
