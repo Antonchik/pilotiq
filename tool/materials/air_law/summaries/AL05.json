@@ -1,582 +1,582 @@
 {
- "topic": "AL05",
- "sections": [
-  {
-   "id": "AL05-1",
-   "status": "verified",
-   "heading": "Licencja PPL: wiek kandydata i przywileje",
-   "body": [
-    "Wymagania dla licencji pilota turystycznego (PPL) określa część FCL rozporządzenia 1178/2011, a wiek dla poszczególnych specjalności personelu lotniczego podaje także Prawo lotnicze. Rozporządzenie w sprawie licencjonowania personelu lotniczego nazywa PPL(A) licencją pilota samolotowego turystycznego. W części FCL skrót LAPL oznacza licencję pilota lekkich statków powietrznych.",
-    "Minimalny wiek:",
-    "- licencja PPL, w tym PPL(A): ukończone 17 lat (pkt FCL.200); tyle samo art. 96 ust. 2 pkt 4 Prawa lotniczego wymaga od pilota turystycznego bez względu na kategorię statku powietrznego;",
-    "- pilot zawodowy: 18 lat, pilot liniowy: 21 lat (art. 96 ust. 2 pkt 5 i 6);",
-    "- licencja MPL oraz certyfikat instruktora: 18 lat (pkt FCL.400.A i FCL.915 lit. a)).",
-    "Posiadacz PPL(A) wykonuje bez wynagrodzenia czynności pilota dowódcy lub drugiego pilota samolotów lub motoszybowców turystycznych w operacjach niekomercyjnych (pkt FCL.205.A lit. a)). Wynagrodzenie może otrzymywać tylko posiadacz PPL(A) z przywilejami instruktora lub egzaminatora, m.in. za prowadzenie szkolenia praktycznego do LAPL(A) lub PPL(A) oraz za egzaminy praktyczne i kontrole umiejętności (lit. b))."
-   ],
-   "refs": [
+  "topic": "AL05",
+  "sections": [
     {
-     "src": "EU-1178-2011",
-     "loc": "FCL.200",
-     "quote": "Osoba ubiegająca się o licencję PPL lub GPL musi mieć ukończone 17 lat."
+      "id": "AL05-1",
+      "status": "verified",
+      "heading": "Licencja PPL: wiek kandydata i przywileje",
+      "body": [
+        "Wymagania dla licencji pilota turystycznego (PPL) określa część FCL rozporządzenia 1178/2011, a wiek dla poszczególnych specjalności personelu lotniczego podaje także Prawo lotnicze. Rozporządzenie w sprawie licencjonowania personelu lotniczego nazywa PPL(A) licencją pilota samolotowego turystycznego. W części FCL skrót LAPL oznacza licencję pilota lekkich statków powietrznych.",
+        "Minimalny wiek:",
+        "- licencja PPL, w tym PPL(A): ukończone 17 lat (pkt FCL.200); tyle samo art. 96 ust. 2 pkt 4 Prawa lotniczego wymaga od pilota turystycznego bez względu na kategorię statku powietrznego;",
+        "- pilot zawodowy: 18 lat, pilot liniowy: 21 lat (art. 96 ust. 2 pkt 5 i 6);",
+        "- licencja MPL oraz certyfikat instruktora: 18 lat (pkt FCL.400.A i FCL.915 lit. a)).",
+        "Posiadacz PPL(A) wykonuje bez wynagrodzenia czynności pilota dowódcy lub drugiego pilota samolotów lub motoszybowców turystycznych w operacjach niekomercyjnych (pkt FCL.205.A lit. a)). Wynagrodzenie może otrzymywać tylko posiadacz PPL(A) z przywilejami instruktora lub egzaminatora, m.in. za prowadzenie szkolenia praktycznego do LAPL(A) lub PPL(A) oraz za egzaminy praktyczne i kontrole umiejętności (lit. b))."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.200",
+          "quote": "Osoba ubiegająca się o licencję PPL lub GPL musi mieć ukończone 17 lat."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 4",
+          "quote": "pilot turystyczny, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 17 lat"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 5",
+          "quote": "pilot zawodowy, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 18 lat"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 6",
+          "quote": "pilot liniowy, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 21 lat"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.400.A",
+          "quote": "Osoba ubiegająca się o licencję MPL musi mieć ukończone 18 lat."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.915(a)",
+          "quote": "Osoba ubiegająca się o certyfikat instruktora musi mieć ukończone 18 lat."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 2 pkt 9",
+          "quote": "PPL(A) – rozumie się przez to licencję pilota samolotowego turystycznego"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(b)(4)",
+          "quote": "licencji pilota lekkich statków powietrznych (LAPL)"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.205.A(a)",
+          "quote": "Przywileje posiadacza licencji PPL(A) obejmują wykonywanie bez wynagrodzenia czynności pilota dowódcy lub drugiego pilota samolotów lub motoszybowców turystycznych w operacjach niekomercyjnych"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.205.A(b)",
+          "quote": "posiadacz licencji PPL(A) z przywilejami instruktora lub egzaminatora może otrzymywać wynagrodzenie za:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.205.A(b)(1)",
+          "quote": "prowadzenie szkolenia praktycznego w zakresie licencji LAPL(A) lub PPL(A);"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.205.A(b)(2)",
+          "quote": "przeprowadzanie egzaminów praktycznych i kontroli umiejętności w zakresie licencji określonych w pkt 1;"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0229#93f53bee",
+        "PL010-0427#93f53bee",
+        "PL010-0407#1f3aeceb",
+        "PL010-0408#5e00cb49",
+        "PL010-0426#ce5130ce",
+        "PL010-0425#9575bd85",
+        "PL010-0425#ea008287",
+        "PL010-1548#5406168c"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 96 ust. 2 pkt 4",
-     "quote": "pilot turystyczny, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 17 lat"
+      "id": "AL05-2",
+      "status": "verified",
+      "heading": "Egzamin z wiedzy teoretycznej: zaliczenie i ważność wyniku",
+      "body": [
+        "Do egzaminu z wiedzy teoretycznej kandydat przystępuje tylko z zaświadczeniem DTO lub ATO odpowiedzialnej za jego szkolenie, wydanym po zadowalającym ukończeniu kursu z zakresu wiedzy teoretycznej. Zaświadczenie zachowuje ważność przez 12 miesięcy (pkt FCL.025 lit. a) ppkt 2 i 3 rozporządzenia 1178/2011).",
+        "Zasady zaliczenia (lit. b)):",
+        "- test jest zaliczony, jeżeli kandydat uzyska co najmniej 75 % punktów; nie stosuje się punktów karnych (ppkt 1);",
+        "- wszystkie wymagane testy trzeba zaliczyć w okresie 18 miesięcy, licząc od końca miesiąca kalendarzowego, w którym kandydat po raz pierwszy podszedł do egzaminu (ppkt 2).",
+        "Pozytywny wynik egzaminów pozostaje ważny przez 24 miesiące w przypadku wydania licencji LAPL, PPL lub licencji pilota wiatrakowców, a przez 36 miesięcy w przypadku licencji CPL, MPL lub uprawnienia IR (lit. c) ppkt 1). Okresy te liczy się od dnia, w którym kandydat zdał egzamin z wiedzy teoretycznej, a nie od dnia pierwszego podejścia."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(a)(2)",
+          "quote": "Osoby wnioskujące przystępują do egzaminu z wiedzy teoretycznej tylko po uzyskaniu zaświadczenia zadeklarowanej organizacji szkolenia (DTO) lub zatwierdzonej organizacji szkolenia (ATO) odpowiedzialnej za ich szkolenie"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(a)(3)",
+          "quote": "Zaświadczenie wydane przez DTO lub ATO zachowuje ważność przez 12 miesięcy."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(b)(1)",
+          "quote": "Osoba wnioskująca zalicza dany test z wiedzy teoretycznej, jeżeli uzyska co najmniej 75 % punktów możliwych do zdobycia w tym teście. Nie stosuje się punktów karnych."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(b)(2)",
+          "quote": "jeżeli zaliczyła wszystkie wymagane testy z wiedzy teoretycznej w okresie 18 miesięcy, licząc od końca miesiąca kalendarzowego, w którym osoba ta po raz pierwszy podeszła do egzaminu"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(c)(1)(i)",
+          "quote": "w przypadku wydania licencji pilota lekkich statków powietrznych, licencji pilota turystycznego lub licencji pilota wiatrakowców, przez okres 24 miesięcy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(c)(1)(ii)",
+          "quote": "w przypadku wydania licencji pilota zawodowego, licencji pilota w załodze wieloosobowej lub uprawnienia do wykonywania lotów według wskazań przyrządów (IR) na okres 36 miesięcy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(c)(1)",
+          "quote": "Okresy podane w ppkt (i) i (ii) liczy się od dnia, w którym pilot zdał egzamin z wiedzy teoretycznej"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0226#1a030b4b"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 96 ust. 2 pkt 5",
-     "quote": "pilot zawodowy, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 18 lat"
+      "id": "AL05-3",
+      "status": "draft",
+      "heading": "Szkolenie praktyczne do licencji PPL(A)",
+      "body": [
+        "Kandydat do licencji PPL(A) musi zaliczyć co najmniej 45 godzin szkolenia praktycznego na samolotach lub motoszybowcach turystycznych, z czego 5 godzin można zaliczyć na szkoleniowych urządzeniach symulacji lotu (FSTD) (pkt FCL.210.A lit. a) rozporządzenia 1178/2011). W tych 45 godzinach muszą się zmieścić co najmniej:",
+        "- 25 godzin szkolenia praktycznego z instruktorem (pkt 1);",
+        "- 10 godzin czasu samodzielnego lotu pod nadzorem, w tym co najmniej 5 godzin samodzielnych lotów nawigacyjnych (pkt 2);",
+        "- jeden samodzielny lot nawigacyjny na odległość co najmniej 270 km (150 mil morskich), z lądowaniami z pełnym zatrzymaniem na dwóch lotniskach innych niż lotnisko odlotu (pkt 2).",
+        "Przepis nie wskazuje klasy samolotu, więc klasa wymieniona w pytaniu nie zmienia tych minimów.",
+        "Typowe pułapki: 10 godzin to cały czas samodzielnego lotu pod nadzorem, a 5 godzin tylko jego część nawigacyjna; lądowanie na jednym lotnisku nie wystarcza nawet przy przelocie na 270 km. W pytaniu o lot samodzielny wariant z samolotami wielosilnikowymi tłokowymi odpada, bo pierwsze uprawnienie na klasę samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca (pkt FCL.720.A lit. a) pkt 1); w pytaniu o 25 godzin z instruktorem polska wersja klucza ULC wymienia jednak tę klasę i decyduje liczba godzin."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(a)",
+          "quote": "Osoba ubiegająca się o licencję PPL(A) musi zaliczyć co najmniej 45 godzin szkolenia praktycznego na samolotach lub motoszybowcach turystycznych, z czego 5 godzin można zaliczyć na szkoleniowych urządzeniach symulacji lotu (FSTD)"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(a)(1)",
+          "quote": "25 godzin szkolenia praktycznego z instruktorem;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(a)(2)",
+          "quote": "10 godzin czasu samodzielnego lotu pod nadzorem, w tym co najmniej 5 godzin czasu samodzielnego lotu w lotach nawigacyjnych"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(a)(2)",
+          "quote": "co najmniej jeden lot nawigacyjny na odległość co najmniej 270 km (150 mil morskich), podczas którego należy wykonać lądowania z pełnym zatrzymaniem na dwóch lotniskach innych niż lotnisko odlotu"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.720.A(a)(1)",
+          "quote": "Osoba ubiegająca się o wydanie pierwszego uprawnienia na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową, musi wykonać co najmniej 70 godzin lotu jako pilot dowódca na samolotach."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0463#2bb6a2c9",
+        "PL010-0463#19d61118",
+        "PL010-0465#6e9f6b50",
+        "PL010-0465#b368e1cc",
+        "PL010-0466#877140b5",
+        "PL010-0466#94bc8590",
+        "PL010-0467#3b832689",
+        "PL010-0467#44712b6f",
+        "PL010-0468#31cfb564",
+        "PL010-0468#6afb94dc",
+        "PL010-0470#0298d86b",
+        "PL010-0470#2013084b",
+        "PL010-0471#e96c6af7"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 96 ust. 2 pkt 6",
-     "quote": "pilot liniowy, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 21 lat"
+      "id": "AL05-4",
+      "status": "verified",
+      "heading": "Zaliczenie czasu lotu z licencji na inną kategorię",
+      "body": [
+        "Kandydat do licencji PPL(A), który posiada licencję pilota na inną kategorię statku powietrznego, z wyjątkiem balonów, uzyskuje zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy tego statku powietrznego, nie więcej niż 10 godzin (pkt FCL.210.A lit. d) rozporządzenia 1178/2011). Zaliczenie w żadnym przypadku nie obejmuje wymaganego czasu samodzielnego lotu pod nadzorem (lit. a) pkt 2).",
+        "Kategoriami statków powietrznych są m.in. samolot, śmigłowiec, szybowiec i balon wolny (pkt FCL.010). Wynika z tego, że:",
+        "- posiadacz licencji pilota śmigłowcowego lub szybowcowego może skrócić wymagany czas lotu najwyżej o 10 godzin; klucz ULC stosuje tę samą zasadę do licencji pilota wiatrakowcowego (art. 94 ust. 6 pkt 1 lit. j i k Prawa lotniczego);",
+        "- posiadacz licencji pilota balonowego nie uzyskuje zaliczenia;",
+        "- posiadacz UAVO też nie, bo jest to świadectwo kwalifikacji operatora bezzałogowego statku powietrznego, a nie licencja pilota (§ 4 ust. 1 pkt 5 rozporządzenia w sprawie świadectw kwalifikacji).",
+        "Odrębne zasady dotyczą posiadacza licencji SPL z przywilejami TMG: musi on wykonać co najmniej 24 godziny lotu na motoszybowcach turystycznych po wpisie tych przywilejów oraz co najmniej 15 godzin szkolenia praktycznego na samolotach w DTO lub ATO (lit. c))."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(d)",
+          "quote": "Kandydat posiadający licencję pilota na inną kategorię statku powietrznego, z wyjątkiem balonów, uzyskuje zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy tego statku powietrznego, do ilości 10 godzin."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(d)",
+          "quote": "Zaliczenie w żadnym przypadku nie obejmuje wymagań określonych w lit. a) pkt 2."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.010",
+          "quote": "„Kategoria statku powietrznego” oznacza podział statków powietrznych na kategorie według określonych podstawowych właściwości, na przykład: samolot, pionowzlot, śmigłowiec, sterowiec, szybowiec, balon wolny."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 1",
+          "quote": "j) pilot wiatrakowcowy turystyczny, k) pilot wiatrakowcowy zawodowy,"
+        },
+        {
+          "src": "PL-ROZP-SWIADECTWA-KWALIFIKACJI-2023",
+          "loc": "§ 4 ust. 1 pkt 5",
+          "quote": "operatora bezzałogowego statku powietrznego używanego w celach innych niż rekreacyjne lub sportowe;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(c)",
+          "quote": "Osoba ubiegająca się o licencję PPL(A), która posiada SPL z przywilejami dotyczącymi pilotowania motoszybowców turystycznych, musi wykonać:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(c)(1)",
+          "quote": "co najmniej 24 godziny czasu lotu na motoszybowcach turystycznych po uzyskaniu wpisu przywilejów TMG do licencji"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210.A(c)(2)",
+          "quote": "co najmniej 15 godzin szkolenia praktycznego na samolotach w ramach szkolenia w DTO lub ATO"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0534#085740df",
+        "PL010-0535#e2127d14",
+        "PL010-0536#1e5735d7",
+        "PL010-0537#f04c5291",
+        "PL010-0537#4f8f9764",
+        "PL010-0538#590d3fee",
+        "PL010-0539#a1cc18b0"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-1178-2011",
-     "loc": "FCL.400.A",
-     "quote": "Osoba ubiegająca się o licencję MPL musi mieć ukończone 18 lat."
+      "id": "AL05-5",
+      "status": "verified",
+      "heading": "Uprawnienie do lotów VFR w nocy",
+      "body": [
+        "Aby korzystać z przywilejów licencji LAPL lub PPL na samoloty, motoszybowce turystyczne lub sterowce w warunkach VFR w nocy, kandydat musi ukończyć szkolenie w DTO lub ATO w okresie nieprzekraczającym 6 miesięcy (pkt FCL.810 lit. a) ppkt 1 rozporządzenia 1178/2011). Szkolenie obejmuje wykłady z wiedzy teoretycznej oraz:",
+        "- co najmniej 5 godzin czasu lotu w nocy na statku powietrznym odpowiedniej kategorii;",
+        "- w tym co najmniej 3 godziny szkolenia z instruktorem;",
+        "- z czego co najmniej 1 godzinę lotu nawigacyjnego, z co najmniej jednym lotem nawigacyjnym z instruktorem na odległość co najmniej 50 km (27 NM);",
+        "- 5 samodzielnych startów i 5 samodzielnych lądowań z pełnym zatrzymaniem.",
+        "Te liczby łatwo pomylić. 5 godzin to łączny minimalny czas lotu w nocy, a nie czas szkolenia z instruktorem. Samodzielna część szkolenia jest określona liczbą startów i lądowań, a nie godzinami. Minima wynikają wprost z przepisu, który określa, co szkolenie w DTO lub ATO musi obejmować."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.810(a)(1)",
+          "quote": "Aby korzystać z przywilejów wynikających z licencji LAPL lub PPL na samoloty, motoszybowce turystyczne lub sterowce w warunkach VFR w nocy, kandydat musi mieć ukończone szkolenie w DTO lub ATO w okresie nieprzekraczającym 6 miesięcy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.810(a)(1)(i)",
+          "quote": "wykłady z wiedzy teoretycznej;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.810(a)(1)(ii)",
+          "quote": "co najmniej 5 godzin czasu lotu na statku powietrznym odpowiedniej kategorii w nocy, w tym co najmniej 3 godziny szkolenia z instruktorem, z czego co najmniej 1 godzinę lotu nawigacyjnego"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.810(a)(1)(ii)",
+          "quote": "z co najmniej jednym lotem nawigacyjnym z instruktorem na odległość co najmniej 50 km (27 NM), a także 5 samodzielnych startów i 5 samodzielnych lądowań z pełnym zatrzymaniem"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0403#22537431",
+        "PL010-0403#2a0bd319",
+        "PL010-0404#7c5ce532",
+        "PL010-0404#259be20f",
+        "PL010-0405#c85513f5",
+        "PL010-0406#e1abedaa"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-1178-2011",
-     "loc": "FCL.915(a)",
-     "quote": "Osoba ubiegająca się o certyfikat instruktora musi mieć ukończone 18 lat."
+      "id": "AL05-6",
+      "status": "verified",
+      "heading": "Uprawnienia na klasę i typ samolotu w licencji PPL(A)",
+      "body": [
+        "Posiadacz licencji pilota wykonuje czynności pilota statku powietrznego tylko wtedy, gdy ma ważne uprawnienie na odpowiednią klasę lub typ (pkt FCL.700 lit. a) rozporządzenia 1178/2011). Zakresy wpisów uprawnień do PPL(A) określa część FCL (§ 7 ust. 4 rozporządzenia w sprawie licencjonowania personelu lotniczego). Do PPL(A) można wpisać m.in.:",
+        "- uprawnienie na klasę lądowych lub wodnych samolotów SEP, czyli samolotów jednosilnikowych z załogą jednoosobową, np. z silnikiem tłokowym (art. 2 pkt 8c, pkt FCL.740.A lit. b) ppkt 4);",
+        "- uprawnienie na klasę motoszybowców turystycznych (pkt FCL.740.A lit. b) ppkt 1);",
+        "- uprawnienie na klasę samolotów wielosilnikowych tłokowych (pkt FCL.710 lit. c) ppkt 1 (iii)); część FCL wymienia też wodne samoloty wielosilnikowe z załogą jednoosobową (pkt FCL.725 lit. b) ppkt 5);",
+        "- uprawnienie na typ samolotu; w przypadku samolotu z załogą wieloosobową może ono mieć ograniczone przywileje drugiego pilota zastępującego podczas przelotu powyżej poziomu lotu 200 (pkt FCL.720.A lit. c)).",
+        "Pierwsze uprawnienie na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca na samolotach (pkt FCL.720.A lit. a) ppkt 1)."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.700(a)",
+          "quote": "Posiadacz licencji pilota wykonuje czynności pilota statku powietrznego tylko wtedy, gdy posiada ważne uprawnienia na odpowiednią klasę lub typ statku powietrznego"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 7 ust. 4",
+          "quote": "Zakresy wpisów uprawnień do licencji, o których mowa w § 3 ust. 1 pkt 1 oraz ust. 2, oraz skróty nazw tych uprawnień określają przepisy załącznika I (Część FCL) do rozporządzenia nr 1178/2011."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 1 pkt 1",
+          "quote": "PPL(A), CPL(A), ATPL(A), MPL, PPL(H)"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 8c",
+          "quote": "„samolot SEP” oznacza samolot jednosilnikowy z załogą jednoosobową, dla którego nie jest wymagane uprawnienie na typ"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 8c",
+          "quote": "a) silnik tłokowy;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740.A(b)(4)",
+          "quote": "W przypadku gdy kandydat posiada zarówno uprawnienie na klasę lądowych samolotów SEP, jak i uprawnienie na klasę wodnych samolotów SEP"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740.A(b)(1)",
+          "quote": "Uprawnienia na klasę samolotów SEP i uprawnienia na klasę motoszybowców turystycznych."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.710(c)(1)",
+          "quote": "samoloty wymagające uprawnienia na klasę:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.710(c)(1)(iii)",
+          "quote": "(iii) samoloty wielosilnikowe tłokowe;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.725(b)(5)",
+          "quote": "W przypadku samolotów jednosilnikowych z załogą jednoosobową i samolotów wielosilnikowych z załogą jednoosobową (wodnych) egzamin ma formę pisemną"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.720.A(c)",
+          "quote": "otrzymuje uprawnienie na typ z ograniczonymi przywilejami w odniesieniu do samolotu z załogą wieloosobową, które umożliwia posiadaczom takiego uprawnienia wykonywanie czynności drugiego pilota zastępującego podczas przelotu w locie powyżej poziomu lotu 200"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.720.A(a)(1)",
+          "quote": "Osoba ubiegająca się o wydanie pierwszego uprawnienia na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową, musi wykonać co najmniej 70 godzin lotu jako pilot dowódca na samolotach."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0416#3880efd9",
+        "PL010-0416#ab4c6cd8",
+        "PL010-0417#3880efd9",
+        "PL010-0417#d55a3a5b",
+        "PL010-0418#8821ca06",
+        "PL010-0418#f7edf967",
+        "PL010-0419#026d9232",
+        "PL010-0419#86491523",
+        "PL010-0420#4a561dcb",
+        "PL010-0420#9cafa46c",
+        "PL010-0421#71eb05cd",
+        "PL010-0422#1df33f43",
+        "PL010-0422#d35d9b6e"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 2 pkt 9",
-     "quote": "PPL(A) – rozumie się przez to licencję pilota samolotowego turystycznego"
+      "id": "AL05-7",
+      "status": "verified",
+      "heading": "Uprawnienia dodatkowe: loty nocne, IR, holowanie",
+      "body": [
+        "Poza uprawnieniami na klasę i typ do licencji PPL(A) wpisuje się m.in.:",
+        "- uprawnienie do lotów nocnych w warunkach VFR, po szkoleniu w DTO lub ATO (pkt FCL.810 lit. a) ppkt 1 rozporządzenia 1178/2011);",
+        "- uprawnienie do lotów według wskazań przyrządów (IR): loty IFR na samolotach mogą wykonywać posiadacze licencji PPL, CPL, MPL i ATPL z uprawnieniem IR odpowiednim dla danej kategorii (pkt FCL.600);",
+        "- uprawnienia do holowania szybowców lub banerów, bez których posiadacz licencji z przywilejami do pilotowania samolotów lub motoszybowców turystycznych nie może holować (pkt FCL.805 lit. a)). Wpisów takich uprawnień dodatkowych dokonuje Prezes Urzędu Lotnictwa Cywilnego na wniosek pilota (§ 48 rozporządzenia w sprawie licencjonowania personelu lotniczego).",
+        "Jeżeli uprawnienie IR nie zostało przedłużone ani wznowione w ciągu 7 poprzedzających lat, kandydat musi ponownie zaliczyć egzamin z wiedzy teoretycznej i egzamin praktyczny w zakresie IR (pkt FCL.625 lit. d)).",
+        "Częsta błędna odpowiedź: loty agrolotnicze, gaśnicze lub z ciężarem podwieszonym pod statkiem powietrznym nie są uprawnieniem wpisywanym do licencji. Wymagają potwierdzenia odbycia szkolenia lotniczego specjalistycznego, wpisanego do osobistego dokumentu praktyki lotniczej pilota (załącznik nr 3 pkt 4.1 rozporządzenia w sprawie licencjonowania personelu lotniczego)."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.810(a)(1)",
+          "quote": "Aby korzystać z przywilejów wynikających z licencji LAPL lub PPL na samoloty, motoszybowce turystyczne lub sterowce w warunkach VFR w nocy, kandydat musi mieć ukończone szkolenie w DTO lub ATO"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.600",
+          "quote": "operacje wykonywane zgodnie z przepisami dla lotów według wskazań przyrządów (IFR) na samolotach, śmigłowcach, sterowcach lub pionowzlotach mogą być wykonywane tylko przez posiadaczy licencji PPL, CPL, MPL oraz ATPL, którzy posiadają uprawnienie IR odpowiednie dla danej kategorii statku powietrznego"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.805(a)",
+          "quote": "Posiadaczowi licencji pilota z przywilejami do pilotowania samolotów lub motoszybowców turystycznych wolno holować szybowce lub banery tylko w przypadku posiadania odpowiednich uprawnień do holowania szybowców lub holowania banerów."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 48",
+          "quote": "Prezes Urzędu Lotnictwa Cywilnego dokonuje, na wniosek członka personelu lotniczego, wpisów uprawnień dodatkowych, o których mowa w przepisach FCL.800 oraz FCL.805 załącznika 1 do rozporządzenia nr 1178/2011, do licencji"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.625(d)",
+          "quote": "W przypadku nieprzedłużenia lub niewznowienia ważności uprawnienia IR w ciągu 7 poprzedzających lat osoba ubiegająca się o uprawnienia IR musi ponownie zaliczyć egzamin z wiedzy teoretycznej i egzamin praktyczny w zakresie IR."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "załącznik 3 pkt 4.1",
+          "quote": "3) agrolotniczych, 4) gaśniczych, 5) z ciężarem podwieszonym pod statkiem powietrznym – wymaga posiadania odpowiedniego potwierdzenia odbycia szkolenia lotniczego specjalistycznego wpisanego do osobistego dokumentu praktyki lotniczej pilota"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0423#9710ebf0",
+        "PL010-0423#e06e93e4",
+        "PL010-0424#67e4e410",
+        "PL010-0424#855e16c2",
+        "PL010-0421#3bf9b149",
+        "PL010-0227#98403277",
+        "PL010-0416#3880efd9",
+        "PL010-0416#ab4c6cd8",
+        "PL010-0417#3880efd9",
+        "PL010-0417#d55a3a5b",
+        "PL010-0418#8821ca06",
+        "PL010-0418#f7edf967",
+        "PL010-0419#026d9232",
+        "PL010-0419#86491523",
+        "PL010-0420#4a561dcb",
+        "PL010-0420#9cafa46c",
+        "PL010-0421#71eb05cd",
+        "PL010-0422#1df33f43",
+        "PL010-0422#d35d9b6e"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(b)(4)",
-     "quote": "licencji pilota lekkich statków powietrznych (LAPL)"
+      "id": "AL05-8",
+      "status": "verified",
+      "heading": "Ważność i przedłużanie uprawnień na klasę lub typ",
+      "body": [
+        "Okres ważności uprawnień na klasę lub typ statku powietrznego wynosi 1 rok. Wyjątkiem są uprawnienia na klasę jednosilnikowych statków powietrznych z załogą jednoosobową, np. SEP, ważne 2 lata, o ile dane dotyczące zgodności operacyjnej nie stanowią inaczej (pkt FCL.740 lit. a) ppkt 1 rozporządzenia 1178/2011).",
+        "Kontrola umiejętności w celu przedłużenia:",
+        "- klasa i typ samolotów wielosilnikowych: w okresie 3 miesięcy bezpośrednio poprzedzających datę upływu ważności (pkt FCL.740.A lit. a) ppkt 1); tak samo typ śmigłowca (pkt FCL.740.H lit. a) ppkt 1 (ii));",
+        "- klasa samolotów SEP: jedną z dróg przedłużenia jest kontrola umiejętności z egzaminatorem w okresie 3 miesięcy poprzedzających datę upływu ważności (pkt FCL.740.A lit. b) ppkt 1 (i)).",
+        "Jeżeli pilot spełni wymogi przedłużenia wcześniej, nowy okres ważności rozpoczyna się od daty kontroli umiejętności (pkt FCL.740 lit. a) ppkt 1). Kandydat, który nie zaliczy wszystkich sekcji kontroli umiejętności przed datą upływu ważności, nie może korzystać z przywilejów uprawnienia do czasu zaliczenia kontroli (pkt FCL.740.A lit. c)). Uprawnienia po upływie ważności nie przedłuża się, lecz wznawia (pkt FCL.740 lit. b))."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740(a)(1)",
+          "quote": "Okres ważności uprawnień na klasę lub typ statku powietrznego wynosi 1 rok, z wyjątkiem uprawnień na klasę jednosilnikowych statków powietrznych z załogą jednoosobową, w przypadku których wynosi on 2 lata, o ile w danych dotyczących zgodności operacyjnej nie określono inaczej."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740.A(a)(1)",
+          "quote": "w okresie 3 miesięcy bezpośrednio poprzedzających datę upływu ważności uprawnienia"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740.H(a)(1)(ii)",
+          "quote": "w ciągu 3 miesięcy bezpośrednio poprzedzających datę upływu ważności uprawnienia na typ, zaliczyć kontrolę umiejętności"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740.A(b)(1)(i)",
+          "quote": "w okresie 3 miesięcy poprzedzających datę upływu ważności uprawnienia, zaliczyć w obecności egzaminatora kontrolę umiejętności na odpowiedniej klasie zgodnie z dodatkiem 9 do niniejszej części"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740(a)(1)",
+          "quote": "Jeżeli piloci zdecydują się na spełnienie wymogów dotyczących przedłużenia w terminie wcześniejszym niż wskazano w pkt FCL.740.A, FCL.740.H, FCL.740.PL i FCL.740.As, nowy okres ważności rozpoczyna się od daty kontroli umiejętności."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740.A(c)",
+          "quote": "Kandydat, który nie zaliczy wszystkich sekcji kontroli umiejętności przed datą upływu ważności uprawnienia na klasę lub typ, nie może korzystać z przywilejów wynikających z tego uprawnienia do czasu zaliczenia kontroli umiejętności."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740(b)",
+          "quote": "Na potrzeby wznowienia uprawnień na klasę lub typ kandydat musi spełnić wszystkie poniższe warunki:"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0087#610b4076",
+        "PL010-0087#0876ed9a",
+        "PL010-0088#330b34e9",
+        "PL010-0617#14fe554d"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-1178-2011",
-     "loc": "FCL.205.A(a)",
-     "quote": "Przywileje posiadacza licencji PPL(A) obejmują wykonywanie bez wynagrodzenia czynności pilota dowódcy lub drugiego pilota samolotów lub motoszybowców turystycznych w operacjach niekomercyjnych"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.205.A(b)",
-     "quote": "posiadacz licencji PPL(A) z przywilejami instruktora lub egzaminatora może otrzymywać wynagrodzenie za:"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.205.A(b)(1)",
-     "quote": "prowadzenie szkolenia praktycznego w zakresie licencji LAPL(A) lub PPL(A);"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.205.A(b)(2)",
-     "quote": "przeprowadzanie egzaminów praktycznych i kontroli umiejętności w zakresie licencji określonych w pkt 1;"
+      "id": "AL05-9",
+      "status": "disputed",
+      "heading": "Uprawnienia krajowe i data ważności po przedłużeniu lub wznowieniu",
+      "body": [
+        "Sprawdzenie kwalifikacji do licencji Part-FCL, np. PPL(A), odbywa się według części FCL (§ 31 rozporządzenia w sprawie licencjonowania personelu lotniczego). Dla uprawnień, których ważność określa załącznik nr 3 do tego rozporządzenia, sprawdzenie w celu przedłużenia przeprowadza się w okresie ważności uprawnienia, jednak (§ 33 ust. 1):",
+        "- przy ważności 12 miesięcy: nie wcześniej niż na 3 miesiące przed jej upływem;",
+        "- przy ważności 3 lat: nie wcześniej niż na 12 miesięcy przed jej upływem.",
+        "Po upływie ważności uprawnienia się nie przedłuża, lecz wznawia (§ 33 ust. 2).",
+        "Datę ważności wpisuje egzaminator praktyczny (§ 66 rozporządzenia w sprawie egzaminów państwowych):",
+        "- przy przedłużeniu: licząc od ostatniego dnia miesiąca, w którym upływa okres ważności danego uprawnienia (ust. 2); klucz ULC ujmuje to jako dzień upływu poprzedniego okresu ważności;",
+        "- przy wydaniu lub wznowieniu: licząc od ostatniego dnia miesiąca, w którym przeprowadzono egzamin praktyczny (ust. 1).",
+        "Klucz ULC w pytaniu o wznowienie przyjmuje tę samą zasadę co przy przedłużeniu, czyli liczenie od upływu poprzedniego okresu ważności; aktualny § 66 ust. 1 wiąże datę ważności wznowionego uprawnienia z miesiącem egzaminu praktycznego."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 31",
+          "quote": "dotyczące licencji, o których mowa w § 3 ust. 1 pkt 1 oraz ust. 2, odbywa się zgodnie z przepisami załącznika I (Część FCL) do rozporządzenia nr 1178/2011, z uwzględnieniem § 32, 34 i 35"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 33 ust. 1",
+          "quote": "Sprawdzenie kwalifikacji lotniczych w celu przedłużenia ważności uprawnienia, którego ważność zgodnie z załącznikiem nr 3 do rozporządzenia wynosi:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 33 ust. 1 pkt 1",
+          "quote": "12 miesięcy – jest przeprowadzane w okresie jego ważności, jednak nie wcześniej niż na 3 miesiące przed jej upływem;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 33 ust. 1 pkt 2",
+          "quote": "3 lata – jest przeprowadzane w okresie jego ważności, jednak nie wcześniej niż na 12 miesięcy przed jej upływem."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 33 ust. 2",
+          "quote": "W razie upływu ważności uprawnienia, o którym mowa w ust. 1, wznawia się jego ważność."
+        },
+        {
+          "src": "PL-ROZP-EGZAMINY-2021",
+          "loc": "§ 66 ust. 2",
+          "quote": "W przypadku przedłużenia ważności uprawnienia wpisywanego do licencji albo świadectwa kwalifikacji egzaminator praktyczny wpisuje datę ważności uprawnienia, licząc od ostatniego dnia miesiąca, w którym upływa okres ważności danego uprawnienia."
+        },
+        {
+          "src": "PL-ROZP-EGZAMINY-2021",
+          "loc": "§ 66 ust. 1",
+          "quote": "W przypadku wydania lub wznowienia ważności uprawnienia wpisywanego do licencji albo świadectwa kwalifikacji egzaminator praktyczny wpisuje datę ważności uprawnienia, licząc od ostatniego dnia miesiąca, w którym został przeprowadzony egzamin praktyczny."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0087#0876ed9a",
+        "PL010-0089#12519f67",
+        "PL010-0226#c1389f4e",
+        "PL010-0229#0ba29b76"
+      ],
+      "disputeNote": "Według § 66 ust. 1 rozporządzenia w sprawie egzaminów państwowych przy wznowieniu ważności uprawnienia datę ważności liczy się od ostatniego dnia miesiąca, w którym przeprowadzono egzamin praktyczny, czyli od sprawdzenia kwalifikacji, a nie od upływu poprzedniego okresu ważności. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     }
-   ],
-   "questionKeys": [
-    "PL010-0229#93f53bee",
-    "PL010-0427#93f53bee",
-    "PL010-0407#1f3aeceb",
-    "PL010-0408#5e00cb49",
-    "PL010-0426#ce5130ce",
-    "PL010-0425#9575bd85",
-    "PL010-0425#ea008287",
-    "PL010-1548#5406168c"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-2",
-   "status": "verified",
-   "heading": "Egzamin z wiedzy teoretycznej: zaliczenie i ważność wyniku",
-   "body": [
-    "Do egzaminu z wiedzy teoretycznej kandydat przystępuje tylko z zaświadczeniem DTO lub ATO odpowiedzialnej za jego szkolenie, wydanym po zadowalającym ukończeniu kursu z zakresu wiedzy teoretycznej. Zaświadczenie zachowuje ważność przez 12 miesięcy (pkt FCL.025 lit. a) ppkt 2 i 3 rozporządzenia 1178/2011).",
-    "Zasady zaliczenia (lit. b)):",
-    "- test jest zaliczony, jeżeli kandydat uzyska co najmniej 75 % punktów; nie stosuje się punktów karnych (ppkt 1);",
-    "- wszystkie wymagane testy trzeba zaliczyć w okresie 18 miesięcy, licząc od końca miesiąca kalendarzowego, w którym kandydat po raz pierwszy podszedł do egzaminu (ppkt 2).",
-    "Pozytywny wynik egzaminów pozostaje ważny przez 24 miesiące w przypadku wydania licencji LAPL, PPL lub licencji pilota wiatrakowców, a przez 36 miesięcy w przypadku licencji CPL, MPL lub uprawnienia IR (lit. c) ppkt 1). Okresy te liczy się od dnia, w którym kandydat zdał egzamin z wiedzy teoretycznej, a nie od dnia pierwszego podejścia."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(a)(2)",
-     "quote": "Osoby wnioskujące przystępują do egzaminu z wiedzy teoretycznej tylko po uzyskaniu zaświadczenia zadeklarowanej organizacji szkolenia (DTO) lub zatwierdzonej organizacji szkolenia (ATO) odpowiedzialnej za ich szkolenie"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(a)(3)",
-     "quote": "Zaświadczenie wydane przez DTO lub ATO zachowuje ważność przez 12 miesięcy."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(b)(1)",
-     "quote": "Osoba wnioskująca zalicza dany test z wiedzy teoretycznej, jeżeli uzyska co najmniej 75 % punktów możliwych do zdobycia w tym teście. Nie stosuje się punktów karnych."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(b)(2)",
-     "quote": "jeżeli zaliczyła wszystkie wymagane testy z wiedzy teoretycznej w okresie 18 miesięcy, licząc od końca miesiąca kalendarzowego, w którym osoba ta po raz pierwszy podeszła do egzaminu"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(c)(1)(i)",
-     "quote": "w przypadku wydania licencji pilota lekkich statków powietrznych, licencji pilota turystycznego lub licencji pilota wiatrakowców, przez okres 24 miesięcy"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(c)(1)(ii)",
-     "quote": "w przypadku wydania licencji pilota zawodowego, licencji pilota w załodze wieloosobowej lub uprawnienia do wykonywania lotów według wskazań przyrządów (IR) na okres 36 miesięcy"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(c)(1)",
-     "quote": "Okresy podane w ppkt (i) i (ii) liczy się od dnia, w którym pilot zdał egzamin z wiedzy teoretycznej"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0226#1a030b4b"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-3",
-   "status": "draft",
-   "heading": "Szkolenie praktyczne do licencji PPL(A)",
-   "body": [
-    "Kandydat do licencji PPL(A) musi zaliczyć co najmniej 45 godzin szkolenia praktycznego na samolotach lub motoszybowcach turystycznych, z czego 5 godzin można zaliczyć na szkoleniowych urządzeniach symulacji lotu (FSTD) (pkt FCL.210.A lit. a) rozporządzenia 1178/2011). W tych 45 godzinach muszą się zmieścić co najmniej:",
-    "- 25 godzin szkolenia praktycznego z instruktorem (pkt 1);",
-    "- 10 godzin czasu samodzielnego lotu pod nadzorem, w tym co najmniej 5 godzin samodzielnych lotów nawigacyjnych (pkt 2);",
-    "- jeden samodzielny lot nawigacyjny na odległość co najmniej 270 km (150 mil morskich), z lądowaniami z pełnym zatrzymaniem na dwóch lotniskach innych niż lotnisko odlotu (pkt 2).",
-    "Przepis nie wskazuje klasy samolotu, więc klasa wymieniona w pytaniu nie zmienia tych minimów.",
-    "Typowe pułapki: 10 godzin to cały czas samodzielnego lotu pod nadzorem, a 5 godzin tylko jego część nawigacyjna; lądowanie na jednym lotnisku nie wystarcza nawet przy przelocie na 270 km. W pytaniu o lot samodzielny wariant z samolotami wielosilnikowymi tłokowymi odpada, bo pierwsze uprawnienie na klasę samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca (pkt FCL.720.A lit. a) pkt 1); w pytaniu o 25 godzin z instruktorem polska wersja klucza ULC wymienia jednak tę klasę i decyduje liczba godzin."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(a)",
-     "quote": "Osoba ubiegająca się o licencję PPL(A) musi zaliczyć co najmniej 45 godzin szkolenia praktycznego na samolotach lub motoszybowcach turystycznych, z czego 5 godzin można zaliczyć na szkoleniowych urządzeniach symulacji lotu (FSTD)"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(a)(1)",
-     "quote": "25 godzin szkolenia praktycznego z instruktorem;"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(a)(2)",
-     "quote": "10 godzin czasu samodzielnego lotu pod nadzorem, w tym co najmniej 5 godzin czasu samodzielnego lotu w lotach nawigacyjnych"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(a)(2)",
-     "quote": "co najmniej jeden lot nawigacyjny na odległość co najmniej 270 km (150 mil morskich), podczas którego należy wykonać lądowania z pełnym zatrzymaniem na dwóch lotniskach innych niż lotnisko odlotu"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.720.A(a)(1)",
-     "quote": "Osoba ubiegająca się o wydanie pierwszego uprawnienia na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową, musi wykonać co najmniej 70 godzin lotu jako pilot dowódca na samolotach."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0463#2bb6a2c9",
-    "PL010-0463#19d61118",
-    "PL010-0465#6e9f6b50",
-    "PL010-0465#b368e1cc",
-    "PL010-0466#877140b5",
-    "PL010-0466#94bc8590",
-    "PL010-0467#3b832689",
-    "PL010-0467#44712b6f",
-    "PL010-0468#31cfb564",
-    "PL010-0468#6afb94dc",
-    "PL010-0470#0298d86b",
-    "PL010-0470#2013084b",
-    "PL010-0471#e96c6af7"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-4",
-   "status": "verified",
-   "heading": "Zaliczenie czasu lotu z licencji na inną kategorię",
-   "body": [
-    "Kandydat do licencji PPL(A), który posiada licencję pilota na inną kategorię statku powietrznego, z wyjątkiem balonów, uzyskuje zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy tego statku powietrznego, nie więcej niż 10 godzin (pkt FCL.210.A lit. d) rozporządzenia 1178/2011). Zaliczenie w żadnym przypadku nie obejmuje wymaganego czasu samodzielnego lotu pod nadzorem (lit. a) pkt 2).",
-    "Kategoriami statków powietrznych są m.in. samolot, śmigłowiec, szybowiec i balon wolny (pkt FCL.010). Wynika z tego, że:",
-    "- posiadacz licencji pilota śmigłowcowego lub szybowcowego może skrócić wymagany czas lotu najwyżej o 10 godzin; klucz ULC stosuje tę samą zasadę do licencji pilota wiatrakowcowego (art. 94 ust. 6 pkt 1 lit. j i k Prawa lotniczego);",
-    "- posiadacz licencji pilota balonowego nie uzyskuje zaliczenia;",
-    "- posiadacz UAVO też nie, bo jest to świadectwo kwalifikacji operatora bezzałogowego statku powietrznego, a nie licencja pilota (§ 4 ust. 1 pkt 5 rozporządzenia w sprawie świadectw kwalifikacji).",
-    "Odrębne zasady dotyczą posiadacza licencji SPL z przywilejami TMG: musi on wykonać co najmniej 24 godziny lotu na motoszybowcach turystycznych po wpisie tych przywilejów oraz co najmniej 15 godzin szkolenia praktycznego na samolotach w DTO lub ATO (lit. c))."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(d)",
-     "quote": "Kandydat posiadający licencję pilota na inną kategorię statku powietrznego, z wyjątkiem balonów, uzyskuje zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy tego statku powietrznego, do ilości 10 godzin."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(d)",
-     "quote": "Zaliczenie w żadnym przypadku nie obejmuje wymagań określonych w lit. a) pkt 2."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.010",
-     "quote": "„Kategoria statku powietrznego” oznacza podział statków powietrznych na kategorie według określonych podstawowych właściwości, na przykład: samolot, pionowzlot, śmigłowiec, sterowiec, szybowiec, balon wolny."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 94 ust. 6 pkt 1",
-     "quote": "j) pilot wiatrakowcowy turystyczny, k) pilot wiatrakowcowy zawodowy,"
-    },
-    {
-     "src": "PL-ROZP-SWIADECTWA-KWALIFIKACJI-2023",
-     "loc": "§ 4 ust. 1 pkt 5",
-     "quote": "operatora bezzałogowego statku powietrznego używanego w celach innych niż rekreacyjne lub sportowe;"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(c)",
-     "quote": "Osoba ubiegająca się o licencję PPL(A), która posiada SPL z przywilejami dotyczącymi pilotowania motoszybowców turystycznych, musi wykonać:"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(c)(1)",
-     "quote": "co najmniej 24 godziny czasu lotu na motoszybowcach turystycznych po uzyskaniu wpisu przywilejów TMG do licencji"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210.A(c)(2)",
-     "quote": "co najmniej 15 godzin szkolenia praktycznego na samolotach w ramach szkolenia w DTO lub ATO"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0534#085740df",
-    "PL010-0535#e2127d14",
-    "PL010-0536#1e5735d7",
-    "PL010-0537#f04c5291",
-    "PL010-0537#4f8f9764",
-    "PL010-0538#590d3fee",
-    "PL010-0539#a1cc18b0"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-5",
-   "status": "verified",
-   "heading": "Uprawnienie do lotów VFR w nocy",
-   "body": [
-    "Aby korzystać z przywilejów licencji LAPL lub PPL na samoloty, motoszybowce turystyczne lub sterowce w warunkach VFR w nocy, kandydat musi ukończyć szkolenie w DTO lub ATO w okresie nieprzekraczającym 6 miesięcy (pkt FCL.810 lit. a) ppkt 1 rozporządzenia 1178/2011). Szkolenie obejmuje wykłady z wiedzy teoretycznej oraz:",
-    "- co najmniej 5 godzin czasu lotu w nocy na statku powietrznym odpowiedniej kategorii;",
-    "- w tym co najmniej 3 godziny szkolenia z instruktorem;",
-    "- z czego co najmniej 1 godzinę lotu nawigacyjnego, z co najmniej jednym lotem nawigacyjnym z instruktorem na odległość co najmniej 50 km (27 NM);",
-    "- 5 samodzielnych startów i 5 samodzielnych lądowań z pełnym zatrzymaniem.",
-    "Te liczby łatwo pomylić. 5 godzin to łączny minimalny czas lotu w nocy, a nie czas szkolenia z instruktorem. Samodzielna część szkolenia jest określona liczbą startów i lądowań, a nie godzinami. Minima wynikają wprost z przepisu, który określa, co szkolenie w DTO lub ATO musi obejmować."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.810(a)(1)",
-     "quote": "Aby korzystać z przywilejów wynikających z licencji LAPL lub PPL na samoloty, motoszybowce turystyczne lub sterowce w warunkach VFR w nocy, kandydat musi mieć ukończone szkolenie w DTO lub ATO w okresie nieprzekraczającym 6 miesięcy"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.810(a)(1)(i)",
-     "quote": "wykłady z wiedzy teoretycznej;"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.810(a)(1)(ii)",
-     "quote": "co najmniej 5 godzin czasu lotu na statku powietrznym odpowiedniej kategorii w nocy, w tym co najmniej 3 godziny szkolenia z instruktorem, z czego co najmniej 1 godzinę lotu nawigacyjnego"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.810(a)(1)(ii)",
-     "quote": "z co najmniej jednym lotem nawigacyjnym z instruktorem na odległość co najmniej 50 km (27 NM), a także 5 samodzielnych startów i 5 samodzielnych lądowań z pełnym zatrzymaniem"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0403#22537431",
-    "PL010-0403#2a0bd319",
-    "PL010-0404#7c5ce532",
-    "PL010-0404#259be20f",
-    "PL010-0405#c85513f5",
-    "PL010-0406#e1abedaa"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-6",
-   "status": "verified",
-   "heading": "Uprawnienia na klasę i typ samolotu w licencji PPL(A)",
-   "body": [
-    "Posiadacz licencji pilota wykonuje czynności pilota statku powietrznego tylko wtedy, gdy ma ważne uprawnienie na odpowiednią klasę lub typ (pkt FCL.700 lit. a) rozporządzenia 1178/2011). Zakresy wpisów uprawnień do PPL(A) określa część FCL (§ 7 ust. 4 rozporządzenia w sprawie licencjonowania personelu lotniczego). Do PPL(A) można wpisać m.in.:",
-    "- uprawnienie na klasę lądowych lub wodnych samolotów SEP, czyli samolotów jednosilnikowych z załogą jednoosobową, np. z silnikiem tłokowym (art. 2 pkt 8c, pkt FCL.740.A lit. b) ppkt 4);",
-    "- uprawnienie na klasę motoszybowców turystycznych (pkt FCL.740.A lit. b) ppkt 1);",
-    "- uprawnienie na klasę samolotów wielosilnikowych tłokowych (pkt FCL.710 lit. c) ppkt 1 (iii)); część FCL wymienia też wodne samoloty wielosilnikowe z załogą jednoosobową (pkt FCL.725 lit. b) ppkt 5);",
-    "- uprawnienie na typ samolotu; w przypadku samolotu z załogą wieloosobową może ono mieć ograniczone przywileje drugiego pilota zastępującego podczas przelotu powyżej poziomu lotu 200 (pkt FCL.720.A lit. c)).",
-    "Pierwsze uprawnienie na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca na samolotach (pkt FCL.720.A lit. a) ppkt 1)."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.700(a)",
-     "quote": "Posiadacz licencji pilota wykonuje czynności pilota statku powietrznego tylko wtedy, gdy posiada ważne uprawnienia na odpowiednią klasę lub typ statku powietrznego"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 7 ust. 4",
-     "quote": "Zakresy wpisów uprawnień do licencji, o których mowa w § 3 ust. 1 pkt 1 oraz ust. 2, oraz skróty nazw tych uprawnień określają przepisy załącznika I (Część FCL) do rozporządzenia nr 1178/2011."
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 3 ust. 1 pkt 1",
-     "quote": "PPL(A), CPL(A), ATPL(A), MPL, PPL(H)"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "art. 2 pkt 8c",
-     "quote": "„samolot SEP” oznacza samolot jednosilnikowy z załogą jednoosobową, dla którego nie jest wymagane uprawnienie na typ"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "art. 2 pkt 8c",
-     "quote": "a) silnik tłokowy;"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740.A(b)(4)",
-     "quote": "W przypadku gdy kandydat posiada zarówno uprawnienie na klasę lądowych samolotów SEP, jak i uprawnienie na klasę wodnych samolotów SEP"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740.A(b)(1)",
-     "quote": "Uprawnienia na klasę samolotów SEP i uprawnienia na klasę motoszybowców turystycznych."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.710(c)(1)",
-     "quote": "samoloty wymagające uprawnienia na klasę:"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.710(c)(1)(iii)",
-     "quote": "(iii) samoloty wielosilnikowe tłokowe;"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.725(b)(5)",
-     "quote": "W przypadku samolotów jednosilnikowych z załogą jednoosobową i samolotów wielosilnikowych z załogą jednoosobową (wodnych) egzamin ma formę pisemną"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.720.A(c)",
-     "quote": "otrzymuje uprawnienie na typ z ograniczonymi przywilejami w odniesieniu do samolotu z załogą wieloosobową, które umożliwia posiadaczom takiego uprawnienia wykonywanie czynności drugiego pilota zastępującego podczas przelotu w locie powyżej poziomu lotu 200"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.720.A(a)(1)",
-     "quote": "Osoba ubiegająca się o wydanie pierwszego uprawnienia na klasę lub typ samolotu wielosilnikowego z załogą jednoosobową, musi wykonać co najmniej 70 godzin lotu jako pilot dowódca na samolotach."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0416#3880efd9",
-    "PL010-0416#ab4c6cd8",
-    "PL010-0417#3880efd9",
-    "PL010-0417#d55a3a5b",
-    "PL010-0418#8821ca06",
-    "PL010-0418#f7edf967",
-    "PL010-0419#026d9232",
-    "PL010-0419#86491523",
-    "PL010-0420#4a561dcb",
-    "PL010-0420#9cafa46c",
-    "PL010-0421#71eb05cd",
-    "PL010-0422#1df33f43",
-    "PL010-0422#d35d9b6e"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-7",
-   "status": "verified",
-   "heading": "Uprawnienia dodatkowe: loty nocne, IR, holowanie",
-   "body": [
-    "Poza uprawnieniami na klasę i typ do licencji PPL(A) wpisuje się m.in.:",
-    "- uprawnienie do lotów nocnych w warunkach VFR, po szkoleniu w DTO lub ATO (pkt FCL.810 lit. a) ppkt 1 rozporządzenia 1178/2011);",
-    "- uprawnienie do lotów według wskazań przyrządów (IR): loty IFR na samolotach mogą wykonywać posiadacze licencji PPL, CPL, MPL i ATPL z uprawnieniem IR odpowiednim dla danej kategorii (pkt FCL.600);",
-    "- uprawnienia do holowania szybowców lub banerów, bez których posiadacz licencji z przywilejami do pilotowania samolotów lub motoszybowców turystycznych nie może holować (pkt FCL.805 lit. a)). Wpisów takich uprawnień dodatkowych dokonuje Prezes Urzędu Lotnictwa Cywilnego na wniosek pilota (§ 48 rozporządzenia w sprawie licencjonowania personelu lotniczego).",
-    "Jeżeli uprawnienie IR nie zostało przedłużone ani wznowione w ciągu 7 poprzedzających lat, kandydat musi ponownie zaliczyć egzamin z wiedzy teoretycznej i egzamin praktyczny w zakresie IR (pkt FCL.625 lit. d)).",
-    "Częsta błędna odpowiedź: loty agrolotnicze, gaśnicze lub z ciężarem podwieszonym pod statkiem powietrznym nie są uprawnieniem wpisywanym do licencji. Wymagają potwierdzenia odbycia szkolenia lotniczego specjalistycznego, wpisanego do osobistego dokumentu praktyki lotniczej pilota (załącznik nr 3 pkt 4.1 rozporządzenia w sprawie licencjonowania personelu lotniczego)."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.810(a)(1)",
-     "quote": "Aby korzystać z przywilejów wynikających z licencji LAPL lub PPL na samoloty, motoszybowce turystyczne lub sterowce w warunkach VFR w nocy, kandydat musi mieć ukończone szkolenie w DTO lub ATO"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.600",
-     "quote": "operacje wykonywane zgodnie z przepisami dla lotów według wskazań przyrządów (IFR) na samolotach, śmigłowcach, sterowcach lub pionowzlotach mogą być wykonywane tylko przez posiadaczy licencji PPL, CPL, MPL oraz ATPL, którzy posiadają uprawnienie IR odpowiednie dla danej kategorii statku powietrznego"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.805(a)",
-     "quote": "Posiadaczowi licencji pilota z przywilejami do pilotowania samolotów lub motoszybowców turystycznych wolno holować szybowce lub banery tylko w przypadku posiadania odpowiednich uprawnień do holowania szybowców lub holowania banerów."
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 48",
-     "quote": "Prezes Urzędu Lotnictwa Cywilnego dokonuje, na wniosek członka personelu lotniczego, wpisów uprawnień dodatkowych, o których mowa w przepisach FCL.800 oraz FCL.805 załącznika 1 do rozporządzenia nr 1178/2011, do licencji"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.625(d)",
-     "quote": "W przypadku nieprzedłużenia lub niewznowienia ważności uprawnienia IR w ciągu 7 poprzedzających lat osoba ubiegająca się o uprawnienia IR musi ponownie zaliczyć egzamin z wiedzy teoretycznej i egzamin praktyczny w zakresie IR."
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "załącznik 3 pkt 4.1",
-     "quote": "3) agrolotniczych, 4) gaśniczych, 5) z ciężarem podwieszonym pod statkiem powietrznym – wymaga posiadania odpowiedniego potwierdzenia odbycia szkolenia lotniczego specjalistycznego wpisanego do osobistego dokumentu praktyki lotniczej pilota"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0423#9710ebf0",
-    "PL010-0423#e06e93e4",
-    "PL010-0424#67e4e410",
-    "PL010-0424#855e16c2",
-    "PL010-0421#3bf9b149",
-    "PL010-0227#98403277",
-    "PL010-0416#3880efd9",
-    "PL010-0416#ab4c6cd8",
-    "PL010-0417#3880efd9",
-    "PL010-0417#d55a3a5b",
-    "PL010-0418#8821ca06",
-    "PL010-0418#f7edf967",
-    "PL010-0419#026d9232",
-    "PL010-0419#86491523",
-    "PL010-0420#4a561dcb",
-    "PL010-0420#9cafa46c",
-    "PL010-0421#71eb05cd",
-    "PL010-0422#1df33f43",
-    "PL010-0422#d35d9b6e"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-8",
-   "status": "verified",
-   "heading": "Ważność i przedłużanie uprawnień na klasę lub typ",
-   "body": [
-    "Okres ważności uprawnień na klasę lub typ statku powietrznego wynosi 1 rok. Wyjątkiem są uprawnienia na klasę jednosilnikowych statków powietrznych z załogą jednoosobową, np. SEP, ważne 2 lata, o ile dane dotyczące zgodności operacyjnej nie stanowią inaczej (pkt FCL.740 lit. a) ppkt 1 rozporządzenia 1178/2011).",
-    "Kontrola umiejętności w celu przedłużenia:",
-    "- klasa i typ samolotów wielosilnikowych: w okresie 3 miesięcy bezpośrednio poprzedzających datę upływu ważności (pkt FCL.740.A lit. a) ppkt 1); tak samo typ śmigłowca (pkt FCL.740.H lit. a) ppkt 1 (ii));",
-    "- klasa samolotów SEP: jedną z dróg przedłużenia jest kontrola umiejętności z egzaminatorem w okresie 3 miesięcy poprzedzających datę upływu ważności (pkt FCL.740.A lit. b) ppkt 1 (i)).",
-    "Jeżeli pilot spełni wymogi przedłużenia wcześniej, nowy okres ważności rozpoczyna się od daty kontroli umiejętności (pkt FCL.740 lit. a) ppkt 1). Kandydat, który nie zaliczy wszystkich sekcji kontroli umiejętności przed datą upływu ważności, nie może korzystać z przywilejów uprawnienia do czasu zaliczenia kontroli (pkt FCL.740.A lit. c)). Uprawnienia po upływie ważności nie przedłuża się, lecz wznawia (pkt FCL.740 lit. b))."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740(a)(1)",
-     "quote": "Okres ważności uprawnień na klasę lub typ statku powietrznego wynosi 1 rok, z wyjątkiem uprawnień na klasę jednosilnikowych statków powietrznych z załogą jednoosobową, w przypadku których wynosi on 2 lata, o ile w danych dotyczących zgodności operacyjnej nie określono inaczej."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740.A(a)(1)",
-     "quote": "w okresie 3 miesięcy bezpośrednio poprzedzających datę upływu ważności uprawnienia"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740.H(a)(1)(ii)",
-     "quote": "w ciągu 3 miesięcy bezpośrednio poprzedzających datę upływu ważności uprawnienia na typ, zaliczyć kontrolę umiejętności"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740.A(b)(1)(i)",
-     "quote": "w okresie 3 miesięcy poprzedzających datę upływu ważności uprawnienia, zaliczyć w obecności egzaminatora kontrolę umiejętności na odpowiedniej klasie zgodnie z dodatkiem 9 do niniejszej części"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740(a)(1)",
-     "quote": "Jeżeli piloci zdecydują się na spełnienie wymogów dotyczących przedłużenia w terminie wcześniejszym niż wskazano w pkt FCL.740.A, FCL.740.H, FCL.740.PL i FCL.740.As, nowy okres ważności rozpoczyna się od daty kontroli umiejętności."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740.A(c)",
-     "quote": "Kandydat, który nie zaliczy wszystkich sekcji kontroli umiejętności przed datą upływu ważności uprawnienia na klasę lub typ, nie może korzystać z przywilejów wynikających z tego uprawnienia do czasu zaliczenia kontroli umiejętności."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740(b)",
-     "quote": "Na potrzeby wznowienia uprawnień na klasę lub typ kandydat musi spełnić wszystkie poniższe warunki:"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0087#610b4076",
-    "PL010-0087#0876ed9a",
-    "PL010-0088#330b34e9",
-    "PL010-0617#14fe554d"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL05-9",
-   "status": "disputed",
-   "heading": "Uprawnienia krajowe i data ważności po przedłużeniu lub wznowieniu",
-   "body": [
-    "Sprawdzenie kwalifikacji do licencji Part-FCL, np. PPL(A), odbywa się według części FCL (§ 31 rozporządzenia w sprawie licencjonowania personelu lotniczego). Dla uprawnień, których ważność określa załącznik nr 3 do tego rozporządzenia, sprawdzenie w celu przedłużenia przeprowadza się w okresie ważności uprawnienia, jednak (§ 33 ust. 1):",
-    "- przy ważności 12 miesięcy: nie wcześniej niż na 3 miesiące przed jej upływem;",
-    "- przy ważności 3 lat: nie wcześniej niż na 12 miesięcy przed jej upływem.",
-    "Po upływie ważności uprawnienia się nie przedłuża, lecz wznawia (§ 33 ust. 2).",
-    "Datę ważności wpisuje egzaminator praktyczny (§ 66 rozporządzenia w sprawie egzaminów państwowych):",
-    "- przy przedłużeniu: licząc od ostatniego dnia miesiąca, w którym upływa okres ważności danego uprawnienia (ust. 2); klucz ULC ujmuje to jako dzień upływu poprzedniego okresu ważności;",
-    "- przy wydaniu lub wznowieniu: licząc od ostatniego dnia miesiąca, w którym przeprowadzono egzamin praktyczny (ust. 1).",
-    "Klucz ULC w pytaniu o wznowienie przyjmuje tę samą zasadę co przy przedłużeniu, czyli liczenie od upływu poprzedniego okresu ważności; aktualny § 66 ust. 1 wiąże datę ważności wznowionego uprawnienia z miesiącem egzaminu praktycznego."
-   ],
-   "refs": [
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 31",
-     "quote": "dotyczące licencji, o których mowa w § 3 ust. 1 pkt 1 oraz ust. 2, odbywa się zgodnie z przepisami załącznika I (Część FCL) do rozporządzenia nr 1178/2011, z uwzględnieniem § 32, 34 i 35"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 33 ust. 1",
-     "quote": "Sprawdzenie kwalifikacji lotniczych w celu przedłużenia ważności uprawnienia, którego ważność zgodnie z załącznikiem nr 3 do rozporządzenia wynosi:"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 33 ust. 1 pkt 1",
-     "quote": "12 miesięcy – jest przeprowadzane w okresie jego ważności, jednak nie wcześniej niż na 3 miesiące przed jej upływem;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 33 ust. 1 pkt 2",
-     "quote": "3 lata – jest przeprowadzane w okresie jego ważności, jednak nie wcześniej niż na 12 miesięcy przed jej upływem."
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 33 ust. 2",
-     "quote": "W razie upływu ważności uprawnienia, o którym mowa w ust. 1, wznawia się jego ważność."
-    },
-    {
-     "src": "PL-ROZP-EGZAMINY-2021",
-     "loc": "§ 66 ust. 2",
-     "quote": "W przypadku przedłużenia ważności uprawnienia wpisywanego do licencji albo świadectwa kwalifikacji egzaminator praktyczny wpisuje datę ważności uprawnienia, licząc od ostatniego dnia miesiąca, w którym upływa okres ważności danego uprawnienia."
-    },
-    {
-     "src": "PL-ROZP-EGZAMINY-2021",
-     "loc": "§ 66 ust. 1",
-     "quote": "W przypadku wydania lub wznowienia ważności uprawnienia wpisywanego do licencji albo świadectwa kwalifikacji egzaminator praktyczny wpisuje datę ważności uprawnienia, licząc od ostatniego dnia miesiąca, w którym został przeprowadzony egzamin praktyczny."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0087#0876ed9a",
-    "PL010-0089#12519f67",
-    "PL010-0226#c1389f4e",
-    "PL010-0229#0ba29b76"
-   ],
-   "disputeNote": "Według § 66 ust. 1 rozporządzenia w sprawie egzaminów państwowych przy wznowieniu ważności uprawnienia datę ważności liczy się od ostatniego dnia miesiąca, w którym przeprowadzono egzamin praktyczny, czyli od sprawdzenia kwalifikacji, a nie od upływu poprzedniego okresu ważności. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
-  }
- ]
+  ]
 }

@@ -1,538 +1,538 @@
 {
- "topic": "AL06",
- "sections": [
-  {
-   "id": "AL06-1",
-   "status": "verified",
-   "heading": "Gdzie prowadzi się szkolenie lotnicze: ATO, DTO, ośrodek szkolenia",
-   "body": [
-    "Osoba ubiegająca się o licencję PPL musi ukończyć szkolenie w ATO lub DTO (pkt FCL.210 lit. a) rozporządzenia 1178/2011):",
-    "- ATO (zatwierdzona organizacja szkolenia) szkoli pilotów na podstawie zatwierdzenia (art. 2 pkt 16);",
-    "- DTO (zadeklarowana organizacja szkolenia) szkoli na podstawie deklaracji (art. 2 pkt 24).",
-    "Według przepisów krajowych szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego, będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu (§ 26 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego). Ośrodek szkoli w zakresie certyfikatu wydanego na podstawie art. 160 ust. 3 pkt 2 Prawa lotniczego (§ 27).",
-    "Certyfikat ATO wydaje organ wyznaczony przez państwo członkowskie, w którym organizacja ma główne miejsce działalności (pkt ORA.GEN.105 lit. a) ppkt 1 (i)); w Polsce certyfikację przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 161 ust. 1 Prawa lotniczego). W ATO musi być wyznaczony kierownik szkolenia z rozległym doświadczeniem instruktorskim i odpowiednimi zdolnościami kierowniczymi (pkt ORA.ATO.110 lit. a)); kierownika szkolenia wyznacza też DTO (pkt DTO.GEN.210 lit. a) ppkt 2).",
-    "Po kursie teoretycznym DTO lub ATO wydaje zaświadczenie, z którym kandydat przystępuje do egzaminu z wiedzy teoretycznej; zaświadczenie zachowuje ważność przez 12 miesięcy (pkt FCL.025 lit. a) ppkt 2 i 3)."
-   ],
-   "refs": [
+  "topic": "AL06",
+  "sections": [
     {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210(a)",
-     "quote": "Osoba ubiegająca się o licencję PPL lub GPL musi ukończyć szkolenie w ATO lub DTO."
+      "id": "AL06-1",
+      "status": "verified",
+      "heading": "Gdzie prowadzi się szkolenie lotnicze: ATO, DTO, ośrodek szkolenia",
+      "body": [
+        "Osoba ubiegająca się o licencję PPL musi ukończyć szkolenie w ATO lub DTO (pkt FCL.210 lit. a) rozporządzenia 1178/2011):",
+        "- ATO (zatwierdzona organizacja szkolenia) szkoli pilotów na podstawie zatwierdzenia (art. 2 pkt 16);",
+        "- DTO (zadeklarowana organizacja szkolenia) szkoli na podstawie deklaracji (art. 2 pkt 24).",
+        "Według przepisów krajowych szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego, będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu (§ 26 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego). Ośrodek szkoli w zakresie certyfikatu wydanego na podstawie art. 160 ust. 3 pkt 2 Prawa lotniczego (§ 27).",
+        "Certyfikat ATO wydaje organ wyznaczony przez państwo członkowskie, w którym organizacja ma główne miejsce działalności (pkt ORA.GEN.105 lit. a) ppkt 1 (i)); w Polsce certyfikację przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 161 ust. 1 Prawa lotniczego). W ATO musi być wyznaczony kierownik szkolenia z rozległym doświadczeniem instruktorskim i odpowiednimi zdolnościami kierowniczymi (pkt ORA.ATO.110 lit. a)); kierownika szkolenia wyznacza też DTO (pkt DTO.GEN.210 lit. a) ppkt 2).",
+        "Po kursie teoretycznym DTO lub ATO wydaje zaświadczenie, z którym kandydat przystępuje do egzaminu z wiedzy teoretycznej; zaświadczenie zachowuje ważność przez 12 miesięcy (pkt FCL.025 lit. a) ppkt 2 i 3)."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210(a)",
+          "quote": "Osoba ubiegająca się o licencję PPL lub GPL musi ukończyć szkolenie w ATO lub DTO."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 16",
+          "quote": "„zatwierdzona organizacja szkolenia (ang. approved training organisation, ATO)” oznacza organizację, która jest uprawniona do prowadzenia szkolenia pilotów na podstawie zatwierdzenia"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 24",
+          "quote": "„zadeklarowana organizacja szkolenia (ang. declared training organisation, DTO)” oznacza organizację, która jest uprawniona do prowadzenia szkolenia pilotów na podstawie deklaracji"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 26 ust. 1",
+          "quote": "Szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 27",
+          "quote": "Ośrodek szkolenia lotniczego prowadzi szkolenie lotnicze w zakresie objętym posiadanym certyfikatem wydanym na podstawie art. 160 ust. 3 pkt 2 ustawy."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.GEN.105(a)(1)(i)",
+          "quote": "organ wyznaczony przez państwo członkowskie – dla organizacji, których głównym miejscem prowadzenia działalności jest to państwo członkowskie;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 161 ust. 1",
+          "quote": "Certyfikację przeprowadza, na wniosek zainteresowanego podmiotu, Prezes Urzędu, chyba że przepisy Unii Europejskiej stanowią inaczej."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.110(a)",
+          "quote": "Musi być wyznaczony kierownik szkolenia. Kierownik szkolenia musi mieć rozległe doświadczenie instruktorskie w dziedzinach istotnych z punktu widzenia szkolenia prowadzonego przez zatwierdzoną organizację szkolenia (ATO) oraz odpowiednie zdolności kierownicze."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "DTO.GEN.210(a)(2)",
+          "quote": "kierownika szkolenia, który posiada odpowiednie kwalifikacje"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(a)(2)",
+          "quote": "Osoby wnioskujące przystępują do egzaminu z wiedzy teoretycznej tylko po uzyskaniu zaświadczenia zadeklarowanej organizacji szkolenia (DTO) lub zatwierdzonej organizacji szkolenia (ATO) odpowiedzialnej za ich szkolenie"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(a)(3)",
+          "quote": "Zaświadczenie wydane przez DTO lub ATO zachowuje ważność przez 12 miesięcy."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0041#79102d63",
+        "PL010-0400#90cc73c5",
+        "PL010-0400#91fcac65",
+        "PL010-0604#f21de2b8",
+        "PL010-0544#9b9eecb5",
+        "PL010-0544#f8c1a9ab",
+        "PL010-1549#aa7d7e08"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-1178-2011",
-     "loc": "art. 2 pkt 16",
-     "quote": "„zatwierdzona organizacja szkolenia (ang. approved training organisation, ATO)” oznacza organizację, która jest uprawniona do prowadzenia szkolenia pilotów na podstawie zatwierdzenia"
+      "id": "AL06-2",
+      "status": "verified",
+      "heading": "Rodzaje szkolenia lotniczego",
+      "body": [
+        "Szkolenie lotnicze składa się z (§ 22 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
+        "- szkolenia teoretycznego, w celu uzyskania wszystkich licencji, o których mowa w § 3 (pkt 1);",
+        "- szkolenia praktycznego na ziemi i w locie, w celu uzyskania m.in. licencji pilotów oraz FNL i FEL (pkt 2);",
+        "- szkolenia praktycznego na ziemi, w celu uzyskania FDL i MML (pkt 3);",
+        "- uzupełniającego szkolenia praktycznego w formie nadzorowanej praktyki lotniczej, w zakresie wymaganym dla uzyskania uprawnień instruktorskich do licencji z § 3 ust. 1 pkt 2 i 3 (pkt 4).",
+        "Załącznik nr 3 do rozporządzenia określa cele obu podstawowych części: szkolenie teoretyczne służy zdobyciu wiedzy lotniczej (pkt 1.1.29), a szkolenie praktyczne nabyciu umiejętności lotniczych praktycznego wykonywania czynności lotniczych (pkt 1.1.26). Także pkt FCL.210 lit. b) rozporządzenia 1178/2011 wymaga, by szkolenie do licencji PPL obejmowało szkolenie z wiedzy teoretycznej oraz szkolenie w powietrzu.",
+        "Nadzorowana praktyka lotnicza nie jest więc szkoleniem praktycznym na ziemi i w locie, lecz formą szkolenia uzupełniającego, a nauczanie wiedzy lotniczej jest celem szkolenia teoretycznego, nie praktycznego."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 22",
+          "quote": "Szkolenie lotnicze składa się z:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 22 pkt 1",
+          "quote": "szkolenia teoretycznego – w celu uzyskania licencji, o których mowa w § 3;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 22 pkt 2",
+          "quote": "szkolenia praktycznego na ziemi i w locie – w celu uzyskania licencji, o których mowa w § 3 ust. 1 pkt 1 i 3 oraz ust. 2, a także FNL i FEL;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 22 pkt 3",
+          "quote": "szkolenia praktycznego na ziemi – w celu uzyskania FDL i MML;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 22 pkt 4",
+          "quote": "uzupełniającego szkolenia praktycznego – w formie nadzorowanej praktyki lotniczej, w zakresie wymaganym dla uzyskania uprawnień instruktorskich do licencji, o których mowa § 3 ust. 1 pkt 2 i 3"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "załącznik 3 pkt 1.1",
+          "quote": "1.1.29 Szkolenie teoretyczne. Szkolenie, którego celem jest zdobycie wiedzy lotniczej."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "załącznik 3 pkt 1.1",
+          "quote": "1.1.26 Szkolenie praktyczne. Szkolenie, którego celem jest nabycie umiejętności lotniczych praktycznego wykonywania czynności lotniczych"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210(b)",
+          "quote": "Szkolenie to musi obejmować szkolenie z wiedzy teoretycznej oraz szkolenie w powietrzu"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0639#deedcc94",
+        "PL010-0639#3ec404bf",
+        "PL010-0640#fe8bfe32",
+        "PL010-0640#bbced045",
+        "PL010-0383#bb4b5763",
+        "PL010-0384#e37a02f6"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-1178-2011",
-     "loc": "art. 2 pkt 24",
-     "quote": "„zadeklarowana organizacja szkolenia (ang. declared training organisation, DTO)” oznacza organizację, która jest uprawniona do prowadzenia szkolenia pilotów na podstawie deklaracji"
+      "id": "AL06-3",
+      "status": "draft",
+      "heading": "Certyfikat organizacji szkolącej: zakres i ważność",
+      "body": [
+        "Podjęcie i wykonywanie działalności w lotnictwie cywilnym w zakresie określonym w art. 160 ust. 3 Prawa lotniczego wymaga uzyskania certyfikatu (art. 160 ust. 1). Certyfikacji podlega m.in. szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień (ust. 3 pkt 2). Przepis nie rozróżnia szkolenia zarobkowego i niezarobkowego ani nie uzależnia certyfikacji od masy statku powietrznego.",
+        "Prezes Urzędu wydaje certyfikat, w którym określa m.in. zakres prowadzonej działalności i termin, na jaki certyfikat jest wydawany (art. 161 ust. 2). Rozszerzenie uprawnień z certyfikatu wymaga decyzji Prezesa Urzędu (art. 161 ust. 8), a certyfikowana organizacja musi wykazać zgodność z zakresem i przywilejami z warunków zatwierdzania (pkt ORA.GEN.125 rozporządzenia 1178/2011). Dlatego:",
+        "- po upływie ważności certyfikatu organizacja nie może prowadzić szkolenia;",
+        "- nie może też szkolić poza zakresem certyfikatu;",
+        "- przepisy nie przewidują w takiej sytuacji zgody Prezesa ULC ani ministra, ani 14-dniowego okresu przejściowego.",
+        "Szkolenie kandydatów na kontrolerów ruchu lotniczego prowadzi organizacja z certyfikatem ATCO TO (załącznik nr 6 do Prawa lotniczego, pkt 6a). Skrót CAPTO z odpowiedzi w kluczu ULC nie występuje w aktualnych przepisach, które taką organizację oznaczają skrótem ATCO TO."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 160 ust. 1",
+          "quote": "Podjęcie i wykonywanie działalności w lotnictwie cywilnym, w zakresie określonym w ust. 3, wymaga uzyskania certyfikatu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 160 ust. 3",
+          "quote": "Certyfikacji podlega:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 160 ust. 3 pkt 2",
+          "quote": "szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 161 ust. 2",
+          "quote": "Prezes Urzędu wydaje certyfikat, w którym określa nazwę podmiotu, zakres prowadzonej działalności, warunki jej prowadzenia oraz termin, na jaki certyfikat jest wydawany."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 161 ust. 8",
+          "quote": "Prezes Urzędu, w drodze decyzji administracyjnej, wydaje certyfikat, zmienia, w tym rozszerza lub ogranicza uprawnienia wynikające z certyfikatu"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.GEN.125",
+          "quote": "Certyfikowana organizacja musi wykazać zgodność z zakresem i przywilejami określonymi w warunkach zatwierdzania dołączonych do certyfikatu organizacji."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "załącznik 6",
+          "quote": "certyfikat organizacji szkolącej kontrolerów ruchu lotniczego potwierdzający zdolność podmiotu do prowadzenia szkolenia kontrolerów ruchu lotniczego, o których mowa w art. 94 ust. 6 pkt 4 i 4a ustawy, w zakresie wymaganym do uzyskania licencji"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0364#448d9b0d",
+        "PL010-0369#4b752410",
+        "PL010-0369#bb2004ee",
+        "PL010-0370#28df25f9",
+        "PL010-0370#9f98e2d6",
+        "PL010-0372#318ac315",
+        "PL010-0372#4cb3d0ad",
+        "PL010-0373#5116e95c",
+        "PL010-0373#6e91354d",
+        "PL010-0401#48893e1a"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 26 ust. 1",
-     "quote": "Szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu."
+      "id": "AL06-4",
+      "status": "disputed",
+      "heading": "ATO i DTO: zatwierdzenie, deklaracja i szkolenie do uprawnień",
+      "body": [
+        "Organizacje szkolące pilotów co do zasady muszą uzyskać zatwierdzenie właściwego organu (art. 10a ust. 1 akapit pierwszy rozporządzenia 1178/2011). Organizacja z głównym miejscem działalności w państwie członkowskim może jednak prowadzić szkolenia wymienione w pkt DTO.GEN.110 bez zatwierdzenia, jeżeli przedłożyła właściwemu organowi deklarację (akapit drugi, pkt DTO.GEN.115 lit. a)). DTO może prowadzić m.in. szkolenie teoretyczne do LAPL(A) i PPL(A) (pkt DTO.GEN.110 lit. a) ppkt 1).",
+        "Szkolenie do uprawnień na klasę lub typ:",
+        "- do wydania uprawnienia kandydat kończy szkolenie w ATO; szkolenie do uprawnienia na klasę samolotów SEP o przeciętnych osiągach, klasę motoszybowców turystycznych lub typ jednosilnikowych śmigłowców może odbyć także w DTO (pkt FCL.725 lit. a));",
+        "- przy wznowieniu wygasłego uprawnienia ocenę, czy potrzebne jest szkolenie odświeżające, przeprowadza ATO, a dla tych samych klas i typu także DTO (pkt FCL.740 lit. b) ppkt 1); szkolenie odświeżające kandydat kończy w organizacji, która uznała je za konieczne (ppkt 2).",
+        "Klucz ULC w pytaniu, czy działalność organizacji lotniczej niebędącej ośrodkiem szkolenia lotniczego podlega certyfikacji, przyjmuje odpowiedź „Tak”, opartą na art. 160 ust. 3 pkt 2 Prawa lotniczego; aktualne rozporządzenie 1178/2011 pozwala DTO szkolić m.in. do PPL(A) na podstawie deklaracji, bez zatwierdzenia."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 10a ust. 1",
+          "quote": "wyłącznie jeśli uzyskały od właściwego organu zatwierdzenie"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 10a ust. 1",
+          "quote": "bez konieczności uzyskania takiego zatwierdzenia, jeżeli przedłożyły właściwemu organowi deklarację zgodnie z wymaganiami określonymi w pkt DTO.GEN.115"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "DTO.GEN.115(a)",
+          "quote": "Przed rozpoczęciem któregokolwiek ze szkoleń wymienionych w pkt DTO.GEN.110 organizacja zamierzająca prowadzić takie szkolenia przedkłada właściwemu organowi deklarację."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "DTO.GEN.110(a)",
+          "quote": "DTO jest uprawniona, pod warunkiem złożenia przez nią deklaracji zgodnie z pkt DTO.GEN.115, do prowadzenia następujących szkoleń:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "DTO.GEN.110(a)(1)",
+          "quote": "szkolenie teoretyczne na potrzeby uzyskania LAPL(A) i PPL(A);"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.725(a)",
+          "quote": "Osoba ubiegająca się o wydanie uprawnienia na klasę lub typ statku powietrznego musi ukończyć szkolenie w ATO."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.725(a)",
+          "quote": "Osoba ubiegająca się o wydanie uprawnienia na klasę samolotów SEP o przeciętnych osiągach, uprawnienia na klasę motoszybowców turystycznych lub uprawnienia na typ jednosilnikowych śmigłowców"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.725(a)",
+          "quote": "załącznika VIII (część DTO) do tego rozporządzenia, może odbyć szkolenie w DTO."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740(b)(1)(i)",
+          "quote": "w ATO;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740(b)(1)(ii)",
+          "quote": "w DTO lub w ATO, jeżeli uprawnienie, które wygasło, dotyczyło klasy samolotów SEP o przeciętnych osiągach, klasy motoszybowców turystycznych lub typu jednosilnikowych śmigłowców"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.740(b)(2)",
+          "quote": "jeżeli organizacja lub instruktor przeprowadzający ocenę zgodnie z pkt 1 uzna to za konieczne, musi ukończyć szkolenie odświeżające w tej organizacji lub u tego instruktora"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 160 ust. 3 pkt 2",
+          "quote": "szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0088#c249f947",
+        "PL010-0089#6d74eb81",
+        "PL010-0363#5945c899"
+      ],
+      "disputeNote": "Według art. 10a ust. 1 akapit drugi rozporządzenia 1178/2011 organizacja może prowadzić szkolenia wymienione w pkt DTO.GEN.110 (m.in. do PPL(A)) bez zatwierdzenia, na podstawie deklaracji (DTO.GEN.115 lit. a)), więc nie każda organizacja szkoląca do licencji podlega certyfikacji. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 27",
-     "quote": "Ośrodek szkolenia lotniczego prowadzi szkolenie lotnicze w zakresie objętym posiadanym certyfikatem wydanym na podstawie art. 160 ust. 3 pkt 2 ustawy."
+      "id": "AL06-5",
+      "status": "verified",
+      "heading": "Wymagania wobec uczestnika szkolenia i kto je sprawdza",
+      "body": [
+        "Wymagania w zakresie wieku z art. 96 ust. 2 Prawa lotniczego musi spełnić osoba ubiegająca się o licencję (pilot turystyczny: 17 lat), są więc warunkiem uzyskania licencji, a nie rozpoczęcia szkolenia. Rozporządzenie 1178/2011 także wiąże 17 lat z wnioskiem o licencję PPL (pkt FCL.200), a od ucznia-pilota wymaga ukończenia 16 lat dopiero przed pierwszym samodzielnym lotem (pkt FCL.020 lit. b)). Organizacja szkoleniowa może więc dopuścić do szkolenia teoretycznego kandydata, który nie ma jeszcze wieku wymaganego do licencji.",
+        "Kto sprawdza, czy uczestnik spełnia warunki szkolenia:",
+        "- w szkoleniu do licencji Part-FCL, np. PPL(A), ATO dopilnowuje, aby uczestnicy spełniali warunki kwalifikujące ich do udziału w szkoleniu określone w częściach MED i FCL (pkt ORA.ATO.145 lit. a));",
+        "- w szkoleniu do licencji krajowych z § 3 ust. 1 pkt 2 i 3 (np. FNL, PPL(AG)) spełnianie wymagań stwierdza ośrodek szkolenia lotniczego, przed rozpoczęciem szkolenia oraz w trakcie jego trwania (§ 25 ust. 1–3 rozporządzenia w sprawie licencjonowania personelu lotniczego)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2",
+          "quote": "W celu uzyskania licencji członka personelu lotniczego osoba ubiegająca się o nią musi spełnić następujące wymagania dla poszczególnych specjalności w zakresie wieku:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 4",
+          "quote": "pilot turystyczny, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 17 lat"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.200",
+          "quote": "Osoba ubiegająca się o licencję PPL lub GPL musi mieć ukończone 17 lat."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.020(b)",
+          "quote": "Przed odbyciem pierwszego samodzielnego lotu uczeń-pilot musi mieć ukończone 16 lat."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.145(a)",
+          "quote": "Zatwierdzona organizacja szkolenia (ATO) dopilnowuje, aby uczestnicy szkolenia spełniali warunki kwalifikujące ich do udziału w szkoleniu określone w częściach MED i FCL"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 25 ust. 1",
+          "quote": "Uczestnik szkolenia teoretycznego lub praktycznego prowadzonego w celu uzyskania licencji, o których mowa w § 3 ust. 1 pkt 2, oraz wpisywanych do nich uprawnień, powinien spełniać wymagania określone w załączniku nr 3 do rozporządzenia"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 25 ust. 2",
+          "quote": "Uczestnik szkolenia teoretycznego i praktycznego prowadzonego w celu uzyskania licencji, o których mowa w § 3 ust. 1 pkt 3"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 25 ust. 3",
+          "quote": "Spełnianie przez uczestnika szkolenia wymagań, o których mowa w ust. 1 i 2, stwierdza ośrodek szkolenia lotniczego przed rozpoczęciem szkolenia oraz w trakcie jego trwania."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 1 pkt 2",
+          "quote": "FNL, FEL, FDL, MML;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 1 pkt 3",
+          "quote": "PPL(AG), CPL(AG)."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0368#103c0a55",
+        "PL010-0508#97331b20",
+        "PL010-0508#99d09efc",
+        "PL010-0509#0cd7d758"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-1178-2011",
-     "loc": "ORA.GEN.105(a)(1)(i)",
-     "quote": "organ wyznaczony przez państwo członkowskie – dla organizacji, których głównym miejscem prowadzenia działalności jest to państwo członkowskie;"
+      "id": "AL06-6",
+      "status": "verified",
+      "heading": "Instrukcje, kadra i baza dydaktyczna",
+      "body": [
+        "Szkolenie lotnicze prowadzi się (§ 28 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
+        "- zgodnie z zatwierdzonymi przez Prezesa Urzędu do użytku w ośrodku i wprowadzonymi w życie instrukcjami wykonawczymi oraz dokumentami regulaminowymi, m.in. instrukcją szkolenia, instrukcją operacyjną (w ośrodkach prowadzących szkolenie podczas operacji statków powietrznych), instrukcją systemu monitorowania zgodności z wymaganiami i programami szkoleń (pkt 1);",
+        "- z udziałem kadry dydaktycznej o kwalifikacjach i uprawnieniach odpowiednich do rodzaju i zakresu szkolenia (pkt 2);",
+        "- przy wykorzystaniu odpowiedniej bazy dydaktycznej (pkt 3);",
+        "- przy wykorzystaniu statków powietrznych albo szkoleniowych urządzeń symulacji lotu, odpowiednich do rodzaju i zakresu szkolenia (pkt 4).",
+        "Przepis nie wyodrębnia szkolenia niezarobkowego: wymagania dotyczą każdego szkolenia lotniczego prowadzonego w ośrodku szkolenia lotniczego (§ 26 ust. 1).",
+        "Dla ATO pkt ORA.ATO.130 lit. a) rozporządzenia 1178/2011 wymaga opracowania i utrzymywania instrukcji szkolenia i operacyjnych, które dają uczestnikom szkolenia wytyczne, w jaki sposób spełnić wymagania szkoleniowe. Instrukcje operacyjne i szkoleniowe ATO przekazuje właściwemu organowi już razem z wnioskiem o wydanie certyfikatu (pkt ORA.ATO.105 lit. a) ppkt 2)."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1",
+          "quote": "Szkolenie lotnicze prowadzi się:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 1",
+          "quote": "zgodnie z zatwierdzonymi przez Prezesa Urzędu do użytku w tym ośrodku i wprowadzonymi w życie instrukcjami wykonawczymi oraz dokumentami regulaminowymi:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 1 lit. a",
+          "quote": "instrukcją szkolenia"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 1 lit. b",
+          "quote": "instrukcją operacyjną określającą zasady, zakres współpracy z innymi organizacjami i procedury organizacji i wykonywania operacji lotniczych związanych ze szkoleniem w locie"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 1 lit. b",
+          "quote": "w przypadku ośrodków prowadzących szkolenie podczas operacji statków powietrznych"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 1 lit. c",
+          "quote": "instrukcją systemu monitorowania zgodności z wymaganiami,"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 1 lit. d",
+          "quote": "programami szkoleń;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 2",
+          "quote": "z udziałem kadry dydaktycznej posiadającej kwalifikacje i uprawnienia odpowiednie do rodzaju i zakresu szkolenia lotniczego;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 3",
+          "quote": "przy wykorzystaniu bazy dydaktycznej odpowiedniej do rodzaju i zakresu szkolenia lotniczego;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 28 ust. 1 pkt 4",
+          "quote": "przy wykorzystaniu statków powietrznych albo szkoleniowych urządzeń symulacji lotu, odpowiednich do rodzaju i zakresu szkolenia lotniczego."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 26 ust. 1",
+          "quote": "Szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.130(a)",
+          "quote": "Zatwierdzona organizacja szkolenia (ATO) musi opracować i utrzymywać instrukcje szkolenia i operacyjne zawierające informacje i instrukcje umożliwiające personelowi wykonywanie swoich obowiązków, a także dające uczestnikom szkolenia wytyczne, w jaki sposób należy spełnić wymagania szkoleniowe."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.105(a)",
+          "quote": "Wnioskujący o wydanie certyfikatu dla zatwierdzonej organizacji szkolenia (ATO) muszą przekazać właściwemu organowi:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.105(a)(2)",
+          "quote": "instrukcje operacyjne i szkoleniowe."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0592#71915062",
+        "PL010-0592#fcefc237",
+        "PL010-0593#8ea37ad6",
+        "PL010-0594#f5addded",
+        "PL010-0595#aef1984f",
+        "PL010-1541#eb5e5cb6"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 161 ust. 1",
-     "quote": "Certyfikację przeprowadza, na wniosek zainteresowanego podmiotu, Prezes Urzędu, chyba że przepisy Unii Europejskiej stanowią inaczej."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.110(a)",
-     "quote": "Musi być wyznaczony kierownik szkolenia. Kierownik szkolenia musi mieć rozległe doświadczenie instruktorskie w dziedzinach istotnych z punktu widzenia szkolenia prowadzonego przez zatwierdzoną organizację szkolenia (ATO) oraz odpowiednie zdolności kierownicze."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "DTO.GEN.210(a)(2)",
-     "quote": "kierownika szkolenia, który posiada odpowiednie kwalifikacje"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(a)(2)",
-     "quote": "Osoby wnioskujące przystępują do egzaminu z wiedzy teoretycznej tylko po uzyskaniu zaświadczenia zadeklarowanej organizacji szkolenia (DTO) lub zatwierdzonej organizacji szkolenia (ATO) odpowiedzialnej za ich szkolenie"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.025(a)(3)",
-     "quote": "Zaświadczenie wydane przez DTO lub ATO zachowuje ważność przez 12 miesięcy."
+      "id": "AL06-7",
+      "status": "verified",
+      "heading": "Statki powietrzne, FSTD i lotniska w szkoleniu",
+      "body": [
+        "Szkolenie praktyczne na ziemi i w locie prowadzi się na statkach powietrznych spełniających wymagania art. 31 ust. 1 Prawa lotniczego lub na polskich państwowych statkach powietrznych, które odpowiadają rodzajowi i zakresowi szkolenia (§ 23 rozporządzenia w sprawie licencjonowania personelu lotniczego). Art. 31 ust. 1 dopuszcza do lotów cywilne statki powietrzne:",
+        "- wpisane do polskiego lub obcego rejestru cywilnych statków powietrznych (pkt 1);",
+        "- mające wymagane znaki rozpoznawcze (pkt 2);",
+        "- posiadające zdatność do lotów, potwierdzoną odpowiednimi dokumentami (pkt 3).",
+        "ATO musi korzystać z odpowiedniej floty szkolnych statków powietrznych lub FSTD, wyposażonych odpowiednio do prowadzonych kursów szkoleniowych. Szkolenie z użyciem FSTD prowadzi po wykazaniu właściwemu organowi m.in. zgodności specyfikacji FSTD z programem szkolenia (pkt ORA.ATO.135 lit. a) i b) rozporządzenia 1178/2011). FSTD to szkoleniowe urządzenie symulacji lotu przeznaczone do szkolenia pilotów, np. pełny symulator lotu (FFS) lub urządzenie FTD (art. 2 pkt 20).",
+        "Prowadząc szkolenie w powietrzu, ATO korzysta z lotnisk lub miejsc operacji lotniczych wyposażonych w odpowiednie zaplecze i umożliwiających szkolenie w wykonywaniu manewrów (pkt ORA.ATO.140)."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 23",
+          "quote": "Szkolenie praktyczne na ziemi i w locie prowadzi się na statkach powietrznych spełniających wymagania określone w art. 31 ust. 1 ustawy lub na polskich państwowych statkach powietrznych, które odpowiadają rodzajowi i zakresowi szkolenia"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1",
+          "quote": "Do wykonywania lotów w przestrzeni powietrznej dopuszcza się, z zastrzeżeniem art. 33 ust. 2 i art. 156b ust. 3 pkt 1, wyłącznie cywilne statki powietrzne:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1 pkt 1",
+          "quote": "wpisane do polskiego lub obcego rejestru cywilnych statków powietrznych;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1 pkt 2",
+          "quote": "mające wymagane znaki rozpoznawcze;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1 pkt 3",
+          "quote": "posiadające zdatność do lotów, potwierdzoną odpowiednimi dokumentami"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.135(a)",
+          "quote": "Zatwierdzona organizacja szkolenia musi korzystać z odpowiedniej floty szkolnych statków powietrznych lub FSTD wyposażonych odpowiednio do prowadzonych kursów szkoleniowych."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.135(b)",
+          "quote": "Zatwierdzona organizacja szkolenia (ATO) może prowadzić szkolenie z użyciem FSTD, pod warunkiem że wykaże właściwemu organowi, co następuje:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.135(b)(1)",
+          "quote": "zgodność specyfikacji FSTD z odnośnym programu szkolenia;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 20",
+          "quote": "„szkoleniowe urządzenie symulacji lotu (ang. flight simulation training device, FSTD)” oznacza urządzenie przeznaczone do szkolenia pilotów"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 20",
+          "quote": "w przypadku samolotów jest pełnym symulatorem lotu (ang. full flight simulator, FFS), urządzeniem do szkolenia lotniczego (ang. flight training device, FTD)"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.140",
+          "quote": "musi korzystać z lotnisk lub miejsc operacji lotniczych wyposażonych w odpowiednie zaplecze i spełniających warunki umożliwiające szkolenie w zakresie wykonywania manewrów"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0313#4bd1c864",
+        "PL010-0313#ca811a9f",
+        "PL010-0532#69cd8cb0",
+        "PL010-0532#3e0d829a",
+        "PL010-0038#c3aac04e",
+        "PL010-0594#9e00d9eb",
+        "PL010-0593#8ea37ad6"
+      ],
+      "disputeNote": null
     }
-   ],
-   "questionKeys": [
-    "PL010-0041#79102d63",
-    "PL010-0400#90cc73c5",
-    "PL010-0400#91fcac65",
-    "PL010-0604#f21de2b8",
-    "PL010-0544#9b9eecb5",
-    "PL010-0544#f8c1a9ab",
-    "PL010-1549#aa7d7e08"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL06-2",
-   "status": "verified",
-   "heading": "Rodzaje szkolenia lotniczego",
-   "body": [
-    "Szkolenie lotnicze składa się z (§ 22 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
-    "- szkolenia teoretycznego, w celu uzyskania wszystkich licencji, o których mowa w § 3 (pkt 1);",
-    "- szkolenia praktycznego na ziemi i w locie, w celu uzyskania m.in. licencji pilotów oraz FNL i FEL (pkt 2);",
-    "- szkolenia praktycznego na ziemi, w celu uzyskania FDL i MML (pkt 3);",
-    "- uzupełniającego szkolenia praktycznego w formie nadzorowanej praktyki lotniczej, w zakresie wymaganym dla uzyskania uprawnień instruktorskich do licencji z § 3 ust. 1 pkt 2 i 3 (pkt 4).",
-    "Załącznik nr 3 do rozporządzenia określa cele obu podstawowych części: szkolenie teoretyczne służy zdobyciu wiedzy lotniczej (pkt 1.1.29), a szkolenie praktyczne nabyciu umiejętności lotniczych praktycznego wykonywania czynności lotniczych (pkt 1.1.26). Także pkt FCL.210 lit. b) rozporządzenia 1178/2011 wymaga, by szkolenie do licencji PPL obejmowało szkolenie z wiedzy teoretycznej oraz szkolenie w powietrzu.",
-    "Nadzorowana praktyka lotnicza nie jest więc szkoleniem praktycznym na ziemi i w locie, lecz formą szkolenia uzupełniającego, a nauczanie wiedzy lotniczej jest celem szkolenia teoretycznego, nie praktycznego."
-   ],
-   "refs": [
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 22",
-     "quote": "Szkolenie lotnicze składa się z:"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 22 pkt 1",
-     "quote": "szkolenia teoretycznego – w celu uzyskania licencji, o których mowa w § 3;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 22 pkt 2",
-     "quote": "szkolenia praktycznego na ziemi i w locie – w celu uzyskania licencji, o których mowa w § 3 ust. 1 pkt 1 i 3 oraz ust. 2, a także FNL i FEL;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 22 pkt 3",
-     "quote": "szkolenia praktycznego na ziemi – w celu uzyskania FDL i MML;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 22 pkt 4",
-     "quote": "uzupełniającego szkolenia praktycznego – w formie nadzorowanej praktyki lotniczej, w zakresie wymaganym dla uzyskania uprawnień instruktorskich do licencji, o których mowa § 3 ust. 1 pkt 2 i 3"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "załącznik 3 pkt 1.1",
-     "quote": "1.1.29 Szkolenie teoretyczne. Szkolenie, którego celem jest zdobycie wiedzy lotniczej."
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "załącznik 3 pkt 1.1",
-     "quote": "1.1.26 Szkolenie praktyczne. Szkolenie, którego celem jest nabycie umiejętności lotniczych praktycznego wykonywania czynności lotniczych"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.210(b)",
-     "quote": "Szkolenie to musi obejmować szkolenie z wiedzy teoretycznej oraz szkolenie w powietrzu"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0639#deedcc94",
-    "PL010-0639#3ec404bf",
-    "PL010-0640#fe8bfe32",
-    "PL010-0640#bbced045",
-    "PL010-0383#bb4b5763",
-    "PL010-0384#e37a02f6"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL06-3",
-   "status": "draft",
-   "heading": "Certyfikat organizacji szkolącej: zakres i ważność",
-   "body": [
-    "Podjęcie i wykonywanie działalności w lotnictwie cywilnym w zakresie określonym w art. 160 ust. 3 Prawa lotniczego wymaga uzyskania certyfikatu (art. 160 ust. 1). Certyfikacji podlega m.in. szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień (ust. 3 pkt 2). Przepis nie rozróżnia szkolenia zarobkowego i niezarobkowego ani nie uzależnia certyfikacji od masy statku powietrznego.",
-    "Prezes Urzędu wydaje certyfikat, w którym określa m.in. zakres prowadzonej działalności i termin, na jaki certyfikat jest wydawany (art. 161 ust. 2). Rozszerzenie uprawnień z certyfikatu wymaga decyzji Prezesa Urzędu (art. 161 ust. 8), a certyfikowana organizacja musi wykazać zgodność z zakresem i przywilejami z warunków zatwierdzania (pkt ORA.GEN.125 rozporządzenia 1178/2011). Dlatego:",
-    "- po upływie ważności certyfikatu organizacja nie może prowadzić szkolenia;",
-    "- nie może też szkolić poza zakresem certyfikatu;",
-    "- przepisy nie przewidują w takiej sytuacji zgody Prezesa ULC ani ministra, ani 14-dniowego okresu przejściowego.",
-    "Szkolenie kandydatów na kontrolerów ruchu lotniczego prowadzi organizacja z certyfikatem ATCO TO (załącznik nr 6 do Prawa lotniczego, pkt 6a). Skrót CAPTO z odpowiedzi w kluczu ULC nie występuje w aktualnych przepisach, które taką organizację oznaczają skrótem ATCO TO."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 160 ust. 1",
-     "quote": "Podjęcie i wykonywanie działalności w lotnictwie cywilnym, w zakresie określonym w ust. 3, wymaga uzyskania certyfikatu."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 160 ust. 3",
-     "quote": "Certyfikacji podlega:"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 160 ust. 3 pkt 2",
-     "quote": "szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 161 ust. 2",
-     "quote": "Prezes Urzędu wydaje certyfikat, w którym określa nazwę podmiotu, zakres prowadzonej działalności, warunki jej prowadzenia oraz termin, na jaki certyfikat jest wydawany."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 161 ust. 8",
-     "quote": "Prezes Urzędu, w drodze decyzji administracyjnej, wydaje certyfikat, zmienia, w tym rozszerza lub ogranicza uprawnienia wynikające z certyfikatu"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.GEN.125",
-     "quote": "Certyfikowana organizacja musi wykazać zgodność z zakresem i przywilejami określonymi w warunkach zatwierdzania dołączonych do certyfikatu organizacji."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "załącznik 6",
-     "quote": "certyfikat organizacji szkolącej kontrolerów ruchu lotniczego potwierdzający zdolność podmiotu do prowadzenia szkolenia kontrolerów ruchu lotniczego, o których mowa w art. 94 ust. 6 pkt 4 i 4a ustawy, w zakresie wymaganym do uzyskania licencji"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0364#448d9b0d",
-    "PL010-0369#4b752410",
-    "PL010-0369#bb2004ee",
-    "PL010-0370#28df25f9",
-    "PL010-0370#9f98e2d6",
-    "PL010-0372#318ac315",
-    "PL010-0372#4cb3d0ad",
-    "PL010-0373#5116e95c",
-    "PL010-0373#6e91354d",
-    "PL010-0401#48893e1a"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL06-4",
-   "status": "disputed",
-   "heading": "ATO i DTO: zatwierdzenie, deklaracja i szkolenie do uprawnień",
-   "body": [
-    "Organizacje szkolące pilotów co do zasady muszą uzyskać zatwierdzenie właściwego organu (art. 10a ust. 1 akapit pierwszy rozporządzenia 1178/2011). Organizacja z głównym miejscem działalności w państwie członkowskim może jednak prowadzić szkolenia wymienione w pkt DTO.GEN.110 bez zatwierdzenia, jeżeli przedłożyła właściwemu organowi deklarację (akapit drugi, pkt DTO.GEN.115 lit. a)). DTO może prowadzić m.in. szkolenie teoretyczne do LAPL(A) i PPL(A) (pkt DTO.GEN.110 lit. a) ppkt 1).",
-    "Szkolenie do uprawnień na klasę lub typ:",
-    "- do wydania uprawnienia kandydat kończy szkolenie w ATO; szkolenie do uprawnienia na klasę samolotów SEP o przeciętnych osiągach, klasę motoszybowców turystycznych lub typ jednosilnikowych śmigłowców może odbyć także w DTO (pkt FCL.725 lit. a));",
-    "- przy wznowieniu wygasłego uprawnienia ocenę, czy potrzebne jest szkolenie odświeżające, przeprowadza ATO, a dla tych samych klas i typu także DTO (pkt FCL.740 lit. b) ppkt 1); szkolenie odświeżające kandydat kończy w organizacji, która uznała je za konieczne (ppkt 2).",
-    "Klucz ULC w pytaniu, czy działalność organizacji lotniczej niebędącej ośrodkiem szkolenia lotniczego podlega certyfikacji, przyjmuje odpowiedź „Tak”, opartą na art. 160 ust. 3 pkt 2 Prawa lotniczego; aktualne rozporządzenie 1178/2011 pozwala DTO szkolić m.in. do PPL(A) na podstawie deklaracji, bez zatwierdzenia."
-   ],
-   "refs": [
-    {
-     "src": "EU-1178-2011",
-     "loc": "art. 10a ust. 1",
-     "quote": "wyłącznie jeśli uzyskały od właściwego organu zatwierdzenie"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "art. 10a ust. 1",
-     "quote": "bez konieczności uzyskania takiego zatwierdzenia, jeżeli przedłożyły właściwemu organowi deklarację zgodnie z wymaganiami określonymi w pkt DTO.GEN.115"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "DTO.GEN.115(a)",
-     "quote": "Przed rozpoczęciem któregokolwiek ze szkoleń wymienionych w pkt DTO.GEN.110 organizacja zamierzająca prowadzić takie szkolenia przedkłada właściwemu organowi deklarację."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "DTO.GEN.110(a)",
-     "quote": "DTO jest uprawniona, pod warunkiem złożenia przez nią deklaracji zgodnie z pkt DTO.GEN.115, do prowadzenia następujących szkoleń:"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "DTO.GEN.110(a)(1)",
-     "quote": "szkolenie teoretyczne na potrzeby uzyskania LAPL(A) i PPL(A);"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.725(a)",
-     "quote": "Osoba ubiegająca się o wydanie uprawnienia na klasę lub typ statku powietrznego musi ukończyć szkolenie w ATO."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.725(a)",
-     "quote": "Osoba ubiegająca się o wydanie uprawnienia na klasę samolotów SEP o przeciętnych osiągach, uprawnienia na klasę motoszybowców turystycznych lub uprawnienia na typ jednosilnikowych śmigłowców"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.725(a)",
-     "quote": "załącznika VIII (część DTO) do tego rozporządzenia, może odbyć szkolenie w DTO."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740(b)(1)(i)",
-     "quote": "w ATO;"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740(b)(1)(ii)",
-     "quote": "w DTO lub w ATO, jeżeli uprawnienie, które wygasło, dotyczyło klasy samolotów SEP o przeciętnych osiągach, klasy motoszybowców turystycznych lub typu jednosilnikowych śmigłowców"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.740(b)(2)",
-     "quote": "jeżeli organizacja lub instruktor przeprowadzający ocenę zgodnie z pkt 1 uzna to za konieczne, musi ukończyć szkolenie odświeżające w tej organizacji lub u tego instruktora"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 160 ust. 3 pkt 2",
-     "quote": "szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0088#c249f947",
-    "PL010-0089#6d74eb81",
-    "PL010-0363#5945c899"
-   ],
-   "disputeNote": "Według art. 10a ust. 1 akapit drugi rozporządzenia 1178/2011 organizacja może prowadzić szkolenia wymienione w pkt DTO.GEN.110 (m.in. do PPL(A)) bez zatwierdzenia, na podstawie deklaracji (DTO.GEN.115 lit. a)), więc nie każda organizacja szkoląca do licencji podlega certyfikacji. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
-  },
-  {
-   "id": "AL06-5",
-   "status": "verified",
-   "heading": "Wymagania wobec uczestnika szkolenia i kto je sprawdza",
-   "body": [
-    "Wymagania w zakresie wieku z art. 96 ust. 2 Prawa lotniczego musi spełnić osoba ubiegająca się o licencję (pilot turystyczny: 17 lat), są więc warunkiem uzyskania licencji, a nie rozpoczęcia szkolenia. Rozporządzenie 1178/2011 także wiąże 17 lat z wnioskiem o licencję PPL (pkt FCL.200), a od ucznia-pilota wymaga ukończenia 16 lat dopiero przed pierwszym samodzielnym lotem (pkt FCL.020 lit. b)). Organizacja szkoleniowa może więc dopuścić do szkolenia teoretycznego kandydata, który nie ma jeszcze wieku wymaganego do licencji.",
-    "Kto sprawdza, czy uczestnik spełnia warunki szkolenia:",
-    "- w szkoleniu do licencji Part-FCL, np. PPL(A), ATO dopilnowuje, aby uczestnicy spełniali warunki kwalifikujące ich do udziału w szkoleniu określone w częściach MED i FCL (pkt ORA.ATO.145 lit. a));",
-    "- w szkoleniu do licencji krajowych z § 3 ust. 1 pkt 2 i 3 (np. FNL, PPL(AG)) spełnianie wymagań stwierdza ośrodek szkolenia lotniczego, przed rozpoczęciem szkolenia oraz w trakcie jego trwania (§ 25 ust. 1–3 rozporządzenia w sprawie licencjonowania personelu lotniczego)."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 96 ust. 2",
-     "quote": "W celu uzyskania licencji członka personelu lotniczego osoba ubiegająca się o nią musi spełnić następujące wymagania dla poszczególnych specjalności w zakresie wieku:"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 96 ust. 2 pkt 4",
-     "quote": "pilot turystyczny, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 17 lat"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.200",
-     "quote": "Osoba ubiegająca się o licencję PPL lub GPL musi mieć ukończone 17 lat."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "FCL.020(b)",
-     "quote": "Przed odbyciem pierwszego samodzielnego lotu uczeń-pilot musi mieć ukończone 16 lat."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.145(a)",
-     "quote": "Zatwierdzona organizacja szkolenia (ATO) dopilnowuje, aby uczestnicy szkolenia spełniali warunki kwalifikujące ich do udziału w szkoleniu określone w częściach MED i FCL"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 25 ust. 1",
-     "quote": "Uczestnik szkolenia teoretycznego lub praktycznego prowadzonego w celu uzyskania licencji, o których mowa w § 3 ust. 1 pkt 2, oraz wpisywanych do nich uprawnień, powinien spełniać wymagania określone w załączniku nr 3 do rozporządzenia"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 25 ust. 2",
-     "quote": "Uczestnik szkolenia teoretycznego i praktycznego prowadzonego w celu uzyskania licencji, o których mowa w § 3 ust. 1 pkt 3"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 25 ust. 3",
-     "quote": "Spełnianie przez uczestnika szkolenia wymagań, o których mowa w ust. 1 i 2, stwierdza ośrodek szkolenia lotniczego przed rozpoczęciem szkolenia oraz w trakcie jego trwania."
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 3 ust. 1 pkt 2",
-     "quote": "FNL, FEL, FDL, MML;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 3 ust. 1 pkt 3",
-     "quote": "PPL(AG), CPL(AG)."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0368#103c0a55",
-    "PL010-0508#97331b20",
-    "PL010-0508#99d09efc",
-    "PL010-0509#0cd7d758"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL06-6",
-   "status": "verified",
-   "heading": "Instrukcje, kadra i baza dydaktyczna",
-   "body": [
-    "Szkolenie lotnicze prowadzi się (§ 28 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
-    "- zgodnie z zatwierdzonymi przez Prezesa Urzędu do użytku w ośrodku i wprowadzonymi w życie instrukcjami wykonawczymi oraz dokumentami regulaminowymi, m.in. instrukcją szkolenia, instrukcją operacyjną (w ośrodkach prowadzących szkolenie podczas operacji statków powietrznych), instrukcją systemu monitorowania zgodności z wymaganiami i programami szkoleń (pkt 1);",
-    "- z udziałem kadry dydaktycznej o kwalifikacjach i uprawnieniach odpowiednich do rodzaju i zakresu szkolenia (pkt 2);",
-    "- przy wykorzystaniu odpowiedniej bazy dydaktycznej (pkt 3);",
-    "- przy wykorzystaniu statków powietrznych albo szkoleniowych urządzeń symulacji lotu, odpowiednich do rodzaju i zakresu szkolenia (pkt 4).",
-    "Przepis nie wyodrębnia szkolenia niezarobkowego: wymagania dotyczą każdego szkolenia lotniczego prowadzonego w ośrodku szkolenia lotniczego (§ 26 ust. 1).",
-    "Dla ATO pkt ORA.ATO.130 lit. a) rozporządzenia 1178/2011 wymaga opracowania i utrzymywania instrukcji szkolenia i operacyjnych, które dają uczestnikom szkolenia wytyczne, w jaki sposób spełnić wymagania szkoleniowe. Instrukcje operacyjne i szkoleniowe ATO przekazuje właściwemu organowi już razem z wnioskiem o wydanie certyfikatu (pkt ORA.ATO.105 lit. a) ppkt 2)."
-   ],
-   "refs": [
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1",
-     "quote": "Szkolenie lotnicze prowadzi się:"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 1",
-     "quote": "zgodnie z zatwierdzonymi przez Prezesa Urzędu do użytku w tym ośrodku i wprowadzonymi w życie instrukcjami wykonawczymi oraz dokumentami regulaminowymi:"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 1 lit. a",
-     "quote": "instrukcją szkolenia"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 1 lit. b",
-     "quote": "instrukcją operacyjną określającą zasady, zakres współpracy z innymi organizacjami i procedury organizacji i wykonywania operacji lotniczych związanych ze szkoleniem w locie"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 1 lit. b",
-     "quote": "w przypadku ośrodków prowadzących szkolenie podczas operacji statków powietrznych"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 1 lit. c",
-     "quote": "instrukcją systemu monitorowania zgodności z wymaganiami,"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 1 lit. d",
-     "quote": "programami szkoleń;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 2",
-     "quote": "z udziałem kadry dydaktycznej posiadającej kwalifikacje i uprawnienia odpowiednie do rodzaju i zakresu szkolenia lotniczego;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 3",
-     "quote": "przy wykorzystaniu bazy dydaktycznej odpowiedniej do rodzaju i zakresu szkolenia lotniczego;"
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 28 ust. 1 pkt 4",
-     "quote": "przy wykorzystaniu statków powietrznych albo szkoleniowych urządzeń symulacji lotu, odpowiednich do rodzaju i zakresu szkolenia lotniczego."
-    },
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 26 ust. 1",
-     "quote": "Szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.130(a)",
-     "quote": "Zatwierdzona organizacja szkolenia (ATO) musi opracować i utrzymywać instrukcje szkolenia i operacyjne zawierające informacje i instrukcje umożliwiające personelowi wykonywanie swoich obowiązków, a także dające uczestnikom szkolenia wytyczne, w jaki sposób należy spełnić wymagania szkoleniowe."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.105(a)",
-     "quote": "Wnioskujący o wydanie certyfikatu dla zatwierdzonej organizacji szkolenia (ATO) muszą przekazać właściwemu organowi:"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.105(a)(2)",
-     "quote": "instrukcje operacyjne i szkoleniowe."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0592#71915062",
-    "PL010-0592#fcefc237",
-    "PL010-0593#8ea37ad6",
-    "PL010-0594#f5addded",
-    "PL010-0595#aef1984f",
-    "PL010-1541#eb5e5cb6"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL06-7",
-   "status": "verified",
-   "heading": "Statki powietrzne, FSTD i lotniska w szkoleniu",
-   "body": [
-    "Szkolenie praktyczne na ziemi i w locie prowadzi się na statkach powietrznych spełniających wymagania art. 31 ust. 1 Prawa lotniczego lub na polskich państwowych statkach powietrznych, które odpowiadają rodzajowi i zakresowi szkolenia (§ 23 rozporządzenia w sprawie licencjonowania personelu lotniczego). Art. 31 ust. 1 dopuszcza do lotów cywilne statki powietrzne:",
-    "- wpisane do polskiego lub obcego rejestru cywilnych statków powietrznych (pkt 1);",
-    "- mające wymagane znaki rozpoznawcze (pkt 2);",
-    "- posiadające zdatność do lotów, potwierdzoną odpowiednimi dokumentami (pkt 3).",
-    "ATO musi korzystać z odpowiedniej floty szkolnych statków powietrznych lub FSTD, wyposażonych odpowiednio do prowadzonych kursów szkoleniowych. Szkolenie z użyciem FSTD prowadzi po wykazaniu właściwemu organowi m.in. zgodności specyfikacji FSTD z programem szkolenia (pkt ORA.ATO.135 lit. a) i b) rozporządzenia 1178/2011). FSTD to szkoleniowe urządzenie symulacji lotu przeznaczone do szkolenia pilotów, np. pełny symulator lotu (FFS) lub urządzenie FTD (art. 2 pkt 20).",
-    "Prowadząc szkolenie w powietrzu, ATO korzysta z lotnisk lub miejsc operacji lotniczych wyposażonych w odpowiednie zaplecze i umożliwiających szkolenie w wykonywaniu manewrów (pkt ORA.ATO.140)."
-   ],
-   "refs": [
-    {
-     "src": "PL-ROZP-LICENCJONOWANIE-2021",
-     "loc": "§ 23",
-     "quote": "Szkolenie praktyczne na ziemi i w locie prowadzi się na statkach powietrznych spełniających wymagania określone w art. 31 ust. 1 ustawy lub na polskich państwowych statkach powietrznych, które odpowiadają rodzajowi i zakresowi szkolenia"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 31 ust. 1",
-     "quote": "Do wykonywania lotów w przestrzeni powietrznej dopuszcza się, z zastrzeżeniem art. 33 ust. 2 i art. 156b ust. 3 pkt 1, wyłącznie cywilne statki powietrzne:"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 31 ust. 1 pkt 1",
-     "quote": "wpisane do polskiego lub obcego rejestru cywilnych statków powietrznych;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 31 ust. 1 pkt 2",
-     "quote": "mające wymagane znaki rozpoznawcze;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 31 ust. 1 pkt 3",
-     "quote": "posiadające zdatność do lotów, potwierdzoną odpowiednimi dokumentami"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.135(a)",
-     "quote": "Zatwierdzona organizacja szkolenia musi korzystać z odpowiedniej floty szkolnych statków powietrznych lub FSTD wyposażonych odpowiednio do prowadzonych kursów szkoleniowych."
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.135(b)",
-     "quote": "Zatwierdzona organizacja szkolenia (ATO) może prowadzić szkolenie z użyciem FSTD, pod warunkiem że wykaże właściwemu organowi, co następuje:"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.135(b)(1)",
-     "quote": "zgodność specyfikacji FSTD z odnośnym programu szkolenia;"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "art. 2 pkt 20",
-     "quote": "„szkoleniowe urządzenie symulacji lotu (ang. flight simulation training device, FSTD)” oznacza urządzenie przeznaczone do szkolenia pilotów"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "art. 2 pkt 20",
-     "quote": "w przypadku samolotów jest pełnym symulatorem lotu (ang. full flight simulator, FFS), urządzeniem do szkolenia lotniczego (ang. flight training device, FTD)"
-    },
-    {
-     "src": "EU-1178-2011",
-     "loc": "ORA.ATO.140",
-     "quote": "musi korzystać z lotnisk lub miejsc operacji lotniczych wyposażonych w odpowiednie zaplecze i spełniających warunki umożliwiające szkolenie w zakresie wykonywania manewrów"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0313#4bd1c864",
-    "PL010-0313#ca811a9f",
-    "PL010-0532#69cd8cb0",
-    "PL010-0532#3e0d829a",
-    "PL010-0038#c3aac04e",
-    "PL010-0594#9e00d9eb",
-    "PL010-0593#8ea37ad6"
-   ],
-   "disputeNote": null
-  }
- ]
+  ]
 }
