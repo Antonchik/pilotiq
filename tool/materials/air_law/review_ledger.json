@@ -4889,11 +4889,11 @@
  },
  "PL010-0544#9b9eecb5": {
   "date": "2026-11-25",
-  "note": "Klucz = § 26 ust. 1 LIC – poprawnie, ale element klucza «szkoląca do licencji personelu lotniczego» oparty na § 1 pkt 4 lit. e, który mówi tylko «prowadzenia szkolenia lotniczego» – słowa «do licencji» tam nie ma. Właściwa podstawa: § 27 LIC (certyfikat z art. 160 ust. 3 pkt 2) + art. 160 ust. 3 pkt 2 PL («szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień»). Pułapka uogólnia art. 95a ust. 1: wyłączone jest szkolenie informatorów FIS/AFIS (te objęte certyfikacją z art. 160 ust. 3 pkt 2). Nowy tekst (3 zdania, 649 zn.): «Zgodnie z § 26 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu. Ośrodek prowadzi szkolenie w zakresie certyfikatu wydanego na podstawie art. 160 ust. 3 pkt 2 Prawa lotniczego (§ 27), a certyfikacji podlega szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego. Pułapka: szkolenie do świadectw kwalifikacji, z wyjątkiem informatorów służby informacji powietrznej, podlega wpisowi do rejestru podmiotów szkolących (art. 95a ust. 1 Prawa lotniczego).» refs: zostaw § 26 ust. 1 i dwa cytaty art. 95a ust. 1; usuń § 1 pkt 4 i § 1 pkt 4 lit. e; dodaj PL-ROZP-LICENCJONOWANIE-2021 § 27 «Ośrodek szkolenia lotniczego prowadzi szkolenie lotnicze w zakresie objętym posiadanym certyfikatem wydanym na podstawie art. 160 ust. 3 pkt 2 ustawy.», PL-PRAWO-LOTNICZE art. 160 ust. 3 pkt 2 «szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień» oraz art. 95a ust. 1 «z wyjątkiem prowadzenia szkolenia lotniczego w celu uzyskania świadectwa kwalifikacji informatora służby informacji powietrznej».",
+  "note": "Poprawka z r1 wprowadzona dosłownie: klucz = § 26 ust. 1 LIC; «do licencji» oparte na § 27 LIC + art. 160 ust. 3 pkt 2 PL; pułapka z wyjątkiem informatorów FIS zgodna z art. 95a ust. 1. § 1 pkt 4 usunięty, cytaty dosłowne (validate: 0 błędów dla P11). 3 zdania, 649 zn.",
   "portion": "P11",
-  "round": 1,
-  "textSha": "915827eec6bdccfd",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "e27fb02f5cc01727",
+  "verdict": "PASS"
  },
  "PL010-0544#f8c1a9ab": {
   "date": "2026-11-25",
