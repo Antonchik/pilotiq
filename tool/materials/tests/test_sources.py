@@ -1231,6 +1231,161 @@ class UlcPlainTest(unittest.TestCase):
             for par in m.loc_parents(key):
                 self.assertIn(par, a, (key, par))
 
+    def test_annex6_part2_dzial_style(self):
+        import materials as m
+        text = ("DZIAŁ 1\nPOSTANOWIENIA OGÓLNE\nROZDZIAŁ 1.1 DEFINICJE\nLotnisko (Aerodrome). Powierzchnia na ziemi.\n"
+                "   Uwaga. – Przykład.\nROZDZIAŁ 1.2 ZASTOSOWANIE\n1.2.1 Normy stosuje się.\n"
+                "DZIAŁ 2\nOPERACJE\nROZDZIAŁ 2.1 POSTANOWIENIA OGÓLNE\n2.1.1 Stosowanie praw\n2.1.1.1 Pilot-dowódca przestrzega.\n"
+                "a) praw;\nb) przepisów.\nROZDZIAŁ 2.2 OPERACJE LOTNICZE\nTabela 2.A-1. Wymagania\n"
+                "DODATEK 2.1 ŚWIATŁA ZEWNĘTRZNE\n1. Terminologia\n2. Światła\nDODATEK 2.2 DOKŁADNOŚĆ\n1. Cel\n"
+                "ZAŁĄCZNIK 2.A TLEN\n1. Zaopatrzenie\nZAŁĄCZNIK 2.B PRZEWODNIK\n"
+                "DZIAŁ 3\nSAMOLOTY DUŻE\nROZDZIAŁ 3.1 ZASTOSOWANIE\nTabela 3.C-1. Wymagania\nZAŁĄCZNIK 3.A INSTRUKCJA\n")
+        a = ec.ulc_annex_anchors(text, style="dzial")
+        for key in ("rozdział 1", "1.1", "definicja Lotnisko", "1.2", "1.2.1", "rozdział 2", "2.1", "2.1.1", "2.1.1.1", "2.1.1.1 lit. a",
+                    "2.1.1.1 lit. b", "2.2", "tabela 2.A-1", "dodatek 2.1", "dodatek 2.1 pkt 1", "dodatek 2.1 pkt 2", "dodatek 2.2",
+                    "dodatek 2.2 pkt 1", "załącznik 2.A", "załącznik 2.A pkt 1", "załącznik 2.B", "rozdział 3", "3.1", "tabela 3.C-1",
+                    "załącznik 3.A"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("tabela 3", a)
+        for key in a:
+            self.assertTrue(m.loc_valid("icao_pl", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+        self.assertEqual(["2.1.1", "2.1", "rozdział 2"], m.loc_parents("2.1.1.1"))
+        self.assertEqual(["rozdział 1"], m.loc_parents("1.1"))
+        self.assertIn("Powierzchnia na ziemi", text[slice(*a["definicja Lotnisko"])])
+        self.assertNotIn("DZIAŁ 2", text[slice(*a["1.2"])])
+
+    def test_parts_prefix_and_implicit_chapters(self):
+        import materials as m
+        text = ("DZIAŁ I\nROZDZIAŁ 1. DEFINICJE\nTerm (Term). Opis.\nROZDZIAŁ 2. ZASTOSOWANIE\n2.1 Stosowanie.\n"
+                "DZIAŁ II\nROZDZIAŁ 1. OGÓLNE\n1.1 Pierwszy.\n1.1.1 Drugi.\na) tak;\nb) nie.\nROZDZIAŁ 2. LOT\n2.1 Lot.\n"
+                "DZIAŁ III\nROZDZIAŁ 1. OGÓLNE\n1.1 Trzeci.\n1.1.1 Czwarty.\n2.1 Rozdział bez nagłówka.\n2.1.1 Punkt.\n"
+                "DODATEK 1. WZÓR\n1. Cel\n")
+        parts = {"re": r"^DZIAŁ (I{1,3})$", "word": "dział", "plain": ["I"]}
+        a = ec.ulc_annex_anchors(text, parts=parts, implicit_chapters=True)
+        for key in ("rozdział 1", "definicja Term", "rozdział 2", "2.1", "dział II rozdział 1", "dział II 1.1", "dział II 1.1.1",
+                    "dział II 1.1.1 lit. a", "dział II 1.1.1 lit. b", "dział II rozdział 2", "dział II 2.1", "dział III rozdział 1",
+                    "dział III 1.1.1", "dział III rozdział 2", "dział III 2.1", "dział III 2.1.1", "dodatek 1", "dodatek 1 pkt 1"):
+            self.assertIn(key, a, key)
+        for key in a:
+            self.assertTrue(m.loc_valid("icao_pl", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+        self.assertEqual(["dział II 1.1.1", "dział II 1.1", "dział II rozdział 1"], m.loc_parents("dział II 1.1.1 lit. a"))
+        self.assertEqual(["część IIIA 2.2", "część IIIA rozdział 2"], m.loc_parents("część IIIA 2.2.1"))
+        self.assertTrue(m.loc_valid("icao_pl", "część VB 3.4.2"))
+        self.assertFalse(m.loc_valid("icao_pl", "dział 3.4"))
+        self.assertIn("Trzeci", text[slice(*a["dział III 1.1"])])
+        self.assertNotIn("Trzeci", text[slice(*a["dział II 2.1"])])        # the same number in another Dział is another anchor
+        # a part consisting only of definitions (Annex 8 part I) is `rozdział 1`
+        t2 = "CZĘŚĆ I. DEFINICJE\nSamolot (Aeroplane). Statek.\nCZĘŚĆ II. PROCEDURY\n1.1 Stosowalność\nCZĘŚĆ III A. SAMOLOTY\nROZDZIAŁ 1. OGÓLNE\n1.1 Ogólne\n"
+        b = ec.ulc_annex_anchors(t2, parts={"re": r"^CZĘŚĆ (II|III ?A|I)\.(?: .*)?$", "word": "część", "plain": ["I"], "defs": ["I"]},
+                                 implicit_chapters=True)
+        for key in ("rozdział 1", "definicja Samolot", "część II rozdział 1", "część II 1.1", "część IIIA rozdział 1", "część IIIA 1.1"):
+            self.assertIn(key, b, key)
+
+    def test_annex9_numbered_appendices_and_annex18_definitions(self):
+        text = ("ROZDZIAŁ 1. DEFINICJE I ZASADY OGÓLNE\nA. Definicje\nAgent (Agent). Osoba.\nB. Zasady ogólne\n1.1 Zasada.\n"
+                "ROZDZIAŁ 2. PRZYLOT\n2.1 Pierwszy.\n2.2 Drugi.\nZAŁĄCZNIK 1. Deklaracja Ogólna\nZAŁĄCZNIK 2. Lista Pasażerów\n"
+                "1. Cel\n")
+        a = ec.ulc_annex_anchors(text, attach_num=True, skip_lines=[r"^[AB]\. (?:Definicje|Zasady ogólne)$"])
+        for key in ("rozdział 1", "definicja Agent", "1.1", "rozdział 2", "2.1", "2.2", "załącznik 1", "załącznik 2", "załącznik 2 pkt 1"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("definicja A", a)
+        self.assertNotIn("definicja B", a)
+        t2 = ("ROZDZIAŁ 1. DEFINICJE\nZatwierdzenie. (Approval). Uprawnienie przyznane.\n   Uwaga. – Przykład.\n"
+              "Przesyłka. (Consignment). Jedna lub więcej paczek.\nMateriały niebezpieczne (Dangerous goods). Przedmioty.\n"
+              "ROZDZIAŁ 2. ZASTOSOWANIE\n2.1 Zastosowanie ogólne\n")
+        b = ec.ulc_annex_anchors(t2, def_style="dotparen")
+        for key in ("definicja Zatwierdzenie", "definicja Przesyłka", "definicja Materiały niebezpieczne", "2.1"):
+            self.assertIn(key, b, key)
+        self.assertNotIn("definicja Uwaga", b)
+
+    def test_skip_ranges_outline_of_appendix(self):
+        text = ("ROZDZIAŁ 1. DEFINICJE\nROZDZIAŁ 2. X\nDODATEK 1. STRUKTURA\nStruktura zawiera dwa komponenty:\n1. Polityka\n1.1 Zaangażowanie\n"
+                "2. Zapewnianie\n2.1 Pomiar.\n1. Polityka\n1.1 Zaangażowanie\n1.1.1 Podmiot definiuje politykę.\n2. Zapewnianie\n2.1 Pomiar\n")
+        self.assertNotIn("dodatek 1 pkt 1.1.1", ec.ulc_annex_anchors(text))     # without the skip the outline blocks the numbering
+        a = ec.ulc_annex_anchors(text, skip_ranges=[[r"^Struktura zawiera", r"^2\.1 Pomiar\.$"]])
+        self.assertIn("dodatek 1 pkt 1.1.1", a)
+        self.assertLess(a["dodatek 1 pkt 1.1"][1] - a["dodatek 1 pkt 1.1"][0], 60)
+        self.assertTrue(text[a["dodatek 1 pkt 1"][0]:].startswith("1. Polityka\n1.1 Zaang"))
+        self.assertEqual(text.index("1. Polityka\n1.1 Zaangażowanie\n1.1.1"), a["dodatek 1 pkt 1"][0])
+
+    def test_tables_with_attachment_letters(self):
+        m = ec._ULC_TABLE_RE
+        for cap, key in (("Tabela A2.3-1", "A2.3-1"), ("Tabela 3.C-1. Normy i zalecane metody", "3.C-1"), ("Tabela A2.C-2. Normy", "A2.C-2"),
+                         ("Tabela 3-2. Opis", "3-2"), ("Tabela A5-1-1", "A5-1-1")):
+            self.assertEqual(key, m.match(cap).group(1), cap)
+        import materials as mm
+        for loc in ("tabela A2.3-1", "tabela 3.C-1", "tabela A2.C-2", "tabela 3-2", "tabela A5-1-1"):
+            self.assertTrue(mm.loc_valid("icao_pl", loc), loc)
+        self.assertTrue(mm.loc_valid("icao_pl", "dodatek 2.1 pkt 3.1 lit. a"))
+        self.assertTrue(mm.loc_valid("icao_pl", "załącznik 2.A pkt 1.1"))
+        self.assertTrue(mm.loc_valid("icao_pl", "załącznik 8"))
+
+    def test_new_sources_entries_and_anchors(self):
+        import json
+        import materials as m
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        src = {x["id"]: x for x in json.load(open(os.path.join(root, "sources.json"), encoding="utf-8"))}
+        official = ("ICAO-ZAL-06-I", "ICAO-ZAL-06-II", "ICAO-ZAL-06-III", "ICAO-ZAL-08", "ICAO-ZAL-09", "ICAO-ZAL-18", "ICAO-ZAL-19")
+        for sid in official + ("ICAO-ZAL-07",):
+            x = src[sid]
+            self.assertEqual("icao_pl", x["kind"], sid)
+            self.assertEqual("ULC-KONWENCJE", x["fetch"]["dir"], sid)
+            self.assertEqual(x["sha256"], x["fetch"]["files"][0]["sha256"], sid)
+            self.assertRegex(x["sha256"], r"^[0-9a-f]{64}$", sid)
+        for sid in official:
+            self.assertEqual("public-domain", src[sid]["reuse"], sid)
+            self.assertTrue(src[sid]["allowQuote"], sid)
+            self.assertIn("obwieszczenie", src[sid]["version"].lower(), sid)
+            self.assertTrue(src[sid]["internal_note"], sid)
+        self.assertEqual("reference-only", src["ICAO-ZAL-07"]["reuse"])        # no obwieszczenie in the file
+        self.assertFalse(src["ICAO-ZAL-07"]["allowQuote"])
+        self.assertEqual("nota-mp", src["PL-KONWENCJA-COSPAS-SARSAT-2005"]["fetch"]["files"][0]["profile"])
+        self.assertIn("M.P. 2006 nr 13 poz. 171", src["PL-KONWENCJA-COSPAS-SARSAT-2005"]["version"])
+        want = {"ICAO-ZAL-06-II": ("2.4.15", "definicja Operacje lotnictwa ogólnego", "dodatek 2.3", "załącznik 3.C", "rozdział 3", "3.6.3"),
+                "ICAO-ZAL-06-I": ("6.2", "dodatek 8", "załącznik A", "rozdział 15"),
+                "ICAO-ZAL-06-III": ("dział II 4.1", "dział III 4.1", "dział II rozdział 12", "rozdział 1", "dodatek 4"),
+                "ICAO-ZAL-07": ("rozdział 1", "4.2.1", "definicja Statek powietrzny", "9.2 lit. a"),
+                "ICAO-ZAL-08": ("rozdział 1", "część II 1.1", "część IIIA 2.2", "część IIIB rozdział 10", "część VB 3.1", "część VII rozdział 3"),
+                "ICAO-ZAL-09": ("rozdział 1", "2.1", "3.10", "załącznik 5", "definicja Dezynsekcja"),
+                "ICAO-ZAL-18": ("2.1.1", "rozdział 13", "definicja Materiały niebezpieczne"),
+                "ICAO-ZAL-19": ("3.2.1.1", "dodatek 2 pkt 1.1", "definicja Wypadek", "rozdział 5"),
+                "PL-KONWENCJA-COSPAS-SARSAT-2005": ("art. 2 ust. 1 lit. a", "art. 7 ust. 4")}
+        for sid, keys in want.items():
+            corpus = os.path.join(root, "corpus", sid + ".txt")
+            if not os.path.exists(corpus):
+                self.skipTest("corpus not extracted")
+            doc = json.load(open(os.path.join(root, "anchors", sid + ".json"), encoding="utf-8"))
+            text = open(corpus, encoding="utf-8").read()
+            self.assertEqual(hashlib.sha256(text.encode("utf-8")).hexdigest(), doc["textSha"], sid)
+            a = doc["anchors"]
+            kind = src[sid]["kind"]
+            for key in keys:
+                self.assertIn(key, a, (sid, key))
+            for key in a:
+                self.assertTrue(m.loc_valid(kind, key), (sid, key))
+                for par in m.loc_parents(key):
+                    self.assertIn(par, a, (sid, key, par))
+
+    def test_nota_mp_anchors(self):
+        import materials as m
+        text = ("NOTA\no przystąpieniu\nPRZYJMUJĄC do wiadomości coś;\n1. Definicje\n – \"Umowa\" oznacza coś;\n"
+                "2.       Zakres i cele\n2. 1. Celami są:\na) wspieranie celów,\nb) współpraca.\n2. 2. Aby wdrożyć cele,\n"
+                "3. Wykaz\n3. 1. Zgodnie z Umową:\na) powiadomienie;\n3. 2. Niniejsza nota.\n"
+                "W DOWÓD CZEGO podpisali.\nNOTA o przystąpieniu, sporządzona w Warszawie.\n")
+        a = ec.nota_anchors(text)
+        self.assertEqual(["art. 1", "art. 2", "art. 2 ust. 1", "art. 2 ust. 1 lit. a", "art. 2 ust. 1 lit. b", "art. 2 ust. 2", "art. 3",
+                          "art. 3 ust. 1", "art. 3 ust. 1 lit. a", "art. 3 ust. 2"], sorted(a, key=lambda k: a[k][0]))
+        for key in a:
+            self.assertTrue(m.loc_valid("convention", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+        self.assertNotIn("W DOWÓD", text[slice(*a["art. 3 ust. 2"])])
+        self.assertTrue(ec._KONW_FRONT.match("M.P. z 2006 Nr 13 poz. 171"))
+
     def test_missing_heading_is_tolerated_only_when_lenient(self):
         text = ("ROZDZIAŁ 1. DEFINICJE\nROZDZIAŁ 2. X\nROZDZIAŁ 3. X\nROZDZIAŁ 4. X\nROZDZIAŁ 5. TEKST\n5.1 Pierwszy\n5.1.1 Drugi\n"
                 "5.1.1.1 Trzeci\n5.1.1.2 Czwarty\n5.1.2.1. Pełne znaki\n5.1.2.1.1 Treść\n")

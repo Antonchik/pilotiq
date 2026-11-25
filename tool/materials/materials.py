@@ -325,9 +325,9 @@ LOC_ITU = re.compile(r"^Appendix \d+( channel (\d{2,4}|AIS\d|ASM\d)| note [a-z]{
 # Polish ICAO Annex texts (Dz. Urz. ULC): rozdział 3, 3.1.2, 3.1.2 lit. a, definicja Faza alarmu, dodatek 1 pkt 2.1 lit. a,
 # dodatek pkt 2.1 (an unnumbered Appendix), załącznik A, załącznik A pkt 2.1, załącznik A sekcja 19a, tabela 3-1, tabela A4-1,
 # dodatek A pkt 2 (Annex 10), tabela A5-1-1, rysunek 5-25A (Doc 4444), dodatek 2 pole 7 (Doc 4444 flight plan item)
-LOC_ICAO_PL = re.compile(r"^(obwieszczenie|przedmowa|rozdział \d+|\d+(\.\d+[a-z]?)+( lit\. [a-z])?|definicja [A-ZĄĆĘŁŃÓŚŹŻ][^\n]{0,120}|"
-                         r"(dodatek( \d+| [A-Z])?|załącznik [A-Z])( (pkt|sekcja) %s( lit\. [a-z])?)?|"
-                         r"tabela (?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2}){0,2}|rysunek (?:A?\d{1,2}-)\d{1,3}[A-Z]?|dodatek 2 pole \d{1,2})$" % _L)
+LOC_ICAO_PL = re.compile(r"^(obwieszczenie|przedmowa|((dział|część) [IVX]+[AB]? )?(rozdział \d+|\d+(\.\d+[a-z]?)+( lit\. [a-z])?)|definicja [A-ZĄĆĘŁŃÓŚŹŻ][^\n]{0,120}|"
+                         r"(dodatek( \d+(\.\d+)?| [A-Z])?|załącznik (\d{1,2}\.[A-Z]|[A-Z]|\d{1,2}))( (pkt|sekcja) %s( lit\. [a-z])?)?|"
+                         r"tabela (?:A?\d{1,2}\.(?:\d{1,2}|[A-Z])-\d{1,2}|(?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2}){0,2})|rysunek (?:A?\d{1,2}-)\d{1,3}[A-Z]?|dodatek 2 pole \d{1,2})$" % _L)
 LOC_EASA_ART = re.compile(r"^((GM\d* )?Article \d+[a-z]?|Annex [IVX]+)(\([0-9a-z]+\))*$")
 LOC_EASA_APP = re.compile(r"^Appendix \d+( pkt %s| to (AMC|GM)\d* [A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*)?$" % _L)
 FUTURE_MARK = "PRZYSZŁA REDAKCJA"
@@ -369,6 +369,9 @@ def loc_parents(loc):
         return [mi.group(1)]
     if re.match(r"^def [A-Z]", loc):
         return ["Chapter 1"]
+    mpf = re.match(r"^((?:dział|część) [IVX]+[AB]? )(rozdział \d+|\d+(?:\.\d+[a-z]?)+(?: lit\. [a-z])?)$", loc)
+    if mpf:   # Annex 6 part III / Annex 8: the numbering restarts in every Dział / Część: "dział II 4.2.1" -> "dział II 4.2" -> "dział II rozdział 4"
+        return [mpf.group(1) + x for x in loc_parents(mpf.group(2))]
     mn = re.match(r"^(\d+(?:\.\d+[a-z]?)+)( lit\. [a-z])?$", loc)
     if mn:   # Polish ICAO Annex: 3.1.2 lit. a -> 3.1.2 -> 3.1 -> rozdział 3
         parts = mn.group(1).split(".")

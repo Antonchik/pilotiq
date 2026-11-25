@@ -1684,20 +1684,20 @@
   },
   {
     "id": "ICAO-ZAL-01",
-    "title_pl": "Załącznik 1 do Konwencji chicagowskiej – Licencjonowanie personelu (wydanie jedenaste, zmiany 1–176), tekst polski ze strony ULC (nieurzędowy)",
+    "title_pl": "Załącznik 1 do Konwencji chicagowskiej – Licencjonowanie personelu (wydanie jedenaste, zmiany 1–176), tekst polski ze strony ULC",
     "kind": "icao_pl",
     "lang": "pl",
     "status": "available",
     "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
     "format": "pdf",
-    "version": "Załącznik 1, wydanie jedenaste, zmiany 1–176; polskie tłumaczenie opublikowane na stronie ULC, bez obwieszczenia w Dz. Urz. ULC (plik zawiera tylko tekst Załącznika)",
-    "internal_note": "[ПРОВЕРИТЬ владельцем: статус польского перевода Załącznika 1 (не официальная публикация в Dz. Urz. ULC)]",
+    "version": "Załącznik 1, wydanie jedenaste, zmiany 1–176; załącznik do obwieszczenia nr 16 Prezesa ULC z dnia 8 grudnia 2020 r.",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF; шапка «Załącznik do obwieszczenia nr 16 Prezesa ULC z 8.12.2020» как у остальных Załączników]",
     "sha256": "0ba30f1b0f8f22ef5d2e0b5ab9ef5e5130e1b202723ede05c3458b7ac01f1511",
     "fetched": "2026-11-25",
-    "reuse": "reference-only",
-    "allowQuote": false,
+    "reuse": "public-domain",
+    "allowQuote": true,
     "terms_url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
-    "terms_note": "Plik ze strony ULC bez obwieszczenia Prezesa ULC w Dzienniku Urzędowym – nieurzędowe tłumaczenie Załącznika ICAO (prawa autorskie ICAO); tylko odniesienie do punktu i własna parafraza, bez cytatów (allowQuote=false).",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
     "fetch": {
       "mode": "manual",
       "dir": "ULC-KONWENCJE",
@@ -1790,5 +1790,467 @@
       ]
     },
     "bytes": 1418574
+  },
+  {
+    "id": "ICAO-ZAL-06-II",
+    "title_pl": "Załącznik 6 do Konwencji chicagowskiej – Operacje statków powietrznych, Część II: Międzynarodowe lotnictwo ogólne – Samoloty (wydanie jedenaste, lipiec 2022, zmiany 1–41), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Obwieszczenie nr 8/2025 Prezesa ULC z 15.5.2025 (Dz. Urz. ULC 2025); Załącznik 6 część II, wydanie jedenaste (lipiec 2022, obowiązuje od 3.11.2022), zmiany 1–41; plik pobrany ze strony ULC",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF (только «Załącznik do obwieszczenia nr 8 Prezesa ULC z dnia 15 maja 2025 r.»)]",
+    "sha256": "581846c1223688c0a2ad2c21331bbeaf1f489c8d83fba2605f1d06a362bb187e",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2025-05-15",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 6 część II",
+          "file": "Zalacznik-06-II.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            13,
+            17
+          ],
+          "bodyPage": 25,
+          "style": "dzial",
+          "head": [
+            "^(?:Rozdział \\d\\.\\d+ |Wstęp |Spis treści |Skróty i oznaczenia )?Załącznik 6 [–-] Operacje statków powietrznych(?: Część II)?$",
+            "^MIĘDZYNARODOWE NORMY$",
+            "^I ZALECANE METODY POSTĘPOWANIA$"
+          ],
+          "foot": [
+            "^\\d{1,3}$"
+          ],
+          "drop": [
+            "^_{5,}$"
+          ],
+          "skipLines": [
+            "^Tabela A8-1$"
+          ],
+          "imageOnly": "Grafika: tylko rysunki świateł zewnętrznych w Dodatku 2.1 (rys. 1–7, str. 77–79 PDF) oraz herb na stronie tytułowej – podpisy i opisy są w tekście. Tabele wielokolumnowe (Dodatek 2.3 – parametry rejestratorów; Załączniki 2.C/3.C – tabele wymagań dla rejestratorów lotu) – tekst jest, kolejność słów w wierszach częściowo zaburzona. Pominięto spis zmian w Przedmowie (Tabela A i wykaz przyjęcia, str. 18–24). Numeracja: Dział = `rozdział N`, rozdział „N.M” = punkt `N.M`, załączniki „2.A” = `załącznik 2.A`, dodatki „2.1” = `dodatek 2.1`.",
+          "sha256": "581846c1223688c0a2ad2c21331bbeaf1f489c8d83fba2605f1d06a362bb187e",
+          "bytes": 1490857
+        }
+      ]
+    },
+    "bytes": 1490857
+  },
+  {
+    "id": "ICAO-ZAL-07",
+    "title_pl": "Załącznik 7 do Konwencji chicagowskiej – Znaki przynależności państwowej oraz rejestracyjne statków powietrznych (wydanie szóste, lipiec 2012), tekst polski ze strony ULC (nieurzędowy)",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Załącznik 7, wydanie szóste (lipiec 2012, obowiązuje od 15.11.2012; stopka „15/11/12”); polskie tłumaczenie opublikowane na stronie ULC, bez obwieszczenia w Dz. Urz. ULC (plik zawiera tylko tekst Załącznika; metadane PDF: kwiecień 2013)",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: статус польского перевода Załącznika 7 (не официальная публикация в Dz. Urz. ULC; издание 6 от 2012, ICAO с тех пор выпустила более новое)]",
+    "sha256": "7fb26b461fe4c4aad140a23332e8e7d05c859f07e4534dd7c717a589fb5d769a",
+    "fetched": "2026-11-25",
+    "reuse": "reference-only",
+    "allowQuote": false,
+    "terms_url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "terms_note": "Plik ze strony ULC bez obwieszczenia Prezesa ULC w Dzienniku Urzędowym (tylko tekst Załącznika, wydanie szóste z 2012 r.) – nieurzędowe tłumaczenie Załącznika ICAO (prawa autorskie ICAO); tylko odniesienie do punktu i własna parafraza, bez cytatów (allowQuote=false).",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 7",
+          "file": "Zalacznik-07.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 0,
+          "prefacePages": [
+            7,
+            9
+          ],
+          "bodyPage": 11,
+          "style": "numcaps",
+          "head": [],
+          "foot": [],
+          "drop": [
+            "^(?:Normy Międzynarodowe |Wstęp )?Załącznik 7 - Oznaczenia Przynależności Państwowej(?: (?:Normy Międzynarodowe|Wstęp))?$",
+            "^oraz Rejestracji Statków Powietrznych$",
+            "^(?:(?:ZAŁĄCZNIK|Załącznik) 7 )?(?:\\d{1,2}|\\([ivx]+\\)) 15/11/12$",
+            "^15/11/12 (?:\\d{1,2}|\\([ivx]+\\))$"
+          ],
+          "imageOnly": "Tabela 1 (klasyfikacja statków powietrznych – graficzny diagram drzewa) i Rysunek 1 (wzór świadectwa rejestracji) – tekst jest, kolejność słów w wierszach zaburzona. Pominięto spis treści i tabelę zmian.",
+          "sha256": "7fb26b461fe4c4aad140a23332e8e7d05c859f07e4534dd7c717a589fb5d769a",
+          "bytes": 282007
+        }
+      ]
+    },
+    "bytes": 282007
+  },
+  {
+    "id": "ICAO-ZAL-09",
+    "title_pl": "Załącznik 9 do Konwencji chicagowskiej – Ułatwienia (wydanie siedemnaste, marzec 2025, zmiany 1–30), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Obwieszczenie nr 11 Prezesa ULC z 11.6.2026 (Dz. Urz. ULC 2026); Załącznik 9, wydanie siedemnaste (marzec 2025, obowiązuje od 11.7.2025), zmiany 1–30; plik pobrany ze strony ULC",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF (только «Załącznik do obwieszczenia nr 11 Prezesa ULC z dnia 11 czerwca 2026 r.»)]",
+    "sha256": "31d8c9e8f27cd7634af9915b9896528ebcbaddeca0eb6ca771fa96bed37ce5a6",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2026-06-11",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 9",
+          "file": "Zalacznik-09.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            6,
+            8
+          ],
+          "bodyPage": 15,
+          "attachNum": true,
+          "skipLines": [
+            "^[AB]\\. (?:Definicje|Zasady ogólne)$",
+            "^Maszynowo \\(MRTD\\)\\.$"
+          ],
+          "head": [],
+          "foot": [],
+          "drop": [
+            "^MIĘDZYNARODOWE NORMY I ZALECANE METODY POSTĘPOWANIA$",
+            "^(?:ZAŁĄCZNIK|Załącznik) 9(?:[ \\dAP/-])*$",
+            "^(?:APP )?\\d{1,2}-\\d{1,3}$"
+          ],
+          "imageOnly": "Grafika tylko na stronie tytułowej (logo). Załączniki 1–13 (wzory formularzy: Deklaracja Ogólna, lista pasażerów, wykaz ładunków, karty …) są tabelami/formularzami – tekst jest, kolejność słów w wierszach zaburzona. Pominięto spis zmian w Przedmowie (Tabela A, str. 9–14). Stopki PDF mają nakładające się warstwy tekstu (numer strony + data), usunięte wyrażeniem regularnym. Punkt, którego numer stoi w osobnym wierszu (np. „9.28”), nie ma własnej kotwicy. Załączniki do Załącznika 9 („ZAŁĄCZNIK 8.”) mają lokalizator `załącznik 8`; litery sekcji rozdziału („A. Postanowienia ogólne”) nie są kotwicami.",
+          "sha256": "31d8c9e8f27cd7634af9915b9896528ebcbaddeca0eb6ca771fa96bed37ce5a6",
+          "bytes": 1188602
+        }
+      ]
+    },
+    "bytes": 1188602
+  },
+  {
+    "id": "ICAO-ZAL-18",
+    "title_pl": "Załącznik 18 do Konwencji chicagowskiej – Bezpieczny transport materiałów niebezpiecznych drogą powietrzną (wydanie czwarte, lipiec 2011, zmiany 1–12), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Obwieszczenie nr 6 Prezesa ULC z 12.4.2018 (Dz. Urz. ULC 2018); Załącznik 18, wydanie czwarte (lipiec 2011, obowiązuje od 17.11.2011), zmiany 1–12 (ostatnia od 12.11.2015); plik pobrany ze strony ULC",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF (только «Załącznik do obwieszczenia Nr 6 Prezesa ULC z dnia 12 kwietnia 2018 r.»); ВНИМАНИЕ: это издание 4 (2011); более новое издание Załącznika 18 может быть в силе]",
+    "sha256": "b29fb4f1d327965b640b58eb3d825486fee90e9fb987880d27668c7909f4af3a",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2018-04-12",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 18",
+          "file": "Zalacznik-18.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            7,
+            9
+          ],
+          "bodyPage": 11,
+          "defStyle": "dotparen",
+          "head": [],
+          "foot": [],
+          "drop": [
+            "^MIĘDZYNARODOWE NORMY$",
+            "^I ZALECANE METODY POSTĘPOWANIA$",
+            "^_{5,}$",
+            "^(?:(?:Rozdział \\d{1,2}|Przedmowa|Spis treści) )?Załącznik 18 [-–—] Bezpieczny transport .{0,20}niebezpiecznych drogą powietrzną\\.?(?: (?:Rozdział \\d{1,2}|Przedmowa|Spis treści))?$",
+            "^(?:ZAŁĄCZNIK 18 )?(?:\\d{1,2}-\\d{1,2} )?\\d{1,2}/\\d{1,2}/\\d{2,4}(?: \\d{1,2}-\\d{1,2})?(?: ZAŁĄCZNIK 18)?(?: Nr \\d{1,2})?$",
+            "^(?:ZAŁĄCZNIK 18 )?\\d{1,2}-\\d{1,2}(?: \\d{1,2}/\\d{1,2}/\\d{2,4})?$",
+            "^(?:\\([ivx]+\\) )?(?:\\d{1,2}/\\d{1,2}/\\d{2,4} )?(?:\\([ivx]+\\) )?(?:ZAŁĄCZNIK 18)?$",
+            "^Nr \\d{1,2}(?: \\.)?$",
+            "^ZAŁĄCZNIK 18 \\([ivx]+\\) \\d{1,2}/\\d{1,2}/\\d{2,4}$"
+          ],
+          "imageOnly": "Brak grafiki poza herbem na stronie tytułowej; pominięto spis treści i tabelę zmian w Przedmowie. Definicje w układzie „Termin. (English). Tekst”.",
+          "sha256": "b29fb4f1d327965b640b58eb3d825486fee90e9fb987880d27668c7909f4af3a",
+          "bytes": 1254499
+        }
+      ]
+    },
+    "bytes": 1254499
+  },
+  {
+    "id": "ICAO-ZAL-19",
+    "title_pl": "Załącznik 19 do Konwencji chicagowskiej – Zarządzanie bezpieczeństwem (wydanie drugie, lipiec 2016, zmiana 1), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Obwieszczenie nr 1/2020 Prezesa ULC z 10.1.2020 (Dz. Urz. ULC 2020); Załącznik 19, wydanie drugie (lipiec 2016, obowiązuje od 7.11.2019), zmiana 1; plik pobrany ze strony ULC",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF (только «Załącznik do obwieszczenia nr 1 Prezesa ULC z dnia 10 stycznia 2020 r.»); ВНИМАНИЕ: издание 2 (2016); в силе может быть более новое издание Załącznika 19]",
+    "sha256": "19d3df9809cf0155a6adb4a74df9d4f2b4ec923bea6c7f3cd9af0779a2ffbd11",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2020-01-10",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 19",
+          "file": "Zalacznik-19.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            8,
+            11
+          ],
+          "bodyPage": 13,
+          "defStyle": "dash",
+          "skipRanges": [
+            [
+              "^Struktura zawiera cztery komponenty",
+              "^4\\.2 Komunikacja w sprawach bezpieczeństwa\\.$"
+            ]
+          ],
+          "head": [],
+          "foot": [],
+          "drop": [
+            "^MIĘDZYNARODOWE NORMY I ZALECANE METODY POSTĘPOWANIA$",
+            "^(?:(?:Rozdział \\d{1,2}|Dodatek \\d{1}|Przedmowa|Spis treści) )?Załącznik 19 [-–—] Zarządzanie Bezpieczeństwem(?: (?:Rozdział \\d{1,2}|Dodatek \\d|Przedmowa|Spis treści))?$",
+            "^(?:Załącznik 19 )?(?:\\d{1,2}-\\d{1,2}|APP \\d-\\d{1,2}|\\([ivx]+\\))?(?: )?(?:\\d{1,2}/\\d{1,2}/\\d{2,4})?(?: (?:\\d{1,2}-\\d{1,2}|APP \\d-\\d{1,2}|\\([ivx]+\\)))?$"
+          ],
+          "imageOnly": "Brak grafiki poza herbem na stronie tytułowej; pominięto spis treści, wykazy skrótów i publikacji (str. 4–7) i tabelę zmian w Przedmowie.",
+          "sha256": "19d3df9809cf0155a6adb4a74df9d4f2b4ec923bea6c7f3cd9af0779a2ffbd11",
+          "bytes": 619430
+        }
+      ]
+    },
+    "bytes": 619430
+  },
+  {
+    "id": "ICAO-ZAL-06-I",
+    "title_pl": "Załącznik 6 do Konwencji chicagowskiej – Operacje statków powietrznych, Część I: Międzynarodowy zarobkowy transport lotniczy – Samoloty (wydanie dwunaste, lipiec 2022, zmiany 1–49), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Obwieszczenie nr 7/2025 Prezesa ULC z 14.5.2025 (Dz. Urz. ULC 2025); Załącznik 6 część I, wydanie dwunaste (lipiec 2022, obowiązuje od 8.11.2022), zmiany 1–49; plik pobrany ze strony ULC",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF (только «Załącznik do obwieszczenia nr 7/2025 Prezesa ULC z dnia 14 maja 2025 r.»)]",
+    "sha256": "ba984d4f78ca49ad75b79dff4018ed87d4529953cb193fdabe16d881a1e9e94c",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2025-05-14",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 6 część I",
+          "file": "Zalacznik-06-I.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            15,
+            21
+          ],
+          "bodyPage": 35,
+          "head": [],
+          "foot": [],
+          "drop": [
+            "^MIĘDZYNARODOWE NORMY(?: I ZALECANE METODY)?$",
+            "^(?:I ZALECANE METODY )?POSTĘPOWANIA$",
+            "^I ZALECANE METODY POSTĘPOWANIA$",
+            "^_{5,}$",
+            "^(?:(?:Rozdział \\d{1,2}|Dodatek \\d{1,2}|Załącznik [A-I]|Wstęp|Spis treści|Skróty i oznaczenia|Publikacje) )?Załącznik 6 [–-] Operacje statków powietrznych(?: Część I)?(?: (?:Rozdział \\d{1,2}|Dodatek \\d{1,2}|Załącznik [A-I]))?$",
+            "^\\d{1,3}$"
+          ],
+          "imageOnly": "Grafika: tylko rysunki świateł zewnętrznych samolotu w Dodatku 1 (rys. 1–7, str. 126–129 PDF) oraz herb na stronie tytułowej – podpisy i opisy w tekście. Tabele wielokolumnowe (Dodatek 8 – parametry rejestratorów lotu, tabele A8-1…A8-3; Załączniki F, H, I) – tekst jest, kolejność słów w wierszach częściowo zaburzona. Pominięto spis treści, skróty i oznaczenia, wykaz publikacji i tabelę zmian w Przedmowie (str. 22–34). Układ numeracji: rozdział N = `rozdział N`, punkty `6.12`, `6.12.3`; dodatki `dodatek 8 pkt 2`, załączniki `załącznik C`.",
+          "sha256": "ba984d4f78ca49ad75b79dff4018ed87d4529953cb193fdabe16d881a1e9e94c",
+          "bytes": 2040219
+        }
+      ]
+    },
+    "bytes": 2040219
+  },
+  {
+    "id": "ICAO-ZAL-06-III",
+    "title_pl": "Załącznik 6 do Konwencji chicagowskiej – Operacje statków powietrznych, Część III: Operacje międzynarodowe – Śmigłowce (wydanie jedenaste, lipiec 2022, zmiany 1–25), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Obwieszczenie nr 9/2025 Prezesa ULC z 15.5.2025 (Dz. Urz. ULC 2025); Załącznik 6 część III, wydanie jedenaste (lipiec 2022, obowiązuje od 3.11.2022), zmiany 1–25; plik pobrany ze strony ULC",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF (только «Załącznik do obwieszczenia nr 9/2025 Prezesa ULC z dnia 15 maja 2025 r.»)]",
+    "sha256": "617cab938bcb5b4f8876e1fe7f41fa5090274458c5e74091a161701c957a1507",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2025-05-15",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 6 część III",
+          "file": "Zalacznik-06-III.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            16,
+            18
+          ],
+          "bodyPage": 26,
+          "parts": {
+            "re": "^DZIAŁ (I{1,3})$",
+            "word": "dział",
+            "plain": [
+              "I"
+            ]
+          },
+          "head": [],
+          "foot": [],
+          "drop": [
+            "^MIĘDZYNARODOWE NORMY(?: I ZALECANE METODY POSTĘPOWANIA)?$",
+            "^I ZALECANE METODY POSTĘPOWANIA$",
+            "^_{5,}$",
+            "^(?:(?:Dział I{1,3}, )?(?:Rozdział \\d{1,2}|Dodatek \\d{1,2}|Załącznik [A-G]|Wstęp|Spis treści|Skróty i oznaczenia|Publikacje) )?Załącznik 6 [–-] Operacje statków powietrznych(?: Część III)?(?: (?:Rozdział \\d{1,2}|Dodatek \\d{1,2}|Załącznik [A-G]))?$",
+            "^\\d{1,3}$"
+          ],
+          "imageOnly": "Grafika: małe rysunki (oznakowanie punktów dostępu zewnętrznego – Dział III rozdz. 4, str. 71 i 121 PDF; herb). Tabele wielokolumnowe (Dodatek 4 – rejestratory lotu, tabele A4-1…A4-3; Załącznik F) – tekst jest, kolejność słów w wierszach częściowo zaburzona. Pominięto spis treści, skróty, wykaz publikacji i tabelę zmian w Przedmowie (str. 19–25). Numeracja rozdziałów powtarza się w Działach: Dział I (Postanowienia ogólne: rozdz. 1 Definicje i 2 Zastosowanie) ma lokalizatory bez prefiksu (`rozdział 1`, `definicja …`), Dział II i III z prefiksem (`dział II rozdział 4`, `dział II 4.2.1`, `dział III 4.2.1 lit. a`); dodatki 1–8 i załączniki A–G bez prefiksu.",
+          "sha256": "617cab938bcb5b4f8876e1fe7f41fa5090274458c5e74091a161701c957a1507",
+          "bytes": 1992820
+        }
+      ]
+    },
+    "bytes": 1992820
+  },
+  {
+    "id": "ICAO-ZAL-08",
+    "title_pl": "Załącznik 8 do Konwencji chicagowskiej – Zdatność do lotu statków powietrznych (wydanie dwunaste, lipiec 2018, zmiany 1–107), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "Obwieszczenie nr 9 Prezesa ULC z 7.4.2021 (Dz. Urz. ULC 2021); Załącznik 8, wydanie dwunaste (lipiec 2018, obowiązuje od 8.11.2018; ostatnia zmiana 107 z 4.11.2021), zmiany 1–107; plik pobrany ze strony ULC",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: номер позиции Dz. Urz. ULC не указан в PDF (только «Załącznik do obwieszczenia nr 9 Prezesa ULC z dnia 7 kwietnia 2021 r.»); в PDF указано, что издание включает изменения до 10.11.2021]",
+    "sha256": "a88bb6dd741e77108de7f79dd9c62ef6c10965cb2a60f29ae5bdfa84b5d7f161",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2021-04-07",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Załącznik 8",
+          "file": "Zalacznik-08.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            19,
+            24
+          ],
+          "bodyPage": 31,
+          "implicitChapters": true,
+          "parts": {
+            "re": "^CZĘŚĆ (II|III ?A|III ?B|IV ?A|IV ?B|V ?A|V ?B|VI|VII|I)\\.(?: .*)?$",
+            "word": "część",
+            "plain": [
+              "I"
+            ],
+            "defs": [
+              "I"
+            ]
+          },
+          "head": [],
+          "foot": [],
+          "drop": [
+            "^NORMY MIĘDZYNARODOWE$",
+            "^I ZALECANE PRAKTYKI$",
+            "^_{5,}$",
+            "^(?:(?:Rozdział \\d{1,2}|Definicje|Przedmowa|Spis treści|Załącznik) )?Załącznik 8 [-–] Zdatność do lotu statków powietrznych(?: (?:Część [IVX]{1,4}[AB]?|Rozdział \\d{1,2}|Załącznik|Przedmowa|Definicje|Spis treści))?$",
+            "^Załącznik(?: Załącznik 8 [-–] Zdatność do lotu statków powietrznych)?$",
+            "^(?:(?:ZAŁĄCZNIK|Załącznik) 8 ?)?(?:\\d{1,2}/\\d{1,2}/\\d{2,3} ?)?(?:(?:\\([ivx]+\\)|APP [\\dI]-\\d{1,3}|[IVX]{1,4}[AB]?-(?:[\\dI]{1,2}-)?\\d{1,3}) ?)?(?:\\d{1,2}/\\d{1,2}/\\d{2,3})?$",
+            "^\\([ivx]+\\)(?: \\d{1,2}/\\d{1,2}/\\d{2,3})?$"
+          ],
+          "imageOnly": "Grafika: herb na stronie tytułowej; rysunki i wykresy w tekście są pominięte jako grafika (wzory, wykresy). Tabele wielokolumnowe (np. wymagania dla samolotów, szablon certyfikatu AMO na końcu) – tekst jest, kolejność słów w wierszach częściowo zaburzona. Pominięto spis treści i tabelę zmian w Przedmowie (str. 25–29). Numeracja rozdziałów powtarza się w częściach (II, IIIA, IIIB, IVA, IVB, VA, VB, VI, VII): Część I (Definicje) = `rozdział 1`, `definicja …` bez prefiksu, pozostałe części z prefiksem (`część IIIA rozdział 2`, `część IIIA 2.2.1`, `część VB 3.4.2 lit. a`); w niektórych częściach brak w druku nagłówka rozdziału – rozdział zaczyna się od pierwszego punktu „N.1” (implicitChapters). Końcowy załącznik «Certyfikat zatwierdzonej organizacji obsługi (AMO)» (str. 247–249 PDF, bez numeru) nie ma własnej kotwicy – wchodzi w zakres ostatniego rozdziału części VII. Punkty w układzie wypunktowania „1)”, „i)” nie mają kotwic.",
+          "sha256": "a88bb6dd741e77108de7f79dd9c62ef6c10965cb2a60f29ae5bdfa84b5d7f161",
+          "bytes": 1772931
+        }
+      ]
+    },
+    "bytes": 1772931
+  },
+  {
+    "id": "PL-KONWENCJA-COSPAS-SARSAT-2005",
+    "title_pl": "Nota o przystąpieniu Rzeczypospolitej Polskiej do Programu Międzynarodowego COSPAS-SARSAT jako Państwo Użytkownik (Warszawa, 31 maja 2005 r.)",
+    "kind": "convention",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://ulc.gov.pl/prawo/prawo-miedzynarodowe/konwencje",
+    "format": "pdf",
+    "version": "M.P. 2006 nr 13 poz. 171 (nota podpisana w Warszawie 31.5.2005; tekst z nagłówkiem Monitora Polskiego); plik ze strony ULC",
+    "sha256": "2c44c77eee20b6f0f4d5bb9d7655731ade6324ff5303086032a7001f50879db5",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://api.sejm.gov.pl/eli.html",
+    "terms_note": "Polski tekst noty (umowy międzynarodowej) ogłoszony w Monitorze Polskim – tekst urzędowy, nie jest przedmiotem prawa autorskiego (art. 4 pkt 1 i 2 ustawy o prawie autorskim i prawach pokrewnych). Plik pobrany ze strony ULC (kopia, nie sprawdzona z ISAP). Nota ma numerowane punkty zamiast artykułów: lokalizator `art. N` oznacza punkt N noty, `art. N ust. M` – podpunkt „N. M.”, `lit.` – litery a), b)…",
+    "fetch": {
+      "mode": "manual",
+      "dir": "ULC-KONWENCJE",
+      "files": [
+        {
+          "section": "Nota COSPAS-SARSAT",
+          "file": "Konwencja-13-cospas-sarsat.pdf",
+          "profile": "nota-mp",
+          "lang": "pl",
+          "sha256": "2c44c77eee20b6f0f4d5bb9d7655731ade6324ff5303086032a7001f50879db5",
+          "bytes": 124377
+        }
+      ]
+    },
+    "bytes": 124377
   }
 ]
