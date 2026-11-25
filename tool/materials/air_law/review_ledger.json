@@ -5263,6 +5263,14 @@
   "textSha": "021c35a960128f29",
   "verdict": "PASS"
  },
+ "PL099-0090#f7c2182a": {
+  "date": "2026-11-25",
+  "note": "Klucz (60 dni lub do innego polecenia organu prowadzącego dochodzenie) zgodny z CAT.GEN.MPA.195 lit. a), NCC.GEN.145 lit. a) i SPO.GEN.145 lit. a) rozporządzenia 965/2012 (identyczne brzmienie, sprawdzone w korpusie). Część NCO nie ma przepisu o przechowywaniu zapisów rejestratorów (NCO.GEN.145 dotyczy reagowania na problemy bezpieczeństwa), a 996/2010 i Prawo lotnicze nie podają innego okresu — przepisy milczą, nie przeczą kluczowi, więc disputeNote nie jest potrzebny (inaczej niż P29 0051, gdzie klucz rozszerzał warunki przepisu CAT). Zakres (CAT/NCC/SPO) w tekście podany precyzyjnie; 3 zdania, 579 znaków.",
+  "portion": "P31",
+  "round": 1,
+  "textSha": "6bf32008b5699dda",
+  "verdict": "PASS"
+ },
  "PL099-0091#b4d5dc8c": {
   "date": "2026-11-25",
   "note": "Poprawka z r1 wprowadzona dosłownie (CAT.OP.MPA.225 jako przepis części CAT, 470 znaków). disputeNote bez zmian i poprawny: NCO.GEN.105(f)(1) i CAT.OP.MPA.225(a)(2) są w refs, czyli również odpowiedź „przez cały czas trwania lotu” da się obronić; formuła o kluczu ULC jest obecna.",
