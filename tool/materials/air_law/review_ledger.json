@@ -2881,11 +2881,11 @@
  },
  "PL010-0429#d3694b1a": {
   "date": "2026-11-25",
-  "note": "Klucz poprawny (ENR 1.10 pkt 4.8 lit. d): 1 godzina przed EOBT; SERA.4001(d)(3) 60 minut). Błąd w pułapce: „30 minut AIP dopuszcza tylko dla lotów VFR w całości w przestrzeni niekontrolowanej” – pkt 4.8 lit. g) podaje też 30 minut przed EOBT dla zastępczych planów lotu (RFP), więc „tylko” jest nieprawdziwe. Poprawka: „Pułapka: 30 minut dotyczy lotów VFR zaplanowanych w całości w przestrzeni niekontrolowanej (lit. c)), a 10 minut planu lotu składanego podczas lotu (SERA.4001 lit. d) ppkt 4).” Przy okazji można skrócić zdanie o SERA (616 znaków, blisko limitu).",
+  "note": "Pułapka poprawiona zgodnie z r1: bez „tylko”; 30 minut = ENR 1.10 pkt 4.8 lit. c), 10 minut = SERA.4001(d)(4). Klucz 60 min = pkt 4.8 lit. d) i SERA.4001(d)(3). 3 zdania, 611 znaków, cytaty zgodne z korpusem.",
   "portion": "P19",
-  "round": 1,
-  "textSha": "0a7574fa9051bd62",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "09b45d7bd949d0f1",
+  "verdict": "PASS"
  },
  "PL010-0430#219a77cc": {
   "date": "2026-11-25",
