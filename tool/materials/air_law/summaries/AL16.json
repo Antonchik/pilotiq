@@ -123,7 +123,7 @@
     },
     {
       "id": "AL16-3",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Kto bada wypadek, a kto incydent",
       "body": [
         "Podział badań określa art. 135 Prawa lotniczego:",
@@ -173,7 +173,7 @@
     },
     {
       "id": "AL16-4",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Zgłaszanie zdarzeń lotniczych",
       "body": [
         "Zdarzenia statków powietrznych objętych rozporządzeniem 376/2014 zgłasza się w systemie obowiązkowego zgłaszania zdarzeń. Do zdarzeń objętych obowiązkiem należą m.in. kolizje, zbliżenia lub potencjalne kolizje (art. 4 ust. 1). Pilot dowódca, a gdy nie jest w stanie, inny członek załogi, zgłasza je za pośrednictwem systemu organizacji, która go zatrudnia lub korzysta z jego usług, albo alternatywnie systemu państwa członkowskiego (art. 4 ust. 6). W Polsce zgłoszenia w systemie państwowym przyjmuje Komisja (art. 135a ust. 1 Prawa lotniczego).",
@@ -247,7 +247,7 @@
     },
     {
       "id": "AL16-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Zawiadomienie o wypadku, przymusowym lądowaniu i odnalezieniu statku",
       "body": [
         "Art. 137 ust. 4 Prawa lotniczego nakłada ten sam obowiązek na:",
@@ -290,7 +290,7 @@
     },
     {
       "id": "AL16-6",
-      "status": "draft",
+      "status": "verified",
       "heading": "Zabezpieczenie dowodów i zapisów rejestratorów",
       "body": [
         "Komisja badająca wypadek korzysta z pomocy innych podmiotów (art. 137 Prawa lotniczego):",
@@ -353,7 +353,7 @@
     },
     {
       "id": "AL16-7",
-      "status": "draft",
+      "status": "verified",
       "heading": "Sytuacja zagrożenia i pilności: MAYDAY i PAN PAN",
       "body": [
         "Pkt SERA.14095 lit. a) rozporządzenia 923/2012 rozróżnia dwie sytuacje:",
@@ -465,7 +465,7 @@
     },
     {
       "id": "AL16-9",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Częstotliwość 121,5 MHz i nasłuch",
       "body": [
         "VHF częstotliwość w niebezpieczeństwie 121,500 MHz wykorzystuje się jedynie do celów awaryjnych (art. 4a ust. 1 rozporządzenia 923/2012), wymienionych w pkt SERA.14095 lit. d), m.in.:",
@@ -528,7 +528,7 @@
     },
     {
       "id": "AL16-10",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Łączność w akcjach poszukiwawczo-ratowniczych: 123,1 i 156,3 MHz",
       "body": [
         "- 123,1 MHz to częstotliwość pomocnicza do celów operacji poszukiwawczo-ratunkowych, wymieniana obok częstotliwości awaryjnej 121,5 MHz (art. 3f ust. 2 rozporządzenia wykonawczego 2017/373).",
@@ -585,7 +585,7 @@
     },
     {
       "id": "AL16-11",
-      "status": "draft",
+      "status": "verified",
       "heading": "Świadectwo radiooperatora i nadajnik ELT",
       "body": [
         "Obsługiwanie urządzenia radiowego nadawczego lub nadawczo-odbiorczego używanego w służbie radiokomunikacyjnej lotniczej wymaga świadectwa operatora urządzeń radiowych albo równoważnego dokumentu wydanego przez uprawniony organ zagraniczny (art. 157 ust. 1 ustawy – Prawo komunikacji elektronicznej). W lotnictwie jest to świadectwo radiooperatora w służbie lotniczej; egzaminy przeprowadza komisja egzaminacyjna, o której mowa w art. 99 Prawa lotniczego (art. 158 ust. 7). Przepis nie uzależnia obsługi radiostacji od obywatelstwa.",
@@ -641,7 +641,7 @@
     },
     {
       "id": "AL16-12",
-      "status": "draft",
+      "status": "verified",
       "heading": "Wyposażenie awaryjne i apteczka pierwszej pomocy",
       "body": [
         "Pilot dowódca rozpoczyna lot wyłącznie wtedy, gdy upewni się, że przyrządy i wyposażenie wymagane do wykonania lotu zostały zainstalowane na pokładzie i działają (NCO.GEN.105 lit. a) ppkt 4 (iii) rozporządzenia 965/2012; dla szybowców SAO.GEN.130 lit. d) ppkt 3 rozporządzenia 2018/1976). Dlatego za kompletność i dostępność pokładowego wyposażenia awaryjnego, w tym za obecność i stan apteczki, odpowiada dowódca statku powietrznego.",
@@ -707,7 +707,7 @@
     },
     {
       "id": "AL16-13",
-      "status": "draft",
+      "status": "verified",
       "heading": "Oznakowanie lotniskowych pojazdów ratowniczych",
       "body": [
         "Oznakowanie i oświetlenie pojazdów na lotnisku opisują akceptowalne sposoby spełnienia EASA do rozporządzenia 139/2014 (AMC1 ADR.OPS.B.080(a)):",

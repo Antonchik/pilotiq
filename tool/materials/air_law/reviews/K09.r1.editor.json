@@ -1,0 +1,67 @@
+[
+ {
+  "key": "AL16-1",
+  "verdict": "FIX",
+  "note": "Treść zgodna z art. 17 ust. 1, art. 134 ust. 1 i 1e, art. 135 ust. 1, art. 135a ust. 4 Prawa lotniczego i art. 2 pkt 14 rozporządzenia 996/2010; zgodna z verified PL010-0327 i PL099-0001; 159 słów, działa jako bezpłatny przegląd. Jedna luka: zdanie „od tej kwalifikacji zależy, kto prowadzi badanie” nie wynika z cytowanego art. 135 ust. 1, tylko z art. 135 ust. 2 (Komisja bada wypadki i poważne incydenty, inne incydenty – użytkownik itd.), którego nie ma w refs. Poprawka: w body zmienić „(art. 135 ust. 1); od tej kwalifikacji zależy, kto prowadzi badanie.” na „(art. 135 ust. 1); od tej kwalifikacji zależy, kto prowadzi badanie (art. 135 ust. 2).” i dodać ref {\"src\":\"PL-PRAWO-LOTNICZE\",\"loc\":\"art. 135 ust. 2\",\"quote\":\"Każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do państwowego rejestru cywilnych statków powietrznych jest przedmiotem badania przez Komisję.\"}. Kontekst z art. 134 ust. 1e i 135a ust. 4 sprawdzony z korpusem – poprawny (parafraza ust. 1e pomija „sądowo-administracyjnego”, dopuszczalne)."
+ },
+ {
+  "key": "AL16-2",
+  "verdict": "FIX",
+  "note": "Definicje (art. 134 ust. 2 pkt 1–3, ust. 5 PL; art. 2 pkt 7 996/2010) i CAT.GEN.MPA.105(d)(2) zgodne z korpusem; body i disputeNote nie przeczą disputed PL099-0011 i PL099-0051. Pominięcie wyłączenia z art. 2 pkt 1 lit. b) 996/2010 (niewielkie uszkodzenia spowodowane przez grad lub zderzenie z ptakiem nie czynią zdarzenia wypadkiem) jest dopuszczalne: dotyczy tylko drobnych uszkodzeń i nie przeczy zdaniu, że uszkodzenie wymagające poważnego remontu oznacza wypadek. Do poprawy: zdanie disputeNote „Pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2” jest zbyt szerokie (system zgłaszania z art. 4 rozporządzenia 376/2014 i art. 135a Prawa lotniczego też może obejmować zderzenie z ptakiem); „tylko” potwierdza korpus wyłącznie dla rozporządzenia 965/2012 (jedyne miejsce o raporcie o zderzeniu z ptakiem). Nowy disputeNote (384 znaki): „Zderzenie z ptakiem, po którym wymagany jest poważny remont lub wymiana elementu (art. 134 ust. 2 pkt 2 Prawa lotniczego), jest wypadkiem, a nie incydentem. W rozporządzeniu 965/2012 pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2 (część CAT) i tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Na egzaminie ULC zaliczana jest odpowiedź z klucza.”"
+ },
+ {
+  "key": "AL16-3",
+  "verdict": "DISPUTED",
+  "note": "Art. 135 ust. 1, 2, 2a i 4 Prawa lotniczego zgodne z korpusem (2a: MTOM „nie przekracza 2250 kg”, badanie pod nadzorem Komisji; ust. 4: raport użytkownika pod nadzorem Komisji przy niepodjęciu badania statku spoza rejestru). Zgodne z verified PL099-0009 i disputed PL099-0010; disputeNote poprawny, neutralny, punkty z disputeNote są w refs; 156 słów."
+ },
+ {
+  "key": "AL16-4",
+  "verdict": "DISPUTED",
+  "note": "Art. 4 ust. 1 lit. c) ppkt (i), ust. 6 lit. a), ust. 8 rozporządzenia 376/2014 oraz art. 135a ust. 1, 2 (pkt 1, 4, 5) i 3 Prawa lotniczego zgodne z korpusem (72 godziny w obu aktach). Zgodne z verified PL099-0079 i disputed PL099-0022 (PL102-0039 sameAs); disputeNote identyczny co do treści z disputeNote PL099-0022, poprawny; 174 słowa."
+ },
+ {
+  "key": "AL16-5",
+  "verdict": "PASS",
+  "note": "Treść oddaje art. 137 ust. 4 Prawa lotniczego (trzy grupy obowiązanych i adresaci, w tym „w szczególności jednostki ochrony przeciwpożarowej”). Sformułowanie „Wszystkie odpowiedzi są prawidłowe” trafne dla PL010-0322#d19cfdd6 (trzy odpowiedzi = trzy grupy adresatów z przepisu); zdanie o straży miejskiej identyczne z verified PL010-0322#02c11389 i neutralne; lista nie-adresatów (Prezes ULC, delegatura, minister, firma ubezpieczeniowa) zgodna z dystraktorami i verified wyjaśnieniami. 10 kluczy – wszystkie verified; 127 słów."
+ },
+ {
+  "key": "AL16-6",
+  "verdict": "PASS",
+  "note": "Art. 137 ust. 1–3 Prawa lotniczego sprawdzone z korpusem – parafraza wierna (ust. 2: udostępnienie środków łączności; ust. 3: środki rejestracji obrazu w pobliżu wypadku). CAT.GEN.MPA.195(a), NCC.GEN.145(a), SPO.GEN.145(a): 60 dni lub do innego polecenia organu prowadzącego dochodzenie – zgodne; zgodne z verified PL099-0090; 152 słowa. Uwaga redakcyjna (bez wpływu na werdykt): art. 137 ust. 1–3 dotyczą pomocy dla Komisji, nie „zabezpieczenia dowodów”; nagłówek np. „Pomoc dla Komisji i zapisy rejestratorów” byłby dokładniejszy."
+ },
+ {
+  "key": "AL16-7",
+  "verdict": "PASS",
+  "note": "SERA.14095(a)(1)(i)/(ii), (a)(2), (b)(1)(i)/(ii) i dodatek 1 pkt 1.1.1 rozporządzenia 923/2012 zgodne z korpusem (elementy depeszy B–E wymienione poprawnie). Wnioski o MAYDAY, wywołaniu wszystkimi środkami i meldunku o miejscu opuszczenia statku takie same jak w verified PL099-0023, PL099-0088, PL099-0084; 157 słów."
+ },
+ {
+  "key": "AL16-8",
+  "verdict": "FIX",
+  "note": "Tabela S14-1 w SERA.14005(a) oddana poprawnie; „trzecie miejsce” dla komunikatów dotyczących znajdowania kierunku wynika wprost z kolejności a) MAYDAY, b) PAN PAN, c) znajdowanie kierunku; zgodne z verified PL099-0074 (PL102-0046 sameAs). SERA.14095(a)(5) zgodne. Luka: body powołuje „SERA.14005 lit. b) i c)”, a w refs jest tylko lit. b). Poprawka: dodać ref {\"src\":\"EU-923-2012\",\"loc\":\"SERA.14005(c)\",\"quote\":\"Depesze pilne i wymianę korespondencji dotyczącej sytuacji pilności, w tym depesze poprzedzone sygnałem transportu medycznego, należy traktować zgodnie z przepisami SERA.14095.\"}. Treść body bez zmian (135 słów)."
+ },
+ {
+  "key": "AL16-9",
+  "verdict": "DISPUTED",
+  "note": "Art. 4a ust. 1 i SERA.14095(d)(1), (3), (5), (6) oraz SERA.14080(b) rozporządzenia 923/2012 zgodne z korpusem; AIP GEN 3.6 pkt 5 (nasłuch 121,500 MHz w godzinach pracy organów ATS; 2182 kHz tylko do powiadomienia o zagrożeniu) oddane poprawnie, cytaty z polskiego tekstu (ostrzeżenie validate pl+en nieistotne). Zgodne z disputed PL099-0004 i verified PL099-0025 (+ sameAs PL102-0051, PL102-0048); disputeNote identyczny co do treści z PL099-0004, poprawny; 161 słów. Drobiazg: zdanie o nasłuchu z AIP jest bliskie dosłownemu, ale tak samo w zatwierdzonym PL099-0025 – akceptowalne."
+ },
+ {
+  "key": "AL16-10",
+  "verdict": "DISPUTED",
+  "note": "Art. 3f ust. 2 lit. a) pkt 1–2 rozporządzenia 2017/373 (121,5 MHz awaryjna, 123,1 MHz pomocnicza SAR) i § 13 pkt 1 rozporządzenia SAR zgodne z korpusem. Źródła reference-only sprawdzone ręcznie: ITU RR App. 18 – kanał 06 = 156,300 MHz z uwagą f); uwaga f) dopuszcza 156,300 (06), 156,525 (70), 156,800 (16) MHz (oraz AIS1/AIS2) dla stacji pokładowych statków powietrznych do SAR i innej łączności związanej z bezpieczeństwem – opis wierny; EASA EAR SERA.14095(d)(3): „between such aircraft and surface services, involved in common search and rescue operations” – uwaga o „surface services” trafna. Bez cytatów dla źródeł reference-only – poprawnie. Zgodne z verified PL099-0005 i disputed PL099-0012 (+ sameAs PL102-0049, PL102-0050); disputeNote poprawny; 148 słów."
+ },
+ {
+  "key": "AL16-11",
+  "verdict": "PASS",
+  "note": "Art. 157 ust. 1 i art. 158 ust. 7 ustawy – Prawo komunikacji elektronicznej oraz NCO.IDE.A.170(b) zgodne z korpusem; AIP GEN 3.6 pkt 5 (Cospas-Sarsat 406 MHz, od 1.02.2009 bez 121,500/243 MHz; statki SAR na 121,500 MHz) sparafrazowane poprawnie. Wniosek o obywatelstwie dopuszczalny: art. 157 ust. 1 wymaga tylko świadectwa lub równoważnego dokumentu zagranicznego i nie zawiera warunku obywatelstwa; to samo w verified PL099-0013. Zdanie o kluczu SARSAT zgodne z verified PL099-0021; 153 słowa."
+ },
+ {
+  "key": "AL16-12",
+  "verdict": "PASS",
+  "note": "NCO.GEN.105(a)(4)(iii), NCO.IDE.A.100(e), NCO.IDE.A.145(a)/(b)(1)/(b)(2), NCO.IDE.H.145 i SAO.GEN.130(d)(3) zgodne z korpusem. Wnioski o odpowiedzialności dowódcy (także za apteczkę) i o umieszczeniu apteczki „łatwo dostępnej dla wszystkich członków załogi i pasażerów” wynikają z „łatwo dostępna do użytku” w ten sam sposób co w verified PL099-0093, PL099-0099, PL102-0053 – brak sprzeczności; 141 słów."
+ },
+ {
+  "key": "AL16-13",
+  "verdict": "PASS",
+  "note": "AMC1 ADR.OPS.B.080(a) (EASA, reference-only, bez cytatu – poprawnie) sprawdzone ręcznie: „Red or yellowish green colour should preferably be used for marking emergency vehicles and yellow colour for service vehicles”; flagi w szachownicę pomarańczowo-białą lub czerwono-białą; światła typu C migające niebieskie dla pojazdów ratowniczych/ochrony („emergency or security”), żółte dla pozostałych (lit. b) tego AMC). Parafraza wierna, zgodna z verified PL099-0033; 102 słowa."
+ }
+]
