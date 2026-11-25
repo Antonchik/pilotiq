@@ -1,0 +1,112 @@
+[
+ {
+  "key": "PL010-0004#9cb08255",
+  "verdict": "PASS",
+  "note": "Klucz = najpełniejsza odpowiedź; art. 119 ust. 3 wymienia obronność państwa i bezpieczeństwo publiczne (obok ochrony przyrody i bezpieczeństwa ruchu lotniczego). Pułapka (warunki pogodowe) zgodna z przepisem; nie sporne — pojedyncze przesłanki są tylko niepełne."
+ },
+ {
+  "key": "PL010-0164#2fe1de9a",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 1: «dostępna na równych prawach dla wszystkich jej użytkowników». Lokator i cytat poprawne."
+ },
+ {
+  "key": "PL010-0188#d12c7188",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 1: «wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw…». Różnica sformułowań klucza («innych przepisów») nie zmienia sensu."
+ },
+ {
+  "key": "PL010-0004#809f9cbb",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 3; zdanie o «ochronie przyrody» vs «ochronie środowiska» w odpowiedzi ULC rzetelne. Klucz «Wszystkie» najlepszy, nie sporny."
+ },
+ {
+  "key": "PL010-0041#eb6afb3c",
+  "verdict": "PASS",
+  "note": "Art. 122 ust. 1 sparafrazowany wiernie; zdanie o innych nazwach organów w odpowiedziach ULC (państwowy organ zarządzania ruchem lotniczym, właściwe organy wojskowe) uczciwe i nie wykracza poza źródło. Zmiana nazewnictwa nie podważa klucza."
+ },
+ {
+  "key": "PL010-0164#5ca7e0eb",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: to samo pytanie i ta sama odpowiedź; inny tylko czwarty dystraktor, do którego tekst oryginału się nie odnosi."
+ },
+ {
+  "key": "PL010-0188#ad4d889e",
+  "verdict": "FIX",
+  "note": "Art. 119 ust. 1: ograniczenie «wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego», a inne ustawy i umowy/uchwały międzynarodowe są tym, co należy «zachować», nie odrębną podstawą. Zdanie «Każda z trzech odpowiedzi odpowiada jednemu z elementów tego przepisu» przemilcza to. Proponuję: zdanie 2 → «Klucz ULC traktuje wszystkie elementy tego przepisu – upoważnienie Prawa lotniczego, przepisy innych ustaw, umowy międzynarodowe i uchwały organizacji międzynarodowych – łącznie, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.» oraz disputeNote: «Według art. 119 ust. 1 Prawa lotniczego podstawą ograniczenia swobody lotów jest wyłącznie wyraźne upoważnienie Prawa lotniczego, a przepisy innych ustaw oraz wiążące Rzeczpospolitą Polską umowy międzynarodowe i uchwały organizacji międzynarodowych należy przy tym zachować. Na egzaminie ULC zaliczana jest odpowiedź z klucza.» (ref art. 119 ust. 1 już jest)."
+ },
+ {
+  "key": "PL010-0574#a58ca725",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 2 pkt 1; pułapka poparta art. 123 ust. 2 pkt 4 i 7. Cytaty zgodne."
+ },
+ {
+  "key": "PL010-0574#257d28ca",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 2 pkt 1–3, «m.in.» słusznie (jest też pkt 4)."
+ },
+ {
+  "key": "PL010-0575#21fa30b8",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 2 pkt 4; pułapka poparta art. 123 ust. 2 pkt 3, 4, 6."
+ },
+ {
+  "key": "PL010-0575#ed152e3c",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 2 pkt 3 i 4; klucz «Wszystkie» zgodny."
+ },
+ {
+  "key": "PL010-0602#3ef571be",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 2: «w drodze rozporządzenia»."
+ },
+ {
+  "key": "PL010-0007#d367756c",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 4 pkt 1 + wstęp ust. 4. Klucz pomija ministra «do spraw klimatu» — niepełny, nie błędny (pozostałe odpowiedzi wyraźnie sprzeczne z przepisem); tekst to uczciwie zaznacza. Nie sporne."
+ },
+ {
+  "key": "PL010-0007#4770af24",
+  "verdict": "PASS",
+  "note": "sameAs: wariant rawMixed, te same pytanie i odpowiedzi."
+ },
+ {
+  "key": "PL010-0007#75da7961",
+  "verdict": "PASS",
+  "note": "sameAs: wariant rawMixed, te same pytanie i odpowiedzi."
+ },
+ {
+  "key": "PL010-0127#61f18628",
+  "verdict": "PASS",
+  "note": "Art. 119 ust. 4 pkt 2 + wstęp; zastrzeżenia (minister do spraw klimatu, instytucje zapewniające służby ruchu lotniczego zamiast «państwowego organu zarządzania ruchem lotniczym») zgodne z korpusem. Klucz niepełny, nie błędny."
+ },
+ {
+  "key": "PL010-0127#2bc84d70",
+  "verdict": "PASS",
+  "note": "sameAs: wariant rawMixed, te same pytanie i odpowiedzi."
+ },
+ {
+  "key": "PL010-0243#808177a8",
+  "verdict": "FIX",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc cytatów «mniejszej niż 1000 m … w inne silniki» i «… 500 m … tłokowych» na '§ 3 ust. 1 pkt 2 lit. a' (wstęp «zakaz wykonywania lotów nad obszarami miast…» zostaje przy '§ 3 ust. 1 pkt 2'). Treść poprawna: 1000 m dla samolotów z innymi silnikami; strefy R w § 3 ust. 1 pkt 5 (załącznik nr 3 to parki narodowe i inne strefy, nie miasta)."
+ },
+ {
+  "key": "PL010-0244#5810ba89",
+  "verdict": "FIX",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc obu cytatów (500 m dla śmigłowców i samolotów tłokowych; 1000 m dla innych silników) na '§ 3 ust. 1 pkt 2 lit. a'. Treść poprawna."
+ },
+ {
+  "key": "PL010-0245#4ae2e2e4",
+  "verdict": "FIX",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc: cytat 1000 m → '§ 3 ust. 1 pkt 2 lit. b', cytat 1500 m → '§ 3 ust. 1 pkt 2 lit. c'. Treść poprawna."
+ },
+ {
+  "key": "PL010-0246#22a37308",
+  "verdict": "FIX",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). (1) loc cytatu 500 m → '§ 3 ust. 1 pkt 2 lit. a'. (2) Odpowiedź z klucza «AMSL GND» zawiera AMSL, a § 2 pkt 5: «AMSL – (Above Mean Sea Level) nad średnim poziomem morza»; tekst to pomija. Zdanie 2 → «Odpowiedź z klucza wskazuje skrót GND, który według § 2 pkt 10 oznacza poziom terenu; AMSL (§ 2 pkt 5) to średni poziom morza, od którego przepis tych wysokości nie liczy.» + ref {src PL-ROZP-ZAKAZY-LOTOW, loc '§ 2 pkt 5', quote 'AMSL – (Above Mean Sea Level) nad średnim poziomem morza'}. Nie sporne: pozostałe odpowiedzi (przeszkody) sprzeczne z przepisem."
+ },
+ {
+  "key": "PL010-0247#54dc8471",
+  "verdict": "FIX",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc: cytat 1500 m → '§ 3 ust. 1 pkt 2 lit. c', cytat Warszawa 2000 m → '§ 3 ust. 1 pkt 2 lit. d'. Treść poprawna."
+ }
+]

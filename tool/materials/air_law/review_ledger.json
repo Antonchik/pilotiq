@@ -71,6 +71,22 @@
   "textSha": "8e0718d376e02524",
   "verdict": "PASS"
  },
+ "PL010-0004#809f9cbb": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 3; zdanie o «ochronie przyrody» vs «ochronie środowiska» w odpowiedzi ULC rzetelne. Klucz «Wszystkie» najlepszy, nie sporny.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "1f6fff02ca00f6c0",
+  "verdict": "PASS"
+ },
+ "PL010-0004#9cb08255": {
+  "date": "2026-11-25",
+  "note": "Klucz = najpełniejsza odpowiedź; art. 119 ust. 3 wymienia obronność państwa i bezpieczeństwo publiczne (obok ochrony przyrody i bezpieczeństwa ruchu lotniczego). Pułapka (warunki pogodowe) zgodna z przepisem; nie sporne — pojedyncze przesłanki są tylko niepełne.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "cfd4822d4309bec2",
+  "verdict": "PASS"
+ },
  "PL010-0005#c72c8490": {
   "date": "2026-11-24",
   "note": "Klucz = art. 117 ust. 2; okoliczność z pytania poprawnie przypisana do art. 117 ust. 1. Pułapka (zgoda Prezesa ULC/ministra) wynika z tego, że ust. 2 podaje jedyną przesłankę ustania – dopuszczalna. Osobny wpis zamiast sameAs uzasadniony (inna okoliczność w pytaniu, tekst ją powtarza).",
@@ -85,6 +101,30 @@
   "portion": "P25",
   "round": 1,
   "textSha": "454abab8df262441",
+  "verdict": "PASS"
+ },
+ "PL010-0007#4770af24": {
+  "date": "2026-11-25",
+  "note": "sameAs: wariant rawMixed, te same pytanie i odpowiedzi.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "be8bb8785e9fb0cc",
+  "verdict": "PASS"
+ },
+ "PL010-0007#75da7961": {
+  "date": "2026-11-25",
+  "note": "sameAs: wariant rawMixed, te same pytanie i odpowiedzi.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "be8bb8785e9fb0cc",
+  "verdict": "PASS"
+ },
+ "PL010-0007#d367756c": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 4 pkt 1 + wstęp ust. 4. Klucz pomija ministra «do spraw klimatu» — niepełny, nie błędny (pozostałe odpowiedzi wyraźnie sprzeczne z przepisem); tekst to uczciwie zaznacza. Nie sporne.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "57deb7ac49967c11",
   "verdict": "PASS"
  },
  "PL010-0009#082b38de": {
@@ -317,6 +357,14 @@
   "portion": "P05",
   "round": 1,
   "textSha": "ef0b53f630960949",
+  "verdict": "PASS"
+ },
+ "PL010-0041#eb6afb3c": {
+  "date": "2026-11-25",
+  "note": "Art. 122 ust. 1 sparafrazowany wiernie; zdanie o innych nazwach organów w odpowiedziach ULC (państwowy organ zarządzania ruchem lotniczym, właściwe organy wojskowe) uczciwe i nie wykracza poza źródło. Zmiana nazewnictwa nie podważa klucza.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "1dff81711fd6345f",
   "verdict": "PASS"
  },
  "PL010-0047#f4230c61": {
@@ -951,6 +999,22 @@
   "textSha": "c0ed9566c391ae94",
   "verdict": "DISPUTED"
  },
+ "PL010-0127#2bc84d70": {
+  "date": "2026-11-25",
+  "note": "sameAs: wariant rawMixed, te same pytanie i odpowiedzi.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "38764b755f9c4635",
+  "verdict": "PASS"
+ },
+ "PL010-0127#61f18628": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 4 pkt 2 + wstęp; zastrzeżenia (minister do spraw klimatu, instytucje zapewniające służby ruchu lotniczego zamiast «państwowego organu zarządzania ruchem lotniczym») zgodne z korpusem. Klucz niepełny, nie błędny.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "27fe6fe7b28b5944",
+  "verdict": "PASS"
+ },
  "PL010-0129#446a12c0": {
   "date": "2026-11-24",
   "note": "Klucz = art. 106 ust. 1 pkt 1; pułapka z art. 106 ust. 3 poprawna (ust. 1 wymienia tylko AeMC i AME).",
@@ -1167,6 +1231,22 @@
   "textSha": "fc28e5661d07c3d0",
   "verdict": "PASS"
  },
+ "PL010-0164#2fe1de9a": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 1: «dostępna na równych prawach dla wszystkich jej użytkowników». Lokator i cytat poprawne.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "012fb4a14ac10067",
+  "verdict": "PASS"
+ },
+ "PL010-0164#5ca7e0eb": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: to samo pytanie i ta sama odpowiedź; inny tylko czwarty dystraktor, do którego tekst oryginału się nie odnosi.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "56a7d78f47d06318",
+  "verdict": "PASS"
+ },
  "PL010-0170#7bc66964": {
   "date": "2026-11-24",
   "note": "sameAs dopuszczalny (STYLE §5: różnica w dystraktorze „Wszystkie odpowiedzi są prawidłowe”); uwaga: tekst oryginału wspomina „opłatę lotniczą”, której w tym wariancie nie ma wśród odpowiedzi – nie wprowadza w błąd, bez wymogu poprawki.",
@@ -1293,6 +1373,22 @@
   "portion": "P21",
   "round": 1,
   "textSha": "ab36bb6f7cf43a25",
+  "verdict": "PASS"
+ },
+ "PL010-0188#ad4d889e": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 1: ograniczenie «wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego», a inne ustawy i umowy/uchwały międzynarodowe są tym, co należy «zachować», nie odrębną podstawą. Zdanie «Każda z trzech odpowiedzi odpowiada jednemu z elementów tego przepisu» przemilcza to. Proponuję: zdanie 2 → «Klucz ULC traktuje wszystkie elementy tego przepisu – upoważnienie Prawa lotniczego, przepisy innych ustaw, umowy międzynarodowe i uchwały organizacji międzynarodowych – łącznie, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.» oraz disputeNote: «Według art. 119 ust. 1 Prawa lotniczego podstawą ograniczenia swobody lotów jest wyłącznie wyraźne upoważnienie Prawa lotniczego, a przepisy innych ustaw oraz wiążące Rzeczpospolitą Polską umowy międzynarodowe i uchwały organizacji międzynarodowych należy przy tym zachować. Na egzaminie ULC zaliczana jest odpowiedź z klucza.» (ref art. 119 ust. 1 już jest).",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "a76438601116b619",
+  "verdict": "FIX"
+ },
+ "PL010-0188#d12c7188": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 1: «wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw…». Różnica sformułowań klucza («innych przepisów») nie zmienia sensu.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "4a3c65cdad1b4847",
   "verdict": "PASS"
  },
  "PL010-0190#5ff32bdb": {
@@ -1670,6 +1766,46 @@
   "round": 1,
   "textSha": "c5f5a37db68c69b7",
   "verdict": "PASS"
+ },
+ "PL010-0243#808177a8": {
+  "date": "2026-11-25",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc cytatów «mniejszej niż 1000 m … w inne silniki» i «… 500 m … tłokowych» na '§ 3 ust. 1 pkt 2 lit. a' (wstęp «zakaz wykonywania lotów nad obszarami miast…» zostaje przy '§ 3 ust. 1 pkt 2'). Treść poprawna: 1000 m dla samolotów z innymi silnikami; strefy R w § 3 ust. 1 pkt 5 (załącznik nr 3 to parki narodowe i inne strefy, nie miasta).",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "0da3913831b642b1",
+  "verdict": "FIX"
+ },
+ "PL010-0244#5810ba89": {
+  "date": "2026-11-25",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc obu cytatów (500 m dla śmigłowców i samolotów tłokowych; 1000 m dla innych silników) na '§ 3 ust. 1 pkt 2 lit. a'. Treść poprawna.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "eeb2150786dfac0d",
+  "verdict": "FIX"
+ },
+ "PL010-0245#4ae2e2e4": {
+  "date": "2026-11-25",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc: cytat 1000 m → '§ 3 ust. 1 pkt 2 lit. b', cytat 1500 m → '§ 3 ust. 1 pkt 2 lit. c'. Treść poprawna.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "e9e8e470110999ee",
+  "verdict": "FIX"
+ },
+ "PL010-0246#22a37308": {
+  "date": "2026-11-25",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). (1) loc cytatu 500 m → '§ 3 ust. 1 pkt 2 lit. a'. (2) Odpowiedź z klucza «AMSL GND» zawiera AMSL, a § 2 pkt 5: «AMSL – (Above Mean Sea Level) nad średnim poziomem morza»; tekst to pomija. Zdanie 2 → «Odpowiedź z klucza wskazuje skrót GND, który według § 2 pkt 10 oznacza poziom terenu; AMSL (§ 2 pkt 5) to średni poziom morza, od którego przepis tych wysokości nie liczy.» + ref {src PL-ROZP-ZAKAZY-LOTOW, loc '§ 2 pkt 5', quote 'AMSL – (Above Mean Sea Level) nad średnim poziomem morza'}. Nie sporne: pozostałe odpowiedzi (przeszkody) sprzeczne z przepisem.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "eceb327bb034c4aa",
+  "verdict": "FIX"
+ },
+ "PL010-0247#54dc8471": {
+  "date": "2026-11-25",
+  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc: cytat 1500 m → '§ 3 ust. 1 pkt 2 lit. c', cytat Warszawa 2000 m → '§ 3 ust. 1 pkt 2 lit. d'. Treść poprawna.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "312e08d019d7330f",
+  "verdict": "FIX"
  },
  "PL010-0249#fb6097ab": {
   "date": "2026-11-24",
@@ -3679,6 +3815,38 @@
   "textSha": "52d5a1a745742cde",
   "verdict": "PASS"
  },
+ "PL010-0574#257d28ca": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 2 pkt 1–3, «m.in.» słusznie (jest też pkt 4).",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "995f7d39a0c03083",
+  "verdict": "PASS"
+ },
+ "PL010-0574#a58ca725": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 2 pkt 1; pułapka poparta art. 123 ust. 2 pkt 4 i 7. Cytaty zgodne.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "bdae5cf8beb99174",
+  "verdict": "PASS"
+ },
+ "PL010-0575#21fa30b8": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 2 pkt 4; pułapka poparta art. 123 ust. 2 pkt 3, 4, 6.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "63a725800b129cc3",
+  "verdict": "PASS"
+ },
+ "PL010-0575#ed152e3c": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 2 pkt 3 i 4; klucz «Wszystkie» zgodny.",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "ec582da41528c7db",
+  "verdict": "PASS"
+ },
  "PL010-0577#1bf31f48": {
   "date": "2026-11-24",
   "note": "Klucz = SERA.6001(a)(7) i dodatek 4 (klasa G: separacja «Brak» dla IFR i VFR); art. 2 pkt 77 potwierdza charakter FIS. Zgodne też z AIP ENR 1.4 klasa G.",
@@ -3845,6 +4013,14 @@
   "portion": "P22",
   "round": 1,
   "textSha": "a4195a82ffc4fb6a",
+  "verdict": "PASS"
+ },
+ "PL010-0602#3ef571be": {
+  "date": "2026-11-25",
+  "note": "Art. 119 ust. 2: «w drodze rozporządzenia».",
+  "portion": "P23",
+  "round": 1,
+  "textSha": "7f0a9cb56d64824d",
   "verdict": "PASS"
  },
  "PL010-0611#3f7716b4": {
