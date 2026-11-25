@@ -308,7 +308,7 @@ _L = r"\d+[a-z]?(?:\.\d+[a-z]?)*"  # номер строки таблицы / п
 # załącznik 6, załącznik 6 tabela 2, załącznik 6 tabela 2 część I, załącznik 6 tabela 2 część I pkt 3.14
 LOC_STATUTE = re.compile(r"^((art\. |§ )%s( ust\. %s)?( pkt %s( lit\. [a-z]{1,2})?)?|załącznik \d+[a-z]?( tabela \d+)?( część [IVX]+[a-z]?)?( pkt %s)?)$"
                          % (_N, _N, _N, _L))
-LOC_CONVENTION = re.compile(r"^(art\. %s( ust\. %s)?|załącznik \d+( pkt \d+(\.\d+)*)?)$" % (_N, _N), re.I)
+LOC_CONVENTION = re.compile(r"^(art\. %s( ust\. %s)?( lit\. [a-z])?|załącznik \d+( pkt \d+(\.\d+)*)?)$" % (_N, _N), re.I)
 # правила: FCL.205.A, SERA.5005(b)(1)(i), MED.A.030, ORA.AeMC.215, M.A.201; Part 21/145/66/147: 21.A.3A, 145.A.30
 LOC_EUPARA = re.compile(r"^([A-Z][A-Za-z]*([/-][A-Z][A-Za-z]*)?|\d{2,3})(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*$")
 LOC_EUART = re.compile(r"^art\. %s( ust\. %s)?( pkt %s)?$" % (_N, _N, _N))
@@ -323,10 +323,11 @@ LOC_ICAO = re.compile(r"^(Article \d+( bis| ter| quater)?(\([a-z]\))?|Chapter \d
 # ITU Radio Regulations: Appendix 18, Appendix 18 channel 06, Appendix 18 channel AIS1, Appendix 18 note f
 LOC_ITU = re.compile(r"^Appendix \d+( channel (\d{2,4}|AIS\d|ASM\d)| note [a-z]{1,2})?$")
 # Polish ICAO Annex texts (Dz. Urz. ULC): rozdział 3, 3.1.2, 3.1.2 lit. a, definicja Faza alarmu, dodatek 1 pkt 2.1 lit. a,
-# dodatek pkt 2.1 (an unnumbered Appendix), załącznik A, załącznik A pkt 2.1, załącznik A sekcja 19a, tabela 3-1, tabela A4-1
+# dodatek pkt 2.1 (an unnumbered Appendix), załącznik A, załącznik A pkt 2.1, załącznik A sekcja 19a, tabela 3-1, tabela A4-1,
+# dodatek A pkt 2 (Annex 10), tabela A5-1-1, rysunek 5-25A (Doc 4444), dodatek 2 pole 7 (Doc 4444 flight plan item)
 LOC_ICAO_PL = re.compile(r"^(obwieszczenie|przedmowa|rozdział \d+|\d+(\.\d+[a-z]?)+( lit\. [a-z])?|definicja [A-ZĄĆĘŁŃÓŚŹŻ][^\n]{0,120}|"
-                         r"(dodatek( \d+)?|załącznik [A-Z])( (pkt|sekcja) %s( lit\. [a-z])?)?|"
-                         r"tabela (?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2})?)$" % _L)
+                         r"(dodatek( \d+| [A-Z])?|załącznik [A-Z])( (pkt|sekcja) %s( lit\. [a-z])?)?|"
+                         r"tabela (?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2}){0,2}|rysunek (?:A?\d{1,2}-)\d{1,3}[A-Z]?|dodatek 2 pole \d{1,2})$" % _L)
 LOC_EASA_ART = re.compile(r"^((GM\d* )?Article \d+[a-z]?|Annex [IVX]+)(\([0-9a-z]+\))*$")
 LOC_EASA_APP = re.compile(r"^Appendix \d+( pkt %s| to (AMC|GM)\d* [A-Z][A-Za-z]*(\.[A-Za-z0-9]+)+(\([a-z0-9]+\))*)?$" % _L)
 FUTURE_MARK = "PRZYSZŁA REDAKCJA"
@@ -375,6 +376,8 @@ def loc_parents(loc):
             [".".join(parts[:n]) for n in range(len(parts) - 1, 1, -1)] + ["rozdział " + parts[0]]
     if loc.startswith("definicja "):
         return ["rozdział 1"]
+    if re.match(r"^dodatek 2 pole \d+$", loc):
+        return ["dodatek 2 pkt 2", "dodatek 2"]   # Doc 4444, item of the flight plan instructions
     if re.match(r"^Appendix \d+ to (?:AMC|GM)", loc):
         return []   # EASA "Appendix 1 to AMC1 SERA.6005(c)" is a block of its own
     mt = re.match(r"^((?:GEN|ENR|AD) \d+(?:\.\d+)*) (?:klasa [A-G]|przypis \*{1,4}|[A-Z0-9][A-Z0-9/&.\-]{0,9}(?: \d{1,2})?)$", loc)
@@ -754,6 +757,14 @@ def validate_all(ctx, no_corpus=False, check_asset=False):
 
     rep.info.append("ключей в инвентаре: %d, без записи: %d, записей: %d" % (len(inv), len(new_without_record), len(records)))
 
+    # nothing marked for the owner may reach the asset (the flags live in terms_note / internal_note only)
+    try:
+        flagged = [t for t in asset_strings(json.loads(build_asset_text(ctx))) if OWNER_FLAG in t]
+    except SystemExit:
+        flagged = []
+    for t in flagged[:5]:
+        rep.err("в ассет попала пометка для владельца «%s»: %s" % (OWNER_FLAG, t[:80]))
+
     # asset
     if check_asset:
         try:
@@ -783,8 +794,37 @@ def cmd_validate(ctx, args):
 
 # ---------------------------------------------------------------- сборка ассета
 
+OWNER_FLAG = "ПРОВЕРИТЬ"
+
+
 def clean_refs(refs):
-    return [{"src": r["src"], "loc": r["loc"]} for r in (refs or [])]
+    """Refs of the asset: only src and loc (no quotes); identical (src, loc) pairs of one list collapse into the first one."""
+    out = []
+    seen = set()
+    for r in refs or []:
+        pair = (r["src"], r["loc"])
+        if pair not in seen:
+            seen.add(pair)
+            out.append({"src": r["src"], "loc": r["loc"]})
+    return out
+
+
+def capitalize_note(note):
+    """The note of an outdated question starts with a capital letter (the sources write it in lower case)."""
+    note = (note or "").strip()
+    return note[:1].upper() + note[1:] if note[:1].islower() else note
+
+
+def asset_strings(obj):
+    if isinstance(obj, str):
+        yield obj
+    elif isinstance(obj, dict):
+        for k, v in obj.items():
+            yield k
+            yield from asset_strings(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from asset_strings(v)
 
 
 def build_asset_text(ctx):
@@ -814,7 +854,7 @@ def build_asset_text(ctx):
         if r.get("status") == "unverified" and r.get("basis") == "outdated" and not r.get("sameAs") \
                 and not (r.get("text") or "").strip() and (r.get("basisNote") or "").strip() \
                 and len(r["basisNote"]) <= MAX_OUTDATED_NOTE:
-            outdated[key] = {"note": r["basisNote"].strip()}
+            outdated[key] = {"note": capitalize_note(r["basisNote"])}
 
     sections_by_topic = {}
     for stem, _, data in load_summaries(ctx):
@@ -855,11 +895,14 @@ def build_asset_text(ctx):
     for secs in sections_by_topic.values():
         for s in secs:
             used.update(x["src"] for x in s["refs"])
+    # "Stan prawny na": the NEWEST legal state among the cited sources (legalState, else the date the text was fetched as the
+    # current one). The oldest date would mislead: an unchanged old act (EU 376/2014, consolidated 2018) says nothing
+    # about how fresh the materials are.
     fetched = sorted((sources[s].get("legalState") or sources[s].get("fetched")) for s in used
                      if s in sources and (sources[s].get("legalState") or sources[s].get("fetched")))
     asset = {
         "schema": ASSET_SCHEMA, "subject": SUBJECT, "lang": "pl",
-        "legalStateAsOf": fetched[0] if fetched else None,
+        "legalStateAsOf": fetched[-1] if fetched else None,
         "sources": {s: {"title": sources[s].get("title_pl", s), "version": sources[s].get("version"),
                         "kind": sources[s].get("kind")} for s in sorted(used) if s in sources},
         "topics": out_topics, "explanations": explanations, "outdated": outdated,

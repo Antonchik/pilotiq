@@ -18,6 +18,7 @@ Locators (see plan "Общие соглашения"):
   eu_reg               : art. N | art. N ust. N | SERA.5005 | SERA.5005(a)(1) | FCL.205.A ...
   easa                 : SERA.5005 | SERA.5005(a)(1) | AMC1 SERA.5005(b) | GM1 FCL.205.A ...
   aip                  : GEN 1.2 | ENR 1.2 | ENR 1.2 pkt 2.1
+  convention (Chicago)  : art. 12 | art. 3bis | art. 44 lit. a
   icao_pl              : rozdział 3 | 3.1.2 | 3.1.2 lit. a | definicja Faza alarmu | dodatek 1 pkt 2.1 | załącznik A | tabela 3-1
 """
 import argparse
@@ -1829,6 +1830,14 @@ _ULC_TOC = re.compile(r"\.{5,}")
 _ULC_SYMBOL = str.maketrans({"\uf02d": "\u2212", "\uf0b0": "\u00b0", "\uf02b": "+", "\uf03d": "=", "\uf02a": "*",
                              "\uf0b4": "\u00d7", "\uf0be": " "})
 _ULC_BODY_START = re.compile(r"^ROZDZIAŁ 1(?:\.? [A-ZĄĆĘŁŃÓŚŹŻ ,–-]+)?$")
+# Doc 4444 (PANS-ATM): "Rozdział 4" / "Dodatek 2" alone on a line, the title follows in capitals
+_PANS_BODY_START = re.compile(r"^Rozdział 1$")
+_PANS_CHAPTER_RE = re.compile(r"^Rozdział (\d{1,2})$")
+_PANS_APPENDIX_RE = re.compile(r"^Dodatek (\d{1,2})$")
+# "4.6.1.4 . Korygowanie …" (a stray full stop) and "12.3.1.12" alone on a line (the text is in a table) occur in Doc 4444
+_PANS_NUM_RE = re.compile(r"^(\d{1,2}[a-z]?(?:\.\d{1,3}[a-z]?){0,6})(\.?)(?:(?:\s+\.)?(\s+[„\"(]?[A-ZĄĆĘŁŃÓŚŹŻ])|$)")
+_PANS_FIGURE_RE = re.compile(r"^Rysunek ((?:A?\d{1,2}-)\d{1,3}[A-Z]?)\.")
+_PANS_FIELD_RE = re.compile(r"^PUNKT (\d{1,2}):")
 
 
 def _ulc_rotated(obj):
@@ -1892,11 +1901,23 @@ def ulc_annex_lines(path, cfg):
 
 _ULC_CHAPTER_RE = re.compile(r"^ROZDZIAŁ (\d{1,2})(?:\.?\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?\.?$")
 _ULC_APPENDIX_RE = re.compile(r"^DODATEK(?: (\d{1,2}))?\.?(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?$")
+_ULC_STYLES = {
+    "caps": (_ULC_BODY_START, _ULC_CHAPTER_RE, _ULC_APPENDIX_RE),
+    "pans": (_PANS_BODY_START, _PANS_CHAPTER_RE, _PANS_APPENDIX_RE),
+    "caps-letter": (_ULC_BODY_START, _ULC_CHAPTER_RE,
+                    re.compile(r"^(?:DODATEK|Dodatek) (\d{1,2}|[A-Z])(?:\.? .*)?$")),
+    "caps-alone": (re.compile(r"^ROZDZIAŁ 1$"), re.compile(r"^ROZDZIAŁ (\d{1,2})$"),      # Annex 1: "ROZDZIAŁ 4" + title on the next line
+                   re.compile(r"^DODATEK (\d{1,2})$")),
+    "numcaps": (re.compile(r"^1\. DEFINICJE$"),      # Annex 10 vol. IV: "3. SYSTEMY DOZOROWANIA", sections "3.1. TITLE"
+                re.compile(r"^(\d{1,2})\. [A-ZĄĆĘŁŃÓŚŹŻ][A-ZĄĆĘŁŃÓŚŹŻ0-9 ,–/().-]+$"), re.compile(r"^\x00$")),
+    "title": (re.compile(r"^Rozdział 1\.? [A-ZĄĆĘŁŃÓŚŹŻ].*$"), re.compile(r"^Rozdział (\d{1,2})\.? [A-ZĄĆĘŁŃÓŚŹŻ].*$"),
+              re.compile(r"^Dodatek (\d{1,2}|[A-Z])(?:\.? [A-ZĄĆĘŁŃÓŚŹŻ].*)$")),
+}
 _ULC_ATTACH_RE = re.compile(r"^ZAŁĄCZNIK ([A-Z])\.?(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?$")
 _ULC_NUM_RE = re.compile(r"^(\d{1,2}[a-z]?(?:\.\d{1,3}[a-z]?){0,6})(\.?)\s+[„\"(]?[A-ZĄĆĘŁŃÓŚŹŻ]")
 _ULC_SECTION_RE = re.compile(r"^Sekcja (\d{1,2}[a-z]?)\.?\s+[A-ZĄĆĘŁŃÓŚŹŻ]")   # Annex 14 Attachment A "Sekcja 19a …"
 _ULC_LIT_RE = re.compile(r"^([a-z])\)\s+\S")
-_ULC_TABLE_RE = re.compile(r"^Tabela ((?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2})?)(?:\*|\.|\s*$|\s+(?:\(c\.d\.\)|[A-ZĄĆĘŁŃÓŚŹŻ(„\"]))")
+_ULC_TABLE_RE = re.compile(r"^Tabela ((?:[A-Z]\d{0,2}-)?\d{1,2}(?:[-.]\d{1,2}){0,2})(?:\*|\.|\s*$|\s+(?:\(c\.d\.\)|[A-ZĄĆĘŁŃÓŚŹŻ(„\"]))")
 # definitions in Chapter 1: "Faza alarmu (Alert phase). …", "Lotnisko (Aerodrome) − …", "IFR. Skrót …", "D. – …"
 _ULC_DEF_PAREN_RE = re.compile(r"^([A-ZĄĆĘŁŃÓŚŹŻ][^\s(.;:]*(?: (?:[A-Z]\.|[^\s(.;:][^\s.;:]*)){0,11}?)\d?\s\((?=[A-Za-z(])")
 _ULC_DEF_ABBR_RE = re.compile(r"^([A-Z][A-Z0-9/-]{0,11})\.\s+(?:[–—−-]\s+)?[A-ZĄĆĘŁŃÓŚŹŻa-z]")
@@ -1950,6 +1971,38 @@ def _ulc_definition(line, nxt):
     return None
 
 
+def _ulc_definition_dash(line):
+    """(term, strong) for a definition of the form "Term - text" or "Term (RR S1.32) - text" (Annex 10 Polish text)."""
+    m = re.match(r"^([A-ZĄĆĘŁŃÓŚŹŻ][^-–—:;()]{1,80}?)(?: \((?:RR )?[A-Z]?[\w. /]{1,20}\))? [-–—] \S", line)
+    if not m or m.group(1).startswith(("RR ", "Uwaga", "Zalecenie")) or m.group(1).count(" ") > 8:
+        return None
+    return m.group(1).strip(), True
+
+
+def _ulc_definition_dot(line):
+    """(term, False) for "Dupleks. Metoda, w której …" or "Stacja zdalnego pilotowania (RPS). Element …" (Annex 10 vol. V)."""
+    m = re.match(r"^([A-ZĄĆĘŁŃÓŚŹŻ][^.:;()]{1,60}?)(?: \([^)]{1,70}\))?\.\s+[A-ZĄĆĘŁŃÓŚŹŻ]", line)
+    if not m or m.group(1).startswith(("Uwaga", "Zalecenie", "Norma", "Zgodnie")) or m.group(1).count(" ") > 6:
+        return None
+    return m.group(1).strip(), False
+
+
+def _ulc_next_label(cur, new):
+    """The next appendix label: 1 -> 2 (up to +2), A -> B."""
+    if cur.isdigit() and new.isdigit():
+        return 0 < int(new) - int(cur) <= 2
+    if len(cur) == 1 and len(new) == 1 and cur.isalpha() and new.isalpha():
+        return 0 < ord(new) - ord(cur) <= 2
+    return False
+
+
+def _ulc_skip_heading(last, cur):
+    """A paragraph "5.2.1.7.2.1" after "5.2.1.7.1.2": the intermediate heading "5.2.1.7.2" is missing in the print."""
+    k = len(cur)
+    return (k >= 3 and k - 1 <= len(last) and cur[-1] == (1, "") and cur[:k - 2] == last[:k - 2]
+            and cur[k - 2][1] == "" and last[k - 2][1] == "" and cur[k - 2][0] - last[k - 2][0] == 1)
+
+
 def _ulc_comp(tok):
     m = re.match(r"^(\d+)([a-z]?)$", tok)
     return (int(m.group(1)), m.group(2))
@@ -1968,12 +2021,22 @@ def _ulc_seq_ok(last, cur):
     return (n2 == n1 and s2 > s1) or (0 < n2 - n1 <= 3 and s2 in ("", "a"))
 
 
-def ulc_annex_anchors(text):
+def ulc_annex_anchors(text, pans=False, style=None, def_style="paren", flat_appendix=False, lenient_seq=False, figures=False):
     """Anchors of a Polish ICAO Annex text (profile ulc-annex):
     `obwieszczenie`, `przedmowa`, `rozdział 3`, `3.1.2`, `3.1.2 lit. a`, `definicja Faza alarmu` (Chapter 1),
     `dodatek 1`, `dodatek 1 pkt 2.1`, `dodatek 1 pkt 2.1 lit. a` (an unnumbered Appendix: `dodatek`, `dodatek pkt 2.1`),
     `załącznik A`, `załącznik A pkt 2.1`, `załącznik A sekcja 19a` (Annex 14), `tabela 3-1`, `tabela A-1`.
-    A number printed twice in a row (two versions of a provision with dates of application) is one anchor covering both."""
+    A number printed twice in a row (two versions of a provision with dates of application) is one anchor covering both.
+    pans=True (profile ulc-pans, Doc 4444): headings are "Rozdział 4" / "Dodatek 2" in mixed case on their own line; additional
+    anchors `rysunek 5-25A` and `dodatek 2 pole 7` (the "PUNKT 7:" items of the flight plan instructions).
+    Other print layouts (`style`): "caps" (default, ROZDZIAŁ 3. TITLE), "caps-letter" (+ Dodatek A), "title" (Rozdział 3. Title,
+    Dodatek A. Title; Annex 10); `figures`: anchors `rysunek 3-1` (always on for pans); `def_style` "paren" (Term (English). …) or "dash" (Term - text; Annex 10 vol. II), "dot" (Term. Text; Annex 10 vol. V); `flat_appendix`: an
+    appendix is one anchor without paragraphs (Annex 17: excerpts of other documents); `lenient_seq`: a paragraph "5.2.1.7.2.1"
+    is accepted after "5.2.1.7.1.2" although its heading "5.2.1.7.2" is missing in the print (Annex 10).
+    """
+    pans = pans or style == "pans"
+    style = "pans" if pans else (style or "caps")
+    body_start, chapter_re, appendix_re = _ULC_STYLES[style]
     rows = _line_offsets(text)
     total = len(text)
     ev = []   # (start, type, key, extra)
@@ -1993,20 +2056,20 @@ def ulc_annex_anchors(text):
             ev.append((start, "front", "przedmowa", None))
             continue
         if not body:
-            if not _ULC_BODY_START.match(line):
+            if not body_start.match(line):
                 continue
             body = True
         nxt = rows[ri + 1][1] if ri + 1 < len(rows) else ""
         prev = rows[ri - 1][1] if ri else ""
-        mc = _ULC_CHAPTER_RE.match(line)
-        ma = _ULC_APPENDIX_RE.match(line)
-        mt = _ULC_ATTACH_RE.match(line)
+        mc = chapter_re.match(line)
+        ma = appendix_re.match(line)
+        mt = None if pans else _ULC_ATTACH_RE.match(line)
         new = None
         if mc and (chapter is None or 0 < int(mc.group(1)) - chapter <= 2) and (container is None or container[0] == "rozdział"):
             chapter = int(mc.group(1))
             new = ("rozdział", mc.group(1))
         elif ma and (container is None or container[0] == "rozdział" or
-                     (container[0] == "dodatek" and container[1] and ma.group(1) and 0 < int(ma.group(1)) - int(container[1]) <= 2)):
+                     (container[0] == "dodatek" and container[1] and ma.group(1) and _ulc_next_label(container[1], ma.group(1)))):
             new = ("dodatek", ma.group(1) or "")
         elif mt and container is not None and (container[0] != "załącznik" or 0 < ord(mt.group(1)) - ord(container[1]) <= 2):
             new = ("załącznik", mt.group(1))
@@ -2016,27 +2079,39 @@ def ulc_annex_anchors(text):
             ev.append((start, "container", key, None))
             last = ((int(new[1]), ""),) if new[0] == "rozdział" else ()
             lit = para = None
-            defs_on = new == ("rozdział", "1") and "DEFINICJE" in line
+            defs_on = new == ("rozdział", "1") and (pans or "DEFINICJE" in line.upper())
             prev_struct = True
             continue
-        if container is None:
+        if container is None or (flat_appendix and container[0] == "dodatek"):
             continue
         mtab = _ULC_TABLE_RE.match(line)
         if mtab:
             ev.append((start, "table", "tabela %s" % mtab.group(1), None))
             continue
-        mn = _ULC_NUM_RE.match(line)
+        if pans or figures:
+            mfig = _PANS_FIGURE_RE.match(line)
+            if mfig:
+                ev.append((start, "table", "rysunek %s" % mfig.group(1), None))
+                continue
+        if pans:
+            mpole = _PANS_FIELD_RE.match(line)
+            if mpole and container == ("dodatek", "2") and last[:1] == ((2, ""),):
+                ev.append((start, "table", "dodatek 2 pole %s" % mpole.group(1), None))
+                continue
+        mn = (_PANS_NUM_RE if pans else _ULC_NUM_RE).match(line)
+        if mn and pans and not mn.group(3) and mn.group(1).count(".") < 2:
+            mn = None     # a bare number alone on a line counts only with three levels (a phraseology table row)
         msec = _ULC_SECTION_RE.match(line) if container[0] != "rozdział" else None
         if mn or msec:
             num = (msec or mn).group(1)
             cur = tuple(_ulc_comp(x) for x in num.split("."))
-            ok = _ulc_seq_ok(last, cur)
+            ok = _ulc_seq_ok(last, cur) or (lenient_seq and _ulc_skip_heading(last, cur))
             if container[0] == "rozdział":
                 ok = ok and len(cur) >= 2 and cur[0] == (chapter, "")
             elif len(cur) == 1 and not msec:
                 ok = ok and mn.group(2) == "."
             if ok:
-                if container[0] == "rozdział" and chapter == 1:
+                if container[0] == "rozdział" and chapter == 1 and def_style not in ("dash", "dot"):
                     defs_on = defs_on and len(cur) > 2 or (cur == ((1, ""), (1, "")) and "Definicje" in line)
                 cname = " ".join(container).strip()
                 if container[0] == "rozdział":
@@ -2054,11 +2129,13 @@ def ulc_annex_anchors(text):
         was_struct, prev_struct = prev_struct, False
         if defs_on:
             term = None
-            d = _ulc_definition(line, nxt)
+            d = (_ulc_definition_dash(line) if def_style == "dash" else _ulc_definition_dot(line) if def_style == "dot"
+                 else _ulc_definition(line, nxt))
             if d and (d[1] or was_struct or not prev or prev.rstrip()[-1:] in ".:;)" or prev.startswith("== ")):
                 term = d[0]
             if term:
-                term = re.sub(r"(?<=[^\W\d_])\d$", "", term).strip()   # footnote mark "statku powietrznego1"
+                if def_style != "dot":
+                    term = re.sub(r"(?<=[^\W\d_])\d$", "", term).strip()   # footnote mark "statku powietrznego1"
                 term = re.sub(r"[\s†*]+$", "", term)                      # version marks "RPAS) †", "RPAS) ††"
                 if term.count(")") > term.count("("):
                     term = term.replace(")", "").strip()
@@ -2119,7 +2196,195 @@ def ulc_annex_anchors(text):
     return dict(sorted(out.items(), key=lambda kv: (kv[1][0], -kv[1][1], kv[0])))
 
 
-_OWNER_PROFILES = {"icao7300": icao7300_lines, "icao4444": icao4444_lines, "itu-rr": itu_lines, "ulc-annex": ulc_annex_lines}
+# --------------------------------------------------------------------------- Chicago Convention (Dz.U. 1959 nr 35 poz. 212)
+#
+# kind "convention", profile "konwencja-isap": the consolidated ISAP text of the Polish instrument of ratification and of the
+# Convention. The first page carries the amendment history (dropped), every page ends with "© Urząd Lotnictwa Cywilnego".
+# Articles "Artykuł 3 bis" -> `art. 3bis`, paragraphs a), b) … -> `art. 12 lit. a` (the Convention has no ust.).
+
+_KONW_FOOTER = re.compile(r"^©\s*Urząd Lotnictwa Cywilnego$")
+_KONW_FRONT = re.compile(r"^(?:Aktualizacja: .*|Dz\.\s?U\.[\d.]+|\d{4}\.\d{2}\.\d{2}\s+zm\..*|"
+                         r"Dz\. ?U\. z \d{4} r?\.?,? ?Nr \d+,? ?poz\. \d+(?: ze zm\.)?(?:\s+Strona \d+)?|Strona \d+)$")
+_KONW_ARTICLE_RE = re.compile(r"^Artykuł (\d{1,2}|pierwszy)\.?(?: (bis|ter|quater))?$")
+_KONW_UST_RE = re.compile(r"^(\d{1,2})[.)]\s+[A-ZĄĆĘŁŃÓŚŹŻ„\"(]")
+_KONW_DIVISION_RE = re.compile(r"^(?:Rozdział [IVXLa-ząćęłńóśźż]+\.?(?: .*)?|CZĘŚĆ [IVX]+\.?(?: .*)?|PODPISANIE KONWENCJI)$")
+_KONW_LIT_RE = re.compile(r"^([a-z])\)\s+\S")
+
+
+def konwencja_lines(path, cfg):
+    import pdfplumber
+
+    lines = []
+    with pdfplumber.open(path) as pdf:
+        for page in pdf.pages:
+            rows = [clean_line(ln["text"]) for ln in page.extract_text_lines()]
+            lines.extend(r for r in rows if r and not _KONW_FOOTER.match(r) and not _KONW_FRONT.match(r))
+            page.flush_cache()
+    return ulc_dehyphenate(clean_lines(lines))
+
+
+def konwencja_anchors(text):
+    """`art. 12`, `art. 3bis`, `art. 5 ust. 1`, `art. 44 lit. a`, `art. 5 ust. 1 lit. a` of a convention (Chicago, Tokyo). An article
+    ends at the next article or at a chapter / part heading; a paragraph "1." at the next paragraph; a lit. at the next lit.
+    or paragraph. The Chicago Convention has no numbered paragraphs, the Tokyo Convention has."""
+    rows = _line_offsets(text)
+    total = len(text)
+    ev = []
+    art = None
+    ust = None
+    last_ust = 0
+    lit = None
+    for start, line in rows:
+        m = _KONW_ARTICLE_RE.match(line)
+        if m:
+            art = "art. %s%s" % ("1" if m.group(1) == "pierwszy" else m.group(1), m.group(2) or "")
+            ev.append((start, "art", art))
+            ust = lit = None
+            last_ust = 0
+            continue
+        if _KONW_DIVISION_RE.match(line):
+            ev.append((start, "end", None))
+            art = ust = lit = None
+            continue
+        if not art:
+            continue
+        mu = _KONW_UST_RE.match(line)
+        if mu and int(mu.group(1)) == last_ust + 1:
+            last_ust += 1
+            ust = "%s ust. %d" % (art, last_ust)
+            ev.append((start, "ust", ust))
+            lit = None
+            continue
+        ml = _KONW_LIT_RE.match(line)
+        if ml:
+            exp = "a" if lit is None else chr(ord(lit) + 1)
+            if ml.group(1) == exp:
+                lit = exp
+                ev.append((start, "lit", "%s lit. %s" % (ust or art, exp)))
+    out = {}
+    for i, (s, typ, key) in enumerate(ev):
+        if typ == "end":
+            continue
+        end = total
+        for s2, typ2, key2 in ev[i + 1:]:
+            if typ2 in ("art", "end") or (typ == "ust" and typ2 == "ust") or (typ == "lit" and typ2 in ("lit", "ust")):
+                end = s2
+                break
+        if key not in out:
+            out[key] = [s, end]
+    return out
+
+
+# Doc 4444 (PANS-ATM, Dz. Urz. ULC 2025 poz. 58): same Dziennik header; the running header is "1-2 Zarządzanie ruchem lotniczym
+# (PANS-ATM)", "A3-3 Zarządzanie …", "Rozdział 5. Metody i minima separacji 5-31" (a long title wraps onto a second line
+# that ends with the page number), "Dodatek 3 A3-3" (sic "Doatek"); the footer "PANS-ATM 1-1" is printed on some pages.
+# Front matter: page 1 the obwieszczenie, pages 2-8 title/register/contents (dropped), the Preface from page 9 (its
+# table of the origin of amendments is a garbled multi-column table and is cut off at "1. wydanie"), the body from the page
+# with "Rozdział 1". The title pages of Dodatek 1-5 only repeat the list of their sections (dropped, titles kept).
+_PANS_RUNNING = re.compile(r"^(?:(?:\(?[ivxl]+\)|\d{1,2}-\d{1,3}|A\d-\d{1,3}) Zarządzanie ruchem lotniczym(?: \(PANS-ATM\))?|"
+                           r"(?:Przedmowa|Spis treści) \([ivxl]+\)|Rozdział \d{1,2}\. .+|Do(?:d|)atek \d{1,2} A\d-\d{1,3})$")
+_PANS_RUN_TAIL = re.compile(r"^.{1,70} \d{1,2}-\d{1,3}$")
+_PANS_FOOTER = re.compile(r"^PANS-ATM (?:A?\d{1,2}-\d{1,3}|\([ivxl]+\))$")
+_PANS_APP_TITLE = re.compile(r"^Dodatek [1-5]$")
+
+
+def pans_page_rows(rows):
+    rows = [r for r in rows if r]
+    late = [i for i, r in enumerate(rows) if i and _ULC_DZIENNIK.match(r)]
+    if late:     # a landscape page (154): the Dziennik line comes last, the rotated figure text is garbage; keep the captions
+        rows = [r for i, r in enumerate(rows) if i != late[0] and r.startswith(("Rysunek ", "Tabela "))]
+    if rows and _ULC_DZIENNIK.match(rows[0]):
+        rows = rows[1:]
+    if rows and _PANS_RUNNING.match(rows[0]):
+        wrapped = rows[0].startswith("Rozdział ") and not re.search(r" \d{1,2}-\d{1,3}$", rows[0])
+        rows = rows[1:]
+        if wrapped and rows and _PANS_RUN_TAIL.match(rows[0]):
+            rows = rows[1:]
+    while rows and _PANS_FOOTER.match(rows[-1]):
+        rows.pop()
+    if rows and _PANS_APP_TITLE.match(rows[0]):
+        rows = [r for r in rows if r == r.upper() or _PANS_APP_TITLE.match(r)]
+    return rows
+
+
+def ulc_pans_lines(path, cfg):
+    import pdfplumber
+
+    pre_from, body_from = cfg.get("prefacePage", 9), cfg.get("bodyPage", 20)
+    lines = []
+    with pdfplumber.open(path) as pdf:
+        for idx, page in enumerate(pdf.pages):
+            num = idx + 1
+            if 1 < num < pre_from:
+                continue
+            flat = page.filter(lambda o: not _ulc_rotated(o))
+            rows = pans_page_rows([clean_line(ln["text"].translate(_ULC_SYMBOL)) for ln in flat.extract_text_lines()])
+            if num == 1:
+                lines.append("== OBWIESZCZENIE ==")
+            elif num == pre_from:
+                lines.append("== PRZEDMOWA ==")
+            if pre_from <= num < body_from:
+                cut = [i for i, r in enumerate(rows) if re.match(r"^1\. wydanie\b", r)]
+                if cut:
+                    rows = rows[:cut[0]]
+                elif num > pre_from + 2:
+                    rows = []
+            lines.extend(rows)
+            page.flush_cache()
+    return ulc_dehyphenate(clean_lines(lines))
+
+
+# Annex 17 and Annex 10 (volumes II, V …; Dz. Urz. ULC 2024-2025): no "Dziennik Urzędowy" line on the pages, the running
+# header and footer differ per volume, so the profile "ulc-plain" is driven by the regular expressions in the fetch.files entry:
+#   head / foot : regexes of the page header / footer rows (dropped while the first / last row matches); drop: rows dropped anywhere
+#   obwieszczeniePage, prefacePages [from, to] (a preface table of amendments is not part of the text), bodyPage
+#   prefaceCut  : regex; the rows from the first match on are dropped on the last preface page
+#   style, defStyle, flatAppendix : see ulc_annex_anchors
+
+def plain_page_rows(rows, head, foot, drop=()):
+    rows = [r for r in rows if r and not any(re.match(d, r) for d in drop)]
+    for _ in range(3):
+        if rows and any(re.match(h, rows[0]) for h in head):
+            rows = rows[1:]
+    for _ in range(4):
+        if rows and any(re.match(f, rows[-1]) for f in foot):
+            rows.pop()
+    return rows
+
+
+def ulc_plain_lines(path, cfg):
+    import pdfplumber
+
+    head, foot = cfg.get("head", []), cfg.get("foot", [])
+    pre_from, pre_to = cfg.get("prefacePages", [0, 0])
+    body_from = cfg["bodyPage"]
+    cut = re.compile(cfg["prefaceCut"]) if cfg.get("prefaceCut") else None
+    lines = []
+    with pdfplumber.open(path) as pdf:
+        for idx, page in enumerate(pdf.pages):
+            num = idx + 1
+            keep = num == cfg.get("obwieszczeniePage", 1) or pre_from <= num <= pre_to or num >= body_from
+            if not keep:
+                continue
+            flat = page.filter(lambda o: not _ulc_rotated(o))
+            rows = plain_page_rows([clean_line(ln["text"].translate(_ULC_SYMBOL)) for ln in flat.extract_text_lines()],
+                                   head, foot, cfg.get("drop", []))
+            if num == cfg.get("obwieszczeniePage", 1):
+                lines.append("== OBWIESZCZENIE ==")
+            elif num == pre_from:
+                lines.append("== PRZEDMOWA ==")
+            if cut and num == pre_to:
+                hit = [i for i, r in enumerate(rows) if cut.match(r)]
+                if hit:
+                    rows = rows[:hit[0]]
+            lines.extend(rows)
+            page.flush_cache()
+    return ulc_dehyphenate(clean_lines(lines))
+
+
+_OWNER_PROFILES = {"icao7300": icao7300_lines, "icao4444": icao4444_lines, "itu-rr": itu_lines, "ulc-annex": ulc_annex_lines,
+                   "ulc-pans": ulc_pans_lines, "ulc-plain": ulc_plain_lines,
+                   "konwencja-isap": konwencja_lines}
 
 
 def build_owner_corpus(src, sources_dir):
@@ -2287,10 +2552,19 @@ def write_anchors(path, text_sha, anchors, future=(), langs=None):
 
 
 def extract_one(src, sources_dir, corpus_dir, anchors_dir):
+    if (src.get("fetch") or {}).get("mode") == "manual" and src["kind"] == "convention":
+        text, cfg = build_owner_corpus(src, sources_dir)
+        sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        anchors = konwencja_anchors(text)
+        write_text(os.path.join(corpus_dir, src["id"] + ".txt"), text)
+        write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors)
+        return src["id"], len(text), len(anchors)
     if (src.get("fetch") or {}).get("mode") == "manual" and src["kind"] == "icao_pl":
         text, cfg = build_owner_corpus(src, sources_dir)
         sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
-        anchors = ulc_annex_anchors(text)
+        anchors = ulc_annex_anchors(text, pans=cfg["profile"] == "ulc-pans", style=cfg.get("style"),
+                                    def_style=cfg.get("defStyle", "paren"), flat_appendix=bool(cfg.get("flatAppendix")),
+                                    lenient_seq=bool(cfg.get("lenientSeq")), figures=bool(cfg.get("figures")))
         write_text(os.path.join(corpus_dir, src["id"] + ".txt"), text)
         write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors)
         return src["id"], len(text), len(anchors)

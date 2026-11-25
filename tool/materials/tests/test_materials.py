@@ -492,6 +492,14 @@ class UnverifiedBasisTest(Base):
         self.put_src("P01", [self.outdated(refs=[{"src": "LAW", "loc": "art. 999"}])])
         self.assertTrue(any("якоря" in e for e in self.validate().errors))
 
+    def test_outdated_note_is_capitalised_in_the_asset_only(self):
+        self.put_src("P01", [self.outdated(basisNote="uchylone rozp. MI z 9.10.2003.")])
+        self.assertEqual(self.errors(), [])
+        self.assertEqual(self.build()["outdated"][self.k]["note"], "Uchylone rozp. MI z 9.10.2003.")
+        self.assertEqual(m.capitalize_note("  łączność"), "Łączność")
+        self.assertEqual(m.capitalize_note("2018 r."), "2018 r.")
+        self.assertEqual(m.read_json(self.ctx.src_dir / "P01.json")[0]["basisNote"], "uchylone rozp. MI z 9.10.2003.")
+
     def test_outdated_entry_is_built_as_a_separate_list_with_links(self):
         self.put_src("P01", [self.outdated()])
         asset = self.build()
@@ -744,6 +752,34 @@ class SourcesTest(Base):
     def test_reference_only_quote_forbidden(self):
         self.put_src("P01", [self.rec(self.k, refs=[{"src": "REF", "loc": "SERA.5005", "quote": "x"}])])
         self.assertTrue(any("цитаты запрещены" in e for e in self.validate().errors))
+
+    def test_duplicate_refs_collapse_in_the_asset_only(self):
+        refs = [{"src": "LAW", "loc": "art. 1", "quote": GOOD_QUOTE}, {"src": "LAW", "loc": "art. 2"},
+                {"src": "LAW", "loc": "art. 1", "quote": GOOD_QUOTE}]
+        self.assertEqual(m.clean_refs(refs), [{"src": "LAW", "loc": "art. 1"}, {"src": "LAW", "loc": "art. 2"}])
+        self.assertEqual(m.clean_refs(None), [])
+        self.put_src("P01", [self.rec(self.k, refs=refs)])
+        self.assertEqual(len(m.read_json(self.ctx.src_dir / "P01.json")[0]["refs"]), 3)   # the source is untouched
+
+    def test_legal_state_is_the_newest_of_the_cited_sources(self):
+        self.put_src("P01", [self.rec(self.k, refs=[{"src": "LAW", "loc": "art. 1", "quote": GOOD_QUOTE},
+                                                    {"src": "REF", "loc": "SERA.5005(a)"}])])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}])
+        self.assertEqual(self.build()["legalStateAsOf"], "2026-11-24")   # REF has no legalState: its fetch date; not the older LAW date
+
+    def test_owner_flag_never_reaches_the_asset(self):
+        self.put_src("P01", [self.rec(self.k)])
+        self.review("P01.r1.editor.json", [{"key": self.k, "verdict": "PASS"}])
+        self.assertEqual(self.validate().errors, [])
+        data = m.read_json(self.ctx.sources)
+        data[0]["version"] = "Dz.U. test [ПРОВЕРИТЬ владельцем: URL]"
+        jdump(self.ctx.sources, data)
+        self.assertTrue(any("ПРОВЕРИТЬ" in e for e in self.validate().errors))
+        data[0]["version"] = "Dz.U. test"
+        data[0]["internal_note"] = "[ПРОВЕРИТЬ владельцем: URL]"   # internal fields never reach the asset
+        jdump(self.ctx.sources, data)
+        self.assertEqual(self.validate().errors, [])
+        self.assertNotIn("internal_note", self.ctx.asset.read_text(encoding="utf-8") if self.ctx.asset.exists() else "")
 
     def test_legal_state_preferred(self):
         self.put_src("P01", [self.rec(self.k)])

@@ -1057,6 +1057,173 @@ class UlcAnnexTest(unittest.TestCase):
         self.assertTrue(m.src_quotable({"kind": "icao_pl"}))
 
 
+class UlcPansTest(unittest.TestCase):
+    """Doc 4444 PANS-ATM (Dz. Urz. ULC 2025 poz. 58, profile ulc-pans)."""
+
+    TEXT = ("== OBWIESZCZENIE ==\nOBWIESZCZENIE NR 22/2025\n== PRZEDMOWA ==\nPRZEDMOWA\n1. Tło historyczne\n"
+            "Rozdział 1\nDEFINICJE\nWyrażenia użyte w niniejszym dokumencie mają następujące znaczenie:\n"
+            "Adres logowania (Logon address). Określony kod stosowany dla łącza danych.\n"
+            "AIRPROX. Wyraz kodowy stosowany w meldunku.\n"
+            "Rozdział 2\nBEZPIECZEŃSTWO\nRozdział 3\nPRZEPUSTOWOŚĆ\nRozdział 4\nOGÓLNE PRZEPISY\n4.1 ODPOWIEDZIALNOŚĆ\n4.1.1 Służba kontroli obszaru\nSłużba jest zapewniana:\n"
+            "a) przez centrum; lub\nb) przez organ.\n4.1.2 Służba kontroli zbliżania\n"
+            "4.1.2.1 Kontroli prędkości nie stosuje się.\n4.1.2.2 . Korygowanie prędkości należy ograniczać.\n"
+            "4.1.2.3 Tekst pierwszy.\n4.1.2.4\nOkoliczności Wyrażenia frazeologiczne\n4.1.2.5 Kolejny punkt.\n"
+            "Rysunek 5-25A. Separacja — przy wykorzystaniu DME\nTabela A5-1-1. Żądania dotyczące zmiany trasy\n"
+            "Dodatek 2\nPLAN LOTU\n1. Wzór formularza planu ICAO.\n2. Instrukcje wypełniania formularza.\n"
+            "PUNKT 7: ZNAK ROZPOZNAWCZY\nWPISAĆ znak.\nPUNKT 8: PRZEPISY WYKONYWANIA LOTU\nWPISAĆ literę.\n"
+            "3. Instrukcje nadawania depeszy.\nDodatek 3\nDEPESZE\n1. Treść i formaty\n1.1. Standardowe rodzaje depesz\n")
+
+    def test_anchors(self):
+        import materials as m
+        a = ec.ulc_annex_anchors(self.TEXT, pans=True)
+        t = self.TEXT
+        for key in ("obwieszczenie", "przedmowa", "rozdział 1", "definicja Adres logowania", "definicja AIRPROX",
+                    "rozdział 4", "4.1", "4.1.1", "4.1.1 lit. a", "4.1.1 lit. b", "4.1.2", "4.1.2.1", "4.1.2.2",
+                    "4.1.2.3", "4.1.2.4", "4.1.2.5", "rysunek 5-25A", "tabela A5-1-1", "dodatek 2", "dodatek 2 pkt 1",
+                    "dodatek 2 pkt 2", "dodatek 2 pole 7", "dodatek 2 pole 8", "dodatek 2 pkt 3", "dodatek 3",
+                    "dodatek 3 pkt 1", "dodatek 3 pkt 1.1"):
+            self.assertIn(key, a, key)
+        for key in a:
+            self.assertTrue(m.loc_valid("icao_pl", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+        self.assertIn("Korygowanie", t[slice(*a["4.1.2.2"])])
+        self.assertIn("WPISAĆ znak", t[slice(*a["dodatek 2 pole 7"])])
+        self.assertNotIn("WPISAĆ literę", t[slice(*a["dodatek 2 pole 7"])])
+        self.assertIn("pole 8", " ".join(k for k in a if k.startswith("dodatek 2 pole")) + "pole 8")
+        # the annex profile does not read the mixed-case headings
+        self.assertNotIn("rozdział 4", ec.ulc_annex_anchors(self.TEXT))
+
+    def test_page_furniture(self):
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 105 – Poz. 58", "5-30 Zarządzanie ruchem lotniczym (PANS-ATM)",
+                "5.4.2.4.3 Gdy stosowana jest technika liczby Macha", "PANS-ATM 5-30"]
+        self.assertEqual(["5.4.2.4.3 Gdy stosowana jest technika liczby Macha"], ec.pans_page_rows(rows))
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 340 – Poz. 58",
+                "Rozdział 15. Procedury dotyczące zagrożeń, utraty łączności i nieprzewidzianych", "sytuacji 15-3", "15.1 Treść"]
+        self.assertEqual(["15.1 Treść"], ec.pans_page_rows(rows))
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 382 – Poz. 58", "Dodatek 1 A1-3", "1.1 Treść"]
+        self.assertEqual(["1.1 Treść"], ec.pans_page_rows(rows))
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 380 – Poz. 58", "Dodatek 1", "INSTRUKCJE DLA PRZEKAZYWANIA",
+                "1. Instrukcje dotyczące meldowania.", "PANS-ATM A1-1"]    # a title page repeats the list of sections
+        self.assertEqual(["Dodatek 1", "INSTRUKCJE DLA PRZEKAZYWANIA"], ec.pans_page_rows(rows))
+        rows = ["Rozdział 3. Separacja w pobliżu lotnisk 6-25", "Rysunek 6-7. Rozdzielone operacje", "b p p y r o", "U w a g a",
+                "Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 154 – Poz. 58", "Rysunek 6-8. Inny"]   # landscape page
+        self.assertEqual(["Rysunek 6-7. Rozdzielone operacje", "Rysunek 6-8. Inny"], ec.pans_page_rows(rows))
+
+    def test_locators(self):
+        import materials as m
+        self.assertEqual(["dodatek 2 pkt 2", "dodatek 2"], m.loc_parents("dodatek 2 pole 7"))
+        for loc in ("rysunek 5-25A", "rysunek 6-7", "tabela A5-14-1", "dodatek 2 pole 18", "dodatek 6 pkt 2.21"):
+            self.assertTrue(m.loc_valid("icao_pl", loc), loc)
+        for loc in ("rysunek", "dodatek 3 pole 7", "pole 7"):
+            self.assertFalse(m.loc_valid("icao_pl", loc), loc)
+
+
+class UlcPlainTest(unittest.TestCase):
+    """Annex 17 / Annex 10 (profile ulc-plain: furniture by regular expressions, other print layouts)."""
+
+    def test_page_rows(self):
+        head, foot = [r"^Rozdział \d{1,2} Załącznik 10 [-–] Łączność lotnicza$"], [r"^(?:Dod [A-Z] ?-\d{1,3}|\d{1,2}-\d{1,3})$"]
+        rows = ["Rozdział 3 Załącznik 10 – Łączność lotnicza", "3.1 Zasady ogólne", "Dowolny tekst", "3-1"]
+        self.assertEqual(["3.1 Zasady ogólne", "Dowolny tekst"], ec.plain_page_rows(rows, head, foot))
+        rows = ["Załącznik 17 – Ochrona Dodatek", "Treść", "18/11/22 DOD-23", "1/7/11"]
+        self.assertEqual(["Treść", "18/11/22 DOD-23"],
+                         ec.plain_page_rows(rows, [], [r"^\d{1,2}/\d{1,2}/\d{2}$"], [r"^Załącznik 17 [-–] Ochrona(?: .*)?$", r"^\d{1,2}/\d{1,2}/\d{1,2}$"]))
+
+    def test_annex17_flat_appendix_and_caps_letter(self):
+        import materials as m
+        text = ("== OBWIESZCZENIE ==\nZałącznik do obwieszczenia\n== PRZEDMOWA ==\nPRZEDMOWA\nROZDZIAŁ 1. DEFINICJE\n"
+                "Audyt ochrony (Security audit). Szczegółowa weryfikacja zgodności.\nROZDZIAŁ 2. ZASADY OGÓLNE\n2.1 Cele\n"
+                "2.1.1 Celem jest bezpieczeństwo.\nDODATEK DO ZAŁĄCZNIKA 17\nWYCIĄG Z ZAŁĄCZNIKA 2\nROZDZIAŁ 3. ZASADY OGÓLNE\n"
+                "3.7 Bezprawna ingerencja\n3.7.1 Statek powietrzny\n")
+        a = ec.ulc_annex_anchors(text, flat_appendix=True)
+        self.assertIn("dodatek", a)
+        self.assertIn("2.1.1", a)
+        self.assertNotIn("dodatek pkt 3.7", a)
+        self.assertIn("definicja Audyt ochrony", a)
+        t2 = ("ROZDZIAŁ 1. DEFINICJE\n1.1 Służby\nLotnicza służba rozgłaszania - służba rozgłaszania.\nRR S1.10 - Radionawigacja: x\n"
+              "ROZDZIAŁ 2. PRZEPISY\n2.1 Ogólne\n2.1.1 Treść.\nDodatek A do tomu II –\nLISTA TERMINÓW\n1. Wstęp\n"
+              "Dodatek B do tomu II -\nWYTYCZNE\n1. Wstęp\n1.1 Wymagania dotyczące\n")
+        b = ec.ulc_annex_anchors(t2, style="caps-letter", def_style="dash")
+        for key in ("definicja Lotnicza służba rozgłaszania", "dodatek A", "dodatek A pkt 1", "dodatek B", "dodatek B pkt 1.1"):
+            self.assertIn(key, b, key)
+        self.assertNotIn("definicja RR S1.10", b)
+        for key in b:
+            self.assertTrue(m.loc_valid("icao_pl", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, b, (key, par))
+
+    def test_title_and_numcaps_styles(self):
+        t5 = ("Rozdział 1. Definicje\nSimpleks. Metoda, w której łączność odbywa się w jednym kierunku.\n"
+              "Łącze C2. Łącze danych pomiędzy statkiem a stacją.\nRozdział 2. Częstotliwości alarmowe\n2.1 Częstotliwości ELT\n"
+              "2.1.1 Wszystkie nadajniki ELT.\nDodatek A. Czynniki wpływające\n1. Szczególnie na obszarach NDB.\n")
+        a = ec.ulc_annex_anchors(t5, style="title", def_style="dot")
+        for key in ("rozdział 1", "definicja Simpleks", "definicja Łącze C2", "rozdział 2", "2.1.1", "dodatek A", "dodatek A pkt 1"):
+            self.assertIn(key, a, key)
+        t4 = "1. DEFINICJE\nRadar dozorowania. Radar do określania pozycji.\n2. POSTANOWIENIA OGÓLNE\n2.1. WTÓRNY RADAR\n2.1.1 Mody\nRysunek 3-1. Definicje kształtów\nTabela 3-2. Kształty\n"
+        b = ec.ulc_annex_anchors(t4, style="numcaps", def_style="dot", figures=True)
+        for key in ("rozdział 1", "rozdział 2", "2.1", "2.1.1", "rysunek 3-1", "tabela 3-2", "definicja Radar dozorowania"):
+            self.assertIn(key, b, key)
+
+    def test_missing_heading_is_tolerated_only_when_lenient(self):
+        text = ("ROZDZIAŁ 1. DEFINICJE\nROZDZIAŁ 2. X\nROZDZIAŁ 3. X\nROZDZIAŁ 4. X\nROZDZIAŁ 5. TEKST\n5.1 Pierwszy\n5.1.1 Drugi\n"
+                "5.1.1.1 Trzeci\n5.1.1.2 Czwarty\n5.1.2.1. Pełne znaki\n5.1.2.1.1 Treść\n")
+        self.assertNotIn("5.1.2.1", ec.ulc_annex_anchors(text))
+        a = ec.ulc_annex_anchors(text, lenient_seq=True)
+        self.assertIn("5.1.2.1", a)
+        self.assertIn("5.1.2", a)    # synthetic parent
+
+
+class ConventionTest(unittest.TestCase):
+    """Chicago Convention (Dz.U. 1959 nr 35 poz. 212, kind convention, profile konwencja-isap)."""
+
+    TEXT = ("KONWENCJA\nCZĘŚĆ I. ŻEGLUGA POWIETRZNA\nRozdział I\nOgólne zasady\nArtykuł 1\nSuwerenność\n"
+            "Umawiające się Państwa uznają suwerenność.\nArtykuł 3\nCywilne i państwowe statki powietrzne\n"
+            "a) Niniejsza Konwencja stosuje się wyłącznie do cywilnych statków powietrznych,\n"
+            "b) Statki powietrzne używane w służbie wojskowej uważa się za państwowe.\n"
+            "c) Żaden państwowy statek powietrzny nie może przelatywać nad terytorium.\nArtykuł 3 bis\n"
+            "a) Państwa uznają, że każde Państwo musi powstrzymać się od użycia broni.\n"
+            "Artykuł 12\nReguły lotnicze\nKażde Umawiające się Państwo zobowiązuje się zastosować właściwe środki.\n"
+            "Rozdział III\nKrajowość\nArtykuł 44\nPrzedmiot działalności\nCelem Organizacji jest:\n"
+            "a) zapewnić bezpieczny rozwój,\nb) popierać umiejętności,\nartykuł o ustępie b) w tekście\n"
+            "PODPISANIE KONWENCJI\nNa dowód czego podpisują.\n")
+
+    def test_anchors_and_locators(self):
+        import materials as m
+        a = ec.konwencja_anchors(self.TEXT)
+        t = self.TEXT
+        self.assertEqual(["art. 1", "art. 3", "art. 3 lit. a", "art. 3 lit. b", "art. 3 lit. c", "art. 3bis", "art. 3bis lit. a",
+                          "art. 12", "art. 44", "art. 44 lit. a", "art. 44 lit. b"], sorted(a, key=lambda k: a[k][0]))
+        for key in a:
+            self.assertTrue(m.loc_valid("convention", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+        self.assertEqual(["art. 3"], m.loc_parents("art. 3 lit. a"))
+        self.assertIn("Reguły lotnicze", t[slice(*a["art. 12"])])
+        self.assertNotIn("Krajowość", t[slice(*a["art. 12"])])        # a chapter heading ends the article
+        self.assertNotIn("Na dowód", t[slice(*a["art. 44"])])         # the signature block is not part of the last article
+        self.assertNotIn("lit. a", " ".join(k for k in a if k.startswith("art. 12")))   # no lit. without a) b) lines
+        self.assertTrue(t[slice(*a["art. 3 lit. b"])].startswith("b) Statki"))
+        self.assertFalse(m.loc_valid("convention", "art. 12 ust. 1 lit. a)"))
+        self.assertTrue(m.loc_valid("convention", "art. 12 lit. a"))
+        self.assertTrue(m.src_quotable({"kind": "convention", "allowQuote": True}))
+
+    def test_numbered_paragraphs_and_old_spelling(self):
+        import materials as m
+        text = ("KONWENCJA\nRozdział pierwszy.\nArtykuł pierwszy.\n1. Niniejszą konwencję stosuje się do:\na) przestępstw;\n"
+                "b) czynów.\n2. Z zastrzeżeniem rozdziału III, konwencję stosuje się do czynów.\nArtykuł 2.\nTreść.\n"
+                "Dz. U. z 1937 r. Nr 74, poz. 540 Strona 2\nArtykuł 3.\n1) Pierwsze.\n2) Drugie.\n")
+        a = ec.konwencja_anchors(text)
+        self.assertEqual(["art. 1", "art. 1 ust. 1", "art. 1 ust. 1 lit. a", "art. 1 ust. 1 lit. b", "art. 1 ust. 2", "art. 2", "art. 3",
+                          "art. 3 ust. 1", "art. 3 ust. 2"], sorted(a, key=lambda k: a[k][0]))
+        for key in a:
+            self.assertTrue(m.loc_valid("convention", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+        self.assertEqual(["art. 1 ust. 1", "art. 1"], m.loc_parents("art. 1 ust. 1 lit. a"))
+        self.assertTrue(ec._KONW_FRONT.match("Dz. U. z 1937 r. Nr 74, poz. 540 Strona 2"))
+
+
 class ReviewSrc2R1Test(unittest.TestCase):
     """M-SRC2-r1: wrapped cross-references, annex numbering, SECTION series, lit., two-letter points, closing sentences."""
 
