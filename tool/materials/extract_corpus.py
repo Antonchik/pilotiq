@@ -95,7 +95,7 @@ def dehyphenate(lines):
 
 # --------------------------------------------------------------------------- readers
 
-_ANNEX_HEAD = re.compile(r"^Załącznik nr \d+[a-z]?$")
+_ANNEX_HEAD = re.compile(r"^Załącznik nr \d+[a-z]?(?:\d{0,2}\))?$")
 _FOOT_START = re.compile(r"^(\d+)\)\s+(.*)$")
 _FUTURE_PAIR_OLD = re.compile(r"^(W tym brzmieniu obowi.zuje|Wprowadzenie do wyliczenia w tym brzmieniu|"
                               r"Obowi.zuje do wejścia)")
@@ -331,6 +331,7 @@ _UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
 _DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
 _ANNEX_RE = re.compile(r"^Załącznik nr (\d+?[a-z]?)(?:\d{1,2}\))?$")   # "Załącznik nr 219)" = annex 2 with footnote 19)
+_TAIL_RE = re.compile(r"^[–-]\s+podlega(?:ją)?\b")
 _LIT_RE = re.compile(r"^([a-z]{1,2})\)\s*\S")
 _ITEM_RE = re.compile(r"^(?:[a-z]\)|–|-|\d+[a-z]?\)|\d+[a-z]?\.|Art\.)\s")
 _TABLE_RE = re.compile(r"^Tabela nr (\d+)$")
@@ -387,6 +388,7 @@ def statute_anchors(text, future_out=None):
     open_art = open_ust = open_pkt = None
     open_lit = None
     last_lit = None
+    seen_annex = set()
     cur_art = None
     last_ust = last_pkt = None
     started = False
@@ -452,7 +454,10 @@ def statute_anchors(text, future_out=None):
         if fut and fut_start is None:
             fut_start, fut_level = start, 4   # provisional: a marker inside a lit. / dash item (unit headings re-open at their level)
         ma = _ANNEX_RE.match(line)
+        if ma and ("załącznik " + ma.group(1)) in seen_annex:
+            continue    # a repeated / stray page heading ("Załącznik nr 2" printed again above annex 3)
         if ma:
+            seen_annex.add("załącznik " + ma.group(1))
             close_art_tree(start)
             open_art = open_ust = open_pkt = None
             cur_art = None
@@ -556,6 +561,13 @@ def statute_anchors(text, future_out=None):
                 close_future(start, 2)
                 dead_ust = False
                 open_ust_span(mu.group(1), start)
+            continue
+        if _TAIL_RE.match(line) and (open_pkt is not None or open_lit is not None):
+            # "– podlega karze grzywny." closes the whole ust., it is not part of its last point
+            close(open_lit, start)
+            close(open_pkt, start)
+            open_pkt = open_lit = None
+            last_lit = None
             continue
         mp = _PKT_RE.match(line)
         if mp and not dead_ust and (fut or _next_ok(last_pkt, _num_key(mp.group(1)))):
