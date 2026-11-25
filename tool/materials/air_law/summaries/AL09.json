@@ -707,6 +707,32 @@
         "PL010-0485#fe044557"
       ],
       "disputeNote": null
+    },
+    {
+      "id": "AL09-10",
+      "status": "draft",
+      "heading": "Boczne granice strefy kontrolowanej lotniska (CTR)",
+      "body": [
+        "Zgodnie z pkt 2.11.5.2 Załącznika 11 do Konwencji chicagowskiej boczne granice strefy kontrolowanej lotniska (CTR) sięgają co najmniej 9,3 km (5 NM) od środka danego lotniska lub środków lotnisk w kierunkach, z których mogą być wykonywane podejścia do lądowania.",
+        "Załącznik XI do rozporządzenia wykonawczego 2017/373 wymaga ogólnie, aby granice horyzontalne CTR obejmowały co najmniej te części przestrzeni powietrznej poza obszarami kontrolowanymi, które zawierają tory lotów IFR statków powietrznych przylatujących na lotniska i odlatujących z lotnisk. Odległości przepis ten nie podaje; minimalny zasięg 9,3 km (5 NM) określa Załącznik 11.",
+        "- Pułapka: wartości 7,4 km (4 NM), 11,1 km (6 NM) i 45 km (25 NM) nie są minimalnym zasięgiem bocznych granic CTR według pkt 2.11.5.2."
+      ],
+      "refs": [
+        {
+          "src": "ICAO-ZAL-11",
+          "loc": "2.11.5.2",
+          "quote": "Boczne granice strefy kontrolowanej lotniska sięgają co najmniej 9,3 km (5 NM) od środka danego lotniska lub środków lotnisk w kierunkach, z których mogą być wykonywane podejścia do lądowania."
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik XI dodatek 1 sekcja I(c)(1)",
+          "quote": "Granice horyzontalne strefy kontrolowanej lotniska obejmują co najmniej te części przestrzeni powietrznej, znajdujące się poza obszarami kontrolowanymi, które zawierają tory lotów IFR statków powietrznych przylatujących na lotniska i odlatujących z lotnisk"
+        }
+      ],
+      "questionKeys": [
+        "PL010-1559#af2fad09"
+      ],
+      "disputeNote": null
     }
   ]
 }
