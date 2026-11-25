@@ -305,7 +305,7 @@ def is_published(rec, kind, ledger, id_):
 _N = r"\d+(?:[a-z]{1,3}|\[\d+[a-z]{0,3}\][a-z]{0,3})?"
 _L = r"\d+[a-z]?(?:\.\d+[a-z]?)*"  # номер строки таблицы / позиции: 1, 1.1, 3.14
 # załącznik 6, załącznik 6 tabela 2, załącznik 6 tabela 2 część I, załącznik 6 tabela 2 część I pkt 3.14
-LOC_STATUTE = re.compile(r"^((art\. |§ )%s( ust\. %s)?( pkt %s)?|załącznik \d+[a-z]?( tabela \d+)?( część [IVX]+[a-z]?)?( pkt %s)?)$"
+LOC_STATUTE = re.compile(r"^((art\. |§ )%s( ust\. %s)?( pkt %s( lit\. [a-z]{1,2})?)?|załącznik \d+[a-z]?( tabela \d+)?( część [IVX]+[a-z]?)?( pkt %s)?)$"
                          % (_N, _N, _N, _L))
 LOC_CONVENTION = re.compile(r"^(art\. %s( ust\. %s)?|załącznik \d+( pkt \d+(\.\d+)*)?)$" % (_N, _N), re.I)
 # правила: FCL.205.A, SERA.5005(b)(1)(i), MED.A.030, ORA.AeMC.215, M.A.201; Part 21/145/66/147: 21.A.3A, 145.A.30

@@ -330,7 +330,8 @@ _ART_RE = re.compile(r"^(Art\.|§)\s*(%s)\.(?:\s+(.*))?$" % _ART_ID)   # "Art. 5
 _UST_RE = re.compile(r"^(\d+[a-z]{0,2})\.(?:\s+|(?=[A-ZĄĆĘŁŃÓŚŹŻ]))\S")
 _PKT_RE = re.compile(r"^(\d+[a-z]{0,2})\)")
 _DIV_RE = re.compile(r"^(DZIAŁ [IVXLC]+[A-Z]?|Rozdział \d+[a-z]?|Oddział \d+[a-z]?|ZAŁĄCZNIK( NR \d+)?\.?)$")
-_ANNEX_RE = re.compile(r"^Załącznik nr (\d+[a-z]?)$")
+_ANNEX_RE = re.compile(r"^Załącznik nr (\d+?[a-z]?)(?:\d{1,2}\))?$")   # "Załącznik nr 219)" = annex 2 with footnote 19)
+_LIT_RE = re.compile(r"^([a-z]{1,2})\)\s*\S")
 _ITEM_RE = re.compile(r"^(?:[a-z]\)|–|-|\d+[a-z]?\)|\d+[a-z]?\.|Art\.)\s")
 _TABLE_RE = re.compile(r"^Tabela nr (\d+)$")
 _PART_RE = re.compile(r"^Część ([IVX]+[a-z]?)(?:\s.*)?$")
@@ -360,6 +361,17 @@ def _next_ok(last, cur, first=(1,)):
     return cur[0] == last[0] and cur[1] > last[1]
 
 
+def _lit_next_ok(last, tok):
+    """Letters a) b) ... z) with two-letter insertions (ea) eb) after e)): the next letter, or the next insertion."""
+    if last is None:
+        return tok == "a"
+    if len(tok) == 1:
+        return ord(tok) == ord(last[0]) + 1
+    if len(last) == 1:
+        return tok == last + "a"
+    return tok[0] == last[0] and ord(tok[1]) == ord(last[1]) + 1
+
+
 def statute_anchors(text, future_out=None):
     """Anchors for Polish statutes and conventions.
 
@@ -373,6 +385,8 @@ def statute_anchors(text, future_out=None):
     """
     spans = []
     open_art = open_ust = open_pkt = None
+    open_lit = None
+    last_lit = None
     cur_art = None
     last_ust = last_pkt = None
     started = False
@@ -405,19 +419,23 @@ def statute_anchors(text, future_out=None):
             fut_start, fut_level = at, level
 
     def close_art_tree(at):
-        for sp in (open_pkt, open_ust, open_art):
+        for sp in (open_lit, open_pkt, open_ust, open_art):
             close(sp, at)
 
     def open_pkt_span(token, start):
-        nonlocal open_pkt, last_pkt
+        nonlocal open_pkt, last_pkt, open_lit, last_lit
         key = (open_ust.key if open_ust else cur_art) + " pkt " + token
+        close(open_lit, start)
+        open_lit = last_lit = None
         close(open_pkt, start)
         open_pkt = _Span(key, start, 3)
         spans.append(open_pkt)
         last_pkt = _num_key(token)
 
     def open_ust_span(token, start):
-        nonlocal open_ust, open_pkt, last_ust, last_pkt
+        nonlocal open_ust, open_pkt, last_ust, last_pkt, open_lit, last_lit
+        close(open_lit, start)
+        open_lit = last_lit = None
         close(open_pkt, start)
         close(open_ust, start)
         open_pkt = None
@@ -551,6 +569,15 @@ def statute_anchors(text, future_out=None):
             else:
                 close_future(start, 3)
                 open_pkt_span(mp.group(1), start)
+            continue
+        ml = _LIT_RE.match(line)
+        if ml and not fut and not dead_ust and (open_pkt is not None or open_ust is not None) \
+                and _lit_next_ok(last_lit, ml.group(1)):
+            parent = open_pkt if open_pkt is not None else open_ust
+            close(open_lit, start)
+            open_lit = _Span("%s lit. %s" % (parent.key, ml.group(1)), start, 4)
+            spans.append(open_lit)
+            last_lit = ml.group(1)
     close_future(len(text), 0)
     return _finish(spans, len(text))
 
