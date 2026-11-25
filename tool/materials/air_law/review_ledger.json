@@ -1105,11 +1105,11 @@
  },
  "AL16-14": {
   "date": "2026-11-25",
-  "note": "Treść dodatku do Załącznika 12 sprawdzona z korpusem i z obrazem PDF s. 26 (APP-2): pkt 1.1 lit. a–c, pkt 1.2 (za rufą – pomoc niepotrzebna), tabela 2.1 poz. 2 X „Potrzebna pomoc medyczna”, poz. 3 N „Nie lub Odmowa”, pkt 3.1 lit. a/b i 3.2 – zgodne. AIP GEN 3.6 pkt 6 sparafrazowane poprawnie (cytat z polskiej kolumny). disputeNote (371 znaków) identyczny z zaakceptowanymi PL099-0058/0059 – poprawny, punkty 5.6.3/5.6.4 w refs; questionKeys = 0070, 0071, 0061 (sameAs), 0058, 0059 – zgodne z ANX.r1; 173 słowa; cytaty spoza tekstów datowanych („od 26 listopada 2026”). Do poprawy jedno zdanie: „Sygnał wizualny statek powietrzny stosuje, gdy nie może nawiązać łączności radiowej (pkt 5.6.5).” uogólnia pkt 5.6.5, który dotyczy tylko kierowania jednostki nawodnej; w tym samym rozdziale pkt 5.6.4 podaje inny warunek dla potwierdzenia znaku na ziemi (sygnał wizualny, gdy nie można zrzucić urządzenia łączności lub informacji), więc zdanie przeczy końcowemu zdaniu sekcji. Zastąpić tekstem: „Gdy statek powietrzny ma skierować jednostkę nawodną na miejsce niebezpieczeństwa, a łączność radiowa nie może być nawiązana, stosuje odpowiedni sygnał wizualny (pkt 5.6.5).” (ok. 182 słowa). Opcjonalnie w punkcie o jednostce nawodnej: „z przechylaniem ze skrzydła na skrzydło (albo zmianą obrotów silnika lub skoku śmigła)” – lit. b) podaje trzy warianty.",
+  "note": "FIX z rundy 1 wykonany dosłownie: zdanie o pkt 5.6.5 zawężono do kierowania jednostki nawodnej („Gdy statek powietrzny ma skierować jednostkę nawodną na miejsce niebezpieczeństwa, a łączność radiowa nie może być nawiązana, stosuje odpowiedni sygnał wizualny”), zgodnie z korpusem Zał. 12 i bez sprzeczności z pkt 5.6.4. Reszta bez zmian i zgodna z dodatkiem pkt 1.1, 1.2, 2.1 (X, N – sprawdzone na obrazie PDF s. 26), 3.1, 3.2 i AIP GEN 3.6 pkt 6; 183 słowa; refs i questionKeys bez zmian; disputeNote (371 znaków) poprawny – sporność 0058/0059 z pkt 5.6.3–5.6.4, punkty w refs; validate bez błędów.",
   "portion": "ANXS",
-  "round": 1,
-  "textSha": "6e0583889d8dc636",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "1fa72eacae61058e",
+  "verdict": "DISPUTED"
  },
  "AL16-2": {
   "date": "2026-11-25",
