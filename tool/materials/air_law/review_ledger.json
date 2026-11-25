@@ -289,11 +289,11 @@
  },
  "AL05-3": {
   "date": "2026-11-25",
-  "note": "Zdanie „Wariant z samolotami wielosilnikowymi tłokowymi nie pasuje do kandydata na PPL(A) …” sformułowane ogólnie przeczy kluczowi PL010-0467#3b832689 (verified, w questionKeys tej sekcji): tam poprawna polska odpowiedź to właśnie „25 godzin … na samolotach … wielosilnikowych tłokowych” (objaśnienie 0467 to odnotowuje). Pułapka 70 h (FCL.720.A(a)(1)) dotyczy tylko pytania o lot samodzielny (PL010-0468#31cfb564). Gotowy tekst – zastąpić dwa ostatnie akapity body: [\"Przepis nie wskazuje klasy samolotu, więc klasa wymieniona w pytaniu nie zmienia tych minimów.\", \"Typowe pułapki: 10 godzin to cały czas samodzielnego lotu pod nadzorem, a 5 godzin tylko jego część nawigacyjna; lądowanie na jednym lotnisku nie wystarcza nawet przy przelocie na 270 km. W pytaniu o lot samodzielny wariant z samolotami wielosilnikowymi tłokowymi odpada, bo pierwsze uprawnienie na klasę samolotu wielosilnikowego z załogą jednoosobową wymaga co najmniej 70 godzin lotu jako pilot dowódca (pkt FCL.720.A lit. a) pkt 1); w pytaniu o 25 godzin z instruktorem polska wersja klucza ULC wymienia jednak tę klasę i decyduje liczba godzin.\"] (ok. 198 słów; refs bez zmian). Reszta (FCL.210.A(a), (a)(1), (a)(2)) zgodna z korpusem.",
+  "note": "FIX z rundy 1 wykonany dosłownie: pułapka 70 h (FCL.720.A(a)(1)) ograniczona do pytania o lot samodzielny (PL010-0468#31cfb564), a dla pytania o 25 h z instruktorem odnotowano, że polska wersja klucza PL010-0467#3b832689 wymienia samoloty wielosilnikowe tłokowe – brak sprzeczności z verified objaśnieniami. Refs (FCL.210.A(a), (a)(1), (a)(2), FCL.720.A(a)(1)) bez zmian i zgodne z korpusem; 199 słów; validate bez uwag.",
   "portion": "K03",
-  "round": 1,
-  "textSha": "d1a4b89d5f80b627",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "c25ff83e59190520",
+  "verdict": "PASS"
  },
  "AL05-4": {
   "date": "2026-11-25",
@@ -361,11 +361,11 @@
  },
  "AL06-3": {
   "date": "2026-11-25",
-  "note": "Art. 160 ust. 1 i ust. 3 pkt 2, art. 161 ust. 2 i 8 PL, ORA.GEN.125, zał. 6 pkt 6a (ATCO TO) – zgodne. Jedyny problem: „skrót CAPTO to dawne oznaczenie takiej organizacji” – fakt historyczny spoza korpusu (CAPTO nie występuje w żadnym pliku corpus/*.txt). Gotowy tekst ostatniego akapitu: \"Szkolenie kandydatów na kontrolerów ruchu lotniczego prowadzi organizacja z certyfikatem ATCO TO (załącznik nr 6 do Prawa lotniczego, pkt 6a). Skrót CAPTO z odpowiedzi w kluczu ULC nie występuje w aktualnych przepisach, które taką organizację oznaczają skrótem ATCO TO.\" (refs bez zmian).",
+  "note": "FIX z rundy 1 wykonany dosłownie: usunięto niepotwierdzone „dawne oznaczenie”; nowe zdanie (CAPTO nie występuje w aktualnych przepisach, organizację oznacza skrót ATCO TO – zał. 6 pkt 6a Prawa lotniczego) jest zgodne z korpusem. Reszta sekcji bez zmian (art. 160 ust. 1, ust. 3 pkt 2, art. 161 ust. 2 i 8, ORA.GEN.125); 186 słów; validate bez uwag.",
   "portion": "K03",
-  "round": 1,
-  "textSha": "3994e84606525822",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "198afb6d666b011e",
+  "verdict": "PASS"
  },
  "AL06-4": {
   "date": "2026-11-25",

@@ -390,7 +390,7 @@
    "EU-1178-2011",
    "EASA-EAR-AIRCREW"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0426#b6d9bfe9",
@@ -483,7 +483,7 @@
    "PL-PRAWO-LOTNICZE",
    "EASA-EAR-AIRCREW"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0383#bb4b5763",
