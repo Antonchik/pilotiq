@@ -761,11 +761,11 @@
  },
  "PL010-0079#8b970757": {
   "date": "2026-11-25",
-  "note": "Klucz = art. 6 – poprawnie. Ostatnie zdanie uogólnia art. 11 Konwencji (Doc 7300 Article 11): dotyczy on tylko przepisów o wlocie, wylocie oraz eksploatacji i żegludze statków na terytorium państwa, a nie wszystkich przepisów, więc „Tak samo” to za dużo. Poprawka: „Podobnie art. 11 Konwencji chicagowskiej nakazuje stosować przepisy państwa dotyczące wlotu na jego terytorium, wylotu z niego oraz żeglugi powietrznej na nim do statków wszystkich umawiających się państw bez względu na ich przynależność.”",
+  "note": "Poprawka wprowadzona: art. 11 Konwencji zawężony do przepisów o wlocie, wylocie i żegludze powietrznej – zgodnie z Doc 7300 Article 11.",
   "portion": "P02",
-  "round": 1,
-  "textSha": "e4cf04973d913e94",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "2a6d5b6165f15dd6",
+  "verdict": "PASS"
  },
  "PL010-0079#ae1f1d86": {
   "date": "2026-11-25",
@@ -2025,11 +2025,11 @@
  },
  "PL010-0236#438c71a2": {
   "date": "2026-11-25",
-  "note": "Klucz = art. 8 Prawa lotniczego, SERA.1001(a) poprawnie przywołany. Zdanie-pułapka dotyczy wariantu, którego nie ma wśród odpowiedzi („przepisy obowiązujące w granicach danego terytorium”); dystraktory to przepisy polskie, kraju rejestracji i kraju startu. Poprawka: zastąpić je zdaniem „Pułapka: art. 8 nie wskazuje dla takiego obszaru przepisów polskich ani przepisów państwa rejestracji czy startu statku – odsyła wyłącznie do przepisów międzynarodowych.” (ref art. 8 już jest).",
+  "note": "Nowa pułapka dotyczy faktycznych dystraktorów (przepisy polskie, państwa rejestracji, startu) i wynika z art. 8.",
   "portion": "P02",
-  "round": 1,
-  "textSha": "58ffbf8488f6e4d9",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "4d95b7b1b805696a",
+  "verdict": "PASS"
  },
  "PL010-0236#4fcdb67c": {
   "date": "2026-11-25",
@@ -2865,19 +2865,19 @@
  },
  "PL010-0353#c5d35b88": {
   "date": "2026-11-25",
-  "note": "Klucz = art. 142 pkt 1 i 4 – poprawnie. Ostatnie zdanie uogólnia Doc 7300 Article 3 bis(b): prawo żądania lądowania dotyczy statku lecącego bez zezwolenia lub gdy są uzasadnione podstawy, że jest używany niezgodnie z celami Konwencji. Poprawka: „…potwierdza też art. 3 bis lit. b) Konwencji chicagowskiej wobec statku lecącego bez zezwolenia lub używanego niezgodnie z celami konwencji.”",
+  "note": "Art. 3 bis lit. b) z warunkami (lot bez zezwolenia / użycie niezgodne z celami konwencji) – zgodne z Doc 7300.",
   "portion": "P02",
-  "round": 1,
-  "textSha": "5767fd2ae59553e3",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "afa2f87fd8427d5b",
+  "verdict": "PASS"
  },
  "PL010-0353#d0bdd70e": {
   "date": "2026-11-25",
-  "note": "Jak w 0353#c5d35b88: ostatnie zdanie uogólnia Doc 7300 Article 3 bis(b). Poprawka: „…potwierdza też art. 3 bis lit. b) Konwencji chicagowskiej wobec statku lecącego bez zezwolenia lub używanego niezgodnie z celami konwencji.” Reszta (art. 142 pkt 1 i 4, klucz „Wszystkie”) poprawna.",
+  "note": "Jak 0353#c5d35b88: zastrzeżenie do art. 3 bis lit. b) dodane, reszta bez zmian i poprawna.",
   "portion": "P02",
-  "round": 1,
-  "textSha": "15217c4b4a4dc2f4",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "83993627cb7b7d49",
+  "verdict": "PASS"
  },
  "PL010-0354#8b197628": {
   "date": "2026-11-24",
@@ -5033,11 +5033,11 @@
  },
  "PL010-1557#69b1e448": {
   "date": "2026-11-25",
-  "note": "Merytorycznie poprawnie, ale lokator AIP jest błędny: cytat „Zgodnie z Załącznikiem 1 ICAO – Licencjonowanie Personelu” to uwaga 4) do tabeli minimalnych odległości od granic stref w pkt 11 ENR 5.2.1, a nie pkt 10.9 (pkt 10.9 dotyczy FBZ; kotwica pkt 10.9 błędnie obejmuje pkt 11 – błąd S1). Poprawka: w tekście „AIP Polska (ENR 5.2.1, uwaga 4 do tabeli minimalnych odległości w pkt 11)” i loc „ENR 5.2.1” (ostrzeżenie validate o węższej kotwicy zignorować do naprawy kotwic) albo przestawić zdania: najpierw art. 2 pkt 22b rozp. 1178/2011, AIP jako uzupełnienie z poprawionym opisem miejsca.",
+  "note": "Art. 2 pkt 22b rozp. 1178/2011 na pierwszym miejscu; AIP opisany poprawnie (uwaga 4 do tabeli w pkt 11). Ostrzeżenie validate o 'ENR 5.2.1 pkt 10.9' wynika z błędu kotwicy S1 (pkt 10.9 pochłania pkt 11) – nie zmieniać loc na 10.9.",
   "portion": "P02",
-  "round": 1,
-  "textSha": "906eb3efdf922f0e",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "99dd55dd9482cd13",
+  "verdict": "PASS"
  },
  "PL010-1558#4120c2de": {
   "date": "2026-11-25",
