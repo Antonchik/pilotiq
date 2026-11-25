@@ -863,6 +863,38 @@
   "textSha": "e780aadb8bf6ab14",
   "verdict": "PASS"
  },
+ "PL010-0087#0876ed9a": {
+  "date": "2026-11-25",
+  "note": "Błąd podstawy prawnej: § 33 LIC dotyczy wyłącznie uprawnień, «których ważność zgodnie z załącznikiem nr 3» (licencje krajowe); dla licencji z § 3 ust. 1 pkt 1 (PPL(A), PPL(H)…) § 31 odsyła do części FCL «z uwzględnieniem § 32, 34 i 35» — bez § 33 (por. § 8 ust. 1). Pytanie jest w bankach PPL(A)/PPL(H), więc podstawą pierwszego zdania musi być część FCL. Klucz nadal zgodny z normą. Nowy tekst (691 zn., 3 zdania): «Zgodnie z pkt FCL.740.A lit. a) ppkt 1 rozporządzenia 1178/2011 kontrolę umiejętności w celu przedłużenia ważności uprawnienia na klasę lub typ samolotów wielosilnikowych (ważnego 1 rok, pkt FCL.740 lit. a) ppkt 1) zalicza się w okresie 3 miesięcy bezpośrednio poprzedzających datę upływu ważności; tak samo dla typu śmigłowca (pkt FCL.740.H lit. a) ppkt 1 (ii)). Taką zasadę dla uprawnień krajowych ważnych 12 miesięcy zawiera też § 33 ust. 1 pkt 1 rozporządzenia w sprawie licencjonowania personelu lotniczego, ale licencje Part-FCL, np. PPL(A), podlegają sprawdzeniu według części FCL (§ 31). Pułapka: uprawnienia po upływie ważności nie przedłuża się, lecz wznawia (pkt FCL.740 lit. b)).» Refs: zostawić FCL.740.A(a)(1) i § 33 ust. 1 pkt 1 (§ 33 ust. 1 i § 33 ust. 2 usunąć); dodać EU-1178-2011 'FCL.740(a)(1)' «Okres ważności uprawnień na klasę lub typ statku powietrznego wynosi 1 rok»; 'FCL.740.H(a)(1)(ii)' «w ciągu 3 miesięcy bezpośrednio poprzedzających datę upływu ważności uprawnienia na typ, zaliczyć kontrolę umiejętności»; 'FCL.740(b)' «Na potrzeby wznowienia uprawnień na klasę lub typ kandydat musi spełnić wszystkie poniższe warunki:»; PL-ROZP-LICENCJONOWANIE-2021 '§ 31' «dotyczące licencji, o których mowa w § 3 ust. 1 pkt 1 oraz ust. 2, odbywa się zgodnie z przepisami załącznika I (Część FCL) do rozporządzenia nr 1178/2011, z uwzględnieniem § 32, 34 i 35»; '§ 3 ust. 1 pkt 1' «PPL(A), CPL(A), ATPL(A), MPL, PPL(H)».",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "3d130c63a59abca6",
+  "verdict": "FIX"
+ },
+ "PL010-0087#610b4076": {
+  "date": "2026-11-25",
+  "note": "FCL.740(a)(1): 1 rok (SEP — 2 lata, brak takiej opcji). Zgodne.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "744f1ee739c27bc7",
+  "verdict": "PASS"
+ },
+ "PL010-0088#330b34e9": {
+  "date": "2026-11-25",
+  "note": "Wątpliwość writera rozważona: FCL.740.A(b)(1)(i) — kontrola w okresie 3 miesięcy poprzedzających upływ ważności; wcześniejsza kontrola jest dopuszczalna, ale wtedy nowy okres liczy się od daty kontroli (FCL.740(a)(1)) — tekst to mówi. Alternatywa (ii) (12 h w 12 miesiącach) nie czyni żadnego dystraktora poprawnym («4 miesiące», «po upływie»). Klucz najlepszy, bez sporu.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "e9b2e32b102877fe",
+  "verdict": "PASS"
+ },
+ "PL010-0089#12519f67": {
+  "date": "2026-11-25",
+  "note": "Klucz zgodny z § 33 ust. 1 pkt 2 LIC, a zdanie 2 poprawnie ogranicza przepis do załącznika nr 3, ale nie mówi, że nie dotyczy to licencji Part-FCL (PPL(A)/(H) — banki tego pytania), co przy § 31 jest istotne i spójne z poprawką 0087#0876ed9a. Zdanie 2 zastąpić: «Przepis dotyczy tylko uprawnień, których ważność określa załącznik nr 3 do tego rozporządzenia (licencje krajowe); sprawdzenie kwalifikacji do licencji Part-FCL, takich jak PPL(A), odbywa się według części FCL (§ 31).» (588 zn.) i dodać ref PL-ROZP-LICENCJONOWANIE-2021 '§ 31' z cytatem jak w 0087#0876ed9a. Pozostałe refs bez zmian.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "eba75e1bd4f1efb4",
+  "verdict": "FIX"
+ },
  "PL010-0091#0aba6593": {
   "date": "2026-11-25",
   "note": "§ 10 ust. 2 LIC: «Wymiany licencji dokonuje się na wniosek złożony do Prezesa Urzędu albo z urzędu» – klucz potwierdzony; pkt 1 i 5 jako przykłady i pułapka 5 lat zgodne z zamkniętym katalogiem § 10 ust. 1. 3 zdania, 377 zn.",
@@ -2133,6 +2165,14 @@
   "portion": "P08",
   "round": 1,
   "textSha": "4bc1355501d9cc06",
+  "verdict": "PASS"
+ },
+ "PL010-0226#c1389f4e": {
+  "date": "2026-11-25",
+  "note": "§ 66 ust. 2 EGZAMINY — przy przedłużeniu ważność liczy się od ostatniego dnia miesiąca, w którym upływa poprzedni okres; klucz to oddaje, a tekst uczciwie nazywa różnicę («Klucz ULC ujmuje to jako…»). Dystraktor «od dnia sprawdzenia, nawet jeżeli uprawnienia były ważne» jest prawdziwy tylko przy przedłużeniu przed oknem (FCL.740(a)(1)), nie ogólnie — pułapka to trafnie opisuje; sporu brak.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "d9942d2257eb4285",
   "verdict": "PASS"
  },
  "PL010-0227#98403277": {
@@ -3407,12 +3447,44 @@
   "textSha": "6f2db479276d96e7",
   "verdict": "PASS"
  },
+ "PL010-0403#2a0bd319": {
+  "date": "2026-11-25",
+  "note": "FCL.810(a)(1)(ii): 3 h z instruktorem, w tym 1 h lotu nawigacyjnego — klucz; pułapka 5 h poprawna; spójne z P08 0403#22537431.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "25d7d7e3716f3608",
+  "verdict": "PASS"
+ },
+ "PL010-0404#259be20f": {
+  "date": "2026-11-25",
+  "note": "FCL.810(a)(1)(ii): 5 samodzielnych startów i 5 lądowań z pełnym zatrzymaniem — klucz.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "6bdc9483e27aa885",
+  "verdict": "PASS"
+ },
  "PL010-0404#7c5ce532": {
   "date": "2026-11-24",
   "note": "FCL.810(a)(1)(ii) – 50 km (27 NM); dodatkowe zdanie o 6 miesiącach w DTO/ATO poparte FCL.810(a)(1).",
   "portion": "P08",
   "round": 1,
   "textSha": "6b72a113deb550a6",
+  "verdict": "PASS"
+ },
+ "PL010-0405#c85513f5": {
+  "date": "2026-11-25",
+  "note": "FCL.810(a)(1)(ii): co najmniej 5 h lotu w nocy; pułapka «program szkolenia» trafna (lit. a) ppkt 1 «Szkolenie to musi obejmować»).",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "172e862c5825da46",
+  "verdict": "PASS"
+ },
+ "PL010-0406#e1abedaa": {
+  "date": "2026-11-25",
+  "note": "FCL.810(a)(1)(ii) — 5 samodzielnych startów i lądowań; zgodne.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "b430a11361aad425",
   "verdict": "PASS"
  },
  "PL010-0407#1f3aeceb": {
@@ -3493,6 +3565,134 @@
   "portion": "P19",
   "round": 1,
   "textSha": "394c651d6109bb5f",
+  "verdict": "PASS"
+ },
+ "PL010-0416#3880efd9": {
+  "date": "2026-11-25",
+  "note": "FCL.740.A(b)(4) potwierdza istnienie uprawnienia na klasę lądowych samolotów SEP, art. 2 pkt 8c — definicja SEP z silnikiem tłokowym («np.» poprawne, bo SEP obejmuje też napęd elektryczny/hybrydowy). Terminologia aktu.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "e588e7fd542c5d10",
+  "verdict": "PASS"
+ },
+ "PL010-0416#ab4c6cd8": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny (inny tylko 4. dystraktor).",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "ae1196f6fbe1ca6c",
+  "verdict": "PASS"
+ },
+ "PL010-0417#3880efd9": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: ten sam fp i identyczne pytanie/odpowiedzi co 0416#3880efd9.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "ae1196f6fbe1ca6c",
+  "verdict": "PASS"
+ },
+ "PL010-0417#d55a3a5b": {
+  "date": "2026-11-25",
+  "note": "FCL.740.A(b)(4): uprawnienie na klasę wodnych samolotów SEP — klucz.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "9955851bf6910f15",
+  "verdict": "PASS"
+ },
+ "PL010-0418#8821ca06": {
+  "date": "2026-11-25",
+  "note": "Merytorycznie poprawne (FCL.710(c)(1)(iii) wymienia samoloty wielosilnikowe tłokowe jako wymagające uprawnienia na klasę). Sformułowanie «które pilot uzyskuje po 70 godzinach lotu jako pilot dowódca» sugeruje, że 70 h wystarcza; FCL.720.A(a)(1) mówi tylko o wymaganiu minimalnym (są też szkolenie i egzaminy, FCL.725). Zamienić na: «…wymagają uprawnienia na klasę, a pierwsze takie uprawnienie wymaga wykonania co najmniej 70 godzin lotu jako pilot dowódca na samolotach (pkt FCL.720.A lit. a) ppkt 1).» Refs bez zmian.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "32c28faa11d327c5",
+  "verdict": "FIX"
+ },
+ "PL010-0418#f7edf967": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny (inny tylko 4. dystraktor); obowiązuje po poprawce oryginału.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "9c0c34409f6021ef",
+  "verdict": "PASS"
+ },
+ "PL010-0419#026d9232": {
+  "date": "2026-11-25",
+  "note": "Jak 0418#8821ca06: «a pierwsze takie uprawnienie pilot uzyskuje po 70 godzinach lotu» → «a pierwsze takie uprawnienie wymaga wykonania co najmniej 70 godzin lotu jako pilot dowódca na samolotach (pkt FCL.720.A lit. a) ppkt 1)». Reszta OK: FCL.725(b)(5) dotyczy egzaminu na uprawnienie dla wodnych wielosilnikowych samolotów z załogą jednoosobową, a klasę (wielosilnikowe tłokowe) potwierdza FCL.710(c)(1)(iii); dokładniejsze «uprawnienia na klasę wielosilnikowych samolotów wodnych» z dodatku 9 nie ma własnego anchora (tylko 'załącznik I').",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "9496940e7917672a",
+  "verdict": "FIX"
+ },
+ "PL010-0419#86491523": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny (inny tylko 4. dystraktor).",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "227fc6e6f384996b",
+  "verdict": "PASS"
+ },
+ "PL010-0420#4a561dcb": {
+  "date": "2026-11-25",
+  "note": "FCL.700(a) i FCL.725(a) — uprawnienia na klasę/typ; pułapka jak w serii. Zgodne.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "6e5f8f38c92ad0be",
+  "verdict": "PASS"
+ },
+ "PL010-0420#9cafa46c": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny (inny tylko 4. dystraktor).",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "46ad184f83de4070",
+  "verdict": "PASS"
+ },
+ "PL010-0421#3bf9b149": {
+  "date": "2026-11-25",
+  "note": "FCL.805(a) — holowanie szybowców/banerów wymaga uprawnienia; § 48 LIC — wpis uprawnień dodatkowych FCL.800/FCL.805 do licencji na wniosek. Zgodne.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "2d9627dba22a6bd4",
+  "verdict": "PASS"
+ },
+ "PL010-0421#71eb05cd": {
+  "date": "2026-11-25",
+  "note": "FCL.205.A(a) (samoloty lub motoszybowce turystyczne) i FCL.740.A(b)(1) (uprawnienie na klasę motoszybowców turystycznych) — klucz.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "be7478ac9785705e",
+  "verdict": "PASS"
+ },
+ "PL010-0423#9710ebf0": {
+  "date": "2026-11-25",
+  "note": "FCL.810 (nagłówek «Uprawnienia do wykonywania lotów nocnych») + (a)(1); § 2 pkt 9 i § 7 ust. 4 LIC poprawne. Pułapka AGRO/gaśnicze: załącznik 3 pkt 4.1 LIC (rozdział 4 załącznika stosuje się do wszystkich członków personelu przez § 38 ust. 1 pkt 3, więc także do PPL(A) — w przeciwieństwie do § 33). Opcjonalnie (nieblokujące) dodać ref § 38 ust. 1 pkt 3 w całej serii 0416–0424.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "9c08302813ea34c9",
+  "verdict": "PASS"
+ },
+ "PL010-0423#e06e93e4": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różni się tylko 4. dystraktor («chmurowe» zamiast «Wszystkie»), pułapka go nie dotyczy.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "3f5e6d5203dcef58",
+  "verdict": "PASS"
+ },
+ "PL010-0424#67e4e410": {
+  "date": "2026-11-25",
+  "note": "FCL.600 — IFR dla posiadaczy PPL z uprawnieniem IR; klucz poprawny.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "c0b6c71f33e49d47",
+  "verdict": "PASS"
+ },
+ "PL010-0424#855e16c2": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny (dystraktor «Wszystkie» zamiast «chmurowe»).",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "cc22642a30af9a22",
   "verdict": "PASS"
  },
  "PL010-0425#9575bd85": {
@@ -4511,6 +4711,22 @@
   "textSha": "bb001757e214bda8",
   "verdict": "PASS"
  },
+ "PL010-0536#1e5735d7": {
+  "date": "2026-11-25",
+  "note": "FCL.210.A(d) zalicza tylko licencję pilota na inną kategorię statku powietrznego; UAVO nią nie jest → klucz «Nie ma takiej możliwości» poprawny. § 4 ust. 1 pkt 5 świadectw kwalifikacji podaje nazwę świadectwa; sam skrót UAVO występuje w korpusie dopiero w nagłówku załącznika nr 6 (linia ~1711), którego anchor jest uszkodzony (TODO S1: tekst trafił do załącznik 4 pkt 1.4.7.6.2) — luka anchora, nie błąd wpisu; nie cytować z błędnego anchora. 3 zdania, 623 zn.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "0d920b63d2d47b27",
+  "verdict": "PASS"
+ },
+ "PL010-0537#4f8f9764": {
+  "date": "2026-11-25",
+  "note": "Zdania 1–3 zgodne z FCL.210.A(d) i FCL.010, klucz «O nie więcej niż 10» poprawny (spór nie zachodzi: dla SPL z przywilejami TMG lit. c) wymaga 15 h szkolenia na samolotach, tj. skrócenia o 30 h, czego nie ma wśród odpowiedzi). Ale tekst twierdzi bez zastrzeżeń, że zasada lit. d) obejmuje posiadacza SPL, pomijając szczególny tryb lit. c), a dystraktor «O 15 godzin» jest z nim wprost związany. Dopisać na końcu 4. zdanie: «Pułapka: 15 godzin to minimum szkolenia praktycznego na samolotach dla posiadacza SPL z przywilejami TMG, który ma 24 godziny lotu na motoszybowcach turystycznych (lit. c)).» (razem 669 zn.) i dodać refs: EU-1178-2011 'FCL.210.A(c)(1)' quote «co najmniej 24 godziny czasu lotu na motoszybowcach turystycznych po uzyskaniu wpisu przywilejów TMG do licencji»; 'FCL.210.A(c)(2)' quote «co najmniej 15 godzin szkolenia praktycznego na samolotach w ramach szkolenia w DTO lub ATO».",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "7f3ca05ee44686a0",
+  "verdict": "FIX"
+ },
  "PL010-0537#f04c5291": {
   "date": "2026-11-24",
   "note": "FCL.210.A(d) + FCL.010 (szybowiec – kategoria) – klucz „nie więcej niż 10 h” zgodny. Uwaga o SPL z przywilejami TMG (lit. c)) trafna i poparta quote; żaden dystraktor nie odpowiada schematowi z lit. c) (45→15 h), więc sporu brak.",
@@ -5087,6 +5303,14 @@
   "textSha": "6eb6557a7546e3cc",
   "verdict": "PASS"
  },
+ "PL010-0617#14fe554d": {
+  "date": "2026-11-25",
+  "note": "FCL.740.A(c) dosłownie = klucz; FCL.740.H(f) poprawne uzupełnienie dla PPL(H).",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "f199cc54e92b94a4",
+  "verdict": "PASS"
+ },
  "PL010-0617#ef577b97": {
   "date": "2026-11-25",
   "note": "sameAs PL010-0338#ef577b97 (verified w P06): q_pl i a_pl identyczne (sprawdzone na inventory), różnią się tylko listą licencji.",
@@ -5261,6 +5485,14 @@
   "portion": "P02",
   "round": 1,
   "textSha": "ce7dcfbde0922ae4",
+  "verdict": "PASS"
+ },
+ "PL010-1548#5406168c": {
+  "date": "2026-11-25",
+  "note": "FCL.025(b)(4) zawiera rozwinięcie «licencji pilota lekkich statków powietrznych (LAPL)» (w innym kontekście, ale to jedyne miejsce w 1178/2011 z tą nazwą; LIC § 2 pkt 27–30 nazywa LAPL(A)… «rekreacyjnymi» — bez sprzeczności). Pułapka BPL/FNL z § 2 pkt 19 i 22 poprawna.",
+  "portion": "P09",
+  "round": 1,
+  "textSha": "d774e5f91e36e0b3",
   "verdict": "PASS"
  },
  "PL010-1550#43edacd4": {
