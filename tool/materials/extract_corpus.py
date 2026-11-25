@@ -1848,7 +1848,7 @@ def owner_anchors(text, cfg):
     elif prof == "icao4444":
         chapter = None
         defs_on = False
-        for start, line in rows:
+        for ri, (start, line) in enumerate(rows):
             mc = re.match(r"^== Chapter (\d+)\b", line)
             ma = re.match(r"^== Appendix (\d+) ==$", line)
             if mc or ma:
@@ -1861,6 +1861,9 @@ def owner_anchors(text, cfg):
                 continue
             if defs_on:
                 md = _ICAO_DEF_RE.match(line)
+                prev = rows[ri - 1][1].rstrip() if ri else ""
+                if md and prev and prev[-1] not in ".:;?)”\"" and not prev.isupper() and not prev.startswith("=="):
+                    md = None     # second line of a wrapped sentence ("... published by the International⏎Telecommunication Union (ITU).")
                 if md and not line.startswith("Note"):
                     for sp in spans:
                         if sp.level == 2 and sp.end is None:
