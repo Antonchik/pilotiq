@@ -4063,6 +4063,14 @@
   "textSha": "473de22a2583a266",
   "verdict": "PASS"
  },
+ "PL010-0510#dde2d1ef": {
+  "date": "2026-11-25",
+  "note": "Oba warunki art. 122b ust. 1 (odstępstwo od organizacji lotu i zagrożenie dla bezpieczeństwa wielu osób) oddane; art. 4 ust. 1 w brzmieniu ustawy; pułapka z art. 5 ust. 2 pkt 2. Klucz ULC poparty działającym przepisem. 676 znaków, 3 zdania, refy i cytaty zgodne z korpusem.",
+  "portion": "P02",
+  "round": 3,
+  "textSha": "fb6835ca31f1a3e6",
+  "verdict": "PASS"
+ },
  "PL010-0512#7d9a7d4c": {
   "date": "2026-11-24",
   "note": "Usunięto «obecnie»; ostatnie zdanie opiera się na art. 140a ust. 5 pkt 1 i ust. 7 bez twierdzeń o wcześniejszym stanie prawnym. 3 zdania, 643 znaki, cytaty zgodne.",
