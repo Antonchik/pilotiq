@@ -1,0 +1,443 @@
+{
+  "topic": "AL08",
+  "sections": [
+    {
+      "id": "AL08-1",
+      "status": "draft",
+      "heading": "Badania lotniczo-lekarskie – kogo dotyczą i kto je przeprowadza",
+      "body": [
+        "Sprawność psychiczną i fizyczną członka oraz kandydata na członka personelu lotniczego, a także członka oraz kandydata na członka personelu pokładowego, sprawdza się w trakcie badań lotniczo-lekarskich (art. 105 ust. 1 Prawa lotniczego). Przepis nie przewiduje sprawdzania tej sprawności podczas rozmowy kwalifikacyjnej ani rozmowy w organizacji szkolącej.",
+        "- Członkiem personelu lotniczego jest osoba posiadająca ważną licencję lub świadectwo kwalifikacji (art. 94 ust. 2 pkt 1), więc badaniom podlegają posiadacze licencji i świadectw kwalifikacji oraz osoby ubiegające się o nie.",
+        "- Na pytanie „kto podlega badaniom” pełną odpowiedzią są obie grupy razem: personel lotniczy i personel pokładowy; odpowiedź wymieniająca tylko jedną z nich jest niepełna.",
+        "- Wyjątki dla niektórych specjalności, m.in. pilota lotni i skoczka spadochronowego, określa art. 105 ust. 1a.",
+        "Badania lotniczo-lekarskie są odpłatne, a ich koszty ponosi pracodawca (art. 105 ust. 4). Przeprowadzają je i orzeczenia wydają centra medycyny lotniczej oraz lekarze orzecznicy medycyny lotniczej (art. 106 ust. 1). Okres ważności orzeczenia zależy od klasy i wieku: orzeczenie klasy 2 jest ważne 60 miesięcy, dopóki posiadacz nie osiągnie 40 lat, a orzeczenie klasy 1 – 12 miesięcy (pkt MED.A.045 lit. a) rozporządzenia 1178/2011)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 1",
+          "quote": "Sprawność psychiczną i fizyczną członka oraz kandydata na członka personelu lotniczego i członka oraz kandydata na członka personelu pokładowego sprawdza się w trakcie badań lotniczo-lekarskich."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 2 pkt 1",
+          "quote": "ważną licencję lub świadectwo kwalifikacji i jest wpisana do państwowego rejestru personelu lotniczego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 1a",
+          "quote": "Badaniom, o których mowa w ust. 1, nie podlegają osoby, o których mowa w art. 94 ust. 2 pkt 2, a także członkowie personelu lotniczego oraz kandydaci na członków personelu lotniczego specjalności:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 1a pkt 2",
+          "quote": "pilot lotni;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 1a pkt 5",
+          "quote": "skoczek spadochronowy;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 4",
+          "quote": "Badania lotniczo-lekarskie przeprowadzane są odpłatnie. Koszty tych badań ponosi pracodawca."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 1",
+          "quote": "Badania lotniczo-lekarskie przeprowadzają i wydają orzeczenia o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 1 pkt 1",
+          "quote": "centra medycyny lotniczej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 1 pkt 2",
+          "quote": "lekarze orzecznicy medycyny lotniczej."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(3)(i)",
+          "quote": "60 miesięcy, dopóki posiadacz licencji nie osiągnie wieku 40 lat"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(1)",
+          "quote": "Orzeczenia lekarskie 1. klasy zachowują ważność przez okres 12 miesięcy."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0020#60819151",
+        "PL010-0250#e2e04bb4",
+        "PL010-0096#1f9cb636",
+        "PL010-0020#315617a8",
+        "PL010-0250#b1421fef",
+        "PL010-0096#1f167277",
+        "PL010-0097#cd9e4c4f",
+        "PL010-0097#e3708d12",
+        "PL010-1551#3a9afdc8",
+        "PL010-0252#000fa095"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL08-2",
+      "status": "draft",
+      "heading": "Centra medycyny lotniczej, lekarze orzecznicy i ich listy",
+      "body": [
+        "Badania lotniczo-lekarskie przeprowadzają i orzeczenia o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych wydają (art. 106 ust. 1 Prawa lotniczego):",
+        "- centra medycyny lotniczej;",
+        "- lekarze orzecznicy medycyny lotniczej.",
+        "Naczelny Lekarz Lotnictwa Cywilnego, działający w Urzędzie Lotnictwa Cywilnego (art. 24 ust. 1), orzeczeń w pierwszej instancji nie wydaje: do niego przysługuje odwołanie od orzeczenia (art. 106 ust. 3).",
+        "Listy prowadzi Prezes Urzędu Lotnictwa Cywilnego:",
+        "- listę centrów medycyny lotniczej, zawierającą ich karty ewidencyjne (art. 109 ust. 4); centrum wpisuje się na nią po uzyskaniu certyfikatu centrum medycyny lotniczej (art. 109 ust. 5);",
+        "- listę lekarzy orzeczników medycyny lotniczej, która jest jawna (art. 108 ust. 13).",
+        "Pułapka: Naczelny Lekarz list nie prowadzi, lecz wnioskuje do Prezesa ULC m.in. o skreślenie centrum z listy (art. 109 ust. 8) oraz o wydanie lekarzowi orzecznikowi certyfikatu (art. 107 ust. 1 pkt 4)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 1",
+          "quote": "Badania lotniczo-lekarskie przeprowadzają i wydają orzeczenia o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 1 pkt 1",
+          "quote": "centra medycyny lotniczej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 1 pkt 2",
+          "quote": "lekarze orzecznicy medycyny lotniczej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 24 ust. 1",
+          "quote": "W Urzędzie działa Naczelny Lekarz Lotnictwa Cywilnego, zwany dalej „Naczelnym Lekarzem”"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 3",
+          "quote": "osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 109 ust. 4",
+          "quote": "Prezes Urzędu prowadzi listę centrów medycyny lotniczej, która zawiera karty ewidencyjne centrów medycyny lotniczej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 109 ust. 5",
+          "quote": "Prezes Urzędu wpisuje centrum medycyny lotniczej na listę centrów medycyny lotniczej po uzyskaniu przez nie certyfikatu centrum medycyny lotniczej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 108 ust. 13",
+          "quote": "Prezes Urzędu prowadzi listę lekarzy orzeczników medycyny lotniczej. Lista lekarzy orzeczników medycyny lotniczej jest jawna"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 109 ust. 8",
+          "quote": "Naczelny Lekarz wnioskuje do Prezesa Urzędu o skreślenie centrum medycyny lotniczej z listy centrów medycyny lotniczej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 107 ust. 1 pkt 4",
+          "quote": "wnioskowanie do Prezesa Urzędu o wydanie lekarzowi orzecznikowi medycyny lotniczej certyfikatu"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0129#446a12c0",
+        "PL010-0129#c7ebadf2",
+        "PL010-0130#0ac32c19",
+        "PL010-0130#f1efdfff",
+        "PL010-0304#57dc8d03",
+        "PL010-0305#57dc8d03",
+        "PL010-0306#ab89293e"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL08-3",
+      "status": "draft",
+      "heading": "Okres ważności orzeczeń lekarskich klasy 1 i 2",
+      "body": [
+        "Okresy ważności orzeczeń lekarskich określa pkt MED.A.045 lit. a) rozporządzenia 1178/2011 (część MED).",
+        "Orzeczenie klasy 1:",
+        "- 12 miesięcy (ppkt 1);",
+        "- 6 miesięcy – w drodze odstępstwa – dla posiadaczy, którzy osiągnęli wiek 60 lat, oraz dla posiadaczy po ukończeniu 40 lat wykonujących operacje zarobkowego transportu lotniczego pasażerów w załodze jednoosobowej (ppkt 2).",
+        "Orzeczenie klasy 2 (ppkt 3):",
+        "- 60 miesięcy, dopóki posiadacz nie osiągnie wieku 40 lat; orzeczenie wydane przed 40 rokiem życia traci jednak ważność po ukończeniu 42 lat;",
+        "- 24 miesiące dla posiadaczy w wieku między 40 a 50 lat;",
+        "- 12 miesięcy dla posiadaczy w wieku powyżej 50 lat.",
+        "Klucz ULC w pytaniach o orzeczenie klasy 2 osoby „poniżej 50 roku życia” przyjmuje 24 miesiące, odnosząc to określenie do przedziału 40–50 lat; aktualny przepis daje osobie przed ukończeniem 40 lat orzeczenie ważne 60 miesięcy (ppkt 3 (i))."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(1)",
+          "quote": "Orzeczenia lekarskie 1. klasy zachowują ważność przez okres 12 miesięcy."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(2)",
+          "quote": "W drodze odstępstwa od pkt 1 okres ważności orzeczeń lekarskich 1. klasy wynosi 6 miesięcy w przypadku posiadaczy licencji, którzy:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(2)(i)",
+          "quote": "wykonują operacje zarobkowego transportu lotniczego pasażerów w załodze jednoosobowej i osiągnęli wiek 40 lat"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(2)(ii)",
+          "quote": "osiągnęli wiek 60 lat."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(3)(i)",
+          "quote": "60 miesięcy, dopóki posiadacz licencji nie osiągnie wieku 40 lat. Orzeczenie lekarskie wydane przed osiągnięciem przez posiadacza licencji wieku 40 lat traci ważność po osiągnięciu przez tego posiadacza licencji wieku 42 lat"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(3)(ii)",
+          "quote": "24 miesiące w przypadku posiadaczy licencji w wieku między 40 a 50 lat"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.045(a)(3)(iii)",
+          "quote": "12 miesięcy w przypadku posiadaczy licencji w wieku powyżej 50 lat"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0172#bb1bec5c",
+        "PL010-0173#17b30ff9",
+        "PL010-0174#f43a685c",
+        "PL010-0542#1ecad0aa",
+        "PL010-0543#cd325711",
+        "PL010-1539#f0eebf53",
+        "PL010-1540#ffeebfe9"
+      ],
+      "disputeNote": "Według pkt MED.A.045 lit. a) ppkt 3 (i) rozporządzenia 1178/2011 orzeczenie klasy 2 osoby przed ukończeniem 40 lat, czyli także „poniżej 50 roku życia”, jest ważne 60 miesięcy, więc dla części osób z pytania poprawna byłaby odpowiedź 60 miesięcy. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL08-4",
+      "status": "draft",
+      "heading": "Utrata sprawności, leki i operacje – obowiązki posiadacza licencji",
+      "body": [
+        "Członek personelu lotniczego nie może wykonywać lotów lub innych czynności lotniczych w przypadku utraty wymaganej sprawności psychicznej i fizycznej (art. 105 ust. 2 Prawa lotniczego); przepis nie przewiduje od tego wyjątków ani zezwoleń. Jeżeli jest świadomy takiej utraty, jest obowiązany do natychmiastowego poddania się badaniom lotniczo-lekarskim (art. 105 ust. 3); ustawa nie nakłada przy tym obowiązku poinformowania Prezesa ULC ani ministra.",
+        "Część MED rozporządzenia 1178/2011 dodaje:",
+        "- posiadacz licencji nie korzysta z jej przywilejów, gdy zdaje sobie sprawę z obniżenia sprawności, które może spowodować, że nie będzie w stanie bezpiecznie z nich korzystać (pkt MED.A.020 lit. a) ppkt 1), ani gdy przyjmuje leki, które mogą negatywnie wpływać na bezpieczne korzystanie z przywilejów (ppkt 2);",
+        "- bez zbędnej zwłoki i przed skorzystaniem z przywilejów zasięga porady lotniczo-lekarskiej m.in. po operacji chirurgicznej lub inwazyjnej procedurze medycznej, po rozpoczęciu regularnego przyjmowania jakiegokolwiek leku oraz gdy po raz pierwszy korzysta z soczewek korekcyjnych (lit. b) ppkt 1, 2 i 7);",
+        "- centrum medycyny lotniczej lub lekarz orzecznik ocenia wtedy jego sprawność i decyduje, czy może wznowić korzystanie z przywilejów (lit. c) ppkt 1).",
+        "Przepisy nie przewidują z tych powodów zawieszenia ani utraty licencji."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 2",
+          "quote": "Członek personelu lotniczego oraz personelu pokładowego nie może wykonywać lotów lub innych czynności lotniczych w przypadku utraty wymaganej sprawności psychicznej i fizycznej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 3",
+          "quote": "Członek personelu lotniczego i personelu pokładowego, który jest świadomy utraty sprawności psychicznej lub fizycznej wymaganej do wykonywania swojej funkcji, jest obowiązany do natychmiastowego poddania się badaniom"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(a)(1)",
+          "quote": "zdają sobie sprawę z obniżenia swojej sprawności fizycznej i psychicznej, mogącego spowodować, że nie będą w stanie bezpiecznie korzystać z tych przywilejów"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(a)(2)",
+          "quote": "przyjmują lub stosują jakiekolwiek leki wydawane na receptę lub bez recepty, które mogą negatywnie wpływać na bezpieczne korzystanie z przywilejów wynikających ze stosownej licencji"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(b)",
+          "quote": "Ponadto posiadacze orzeczenia lekarskiego bez zbędnej zwłoki i przed skorzystaniem z przywilejów wynikających z ich licencji zasięgają porady lotniczo-lekarskiej"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(b)(1)",
+          "quote": "zostali poddani operacji chirurgicznej lub inwazyjnej procedurze medycznej"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(b)(2)",
+          "quote": "rozpoczęli regularne przyjmowanie jakiegokolwiek leku"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(b)(7)",
+          "quote": "po raz pierwszy korzystają z soczewek korekcyjnych."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(c)(1)",
+          "quote": "przeprowadza ocenę ich sprawności fizycznej i psychicznej i podejmuje decyzję w kwestii tego, czy są oni zdolni do wznowienia korzystania z przysługujących im przywilejów"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0030#a42ae0d0",
+        "PL010-0049#5774b3b6",
+        "PL010-0049#afac79a5",
+        "PL010-0251#a9120e12",
+        "PL010-0026#3d4d6bb7",
+        "PL010-0084#0e6612bd",
+        "PL010-0084#5ad43359",
+        "PL010-0085#bd9f8bd2"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL08-5",
+      "status": "draft",
+      "heading": "Ograniczenie dotyczące szkieł korekcyjnych",
+      "body": [
+        "Gdy orzeczenie lekarskie zawiera ograniczenie dotyczące szkieł korekcyjnych, podczas korzystania z przywilejów licencji obowiązują wymagania pkt MED.B.070 lit. g) rozporządzenia 1178/2011:",
+        "- do widzenia na odległość okulary lub szkła kontaktowe muszą być używane przez cały czas korzystania z przywilejów (ppkt 3);",
+        "- zapasowa para okularów o podobnych właściwościach korygujących musi być łatwo dostępna do natychmiastowego użycia (ppkt 5);",
+        "- soczewki kontaktowe, jeżeli są stosowane, muszą być m.in. odpowiednie do widzenia na odległość, jednoogniskowe i niebarwione (ppkt 6).",
+        "Przepis nie wymaga okularów przeciwsłonecznych ani dodatkowego aktualnego badania wzroku. Gdy posiadacz licencji po raz pierwszy korzysta z soczewek korekcyjnych, zasięga porady lotniczo-lekarskiej (pkt MED.A.020 lit. b) ppkt 7).",
+        "Klucz ULC w jednym z pytań przyjmuje, że członek personelu lotniczego musi używać niebarwionych soczewek kontaktowych; aktualny przepis dopuszcza okulary lub szkła kontaktowe, a wymóg niebarwienia dotyczy soczewek tylko wtedy, gdy są stosowane."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.B.070(g)(3)",
+          "quote": "W odniesieniu do widzenia na odległość okulary lub szkła kontaktowe muszą być używane przez cały czas korzystania z przywilejów wynikających z odpowiednich licencji."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.B.070(g)(5)",
+          "quote": "Zapasowa para okularów o podobnych właściwościach korygujących, do korekcji – odpowiednio od przypadku – widzenia na odległość lub widzenia bliskiego, musi być łatwo dostępna do natychmiastowego użycia"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.B.070(g)(6)",
+          "quote": "W przypadku stosowania soczewek kontaktowych podczas korzystania z przywilejów wynikających z odpowiednich licencji muszą być one odpowiednie do widzenia na odległość, jednoogniskowe, niebarwione oraz dobrze tolerowane."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(b)",
+          "quote": "Ponadto posiadacze orzeczenia lekarskiego bez zbędnej zwłoki i przed skorzystaniem z przywilejów wynikających z ich licencji zasięgają porady lotniczo-lekarskiej"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(b)(7)",
+          "quote": "po raz pierwszy korzystają z soczewek korekcyjnych."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0083#64897989",
+        "PL010-0083#63e1284c",
+        "PL010-0085#bd9f8bd2"
+      ],
+      "disputeNote": "Pkt MED.B.070 lit. g) ppkt 3 rozporządzenia 1178/2011 dopuszcza korekcję okularami lub szkłami kontaktowymi, więc przepis nie nakazuje używania soczewek kontaktowych; wymóg, by były niebarwione, dotyczy ich tylko wtedy, gdy są stosowane (ppkt 6). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL08-6",
+      "status": "draft",
+      "heading": "Odwołanie od orzeczenia lotniczo-lekarskiego",
+      "body": [
+        "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza, czyli Naczelnego Lekarza Lotnictwa Cywilnego (art. 106 ust. 3 i art. 24 ust. 1 Prawa lotniczego).",
+        "- Termin: 14 dni od dnia otrzymania orzeczenia, taki sam dla orzeczeń centrum i lekarza orzecznika.",
+        "- Do postępowania w sprawie odwołania stosuje się odpowiednio przepisy Kodeksu postępowania administracyjnego.",
+        "- Pełnienie funkcji odwoławczych od tych orzeczeń należy do zadań Naczelnego Lekarza (art. 107 ust. 1 pkt 1); odwołanie nie trafia do Prezesa ULC, ministra ani przewodniczącego komisji centrum.",
+        "- W przypadkach szczególnych prawo złożenia odwołania od takiego orzeczenia przysługuje także Prezesowi Urzędu (art. 106 ust. 4).",
+        "Pytania mówią o „komisji lekarskiej centrum medycyny lotniczej”; aktualny przepis wymienia samo centrum, bez odrębnej komisji (art. 106 ust. 1 pkt 1, ust. 2 uchylony).",
+        "Klucz ULC w części pytań przyjmuje odwołanie „do Naczelnego Lekarza, a w szczególnych przypadkach do Prezesa ULC”; aktualny art. 106 ust. 4 pozwala Prezesowi ULC samemu złożyć odwołanie, a nie je rozpatrywać."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 3",
+          "quote": "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza w terminie 14 dni od dnia otrzymania orzeczenia."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 3",
+          "quote": "Do postępowania w sprawie odwołania stosuje się odpowiednio przepisy ustawy z dnia 14 czerwca 1960 r. – Kodeks postępowania administracyjnego."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 24 ust. 1",
+          "quote": "W Urzędzie działa Naczelny Lekarz Lotnictwa Cywilnego, zwany dalej „Naczelnym Lekarzem”"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 107 ust. 1 pkt 1",
+          "quote": "pełnienie funkcji odwoławczych od orzeczeń lotniczo-lekarskich wydawanych przez centra medycyny lotniczej oraz lekarzy orzeczników medycyny lotniczej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 4",
+          "quote": "W przypadkach szczególnych prawo złożenia odwołania od orzeczenia, o którym mowa w ust. 3, przysługuje także Prezesowi Urzędu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 1 pkt 1",
+          "quote": "centra medycyny lotniczej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 106 ust. 2",
+          "quote": "(uchylony)"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0050#ce6170e3",
+        "PL010-0050#5482a1de",
+        "PL010-0051#88d53fc0",
+        "PL010-0051#fd588f0e",
+        "PL010-0217#0313bb42",
+        "PL010-0217#98288b12",
+        "PL010-0218#b09c751b",
+        "PL010-0218#5cae4536"
+      ],
+      "disputeNote": "Według art. 106 ust. 4 Prawa lotniczego Prezes Urzędu w przypadkach szczególnych sam może złożyć odwołanie, a nie je rozpatruje; funkcje odwoławcze pełni Naczelny Lekarz (art. 106 ust. 3, art. 107 ust. 1 pkt 1). Odwołanie „do Prezesa ULC” nie ma więc oparcia w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL08-7",
+      "status": "draft",
+      "heading": "Orzeczenie lekarskie pilota PPL z uprawnieniem IR",
+      "body": [
+        "Posiadacz licencji pilota turystycznego (PPL) musi mieć przynajmniej ważne orzeczenie lekarskie klasy 2 (pkt MED.A.030 lit. c) ppkt 2 rozporządzenia 1178/2011). Jeżeli licencję PPL uzupełnia się o uprawnienie do wykonywania lotów według wskazań przyrządów (IR), posiadacz przechodzi badanie słuchu metodą audiometrii tonalnej zgodnie z częstotliwością i wytycznymi określonymi dla posiadaczy orzeczenia klasy 1 (lit. e)). Loty IFR mogą wykonywać posiadacze licencji PPL, CPL, MPL i ATPL z uprawnieniem IR odpowiednim dla danej kategorii statku powietrznego (pkt FCL.600).",
+        "Pytania ULC używają dawnej terminologii, której przepis nie zna: „pilot samolotowy turystyczny”, „rozszerzone orzeczenie klasy II”, „orzeczenie klasy II ze stwierdzeniem braku przeciwwskazań do lotów IFR”.",
+        "Klucz ULC w pytaniach o pilota turystycznego z uprawnieniem IR przyjmuje odpowiedź „tak” z warunkiem medycznym (orzeczenie klasy 1 albo „rozszerzone” klasy 2, w drugim wariancie – klasa 2 ze stwierdzeniem braku przeciwwskazań do lotów IFR); według aktualnego pkt FCL.600 obronna jest też krótka odpowiedź „Tak”."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(c)(2)",
+          "quote": "wynikających z licencji pilota turystycznego (PPL) lub licencji pilota wiatrakowców (GPL), pilot musi posiadać przynajmniej ważne orzeczenie lekarskie 2. klasy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(e)",
+          "quote": "Jeżeli licencja PPL jest uzupełniana o uprawnienie do wykonywania lotów według wskazań przyrządów"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(e)",
+          "quote": "posiadacz licencji przechodzi badanie słuchu metodą audiometrii tonalnej zgodnie z częstotliwością i wytycznymi określonymi w odniesieniu do posiadaczy orzeczenia lekarskiego 1. klasy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.600",
+          "quote": "mogą być wykonywane tylko przez posiadaczy licencji PPL, CPL, MPL oraz ATPL, którzy posiadają uprawnienie IR odpowiednie dla danej kategorii statku powietrznego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0374#3dbad0dc",
+        "PL010-0375#f5a4c078"
+      ],
+      "disputeNote": "Według pkt FCL.600 rozporządzenia 1178/2011 loty IFR mogą wykonywać posiadacze licencji PPL z uprawnieniem IR, więc krótka odpowiedź „Tak.” też jest obronna; warunki medyczne wynikają z MED.A.030 lit. c) ppkt 2 i lit. e). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    }
+  ]
+}

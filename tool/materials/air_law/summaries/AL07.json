@@ -1,0 +1,538 @@
+{
+  "topic": "AL07",
+  "sections": [
+    {
+      "id": "AL07-1",
+      "status": "draft",
+      "heading": "Licencja pilota szybowcowego SPL – podstawowe wymagania",
+      "body": [
+        "Część SFCL rozporządzenia 2018/1976 ustanawia wymagania dotyczące wydawania jednej licencji szybowcowej – licencji pilota szybowcowego (SPL) (pkt SFCL.001). Prawo lotnicze wymienia dla szybowców licencje pilota szybowcowego rekreacyjnego i pilota szybowcowego (art. 94 ust. 6 pkt 1); licencji pilota szybowcowego zawodowego nie ma.",
+        "Podstawowe wymagania wobec kandydata:",
+        "- wiek: ukończone 16 lat (pkt SFCL.120; art. 96 ust. 2 pkt 1 Prawa lotniczego);",
+        "- pierwszy samodzielny lot ucznia-pilota: ukończone 14 lat oraz upoważnienie instruktora FI(S) i jego nadzór (pkt SFCL.125);",
+        "- szkolenie: w ATO lub DTO (pkt SFCL.130 lit. a));",
+        "- wykształcenie: ani część SFCL, ani art. 96 ust. 2 pkt 1 Prawa lotniczego nie określają żadnego poziomu wykształcenia.",
+        "Pułapki w pytaniach o wiek: 17 lat to wymóg dla pilota turystycznego (art. 96 ust. 2 pkt 4), a 21 lat – dla pilota liniowego (art. 96 ust. 2 pkt 6). Lot w operacjach innych niż niezarobkowe bez wynagrodzenia jest przywilejem tej samej licencji SPL, dostępnym po ukończeniu 18 lat i zdobyciu doświadczenia (pkt SFCL.115 lit. a) ppkt 3)."
+      ],
+      "refs": [
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.001",
+          "quote": "Niniejszy załącznik ustanawia wymagania dotyczące wydawania licencji pilota szybowcowego (SPL)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 1",
+          "quote": "p) pilot szybowcowy rekreacyjny, q) pilot szybowcowy,"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.120",
+          "quote": "Wnioskodawca ubiegający się o licencję SPL musi mieć ukończone 16 lat."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 1",
+          "quote": "pilot szybowcowy – ukończone 16 lat"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.125(b)",
+          "quote": "Aby zostać dopuszczonym do wykonywania samodzielnych lotów, uczeń-pilot musi mieć ukończone 14 lat."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.125(a)",
+          "quote": "Uczeń-pilot nie może wykonywać samodzielnych lotów, chyba że został do tego upoważniony przez instruktora FI(S) i jest przez niego nadzorowany."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)",
+          "quote": "Wnioskodawca ubiegający się o licencję SPL musi ukończyć szkolenie w ATO lub DTO."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2",
+          "quote": "W celu uzyskania licencji członka personelu lotniczego osoba ubiegająca się o nią musi spełnić następujące wymagania dla poszczególnych specjalności w zakresie wieku:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 4",
+          "quote": "pilot turystyczny, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 17 lat"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 6",
+          "quote": "pilot liniowy, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 21 lat"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.115(a)(3)",
+          "quote": "w operacjach innych niż określone w pkt 1 wyłącznie w przypadku, gdy:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.115(a)(3)(i)",
+          "quote": "ma ukończone 18 lat"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0257#d24341aa",
+        "PL010-1561#3bd72c37",
+        "PL010-0264#ece31364",
+        "PL010-0258#162110e4"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL07-2",
+      "status": "draft",
+      "heading": "Szkolenie do licencji SPL",
+      "body": [
+        "Kandydat na licencję SPL musi ukończyć szkolenie w ATO lub DTO (pkt SFCL.130 lit. a) rozporządzenia 2018/1976); tak samo jest przy licencji BPL (pkt BFCL.130 rozporządzenia 2018/395) i PPL (pkt FCL.210 lit. a) rozporządzenia 1178/2011). ATO to zatwierdzona organizacja szkolenia (art. 2 pkt 16 rozporządzenia 1178/2011), która szkoli pilotów dopiero po uzyskaniu zatwierdzenia od właściwego organu (art. 10a ust. 1), a DTO – zadeklarowana organizacja szkolenia (art. 2 pkt 24). W Polsce certyfikacja podmiotów lotnictwa cywilnego należy do zadań Prezesa ULC (art. 21 ust. 2 pkt 5a Prawa lotniczego), a załącznik nr 6 do ustawy przewiduje opłatę za wydanie certyfikatu ATO.",
+        "Szkolenie obejmuje wiedzę teoretyczną (pkt SFCL.135) i co najmniej 15 godzin szkolenia w locie na szybowcach, w tym co najmniej:",
+        "- 10 godzin szkolenia w locie z instruktorem;",
+        "- dwie godziny czasu lotu samodzielnego pod nadzorem;",
+        "- 45 startów i lądowań.",
+        "Pilot z licencją na inną kategorię statków powietrznych (z wyjątkiem balonów) uzyskuje zaliczenie 10 % czasu lotu jako pilot dowódca, najwyżej siedem godzin, ale najwyżej 10 startów i lądowań (pkt SFCL.130 lit. b)). Pułapka: 15 godzin to całe szkolenie w locie, a nie jego część z instruktorem."
+      ],
+      "refs": [
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)",
+          "quote": "Wnioskodawca ubiegający się o licencję SPL musi ukończyć szkolenie w ATO lub DTO."
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "BFCL.130",
+          "quote": "Wnioskodawca ubiegający się o licencję BPL musi ukończyć szkolenie w ATO lub DTO."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.210(a)",
+          "quote": "Osoba ubiegająca się o licencję PPL lub GPL musi ukończyć szkolenie w ATO lub DTO."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 16",
+          "quote": "„zatwierdzona organizacja szkolenia (ang. approved training organisation, ATO)” oznacza organizację, która jest uprawniona do prowadzenia szkolenia pilotów"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 10a ust. 1",
+          "quote": "wyłącznie jeśli uzyskały od właściwego organu zatwierdzenie potwierdzające"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 24",
+          "quote": "„zadeklarowana organizacja szkolenia (ang. declared training organisation, DTO)” oznacza organizację, która jest uprawniona do prowadzenia szkolenia pilotów na podstawie deklaracji"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 21 ust. 2 pkt 5a",
+          "quote": "certyfikacja podmiotów prowadzących działalność w zakresie lotnictwa cywilnego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "załącznik 6 tabela 1 część III pkt 1",
+          "quote": "Przeprowadzenie procesu certyfikacji i wydanie certyfikatu ATO lub CTO"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)",
+          "quote": "Szkolenie musi być dostosowane do przywilejów, o które ubiega się wnioskodawca, oraz musi obejmować:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)(1)",
+          "quote": "wiedzę teoretyczną określoną w pkt SFCL.135"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)(2)",
+          "quote": "co najmniej 15 godzin szkolenia w locie na szybowcach"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)(2)(i)",
+          "quote": "10 godzin szkolenia w locie z instruktorem"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)(2)(ii)",
+          "quote": "dwie godziny czasu lotu samodzielnego pod nadzorem"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)(2)(iii)",
+          "quote": "45 startów i lądowań"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(b)",
+          "quote": "uzyskuje zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy tego rodzaju statku powietrznego i maksymalnie do siedmiu godzin"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(b)(2)",
+          "quote": "przekroczyć 10 startów i lądowań"
+        }
+      ],
+      "questionKeys": [
+        "PL010-1560#db25d3ed",
+        "PL010-0265#9936a11e",
+        "PL010-0266#0916f2a1",
+        "PL010-0328#4f2e637e",
+        "PL010-0288#e8ed1708",
+        "PL010-0289#c68d42bf"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL07-3",
+      "status": "draft",
+      "heading": "Egzamin teoretyczny na licencję SPL",
+      "body": [
+        "Kandydat na licencję SPL wykazuje podczas egzaminów wiedzę teoretyczną z przedmiotów wymienionych w pkt SFCL.135 lit. a) rozporządzenia 2018/1976:",
+        "- przedmioty wspólne: prawo lotnicze, możliwości człowieka, meteorologia, łączność;",
+        "- przedmioty specyficzne dla szybowców: zasady lotu, procedury operacyjne, wykonywanie i planowanie lotu, wiedza ogólna o statkach powietrznych związana z szybowcami, nawigacja.",
+        "Pytania ULC używają niekiedy innych nazw tych samych przedmiotów: „człowiek – możliwości i ograniczenia” to możliwości człowieka, „osiągi i planowanie lotów” to wykonywanie i planowanie lotu, a „wiedza ogólna o szybowcu” to wiedza ogólna o statkach powietrznych związana z szybowcami.",
+        "Na liście nie ma psychologii człowieka, funkcji życiowych człowieka, trasy lotu, pedagogiki, medycyny lotniczej, wiedzy ogólnej o lotnictwie ani prawa cywilnego, karnego czy prawa pracy; aerodynamika nie jest osobnym przedmiotem. Egzaminy z wiedzy teoretycznej trzeba zdać przed przystąpieniem do egzaminu praktycznego (pkt SFCL.145 lit. c))."
+      ],
+      "refs": [
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.135(a)",
+          "quote": "musi wykazać podczas egzaminów, że posiada wiedzę teoretyczną odpowiednią do przywilejów, o które się ubiega, w zakresie następujących przedmiotów:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.135(a)(1)",
+          "quote": "przedmioty wspólne: (i) prawo lotnicze; (ii) możliwości człowieka; (iii) meteorologia; (iv) łączność;"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.135(a)(2)",
+          "quote": "przedmioty specyficzne dla szybowców: (i) zasady lotu; (ii) procedury operacyjne; (iii) wykonywanie i planowanie lotu; (iv) wiedza ogólna o statkach powietrznych związana z szybowcami; (v) nawigacja."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.145(c)",
+          "quote": "Aby przystąpić do egzaminu praktycznego poprzedzającego wydanie licencji SPL, wnioskodawca musi najpierw zdać wymagane egzaminy z wiedzy teoretycznej."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0278#368cbbc1",
+        "PL010-0279#142f7aec",
+        "PL010-0280#8352e62d",
+        "PL010-0281#514e21c9",
+        "PL010-0282#c67e92fb",
+        "PL010-0283#ff79bc99",
+        "PL010-0284#11dba07d",
+        "PL010-0285#6ee9f144",
+        "PL010-0286#e0a7e145",
+        "PL010-0287#57e1d428"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL07-4",
+      "status": "draft",
+      "heading": "Egzamin praktyczny na licencję SPL",
+      "body": [
+        "Podczas egzaminu praktycznego kandydat wykazuje, że potrafi jako pilot dowódca szybowca wykonywać stosowne procedury i manewry (pkt SFCL.145 lit. a) rozporządzenia 2018/1976). Egzamin zdaje się na szybowcu albo na motoszybowcu turystycznym (TMG), zależnie od przywilejów (lit. b)), i dzieli się na sekcje odpowiadające fazom lotu (lit. d) ppkt 1).",
+        "Zakres egzaminu na szybowcu określa AMC1 SFCL.145 (EASA):",
+        "- sekcja 1: czynności przed lotem i odlot, m.in. przegląd szybowca, dokumentacja, planowanie lotu, masa i wyważenie, czynności przed startem;",
+        "- sekcje 2A–2C: start za wyciągarką lub samochodem, start za samolotem holującym (z prawidłowym wyczepieniem z holu) i start z własnym napędem; co najmniej jedna metoda startu jest wykonywana w pełnym zakresie;",
+        "- sekcja 3: ogólne wykonywanie lotu, m.in. lot po prostej z kontrolą położenia i prędkości, lot z dużym kątem natarcia, zapobieganie wejściu w korkociąg i wyprowadzanie;",
+        "- sekcja 4: procedura wejścia w krąg nadlotniskowy, unikanie kolizji przez obserwację zewnętrzną, czynności kontrolne przed lądowaniem, lądowanie precyzyjne (symulacja lądowania w terenie przygodnym i na krótkim pasie) oraz lądowanie przy bocznym wietrze, jeżeli pozwalają na to warunki.",
+        "Lotów nocnych VFR ani symulowanego pożaru tu nie ma, a osobna sekcja procedur w sytuacjach anormalnych i awaryjnych występuje tylko w egzaminie na TMG."
+      ],
+      "refs": [
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.145(a)",
+          "quote": "musi wykazać podczas egzaminu praktycznego, że potrafi – jako pilot dowódca szybowca – wykonywać stosowne procedury i manewry"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.145(b)",
+          "quote": "Wnioskodawcy muszą zaliczyć egzamin praktyczny na szybowcu, z wyłączeniem motoszybowców turystycznych, lub na motoszybowcu turystycznym"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.145(d)(1)",
+          "quote": "Egzamin praktyczny jest podzielony na różne sekcje, które odpowiadają różnym fazom lotu szybowca."
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145"
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145 SECTION 1"
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145 SECTION 2A"
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145 SECTION 2B"
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145 SECTION 2C"
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145 SECTION 3"
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145 SECTION 4"
+        },
+        {
+          "src": "EASA-EAR-SAILPLANE",
+          "loc": "AMC1 SFCL.145 (2) SECTION 5"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0267#5122fa42",
+        "PL010-0268#f5ac6f10",
+        "PL010-0269#64f8c599",
+        "PL010-0270#06ae6c63",
+        "PL010-0271#197febdc",
+        "PL010-0272#cfe9ba07",
+        "PL010-0273#db8582f6",
+        "PL010-0274#64398428",
+        "PL010-0275#1a395835",
+        "PL010-0276#da70ebd9",
+        "PL010-0277#fbd53beb"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL07-5",
+      "status": "draft",
+      "heading": "Przywileje licencji SPL i bieżąca praktyka",
+      "body": [
+        "Posiadacz licencji SPL wykonuje czynności pilota dowódcy na szybowcach bez wynagrodzenia w operacjach niezarobkowych (pkt SFCL.115 lit. a) ppkt 1 rozporządzenia 2018/1976). W innych operacjach może latać tylko wtedy, gdy (ppkt 3):",
+        "- ma ukończone 18 lat;",
+        "- po uzyskaniu licencji zaliczył 75 godzin czasu lotu lub 200 startów i lądowań jako pilot dowódca na szybowcach.",
+        "Także art. 96 ust. 2 pkt 1 Prawa lotniczego wymaga 18 lat, jeżeli z licencji pilota szybowcowego wynika uprawnienie do zawodowego wykonywania czynności pilota. Odrębnej licencji pilota szybowcowego zawodowego nie ma.",
+        "Z przywilejów na szybowcach korzysta się wyłącznie po spełnieniu wymagań bieżącej praktyki (pkt SFCL.160 lit. a)): w ciągu ostatnich 24 miesięcy przed planowanym lotem pilot wykonał na szybowcach co najmniej pięć godzin czasu lotu jako pilot dowódca, w locie z instruktorem lub w locie samodzielnym pod nadzorem instruktora FI(S), w tym co najmniej 15 startów i dwa loty szkoleniowe z instruktorem FI(S). Zamiast tego może zaliczyć kontrolę umiejętności przed egzaminatorem FE(S) na szybowcu."
+      ],
+      "refs": [
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.115(a)",
+          "quote": "posiadaczowi licencji SPL przysługują przywileje dotyczące wykonywania czynności pilota dowódcy na szybowcach:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.115(a)(1)",
+          "quote": "bez wynagrodzenia w operacjach niezarobkowych"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.115(a)(3)",
+          "quote": "w operacjach innych niż określone w pkt 1 wyłącznie w przypadku, gdy:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.115(a)(3)(i)",
+          "quote": "ma ukończone 18 lat"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.115(a)(3)(ii)",
+          "quote": "po uzyskaniu licencji zaliczył 75 godzin czasu lotu lub 200 startów i lądowań jako pilot dowódca na szybowcach"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 1",
+          "quote": "a jeżeli z licencji wynika uprawnienie do wykonywania zawodowego czynności pilota – ukończone 18 lat"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 1",
+          "quote": "p) pilot szybowcowy rekreacyjny, q) pilot szybowcowy,"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.160(a)",
+          "quote": "wyłącznie wówczas, gdy w ciągu ostatnich 24 miesięcy przed planowanym lotem:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.160(a)(1)",
+          "quote": "wykonał, na szybowcach, co najmniej pięć godzin czasu lotu jako pilot dowódca lub w locie z instruktorem bądź w locie samodzielnym pod nadzorem instruktora FI(S)"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.160(a)(1)(i)",
+          "quote": "15 startów"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.160(a)(1)(ii)",
+          "quote": "dwa loty szkoleniowe z instruktorem FI(S)"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.160(a)(2)",
+          "quote": "zaliczył kontrolę umiejętności przed egzaminatorem FE(S) na szybowcu"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0263#0ea0abfa",
+        "PL010-0326#ee8656a3",
+        "PL010-0258#162110e4"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL07-6",
+      "status": "draft",
+      "heading": "Wniosek o licencję i przywrócenie zawieszonej licencji",
+      "body": [
+        "Do wniosku o wydanie licencji SPL dołącza się dowód spełnienia wymagań części SFCL rozporządzenia 2018/1976 oraz części MED rozporządzenia 1178/2011 (pkt SFCL.015 lit. b)). Są to więc dokumenty potwierdzające:",
+        "- ukończenie szkolenia obejmującego wiedzę teoretyczną i szkolenie w locie (pkt SFCL.130 lit. a); art. 96 ust. 1 pkt 6 Prawa lotniczego);",
+        "- spełnienie wymagań w zakresie sprawności psychicznej i fizycznej, potwierdzonych orzeczeniem o zdolności do wykonywania lotów (art. 96 ust. 1 pkt 5).",
+        "Odpowiedź wymieniająca tylko jedną z tych grup dokumentów jest niepełna.",
+        "Zawieszoną licencję przywraca się na wniosek zainteresowanego członka personelu lotniczego (§ 12 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego). Do wniosku dołącza się kopię orzeczenia lotniczo-lekarskiego odpowiedniej klasy oraz dokumenty potwierdzające spełnienie wymagań niezbędnych do przywrócenia licencji, jeżeli takie wymagania wskazano w decyzji o zawieszeniu (§ 12 ust. 2, § 11 ust. 2 pkt 2). Przepis nie wymaga zdjęć, świadectwa szkolnego ani świadectwa radiooperatora."
+      ],
+      "refs": [
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.015(b)",
+          "quote": "Do wniosku określonego w lit. a) dołącza się dowód spełnienia przez wnioskodawcę odpowiednich wymagań ustanowionych w niniejszym załączniku oraz w załączniku IV (część MED) do rozporządzenia (UE) nr 1178/2011."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)",
+          "quote": "Szkolenie musi być dostosowane do przywilejów, o które ubiega się wnioskodawca, oraz musi obejmować:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)(1)",
+          "quote": "wiedzę teoretyczną określoną w pkt SFCL.135"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.130(a)(2)",
+          "quote": "co najmniej 15 godzin szkolenia w locie na szybowcach"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 6",
+          "quote": "dotyczące ukończenia szkolenia lotniczego, praktyki lotniczej oraz posiadanej wiedzy i umiejętności"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 5",
+          "quote": "odpowiada wymaganiom w zakresie sprawności psychicznej i fizycznej, określonym na podstawie art. 104 ust. 2, potwierdzonym orzeczeniem o zdolności lub niezdolności do wykonywania lotów"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 12 ust. 1",
+          "quote": "Zawieszoną licencję albo uprawnienie przywraca się na wniosek zainteresowanego członka personelu lotniczego"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 12 ust. 2",
+          "quote": "Do wniosku, o którym mowa w ust. 1, dołącza się kopię orzeczenia lotniczo-lekarskiego odpowiedniej klasy oraz dokumenty potwierdzające spełnienie wymagań niezbędnych do przywrócenia zawieszonej licencji lub uprawnienia, jeżeli zostały określone zgodnie z § 11 ust. 2 pkt 2."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 2 pkt 2",
+          "quote": "można wskazać termin i sposób spełnienia wymagań określonych w art. 96 ust. 1 ustawy niezbędnych do przywrócenia zawieszonej licencji lub uprawnienia"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0261#5c533218",
+        "PL010-0259#f63da24b",
+        "PL010-0260#d6a0a88b"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL07-7",
+      "status": "draft",
+      "heading": "Orzeczenie lekarskie a licencja SPL",
+      "body": [
+        "Klasę orzeczenia lekarskiego potrzebną do korzystania z przywilejów poszczególnych licencji określa pkt MED.A.030 lit. c) rozporządzenia 1178/2011 (część MED):",
+        "- licencja SPL: przynajmniej ważne orzeczenie lekarskie na potrzeby licencji LAPL (ppkt 1);",
+        "- licencja PPL: przynajmniej ważne orzeczenie lekarskie klasy 2 (ppkt 2);",
+        "- licencja SPL w zarobkowych operacjach na szybowcach innych niż określone w art. 3 ust. 2 rozporządzenia 2018/1976: przynajmniej orzeczenie klasy 2 (ppkt 4);",
+        "- licencje CPL, MPL i ATPL: orzeczenie klasy 1 (ppkt 5).",
+        "Klucz ULC w pytaniu o posiadaczy i kandydatów do licencji PPL i licencji pilota szybowcowego przyjmuje orzeczenie co najmniej klasy 2; aktualny przepis wymaga klasy 2 dla PPL, a dla SPL – tylko w części operacji zarobkowych."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(c)(1)",
+          "quote": "lub licencji pilota szybowcowego (SPL) wydanej zgodnie z załącznikiem III (część SFCL) do rozporządzenia wykonawczego Komisji (UE) 2018/1976, pilot musi posiadać przynajmniej ważne orzeczenie lekarskie na potrzeby LAPL"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(c)(2)",
+          "quote": "wynikających z licencji pilota turystycznego (PPL) lub licencji pilota wiatrakowców (GPL), pilot musi posiadać przynajmniej ważne orzeczenie lekarskie 2. klasy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(c)(4)",
+          "quote": "wynikających z SPL do celów zarobkowych operacji na szybowcach innych niż określone w art. 3 ust. 2 rozporządzenia wykonawczego Komisji (UE) 2018/1976, pilot musi posiadać przynajmniej ważne orzeczenie lekarskie 2. klasy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(c)(5)",
+          "quote": "pilot musi posiadać ważne orzeczenie lekarskie 1. klasy"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0262#c049e5e3"
+      ],
+      "disputeNote": "Według aktualnego brzmienia pkt MED.A.030 lit. c) ppkt 1 rozporządzenia 1178/2011 posiadacz licencji SPL musi mieć przynajmniej ważne orzeczenie lekarskie na potrzeby LAPL, a klasa 2 jest wymagana dla PPL oraz dla SPL tylko w części operacji zarobkowych (ppkt 4). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL07-8",
+      "status": "draft",
+      "heading": "Szkolny statek powietrzny i palenie tytoniu na pokładzie",
+      "body": [
+        "Zatwierdzona organizacja szkolenia musi korzystać z floty szkolnych statków powietrznych lub FSTD wyposażonych odpowiednio do prowadzonych kursów (pkt ORA.ATO.135 lit. a) rozporządzenia 1178/2011). AMC1 ORA.ATO.135 (EASA) rozwija to wymaganie:",
+        "- każdy szkolny statek powietrzny, z wyjątkiem balonów i statków jednomiejscowych, powinien mieć podstawowe elementy układu sterowania w locie natychmiast dostępne zarówno dla ucznia, jak i dla instruktora (np. podwójne sterownice lub centralny drążek);",
+        "- flota powinna obejmować, stosownie do kursów, statki powietrzne odpowiednio wyposażone do symulacji warunków meteorologicznych dla lotów według wskazań przyrządów (IMC).",
+        "Wskaźnik kierunku wiatru i oświetlenie drogi startowej do szkolenia w nocy to wymagania dla lotniska (AMC1 ORA.ATO.140), a nie wyposażenie statku powietrznego; statki do demonstracji autorotacji dotyczą śmigłowców.",
+        "Na pokładzie szybowca nie wolno palić tytoniu w żadnej fazie lotu (pkt SAO.OP.130 załącznika II do rozporządzenia 2018/1976). Przepis nie przewiduje wyjątków, więc zgoda Prezesa ULC ani służb ATS niczego tu nie zmienia."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "ORA.ATO.135(a)",
+          "quote": "Zatwierdzona organizacja szkolenia musi korzystać z odpowiedniej floty szkolnych statków powietrznych lub FSTD wyposażonych odpowiednio do prowadzonych kursów szkoleniowych."
+        },
+        {
+          "src": "EASA-EAR-AIRCREW",
+          "loc": "AMC1 ORA.ATO.135"
+        },
+        {
+          "src": "EASA-EAR-AIRCREW",
+          "loc": "AMC1 ORA.ATO.140"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SAO.OP.130",
+          "quote": "Nie wolno palić tytoniu na pokładzie szybowca w żadnej fazie lotu."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0332#70328924",
+        "PL010-0333#ae52d302",
+        "PL010-1546#34ceeac0"
+      ],
+      "disputeNote": null
+    }
+  ]
+}

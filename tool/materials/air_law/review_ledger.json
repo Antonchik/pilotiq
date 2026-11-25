@@ -921,11 +921,11 @@
  },
  "PL010-0089#6d74eb81": {
   "date": "2026-11-25",
-  "note": "Merytorycznie zgodne z FCL.740(b)(1)(i)/(ii) i (b)(2). Język: «ukończa je w tej organizacji» — forma niepoprawna (ukończyć → ukończy / imperf. ukańcza). Zamienić na «…musi je ukończyć w tej organizacji (ppkt 2)», jak w akcie («musi ukończyć szkolenie odświeżające w tej organizacji»). Reszta bez zmian; opcjonalnie: ppkt (iii) dopuszcza też instruktora dla SEP/TMG wygasłych ≤3 lata — tekst tego nie przeczy, nie blokuje.",
+  "note": "Poprawiono na «musi je ukończyć w tej organizacji (ppkt 2)» zgodnie z FCL.740(b)(2); reszta bez zmian, 446 zn., 2 zdania.",
   "portion": "P10",
-  "round": 1,
-  "textSha": "ac857760edc86e53",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "8868275535728d4c",
+  "verdict": "PASS"
  },
  "PL010-0091#0aba6593": {
   "date": "2026-11-25",
@@ -3361,11 +3361,11 @@
  },
  "PL010-0369#4b752410": {
   "date": "2026-11-25",
-  "note": "Klucz «Nie» poprawny; przesłanka «niezarobkowo» pochodzi z dawnego reżimu, ale odpowiedź pozostaje prawdziwa według obecnych przepisów (art. 160 ust. 3 pkt 2 nie rozróżnia szkolenia zarobkowego), więc draft, nie outdated — spójne z P11 0592. Błąd: cytat i zdanie 2 ucinają art. 161 ust. 3 przed zastrzeżeniem «jeżeli przepisy Unii Europejskiej nie stanowią inaczej», a dla ATO (banki PPL(A)/(H)) przepisy UE stanowią inaczej: ORA.GEN.135(a) — certyfikat zachowuje ważność, dopóki organizacja spełnia wymagania i nie został zwrócony ani cofnięty (nie «na czas oznaczony»). Zastąpić zdanie 2: «Według art. 161 ust. 3 certyfikat wydaje się na czas oznaczony, jeżeli przepisy Unii Europejskiej nie stanowią inaczej, a certyfikat ATO zachowuje ważność tylko pod warunkami z pkt ORA.GEN.135 lit. a) rozporządzenia 1178/2011; po utracie ważności certyfikatu organizacja nie może więc prowadzić szkolenia.» Ref art. 161 ust. 3: cytat pełnego ustępu (z «jeżeli przepisy Unii Europejskiej nie stanowią inaczej»); dodać ref EU-1178-2011 «ORA.GEN.135(a)», quote «Certyfikat organizacji zachowuje ważność pod warunkiem, że:». Tekst po zmianie ~650 zn., 3 zdania.",
+  "note": "Pełny cytat art. 161 ust. 3 z «jeżeli przepisy Unii Europejskiej nie stanowią inaczej» + ref ORA.GEN.135(a) («Certyfikat organizacji zachowuje ważność pod warunkiem, że:»); wniosek «po utracie ważności… nie może prowadzić szkolenia» poprawny dla obu reżimów. 3 zdania, 623 zn.",
   "portion": "P10",
-  "round": 1,
-  "textSha": "50bc870e687419e4",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "8693a9e429f4f2bc",
+  "verdict": "PASS"
  },
  "PL010-0369#bb2004ee": {
   "date": "2026-11-25",
@@ -3377,11 +3377,11 @@
  },
  "PL010-0370#28df25f9": {
   "date": "2026-11-25",
-  "note": "Klucz «Nie» poprawny (art. 161 ust. 2 i 8 PL, ORA.GEN.125); przesłanka «niezarobkowo» — jak w 0369, draft uzasadniony. Błąd: «certyfikacji podlega każde szkolenie do licencji» jest sprzeczne z art. 10a ust. 1 akapit drugi 1178/2011 i DTO.GEN.110/115 (szkolenia DTO na podstawie deklaracji, bez certyfikacji) oraz z disputeNote 0363#5945c899 tej samej porcji. Zamienić na: «…a art. 160 ust. 3 pkt 2 obejmuje szkolenie do licencji bez rozróżnienia na zarobkowe i niezarobkowe.» Refs bez zmian.",
+  "note": "«każde szkolenie» zastąpione «art. 160 ust. 3 pkt 2 obejmuje szkolenie do licencji bez rozróżnienia na zarobkowe i niezarobkowe» — zgodne z anchorem i spójne z disputeNote 0363#5945c899 (DTO). Nieblokujące: zdanie 1 ma dwa «a» z rzędu («…(art. 161 ust. 8), a art. 160…») — można zamienić drugie na «; art. 160…». 546 zn.",
   "portion": "P10",
-  "round": 1,
-  "textSha": "3be029b2ac2be702",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "338de4ce6418fcae",
+  "verdict": "PASS"
  },
  "PL010-0370#9f98e2d6": {
   "date": "2026-11-25",
@@ -3393,11 +3393,11 @@
  },
  "PL010-0372#318ac315": {
   "date": "2026-11-25",
-  "note": "Jak 0369#4b752410: zdanie 2 i cytat art. 161 ust. 3 ucinają «jeżeli przepisy Unii Europejskiej nie stanowią inaczej». Dla krajowego ośrodka (certyfikat CTO, zał. 6 pkt 7 PL) termin obowiązuje, ale § 27 i art. 160 ust. 3 pkt 2 obejmują też ATO, którego certyfikat wg ORA.GEN.135(a) nie jest terminowy. Zastąpić zdanie 2: «Według art. 161 ust. 3 certyfikat wydaje się na czas oznaczony, jeżeli przepisy Unii Europejskiej nie stanowią inaczej (dla ATO ważność zależy od warunków z pkt ORA.GEN.135 lit. a) rozporządzenia 1178/2011), a po utracie ważności certyfikatu ośrodek nie może prowadzić szkolenia.» Pełny cytat ust. 3 i ref ORA.GEN.135(a) jak w 0369#4b752410; pilnować ≤700 zn. (obecnie 568 — ewentualnie skrócić zdanie 3 do «Przepisy nie przewidują zgody Prezesa ULC, ministra ani 14-dniowego okresu przejściowego.»).",
+  "note": "Pełny cytat art. 161 ust. 3, zastrzeżenie UE i ORA.GEN.135(a) dla ATO w tekście; zdanie 3 skrócone. 3 zdania, 665 zn. sameAs 0372#4cb3d0ad (CTO) nadal pasuje bez zmian.",
   "portion": "P10",
-  "round": 1,
-  "textSha": "f23e732fed9e04b7",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "07c7e14c718f4115",
+  "verdict": "PASS"
  },
  "PL010-0372#4cb3d0ad": {
   "date": "2026-11-25",
@@ -3605,6 +3605,14 @@
   "portion": "P10",
   "round": 1,
   "textSha": "119a3e8f1dcbe6d5",
+  "verdict": "PASS"
+ },
+ "PL010-0401#48893e1a": {
+  "date": "2026-11-25",
+  "note": "Teraz draft: art. 160 ust. 3 pkt 2 (certyfikacja szkolenia do licencji), art. 94 ust. 6 pkt 4 (kontroler ruchu lotniczego — licencja), zał. 6 pkt 6a PL (cytat dosłowny, loc «załącznik 6» — brak węższego anchora) potwierdzają istotę klucza: certyfikowana organizacja szkoląca personel ATS. Nie sporne: pozostałe odpowiedzi bez oparcia. Nieblokujące: «dawnym skrótem CAPTO» to wniosek spoza korpusu (CAPTO w nim nie występuje); ostrożniej «Skrót CAPTO nie występuje w obecnych przepisach, które posługują się skrótem ATCO TO». 3 zdania, 567 zn.",
+  "portion": "P10",
+  "round": 2,
+  "textSha": "56f8b4519b75aa5c",
   "verdict": "PASS"
  },
  "PL010-0402#7dbf50d2": {
