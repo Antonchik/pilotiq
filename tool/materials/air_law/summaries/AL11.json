@@ -229,7 +229,7 @@
     },
     {
       "id": "AL11-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Minima VMC: widzialność i odległość od chmur",
       "body": [
         "Minima widzialności w locie i odległości od chmur dla lotów VFR podaje tabela S5-1 w pkt SERA.5001 rozporządzenia 923/2012. Decyduje wysokość lotu, a klasa przestrzeni tylko na małych wysokościach:",
@@ -284,7 +284,7 @@
     },
     {
       "id": "AL11-6",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Zmniejszona widzialność w klasie G w dzień",
       "body": [
         "W przestrzeni klasy G na i poniżej 900 m (3 000 ft) AMSL lub 300 m (1 000 ft) nad terenem (wyższa z tych wartości) tabela S5-1 wymaga widzialności w locie 5 km. W dzień widzialność może być zmniejszona do nie mniej niż 1500 m (pkt SERA.5001 lit. a) rozporządzenia 923/2012; w Polsce § 7 pkt 1 rozporządzenia w sprawie przepisów ruchu lotniczego), jeżeli lot odbywa się:",
@@ -343,7 +343,7 @@
     },
     {
       "id": "AL11-7",
-      "status": "draft",
+      "status": "verified",
       "heading": "Ograniczenia prędkości w lotach VFR",
       "body": [
         "W lotach VFR na wysokości bezwzględnej poniżej 3050 m (10 000 ft) AMSL obowiązuje ograniczenie prędkości przyrządowej (IAS) do 250 kt. Pkt SERA.6001 lit. a) ppkt 3–7 rozporządzenia 923/2012 przewiduje je w klasach C, D, E, F i G, a AIP Polska (ENR 1.4) podaje to samo ograniczenie m.in. dla klas C i G.",
@@ -483,7 +483,7 @@
     },
     {
       "id": "AL11-9",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Loty VFR w nocy: pułap, widzialność i kontakt z ziemią",
       "body": [
         "Loty VFR w nocy wykonuje się według pkt SERA.5005 lit. c) rozporządzenia 923/2012; AIP Polska (ENR 1.2 pkt 7) podaje te same wymagania dla FIR Warszawa. Warunki meteorologiczne określa ppkt 3:",
@@ -549,7 +549,7 @@
     },
     {
       "id": "AL11-10",
-      "status": "draft",
+      "status": "verified",
       "heading": "Unikanie kolizji i pierwszeństwo drogi",
       "body": [
         "Statek powietrzny nie zbliża się do innego statku powietrznego na odległość stwarzającą niebezpieczeństwo kolizji (pkt SERA.3205 rozporządzenia 923/2012). Przepis nie podaje tej odległości w metrach ani różnicy wysokości. Pilot, który ma pozostać z dala od drogi innego statku, unika przelatywania nad nim, pod nim lub przed nim, chyba że uczyni to w bezpiecznej odległości i uwzględni skutki turbulencji w strumieniu nadążającym (SERA.3210 lit. c)).",
@@ -596,7 +596,7 @@
     },
     {
       "id": "AL11-11",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Separacja lotów VFR w przestrzeni klasy C",
       "body": [
         "W przestrzeni klasy C wszystkie loty wykonuje się z zapewnieniem służby kontroli ruchu lotniczego, ale separacja nie obejmuje wszystkich par lotów (pkt SERA.6001 lit. a) ppkt 3 i SERA.8005 lit. b) rozporządzenia 923/2012):",

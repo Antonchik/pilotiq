@@ -1,0 +1,72 @@
+[
+ {
+  "key": "AL11-5",
+  "verdict": "PASS",
+  "note": "Tabela S5-1 (SERA.5001) sprawdzona: 8 km/1500 m/300 m od 3050 m AMSL, 5 km/1500 m/300 m poniżej, F i G na małych wysokościach 5 km, z dala od chmur i z widocznością ziemi; FL 100 przy niższej wysokości przejściowej; rachunek 1350−300=1050 m poprawny. „B–E” zamiast „A–E” dopuszczalne: w klasie A VFR niedozwolony (SERA.6001 lit. a) ppkt 1), a minima VMC w klasie A tabela nazywa tylko wskazówką. 197 słów (limit 200). Zgodne z 13 zweryfikowanymi wpisami P20 i z AL11-1…4."
+ },
+ {
+  "key": "AL11-6",
+  "verdict": "DISPUTED",
+  "note": "Treść zgodna z SERA.5001 lit. a) ppkt 1–2 i lit. b) oraz § 7 pkt 1 rozporządzenia w sprawie przepisów ruchu lotniczego (dzień, klasa G, na i poniżej 900 m AMSL/300 m nad terenem, ≥1500 m; 800 m tylko śmigłowce). Zdanie sporne neutralne, disputeNote zgodny z disputed 0143#070f66d2 i 0519#295670a5 (odpowiedź „>5 km” zgodna z tabelą S5-1). Każdy pkt z disputeNote jest w refs."
+ },
+ {
+  "key": "AL11-7",
+  "verdict": "PASS",
+  "note": "SERA.6001 lit. a) ppkt 3–7: 250 kt IAS poniżej 3050 m AMSL w C (dla VFR), D, E, F, G; AIP ENR 1.4 klasy C i G oraz przypis * (FL100) się zgadzają; SERA.5005 lit. d) ppkt 1 i ENR 1.2 pkt 8 – zakaz prędkości okołodźwiękowych. Zgodne z verified 0596 i 0521. Ostrzeżenie validate o ENR 1.4 (pl+en) – cytaty są z kolumny polskiej, OK."
+ },
+ {
+  "key": "AL11-8",
+  "verdict": "FIX",
+  "note": "Lista „Pilot wykonuje go:” jest niepełna: pomija warunek SERA.5010 lit. b) ppkt 3 (IAS 140 kt lub mniej), co sugeruje, że wymagania są tylko dwa. Brak minimów udzielenia zezwolenia SVFR (SERA.5010 lit. c): 1500 m/800 m przy ziemi, pułap 180 m) – sam w sobie nie jest błędem, ale przy dodaniu ppkt 3 warto je dać (zgodne z basisNote outdated 0515#19516f9d). Gotowy body (195 słów): [\"Bez zezwolenia organu kontroli ruchu lotniczego w lotach VFR nie startuje się ani nie ląduje na lotnisku znajdującym się w strefie kontrolowanej, ani nie wchodzi się do strefy ruchu lotniskowego lub w krąg nadlotniskowy, gdy (pkt SERA.5005 lit. b) rozporządzenia 923/2012; AIP Polska, ENR 1.2 pkt 6):\", \"- pułap chmur jest niższy niż 450 m (1 500 ft) lub\", \"- widzialność przy ziemi jest mniejsza niż 5 km.\", \"W strefie kontrolowanej może być też dozwolony lot specjalny VFR, pod warunkiem uzyskania zezwolenia ATC (SERA.5010). Pilot wykonuje go:\", \"- z dala od chmur i z widzialnością terenu;\", \"- przy widzialności w locie nie mniejszej niż 1500 m (1,5 km), a w przypadku śmigłowców nie mniejszej niż 800 m;\", \"- z prędkością przyrządową (IAS) 140 kt lub mniejszą (lit. b) ppkt 3).\", \"ATC nie udziela specjalnego zezwolenia VFR na start, lądowanie ani wejście w krąg nadlotniskowy, gdy widzialność przy ziemi jest mniejsza niż 1500 m (dla śmigłowców 800 m) lub pułap chmur jest niższy niż 180 m (600 ft) (lit. c)).\", \"W FIR Warszawa loty specjalne VFR wykonuje się wyłącznie w ciągu dnia (AIP ENR 1.2 pkt 14). Minimum 5 km dotyczy zwykłego lotu VFR (tabela S5-1).\"]. Dodać refs: {EU-923-2012, SERA.5010(b)(3), quote: \"lot jest wykonywany z prędkością przyrządową (IAS) 140 kts lub mniejszą\"}, {EU-923-2012, SERA.5010(c), quote: \"organ kontroli ruchu lotniczego nie udziela statkowi powietrznemu specjalnego zezwolenia w lotach VFR na start ani na lądowanie\"}, {EU-923-2012, SERA.5010(c)(1), quote: \"widzialność przy ziemi jest mniejsza niż 1 500 m, a w przypadku śmigłowców – mniejsza niż 800 m\"}, {EU-923-2012, SERA.5010(c)(2), quote: \"pułap chmur jest niższy niż 180 m (600 ft).\"}. Reszta (SERA.5005 lit. b), ENR 1.2 pkt 6 i 14, SERA.5010 lit. b) ppkt 1–2) sprawdzona i poprawna."
+ },
+ {
+  "key": "AL11-9",
+  "verdict": "DISPUTED",
+  "note": "SERA.5005 lit. c) ppkt 3 (i)–(iii) i ppkt 5 (ii) sprawdzone: pułap ≥450 m, bez obniżenia widzialności z lit. a)/b), kontakt wzrokowy z ziemią w B–G, 300 m nad przeszkodą w promieniu 8 km. Zdanie sporne i disputeNote zgodne z disputed 0524#ae7ee2fc, neutralne. Drobna uwaga bez wymogu zmiany: AIP ENR 1.2 pkt 7 (iii) wymienia tylko klasy C, D i G, więc „te same wymagania” to uproszczenie; dopuszczalne."
+ },
+ {
+  "key": "AL11-10",
+  "verdict": "PASS",
+  "note": "SERA.3205, SERA.3210 lit. c), lit. c) ppkt 1 i ppkt 4 (ii) zgodne. Doc 4444 (reference-only) sprawdzony ręcznie: pkt 6.5.6.1.1 i 7.7.3.3 lit. a) – „an aircraft which anticipates being compelled to land because of factors affecting the safe operation of the aircraft (engine failure, shortage of fuel, etc.)” jako pierwsza pozycja listy pierwszeństwa; parafraza wierna. Zgodne z verified 0611, 0612, 0554."
+ },
+ {
+  "key": "AL11-11",
+  "verdict": "DISPUTED",
+  "note": "SERA.6001 lit. a) ppkt 3, SERA.8005 lit. b) ppkt 2–5 i SERA.3201 sprawdzone: w klasie C VFR separowane tylko od IFR, SVFR od IFR i od SVFR, brak separacji SVFR–VFR. Zdanie sporne i disputeNote zgodne z disputed 0627#cd987965, neutralne."
+ },
+ {
+  "key": "AL12-1",
+  "verdict": "FIX",
+  "note": "Tabela AP1-1 (dodatek 1 pkt 3.1.1) i SERA.3301 lit. a) zgodne, wszystkie 21 kluczy verified. Do poprawy w sekcji bezpłatnej: (1) zdanie „W pytaniach ULC stosuje się je, gdy nie ma łączności radiowej: …” to twierdzenie normatywne bez źródła i opis pytań ULC – zastąpić zdaniem z SERA.14083 lit. c) ppkt 1; (2) „Łatwo pomylić” – ocena, zastąpić neutralnym. Gotowe teksty: body[0] = \"Tabela AP1-1 w pkt 3.1.1 dodatku 1 do rozporządzenia 923/2012 podaje sygnały świetlne kierowane z kontroli lotniska do statku powietrznego. Przy awarii łączności radiowej statek powietrzny w ruchu lotniskowym na lotnisku kontrolowanym śledzi instrukcje wydawane za pomocą sygnałów wzrokowych (SERA.14083 lit. c) ppkt 1). Pilot dowódca, który zauważył lub odebrał sygnał, podejmuje działania wynikające z jego znaczenia (SERA.3301 lit. a)). Ten sam sygnał znaczy co innego w locie i na ziemi:\"; ostatni akapit = \"Światło ciągłe i seria błysków tego samego koloru znaczą co innego: ciągłe zielone zezwala na lądowanie lub start, a błyski zielone każą wracać do lądowania albo zezwalają na kołowanie.\" Dodać ref {EU-923-2012, SERA.14083(c)(1), quote: \"statek powietrzny uczestniczący w ruchu lotniskowym na lotnisku kontrolowanym śledzi sytuację pod kątem instrukcji, jakie mogą być wydawane za pomocą sygnałów wzrokowych\"}. Po zmianie 199 słów."
+ },
+ {
+  "key": "AL12-2",
+  "verdict": "PASS",
+  "note": "SERA.13001 lit. a), § 11 pkt 1–2 rozporządzenia w sprawie przepisów ruchu lotniczego, SERA.13005 lit. a) i lit. b) ppkt 2 zgodne. Doc 4444 (reference-only) sprawdzony ręcznie: def „Discrete code. A four-digit SSR code with the last two digits not being “00”” i pkt 8.5.2.2.7 (kod dyskretny przy potrzebie indywidualnej identyfikacji) – parafraza wierna. Zgodne z verified 0352, 0633, 0409."
+ },
+ {
+  "key": "AL12-3",
+  "verdict": "PASS",
+  "note": "SERA.13005 lit. a) ppkt 1–3, dodatek 1 pkt 1.2.1 lit. f), SERA.14083 lit. c) ppkt 2, SERA.11005 lit. aa) (węższy anchor poprawny), SERA.11015 lit. b) ppkt 4, SERA.8005 lit. c) ppkt 1 zgodne. GM1 SERA.11005 lit. b) ppkt 3 (EASA, reference-only) sprawdzony: 150 m (500 ft) przy VSM 300 m, 300 m (1 000 ft) przy VSM 600 m, przy braku procedur regionalnych – wierne. Zgodne z verified 0614, 0615, 0624, 0625, 0394."
+ },
+ {
+  "key": "AL12-4",
+  "verdict": "PASS",
+  "note": "AIP GEN 2.2 QNH/QFE, ENR 1.7 pkt 1.2, 1.2.1, 1.2.2, 1.4, 2.3, 2.5 i ATS.TR.130 lit. a) rozporządzenia 2017/373 sprawdzone; AIP sparafrazowany. Zgodne z verified 0572, 0573, 0590. Drobiazg bez wymogu zmiany: QFE to ciśnienie, nie „nastawienie” („objaśnia oba skróty” byłoby ściślejsze)."
+ },
+ {
+  "key": "AL12-5",
+  "verdict": "PASS",
+  "note": "Art. 2 pkt 93, 78, 63 i SERA.3110 lit. a)–b) rozporządzenia 923/2012 oraz załącznik I pkt 72 i załącznik III dodatek 1 pkt 4 rozporządzenia 2017/373 zgodne. Uwaga bez wymogu zmiany: środek sektora jako pomoc radionawigacyjna wynika z dodatku 1 pkt 4; pkt 72 wymienia znaczący punkt nawigacyjny/ARP/HRP. Zgodne z verified 0560, 0561, 0563, 0564, 0565, 0531."
+ },
+ {
+  "key": "AL12-6",
+  "verdict": "FIX",
+  "note": "Definicje (art. 2 pkt 134, 135; zał. I pkt 247 rozp. 2017/373), SERA.8015 lit. eb) ppkt 1 i 5 (węższe anchory poprawne) oraz AIP ENR 1.7 pkt 1.2, 2.6.1, 2.6.5, 3.1, 3.1.1 sprawdzone, parafraza AIP poprawna, disputeNote = disputed 0637#9325b5b6. Problem: ostatni akapit przedstawia jako rozbieżność słowo „względna” w kluczu („przyjmuje …; art. 2 pkt 134 mówi tylko o wysokościach bezwzględnych”), a zaakceptowany wpis 0637 mówi, że klucz oddaje definicję z art. 2 pkt 134, a wysokość względną dopuszcza SERA.8015 lit. eb) ppkt 5; spór dotyczy tylko odpowiedzi QNH→STD. Gotowy tekst ostatniego akapitu (body 190 słów): \"Klucz ULC w pytaniu o definicję wysokości przejściowej oddaje art. 2 pkt 134, a wysokość względną dopuszcza pkt SERA.8015 lit. eb) ppkt 5 przy podejściu z QFE. Według AIP (ENR 1.7 pkt 2.6.5) wysokość przejściową opisuje też odpowiedź o przestawieniu wysokościomierza z QNH na STD.\" disputeNote i refs bez zmian; po poprawce sekcja do DISPUTED."
+ },
+ {
+  "key": "AL12-7",
+  "verdict": "PASS",
+  "note": "Źródła wyłącznie reference-only, sprawdzone ręcznie: uwaga w Appendix 1 to AMC1 SERA.14001 pkt 1.4.15 i Doc 4444 pkt 12.3.4.15 – „LONG FINAL” przy zakręcie na prostą dalej niż 7 km (4 NM) lub przy podejściu wprost 15 km (8 NM); „FINAL” w obu przypadkach 7 km (4 NM). Parafraza wierna; zdanie o jednostkach w kluczach dopuszczalne (fakt z tabeli, nie omawianie pytań po kolei). Zgodne z verified 0526–0529."
+ }
+]

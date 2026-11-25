@@ -78,7 +78,7 @@
     },
     {
       "id": "AL12-2",
-      "status": "draft",
+      "status": "verified",
       "heading": "Transponder: kody 7000 i 2000, kod dyskretny",
       "body": [
         "Jeżeli statek powietrzny ma sprawny transponder SSR, pilot korzysta z niego przez cały czas lotu, niezależnie od tego, czy znajduje się w przestrzeni, w której SSR wykorzystuje się na potrzeby ATS (pkt SERA.13001 lit. a) rozporządzenia 923/2012).",
@@ -138,7 +138,7 @@
     },
     {
       "id": "AL12-3",
-      "status": "draft",
+      "status": "verified",
       "heading": "Kody 7700, 7600 i 7500, bezprawna ingerencja",
       "body": [
         "W celu wskazania szczególnej sytuacji awaryjnej pilot statku powietrznego wyposażonego w SSR ustawia w modzie A (pkt SERA.13005 lit. a) rozporządzenia 923/2012):",
@@ -215,7 +215,7 @@
     },
     {
       "id": "AL12-4",
-      "status": "draft",
+      "status": "verified",
       "heading": "QNH, QFE i nastawienie wysokościomierza",
       "body": [
         "Wykaz skrótów w AIP Polska (GEN 2.2) objaśnia oba nastawienia:",
@@ -290,7 +290,7 @@
     },
     {
       "id": "AL12-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Poziom, poziom lotu, poziom przelotu i MSA",
       "body": [
         "Definicje z art. 2 rozporządzenia 923/2012:",
@@ -431,7 +431,7 @@
     },
     {
       "id": "AL12-7",
-      "status": "draft",
+      "status": "verified",
       "heading": "Meldunki „na prostej” i „na długiej prostej”",
       "body": [
         "Uwaga do frazeologii podejścia w Appendix 1 to AMC1 SERA.14001 (EASA) i pkt 12.3.4.15 dokumentu ICAO Doc 4444 określają, kiedy statek powietrzny na lotnisku kontrolowanym podaje meldunki w podejściu do lądowania. Odległości liczy się od punktu przyziemienia:",
