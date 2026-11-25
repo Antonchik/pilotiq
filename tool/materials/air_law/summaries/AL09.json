@@ -270,13 +270,13 @@
     {
       "id": "AL09-4",
       "status": "draft",
-      "heading": "Strefy zakazane, ograniczone, niebezpieczne i ADIZ",
+      "heading": "Strefy zakazane, ograniczone i niebezpieczne",
       "body": [
         "Strefy definiuje art. 2 rozporządzenia 923/2012, a zakazy określa rozporządzenie Ministra Infrastruktury w sprawie zakazów lub ograniczeń lotów (rozporządzenie o zakazach):",
         "- strefa zakazana (P) – nad lądem lub wodami terytorialnymi państwa, loty są w niej zabronione (pkt 103), a zakazy w strefach P wprowadza § 3 ust. 1 pkt 3 rozporządzenia o zakazach;",
-        "- strefa ograniczona (R) – loty są w niej ograniczone zgodnie z określonymi warunkami (pkt 111), podanymi dla każdej strefy w załączniku nr 3 do rozporządzenia o zakazach (§ 3 ust. 1 pkt 5);",
+        "- strefa ograniczona (R) – również nad lądem lub wodami terytorialnymi państwa, loty są w niej ograniczone zgodnie z określonymi warunkami (pkt 111), podanymi dla każdej strefy w załączniku nr 3 do rozporządzenia o zakazach (§ 3 ust. 1 pkt 5);",
         "- strefa niebezpieczna (D) – mogą się w niej odbywać działania niebezpieczne dla lotów (pkt 65); zakaz obowiązuje w terminach aktywności opublikowanych w AUP i UUP (§ 3 ust. 1 pkt 4).",
-        "Nad wodami otwartymi Morza Bałtyckiego wydziela się strefy D (§ 11 ust. 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej). ADIZ to strefa identyfikacji obrony powietrznej (§ 2 pkt 1 tego rozporządzenia); strefy ADIZ wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą sięgają 15 km w głąb terytorium Polski (załącznik nr 4 do rozporządzenia o zakazach).",
+        "Dlatego nad wodami otwartymi Morza Bałtyckiego wydziela się strefy D, a nie P ani R (§ 11 ust. 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej).",
         "Klucz ULC w pytaniach o strefy D i R przyjmuje zezwolenie organu służb ruchu lotniczego; aktualne przepisy wymagają w aktywnej strefie D zgody organu kierującego działaniami niebezpiecznymi (§ 7 ust. 1 pkt 3), a w strefie R zgody zarządzającego obiektem lub rejonem chronionym (§ 8 ust. 1 pkt 5)."
       ],
       "refs": [
@@ -324,53 +324,27 @@
           "src": "PL-ROZP-STRUKTURA-2019",
           "loc": "§ 11 ust. 2",
           "quote": "Nad wodami otwartymi Morza Bałtyckiego w FIR Warszawa, w przypadkach określonych w § 9 ust. 1, wydziela\nsię D."
-        },
-        {
-          "src": "PL-ROZP-STRUKTURA-2019",
-          "loc": "§ 2 pkt 1",
-          "quote": "ADIZ – (Air Defense Identification Zone) strefę identyfikacji obrony powietrznej"
-        },
-        {
-          "src": "PL-ROZP-ZAKAZY-LOTOW",
-          "loc": "załącznik 4",
-          "quote": "15 km w głąb terytorium\nRzeczypospolitej Polskiej"
-        },
-        {
-          "src": "PL-ROZP-ZAKAZY-LOTOW",
-          "loc": "załącznik 4",
-          "quote": "1 ADIZ ROSJA Kaliningradzkim Federacji"
-        },
-        {
-          "src": "PL-ROZP-ZAKAZY-LOTOW",
-          "loc": "załącznik 4",
-          "quote": "z Białorusią o szerokości"
-        },
-        {
-          "src": "PL-ROZP-ZAKAZY-LOTOW",
-          "loc": "załącznik 4",
-          "quote": "z Ukrainą o szerokości"
         }
       ],
       "questionKeys": [
         "PL010-0156#f7e821a5",
         "PL010-0154#be6d0021",
         "PL010-0155#340a4ccd",
-        "PL010-0613#99941d67",
-        "PL010-0014#4615bb7c",
-        "PL010-0591#1d24f33b"
+        "PL010-0613#99941d67"
       ],
       "disputeNote": "Według § 3 ust. 1 pkt 4 i § 7 ust. 1 pkt 3 rozporządzenia w sprawie zakazów lub ograniczeń lotów poza aktywnością strefy D lot nie wymaga zezwolenia wojskowych służb ruchu lotniczego, a w czasie aktywności wystarcza zgoda organu kierującego działaniami niebezpiecznymi; w strefie R – zgoda zarządzającego obiektem (§ 8 ust. 1 pkt 5). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
       "id": "AL09-5",
       "status": "draft",
-      "heading": "ATM, AMC i AUP",
+      "heading": "Skróty ATM, AMC, AUP i strefa ADIZ",
       "body": [
         "Skróty z § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, które tak samo rozwija wykaz skrótów AIP Polska (GEN 2.2):",
         "- ATM (Air Traffic Management) – zarządzanie ruchem lotniczym: ogół działań polegających na zapewnianiu służb ruchu lotniczego, zarządzaniu przepływem ruchu lotniczego i przestrzenią powietrzną (pkt 10);",
         "- AMC Polska (Airspace Management Cell) – komórka zarządzania przestrzenią powietrzną, cywilno-wojskowa komórka odpowiedzialna za zarządzanie i alokację elastycznych elementów struktury przestrzeni (pkt 4); klucz ULC nazywa ją ośrodkiem zarządzania przestrzenią powietrzną;",
         "- AUP (Airspace Use Plan) – plan użytkowania przestrzeni powietrznej o statusie NOTAM, wydawany przez AMC Polska (pkt 13).",
-        "Nie należy ich mylić z ATFM (Air Traffic Flow Management), czyli zarządzaniem przepływem ruchu lotniczego (pkt 8), ani z MRT, czyli trasą lotnictwa wojskowego (pkt 30)."
+        "Nie należy ich mylić z ATFM (Air Traffic Flow Management), czyli zarządzaniem przepływem ruchu lotniczego (pkt 8),",
+        "ADIZ (Air Defense Identification Zone) to strefa identyfikacji obrony powietrznej (pkt 1), wydzielana w FIR Warszawa (§ 7 pkt 1). Ograniczenia lotów w strefach ADIZ wprowadza rozporządzenie Ministra Infrastruktury w sprawie zakazów lub ograniczeń lotów (§ 3 ust. 1 pkt 6); według załącznika nr 4 do tego rozporządzenia strefy ADIZ ciągną się wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą, każda o szerokości 15 km w głąb terytorium Polski."
       ],
       "refs": [
         {
@@ -410,14 +384,51 @@
         },
         {
           "src": "PL-ROZP-STRUKTURA-2019",
-          "loc": "§ 2 pkt 30",
-          "quote": "MRT – (Military Route) trasę lotnictwa wojskowego"
+          "loc": "§ 2 pkt 1",
+          "quote": "ADIZ – (Air Defense Identification Zone) strefę identyfikacji obrony powietrznej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 ADIZ",
+          "quote": "Strefa identyfikacyjna obrony powietrznej"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 7 pkt 1",
+          "quote": "wydziela się R, D, P oraz ADIZ określone w przepisach wydanych na podstawie art. 119 ust. 4 pkt 1 ustawy"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 6",
+          "quote": "ograniczenia wykonywania lotów w strefach ADIZ, określone w załączniku nr 4 do rozporządzenia"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "15 km w głąb terytorium\nRzeczypospolitej Polskiej"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "1 ADIZ ROSJA Kaliningradzkim Federacji"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "z Białorusią o szerokości"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "z Ukrainą o szerokości"
         }
       ],
       "questionKeys": [
         "PL010-0017#d4610fa4",
         "PL010-0015#5c15787a",
-        "PL010-0019#f858f276"
+        "PL010-0019#f858f276",
+        "PL010-0014#4615bb7c",
+        "PL010-0591#1d24f33b"
       ],
       "disputeNote": null
     },
