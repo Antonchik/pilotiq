@@ -1,0 +1,82 @@
+[
+ {
+  "key": "AL14-1",
+  "verdict": "PASS",
+  "note": "Treść zgodna z art. 113 ust. 1–3, art. 114 ust. 1, art. 2 pkt 3 Prawa lotniczego, NCO.GEN.105(a)(1) i SERA.2010(a); 189 słów. Działa jako samodzielny, bezpłatny przegląd podtematu. „Także w lotach niekomercyjnych” to dopuszczalny wniosek z „lot z załogą” (zgodny z verified PL010-0039#02d04295). questionKeys poprawne."
+ },
+ {
+  "key": "AL14-2",
+  "verdict": "PASS",
+  "note": "Zgodne z art. 115 ust. 1 pkt 1–2, ust. 2, ust. 3 pkt 1 i ust. 4; 165 słów. Klucze o zatrzymaniu (ust. 3 pkt 2) są też w AL14-3 – nakładanie się dopuszczalne, bo odpowiedzi łączą oba uprawnienia. Spójne z verified wyjaśnieniami P25/P27."
+ },
+ {
+  "key": "AL14-3",
+  "verdict": "PASS",
+  "note": "Zgodne z art. 115 ust. 3 pkt 1–2 i ust. 5 (Policja i Straż Graniczna); 138 słów. Wyliczenie podmiotów nieobjętych przepisem pokrywa się z verified PL010-0121/0122/0123 i PL099-0042."
+ },
+ {
+  "key": "AL14-4",
+  "verdict": "PASS",
+  "note": "Zgodne z art. 114 ust. 1–3; 118 słów. Ratowanie pasażerów i załogi (nie statku/poczty) oraz trzy podmioty z ust. 3 – jak w verified PL010-0225/0233/0234."
+ },
+ {
+  "key": "AL14-5",
+  "verdict": "FIX",
+  "note": "Wewnętrzna sprzeczność: „Obowiązek istnieje więc zawsze, ale jest ograniczony…”, a następny akapit mówi, że obowiązek ustaje (art. 117 ust. 2); art. 117 ust. 1 też wiąże go z określonymi sytuacjami. Zamienić zdanie na: „Obowiązek więc istnieje, ale jest ograniczony bezpieczeństwem własnego statku i ludzi; przepis nie wymaga użycia „wszelkich środków”.” Reszta zgodna z art. 117 ust. 1–2 i verified wyjaśnieniami."
+ },
+ {
+  "key": "AL14-6",
+  "verdict": "PASS",
+  "note": "Zgodne z art. 116 ust. 1–3 (pkt 1–3); 158 słów. Końcowa uwaga o BOR i WSI jest neutralna i zgodna z basisNote kluczy outdated (PL010-0300#820edba8, 0301#b1aad2f0, 0498#01c23a10, 0498#b1aad2f0), które słusznie nie są w questionKeys."
+ },
+ {
+  "key": "AL14-7",
+  "verdict": "PASS",
+  "note": "Lista ośmiu wyjątków zgodna z art. 123 ust. 2 pkt 1–8. Wzmianka o delegacji art. 123 ust. 3 („ma określić rozporządzenie”) jest ostrożna i nie przypisuje treści niedostępnemu rozporządzeniu. Wniosek o wiązance kwiatów i ochronie granic – jak w verified PL099-0100, PL010-0329/0330."
+ },
+ {
+  "key": "AL14-8",
+  "verdict": "PASS",
+  "note": "Zgodne z NCO.GEN.105(c), CAT.GEN.MPA.105(a)(4), CAT.GEN.MPA.135(b)(1)/(c), SERA.11005(aa) (właściwy, wąski pkt dla 7500 i zawiadomienia ATS), NCO.GEN.105(g), SERA.10005(b); 184 słowa."
+ },
+ {
+  "key": "AL14-9",
+  "verdict": "PASS",
+  "note": "Most SERA.2020 („środek psychotropowy”) – art. 2 pkt 104 („substancja psychotropowa” obejmuje alkohol) sformułowany poprawnie: zdanie mówi o substancjach, jak definicja. Akapit o materiałach promieniotwórczych ostrożny („co do zasady”, „przepis nie wymienia ich wprost”), zgodny z NCO.GEN.140(b),(f) i verified PL099-0038. Opcjonalnie (nie blokuje): można dodać za verified wyjaśnieniem, że lit. f) odsyła do Instrukcji Technicznych, których treści nie sprawdzono."
+ },
+ {
+  "key": "AL14-10",
+  "verdict": "DISPUTED",
+  "note": "Sporność poprawna i neutralna: klucze PL099-0091 (pasy „start/lądowanie + gdy dowódca uzna”) i PL099-0048 (bezwzględny zakaz palenia) vs CAT.OP.MPA.225(a)(2), NCO.GEN.105(f)(1) (pas na stanowisku podczas lotu) i NCO.OP.155(a)(b). Wszystkie punkty z disputeNote są w refs; disputeNote ma formułę o zaliczaniu odpowiedzi z klucza i jest spójny z disputeNote obu wpisów disputed. Zdanie o sporze w formie z STYLE §7. Klucze verified PL099-0098/PL102-0017 (CAT.OP.MPA.225(a)(1), SAO.GEN.130(i)) poprawnie obok; 194 słowa."
+ },
+ {
+  "key": "AL14-11",
+  "verdict": "PASS",
+  "note": "Zgodne z ML.A.201(d), art. 2 rozp. 1321/2014 (definicja przeglądu przed lotem), NCO.OP.135(b), NCO.GEN.105(a)(4)(i),(iii), SAO.GEN.130(d)(3), NCO.OP.175(a), NCO.OP.170(a), NCO.GEN.155(a)(3), ARO.OPS.205(c); 197 słów (blisko limitu). Spójne z verified P27."
+ },
+ {
+  "key": "AL14-12",
+  "verdict": "FIX",
+  "note": "Punkt o MINIMUM FUEL jest niepełny i niegramatyczny („obliczył, że inne opóźnienia…” – „inne” bez odniesienia) i pomija warunek z NCO.OP.185 lit. b) ppkt 1 (lot musi się zakończyć lądowaniem na określonym lotnisku). Zastąpić punkt tekstem: „- zgłasza służbie ATC stan „MINIMUM FUEL”, gdy lot musi się zakończyć lądowaniem na określonym lotnisku, a dowódca obliczył, że każde opóźnienie w ruchu lotniczym może spowodować lądowanie z mniejszą niż planowana ostateczną rezerwą paliwa (pkt NCO.OP.185 lit. b));”. Reszta zgodna z NCO.OP.125(a),(c) i NCO.OP.185(c)."
+ },
+ {
+  "key": "AL14-13",
+  "verdict": "PASS",
+  "note": "Zgodne z NCO.GEN.105(a)(2),(e) i SAO.GEN.130(k). 10 dni pochodzi tylko z AMC1 NCO.GEN.105(e) (EASA, ref bez quote, zgodnie z STYLE) – sprawdzone z tekstem EAR: „as soon as possible and normally within 10 days”, warunek „if required by the State”. Tekst nie twierdzi, że raport ma być pisemny – poprawnie."
+ },
+ {
+  "key": "AL14-14",
+  "verdict": "PASS",
+  "note": "Zgodne z SERA.3220(a),(b) (w tym pole widzenia / obserwator), CAT.OP.MPA.275(a) i NCO.OP.180(a)(1); 148 słów. Spójne z verified PL099-0066 i PL099-0072."
+ },
+ {
+  "key": "AL14-15",
+  "verdict": "PASS",
+  "note": "NCO.GEN.105(d), SAO.GEN.130(p), NCO.GEN.105(a)(8) – zgodne. Rozszerzenie na awarie urządzeń naziemnych i nawigacyjnych przypisane kluczowi („Klucz ULC odnosi…”), nie przepisowi – neutralne i zgodne z verified PL099-0015/0035, PL102-0024/0064."
+ },
+ {
+  "key": "AL14-16",
+  "verdict": "PASS",
+  "note": "Zgodne z art. 158 ust. 1 Prawa lotniczego, CAT.GEN.MPA.120, NCC.GEN.115, pkt 3.0.1, 3.1.1.1, 3.2.1.1 załącznika do 2015/1998, art. 13 ust. 1 rozp. 300/2008, ORO.MLR.100(d); AMC3 ORO.MLR.100 zawiera rozdział A2 „Operational control and supervision” (sprawdzone). Przepisy o ochronie są poboczne dla PPL, ale opisane bez nadinterpretacji; 174 słowa."
+ }
+]
