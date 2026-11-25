@@ -146,7 +146,7 @@
         "PL010-0161#352f1e5b",
         "PL010-0162#b1693ba4"
       ],
-      "disputeNote": "Według art. 2 pkt 12 rozporządzenia 2024/2803 zarządzanie przestrzenią powietrzną polega na optymalizacji jej wykorzystania przez podział czasu użytkowania i segregację między kategoriami użytkowników, a kompatybilność natężenia ruchu z przepustowością należy do ATFM (art. 2 pkt 8); w innym wariancie ULC uznaje za poprawny przydział elementów przestrzeni. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+      "disputeNote": "Według art. 2 pkt 12 rozporządzenia 2024/2803 zarządzanie przestrzenią powietrzną polega na optymalizacji jej wykorzystania przez podział czasu użytkowania i segregację między kategoriami użytkowników, a kompatybilność natężenia ruchu z przepustowością należy do ATFM (art. 2 pkt 8); w innym wariancie ULC uznaje przydział elementów przestrzeni. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
       "id": "AL10-3",
@@ -701,7 +701,7 @@
       "status": "draft",
       "heading": "Terminy przedstawienia planu lotu przed odlotem",
       "body": [
-        "Pkt SERA.4001 lit. d) rozporządzenia 923/2012 wymaga złożenia planu lotu z przelotem nad granicami międzynarodowymi lub lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego albo służba doradcza, co najmniej 60 minut przed odlotem, o ile właściwy organ nie określi krótszego okresu dla krajowych lotów VFR. AIP Polska (ENR 1.10 pkt 4.8) podaje terminy liczone od EOBT, czyli przewidywanego czasu odblokowania:",
+        "Pkt SERA.4001 lit. d) rozporządzenia 923/2012 wymaga złożenia planu lotu z przelotem nad granicami międzynarodowymi lub lotu ze służbą kontroli ruchu lotniczego albo doradczą co najmniej 60 minut przed odlotem, o ile właściwy organ nie określi krótszego okresu dla krajowych lotów VFR. AIP Polska (ENR 1.10 pkt 4.8) podaje terminy liczone od EOBT, czyli przewidywanego czasu odblokowania:",
         "- lot VFR w całości lub w części w przestrzeni kontrolowanej albo z planowanym wlotem w nią – co najmniej 1 godzina;",
         "- lot VFR z przekroczeniem granicy FIR Warszawa – co najmniej 1 godzina;",
         "- lot VFR w całości w przestrzeni niekontrolowanej – co najmniej 30 minut (plan jest wymagany m.in. dla lotów, którym ma być zapewniona służba informacji powietrznej i służba alarmowa, pkt 4.5);",

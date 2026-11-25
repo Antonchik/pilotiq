@@ -9,7 +9,7 @@
         "Rozporządzenie Ministra Infrastruktury w sprawie struktury polskiej przestrzeni powietrznej dzieli polską przestrzeń powietrzną dostępną dla żeglugi powietrznej na przestrzeń kontrolowaną i przestrzeń niekontrolowaną (§ 1 pkt 1), a klasy przestrzeni nadaje się odpowiednio dla każdej z nich (§ 8 ust. 1).",
         "- Przestrzeń kontrolowana (§ 4 ust. 1), w której wszystkim statkom powietrznym zapewnia się służbę ATC: CTA (obszar kontrolowany) obejmujący TMA i MTMA, drogi lotnicze (AWY), CDR oraz przestrzeń od FL 095 do FL 660, następnie CTR i MCTR, a także TRA i CBA, jeżeli nadano im klasę przestrzeni kontrolowanej.",
         "- Przestrzeń niekontrolowana (§ 5 ust. 1): m.in. ATZ nad cywilnym lotniskiem niekontrolowanym, MATZ nad wojskowym lotniskiem niekontrolowanym oraz TSA, TRA, TFR, MRT i CBA z klasą przestrzeni niekontrolowanej albo niesklasyfikowane.",
-        "Strefy kontrolowane lotnisk (CTR) są odrębnym elementem przestrzeni kontrolowanej, a nie częścią obszaru kontrolowanego. W FIR Warszawa AIP Polska (ENR 1.4) oznacza klasy A, B, E i F jako niestosowane, więc występują tam przestrzenie klas C, D i G oraz przestrzeń niesklasyfikowana; jeden wariant klucza ULC wymienia tylko klasy C i G oraz przestrzeń niesklasyfikowaną. Sam rejon informacji powietrznej (FIR) to przestrzeń o określonych wymiarach, w której zapewnia się służbę informacji powietrznej i służbę alarmową (art. 2 pkt 76 rozporządzenia 923/2012)."
+        "Strefy kontrolowane lotnisk (CTR) są odrębnym elementem przestrzeni kontrolowanej, a nie częścią obszaru kontrolowanego. W FIR Warszawa AIP Polska (ENR 1.4) oznacza klasy A, B, E i F jako niestosowane, więc występują tam przestrzenie klas C, D i G oraz przestrzeń niesklasyfikowana; jeden wariant klucza ULC wymienia tylko klasy C i G oraz przestrzeń niesklasyfikowaną. Rejon informacji powietrznej (FIR) to przestrzeń, w której zapewnia się służbę informacji powietrznej i służbę alarmową (art. 2 pkt 76 rozporządzenia 923/2012)."
       ],
       "refs": [
         {
@@ -272,12 +272,12 @@
       "status": "draft",
       "heading": "Strefy zakazane, ograniczone, niebezpieczne i ADIZ",
       "body": [
-        "Rozporządzenie 923/2012 (art. 2) definiuje trzy rodzaje stref:",
-        "- strefa zakazana (P) – nad obszarami lądowymi lub wodami terytorialnymi państwa, loty są w niej zabronione (pkt 103); wyjątki są wąskie, np. loty na hasła GARDA lub ALFA SCRAMBLE albo za zgodą zarządzającego obiektem chronionym strefą P (§ 6 ust. 1 rozporządzenia w sprawie zakazów lub ograniczeń lotów);",
-        "- strefa ograniczona (R) – także nad lądem lub wodami terytorialnymi, loty są w niej ograniczone zgodnie z określonymi warunkami (pkt 111), które dla każdej strefy podaje załącznik nr 3 do rozporządzenia w sprawie zakazów lub ograniczeń lotów (§ 3 ust. 1 pkt 5);",
-        "- strefa niebezpieczna (D) – w danym czasie mogą się w niej odbywać działania niebezpieczne dla lotów (pkt 65); zakaz lotów obowiązuje w terminach aktywności opublikowanych w AUP i UUP (§ 3 ust. 1 pkt 4).",
-        "Nad wodami otwartymi Morza Bałtyckiego wydziela się strefy D (§ 11 ust. 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej). ADIZ to strefa identyfikacji obrony powietrznej (§ 2 pkt 1); strefy ADIZ ciągną się wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą na szerokość 15 km w głąb terytorium Polski (załącznik nr 4 do rozporządzenia w sprawie zakazów lub ograniczeń lotów).",
-        "Klucz ULC w pytaniach o loty w strefach D i R przyjmuje zezwolenie organu służb ruchu lotniczego; aktualne przepisy uzależniają lot w aktywnej strefie D od zgody organu kierującego działaniami niebezpiecznymi (§ 7 ust. 1 pkt 3), a w strefie R od zlecenia albo zgody zarządzającego obiektem lub rejonem chronionym (§ 8 ust. 1 pkt 5)."
+        "Rodzaje stref definiuje art. 2 rozporządzenia 923/2012, a szczegóły zakazów podaje rozporządzenie Ministra Infrastruktury w sprawie zakazów lub ograniczeń lotów (dalej: rozporządzenie o zakazach):",
+        "- strefa zakazana (P) – nad lądem lub wodami terytorialnymi państwa, loty są w niej zabronione (pkt 103); wyjątki są wąskie, np. lot za zgodą zarządzającego obiektem chronionym strefą P (§ 6 ust. 1 pkt 3 rozporządzenia o zakazach);",
+        "- strefa ograniczona (R) – loty są w niej ograniczone zgodnie z określonymi warunkami (pkt 111), podanymi dla każdej strefy w załączniku nr 3 do rozporządzenia o zakazach (§ 3 ust. 1 pkt 5);",
+        "- strefa niebezpieczna (D) – mogą się w niej odbywać działania niebezpieczne dla lotów (pkt 65); zakaz obowiązuje w terminach aktywności opublikowanych w AUP i UUP (§ 3 ust. 1 pkt 4).",
+        "Nad wodami otwartymi Morza Bałtyckiego wydziela się strefy D (§ 11 ust. 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej). ADIZ to strefa identyfikacji obrony powietrznej (§ 2 pkt 1 tego rozporządzenia); strefy ADIZ wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą mają szerokość 15 km w głąb terytorium Polski (załącznik nr 4 do rozporządzenia o zakazach).",
+        "Klucz ULC w pytaniach o strefy D i R przyjmuje zezwolenie organu służb ruchu lotniczego; aktualne przepisy wymagają w aktywnej strefie D zgody organu kierującego działaniami niebezpiecznymi (§ 7 ust. 1 pkt 3), a w strefie R zgody zarządzającego obiektem lub rejonem chronionym (§ 8 ust. 1 pkt 5)."
       ],
       "refs": [
         {
@@ -289,11 +289,6 @@
           "src": "PL-ROZP-ZAKAZY-LOTOW",
           "loc": "§ 3 ust. 1 pkt 3",
           "quote": "zakazy wykonywania lotów w strefach P, określone w załączniku nr 1 do rozporządzenia"
-        },
-        {
-          "src": "PL-ROZP-ZAKAZY-LOTOW",
-          "loc": "§ 6 ust. 1 pkt 1",
-          "quote": "wykonywanych na hasła GARDA lub ALFA SCRAMBLE"
         },
         {
           "src": "PL-ROZP-ZAKAZY-LOTOW",
@@ -369,7 +364,7 @@
         "PL010-0014#4615bb7c",
         "PL010-0591#1d24f33b"
       ],
-      "disputeNote": "Według § 3 ust. 1 pkt 4 i § 7 ust. 1 pkt 3 rozporządzenia w sprawie zakazów lub ograniczeń lotów poza aktywnością strefy D lot nie wymaga zezwolenia wojskowych służb ruchu lotniczego, a w czasie aktywności wystarcza zgoda organu kierującego działaniami niebezpiecznymi; wyjątek w strefie R wymaga zgody zarządzającego obiektem lub rejonem (§ 8 ust. 1 pkt 5). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+      "disputeNote": "Według § 3 ust. 1 pkt 4 i § 7 ust. 1 pkt 3 rozporządzenia w sprawie zakazów lub ograniczeń lotów poza aktywnością strefy D lot nie wymaga zezwolenia wojskowych służb ruchu lotniczego, a w czasie aktywności wystarcza zgoda organu kierującego działaniami niebezpiecznymi; w strefie R – zgoda zarządzającego obiektem (§ 8 ust. 1 pkt 5). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
       "id": "AL09-5",
