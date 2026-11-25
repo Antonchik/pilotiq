@@ -1730,5 +1730,65 @@
       ]
     },
     "bytes": 1373148
+  },
+  {
+    "id": "ICAO-ZAL-13",
+    "title_pl": "Załącznik 13 do Konwencji chicagowskiej – Badanie wypadków i incydentów statków powietrznych (wydanie trzynaste, lipiec 2024, zmiany 1–19), tekst polski",
+    "kind": "icao_pl",
+    "lang": "pl",
+    "status": "available",
+    "url": "https://dziennik.ulc.gov.pl/",
+    "format": "pdf",
+    "version": "Dz. Urz. ULC 2024 poz. 51 (obwieszczenie nr 20/2024 Prezesa ULC z 28.11.2024); Załącznik 13, wydanie trzynaste (lipiec 2024), zmiany 1–19; część przepisów w dwóch wersjach (do 25.11.2026 i od 26.11.2026, oznaczenia † i ††); plik dostarczony przez właściciela",
+    "internal_note": "[ПРОВЕРИТЬ владельцем: точный URL pozycji в Dzienniku ULC]",
+    "sha256": "56edae91081e5bf0fc9e1726eb468cc538ef527817b0a1e621c96b9444fec56c",
+    "fetched": "2026-11-25",
+    "reuse": "public-domain",
+    "allowQuote": true,
+    "terms_url": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU19940240083",
+    "terms_note": "Tekst urzędowy ogłoszony przez Prezesa ULC w Dzienniku Urzędowym ULC (art. 23 ust. 2 pkt 1 i art. 3 ust. 2 Prawa lotniczego) – urzędowy dokument, nie jest przedmiotem prawa autorskiego (art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych); cytujemy tylko ten polski tekst. Oryginał ICAO (Annex, wersje językowe ICAO) jest chroniony prawem autorskim ICAO i nie jest tu źródłem. [ПРОВЕРИТЬ владельцем: статус польского официального текста относительно прав ICAO]",
+    "legalState": "2024-11-28",
+    "fetch": {
+      "mode": "manual",
+      "dir": "OWNER-ICAO-PL",
+      "files": [
+        {
+          "section": "Załącznik 13",
+          "file": "Zalacznik-13.pdf",
+          "lang": "pl",
+          "profile": "ulc-plain",
+          "obwieszczeniePage": 1,
+          "prefacePages": [
+            9,
+            12
+          ],
+          "bodyPage": 17,
+          "defStyle": "dot",
+          "head": [
+            "^Dziennik Urzędowy Urzędu Lotnictwa Cywilnego\\s+[–-]\\s*\\d{1,2}\\s*[–-]\\s+Poz\\. 51$"
+          ],
+          "foot": [],
+          "drop": [
+            "^Załącznik 13 [-–] Badanie wypadków i incydentów statków powietrznych(?: (?:Rozdział \\d|Dodatek \\d|Uzupełnienie [A-F]|Przedmowa|Spis treści))?$",
+            "^(?:Rozdział \\d|Dodatek \\d|Uzupełnienie [A-F]|Przedmowa|Spis treści) Załącznik 13 [-–] Badanie wypadków i incydentów statków powietrznych$",
+            "^(?:ZAŁĄCZNIK 13 )?(?:28/11/24 )?(?:\\d{1,2}-\\d{1,3}|(?:APP|ATT) ?(?:[A-F]|\\d)-\\d{1,3}|\\([ivx]+\\))(?: 28/11/24)?$",
+            "^28/11/24$"
+          ],
+          "imageOnly": "Grafika tylko na stronach tytułowych (herb/logo, str. 1–2), poza tekstem. Pominięto tabelę zmian w Przedmowie (Tabela A, str. 13–16). Tabele wielokolumnowe (Dodatek 1 pkt 1.2 – tabela obrażeń; Uzupełnienie B – listy kontrolne powiadamiania i raportowania) – tekst jest, kolejność słów w wierszach częściowo zaburzona. Przepisy w dwóch wersjach (oznaczenia † od 26.11.2026 i ††) – w tekście obie; kotwica definicji dla powtórzonego terminu (np. «Państwo producenta») wskazuje pierwszą wersję. Błąd druku źródła: drugi pkt «5.6» (rejestratory parametrów lotu) kotwiczony jako 5.7 (numFix; tekst korpusu bez zmian).",
+          "sha256": "56edae91081e5bf0fc9e1726eb468cc538ef527817b0a1e621c96b9444fec56c",
+          "bytes": 1418574,
+          "numFix": [
+            [
+              "5.6 W badaniu wypadku lub incydentu efektywnie wykorzystuje się rejestratory",
+              "5.7"
+            ]
+          ],
+          "skipLines": [
+            "^[1-4]\\. (?:Informacje faktograficzne|Analizę|Wnioski|Zalecenia dotyczące bezpieczeństwa\\.)$"
+          ]
+        }
+      ]
+    },
+    "bytes": 1418574
   }
 ]

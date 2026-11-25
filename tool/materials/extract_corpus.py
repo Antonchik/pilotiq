@@ -1913,7 +1913,7 @@ _ULC_STYLES = {
     "title": (re.compile(r"^Rozdział 1\.? [A-ZĄĆĘŁŃÓŚŹŻ].*$"), re.compile(r"^Rozdział (\d{1,2})\.? [A-ZĄĆĘŁŃÓŚŹŻ].*$"),
               re.compile(r"^Dodatek (\d{1,2}|[A-Z])(?:\.? [A-ZĄĆĘŁŃÓŚŹŻ].*)$")),
 }
-_ULC_ATTACH_RE = re.compile(r"^ZAŁĄCZNIK ([A-Z])\.?(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?$")
+_ULC_ATTACH_RE = re.compile(r"^(?:ZAŁĄCZNIK|UZUPEŁNIENIE) ([A-Z])\.?(?:\s+[A-ZĄĆĘŁŃÓŚŹŻ].*)?$")
 _ULC_NUM_RE = re.compile(r"^(\d{1,2}[a-z]?(?:\.\d{1,3}[a-z]?){0,6})(\.?)\s+[„\"(]?[A-ZĄĆĘŁŃÓŚŹŻ]")
 _ULC_SECTION_RE = re.compile(r"^Sekcja (\d{1,2}[a-z]?)\.?\s+[A-ZĄĆĘŁŃÓŚŹŻ]")   # Annex 14 Attachment A "Sekcja 19a …"
 _ULC_LIT_RE = re.compile(r"^([a-z])\)\s+\S")
@@ -1981,8 +1981,8 @@ def _ulc_definition_dash(line):
 
 def _ulc_definition_dot(line):
     """(term, False) for "Dupleks. Metoda, w której …" or "Stacja zdalnego pilotowania (RPS). Element …" (Annex 10 vol. V)."""
-    m = re.match(r"^([A-ZĄĆĘŁŃÓŚŹŻ][^.:;()]{1,60}?)(?: \([^)]{1,70}\))?\.\s+[A-ZĄĆĘŁŃÓŚŹŻ]", line)
-    if not m or m.group(1).startswith(("Uwaga", "Zalecenie", "Norma", "Zgodnie")) or m.group(1).count(" ") > 6:
+    m = re.match(r"^([A-ZĄĆĘŁŃÓŚŹŻ][^.:;()]{1,60}?)(?: \([^)]{1,70}\))?\.(?: †{1,2})?(?:\s+[-–])?\s+[A-ZĄĆĘŁŃÓŚŹŻ]", line)
+    if not m or m.group(1).startswith(("Uwaga", "Norma", "Zgodnie")) or m.group(1) == "Zalecenie" or m.group(1).count(" ") > 6:
         return None
     return m.group(1).strip(), False
 
@@ -2021,7 +2021,8 @@ def _ulc_seq_ok(last, cur):
     return (n2 == n1 and s2 > s1) or (0 < n2 - n1 <= 3 and s2 in ("", "a"))
 
 
-def ulc_annex_anchors(text, pans=False, style=None, def_style="paren", flat_appendix=False, lenient_seq=False, figures=False):
+def ulc_annex_anchors(text, pans=False, style=None, def_style="paren", flat_appendix=False, lenient_seq=False, figures=False,
+                      num_fix=(), skip_lines=()):
     """Anchors of a Polish ICAO Annex text (profile ulc-annex):
     `obwieszczenie`, `przedmowa`, `rozdział 3`, `3.1.2`, `3.1.2 lit. a`, `definicja Faza alarmu` (Chapter 1),
     `dodatek 1`, `dodatek 1 pkt 2.1`, `dodatek 1 pkt 2.1 lit. a` (an unnumbered Appendix: `dodatek`, `dodatek pkt 2.1`),
@@ -2032,7 +2033,10 @@ def ulc_annex_anchors(text, pans=False, style=None, def_style="paren", flat_appe
     Other print layouts (`style`): "caps" (default, ROZDZIAŁ 3. TITLE), "caps-letter" (+ Dodatek A), "title" (Rozdział 3. Title,
     Dodatek A. Title; Annex 10); `figures`: anchors `rysunek 3-1` (always on for pans); `def_style` "paren" (Term (English). …) or "dash" (Term - text; Annex 10 vol. II), "dot" (Term. Text; Annex 10 vol. V); `flat_appendix`: an
     appendix is one anchor without paragraphs (Annex 17: excerpts of other documents); `lenient_seq`: a paragraph "5.2.1.7.2.1"
-    is accepted after "5.2.1.7.1.2" although its heading "5.2.1.7.2" is missing in the print (Annex 10).
+    is accepted after "5.2.1.7.1.2" although its heading "5.2.1.7.2" is missing in the print (Annex 10);
+    `num_fix`: [[line prefix, number]] pairs: a paragraph with a misprinted number ("5.6" printed instead of "5.7" in Annex 13)
+    is anchored under the right number (the corpus text stays as printed); `skip_lines`: regexes of lines that are never
+    anchors (the list of the report parts "1. Informacje faktograficzne" in the intro of Annex 13 Appendix 1).
     """
     pans = pans or style == "pans"
     style = "pans" if pans else (style or "caps")
@@ -2061,6 +2065,12 @@ def ulc_annex_anchors(text, pans=False, style=None, def_style="paren", flat_appe
             body = True
         nxt = rows[ri + 1][1] if ri + 1 < len(rows) else ""
         prev = rows[ri - 1][1] if ri else ""
+        if any(re.match(x, line) for x in skip_lines):
+            continue
+        for fix_prefix, fix_num in num_fix:
+            if line.startswith(fix_prefix):
+                line = fix_num + line[len(fix_prefix.split(" ", 1)[0]):]
+                break
         mc = chapter_re.match(line)
         ma = appendix_re.match(line)
         mt = None if pans else _ULC_ATTACH_RE.match(line)
@@ -2131,7 +2141,7 @@ def ulc_annex_anchors(text, pans=False, style=None, def_style="paren", flat_appe
             term = None
             d = (_ulc_definition_dash(line) if def_style == "dash" else _ulc_definition_dot(line) if def_style == "dot"
                  else _ulc_definition(line, nxt))
-            if d and (d[1] or was_struct or not prev or prev.rstrip()[-1:] in ".:;)" or prev.startswith("== ")):
+            if d and (d[1] or was_struct or not prev or prev.rstrip("† *")[-1:] in ".:;)" or prev.startswith("== ")):
                 term = d[0]
             if term:
                 if def_style != "dot":
@@ -2564,7 +2574,9 @@ def extract_one(src, sources_dir, corpus_dir, anchors_dir):
         sha = hashlib.sha256(text.encode("utf-8")).hexdigest()
         anchors = ulc_annex_anchors(text, pans=cfg["profile"] == "ulc-pans", style=cfg.get("style"),
                                     def_style=cfg.get("defStyle", "paren"), flat_appendix=bool(cfg.get("flatAppendix")),
-                                    lenient_seq=bool(cfg.get("lenientSeq")), figures=bool(cfg.get("figures")))
+                                    lenient_seq=bool(cfg.get("lenientSeq")), figures=bool(cfg.get("figures")),
+                                    num_fix=tuple(tuple(x) for x in cfg.get("numFix", ())),
+                                    skip_lines=tuple(cfg.get("skipLines", ())))
         write_text(os.path.join(corpus_dir, src["id"] + ".txt"), text)
         write_anchors(os.path.join(anchors_dir, src["id"] + ".json"), sha, anchors)
         return src["id"], len(text), len(anchors)

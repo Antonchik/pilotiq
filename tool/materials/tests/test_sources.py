@@ -1165,6 +1165,72 @@ class UlcPlainTest(unittest.TestCase):
         for key in ("rozdział 1", "rozdział 2", "2.1", "2.1.1", "rysunek 3-1", "tabela 3-2", "definicja Radar dozorowania"):
             self.assertIn(key, b, key)
 
+    def test_annex13_daggers_attachments_and_misprints(self):
+        import materials as m
+        text = ("ROZDZIAŁ 1. DEFINICJE\nWypadek. Zdarzenie związane z eksploatacją statku powietrznego.\n"
+                "Uwaga 1. – Przykład.\nC2 Łącze. † - Łącze danych między statkiem a stacją.\n"
+                "Państwo producenta. †† Państwo, które posiada jurysdykcję nad montażem\nsilnika lub śmigła.††\n"
+                "Państwo miejsca zdarzenia. Państwo, na którego terytorium zaistniał wypadek.\n"
+                "Zalecenie dotyczące bezpieczeństwa. Propozycja organu badającego.\n"
+                "ROZDZIAŁ 2. ZASTOSOWANIE\n2.1 Treść.\nROZDZIAŁ 3. OGÓLNE\nROZDZIAŁ 4. PAŃSTWA\nROZDZIAŁ 5. BADANIE\n5.1 Pięć.\n5.2. Osoba nadzorująca badanie.\n"
+                "Rejestratory parametrów lotu\n5.2 W badaniu efektywnie wykorzystuje się rejestratory.\n5.3.1 Zalecenie. – Obiekty.\n"
+                "a) możliwości;\nb) terminowość.\nDODATEK 1. WZÓR\nCEL\n1. Informacje faktograficzne\n2. Analizę\n"
+                "1. INFORMACJE FAKTOGRAFICZNE\n1.1 Historia lotu. Opis.\nUZUPEŁNIENIE A. PRAWA I OBOWIĄZKI\nTreść bez numerów.\n"
+                "UZUPEŁNIENIE B. LISTA\n1. WYPADKI\nUZUPEŁNIENIE D. WYTYCZNE\n")
+        a = ec.ulc_annex_anchors(text, def_style="dot", num_fix=[["5.2 W badaniu efektywnie", "5.3"]],
+                                 skip_lines=[r"^[12]\. (?:Informacje faktograficzne|Analizę)$"])
+        for key in ("definicja Wypadek", "definicja C2 Łącze", "definicja Państwo producenta", "definicja Państwo miejsca zdarzenia",
+                    "definicja Zalecenie dotyczące bezpieczeństwa", "5.2", "5.3", "5.3.1", "5.3.1 lit. a", "5.3.1 lit. b",
+                    "dodatek 1 pkt 1", "dodatek 1 pkt 1.1", "załącznik A", "załącznik B", "załącznik B pkt 1", "załącznik D"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("definicja Uwaga 1", a)
+        self.assertNotIn("definicja Zalecenie", a)
+        self.assertNotIn("dodatek 1 pkt 2", a)               # the intro list of the report parts is skipped
+        self.assertIn("rejestratory", text[slice(*a["5.3"])])
+        self.assertNotIn("rejestratory", text[slice(*a["5.2"])])
+        for key in a:
+            self.assertTrue(m.loc_valid("icao_pl", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+
+    def test_annex13_page_furniture(self):
+        head = [r"^Dziennik Urzędowy Urzędu Lotnictwa Cywilnego\s+[–-]\s*\d{1,2}\s*[–-]\s+Poz\. 51$"]
+        drop = [r"^Załącznik 13 [-–] Badanie wypadków i incydentów statków powietrznych(?: (?:Rozdział \d|Przedmowa))?$",
+                r"^(?:ZAŁĄCZNIK 13 )?(?:28/11/24 )?(?:\d{1,2}-\d{1,3}|(?:APP|ATT) ?(?:[A-F]|\d)-\d{1,3})(?: 28/11/24)?$"]
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 18 – Poz. 51", "Załącznik 13 - Badanie wypadków i incydentów statków powietrznych Rozdział 1",
+                "Organ badający wypadki. Organ wyznaczony.", "28/11/24 1-2", "† obowiązuje od 26 listopada 2026 r."]
+        self.assertEqual(["Organ badający wypadki. Organ wyznaczony.", "† obowiązuje od 26 listopada 2026 r."],
+                         ec.plain_page_rows(rows, head, [], drop))
+        rows = ["Dziennik Urzędowy Urzędu Lotnictwa Cywilnego – 6 – Poz. 51", "Treść", "ZAŁĄCZNIK 13 ATT B-1 28/11/24"]
+        self.assertEqual(["Treść"], ec.plain_page_rows(rows, head, [], drop))
+
+    def test_annex13_source_entry_and_anchors(self):
+        import json
+        import materials as m
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        src = {x["id"]: x for x in json.load(open(os.path.join(root, "sources.json"), encoding="utf-8"))}["ICAO-ZAL-13"]
+        self.assertEqual("icao_pl", src["kind"])
+        self.assertTrue(src["allowQuote"])
+        self.assertEqual("public-domain", src["reuse"])
+        self.assertEqual("ulc-plain", src["fetch"]["files"][0]["profile"])
+        self.assertIn("poz. 51", src["version"])
+        self.assertEqual(64, len(src["sha256"]))
+        self.assertEqual(src["sha256"], src["fetch"]["files"][0]["sha256"])
+        path = os.path.join(root, "anchors", "ICAO-ZAL-13.json")
+        if not os.path.exists(os.path.join(root, "corpus", "ICAO-ZAL-13.txt")):
+            self.skipTest("corpus not extracted")
+        a = json.load(open(path, encoding="utf-8"))["anchors"]
+        text = open(os.path.join(root, "corpus", "ICAO-ZAL-13.txt"), encoding="utf-8").read()
+        self.assertEqual(hashlib.sha256(text.encode("utf-8")).hexdigest(), json.load(open(path, encoding="utf-8"))["textSha"])
+        for key in ("definicja Wypadek", "definicja Poważny incydent", "definicja Incydent", "4.1", "5.7", "5.12.1", "7.5",
+                    "dodatek 2 pkt 4.1", "załącznik C pkt 2", "załącznik E pkt 9"):
+            self.assertIn(key, a, key)
+        self.assertIn("Zdarzenie związane z eksploatacją", text[slice(*a["definicja Wypadek"])])
+        for key in a:
+            self.assertTrue(m.loc_valid("icao_pl", key), key)
+            for par in m.loc_parents(key):
+                self.assertIn(par, a, (key, par))
+
     def test_missing_heading_is_tolerated_only_when_lenient(self):
         text = ("ROZDZIAŁ 1. DEFINICJE\nROZDZIAŁ 2. X\nROZDZIAŁ 3. X\nROZDZIAŁ 4. X\nROZDZIAŁ 5. TEKST\n5.1 Pierwszy\n5.1.1 Drugi\n"
                 "5.1.1.1 Trzeci\n5.1.1.2 Czwarty\n5.1.2.1. Pełne znaki\n5.1.2.1.1 Treść\n")
