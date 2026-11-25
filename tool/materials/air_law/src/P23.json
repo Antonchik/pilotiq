@@ -1,32 +1,640 @@
 [
-{"key":"PL010-0004#9cb08255","status":"verified","text":"Zgodnie z art. 119 ust. 3 Prawa lotniczego dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego. Odpowiedź z klucza łączy dwie z tych przesłanek, a odpowiedzi „Obronność państwa” i „Bezpieczeństwo publiczne” podają tylko po jednej. Pułapka: przepis nie wymienia warunków pogodowych wśród przesłanek ograniczenia.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 3","quote":"Dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0164#2fe1de9a","status":"verified","text":"Zgodnie z art. 119 ust. 1 Prawa lotniczego polska przestrzeń powietrzna jest dostępna na równych prawach dla wszystkich jej użytkowników. Przepis nie daje pierwszeństwa żadnej grupie statków powietrznych i nie ogranicza równych praw do użytkowników polskich.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 1","quote":"Polska przestrzeń powietrzna jest dostępna na równych prawach dla wszystkich jej użytkowników"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0188#d12c7188","status":"verified","text":"Zgodnie z art. 119 ust. 1 Prawa lotniczego swoboda lotów cywilnych statków powietrznych w polskiej przestrzeni powietrznej może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych. Przepis nie wskazuje jako takiej podstawy decyzji Prezesa ULC, Prezydenta RP ani Ministra Obrony Narodowej.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 1","quote":"swoboda lotów w niej cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych, w tym uchwał organizacji międzynarodowych"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0004#809f9cbb","status":"verified","text":"Zgodnie z art. 119 ust. 3 Prawa lotniczego dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego. Każda z trzech odpowiedzi wskazuje przesłanki z tego przepisu, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są poprawne”. Przepis mówi o ochronie przyrody, którą odpowiedź ULC ujmuje jako ochronę środowiska.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 3","quote":"Dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0041#eb6afb3c","status":"verified","text":"Zgodnie z art. 122 ust. 1 Prawa lotniczego użytkownik polskiej przestrzeni powietrznej jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego, cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego i organów dowodzenia obroną powietrzną, a także poleceń przekazanych przez wojskowe statki powietrzne. Dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”. Odpowiedzi ULC używają innych nazw niż obecny przepis: „państwowy organ zarządzania ruchem lotniczym” i „właściwe organy wojskowe”.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 122 ust. 1","quote":"jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego, a także organów dowodzenia obroną powietrzną, jak również poleceń przekazanych mu przez wojskowe statki powietrzne"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0164#5ca7e0eb","status":"verified","sameAs":"PL010-0164#2fe1de9a"},
-{"key":"PL010-0188#ad4d889e","status":"draft","text":"Zgodnie z art. 119 ust. 1 Prawa lotniczego swoboda lotów cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych, w tym uchwał organizacji międzynarodowych. Każda z trzech odpowiedzi odpowiada jednemu z elementów tego przepisu, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 1","quote":"swoboda lotów w niej cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych, w tym uchwał organizacji międzynarodowych"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0574#a58ca725","status":"verified","text":"Zgodnie z art. 119 ust. 2 pkt 1 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na ważny interes polityki zagranicznej Rzeczypospolitej Polskiej. Pułapka: gospodarka rolna i leśna oraz poszukiwanie i ratownictwo to potrzeby, dla których art. 123 ust. 2 dopuszcza zrzuty ze statku powietrznego, a nie przesłanki zakazów z art. 119 ust. 2.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2","quote":"Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2 pkt 1","quote":"ważny interes polityki zagranicznej Rzeczypospolitej Polskiej"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 123 ust. 2","quote":"Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 123 ust. 2 pkt 4","quote":"poszukiwania i ratownictwa"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 123 ust. 2 pkt 7","quote":"gospodarki rolnej i leśnej"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0574#257d28ca","status":"verified","text":"Zgodnie z art. 119 ust. 2 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne m.in. ze względu na ważny interes polityki zagranicznej (pkt 1), względy obronności i bezpieczeństwa (pkt 2) oraz ważny interes gospodarczy Rzeczypospolitej Polskiej (pkt 3). Każda z trzech odpowiedzi jest przesłanką z tego przepisu, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2","quote":"Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2 pkt 1","quote":"ważny interes polityki zagranicznej Rzeczypospolitej Polskiej"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2 pkt 2","quote":"względy obronności i bezpieczeństwa Rzeczypospolitej Polskiej"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2 pkt 3","quote":"ważny interes gospodarczy Rzeczypospolitej Polskiej"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0575#21fa30b8","status":"verified","text":"Zgodnie z art. 119 ust. 2 pkt 4 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na zobowiązania Rzeczypospolitej Polskiej wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ. Pułapka: poszukiwanie i ratownictwo, służba zdrowia i reklama to potrzeby, dla których art. 123 ust. 2 dopuszcza zrzuty ze statku powietrznego.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2","quote":"Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2 pkt 4","quote":"zobowiązania Rzeczypospolitej Polskiej wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 123 ust. 2","quote":"Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 123 ust. 2 pkt 3","quote":"służby zdrowia"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 123 ust. 2 pkt 4","quote":"poszukiwania i ratownictwa"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 123 ust. 2 pkt 6","quote":"reklamy"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0575#ed152e3c","status":"verified","text":"Zgodnie z art. 119 ust. 2 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne m.in. ze względu na ważny interes gospodarczy Rzeczypospolitej Polskiej (pkt 3) oraz zobowiązania wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ (pkt 4). Każda z trzech odpowiedzi jest przesłanką z tego przepisu, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2","quote":"Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2 pkt 3","quote":"ważny interes gospodarczy Rzeczypospolitej Polskiej"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2 pkt 4","quote":"zobowiązania Rzeczypospolitej Polskiej wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0602#3ef571be","status":"verified","text":"Zgodnie z art. 119 ust. 2 Prawa lotniczego Rada Ministrów może wprowadzić zakazy i ograniczenia w ruchu lotniczym w drodze rozporządzenia. Przepis nie przewiduje dla tych zakazów formy zarządzenia, decyzji administracyjnej ani publikacji w Dzienniku Urzędowym ULC.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 2","quote":"Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0007#4770af24","status":"verified","sameAs":"PL010-0007#d367756c"},
-{"key":"PL010-0007#75da7961","status":"verified","sameAs":"PL010-0007#d367756c"},
-{"key":"PL010-0007#d367756c","status":"verified","text":"Zgodnie z art. 119 ust. 4 pkt 1 Prawa lotniczego zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące może wprowadzić, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej i ministrami właściwymi m.in. do spraw wewnętrznych oraz środowiska. Obecne brzmienie przepisu wymienia wśród uzgadniających także ministra właściwego do spraw klimatu, którego odpowiedź z klucza nie podaje. Pułapka: przepis nie przewiduje porozumienia z Prezesem ULC ani działania ministra bez uzgodnień.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 4","quote":"Minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej, ministrami właściwymi do spraw klimatu, wewnętrznych oraz środowiska, w drodze rozporządzeń"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 4 pkt 1","quote":"może wprowadzić zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0127#2bc84d70","status":"verified","sameAs":"PL010-0127#61f18628"},
-{"key":"PL010-0127#61f18628","status":"verified","text":"Zgodnie z art. 119 ust. 4 pkt 2 Prawa lotniczego zasady wprowadzania ograniczeń lotów w części przestrzeni powietrznej na czas nie dłuższy niż 3 miesiące oraz sposób ich publikacji określa, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej i ministrami właściwymi m.in. do spraw wewnętrznych oraz środowiska. Obecny przepis wymienia wśród uzgadniających także ministra właściwego do spraw klimatu, a ograniczenia wprowadzają według niego instytucje zapewniające służby ruchu lotniczego, nie „państwowy organ zarządzania ruchem lotniczym”.","refs":[{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 4","quote":"Minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej, ministrami właściwymi do spraw klimatu, wewnętrznych oraz środowiska, w drodze rozporządzeń"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 119 ust. 4 pkt 2","quote":"określi zasady wprowadzania przez instytucje zapewniające służby ruchu lotniczego ograniczeń lotów w części przestrzeni powietrznej, których czas trwania nie będzie dłuższy niż 3 miesiące, oraz sposób publikacji tych ograniczeń"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0183#95a36de6","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 11","quote":"Traci moc rozporządzenie Ministra Infrastruktury z dnia 11 czerwca 2010 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 5","quote":"zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"},{"src":"PL-PRAWO-LOTNICZE","loc":"art. 124 ust. 1","quote":"Zabrania się wykonywania lotów statkami powietrznymi z napędem nad obszarami parków narodowych i rezerwatów przyrody poniżej wysokości względnych"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Rozporządzenie z 11 czerwca 2010 r. utraciło moc. Według rozporządzenia z 5 marca 2019 r. nad parkami narodowymi są strefy R (§ 3 ust. 1 pkt 5, załącznik nr 3) z zakazem lotów statków z napędem do górnej granicy określonej dla każdej strefy, a nie jedna wysokość 1000 m."},
-{"key":"PL010-0243#3b832f11","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Tę samą wysokość podaje dziś § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r.: nad miastami powyżej 25 000 do 50 000 mieszkańców samoloty z silnikami innymi niż tłokowe lecą nie niżej niż 1000 m nad terenem."},
-{"key":"PL010-0243#808177a8","status":"draft","text":"Zgodnie z § 3 ust. 1 pkt 2 lit. a rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 25 000 do 50 000 zabrania się lotów samolotów wyposażonych w silniki inne niż tłokowe na wysokości mniejszej niż 1000 m nad poziomem terenu (GND). Dla śmigłowców i samolotów tłokowych ta granica wynosi 500 m. W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 2 pkt 10","quote":"GND – (Ground) poziom terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 5","quote":"zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0244#5810ba89","status":"draft","text":"Zgodnie z § 3 ust. 1 pkt 2 lit. a rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 25 000 do 50 000 zabrania się lotów śmigłowców i samolotów tłokowych na wysokości mniejszej niż 500 m nad poziomem terenu (GND). Pułapka: 1000 m dotyczy nad tymi miastami samolotów wyposażonych w inne silniki. W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 2 pkt 10","quote":"GND – (Ground) poziom terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 5","quote":"zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0244#e370aaec","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r. wymaga nad miastami powyżej 25 000 do 50 000 mieszkańców 500 m nad terenem dla śmigłowców i samolotów tłokowych, a 1000 m dla samolotów z innymi silnikami."},
-{"key":"PL010-0245#4ae2e2e4","status":"draft","text":"Zgodnie z § 3 ust. 1 pkt 2 lit. b rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 50 000 do 100 000 zabrania się lotów na wysokości mniejszej niż 1000 m nad poziomem terenu (GND). Pułapka: 1500 m dotyczy miast o liczbie mieszkańców powyżej 100 000. W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 50 000 do 100 000 – na wysokości mniejszej niż 1000 m nad poziomem terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 2 pkt 10","quote":"GND – (Ground) poziom terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 5","quote":"zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0245#8cb85b16","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 50 000 do 100 000 – na wysokości mniejszej niż 1000 m nad poziomem terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. zabrania samolotom z silnikami innymi niż tłokowe lotów nad miastami powyżej 25 000 mieszkańców niżej niż 1000 m nad terenem, a powyżej 100 000 – niżej niż 1500 m."},
-{"key":"PL010-0246#22a37308","status":"draft","text":"Zgodnie z § 3 ust. 1 pkt 2 rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące minimalne wysokości lotów nad miastami liczy się nad poziomem terenu, np. 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych nad miastami powyżej 25 000 do 50 000 mieszkańców. Odpowiedź z klucza wskazuje skrót GND, który według § 2 pkt 10 oznacza poziom terenu. Przepis nie odnosi tej wysokości do wierzchołków przeszkód.","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 2 pkt 10","quote":"GND – (Ground) poziom terenu"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0246#79ad66a1","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. także liczy minimalne wysokości nad miastami od poziomu terenu, np. 500 m dla śmigłowców i samolotów tłokowych nad miastami powyżej 25 000 do 50 000 mieszkańców."},
-{"key":"PL010-0247#54dc8471","status":"draft","text":"Zgodnie z § 3 ust. 1 pkt 2 lit. c rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 100 000 zabrania się lotów na wysokości mniejszej niż 1500 m nad poziomem terenu (GND). Pułapka: 2000 m dotyczy miasta stołecznego Warszawy (lit. d). W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"miasta stołecznego Warszawy – na wysokości mniejszej niż 2000 m nad poziomem terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 2 pkt 10","quote":"GND – (Ground) poziom terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 5","quote":"zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"}],"disputeNote":null,"sameAs":null},
-{"key":"PL010-0247#cb33f2e0","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Obecnie tę samą wysokość wymaga § 3 ust. 1 pkt 2 lit. c rozporządzenia z 5 marca 2019 r.: nad miastami powyżej 100 000 mieszkańców nie wolno lecieć niżej niż 1500 m nad poziomem terenu."},
-{"key":"PL010-0248#8df32b24","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"miasta stołecznego Warszawy – na wysokości mniejszej niż 2000 m nad poziomem terenu"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 5","quote":"zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Wysokości 1850 m nie ma w obowiązującym rozporządzeniu z 5 marca 2019 r. Według jego § 3 ust. 1 pkt 2 lit. d nad miastem stołecznym Warszawą nie wolno lecieć niżej niż 2000 m nad poziomem terenu, a loty nad miastami ogranicza odrębny zakaz, nie strefa R."},
-{"key":"PL010-0248#b0b75fea","status":"unverified","text":"","refs":[{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"},{"src":"PL-ROZP-ZAKAZY-LOTOW","loc":"§ 3 ust. 1 pkt 2","quote":"miasta stołecznego Warszawy – na wysokości mniejszej niż 2000 m nad poziomem terenu"}],"disputeNote":null,"sameAs":null,"basis":"outdated","basisNote":"Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r., które nad zwartą zabudową Warszawy wymagało poziomu FL 70. Obecnie § 3 ust. 1 pkt 2 lit. d rozporządzenia z 5 marca 2019 r. zabrania lotów nad miastem stołecznym Warszawą niżej niż 2000 m nad poziomem terenu."}
+ {
+  "key": "PL010-0004#9cb08255",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 3 Prawa lotniczego dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego. Odpowiedź z klucza łączy dwie z tych przesłanek, a odpowiedzi „Obronność państwa” i „Bezpieczeństwo publiczne” podają tylko po jednej. Pułapka: przepis nie wymienia warunków pogodowych wśród przesłanek ograniczenia.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 3",
+    "quote": "Dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0164#2fe1de9a",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 1 Prawa lotniczego polska przestrzeń powietrzna jest dostępna na równych prawach dla wszystkich jej użytkowników. Przepis nie daje pierwszeństwa żadnej grupie statków powietrznych i nie ogranicza równych praw do użytkowników polskich.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 1",
+    "quote": "Polska przestrzeń powietrzna jest dostępna na równych prawach dla wszystkich jej użytkowników"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0188#d12c7188",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 1 Prawa lotniczego swoboda lotów cywilnych statków powietrznych w polskiej przestrzeni powietrznej może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych. Przepis nie wskazuje jako takiej podstawy decyzji Prezesa ULC, Prezydenta RP ani Ministra Obrony Narodowej.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 1",
+    "quote": "swoboda lotów w niej cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych, w tym uchwał organizacji międzynarodowych"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0004#809f9cbb",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 3 Prawa lotniczego dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego. Każda z trzech odpowiedzi wskazuje przesłanki z tego przepisu, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są poprawne”. Przepis mówi o ochronie przyrody, którą odpowiedź ULC ujmuje jako ochronę środowiska.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 3",
+    "quote": "Dostępność przestrzeni powietrznej może być czasowo ograniczona ze względu na obronność państwa, bezpieczeństwo publiczne, ochronę przyrody oraz bezpieczeństwo ruchu lotniczego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0041#eb6afb3c",
+  "status": "verified",
+  "text": "Zgodnie z art. 122 ust. 1 Prawa lotniczego użytkownik polskiej przestrzeni powietrznej jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego, cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego i organów dowodzenia obroną powietrzną, a także poleceń przekazanych przez wojskowe statki powietrzne. Dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”. Odpowiedzi ULC używają innych nazw niż obecny przepis: „państwowy organ zarządzania ruchem lotniczym” i „właściwe organy wojskowe”.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 122 ust. 1",
+    "quote": "jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego, a także organów dowodzenia obroną powietrzną, jak również poleceń przekazanych mu przez wojskowe statki powietrzne"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0164#5ca7e0eb",
+  "status": "verified",
+  "sameAs": "PL010-0164#2fe1de9a"
+ },
+ {
+  "key": "PL010-0188#ad4d889e",
+  "status": "draft",
+  "text": "Zgodnie z art. 119 ust. 1 Prawa lotniczego swoboda lotów cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych, w tym uchwał organizacji międzynarodowych. Podstawą ograniczenia jest Prawo lotnicze, a przepisy innych ustaw, umowy międzynarodowe i uchwały organizacji międzynarodowych należy przy tym zachować. Klucz ULC traktuje te elementy przepisu łącznie, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 1",
+    "quote": "swoboda lotów w niej cywilnych statków powietrznych może być ograniczona wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego, przy zachowaniu przepisów innych ustaw i wiążących Rzeczpospolitą Polską umów międzynarodowych, w tym uchwał organizacji międzynarodowych"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0574#a58ca725",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 2 pkt 1 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na ważny interes polityki zagranicznej Rzeczypospolitej Polskiej. Pułapka: gospodarka rolna i leśna oraz poszukiwanie i ratownictwo to potrzeby, dla których art. 123 ust. 2 dopuszcza zrzuty ze statku powietrznego, a nie przesłanki zakazów z art. 119 ust. 2.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2",
+    "quote": "Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2 pkt 1",
+    "quote": "ważny interes polityki zagranicznej Rzeczypospolitej Polskiej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 123 ust. 2",
+    "quote": "Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 123 ust. 2 pkt 4",
+    "quote": "poszukiwania i ratownictwa"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 123 ust. 2 pkt 7",
+    "quote": "gospodarki rolnej i leśnej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0574#257d28ca",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 2 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne m.in. ze względu na ważny interes polityki zagranicznej (pkt 1), względy obronności i bezpieczeństwa (pkt 2) oraz ważny interes gospodarczy Rzeczypospolitej Polskiej (pkt 3). Każda z trzech odpowiedzi jest przesłanką z tego przepisu, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2",
+    "quote": "Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2 pkt 1",
+    "quote": "ważny interes polityki zagranicznej Rzeczypospolitej Polskiej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2 pkt 2",
+    "quote": "względy obronności i bezpieczeństwa Rzeczypospolitej Polskiej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2 pkt 3",
+    "quote": "ważny interes gospodarczy Rzeczypospolitej Polskiej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0575#21fa30b8",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 2 pkt 4 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na zobowiązania Rzeczypospolitej Polskiej wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ. Pułapka: poszukiwanie i ratownictwo, służba zdrowia i reklama to potrzeby, dla których art. 123 ust. 2 dopuszcza zrzuty ze statku powietrznego.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2",
+    "quote": "Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2 pkt 4",
+    "quote": "zobowiązania Rzeczypospolitej Polskiej wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 123 ust. 2",
+    "quote": "Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 123 ust. 2 pkt 3",
+    "quote": "służby zdrowia"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 123 ust. 2 pkt 4",
+    "quote": "poszukiwania i ratownictwa"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 123 ust. 2 pkt 6",
+    "quote": "reklamy"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0575#ed152e3c",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 2 Prawa lotniczego Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne m.in. ze względu na ważny interes gospodarczy Rzeczypospolitej Polskiej (pkt 3) oraz zobowiązania wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ (pkt 4). Każda z trzech odpowiedzi jest przesłanką z tego przepisu, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2",
+    "quote": "Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2 pkt 3",
+    "quote": "ważny interes gospodarczy Rzeczypospolitej Polskiej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2 pkt 4",
+    "quote": "zobowiązania Rzeczypospolitej Polskiej wynikające z umów międzynarodowych, w tym zwłaszcza z wiążących uchwał Rady Bezpieczeństwa ONZ"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0602#3ef571be",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 2 Prawa lotniczego Rada Ministrów może wprowadzić zakazy i ograniczenia w ruchu lotniczym w drodze rozporządzenia. Przepis nie przewiduje dla tych zakazów formy zarządzenia, decyzji administracyjnej ani publikacji w Dzienniku Urzędowym ULC.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 2",
+    "quote": "Rada Ministrów może, w drodze rozporządzenia, wprowadzić zakazy i ograniczenia w ruchu lotniczym niezbędne ze względu na:"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0007#4770af24",
+  "status": "verified",
+  "sameAs": "PL010-0007#d367756c"
+ },
+ {
+  "key": "PL010-0007#75da7961",
+  "status": "verified",
+  "sameAs": "PL010-0007#d367756c"
+ },
+ {
+  "key": "PL010-0007#d367756c",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 4 pkt 1 Prawa lotniczego zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące może wprowadzić, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej i ministrami właściwymi m.in. do spraw wewnętrznych oraz środowiska. Obecne brzmienie przepisu wymienia wśród uzgadniających także ministra właściwego do spraw klimatu, którego odpowiedź z klucza nie podaje. Pułapka: przepis nie przewiduje porozumienia z Prezesem ULC ani działania ministra bez uzgodnień.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 4",
+    "quote": "Minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej, ministrami właściwymi do spraw klimatu, wewnętrznych oraz środowiska, w drodze rozporządzeń"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 4 pkt 1",
+    "quote": "może wprowadzić zakazy lub ograniczenia lotów nad obszarem całego państwa albo jego części na czas dłuższy niż 3 miesiące"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0127#2bc84d70",
+  "status": "verified",
+  "sameAs": "PL010-0127#61f18628"
+ },
+ {
+  "key": "PL010-0127#61f18628",
+  "status": "verified",
+  "text": "Zgodnie z art. 119 ust. 4 pkt 2 Prawa lotniczego zasady wprowadzania ograniczeń lotów w części przestrzeni powietrznej na czas nie dłuższy niż 3 miesiące oraz sposób ich publikacji określa, w drodze rozporządzenia, minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej i ministrami właściwymi m.in. do spraw wewnętrznych oraz środowiska. Obecny przepis wymienia wśród uzgadniających także ministra właściwego do spraw klimatu, a ograniczenia wprowadzają według niego instytucje zapewniające służby ruchu lotniczego, nie „państwowy organ zarządzania ruchem lotniczym”.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 4",
+    "quote": "Minister właściwy do spraw transportu w porozumieniu z Ministrem Obrony Narodowej, ministrami właściwymi do spraw klimatu, wewnętrznych oraz środowiska, w drodze rozporządzeń"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 119 ust. 4 pkt 2",
+    "quote": "określi zasady wprowadzania przez instytucje zapewniające służby ruchu lotniczego ograniczeń lotów w części przestrzeni powietrznej, których czas trwania nie będzie dłuższy niż 3 miesiące, oraz sposób publikacji tych ograniczeń"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0183#95a36de6",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 11",
+    "quote": "Traci moc rozporządzenie Ministra Infrastruktury z dnia 11 czerwca 2010 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 5",
+    "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 124 ust. 1",
+    "quote": "Zabrania się wykonywania lotów statkami powietrznymi z napędem nad obszarami parków narodowych i rezerwatów przyrody poniżej wysokości względnych"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Rozporządzenie z 11 czerwca 2010 r. utraciło moc. Według rozporządzenia z 5 marca 2019 r. nad parkami narodowymi są strefy R (§ 3 ust. 1 pkt 5, załącznik nr 3) z zakazem lotów statków z napędem do górnej granicy określonej dla każdej strefy, a nie jedna wysokość 1000 m."
+ },
+ {
+  "key": "PL010-0243#3b832f11",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Tę samą wysokość podaje dziś § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r.: nad miastami powyżej 25 000 do 50 000 mieszkańców samoloty z silnikami innymi niż tłokowe lecą nie niżej niż 1000 m nad terenem."
+ },
+ {
+  "key": "PL010-0243#808177a8",
+  "status": "draft",
+  "text": "Zgodnie z § 3 ust. 1 pkt 2 lit. a rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 25 000 do 50 000 zabrania się lotów samolotów wyposażonych w silniki inne niż tłokowe na wysokości mniejszej niż 1000 m nad poziomem terenu (GND). Dla śmigłowców i samolotów tłokowych ta granica wynosi 500 m. W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 2 pkt 10",
+    "quote": "GND – (Ground) poziom terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 5",
+    "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0244#5810ba89",
+  "status": "draft",
+  "text": "Zgodnie z § 3 ust. 1 pkt 2 lit. a rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 25 000 do 50 000 zabrania się lotów śmigłowców i samolotów tłokowych na wysokości mniejszej niż 500 m nad poziomem terenu (GND). Pułapka: 1000 m dotyczy nad tymi miastami samolotów wyposażonych w inne silniki. W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 2 pkt 10",
+    "quote": "GND – (Ground) poziom terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 5",
+    "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0244#e370aaec",
+  "status": "draft",
+  "text": "Klucz ULC (500 m) odpowiada granicy dla śmigłowców: według § 3 ust. 1 pkt 2 lit. a rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 25 000 do 50 000 zabrania się lotów śmigłowców i samolotów tłokowych na wysokości mniejszej niż 500 m nad poziomem terenu. Pytanie powołuje się na rozporządzenie z 9 października 2003 r., które już nie obowiązuje.",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"
+   }
+  ],
+  "disputeNote": "Według § 3 ust. 1 pkt 2 lit. a rozporządzenia z 5 marca 2019 r. samoloty wyposażone w silniki inne niż tłokowe nie mogą lecieć nad takimi miastami niżej niż 1000 m nad poziomem terenu, więc dla samolotu z pytania właściwa byłaby odpowiedź 1000 m. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0245#4ae2e2e4",
+  "status": "draft",
+  "text": "Zgodnie z § 3 ust. 1 pkt 2 lit. b rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 50 000 do 100 000 zabrania się lotów na wysokości mniejszej niż 1000 m nad poziomem terenu (GND). Pułapka: 1500 m dotyczy miast o liczbie mieszkańców powyżej 100 000. W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. b",
+    "quote": "o liczbie mieszkańców powyżej 50 000 do 100 000 – na wysokości mniejszej niż 1000 m nad poziomem terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. c",
+    "quote": "o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 2 pkt 10",
+    "quote": "GND – (Ground) poziom terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 5",
+    "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0245#8cb85b16",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "mniejszej niż 1000 m nad poziomem terenu dla samolotów wyposażonych w inne silniki"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. b",
+    "quote": "o liczbie mieszkańców powyżej 50 000 do 100 000 – na wysokości mniejszej niż 1000 m nad poziomem terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. c",
+    "quote": "o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. zabrania samolotom z silnikami innymi niż tłokowe lotów nad miastami powyżej 25 000 mieszkańców niżej niż 1000 m nad terenem, a powyżej 100 000 – niżej niż 1500 m."
+ },
+ {
+  "key": "PL010-0246#22a37308",
+  "status": "draft",
+  "text": "Zgodnie z § 3 ust. 1 pkt 2 rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące minimalne wysokości lotów nad miastami liczy się nad poziomem terenu, np. 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych nad miastami powyżej 25 000 do 50 000 mieszkańców. Odpowiedź z klucza wskazuje skrót GND, który według § 2 pkt 10 oznacza poziom terenu; AMSL (§ 2 pkt 5) to średni poziom morza, od którego przepis tych wysokości nie liczy. Przepis nie odnosi tej wysokości do wierzchołków przeszkód.",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 2 pkt 10",
+    "quote": "GND – (Ground) poziom terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 2 pkt 5",
+    "quote": "AMSL – (Above Mean Sea Level) nad średnim poziomem morza"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0246#79ad66a1",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. a",
+    "quote": "o liczbie mieszkańców powyżej 25 000 do 50 000 – na wysokości mniejszej niż 500 m nad poziomem terenu dla śmigłowców i samolotów tłokowych"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Dziś § 3 ust. 1 pkt 2 rozporządzenia z 5 marca 2019 r. także liczy minimalne wysokości nad miastami od poziomu terenu, np. 500 m dla śmigłowców i samolotów tłokowych nad miastami powyżej 25 000 do 50 000 mieszkańców."
+ },
+ {
+  "key": "PL010-0247#54dc8471",
+  "status": "draft",
+  "text": "Zgodnie z § 3 ust. 1 pkt 2 lit. c rozporządzenia Ministra Infrastruktury z 5 marca 2019 r. w sprawie zakazów lub ograniczeń lotów na czas dłuższy niż 3 miesiące nad miastami o liczbie mieszkańców powyżej 100 000 zabrania się lotów na wysokości mniejszej niż 1500 m nad poziomem terenu (GND). Pułapka: 2000 m dotyczy miasta stołecznego Warszawy (lit. d). W obecnym rozporządzeniu loty nad miastami ogranicza odrębny zakaz z § 3 ust. 1 pkt 2, a nie strefy R, które określa załącznik nr 3 (pkt 5).",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. c",
+    "quote": "o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. d",
+    "quote": "miasta stołecznego Warszawy – na wysokości mniejszej niż 2000 m nad poziomem terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 2 pkt 10",
+    "quote": "GND – (Ground) poziom terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 5",
+    "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0247#cb33f2e0",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. c",
+    "quote": "o liczbie mieszkańców powyżej 100 000 – na wysokości mniejszej niż 1500 m nad poziomem terenu"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r. Obecnie tę samą wysokość wymaga § 3 ust. 1 pkt 2 lit. c rozporządzenia z 5 marca 2019 r.: nad miastami powyżej 100 000 mieszkańców nie wolno lecieć niżej niż 1500 m nad poziomem terenu."
+ },
+ {
+  "key": "PL010-0248#8df32b24",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. d",
+    "quote": "miasta stołecznego Warszawy – na wysokości mniejszej niż 2000 m nad poziomem terenu"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 5",
+    "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Wysokości 1850 m nie ma w obowiązującym rozporządzeniu z 5 marca 2019 r. Według jego § 3 ust. 1 pkt 2 lit. d nad miastem stołecznym Warszawą nie wolno lecieć niżej niż 2000 m nad poziomem terenu, a loty nad miastami ogranicza odrębny zakaz, nie strefa R."
+ },
+ {
+  "key": "PL010-0248#b0b75fea",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2",
+    "quote": "zakaz wykonywania lotów nad obszarami miast w ich granicach administracyjnych odpowiednio dla miast:"
+   },
+   {
+    "src": "PL-ROZP-ZAKAZY-LOTOW",
+    "loc": "§ 3 ust. 1 pkt 2 lit. d",
+    "quote": "miasta stołecznego Warszawy – na wysokości mniejszej niż 2000 m nad poziomem terenu"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Pytanie powołuje się na nieobowiązujące rozporządzenie z 9 października 2003 r., według klucza ULC wymagające nad zabudową Warszawy poziomu FL 70. Obecnie § 3 ust. 1 pkt 2 lit. d rozporządzenia z 5 marca 2019 r. zabrania lotów nad miastem stołecznym Warszawą niżej niż 2000 m nad poziomem terenu."
+ }
 ]

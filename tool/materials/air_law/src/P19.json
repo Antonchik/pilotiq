@@ -1,0 +1,837 @@
+[
+ {
+  "key": "PL010-0397#c3c4ff37",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.8020 lit. b) ppkt 1 rozporządzenia 923/2012, gdy nastąpi nieumyślne odchylenie lotu kontrolowanego od bieżącego planu lotu i statek powietrzny zboczy z linii drogi, natychmiast zmienia się kurs, aby jak najprędzej wejść ponownie na linię drogi. Pułapka: przepis nie przewiduje kontynuowania lotu na aktualnej linii drogi przez trzy lub siedem minut ani proszenia o zezwolenie na zmianę trasy.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8020(b)",
+    "quote": "W przypadku gdy nastąpi nieumyślne odchylenie lotu kontrolowanego od bieżącego planu lotu, podejmuje się następujące działania:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8020(b)(1)",
+    "quote": "w przypadku odchylenia od linii drogi: jeżeli statek powietrzny zboczy z linii drogi, natychmiast zmienia się kurs, aby jak najprędzej wejść ponownie na linię drogi"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0399#f1407309",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.8020 lit. b) ppkt 3 rozporządzenia 923/2012, jeżeli przy nieumyślnym odchyleniu lotu kontrolowanego prędkość rzeczywista na poziomie przelotu różni się od bieżącego planu lotu, informuje się o tym odpowiedni organ służb ruchu lotniczego. Klucz ULC wskazuje właśnie to działanie: zawiadomienie organu kontroli ruchu lotniczego. Przepis nie przewiduje samodzielnego dostosowywania prędkości po trzech lub siedmiu minutach lotu.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8020(b)",
+    "quote": "W przypadku gdy nastąpi nieumyślne odchylenie lotu kontrolowanego od bieżącego planu lotu, podejmuje się następujące działania:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8020(b)(3)",
+    "quote": "jeżeli liczba Macha/prędkość rzeczywista na poziomie przelotu różni się o co najmniej plus/minus 0,02 Macha lub co najmniej plus/minus 19 km/h (10 kt) prędkości rzeczywistej od bieżącego planu lotu, informuje się o tym odpowiedni organ służb ruchu lotniczego"
+   }
+  ],
+  "disputeNote": "Według aktualnego pkt SERA.8020 lit. b) ppkt 3 rozporządzenia 923/2012 progiem odchylenia jest co najmniej plus/minus 0,02 Macha lub 19 km/h (10 kt) prędkości rzeczywistej, a nie 5%, jak podaje pytanie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0411#3d5f9a58",
+  "status": "draft",
+  "text": "Według AIP Polska (ENR 1.10 pkt 6.1, uwaga 2) przy opóźnieniu przekraczającym przewidywany czas odblokowania (EOBT) o 30 minut dla lotu kontrolowanego plan lotu powinien zostać poprawiony albo należy przedstawić nowy plan lotu, anulując poprzedni. Na tej wartości 30 minut opiera się klucz ULC. Pułapka: przepis nie wiąże planu lotu z końcem doby ani z okresem 24 godzin.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 6.1",
+    "quote": "w przypadku opóźnienia przewyższającego przewidywany czas odblokowania o 30 minut dla lotu kontrolowanego lub opóźnienia wynoszącego 1 godzinę dla lotu niekontrolowanego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 6.1",
+    "quote": "plan ten powinien być poprawiony lub należy przedstawić nowy plan lotu, anulując poprzedni"
+   }
+  ],
+  "disputeNote": "Ta sama uwaga AIP Polska (ENR 1.10 pkt 6.1) dla lotu niekontrolowanego podaje opóźnienie 1 godziny, więc odpowiedź 60 minut też odpowiada AIP; AIP nie mówi przy tym wprost o „ważności” planu lotu. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0414#4a61008b",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.6.4.1, prędkość przelotową w planie lotu podaje się literą N i czterema cyframi, gdy jest wyrażona w węzłach (np. N0485). Pułapka: litera M oznacza prędkość w liczbie Macha, a litera K prędkość w kilometrach na godzinę.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.6.4.1",
+    "quote": "N – a następnie cztery cyfry celem określenia prędkości powietrznej w węzłach (np. N0485)"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.6.4.1",
+    "quote": "M – a następnie trzy cyfry celem określenia prędkości powietrznej za pomocą rzeczywistej liczby Macha"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.6.4.1",
+    "quote": "K – a następnie cztery cyfry celem określenia prędkości powietrznej w kilometrach na godzinę (km/h)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0414#fd9708dd",
+  "status": "draft",
+  "sameAs": "PL010-0414#4a61008b"
+ },
+ {
+  "key": "PL010-0429#d3694b1a",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 4.8 lit. d), plan lotu na lot VFR zaplanowany w całości lub w części w przestrzeni powietrznej kontrolowanej przedstawia się co najmniej 1 godzinę, czyli 60 minut, przed EOBT (przewidywanym czasem odblokowania). Pkt SERA.4001 lit. d) ppkt 3 rozporządzenia 923/2012 też wymaga złożenia planu lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego, co najmniej 60 minut przed odlotem. Pułapka: 30 minut AIP dopuszcza tylko dla lotów VFR w całości w przestrzeni niekontrolowanej (lit. c)), a 10 minut dotyczy planu zgłaszanego z powietrza (SERA.4001 lit. d) ppkt 4).",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 4.8",
+    "quote": "w przypadku przedstawiania planów lotów na loty według przepisów VFR, zaplanowane w całości lub w części w przestrzeni powietrznej kontrolowanej – co najmniej 1 godzinę przed EOBT"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)",
+    "quote": "plan lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego lub służba doradcza ruchu lotniczego, jest składany w następujący sposób:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(3)",
+    "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 4.8",
+    "quote": "w przypadku przedstawiania planów lotów na loty według przepisów VFR, zaplanowane w całości w przestrzeni powietrznej niekontrolowanej – co najmniej 30 minut przed EOBT"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)",
+    "quote": "jeżeli jest składany podczas lotu, to w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0430#219a77cc",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.4001 lit. d) ppkt 4 (ii) rozporządzenia 923/2012 plan lotu składany podczas lotu przekazuje się w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego do zamierzonego punktu przecięcia drogi lotniczej. Pułapka: wyprzedzenie 60 minut dotyczy planu lotu składanego przed odlotem (ppkt 3).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)",
+    "quote": "jeżeli jest składany podczas lotu, to w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)(ii)",
+    "quote": "do zamierzonego punktu przecięcia drogi lotniczej lub trasy ze służbą doradczą"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(3)",
+    "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0431#29600c46",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.4001 lit. d) ppkt 4 (i) rozporządzenia 923/2012 plan lotu składany podczas lotu przekazuje się w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego do zamierzonego punktu wejścia do obszaru kontrolowanego. Pułapka: wyprzedzenie 60 minut dotyczy planu lotu składanego przed odlotem (ppkt 3).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)",
+    "quote": "jeżeli jest składany podczas lotu, to w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)(i)",
+    "quote": "do zamierzonego punktu wejścia do obszaru kontrolowanego lub obszaru ze służbą doradczą"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(3)",
+    "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0432#e26650a3",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.4001 lit. d) ppkt 4 (ii) rozporządzenia 923/2012 termin dla planu lotu składanego podczas lotu liczy się od przewidywanego przybycia statku powietrznego do zamierzonego punktu przecięcia drogi lotniczej: organ ATS ma go otrzymać co najmniej 10 minut wcześniej. Pułapka: od przewidywanego czasu odblokowania lub od odlotu liczy się terminy dla planu lotu składanego przed lotem (ppkt 1–3).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)",
+    "quote": "jeżeli jest składany podczas lotu, to w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)(ii)",
+    "quote": "do zamierzonego punktu przecięcia drogi lotniczej lub trasy ze służbą doradczą"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(1)",
+    "quote": "nie wcześniej niż 120 godzin przed przewidywanym czasem odblokowania"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(3)",
+    "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0433#8860ac9b",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.4001 lit. d) ppkt 4 (i) rozporządzenia 923/2012 termin dla planu lotu składanego podczas lotu liczy się od przewidywanego przybycia statku powietrznego do zamierzonego punktu wejścia do obszaru kontrolowanego: organ ATS ma go otrzymać co najmniej 10 minut wcześniej. Pułapka: od przewidywanego czasu odblokowania lub od odlotu liczy się terminy dla planu lotu składanego przed lotem (ppkt 1–3).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)",
+    "quote": "jeżeli jest składany podczas lotu, to w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(4)(i)",
+    "quote": "do zamierzonego punktu wejścia do obszaru kontrolowanego lub obszaru ze służbą doradczą"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(1)",
+    "quote": "nie wcześniej niż 120 godzin przed przewidywanym czasem odblokowania"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(3)",
+    "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0472#5403c78a",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.4001 lit. d) ppkt 3 rozporządzenia 923/2012 plan lotu z przelotem nad granicami międzynarodowymi lub lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego, składa się co najmniej 60 minut przed odlotem. AIP Polska (ENR 1.10 pkt 4.8) podaje 1 godzinę przed EOBT m.in. dla lotów IFR niepodlegających regulacjom ATFM i dla lotów VFR w przestrzeni kontrolowanej. Pułapka: loty podlegające regulacjom ATFM wymagają co najmniej 3 godzin (lit. a)), a nie 120 minut.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)",
+    "quote": "plan lotu każdego lotu, podczas którego planowany jest przelot nad granicami międzynarodowymi"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(d)(3)",
+    "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 4.8",
+    "quote": "w przypadku przedstawiania planów lotów na loty niepodlegające regulacjom ATFM, planowane do wykonania w całości lub w części według przepisów IFR/GAT – co najmniej 1 godzinę przed EOBT"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 4.8",
+    "quote": "w przypadku przedstawiania planów lotów na loty według przepisów VFR, zaplanowane w całości lub w części w przestrzeni powietrznej kontrolowanej – co najmniej 1 godzinę przed EOBT"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 4.8",
+    "quote": "w przypadku lotów podlegających regulacjom ATFM, planowanych do wykonania w całości lub w części według przepisów IFR/GAT i których trasa planowana jest w całości lub w części w strefie IFPZ – co najmniej 3 godziny przed EOBT"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 4.8",
+    "quote": "w przypadku przedstawiania planów lotów na loty według przepisów VFR, zaplanowane w całości w przestrzeni powietrznej niekontrolowanej – co najmniej 30 minut przed EOBT"
+   }
+  ],
+  "disputeNote": "AIP Polska (ENR 1.10 pkt 4.8 lit. c)) pozwala przedstawić plan lotu na lot VFR zaplanowany w całości w przestrzeni niekontrolowanej co najmniej 30 minut przed EOBT, więc dla takiego lotu poprawna byłaby też odpowiedź 30 minut. Na egzaminie ULC zaliczana jest odpowiedź z klucza.",
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0472#96ac0085",
+  "status": "draft",
+  "sameAs": "PL010-0472#5403c78a"
+ },
+ {
+  "key": "PL010-0545#dbc84777",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.1, w polu 8 planu lotu literą I oznacza się lot, którego całość planuje się wykonać zgodnie z przepisami IFR. Pułapka: V oznacza cały lot według VFR, a X i N to litery rodzaju lotu, które wpisuje się na drugim miejscu pola 8 (pkt 3.2 i 3.2.2).",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "I – jeżeli planuje się wykonanie całego lotu zgodnie z IFR"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "V – jeżeli planuje się wykonanie całego lotu zgodnie z VFR"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2",
+    "quote": "Pierwsza z nich określa przepisy wykonywania lotu, zaś druga rodzaj lotu."
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "X – lot innego rodzaju niż podane wyżej"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "N – lot nierozkładowy lotnictwa komunikacyjnego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0546#3ae0eeb4",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.2, rodzaj lotu oznacza się w polu 8 planu lotu literą X, gdy jest to lot innego rodzaju niż lot rozkładowy (S), nierozkładowy lotnictwa komunikacyjnego (N), lot lotnictwa ogólnego (G) i lot wojskowy (M). Przy oznaczeniu X podaje się dalsze szczegóły w polu 18 po oznaczniku RMK/, np. RMK/LOT SZKOLNY. Pułapka: I to litera przepisów wykonywania lotu (IFR), a nie rodzaju lotu (pkt 3.2.1).",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "X – lot innego rodzaju niż podane wyżej"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "S – lot rozkładowy lotnictwa komunikacyjnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "N – lot nierozkładowy lotnictwa komunikacyjnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "G – lot lotnictwa ogólnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "M – lot wojskowy"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "W przypadku użycia oznaczenia rodzaju lotu X należy w polu 18 planu lotu po oznaczniku RMK/ umieścić dalsze szczegóły dotyczące lotu"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "I – jeżeli planuje się wykonanie całego lotu zgodnie z IFR"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0547#dd0d55be",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.2, lot lotnictwa ogólnego oznacza się w polu 8 planu lotu literą G. Pułapka: litera X oznacza lot innego rodzaju niż wymienione w tym punkcie, a litery O i W nie występują w wykazie oznaczeń rodzaju lotu.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "G – lot lotnictwa ogólnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "X – lot innego rodzaju niż podane wyżej"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "Należy podać jedną z następujących liter w celu oznaczenia rodzaju lotu:"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0548#b1448ffd",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.2, lot nierozkładowy lotnictwa komunikacyjnego oznacza się w polu 8 planu lotu literą N. Pułapka: S oznacza lot rozkładowy lotnictwa komunikacyjnego, X lot innego rodzaju, a V jest literą przepisów wykonywania lotu (VFR) według pkt 3.2.1.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "N – lot nierozkładowy lotnictwa komunikacyjnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "S – lot rozkładowy lotnictwa komunikacyjnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "X – lot innego rodzaju niż podane wyżej"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "V – jeżeli planuje się wykonanie całego lotu zgodnie z VFR"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0549#05cb8f55",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.2, lot rozkładowy lotnictwa komunikacyjnego oznacza się w polu 8 planu lotu literą S. Pułapka: N oznacza lot nierozkładowy lotnictwa komunikacyjnego, X lot innego rodzaju, a litera R nie występuje w wykazie oznaczeń rodzaju lotu.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "S – lot rozkładowy lotnictwa komunikacyjnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "N – lot nierozkładowy lotnictwa komunikacyjnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "X – lot innego rodzaju niż podane wyżej"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "Należy podać jedną z następujących liter w celu oznaczenia rodzaju lotu:"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0550#6af10690",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.1, w polu 8 planu lotu literą V oznacza się lot, którego całość planuje się wykonać zgodnie z przepisami VFR. Pułapka: I oznacza cały lot według IFR, a N i S to litery rodzaju lotu (lot nierozkładowy i rozkładowy lotnictwa komunikacyjnego) według pkt 3.2.2.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "V – jeżeli planuje się wykonanie całego lotu zgodnie z VFR"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "I – jeżeli planuje się wykonanie całego lotu zgodnie z IFR"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "N – lot nierozkładowy lotnictwa komunikacyjnego"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "S – lot rozkładowy lotnictwa komunikacyjnego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0552#f1b6bbd1",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.1, literę Y wpisuje się w polu 8 planu lotu, jeżeli lot najpierw będzie wykonywany zgodnie z IFR, a potem nastąpi zmiana lub zmiany przepisów wykonywania lotu. Pułapka: Z oznacza odwrotną kolejność (najpierw VFR), I cały lot według IFR, a X to litera rodzaju lotu (pkt 3.2.2).",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "Y – jeżeli lot najpierw będzie wykonywany zgodnie z IFR, po czym nastąpi zmiana lub zmiany przepisów wykonywania lotu"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "Z – jeżeli lot najpierw będzie wykonywany zgodnie z VFR, po czym nastąpi zmiana lub zmiany przepisów wykonywania lotu"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "I – jeżeli planuje się wykonanie całego lotu zgodnie z IFR"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.2",
+    "quote": "X – lot innego rodzaju niż podane wyżej"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0553#6cea4450",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.2.1, literę Z wpisuje się w polu 8 planu lotu, jeżeli lot najpierw będzie wykonywany zgodnie z VFR, a potem nastąpi zmiana lub zmiany przepisów wykonywania lotu. Pułapka: Y oznacza odwrotną kolejność (najpierw IFR), a V i I oznaczają lot wykonywany w całości według VFR albo IFR.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "Z – jeżeli lot najpierw będzie wykonywany zgodnie z VFR, po czym nastąpi zmiana lub zmiany przepisów wykonywania lotu"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "Y – jeżeli lot najpierw będzie wykonywany zgodnie z IFR, po czym nastąpi zmiana lub zmiany przepisów wykonywania lotu"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "V – jeżeli planuje się wykonanie całego lotu zgodnie z VFR"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.2.1",
+    "quote": "I – jeżeli planuje się wykonanie całego lotu zgodnie z IFR"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0589#c67cd8d3",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.6001 lit. a) ppkt 3 rozporządzenia 923/2012 w przestrzeni klasy C dla wszystkich lotów, także VFR, obowiązuje zezwolenie ATC, a plan lotu przedstawia się służbie kontroli ruchu lotniczego przed rozpoczęciem każdego lotu lub jego części (pkt SERA.4001 lit. b) ppkt 1). AIP Polska (ENR 1.10 pkt 4.5) również wymaga planu lotu dla lotów VFR wykonywanych w całości lub w części w przestrzeni kontrolowanej. Pułapka: samo pozostawanie w VMC nie wystarcza, bo służbę kontroli ruchu lotniczego zapewnia się wszystkim lotom VFR w klasach B, C i D (pkt SERA.8001 lit. b)).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(3)",
+    "quote": "W przypadku wszystkich lotów obowiązuje zezwolenie ATC."
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4001(b)(1)",
+    "quote": "służbie kontroli ruchu lotniczego przed rozpoczęciem każdego lotu lub jego części"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 4.5",
+    "quote": "w całości lub w części wykonywanych w przestrzeni powietrznej kontrolowanej"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(b)",
+    "quote": "wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0610#e69c3be2",
+  "status": "draft",
+  "text": "Zgodnie z AIP Polska, ENR 1.10 pkt 3.6.4.2, wysokość bezwzględną w setkach stóp oznacza się w planie lotu literą A i trzema cyframi (np. A030). Pułapka: litera S oznacza standardowy poziom metryczny w dziesiątkach metrów, a litera M wysokość bezwzględną w dziesiątkach metrów.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.6.4.2",
+    "quote": "A – a następnie trzy cyfry celem określenia wysokości bezwzględnej w setkach stóp (np. A030)"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.6.4.2",
+    "quote": "S – a następnie cztery cyfry celem określenia standardowego poziomu metrycznego w dziesiątkach metrów (np. S1130)"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "ENR 1.10 pkt 3.6.4.2",
+    "quote": "M – a następnie cztery cyfry celem wyrażenia wysokości bezwzględnej w dziesiątkach metrów (np. M0040)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0402#7dbf50d2",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 52 rozporządzenia 923/2012 granica zezwolenia oznacza punkt, do którego statkowi powietrznemu zostało udzielone zezwolenie kontroli ruchu lotniczego. Według pkt 4.5.7.1.1 dokumentu ICAO Doc 4444 (PANS-ATM) granicę zezwolenia określa się przez podanie nazwy odpowiedniego znaczącego punktu, lotniska lub granicy przestrzeni kontrolowanej, co oddaje odpowiedź z klucza. Pułapka: granica zezwolenia nie jest czasem rozpoczęcia lotu ani pośrednim poziomem lotu, lecz punktem.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 52",
+    "quote": "„granica zezwolenia” oznacza punkt, do którego statkowi powietrznemu zostało udzielone zezwolenie kontroli ruchu lotniczego"
+   },
+   {
+    "src": "ICAO-DOC-4444",
+    "loc": "pkt 4.5.7.1.1"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0513#89556111",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 59 rozporządzenia 923/2012 lot kontrolowany oznacza każdy lot, na który wymaga się zezwolenia kontroli ruchu lotniczego. Pułapka: nie każdy lot IFR ani każdy lot w przestrzeni kontrolowanej jest kontrolowany, bo w klasie E zezwolenie ATC obowiązuje tylko loty IFR (pkt SERA.6001 lit. a) ppkt 5), a w klasie G nie jest wymagane żadnym lotom (ppkt 7).",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 59",
+    "quote": "„lot kontrolowany” oznacza każdy lot, na który wymaga się zezwolenia kontroli ruchu lotniczego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(5)",
+    "quote": "W przypadku wszystkich lotów IFR obowiązuje zezwolenie ATC."
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.6001(a)(7)",
+    "quote": "Nie jest wymagane zezwolenie ATC."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0065#adc07f82",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.3401 lit. a) rozporządzenia 923/2012 stosowany jest uniwersalny czas koordynowany (UTC), wyrażany w godzinach i minutach 24-godzinnej doby rozpoczynającej się od północy. Przepis nie rozróżnia ruchu kontrolowanego i niekontrolowanego, więc UTC obowiązuje w obu. Pułapka: przepis nie przewiduje stosowania czasu lokalnego (LMT) w żadnym rodzaju ruchu.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.3401(a)",
+    "quote": "Stosowany jest uniwersalny czas koordynowany (UTC) wyrażany w godzinach i minutach oraz, w miarę potrzeby, w sekundach, 24-godzinnej doby rozpoczynającej się od północy."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0071#b3ef6324",
+  "status": "draft",
+  "text": "Według AIP Polska (GEN 3.3 pkt 3) w przestrzeni powietrznej kontrolowanej zapewniane są służba informacji powietrznej, służba alarmowa i służba kontroli ruchu lotniczego, dlatego wszystkie odpowiedzi są prawidłowe. Wynika to z rozporządzenia 923/2012: służbę kontroli ruchu lotniczego zapewnia się lotom IFR w klasach A–E i lotom VFR w klasach B, C i D (pkt SERA.8001), a statkom objętym tą służbą zapewnia się też służbę informacji powietrznej (pkt SERA.9001 lit. a)) i służbę alarmową (pkt SERA.10001 lit. a)).",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3 pkt 3",
+    "quote": "Służba informacji powietrznej, służba alarmowa i służba kontroli ruchu lotniczego w przestrzeni powietrznej kontrolowanej są zapewniane przez:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(a)",
+    "quote": "wszystkim lotom IFR w przestrzeni powietrznej klas A, B, C, D i E"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.8001(b)",
+    "quote": "wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9001(a)",
+    "quote": "Odpowiednie organy służb ruchu lotniczego zapewniają służbę informacji powietrznej wszystkim statkom powietrznym, których te informacje mogą dotyczyć, oraz:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.9001(a)(1)",
+    "quote": "którym zapewniona jest służba kontroli ruchu lotniczego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.10001(a)",
+    "quote": "Organy służb ruchu lotniczego zapewniają służbę alarmową:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.10001(a)(1)",
+    "quote": "wszystkim statkom powietrznym, którym zapewniona jest służba kontroli ruchu lotniczego"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0195#a6abe391",
+  "status": "draft",
+  "text": "Zgodnie z art. 121 ust. 1 Prawa lotniczego zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej, zarządzanie przestrzenią powietrzną i zarządzanie przepływem ruchu lotniczego, więc wszystkie odpowiedzi są prawidłowe. Służba alarmowa, służba kontroli ruchu lotniczego i służba informacji powietrznej to służby ruchu lotniczego (art. 2 pkt 10 rozporządzenia 2024/2803), które należą do służb żeglugi powietrznej (art. 2 pkt 5).",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1",
+    "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 1",
+    "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 2",
+    "quote": "zarządzanie przestrzenią powietrzną"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 121 ust. 1 pkt 3",
+    "quote": "zarządzanie przepływem ruchu lotniczego"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 10",
+    "quote": "„służby ruchu lotniczego” oznaczają różne służby informacji powietrznej, służby alarmowe i służby doradcze ruchu lotniczego, a także służby ATC"
+   },
+   {
+    "src": "EU-2024-2803",
+    "loc": "art. 2 pkt 5",
+    "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0224#41c9ad34",
+  "status": "draft",
+  "text": "Według AIP Polska (GEN 3.3 pkt 3) w FIR Warszawa służby w przestrzeni kontrolowanej zapewnia m.in. ACC Warszawa, służbę informacji powietrznej i służbę alarmową w przestrzeni niekontrolowanej zapewniają organy FIS, a lotniskową służbę informacji powietrznej organ AFIS. Dlatego w polskiej przestrzeni powietrznej działają FIS, AFIS oraz ACC. Przykładami organów AFIS są AFIS EPBY i AFIS EPSY (GEN 3.3 pkt 1.4 i 1.5), więc żadna z odpowiedzi ze słowem „tylko” nie jest prawidłowa.",
+  "refs": [
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3 pkt 3",
+    "quote": "ACC WARSZAWA w wyznaczonej przestrzeni odpowiedzialności"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3 pkt 3",
+    "quote": "Służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej są zapewniane przez właściwy organ FIS w wyznaczonych przestrzeniach odpowiedzialności"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3 pkt 3",
+    "quote": "lotniskowa służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej zapewniana jest przez organ lotniskowej służby informacji powietrznej"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3 pkt 1.4",
+    "quote": "Organ lotniskowej służby informacji powietrznej AFIS EPBY"
+   },
+   {
+    "src": "AIP-PL",
+    "loc": "GEN 3.3 pkt 1.5",
+    "quote": "Organ lotniskowej służby informacji powietrznej AFIS EPSY"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0224#f8629af5",
+  "status": "unverified",
+  "text": "",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 120 ust. 2",
+    "quote": "W polskiej przestrzeni powietrznej działają instytucje zapewniające służby żeglugi powietrznej, a w wydzielonych częściach tej przestrzeni cywilne lub wojskowe lotniskowe organy służb ruchu lotniczego lub właściwe organy wojskowe."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null,
+  "basis": "outdated",
+  "basisNote": "Według obecnego art. 120 ust. 2 Prawa lotniczego w polskiej przestrzeni powietrznej działają instytucje zapewniające służby żeglugi powietrznej, a nie państwowy organ zarządzania ruchem lotniczym; lotniskowe organy służb ruchu lotniczego i organy wojskowe działają w jej wydzielonych częściach."
+ },
+ {
+  "key": "PL010-0365#4d65e6d8",
+  "status": "draft",
+  "text": "Zgodnie z art. 2 pkt 38 rozporządzenia 923/2012 lotniska zapasowe dzielą się na lotniska zapasowe po starcie, na trasie i dla lotniska docelowego. Materiał wyjaśniający EASA do tej definicji (GM1 Article 2(38)) dodaje, że lotnisko, z którego lot się rozpoczyna, może być również lotniskiem zapasowym na trasie lub lotniskiem zapasowym dla lotniska docelowego tego lotu, dlatego odpowiedź brzmi „Tak”. Przepisy nie uzależniają tego od warunków meteorologicznych do startu ani od VMC.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "art. 2 pkt 38",
+    "quote": "Lotniska zapasowe dzieli się na:"
+   },
+   {
+    "src": "EASA-EAR-SERA",
+    "loc": "GM1 Article 2(38)"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-0382#d98de423",
+  "status": "draft",
+  "text": "Zgodnie z art. 127 ust. 4 Prawa lotniczego certyfikacji instytucji zapewniającej służby żeglugi powietrznej dokonuje Prezes Urzędu jako organ realizujący zadania państwowej władzy nadzorującej. Certyfikat Prezesa Urzędu Lotnictwa Cywilnego jest więc podstawą jej działania, a samo wyznaczenie instytucji należy do ministra właściwego do spraw transportu (art. 127 ust. 2). Pułapka: przepis nie mówi o licencji ani o certyfikacie EASA lub EUROCONTROL.",
+  "refs": [
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 127 ust. 4",
+    "quote": "Certyfikacji instytucji zapewniającej służby żeglugi powietrznej dokonuje Prezes Urzędu jako organ realizujący zadania państwowej władzy nadzorującej"
+   },
+   {
+    "src": "PL-PRAWO-LOTNICZE",
+    "loc": "art. 127 ust. 2",
+    "quote": "Wyznaczenia, o którym mowa w ust. 1, dokonuje, w drodze decyzji administracyjnej, minister właściwy do spraw transportu"
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ },
+ {
+  "key": "PL010-1553#6b517e18",
+  "status": "draft",
+  "text": "Zgodnie z pkt SERA.4020 lit. e) rozporządzenia 923/2012 meldunek o przylocie nadawany przez pilota dowódcę statku powietrznego zawiera znak rozpoznawczy statku powietrznego, lotnisko odlotu lub miejsce operacji lotniczej, a ponadto lotnisko docelowe (tylko przy zmianie miejsca lądowania), lotnisko przylotu i czas przylotu. Odpowiedź z klucza wymienia dwa pierwsze z tych elementów. Pułapka: sam znak rozpoznawczy jest niepełny, a warunki pogodowe i numer polisy nie należą do meldunku.",
+  "refs": [
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4020(e)",
+    "quote": "Meldunki o przylocie nadawane przez pilota dowódcę statku powietrznego zawierają następujące elementy informacji:"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4020(e)(1)",
+    "quote": "znak rozpoznawczy statku powietrznego"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4020(e)(2)",
+    "quote": "lotnisko odlotu lub miejsce operacji lotniczej"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4020(e)(3)",
+    "quote": "lotnisko docelowe lub miejsce operacji lotniczej (tylko w przypadku zmiany miejsca lądowania)"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4020(e)(4)",
+    "quote": "lotnisko przylotu lub miejsce operacji lotniczej"
+   },
+   {
+    "src": "EU-923-2012",
+    "loc": "SERA.4020(e)(5)",
+    "quote": "czas przylotu."
+   }
+  ],
+  "disputeNote": null,
+  "sameAs": null
+ }
+]
