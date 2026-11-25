@@ -1,0 +1,6 @@
+[
+ {"key":"PL099-0091#b4d5dc8c","verdict":"DISPUTED","note":"Poprawka z r1 wprowadzona dosłownie (CAT.OP.MPA.225 jako przepis części CAT, 470 znaków). disputeNote bez zmian i poprawny: NCO.GEN.105(f)(1) i CAT.OP.MPA.225(a)(2) są w refs, czyli również odpowiedź „przez cały czas trwania lotu” da się obronić; formuła o kluczu ULC jest obecna."},
+ {"key":"PL099-0098#22c8deb8","verdict":"PASS","note":"Poprawka z r1 wprowadzona dosłownie: zaznaczono, że CAT.OP.MPA.225(a)(1) dotyczy części CAT; cytat zgodny z korpusem, 479 znaków."},
+ {"key":"PL099-0038#257e330c","verdict":"PASS","note":"Tekst z r1 (689 znaków) wprowadzony; dłuższy cytat z NCO.GEN.140(f), łącznie z „na mocy pkt 1.2.2.1 lit. a) Instrukcji Technicznych”, dosłownie zgodny z korpusem; zastrzeżenie o niesprawdzonych Instrukcjach Technicznych jest obecne."},
+ {"key":"PL099-0096#f87a9e33","verdict":"PASS","note":"Poprawka z r1 wprowadzona dosłownie: CAT.GEN.MPA.120 opisany jako przepis dla operacji zarobkowego transportu lotniczego, a NCC.GEN.115 dla operacji niezarobkowych wykonywanych przy użyciu skomplikowanych statków powietrznych z napędem silnikowym; cytaty dosłowne, 474 znaki."}
+]

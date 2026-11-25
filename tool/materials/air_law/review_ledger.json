@@ -4673,11 +4673,11 @@
  },
  "PL099-0038#257e330c": {
   "date": "2026-11-25",
-  "note": "Lit. f) NCO.GEN.140 mówi o substancjach „wykorzystywanych w celu łatwiejszego zapewnienia bezpieczeństwa lotu”, których obecność zapewnia natychmiastową dostępność do celów operacyjnych, a nie o substancjach „niezbędnych do działania istotnych systemów”; zdanie „Klucz ULC odpowiada temu wyjątkowi” przesadza dopasowanie, a przepis nie wymienia materiałów promieniotwórczych (odsyła do pkt 1.2.2.1 lit. a) Instrukcji Technicznych, spoza korpusu). Proponowany tekst (689 znaków): „Pkt NCO.GEN.140 lit. f) rozporządzenia 965/2012 uznaje za dopuszczone uzasadnione ilości substancji, które zostałyby w innym przypadku zaklasyfikowane jako materiały niebezpieczne, jeżeli służą łatwiejszemu zapewnieniu bezpieczeństwa lotu, a ich obecność zapewnia natychmiastową dostępność do celów operacyjnych. Na tym wyjątku opiera się klucz ULC (substancje niezbędne do działania istotnych systemów statku powietrznego), choć przepis nie wymienia materiałów promieniotwórczych i odsyła do Instrukcji Technicznych, których treści nie sprawdzono. Bezwzględnego zakazu nie ma: materiały niebezpieczne przewozi się zgodnie z lit. a), co do zasady przez zatwierdzonych operatorów (lit. b)).” Drugi cytat lit. f) można wydłużyć o „na mocy pkt 1.2.2.1 lit. a) Instrukcji Technicznych”. Refs bez zmian.",
+  "note": "Tekst z r1 (689 znaków) wprowadzony; dłuższy cytat z NCO.GEN.140(f), łącznie z „na mocy pkt 1.2.2.1 lit. a) Instrukcji Technicznych”, dosłownie zgodny z korpusem; zastrzeżenie o niesprawdzonych Instrukcjach Technicznych jest obecne.",
   "portion": "P27",
-  "round": 1,
-  "textSha": "1985bf82dfcbcf14",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "74f14503cd3e0ccd",
+  "verdict": "PASS"
  },
  "PL099-0039#b2e986e4": {
   "date": "2026-11-25",
@@ -4873,11 +4873,11 @@
  },
  "PL099-0091#b4d5dc8c": {
   "date": "2026-11-25",
-  "note": "Spór zasadny i disputeNote poprawny (NCO.GEN.105(f)(1) – pas zapięty podczas lotu na stanowisku, (f)(2) – pilot pozostaje za sterami przez cały czas; CAT.OP.MPA.225(a)(2) – pozostałe fazy lotu; zmiany redakcji brak → DISPUTED, nie outdated). Jedyna poprawka: tekst musi powiedzieć, że CAT.OP.MPA.225 to przepis dla zarobkowego transportu lotniczego (pytanie z banku PPL). Pierwsze zdanie: „Klucz ULC odpowiada pkt CAT.OP.MPA.225 lit. a) ppkt 1 rozporządzenia 965/2012, który dotyczy operacji zarobkowego transportu lotniczego (część CAT): podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania.” (całość 470 znaków). disputeNote bez zmian; po poprawce – DISPUTED.",
+  "note": "Poprawka z r1 wprowadzona dosłownie (CAT.OP.MPA.225 jako przepis części CAT, 470 znaków). disputeNote bez zmian i poprawny: NCO.GEN.105(f)(1) i CAT.OP.MPA.225(a)(2) są w refs, czyli również odpowiedź „przez cały czas trwania lotu” da się obronić; formuła o kluczu ULC jest obecna.",
   "portion": "P27",
-  "round": 1,
-  "textSha": "a2e90b28e23ca115",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "257d9715720586e5",
+  "verdict": "DISPUTED"
  },
  "PL099-0092#a74def59": {
   "date": "2026-11-24",
@@ -4905,19 +4905,19 @@
  },
  "PL099-0096#f87a9e33": {
   "date": "2026-11-25",
-  "note": "CAT.GEN.MPA.120 i NCC.GEN.115 są przepisami dla operatorów zarobkowego transportu lotniczego i operacji NCC; w części NCO (PPL) odpowiednika brak – tekst musi to powiedzieć. Pierwsze zdanie: „Zgodnie z pkt CAT.GEN.MPA.120 rozporządzenia 965/2012 (operacje zarobkowego transportu lotniczego) operator dopilnowuje, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku; tak samo stanowi pkt NCC.GEN.115 dla operacji niezarobkowych wykonywanych przy użyciu skomplikowanych statków powietrznych z napędem silnikowym.” (całość 474 znaki). Refs bez zmian.",
+  "note": "Poprawka z r1 wprowadzona dosłownie: CAT.GEN.MPA.120 opisany jako przepis dla operacji zarobkowego transportu lotniczego, a NCC.GEN.115 dla operacji niezarobkowych wykonywanych przy użyciu skomplikowanych statków powietrznych z napędem silnikowym; cytaty dosłowne, 474 znaki.",
   "portion": "P27",
-  "round": 1,
-  "textSha": "0be29ca242bc3cc2",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "766cc9b77a2d2d99",
+  "verdict": "PASS"
  },
  "PL099-0098#22c8deb8": {
   "date": "2026-11-25",
-  "note": "Klucz = CAT.OP.MPA.225(a)(1) dosłownie, ale tekst nie mówi, że to przepis części CAT (zarobkowy transport lotniczy), a pytanie jest z banku PPL(A)/PPL(H). Pierwsze zdanie zastąpić: „Zgodnie z pkt CAT.OP.MPA.225 lit. a) ppkt 1 rozporządzenia 965/2012, który dotyczy operacji zarobkowego transportu lotniczego (część CAT), podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania.” (całość ok. 480 znaków). Brak opcji „przez cały czas lotu”, więc spór jak w 0091 nie zachodzi.",
+  "note": "Poprawka z r1 wprowadzona dosłownie: zaznaczono, że CAT.OP.MPA.225(a)(1) dotyczy części CAT; cytat zgodny z korpusem, 479 znaków.",
   "portion": "P27",
-  "round": 1,
-  "textSha": "218baa2ad0ffb901",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "ab877ff89b3df839",
+  "verdict": "PASS"
  },
  "PL099-0100#33e15656": {
   "date": "2026-11-24",
