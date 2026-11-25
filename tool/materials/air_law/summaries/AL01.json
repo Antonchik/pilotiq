@@ -1,0 +1,368 @@
+{
+  "topic": "AL01",
+  "sections": [
+    {
+      "id": "AL01-1",
+      "status": "draft",
+      "heading": "Źródła prawa lotniczego i zwierzchnictwo w przestrzeni powietrznej",
+      "body": [
+        "Do stosunków prawnych z zakresu lotnictwa cywilnego stosuje się przepisy Prawa lotniczego, o ile wiążące Rzeczpospolitą Polską ratyfikowane umowy międzynarodowe nie stanowią inaczej (art. 3 ust. 1). Podstawową taką umową jest Konwencja o międzynarodowym lotnictwie cywilnym, sporządzona w Chicago dnia 7 grudnia 1944 r. (konwencja chicagowska). Przyjmowane przez ICAO załączniki do niej ogłasza się wraz z oświadczeniami rządowymi o ich obowiązywaniu (art. 3 ust. 2).",
+        "Zwierzchnictwo w przestrzeni powietrznej:",
+        "- Rzeczpospolita Polska ma całkowite i wyłączne zwierzchnictwo w swojej przestrzeni powietrznej (art. 4 ust. 1); art. 1 konwencji chicagowskiej przyznaje takie zwierzchnictwo każdemu państwu nad jego terytorium. Przysługuje ono państwu, a nie organizacjom międzynarodowym.",
+        "- Funkcje wynikające ze zwierzchnictwa wykonuje, w zakresie niezwiązanym z umacnianiem obronności państwa, minister właściwy do spraw transportu; Rada Ministrów określa w rozporządzeniu warunki i sposób ich wykonywania (art. 4 ust. 1 i 2).",
+        "- Statek lecący w polskiej przestrzeni powietrznej w sposób odbiegający od ustalonej organizacji lotu i mogący zagrażać bezpieczeństwu wielu osób może zostać wezwany przez państwowy organ zarządzania ruchem lotniczym do zmiany kierunku lub wysokości lotu albo do lądowania (art. 122b ust. 1).",
+        "- Organy międzynarodowe mogą wykonywać tylko niektóre zadania służb żeglugi powietrznej, na podstawie umów międzynarodowych (art. 5 ust. 2 pkt 2)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 1",
+          "quote": "Do stosunków prawnych z zakresu lotnictwa cywilnego stosuje się przepisy Prawa lotniczego, o ile wiążące Rzeczpospolitą Polską ratyfikowane umowy międzynarodowe nie stanowią inaczej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 2",
+          "quote": "przyjęte przez Organizację Międzynarodowego Lotnictwa Cywilnego (ICAO) załączniki do Konwencji o międzynarodowym lotnictwie cywilnym, sporządzonej w Chicago dnia 7 grudnia 1944 r."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 2",
+          "quote": "ogłaszane są bez zbędnej zwłoki wraz z oświadczeniami rządowymi dotyczącymi ich obowiązywania"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 4 ust. 1",
+          "quote": "Rzeczpospolita Polska ma całkowite i wyłączne zwierzchnictwo w swojej przestrzeni powietrznej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 4 ust. 1",
+          "quote": "Funkcje wynikające z tego zwierzchnictwa wykonuje, w zakresie niezwiązanym z umacnianiem obronności państwa, minister właściwy do spraw transportu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 4 ust. 2",
+          "quote": "Rada Ministrów określi, w drodze rozporządzenia, warunki i sposób wykonywania funkcji wynikających ze zwierzchnictwa w polskiej przestrzeni powietrznej"
+        },
+        {
+          "src": "ICAO-DOC-7300",
+          "loc": "Article 1"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122b ust. 1",
+          "quote": "w sposób odbiegający od ustalonej organizacji lotu i mogący stanowić zagrożenie dla bezpieczeństwa wielu osób, może być wezwany przez państwowy organ zarządzania ruchem lotniczym do:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122b ust. 1 pkt 1",
+          "quote": "odpowiedniej zmiany kierunku lub wysokości lotu;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122b ust. 1 pkt 2",
+          "quote": "lądowania na wskazanym przez ten organ lotnisku;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 5 ust. 2",
+          "quote": "Na podstawie umów międzynarodowych i porozumień wiążących Rzeczpospolitą Polską realizowanie niektórych zadań w zakresie zapewniania służb żeglugi powietrznej może być:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 5 ust. 2 pkt 2",
+          "quote": "wykonywane przy pomocy organów międzynarodowych określonych w tych umowach;"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0507#cb1c071c",
+        "PL010-0507#7a8c7c54",
+        "PL010-0510#a4e13336",
+        "PL010-0510#dde2d1ef"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL01-2",
+      "status": "draft",
+      "heading": "Prawo właściwe dla statku powietrznego i lotu",
+      "body": [
+        "Prawo lotnicze rozstrzyga, któremu prawu podlegają statek powietrzny oraz osoby i rzeczy na nim:",
+        "- w czasie lotu w polskiej przestrzeni powietrznej i przebywania na terytorium Rzeczypospolitej Polskiej wszystkie statki powietrzne, także obce, podlegają prawu polskiemu, chyba że prawo to stanowi inaczej (art. 6);",
+        "- w czasie lotu poza granicami polskiej przestrzeni powietrznej i przebywania na obszarze niepodlegającym zwierzchnictwu żadnego państwa prawu polskiemu podlegają polskie statki powietrzne, chyba że prawo to stanowi inaczej (art. 7).",
+        "Odrębną kwestią są przepisy o samym locie i manewrowaniu: obowiązują przepisy danego terytorium, a na obszarze niepodlegającym zwierzchnictwu żadnego państwa – przepisy międzynarodowe (art. 8; podobnie art. 12 konwencji chicagowskiej). Nad morzem pełnym stosuje się bez wyjątku przepisy załącznika 2 do konwencji chicagowskiej (pkt SERA.1001 lit. a) rozporządzenia 923/2012).",
+        "Prawa rzeczowe na statku powietrznym podlegają prawu państwa, w którym statek jest wpisany do rejestru (art. 42 ustawy – Prawo prywatne międzynarodowe). Wpis do rejestru skutkuje przynależnością państwową statku (art. 31 ust. 2 Prawa lotniczego), jest to więc prawo państwa przynależności.",
+        "W żadnym z tych przepisów nie decyduje państwo startu, lądowania ani pochodzenie pasażerów."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 6",
+          "quote": "wszystkie statki powietrzne oraz osoby i rzeczy na tych statkach podlegają prawu polskiemu, chyba że prawo to stanowi inaczej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 7",
+          "quote": "W czasie lotu poza granicami polskiej przestrzeni powietrznej i w czasie przebywania na obszarze niepodlegającym zwierzchnictwu żadnego państwa polskie statki powietrzne oraz osoby i rzeczy na tych statkach podlegają prawu polskiemu, chyba że prawo to stanowi inaczej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 8",
+          "quote": "Lot i manewrowanie statku powietrznego odbywają się zgodnie z przepisami obowiązującymi w granicach danego terytorium, a na obszarze niepodlegającym zwierzchnictwu żadnego państwa – zgodnie z przepisami międzynarodowymi."
+        },
+        {
+          "src": "ICAO-DOC-7300",
+          "loc": "Article 12"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.1001(a)",
+          "quote": "W odniesieniu do lotu nad morzem pełnym stosowane są bez wyjątku przepisy określone w załączniku 2 do konwencji chicagowskiej."
+        },
+        {
+          "src": "PL-PPM-2011",
+          "loc": "art. 42",
+          "quote": "Prawa rzeczowe na statku powietrznym i wodnym oraz na pojeździe szynowym podlegają prawu państwa, w którym statek lub pojazd jest wpisany do rejestru"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 2",
+          "quote": "Wpis do rejestru cywilnych statków powietrznych skutkuje z mocy prawa przynależnością państwową statku powietrznego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0078#030bfd81",
+        "PL010-0078#4405f7fb",
+        "PL010-0079#8b970757",
+        "PL010-0079#ae1f1d86",
+        "PL010-0236#438c71a2",
+        "PL010-0236#4fcdb67c",
+        "PL010-0237#4f155be7",
+        "PL010-0238#458e24e0"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL01-3",
+      "status": "draft",
+      "heading": "ICAO, EASA i inne organizacje lotnicze",
+      "body": [
+        "Organizację Międzynarodowego Lotnictwa Cywilnego (ICAO) utworzyła sama konwencja chicagowska (art. 43 konwencji), sporządzona w Chicago dnia 7 grudnia 1944 r. (art. 3 ust. 2 Prawa lotniczego). Według art. 44 lit. a) konwencji celem ICAO jest zapewnienie bezpiecznego i prawidłowego rozwoju międzynarodowego lotnictwa cywilnego na całym świecie; wśród celów jest też popieranie bezpieczeństwa lotów w międzynarodowej żegludze powietrznej (art. 44 lit. h).",
+        "Prawo lotnicze wymienia organizacje, których wymagania międzynarodowe o charakterze specjalistycznym minister właściwy do spraw transportu może wprowadzić do stosowania w drodze rozporządzenia (art. 3 ust. 4):",
+        "- Organizacja Międzynarodowego Lotnictwa Cywilnego (ICAO);",
+        "- Europejska Konferencja Lotnictwa Cywilnego (ECAC), w tym Zrzeszenie Władz Lotniczych (JAA);",
+        "- Europejska Organizacja do Spraw Bezpieczeństwa Żeglugi Powietrznej (EUROCONTROL);",
+        "- Europejska Agencja Bezpieczeństwa Lotniczego (EASA).",
+        "Akceptowalne sposoby spełnienia wymagań (AMC) to niewiążące normy przyjęte przez Agencję, czyli EASA (art. 2 pkt 14 i art. 1 ust. 1 rozporządzenia 1178/2011); obowiązek ich opracowania przez Agencję powtarza pkt ARA.GEN.120 lit. a). AMC nie wydają ICAO, ECAC ani EUROCONTROL."
+      ],
+      "refs": [
+        {
+          "src": "ICAO-DOC-7300",
+          "loc": "Article 43"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 2",
+          "quote": "sporządzonej w Chicago dnia 7 grudnia 1944 r."
+        },
+        {
+          "src": "ICAO-DOC-7300",
+          "loc": "Article 44(a)"
+        },
+        {
+          "src": "ICAO-DOC-7300",
+          "loc": "Article 44"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 4",
+          "quote": "minister właściwy do spraw transportu może, w drodze rozporządzenia, wprowadzić do stosowania wymagania międzynarodowe o charakterze specjalistycznym"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 4 pkt 1",
+          "quote": "Organizację Międzynarodowego Lotnictwa Cywilnego (ICAO)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 4 pkt 2",
+          "quote": "Europejską Konferencję Lotnictwa Cywilnego (ECAC), w tym Zrzeszenie Władz Lotniczych (JAA)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 4 pkt 3",
+          "quote": "Europejską Organizację do Spraw Bezpieczeństwa Żeglugi Powietrznej (EUROCONTROL)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 3 ust. 4 pkt 4",
+          "quote": "Europejską Agencję Bezpieczeństwa Lotniczego (EASA)"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 14",
+          "quote": "„akceptowalne sposoby spełnienia wymagań (ang. acceptable means of compliance, AMC)” oznaczają niewiążące normy przyjęte przez Agencję"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 1 ust. 1",
+          "quote": "Agencja Unii Europejskiej ds. Bezpieczeństwa Lotniczego (EASA)"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.GEN.120(a)",
+          "quote": "Agencja musi opracować akceptowalne sposoby spełnienia wymagań (AMC)"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0061#44f9371c",
+        "PL010-0204#34723162",
+        "PL010-0204#598d6ff8",
+        "PL010-1532#90cd052e",
+        "PL010-1547#bde3f738"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL01-4",
+      "status": "draft",
+      "heading": "Załączniki do konwencji chicagowskiej",
+      "body": [
+        "Przepisy polskie i unijne odsyłają wprost do poszczególnych załączników do konwencji chicagowskiej:",
+        "- Załącznik 1 – licencjonowanie personelu: zgodnie z nim umawiające się państwa wydają licencje załogi lotniczej (art. 2 pkt 22b rozporządzenia 1178/2011);",
+        "- Załącznik 2 – przepisy ruchu lotniczego (art. 121 ust. 6 pkt 1 Prawa lotniczego; rozporządzenie 923/2012, art. 10 ust. 6, przywołuje go jako „załącznik 2, Przepisy ruchu lotniczego”);",
+        "- Załącznik 11 – służby ruchu lotniczego (art. 121 ust. 6 pkt 2 Prawa lotniczego);",
+        "- Załącznik 12 – poszukiwanie i ratownictwo: według AIP Polska (GEN 3.6) na jego zasadach ustanowiono w Polsce służbę poszukiwania i ratownictwa lotniczego, a w czasie akcji stosuje się podane w nim procedury i sygnały; jego normy przywołuje też rozporządzenie w sprawie służby poszukiwania i ratownictwa lotniczego (§ 2 pkt 1);",
+        "- Załącznik 13 – badanie wypadków i incydentów: z uwzględnieniem jego norm i zalecanych metod postępowania badania prowadzi Państwowa Komisja Badania Wypadków Lotniczych (art. 17 ust. 3 Prawa lotniczego).",
+        "Łatwo pomylić Załącznik 2 (przepisy ruchu lotniczego) z Załącznikiem 11 (służby ruchu lotniczego)."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 22b",
+          "quote": "licencji załogi lotniczej wydanej przez inne umawiające się państwo zgodnie z załącznikiem 1 do konwencji chicagowskiej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 6 pkt 1",
+          "quote": "przepisy ruchu lotniczego – w rozumieniu Załącznika 2 do Konwencji, o której mowa w art. 3 ust. 2"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 10 ust. 6",
+          "quote": "„załącznik 2, Przepisy ruchu lotniczego, wydanie dziesiąte z lipca 2005 r.”"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 6 pkt 2",
+          "quote": "warunki i sposób działania służb ruchu lotniczego – w rozumieniu Załącznika 11 do Konwencji o międzynarodowym lotnictwie cywilnym"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.6 pkt 1",
+          "quote": "Służba poszukiwania i ratownictwa lotniczego (ASAR) w Polsce jest ustanowiona zgodnie z zasadami zawartymi w Załączniku 12 do Konwencji o międzynarodowym lotnictwie cywilnym - Poszukiwanie i ratownictwo"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.6 pkt 6",
+          "quote": "W czasie akcji poszukiwania i ratownictwa lotniczego stosuje się procedury oraz używa sygnałów podanych w Załączniku 12 do Konwencji o Międzynarodowym Lotnictwie Cywilnym - Poszukiwanie i Ratownictwo."
+        },
+        {
+          "src": "PL-ROZP-SAR-2015",
+          "loc": "§ 2 pkt 1",
+          "quote": "normy i zalecane metody postępowania zawarte w Załączniku 12 do Konwencji o międzynarodowym lotnictwie"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 17 ust. 3",
+          "quote": "z uwzględnieniem norm i zalecanych metod postępowania zawartych w Załączniku 13 do Konwencji, o której mowa w art. 3 ust. 2."
+        }
+      ],
+      "questionKeys": [
+        "PL010-1557#69b1e448",
+        "PL010-1558#4120c2de",
+        "PL010-1556#43014812",
+        "PL099-0064#6c3416b5",
+        "PL102-0057#0f22221e",
+        "PL099-0032#324c346b"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL01-5",
+      "status": "draft",
+      "heading": "Loty międzynarodowe: obowiązki statku i zezwolenia",
+      "body": [
+        "Przy wykonywaniu lotów międzynarodowych statek powietrzny jest obowiązany przestrzegać (art. 142 Prawa lotniczego):",
+        "- przepisów ruchu lotniczego właściwych dla obszaru, w którym ruch się odbywa;",
+        "- zakazu przekraczania granic jakiegokolwiek państwa bez wymaganego zezwolenia;",
+        "- zakazu używania statków powietrznych do działań bezprawnych;",
+        "- poleceń organów państwa, w którego przestrzeni powietrznej lot się odbywa, a także poleceń jego państwowego statku powietrznego.",
+        "Obowiązki te obowiązują łącznie, więc odpowiedzi zawężone słowem „tylko” do jednego z nich są niepełne; przepis nie przewiduje też stosowania wyłącznie prawa państwa rejestracji. Prawo państwa do wezwania do lądowania statku lecącego bez zezwolenia potwierdza art. 3 bis lit. b) konwencji chicagowskiej.",
+        "Zezwolenie na lot międzynarodowy:",
+        "- nie jest wymagane dla międzynarodowych lotów niehandlowych polskich cywilnych statków powietrznych ani dla nieregularnych lotów niehandlowych statków państw stron konwencji chicagowskiej (art. 145 ust. 1 pkt 1 i 2);",
+        "- jest wymagane dla międzynarodowych lotów handlowych obcych przewoźników z lądowaniem handlowym w Polsce (art. 144)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 142",
+          "quote": "Przy wykonywaniu lotów międzynarodowych statek powietrzny jest obowiązany przestrzegać:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 142 pkt 1",
+          "quote": "przepisów ruchu lotniczego właściwych dla obszaru, w którym ruch się odbywa;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 142 pkt 2",
+          "quote": "zakazu przekraczania granic jakiegokolwiek państwa bez wymaganego zezwolenia;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 142 pkt 3",
+          "quote": "zakazu używania statków powietrznych do działań bezprawnych;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 142 pkt 4",
+          "quote": "poleceń organów państwa, w którego przestrzeni powietrznej lot się odbywa, a także poleceń otrzymanych od jego państwowego statku powietrznego."
+        },
+        {
+          "src": "ICAO-DOC-7300",
+          "loc": "Article 3 bis(b)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 145 ust. 1",
+          "quote": "Nie wymagają uzyskania zezwolenia:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 145 ust. 1 pkt 1",
+          "quote": "międzynarodowe loty niehandlowe polskich cywilnych statków powietrznych;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 145 ust. 1 pkt 2",
+          "quote": "międzynarodowe nieregularne loty niehandlowe statków powietrznych państw stron Konwencji"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 144",
+          "quote": "Międzynarodowe loty handlowe obcych przewoźników lotniczych z lądowaniem handlowym na terytorium Rzeczypospolitej Polskiej wymagają uzyskania zezwolenia"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0349#235809fc",
+        "PL010-0349#98dc1994",
+        "PL010-0353#c5d35b88",
+        "PL010-0353#d0bdd70e",
+        "PL010-0571#67142ae9",
+        "PL010-0571#387ff122"
+      ],
+      "disputeNote": null
+    }
+  ]
+}

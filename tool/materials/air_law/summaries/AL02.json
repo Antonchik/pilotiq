@@ -1,0 +1,312 @@
+{
+  "topic": "AL02",
+  "sections": [
+    {
+      "id": "AL02-1",
+      "status": "draft",
+      "heading": "Prezes Urzędu Lotnictwa Cywilnego i rejestry lotnicze",
+      "body": [
+        "Centralnym organem administracji rządowej właściwym w sprawach lotnictwa cywilnego jest Prezes Urzędu Lotnictwa Cywilnego (art. 20 ust. 1 Prawa lotniczego). Należą do niego wszystkie sprawy związane z lotnictwem cywilnym, których ustawy lub umowy międzynarodowe nie zastrzegają dla ministra właściwego do spraw transportu lub innych organów (art. 21 ust. 1). Wśród jego zadań art. 21 ust. 2 wymienia m.in. nadzór nad eksploatacją statków powietrznych (pkt 5), sprawdzanie zdatności sprzętu lotniczego do lotów (pkt 6) i prowadzenie rejestrów (pkt 8):",
+        "- rejestr cywilnych statków powietrznych prowadzi Prezes Urzędu (art. 34 ust. 1); w drodze decyzji administracyjnej wpisuje statek do rejestru, zmienia dane rejestrowe, odmawia wpisania i wykreśla statek z rejestru (art. 34 ust. 1b), a sam rejestr jest jawny (art. 34 ust. 1a);",
+        "- organem prowadzącym rejestr podmiotów szkolących jest Prezes Urzędu (art. 95a ust. 3a);",
+        "- Prezes Urzędu prowadzi też rejestry lotnisk, lotniczych urządzeń naziemnych i personelu lotniczego (art. 21 ust. 2 pkt 8).",
+        "Wpisu do rejestru ani wykreślenia z niego nie dokonuje żaden minister."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 20 ust. 1",
+          "quote": "Centralnym organem administracji rządowej właściwym w sprawach lotnictwa cywilnego jest Prezes Urzędu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 21 ust. 1",
+          "quote": "Do kompetencji Prezesa Urzędu należą wszystkie sprawy związane z lotnictwem cywilnym, niezastrzeżone w niniejszej ustawie, innych ustawach oraz umowach międzynarodowych na rzecz ministra właściwego do spraw transportu lub innych organów administracji publicznej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 21 ust. 2 pkt 5",
+          "quote": "sprawowanie nadzoru nad eksploatacją statków powietrznych;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 21 ust. 2 pkt 6",
+          "quote": "sprawdzanie zdatności sprzętu lotniczego do lotów;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 21 ust. 2 pkt 8",
+          "quote": "prowadzenie rejestrów: statków powietrznych, lotnisk, lotniczych urządzeń naziemnych, personelu lotniczego, operatorów systemów bezzałogowych statków powietrznych, podmiotów szkolących"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 34 ust. 1",
+          "quote": "Rejestr cywilnych statków powietrznych, zwany dalej „rejestrem statków”, prowadzi Prezes Urzędu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 34 ust. 1b",
+          "quote": "Prezes Urzędu dokonuje, w drodze decyzji administracyjnej, wpisania statku powietrznego do rejestru statków, zmiany danych rejestrowych, odmowy wpisania i wykreślenia statku powietrznego z tego rejestru."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 34 ust. 1a",
+          "quote": "Rejestr statków jest jawny."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 95a ust. 3a",
+          "quote": "Organem prowadzącym rejestr podmiotów szkolących jest Prezes Urzędu."
+        }
+      ],
+      "questionKeys": [
+        "PL010-1544#e9b43d62",
+        "PL010-0048#144c0eb7",
+        "PL010-1554#8ed701f5",
+        "PL010-1550#43edacd4"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL02-2",
+      "status": "draft",
+      "heading": "Wpis do rejestru i dopuszczenie statku do lotów",
+      "body": [
+        "Do wykonywania lotów w przestrzeni powietrznej dopuszcza się wyłącznie cywilne statki powietrzne, które spełniają łącznie trzy warunki (art. 31 ust. 1 Prawa lotniczego):",
+        "- są wpisane do polskiego lub obcego rejestru cywilnych statków powietrznych;",
+        "- mają wymagane znaki rozpoznawcze;",
+        "- posiadają zdatność do lotów, potwierdzoną odpowiednimi dokumentami.",
+        "Obywatelstwo właściciela ani malowanie statku nie są warunkami dopuszczenia, a samo wykazanie, że statek może oderwać się od ziemi, nie zastępuje dokumentów zdatności.",
+        "Wpis do rejestru skutkuje z mocy prawa przynależnością państwową statku powietrznego i poddaniem go obowiązkowemu nadzorowi władz lotniczych państwa przynależności (art. 31 ust. 2). Wpis nie potwierdza zdatności do lotu: jest ona odrębnym warunkiem z art. 31 ust. 1 pkt 3. Jeżeli statek jest jednocześnie wpisany do rejestrów różnych państw obcych, uznaje się wyłącznie wpis najwcześniejszy (art. 31 ust. 4).",
+        "Użytkownikiem statku powietrznego jest jego właściciel lub inna osoba wpisana jako użytkownik do rejestru statków powietrznych (art. 2 pkt 3)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1",
+          "quote": "Do wykonywania lotów w przestrzeni powietrznej dopuszcza się, z zastrzeżeniem art. 33 ust. 2 i art. 156b ust. 3 pkt 1, wyłącznie cywilne statki powietrzne"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1 pkt 1",
+          "quote": "wpisane do polskiego lub obcego rejestru cywilnych statków powietrznych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1 pkt 2",
+          "quote": "mające wymagane znaki rozpoznawcze"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 1 pkt 3",
+          "quote": "posiadające zdatność do lotów, potwierdzoną odpowiednimi dokumentami"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 2",
+          "quote": "Wpis do rejestru cywilnych statków powietrznych skutkuje z mocy prawa przynależnością państwową statku powietrznego oraz pociąga za sobą poddanie statku powietrznego obowiązkowemu nadzorowi władz lotniczych państwa przynależności"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 31 ust. 4",
+          "quote": "Jeżeli statek powietrzny jest jednocześnie wpisany do rejestrów różnych państw obcych, uznaje się wyłącznie wpis, który nastąpił najwcześniej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 2 pkt 3",
+          "quote": "użytkownikiem statku powietrznego jest jego właściciel lub inna osoba wpisana jako użytkownik do rejestru statków powietrznych"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0048#a54a75b1",
+        "PL010-0073#3220cb22",
+        "PL010-0074#c64eb7fe",
+        "PL010-0075#e5916ce6",
+        "PL010-0484#b123db09"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL02-3",
+      "status": "draft",
+      "heading": "Zdatność do lotu: obowiązki użytkownika i załogi",
+      "body": [
+        "Użytkownik, dowódca i inni członkowie załogi statku powietrznego są obowiązani przestrzegać warunków i ograniczeń ustanowionych w świadectwie zdatności do lotu i w dokumentach z nim związanych (art. 51 ust. 1 Prawa lotniczego). Obowiązek dotyczy wszystkich tych osób jednocześnie, a nie tylko jednej z nich.",
+        "Użytkownik statku powietrznego oraz inne osoby wykonujące na jego zlecenie zadania związane z użytkowaniem, naprawami lub obsługą techniczną statku mają obowiązek zawiadamiania Prezesa Urzędu o wszelkich zdarzeniach i okolicznościach mogących mieć istotne znaczenie dla zdatności statku powietrznego do lotu (art. 51 ust. 2). Przepis:",
+        "- wskazuje jako adresata Prezesa Urzędu Lotnictwa Cywilnego, a nie ministra właściwego do spraw transportu ani EASA;",
+        "- nie ogranicza obowiązku do statków używanych w przewozie lub w szkoleniu lotniczym.",
+        "Sprawdzanie zdatności sprzętu lotniczego do lotów należy do zadań Prezesa Urzędu (art. 21 ust. 2 pkt 6)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 51 ust. 1",
+          "quote": "Użytkownik, dowódca i inni członkowie załogi statku powietrznego są obowiązani do przestrzegania warunków i ograniczeń ustanowionych w świadectwie zdatności do lotu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 51 ust. 2",
+          "quote": "Użytkownik statku powietrznego i inne osoby wykonujące na jego zlecenie zadania związane z użytkowaniem, naprawami lub obsługą techniczną statku powietrznego mają obowiązek zawiadamiania Prezesa Urzędu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 51 ust. 2",
+          "quote": "o wszelkich zdarzeniach i okolicznościach mogących mieć istotne znaczenie dla zdatności statku powietrznego do lotu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 21 ust. 2 pkt 6",
+          "quote": "sprawdzanie zdatności sprzętu lotniczego do lotów;"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0124#caa38600",
+        "PL010-0124#8cd3f3ce",
+        "PL010-0253#00a47f5d",
+        "PL010-0298#5a0017b5"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL02-4",
+      "status": "draft",
+      "heading": "Uznawanie obcych dokumentów zdatności",
+      "body": [
+        "Prezes Urzędu może uznać, zgodnie z art. 12 rozporządzenia 216/2008, za ważne, na równi z odpowiednimi dokumentami wydanymi w Rzeczypospolitej Polskiej, następujące dokumenty wydane lub potwierdzone przez właściwy organ obcego państwa (art. 52 ust. 2 Prawa lotniczego):",
+        "- świadectwa zdatności do lotu;",
+        "- zezwolenia na lot statku powietrznego bez świadectwa zdatności do lotu;",
+        "- certyfikaty.",
+        "Uznanie następuje w drodze decyzji administracyjnej (art. 52 ust. 3) wydawanej przez Prezesa Urzędu, a nie przez ministra właściwego do spraw transportu.",
+        "Przepis nie wymienia już osobno dokumentów potwierdzających spełnienie wymagań ochrony środowiska; mieszczą się one wśród certyfikatów wydanych lub potwierdzonych przez obcy organ. W zakresie niezastrzeżonym dla EASA spełnienie wymagań w zakresie ochrony środowiska przed hałasem i zanieczyszczeniami bada Prezes Urzędu (art. 53 ust. 1), a stwierdza je w świadectwie zdatności w zakresie hałasu, wydawanym w drodze decyzji administracyjnej (art. 53 ust. 2)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 52 ust. 2",
+          "quote": "Prezes Urzędu może uznać, zgodnie z art. 12 rozporządzenia nr 216/2008/WE, za ważne, na równi z odpowiednimi dokumentami wydanymi w Rzeczypospolitej Polskiej, świadectwa zdatności do lotu, zezwolenia na lot statku powietrznego bez świadectwa zdatności do lotu oraz certyfikaty"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 52 ust. 2",
+          "quote": "certyfikaty wydane lub potwierdzone przez właściwy organ obcego państwa"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 52 ust. 3",
+          "quote": "Uznanie, o którym mowa w ust. 2, następuje w drodze decyzji administracyjnej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 53 ust. 1",
+          "quote": "W zakresie niezastrzeżonym dla EASA Prezes Urzędu bada spełnienie wymagań, jakie powinny spełniać statki powietrzne w zakresie ochrony środowiska przed hałasem i zanieczyszczeniami ziemi, wody i powietrza"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 53 ust. 2",
+          "quote": "Prezes Urzędu stwierdza spełnienie wymagań, o których mowa w ust. 1, w świadectwie zdatności w zakresie hałasu wydawanym w drodze decyzji administracyjnej."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0494#14188538",
+        "PL010-0494#32aa5576",
+        "PL010-0495#4ff3e683",
+        "PL010-0495#d7cf6636",
+        "PL010-0496#41485c35",
+        "PL010-0496#55d1e3aa"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL02-5",
+      "status": "draft",
+      "heading": "Kontrola Prezesa Urzędu i inspekcja obcych statków",
+      "body": [
+        "Pracownikom Urzędu oraz innym osobom upoważnionym do przeprowadzenia kontroli przysługuje m.in. prawo (art. 27 ust. 3 Prawa lotniczego):",
+        "- przeprowadzania oględzin statku powietrznego (pkt 2) – przepis nie ogranicza ich do międzynarodowych portów lotniczych;",
+        "- dostępu do materiałów, dokumentów oraz innych danych niezbędnych do przeprowadzenia kontroli, a także sporządzania ich kopii (pkt 3);",
+        "- wykonywania czynności kontrolno-pomiarowych i badań statków powietrznych lub urządzeń wykorzystywanych do prowadzenia działalności lotniczej (pkt 4).",
+        "Czynności kontrolne przeprowadza się po doręczeniu upoważnienia do kontroli wydanego przez Prezesa Urzędu oraz po okazaniu legitymacji służbowej – w przypadku pracownika Urzędu (art. 27 ust. 5).",
+        "Obcy statek powietrzny przebywający na terytorium Rzeczypospolitej Polskiej oraz jego załoga mogą zostać poddane inspekcji, a ich dokumenty sprawdzone przez Prezesa Urzędu (art. 155 ust. 1), także bez uprzedniego poinformowania użytkownika statku (art. 155 ust. 4).",
+        "Klucz ULC w pytaniach o prawa kontrolujących przyjmuje, że pracownik Urzędu działa „tylko” po okazaniu legitymacji służbowej; aktualny art. 27 ust. 5 wymaga ponadto doręczenia upoważnienia."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 27 ust. 3",
+          "quote": "Pracownikom Urzędu oraz innym osobom upoważnionym do przeprowadzenia kontroli przysługuje prawo:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 27 ust. 3 pkt 2",
+          "quote": "przeprowadzania oględzin statku powietrznego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 27 ust. 3 pkt 3",
+          "quote": "dostępu do materiałów, dokumentów oraz innych danych niezbędnych do przeprowadzenia kontroli, a także sporządzania ich kopii"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 27 ust. 3 pkt 4",
+          "quote": "wykonywania czynności kontrolno-pomiarowych, badań statków powietrznych lub urządzeń wykorzystywanych do prowadzenia działalności lotniczej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 27 ust. 5",
+          "quote": "Czynności kontrolne przeprowadza się po doręczeniu upoważnienia do przeprowadzenia kontroli wydanego przez Prezesa Urzędu oraz po okazaniu, w celu ustalenia tożsamości:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 27 ust. 5 pkt 1",
+          "quote": "legitymacji służbowej – w przypadku pracownika Urzędu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 155 ust. 1",
+          "quote": "Obcy statek powietrzny przebywający na terytorium Rzeczypospolitej Polskiej oraz jego załoga mogą zostać poddane inspekcji, a ich dokumenty mogą być sprawdzane przez Prezesa Urzędu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 155 ust. 4",
+          "quote": "Inspekcja może być prowadzona bez uprzedniego poinformowania użytkownika statku o zamiarze jej przeprowadzenia."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0367#f5f25476",
+        "PL010-0376#2a6ddae1",
+        "PL010-0377#2db1c1d5",
+        "PL010-0378#f7026e20"
+      ],
+      "disputeNote": "Według aktualnego art. 27 ust. 5 Prawa lotniczego czynności kontrolne przeprowadza się po doręczeniu upoważnienia wydanego przez Prezesa Urzędu oraz po okazaniu legitymacji służbowej, więc słowo „tylko” w kluczu nie oddaje pełnych warunków. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL02-6",
+      "status": "draft",
+      "heading": "Lotnictwo ogólne i prace lotnicze",
+      "body": [
+        "Zgodnie z definicją w załączniku I do rozporządzenia 2017/373 lotnictwo ogólne oznacza wszelkie operacje lotnictwa cywilnego oprócz prac lotniczych lub zarobkowego transportu lotniczego. Prace lotnicze to operacje, podczas których statek powietrzny jest wykorzystywany do wykonywania usług specjalnych w takich dziedzinach, jak rolnictwo, budownictwo, fotografowanie, miernictwo, obserwacje i patrole, poszukiwanie i ratownictwo lub reklama lotnicza.",
+        "Poza lotnictwem ogólnym pozostają więc:",
+        "- zarobkowy transport lotniczy;",
+        "- prace lotnicze, czyli wykorzystanie statku powietrznego do usług specjalnych.",
+        "Klucz ULC w pytaniach o definicję lotnictwa ogólnego przyjmuje odpowiedź, która wyłącza z niego tylko zarobkowy transport lotniczy; aktualna definicja wyłącza także prace lotnicze."
+      ],
+      "refs": [
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 57",
+          "quote": "„lotnictwo ogólne” oznacza wszelkie operacje lotnictwa cywilnego oprócz prac lotniczych lub zarobkowego transportu lotniczego"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 2",
+          "quote": "„prace lotnicze” oznaczają operacje statku powietrznego, podczas których statek powietrzny jest wykorzystywany do wykonywania usług specjalnych w takich dziedzinach, jak rolnictwo, budownictwo, fotografowanie, miernictwo, obserwacje i patrole, poszukiwanie i ratownictwo lub reklama lotnicza"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0361#917d15cf",
+        "PL010-0361#bdafd792"
+      ],
+      "disputeNote": "Definicja w załączniku I pkt 57 do rozporządzenia 2017/373 wyłącza z lotnictwa ogólnego także prace lotnicze, czego odpowiedź z klucza nie wspomina; w jednym z wariantów pytania przy ścisłym czytaniu obronna jest też odpowiedź „Żadna z odpowiedzi nie jest prawidłowa”. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    }
+  ]
+}
