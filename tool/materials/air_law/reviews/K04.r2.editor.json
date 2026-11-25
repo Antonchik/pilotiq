@@ -1,0 +1,17 @@
+[
+ {
+  "key": "AL07-2",
+  "verdict": "PASS",
+  "note": "Poprawka z rundy 1 wprowadzona dosłownie: zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy, maksymalnie siedem godzin, oraz najwyżej 10 startów i lądowań, zgodnie z SFCL.130(b) i (b)(2). Refs zgodne z korpusem. 197 słów."
+ },
+ {
+  "key": "AL08-1",
+  "verdict": "PASS",
+  "note": "Poprawka z rundy 1 wprowadzona: zdanie o MED.A.045 usunięte razem z oboma refs. Sekcja kończy się na art. 106 ust. 1, a pozostała treść jest zgodna z art. 105 ust. 1, 1a i 4, art. 94 ust. 2 pkt 1 i art. 106 ust. 1. Bezpłatny przegląd nie zawiera już punktu spornego. 149 słów."
+ },
+ {
+  "key": "AL08-4",
+  "verdict": "PASS",
+  "note": "Poprawka z rundy 1 wprowadzona: punkt ograniczony do posiadaczy orzeczeń klasy 1 i 2. Dodany ref MED.A.020(c)(1) («posiadacze orzeczeń lekarskich 1. i 2. klasy zasięgają porady…») jest zgodny z korpusem. Osobny punkt o LAPL nie jest potrzebny, bo sekcja nie twierdzi już niczego o innych orzeczeniach. 198 słów."
+ }
+]

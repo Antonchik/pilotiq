@@ -97,11 +97,11 @@
  },
  "AL07-2": {
   "date": "2026-11-25",
-  "note": "Treść poparta SFCL.130(a)(1)–(2)(iii), BFCL.130, FCL.210(a), art. 2 pkt 16 i 24 oraz art. 10a ust. 1 rozp. 1178/2011, art. 21 ust. 2 pkt 5a i zał. 6. Nieprecyzyjne jest zdanie o zaliczeniu z SFCL.130(b): «uzyskuje zaliczenie 10 % czasu lotu jako pilot dowódca, najwyżej siedem godzin, ale najwyżej 10 startów i lądowań». Przepis mówi o 10 % «całkowitego czasu lotu w charakterze pilota dowódcy tego rodzaju statku powietrznego», a «ale» sugeruje, że limit startów ogranicza limit godzin. Zastąpić to zdanie tekstem: «Pilotowi z licencją na inną kategorię statków powietrznych (z wyjątkiem balonów) zalicza się 10 % całkowitego czasu lotu w charakterze pilota dowódcy na tych statkach powietrznych, maksymalnie siedem godzin; zaliczenie startów i lądowań nie może przekroczyć 10 (pkt SFCL.130 lit. b)).» Refs bez zmian (SFCL.130(b), SFCL.130(b)(2)); po zmianie 197 słów.",
+  "note": "Poprawka z rundy 1 wprowadzona dosłownie: zaliczenie 10 % całkowitego czasu lotu w charakterze pilota dowódcy, maksymalnie siedem godzin, oraz najwyżej 10 startów i lądowań, zgodnie z SFCL.130(b) i (b)(2). Refs zgodne z korpusem. 197 słów.",
   "portion": "K04",
-  "round": 1,
-  "textSha": "e2f5f845b8ed81f0",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "acdb120d90e93aeb",
+  "verdict": "PASS"
  },
  "AL07-3": {
   "date": "2026-11-25",
@@ -153,11 +153,11 @@
  },
  "AL08-1": {
   "date": "2026-11-25",
-  "note": "Art. 105 ust. 1, 1a (pkt 2 i 5), ust. 4, art. 94 ust. 2 pkt 1 i art. 106 ust. 1 zgodne z korpusem i z verified PL010-0020/0250/0096/0097/1551/0252. Ostatnie zdanie o okresach ważności (MED.A.045) wykracza poza temat sekcji («kogo dotyczą i kto przeprowadza») i jest niepełne: pomija zasadę 42 lat oraz okresy 24 i 12 miesięcy. Bezpłatny przegląd podaje też bez zastrzeżenia «60 miesięcy do 40 lat», podczas gdy klucz ULC w disputed PL010-0173 (sekcja AL08-3) przyjmuje 24 miesiące. Usunąć zdanie «Okres ważności orzeczenia zależy od klasy i wieku: orzeczenie klasy 2 jest ważne 60 miesięcy, dopóki posiadacz nie osiągnie 40 lat, a orzeczenie klasy 1 – 12 miesięcy (pkt MED.A.045 lit. a) rozporządzenia 1178/2011).» oraz refs MED.A.045(a)(3)(i) i MED.A.045(a)(1). Ostatni akapit kończy się wtedy na «(art. 106 ust. 1).»; po zmianie 149 słów. questionKeys bez zmian.",
+  "note": "Poprawka z rundy 1 wprowadzona: zdanie o MED.A.045 usunięte razem z oboma refs. Sekcja kończy się na art. 106 ust. 1, a pozostała treść jest zgodna z art. 105 ust. 1, 1a i 4, art. 94 ust. 2 pkt 1 i art. 106 ust. 1. Bezpłatny przegląd nie zawiera już punktu spornego. 149 słów.",
   "portion": "K04",
-  "round": 1,
-  "textSha": "bf4c2de1534bb049",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "44930aca0a92291f",
+  "verdict": "PASS"
  },
  "AL08-2": {
   "date": "2026-11-25",
@@ -177,11 +177,11 @@
  },
  "AL08-4": {
   "date": "2026-11-25",
-  "note": "Art. 105 ust. 2–3, MED.A.020(a)(1)–(2) i (b)(1), (2), (7) zgodne z korpusem i z verified PL010-0030/0049/0251/0026/0084/0085. Nadmierne uogólnienie: MED.A.020(c)(1), na który powołuje się sekcja, dotyczy tylko posiadaczy orzeczeń klasy 1 i 2. Dla posiadaczy orzeczenia na potrzeby LAPL (np. pilotów SPL) lit. c) ppkt 2 dopuszcza także lekarza medycyny ogólnej. Zastąpić punkt «- centrum medycyny lotniczej lub lekarz orzecznik ocenia wtedy jego sprawność i decyduje, czy może wznowić korzystanie z przywilejów (lit. c) ppkt 1).» tekstem: «- posiadacz orzeczenia klasy 1 lub 2 zasięga wtedy porady centrum medycyny lotniczej lub lekarza orzecznika, który ocenia jego sprawność i decyduje, czy może wznowić korzystanie z przywilejów (lit. c) ppkt 1).» Dodać ref {\"src\":\"EU-1178-2011\",\"loc\":\"MED.A.020(c)(1)\",\"quote\":\"posiadacze orzeczeń lekarskich 1. i 2. klasy zasięgają porady lotniczo-lekarskiej centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej\"} (cytat sprawdzony w korpusie). Po zmianie 197 słów.",
+  "note": "Poprawka z rundy 1 wprowadzona: punkt ograniczony do posiadaczy orzeczeń klasy 1 i 2. Dodany ref MED.A.020(c)(1) («posiadacze orzeczeń lekarskich 1. i 2. klasy zasięgają porady…») jest zgodny z korpusem. Osobny punkt o LAPL nie jest potrzebny, bo sekcja nie twierdzi już niczego o innych orzeczeniach. 198 słów.",
   "portion": "K04",
-  "round": 1,
-  "textSha": "25baba820815a897",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "50e42b7566b85026",
+  "verdict": "PASS"
  },
  "AL08-5": {
   "date": "2026-11-25",
@@ -265,11 +265,11 @@
  },
  "AL14-12": {
   "date": "2026-11-25",
-  "note": "Punkt o MINIMUM FUEL jest niepełny i niegramatyczny („obliczył, że inne opóźnienia…” – „inne” bez odniesienia) i pomija warunek z NCO.OP.185 lit. b) ppkt 1 (lot musi się zakończyć lądowaniem na określonym lotnisku). Zastąpić punkt tekstem: „- zgłasza służbie ATC stan „MINIMUM FUEL”, gdy lot musi się zakończyć lądowaniem na określonym lotnisku, a dowódca obliczył, że każde opóźnienie w ruchu lotniczym może spowodować lądowanie z mniejszą niż planowana ostateczną rezerwą paliwa (pkt NCO.OP.185 lit. b));”. Reszta zgodna z NCO.OP.125(a),(c) i NCO.OP.185(c).",
+  "note": "Punkt MINIMUM FUEL zawiera teraz oba warunki NCO.OP.185 lit. b) (ppkt 1: lot musi się zakończyć lądowaniem na określonym lotnisku; ppkt 2: opóźnienia mogą spowodować lądowanie poniżej planowanej ostatecznej rezerwy), oba w tekście kotwicy NCO.OP.185(b) już cytowanej w refs. 154 słowa, gramatyka poprawna, zgodne z verified PL099-0017.",
   "portion": "K08",
-  "round": 1,
-  "textSha": "8a11871f879b4de1",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "0974a8b35eea7e4c",
+  "verdict": "PASS"
  },
  "AL14-13": {
   "date": "2026-11-25",
@@ -329,11 +329,11 @@
  },
  "AL14-5": {
   "date": "2026-11-25",
-  "note": "Wewnętrzna sprzeczność: „Obowiązek istnieje więc zawsze, ale jest ograniczony…”, a następny akapit mówi, że obowiązek ustaje (art. 117 ust. 2); art. 117 ust. 1 też wiąże go z określonymi sytuacjami. Zamienić zdanie na: „Obowiązek więc istnieje, ale jest ograniczony bezpieczeństwem własnego statku i ludzi; przepis nie wymaga użycia „wszelkich środków”.” Reszta zgodna z art. 117 ust. 1–2 i verified wyjaśnieniami.",
+  "note": "Poprawka zastosowana dosłownie: „Obowiązek więc istnieje, ale jest ograniczony…” – sprzeczność z art. 117 ust. 2 usunięta. 145 słów, gramatyka poprawna, refs (art. 117 ust. 1 i ust. 2) bez zmian i zgodne z treścią.",
   "portion": "K08",
-  "round": 1,
-  "textSha": "7aac03b3519c3b6d",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "79b7e90eb196d38a",
+  "verdict": "PASS"
  },
  "AL14-6": {
   "date": "2026-11-25",

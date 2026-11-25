@@ -578,7 +578,7 @@
    "EU-1178-2011",
    "PL-PRAWO-LOTNICZE"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [],
    "aipNotSupplied": []
@@ -647,7 +647,7 @@
    "PL-PRAWO-LOTNICZE",
    "EASA-EAR-AIRCREW"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0374#3dbad0dc",
@@ -1272,7 +1272,7 @@
    "EU-923-2012",
    "EASA-EAR-AIROPS"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL099-0006#004109db",
