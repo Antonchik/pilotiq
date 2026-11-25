@@ -1,0 +1,623 @@
+{
+  "topic": "AL04",
+  "sections": [
+    {
+      "id": "AL04-1",
+      "status": "draft",
+      "heading": "Zawieszenie licencji – zasady",
+      "body": [
+        "Licencje, świadectwa kwalifikacji i wpisane do nich uprawnienia zawiesza, przywraca i cofa Prezes Urzędu Lotnictwa Cywilnego w drodze decyzji administracyjnej (art. 96 ust. 3 Prawa lotniczego). Zawieszenie licencji i wynikających z niej uprawnień lub niektórych wynikających z niej uprawnień ma charakter okresowy (art. 96 ust. 6) – nie jest ani stałe, ani dożywotnie.",
+        "Według § 11 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego, zawieszając licencję lub uprawnienie:",
+        "- określa się okres zawieszenia (pkt 1) – zawsze, niezależnie od tego, jak długo zawieszenie ma trwać;",
+        "- można wskazać termin i sposób spełnienia wymagań określonych w art. 96 ust. 1 ustawy, niezbędnych do przywrócenia zawieszonej licencji lub uprawnienia (pkt 2).",
+        "Po upływie okresu zawieszenia albo po spełnieniu tych wymagań zawieszoną licencję przywraca się na wniosek zainteresowanego członka personelu lotniczego (§ 12 ust. 1)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 3",
+          "quote": "Prezes Urzędu: 1) wydaje, zmienia, zawiesza, przywraca, cofa lub wznawia ważność, 2) uznaje, zawiesza uznanie, przywraca uznanie albo cofa uznanie – licencji, świadectw kwalifikacji lub uprawnień do nich wpisywanych w drodze decyzji administracyjnej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 6",
+          "quote": "Zawieszenie licencji i wynikających z niej uprawnień lub niektórych wynikających z niej uprawnień ma charakter okresowy."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 2",
+          "quote": "Zawieszając licencję lub uprawnienie:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 2 pkt 1",
+          "quote": "określa się okres zawieszenia;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 2 pkt 2",
+          "quote": "można wskazać termin i sposób spełnienia wymagań określonych w art. 96 ust. 1 ustawy niezbędnych do przywrócenia zawieszonej licencji lub uprawnienia."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 12 ust. 1",
+          "quote": "Zawieszoną licencję albo uprawnienie przywraca się na wniosek zainteresowanego członka personelu lotniczego, jeżeli upłynął okres zawieszenia lub zostały spełnione wymagania niezbędne do przywrócenia zawieszonej licencji lub uprawnienia określone zgodnie z § 11 ust. 2 pkt 2."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0042#a501ce5f",
+        "PL010-0064#da779a26",
+        "PL010-0064#5e3fc3f8"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-2",
+      "status": "draft",
+      "heading": "Przywrócenie zawieszonej licencji",
+      "body": [
+        "Zawieszoną licencję albo uprawnienie przywraca się na wniosek zainteresowanego członka personelu lotniczego, jeżeli (§ 12 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
+        "- upłynął okres zawieszenia albo",
+        "- zostały spełnione wymagania niezbędne do przywrócenia, określone przy zawieszeniu, czyli w decyzji o zawieszeniu (§ 11 ust. 2 pkt 2).",
+        "Do wniosku dołącza się kopię orzeczenia lotniczo-lekarskiego odpowiedniej klasy oraz dokumenty potwierdzające spełnienie wymagań niezbędnych do przywrócenia, jeżeli zostały one określone przy zawieszeniu (§ 12 ust. 2). Jeżeli okres zawieszenia upłynął, a członek personelu lotniczego nie spełnił tych wymagań, Prezes Urzędu cofa zawieszoną licencję lub uprawnienie (§ 12 ust. 3).",
+        "Decyzję o przywróceniu wydaje Prezes Urzędu (art. 96 ust. 3 pkt 1 Prawa lotniczego), ale przesłanką przywrócenia jest upływ okresu zawieszenia albo spełnienie wymagań, a nie zgoda Prezesa ULC, ministra czy organizacji szkolenia ani upływ terminu ważności licencji."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 12 ust. 1",
+          "quote": "Zawieszoną licencję albo uprawnienie przywraca się na wniosek zainteresowanego członka personelu lotniczego, jeżeli upłynął okres zawieszenia lub zostały spełnione wymagania niezbędne do przywrócenia zawieszonej licencji lub uprawnienia określone zgodnie z § 11 ust. 2 pkt 2."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 11 ust. 2 pkt 2",
+          "quote": "można wskazać termin i sposób spełnienia wymagań określonych w art. 96 ust. 1 ustawy niezbędnych do przywrócenia zawieszonej licencji lub uprawnienia."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 12 ust. 2",
+          "quote": "Do wniosku, o którym mowa w ust. 1, dołącza się kopię orzeczenia lotniczo-lekarskiego odpowiedniej klasy oraz dokumenty potwierdzające spełnienie wymagań niezbędnych do przywrócenia zawieszonej licencji lub uprawnienia, jeżeli zostały określone zgodnie z § 11 ust. 2 pkt 2."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 12 ust. 3",
+          "quote": "Jeżeli upłynął okres zawieszenia licencji lub uprawnienia, a członek personelu lotniczego nie spełnił wymagań niezbędnych do przywrócenia licencji lub uprawnienia, Prezes Urzędu cofa zawieszoną licencję lub uprawnienie."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 3 pkt 1",
+          "quote": "wydaje, zmienia, zawiesza, przywraca, cofa lub wznawia ważność"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0092#1e5b9b2b",
+        "PL010-0092#fd5d1346",
+        "PL010-0293#5a32789c",
+        "PL010-0293#e3345186"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-3",
+      "status": "draft",
+      "heading": "Przesłanki cofnięcia lub zawieszenia licencji",
+      "body": [
+        "Art. 100 ust. 1 Prawa lotniczego pozwala cofnąć albo zawiesić licencję lub wynikające z niej uprawnienia w przypadku stwierdzenia, że członek personelu lotniczego:",
+        "- uzyskał licencję lub uprawnienia w oparciu o sfałszowane dokumenty (pkt 1);",
+        "- sfałszował zapisy w licencji (pkt 2);",
+        "- utracił kwalifikacje wymagane do wykonywania określonych czynności lotniczych (pkt 3);",
+        "- wykonując czynności lotnicze, do których uprawnia go licencja, zagraża bezpieczeństwu ruchu lotniczego (pkt 4);",
+        "- wykonywał czynności lotnicze pod wpływem alkoholu lub środków odurzających (pkt 5).",
+        "Pkt ARA.FCL.250 lit. a) rozporządzenia 1178/2011 wymienia okoliczności, w których właściwy organ musi ograniczyć, zawiesić lub cofnąć licencję pilota, m.in. sfałszowanie przedłożonych dokumentów dowodowych, dziennika pokładowego lub rejestrów w licencji, korzystanie z przywilejów pod wpływem alkoholu lub narkotyków, niespełnienie obowiązujących wymagań operacyjnych oraz udowodnienie nadużycia lub nielegalnego wykorzystania certyfikatu (klucz ULC mówi o „upoważnieniu”). Według pkt FCL.070 lit. a) licencję można zawiesić lub cofnąć także wtedy, gdy pilot nie spełnia wymagań części FCL lub części medycznej. Brak opłaty lotniczej ani obywatelstwo nie są takimi przesłankami."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 1",
+          "quote": "Licencję lub wynikające z niej uprawnienia można cofnąć albo zawiesić w przypadku stwierdzenia, że członek personelu lotniczego:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 1 pkt 1",
+          "quote": "uzyskał licencję lub uprawnienia w oparciu o sfałszowane dokumenty"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 1 pkt 2",
+          "quote": "sfałszował zapisy w licencji lub poświadczył nieprawdę w dokumentach obsługi technicznej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 1 pkt 3",
+          "quote": "utracił kwalifikacje wymagane do wykonywania określonych czynności lotniczych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 1 pkt 4",
+          "quote": "wykonując czynności lotnicze, do których uprawnia go licencja, zagraża bezpieczeństwu ruchu lotniczego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 1 pkt 5",
+          "quote": "wykonywał czynności lotnicze pod wpływem alkoholu lub środków odurzających"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.FCL.250(a)",
+          "quote": "Właściwy organ, w stosownych przypadkach, musi ograniczyć, zawiesić lub cofnąć licencję pilota i powiązane uprawnienia lub certyfikaty zgodnie z ARA.GEN.355 między innymi w następujących okolicznościach:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.FCL.250(a)(1)",
+          "quote": "uzyskania licencji pilota, uprawnienia lub certyfikatu poprzez sfałszowanie przedłożonych dokumentów dowodowych"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.FCL.250(a)(2)",
+          "quote": "sfałszowania dziennika pokładowego oraz rejestrów w licencji lub certyfikacie"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.FCL.250(a)(4)",
+          "quote": "korzystania z przywilejów wynikających z posiadania licencji, uprawnienia lub certyfikatu pod wpływem alkoholu lub narkotyków"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.FCL.250(a)(5)",
+          "quote": "niespełnienia obowiązujących wymagań operacyjnych"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.FCL.250(a)(6)",
+          "quote": "udowodnienia nadużycia lub nielegalnego wykorzystania certyfikatu"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.070(a)",
+          "quote": "mogą być ograniczane, zawieszane lub cofane przez właściwy organ w przypadku gdy pilot nie spełnia wymagań niniejszej części, części medycznej lub stosownych wymogów operacyjnych"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0211#b2fb296c",
+        "PL010-0212#0ab26e7f",
+        "PL010-0213#c36ad9cd",
+        "PL010-0214#4b2e656a",
+        "PL010-0215#5ab6c893",
+        "PL010-0216#f40419d1",
+        "PL010-1563#1e271f4a",
+        "PL010-1564#73bd55d0"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-4",
+      "status": "draft",
+      "heading": "Zawieszenie i zatrzymanie licencji na czas postępowania",
+      "body": [
+        "W przypadku uzasadnionego podejrzenia zaistnienia okoliczności z art. 100 ust. 1 Prawa lotniczego Prezes Urzędu może zawiesić licencję i zatrzymać ją na czas trwania postępowania administracyjnego w przedmiocie zawieszenia albo cofnięcia licencji (art. 100 ust. 3). Przepis ten stosuje się odpowiednio do uprawnień wpisywanych do licencji.",
+        "Gdy postępowanie w celu stwierdzenia, czy zaistniały okoliczności z ust. 1, prowadzą uprawnione organy państwowe, Prezes Urzędu może na czas tego postępowania zawiesić licencję i zatrzymać ją, jeżeli istnieje uzasadniona obawa, że dalsze wykonywanie czynności lotniczych może zagrażać bezpieczeństwu lotów, a organ prowadzący postępowanie nie zatrzymał tego dokumentu (art. 100 ust. 4).",
+        "Obecny art. 100 nie wymienia wprost badania Państwowej Komisji Badania Wypadków Lotniczych, o które pytają pytania ULC. Odpowiedź z klucza – pilot był pod wpływem alkoholu albo narkotyków – wynika z przesłanki z art. 100 ust. 1 pkt 5; narkotyki wymienia wprost pkt ARA.FCL.250 lit. a) ppkt 4 rozporządzenia 1178/2011."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 3",
+          "quote": "W przypadku uzasadnionego podejrzenia zaistnienia okoliczności, o których mowa w ust. 1, Prezes Urzędu może zawiesić licencję i zatrzymać ją na czas trwania postępowania administracyjnego w przedmiocie zawieszenia albo cofnięcia licencji."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 3",
+          "quote": "Przepis ten stosuje się odpowiednio do zawieszenia uprawnień wpisywanych do licencji."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 4",
+          "quote": "na czas prowadzenia tego postępowania Prezes Urzędu może zawiesić licencję i zatrzymać ją, jeżeli istnieje uzasadniona obawa, że dalsze wykonywanie czynności lotniczych może zagrażać bezpieczeństwu lotów, a organ prowadzący postępowanie nie zatrzymał tego dokumentu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 4",
+          "quote": "W przypadku postępowania prowadzonego przez uprawnione organy państwowe w celu stwierdzenia, czy zaistniały okoliczności, o których mowa w ust. 1"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 1 pkt 5",
+          "quote": "wykonywał czynności lotnicze pod wpływem alkoholu lub środków odurzających"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "ARA.FCL.250(a)(4)",
+          "quote": "korzystania z przywilejów wynikających z posiadania licencji, uprawnienia lub certyfikatu pod wpływem alkoholu lub narkotyków"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0230#3b2952f0",
+        "PL010-0231#c0b53fe6"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-5",
+      "status": "draft",
+      "heading": "Zwrot zawieszonej lub cofniętej licencji",
+      "body": [
+        "W przypadku zawieszenia lub cofnięcia licencji pilot niezwłocznie zwraca swoją licencję właściwemu organowi (FCL.070 lit. b) rozporządzenia 1178/2011). Posiadacze licencji SPL i BPL zwracają licencję niezwłocznie w przypadku ograniczenia, zawieszenia lub cofnięcia licencji, przywileju, uprawnienia lub certyfikatu (SFCL.070 lit. b) rozporządzenia 2018/1976, BFCL.070 lit. b) rozporządzenia 2018/395).",
+        "- W Polsce licencje i wpisane do nich uprawnienia zawiesza i cofa Prezes Urzędu Lotnictwa Cywilnego (art. 96 ust. 3 Prawa lotniczego), dlatego licencję przekazuje się jemu.",
+        "- Zastrzeżenie „chyba że licencja została już uprzednio zatrzymana” wiąże się z art. 100 ust. 3: Prezes Urzędu może zawiesić licencję i zatrzymać ją na czas postępowania.",
+        "- Przy zawieszeniu samego uprawnienia zwrot licencji przewidują wprost pkt SFCL.070 lit. b) i BFCL.070 lit. b); pkt FCL.070 lit. b) mówi o zawieszeniu lub cofnięciu licencji."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.070(b)",
+          "quote": "W przypadku zawieszenia lub cofnięcia licencji pilota niezwłocznie zwraca on swoją licencję lub certyfikat właściwemu organowi."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.070(b)",
+          "quote": "W przypadku ograniczenia, zawieszenia lub cofnięcia ich licencji, przywileju, uprawnienia lub certyfikatu posiadacze licencji SPL niezwłocznie zwracają licencję lub certyfikat właściwemu organowi."
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "BFCL.070(b)",
+          "quote": "W przypadku ograniczenia, zawieszenia lub cofnięcia ich licencji, przywileju, uprawnienia lub certyfikatu posiadacze licencji BPL niezwłocznie zwracają licencję lub certyfikat właściwemu organowi."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 3 pkt 1",
+          "quote": "wydaje, zmienia, zawiesza, przywraca, cofa lub wznawia ważność"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 100 ust. 3",
+          "quote": "Prezes Urzędu może zawiesić licencję i zatrzymać ją na czas trwania postępowania administracyjnego w przedmiocie zawieszenia albo cofnięcia licencji."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0176#1a6471ac",
+        "PL010-0177#13ff03fc",
+        "PL010-0232#7fcbbfdb"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-6",
+      "status": "draft",
+      "heading": "Wymiana licencji",
+      "body": [
+        "Licencja podlega wymianie m.in. (§ 10 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
+        "- po uzyskaniu uprawnienia wpisywanego do licencji (pkt 1);",
+        "- po wznowieniu lub przywróceniu ważności uprawnienia, które uprzednio nie było wpisane do licencji (pkt 3);",
+        "- w razie zmiany danych osobowych wpisywanych do licencji (pkt 5);",
+        "- w razie konieczności sprostowania błędu (pkt 6);",
+        "- w razie uszkodzenia dokumentu licencji (pkt 8).",
+        "Wymiany dokonuje się na wniosek złożony do Prezesa Urzędu albo z urzędu (§ 10 ust. 2). W wyniku wymiany Prezes Urzędu wydaje nowy dokument licencji, do którego wpisuje się wyłącznie ważne uprawnienia (§ 10 ust. 3). W razie utraty lub zniszczenia dokumentu licencji wydaje się duplikat (§ 10 ust. 5). Upływ 3 lub 5 lat od wydania licencji, opłata lotnicza ani uzyskanie świadectwa kwalifikacji nie są przypadkami wymiany."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 1",
+          "quote": "Licencja podlega wymianie:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 1 pkt 1",
+          "quote": "po uzyskaniu uprawnienia wpisywanego do licencji;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 1 pkt 3",
+          "quote": "po wznowieniu lub przywróceniu ważności uprawnienia, o którym mowa w pkt 1, które uprzednio nie było wpisane do licencji;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 1 pkt 5",
+          "quote": "w razie zmiany danych osobowych wpisywanych do licencji;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 1 pkt 6",
+          "quote": "w razie konieczności sprostowania błędu;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 1 pkt 8",
+          "quote": "w razie uszkodzenia dokumentu licencji;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 2",
+          "quote": "Wymiany licencji dokonuje się na wniosek złożony do Prezesa Urzędu albo z urzędu."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 3",
+          "quote": "W wyniku wymiany licencji Prezes Urzędu wydaje nowy dokument licencji, do którego wpisuje się wyłącznie ważne uprawnienia"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 5 pkt 2",
+          "quote": "jest wydawany duplikat dokumentu"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0091#0aba6593",
+        "PL010-0196#a4aa63bb",
+        "PL010-0197#27d9f967",
+        "PL010-0197#ada8f876",
+        "PL010-0198#c6e46946"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-7",
+      "status": "draft",
+      "heading": "Skreślenie z rejestru personelu lotniczego",
+      "body": [
+        "Rejestr personelu lotniczego prowadzi Prezes Urzędu (art. 102 Prawa lotniczego). Skreślenie członka personelu lotniczego z rejestru następuje tylko w dwóch przypadkach (§ 43 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego):",
+        "- w razie śmierci albo uznania członka personelu lotniczego za zmarłego (pkt 1);",
+        "- w razie cofnięcia wszystkich licencji (pkt 2).",
+        "Teczkę osobową członka personelu lotniczego skreślonego z rejestru przechowuje się w rejestrze przez okres (§ 43 ust. 2):",
+        "- 3 lat następujących po roku śmierci (pkt 1);",
+        "- 10 lat następujących po roku, w którym członek personelu lotniczego został uznany za zmarłego (pkt 2);",
+        "- 5 lat następujących po roku, w którym decyzja o cofnięciu ostatniej licencji stała się ostateczna (pkt 3).",
+        "Te okresy dotyczą przechowywania teczki osobowej, a nie przesłanek skreślenia z rejestru."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 102",
+          "quote": "Prezes Urzędu prowadzi rejestr personelu lotniczego."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 43 ust. 1",
+          "quote": "Skreślenie członka personelu lotniczego z rejestru następuje:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 43 ust. 1 pkt 1",
+          "quote": "w razie śmierci albo uznania członka personelu lotniczego za zmarłego;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 43 ust. 1 pkt 2",
+          "quote": "w razie cofnięcia wszystkich licencji."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 43 ust. 2",
+          "quote": "Teczkę osobową członka personelu lotniczego skreślonego z rejestru przechowuje się w rejestrze przez okres:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 43 ust. 2 pkt 1",
+          "quote": "3 lat następujących po roku, w którym nastąpiła śmierć członka personelu lotniczego;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 43 ust. 2 pkt 2",
+          "quote": "10 lat następujących po roku, w którym członek personelu lotniczego został uznany za zmarłego;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 43 ust. 2 pkt 3",
+          "quote": "5 lat następujących po roku, w którym decyzja o cofnięciu ostatniej licencji stała się ostateczna."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0291#f75bd0e6",
+        "PL010-0292#cf5ee909",
+        "PL010-0292#e82d22d4"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-8",
+      "status": "draft",
+      "heading": "Kto sprawdza wiedzę i umiejętności lotnicze",
+      "body": [
+        "Sprawdzenie kwalifikacji lotniczych dotyczące m.in. licencji PPL, SPL, BPL i LAPL odbywa się zgodnie z częścią FCL rozporządzenia 1178/2011, z uwzględnieniem § 32, 34 i 35 rozporządzenia w sprawie licencjonowania personelu lotniczego (§ 31). Sprawdzanie kwalifikacji następuje m.in. (§ 32 ust. 1):",
+        "- przed wydaniem licencji lub uprawnienia (pkt 2);",
+        "- w celu przedłużenia albo wznowienia ważności uprawnienia (pkt 3);",
+        "- jeżeli licencję zawieszono z powodu uzasadnionego przypuszczenia, że członek personelu lotniczego nie posiada wymaganej wiedzy lub umiejętności, w szczególności w wyniku badania wypadku albo incydentu lotniczego lub wykonywania czynności nadzoru lotniczego (pkt 5).",
+        "W tych przypadkach sprawdzenia dokonuje się w formie egzaminu teoretycznego lub egzaminu praktycznego (§ 34 ust. 2), a egzamin państwowy składa się przed komisją egzaminacyjną (art. 99 ust. 1 Prawa lotniczego). Członków komisji powołuje Prezes Urzędu (art. 99 ust. 2), a Prawo lotnicze mówi o egzaminach przeprowadzanych przez Prezesa Urzędu (art. 26a ust. 1 pkt 5). Dlatego w zależności od wariantu pytania klucz ULC wskazuje komisję egzaminacyjną (dawniej „Lotnicza Komisja Egzaminacyjna”) albo Prezesa ULC."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 31",
+          "quote": "dotyczące licencji, o których mowa w § 3 ust. 1 pkt 1 oraz ust. 2, odbywa się zgodnie z przepisami załącznika I (Część FCL) do rozporządzenia nr 1178/2011, z uwzględnieniem § 32, 34 i 35"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 1 pkt 1",
+          "quote": "PPL(A), CPL(A), ATPL(A), MPL, PPL(H), CPL(H), ATPL(H), SPL, PPL(AS), CPL(AS), BPL;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 2",
+          "quote": "Przepisy rozporządzenia stosuje się również do LAPL(A), LAPL(B), LAPL(H) i LAPL(S), o których mowa w rozporządzeniu nr 1178/2011."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 32 ust. 1 pkt 2",
+          "quote": "przed wydaniem licencji lub uprawnienia;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 32 ust. 1 pkt 3",
+          "quote": "w celu przedłużenia albo wznowienia ważności uprawnienia;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 32 ust. 1 pkt 5",
+          "quote": "jeżeli licencja została zawieszona na skutek powstania uzasadnionego przypuszczenia, że członek personelu lotniczego nie posiada wymaganej wiedzy lub umiejętności, w szczególności w wyniku badania wypadku albo incydentu lotniczego lub wykonywania czynności nadzoru lotniczego."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 34 ust. 2",
+          "quote": "Sprawdzenia kwalifikacji lotniczych w przypadkach, o których mowa w § 32 ust. 1 pkt 2–5, dokonuje się w formie egzaminu teoretycznego lub egzaminu praktycznego."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 99 ust. 1",
+          "quote": "Warunkiem uzyskania licencji jest pozytywny wynik egzaminu państwowego składającego się z części teoretycznej lub praktycznej, złożonego przed komisją egzaminacyjną"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 99 ust. 2",
+          "quote": "Prezes Urzędu powołuje członków komisji egzaminacyjnej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 26a ust. 1 pkt 5",
+          "quote": "5) przeprowadzane przez Prezesa Urzędu egzaminy,"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0112#12b21234",
+        "PL010-0112#2321b2d3",
+        "PL010-0113#12b21234",
+        "PL010-0113#2321b2d3",
+        "PL010-0113#a35f2f7b",
+        "PL010-0114#0eae3bbb",
+        "PL010-0114#12b21234",
+        "PL010-0114#2321b2d3",
+        "PL010-0115#249116a6",
+        "PL010-0115#56d1d694",
+        "PL010-0116#65a3f975",
+        "PL010-0116#e13918bd",
+        "PL010-0117#811ddf60",
+        "PL010-0117#d1eefb72",
+        "PL010-0118#9470cfc0",
+        "PL010-0118#a9aa22f8"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-9",
+      "status": "draft",
+      "heading": "Niezaliczona kontrola umiejętności",
+      "body": [
+        "Gdy kandydat nie zaliczy kontroli umiejętności, np. w celu przedłużenia uprawnienia, egzaminator (FCL.1030 lit. b) rozporządzenia 1178/2011):",
+        "- informuje kandydata, że do czasu uzyskania pełnego zaliczenia nie może on korzystać z przywilejów danego uprawnienia (ppkt 1);",
+        "- podaje szczegółowe informacje o wszelkich dalszych wymaganiach dotyczących szkolenia (ppkt 1);",
+        "- odnotowuje w sprawozdaniu powody wydania oceny negatywnej (ppkt 3 (ii)).",
+        "Klucz ULC opisuje to wcześniejszymi określeniami: w „protokole sprawdzenia wiadomości i umiejętności lotniczych” wskazuje się zakres dodatkowego szkolenia niezbędnego do „przywrócenia uprawnienia”. Obecny tekst mówi o sprawozdaniu z kontroli umiejętności i o dalszych wymaganiach szkoleniowych, które egzaminator przekazuje kandydatowi. Sens odpowiedzi z klucza się nie zmienia: kandydat dowiaduje się, jakie szkolenie musi odbyć przed ponowną kontrolą."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.1030(b)(1)",
+          "quote": "W przypadku częściowego zaliczenia lub niezaliczenia egzaminator informuje kandydata o tym, że nie może on korzystać z przywilejów danego uprawnienia do czasu uzyskania pełnego zaliczenia."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.1030(b)(1)",
+          "quote": "Egzaminator podaje szczegółowe informacje o wszelkich dalszych wymaganiach dotyczących szkolenia"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.1030(b)(3)(ii)",
+          "quote": "W przypadku niezaliczenia którejkolwiek z części egzaminator odnotowuje powody wydania takiej oceny"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0338#ef577b97",
+        "PL010-0617#ef577b97"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-10",
+      "status": "draft",
+      "heading": "Dokumenty do wniosku o wydanie licencji",
+      "body": [
+        "Licencję lub uprawnienie wydaje się na wniosek złożony do Prezesa Urzędu, a do wniosku dołącza się kopie dokumentów potwierdzających spełnienie wymagań niezbędnych do wydania licencji lub uprawnienia (§ 9 rozporządzenia w sprawie licencjonowania personelu lotniczego). Wymagania te wynikają z art. 96 ust. 1 Prawa lotniczego i obejmują m.in.:",
+        "- sprawność psychiczną i fizyczną potwierdzoną orzeczeniem o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych (pkt 5);",
+        "- ukończenie szkolenia lotniczego, praktykę lotniczą oraz posiadaną wiedzę i umiejętności (pkt 6).",
+        "W pytaniu o nową licencję po utracie ważności poprzedniej prawidłowa jest więc odpowiedź wymieniająca wszystkie trzy rodzaje dokumentów: o sprawności psychicznej i fizycznej, o praktyce lotniczej oraz o szkoleniu teoretycznym i praktycznym. Obecne przepisy nie przewidują osobnej procedury wydania nowej licencji po utracie ważności poprzedniej, a ważność licencji zależy od badań lotniczo-lekarskich i utrzymania wiadomości i umiejętności (art. 98 ust. 2)."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 9 ust. 1",
+          "quote": "Licencję lub uprawnienie wydaje się na wniosek złożony do Prezesa Urzędu."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 9 ust. 2",
+          "quote": "Do wniosku, o którym mowa w ust. 1, dołącza się kopie dokumentów potwierdzających spełnienie wymagań niezbędnych do wydania licencji lub uprawnienia."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 5",
+          "quote": "odpowiada wymaganiom w zakresie sprawności psychicznej i fizycznej, określonym na podstawie art. 104 ust. 2, potwierdzonym orzeczeniem o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych, o którym mowa w art. 110;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 6",
+          "quote": "dotyczące ukończenia szkolenia lotniczego, praktyki lotniczej oraz posiadanej wiedzy i umiejętności;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 98 ust. 2",
+          "quote": "Ważność licencji jest uzależniona od wyniku okresowego sprawdzenia sprawności psychicznej i fizycznej członka personelu lotniczego, stwierdzonej w badaniach lotniczo-lekarskich"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0345#f3fbf88f"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL04-11",
+      "status": "draft",
+      "heading": "Opłata lotnicza za wydanie licencji",
+      "body": [
+        "Opłacie lotniczej podlegają m.in. wydawane przez Prezesa Urzędu Lotnictwa Cywilnego licencje i inne dokumenty (art. 26a ust. 1 pkt 4 Prawa lotniczego) oraz przeprowadzane przez niego egzaminy (pkt 5). Opłatę pobiera się od podmiotu występującego o wydanie dokumentu (art. 26a ust. 6 pkt 1). Na tej ogólnej zasadzie opiera się klucz ULC „Zawsze tak” w pytaniu, czy wydanie nowej licencji podlega opłacie lotniczej.",
+        "Prawo lotnicze przewiduje jednak wyjątki:",
+        "- nie pobiera się opłat lotniczych od pracowników Urzędu, gdy uzyskiwane kwalifikacje lub uprawnienia są niezbędne do realizowania ich zadań na zajmowanym stanowisku (art. 26a ust. 7);",
+        "- nie pobiera się opłaty za czynności urzędowe wykonane w wyniku postępowania wszczętego z urzędu (art. 26h ust. 3), np. przy wymianie licencji z urzędu (§ 10 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego).",
+        "Klucz ULC przyjmuje „Zawsze tak”; aktualne przepisy przewidują od tej zasady wyjątki."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 26a ust. 1 pkt 4",
+          "quote": "wydawane przez Prezesa Urzędu koncesje, zezwolenia, promesy, licencje"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 26a ust. 1 pkt 5",
+          "quote": "5) przeprowadzane przez Prezesa Urzędu egzaminy,"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 26a ust. 6 pkt 1",
+          "quote": "są pobierane od podmiotów występujących o dokonanie czynności lub wydanie dokumentów wymienionych w tych przepisach"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 26a ust. 7",
+          "quote": "Nie pobiera się opłat lotniczych od pracowników Urzędu, w przypadku gdy uzyskiwane przez nich kwalifikacje lub uprawnienia do wykonywania czynności lotniczych są niezbędne do realizowania przez nich zadań na zajmowanym stanowisku."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 26h ust. 3",
+          "quote": "Nie pobiera się opłaty lotniczej za czynności urzędowe wykonane w wyniku postępowania wszczętego z urzędu."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 10 ust. 2",
+          "quote": "Wymiany licencji dokonuje się na wniosek złożony do Prezesa Urzędu albo z urzędu."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0603#c424caf0"
+      ],
+      "disputeNote": "Prawo lotnicze przewiduje wyjątki: nie pobiera się opłat od pracowników Urzędu, gdy kwalifikacje są niezbędne na ich stanowisku (art. 26a ust. 7), ani za czynności w postępowaniu wszczętym z urzędu (art. 26h ust. 3), np. wymianę licencji z urzędu (§ 10 ust. 2 rozporządzenia o licencjonowaniu). Odpowiedź „Nie zawsze” też ma oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    }
+  ]
+}

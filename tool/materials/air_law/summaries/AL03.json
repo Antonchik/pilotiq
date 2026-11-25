@@ -1,0 +1,710 @@
+{
+  "topic": "AL03",
+  "sections": [
+    {
+      "id": "AL03-1",
+      "status": "draft",
+      "heading": "Personel lotniczy, licencja i świadectwo kwalifikacji",
+      "body": [
+        "Członkiem personelu lotniczego jest osoba, która posiada ważną licencję lub świadectwo kwalifikacji i jest wpisana do państwowego rejestru personelu lotniczego lub innego odpowiedniego rejestru prowadzonego zgodnie z odrębnymi przepisami (art. 94 ust. 2 pkt 1 Prawa lotniczego). Członkiem personelu lotniczego jest więc np. posiadacz licencji pilota turystycznego (PPL) z części FCL rozporządzenia 1178/2011.",
+        "- Licencja jest świadectwem stwierdzającym posiadanie określonych kwalifikacji oraz dowodem upoważnienia do wykonywania określonych czynności lotniczych (art. 94 ust. 3). Łączy więc potwierdzenie kwalifikacji z upoważnieniem do czynności lotniczych, nie tylko do lotów.",
+        "- Licencje wydaje się odrębnie dla każdego rodzaju specjalności członków personelu lotniczego (art. 94 ust. 4).",
+        "- Świadectwo kwalifikacji to dokument stwierdzający posiadanie określonych kwalifikacji i upoważniający do wykonywania określonych czynności lotniczych (art. 95 ust. 1).",
+        "Członek personelu pokładowego, który wykonuje czynności na podstawie świadectwa dopuszczenia do pracy (art. 95g ust. 1), jest według art. 2 pkt 11 rozporządzenia 1178/2011 członkiem załogi niebędącym członkiem personelu lotniczego."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 2 pkt 1",
+          "quote": "ważną licencję lub świadectwo kwalifikacji i jest wpisana do państwowego rejestru personelu lotniczego lub innego odpowiedniego rejestru prowadzonego zgodnie z odrębnymi przepisami"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(b)(4)",
+          "quote": "licencji pilota turystycznego (PPL)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 3",
+          "quote": "Licencja jest świadectwem stwierdzającym posiadanie określonych kwalifikacji oraz dowodem upoważnienia do wykonywania określonych czynności lotniczych."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 4",
+          "quote": "Licencje wydaje się odrębnie dla każdego rodzaju specjalności członków personelu lotniczego."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 95 ust. 1",
+          "quote": "Świadectwem kwalifikacji jest dokument stwierdzający posiadanie określonych kwalifikacji i upoważniający do wykonywania określonych czynności lotniczych."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 95g ust. 1",
+          "quote": "Czynności członków personelu pokładowego na statku powietrznym wykonują osoby posiadające ważne świadectwo dopuszczenia do pracy"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "art. 2 pkt 11",
+          "quote": "„członek personelu pokładowego” oznacza odpowiednio wykwalifikowanego członka załogi, niebędącego członkiem personelu lotniczego ani technicznego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0027#2747cb98",
+        "PL010-0047#f4230c61",
+        "PL010-0119#9e45a40b",
+        "PL010-0119#0814319b",
+        "PL010-0120#4b071eff"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL03-2",
+      "status": "draft",
+      "heading": "Kto może wykonywać loty i czynności lotnicze",
+      "body": [
+        "Do wykonywania lotów i innych czynności lotniczych są uprawnieni wyłącznie członkowie personelu lotniczego, członkowie personelu pokładowego, o których mowa w art. 2 pkt 11 rozporządzenia 1178/2011, oraz inne osoby wymienione w art. 94 ust. 1 Prawa lotniczego, m.in. osoby uczestniczące w szkoleniu lotniczym prowadzonym zgodnie z przepisami wydanymi na podstawie art. 104. Samo przebywanie na pokładzie statku powietrznego ani w kabinie załogi takiego uprawnienia nie daje.",
+        "Art. 97 ust. 1 zabrania:",
+        "- wykonywania czynności lotniczych przez osobę nieposiadającą licencji lub świadectwa kwalifikacji, o ile ich posiadanie jest wymagane (pkt 1);",
+        "- wykonywania przez członka personelu lotniczego czynności lotniczych nieobjętych jego licencją lub świadectwem kwalifikacji albo niezgodnie z warunkami w nich określonymi (pkt 2 lit. a i b).",
+        "Zakazy te nie dotyczą szkolenia lotniczego ani części praktycznej egzaminu państwowego (art. 97 ust. 2).",
+        "Klucz ULC w pytaniach „Kto jest uprawniony do wykonywania lotów?” przyjmuje jedną grupę (członków personelu lotniczego albo uczestników szkolenia); aktualny art. 94 ust. 1 wymienia obok nich także członków personelu pokładowego."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 1",
+          "quote": "Do wykonywania lotów i innych czynności lotniczych są uprawnieni wyłącznie członkowie personelu lotniczego, członkowie personelu pokładowego, o których mowa w art. 2 pkt 11 rozporządzenia nr 1178/2011/UE, osoby uczestniczące w szkoleniu lotniczym prowadzonym zgodnie z przepisami"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 1",
+          "quote": "osoby uczestniczące w szkoleniu lotniczym prowadzonym zgodnie z przepisami wydanymi na podstawie art. 104 ust. 1 pkt 4 lit. e"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 97 ust. 1 pkt 1",
+          "quote": "wykonywania czynności lotniczych przez osobę nieposiadającą licencji lub świadectwa kwalifikacji, o ile posiadanie licencji lub świadectwa kwalifikacji do wykonywania czynności lotniczych jest wymagane"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 97 ust. 1 pkt 2",
+          "quote": "2) wykonywania przez członka personelu lotniczego: a) czynności lotniczych nieobjętych jego licencją lub świadectwem kwalifikacji, b) czynności lotniczych niezgodnie z warunkami określonymi w licencji lub w świadectwach kwalifikacji."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 97 ust. 2",
+          "quote": "Zakazy określone w ust. 1 nie dotyczą szkolenia lotniczego oraz części praktycznej egzaminu państwowego."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0125#abdfb055",
+        "PL010-0125#b99bd9f8",
+        "PL010-0126#a1174e7b",
+        "PL010-0126#c597dbc0",
+        "PL010-0126#e2be34a7",
+        "PL010-0239#ec6a907c",
+        "PL010-0239#aee8b1f2"
+      ],
+      "disputeNote": "Aktualne brzmienie art. 94 ust. 1 Prawa lotniczego wymienia wśród uprawnionych do wykonywania lotów także członków personelu pokładowego, o których mowa w art. 2 pkt 11 rozporządzenia 1178/2011, więc odpowiedź „Członkowie personelu pokładowego” też ma oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL03-3",
+      "status": "draft",
+      "heading": "Specjalności z licencją i ze świadectwem kwalifikacji",
+      "body": [
+        "Art. 94 ust. 6 Prawa lotniczego wymienia specjalności personelu lotniczego, dla których wymagane są licencje:",
+        "- personel wchodzący w skład załóg statków powietrznych (pkt 1 lit. a–s): piloci, m.in. pilot samolotowy turystyczny (lit. b) i zawodowy (lit. c), pilot śmigłowcowy liniowy (lit. i), pilot wiatrakowcowy turystyczny (lit. j), pilot sterowcowy zawodowy (lit. m), pilot balonowy (lit. o) i pilot szybowcowy (lit. q), a także nawigator lotniczy i mechanik pokładowy;",
+        "- mechanik lotniczy obsługi technicznej (pkt 3), kontroler ruchu lotniczego (pkt 4) i dyspozytor lotniczy (pkt 5) – mają licencje, ale nie należą do załóg.",
+        "Pilot balonu wolnego to pilot balonowy: balon wolny nie jest na stałe zakotwiczony w ustalonym punkcie (art. 2 pkt 4 rozporządzenia 2018/395). Pilot lekkich statków powietrznych uzyskuje licencję LAPL z części FCL (FCL.025 lit. b) ppkt 4 rozporządzenia 1178/2011).",
+        "Świadectwa kwalifikacji, a nie licencje, otrzymują m.in. pilot lotni, paralotni i motolotni, skoczek spadochronowy, informator służby informacji powietrznej i informator lotniskowej służby informacji powietrznej (art. 95 ust. 2).",
+        "Klucz ULC w dwóch pytaniach o skład załóg wskazuje dyspozytora lotniczego albo kontrolera ruchu lotniczego jako jedyną z podanych specjalności z licencją; art. 94 ust. 6 nie zalicza ich do załóg."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6",
+          "quote": "Licencje są wymagane dla następujących specjalności personelu lotniczego: 1) personel wchodzący w skład załóg statków powietrznych:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 1 lit. b",
+          "quote": "b) pilot samolotowy turystyczny,"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 1 lit. c",
+          "quote": "c) pilot samolotowy zawodowy,"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 1 lit. o",
+          "quote": "o) pilot balonowy,"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 1",
+          "quote": "q) pilot szybowcowy, r) nawigator lotniczy, s) mechanik pokładowy;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 3",
+          "quote": "3) mechanik lotniczy obsługi technicznej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 4",
+          "quote": "4) kontroler ruchu lotniczego;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 94 ust. 6 pkt 5",
+          "quote": "5) dyspozytor lotniczy."
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "art. 2 pkt 4",
+          "quote": "„balon wolny” oznacza balon, który nie jest na stałe zakotwiczony w ustalonym punkcie podczas operacji"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.025(b)(4)",
+          "quote": "wydanie licencji pilota lekkich statków powietrznych (LAPL)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 95 ust. 2",
+          "quote": "Świadectwa kwalifikacji wydawane są dla następujących specjalności personelu lotniczego: 1) pilot lotni; 2) pilot paralotni; 3) pilot motolotni;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 95 ust. 2 pkt 6",
+          "quote": "6) skoczek spadochronowy;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 95 ust. 2",
+          "quote": "8) informator służby informacji powietrznej; 9) informator lotniskowej służby informacji powietrznej."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0299#414073ca",
+        "PL010-0299#a7cb9b98",
+        "PL010-0385#3452b84a",
+        "PL010-0386#9fe3ed1a",
+        "PL010-0486#15d692c1",
+        "PL010-0487#c58ee89c",
+        "PL010-0487#18094df7",
+        "PL010-0490#4b3347af",
+        "PL010-0491#85063041",
+        "PL010-0491#e90da926",
+        "PL010-0492#ee529e21",
+        "PL010-0492#d0d6e09f"
+      ],
+      "disputeNote": "Art. 94 ust. 6 pkt 1 Prawa lotniczego (lit. a–s) nie obejmuje dyspozytora lotniczego ani kontrolera ruchu lotniczego, wymienionych osobno w pkt 5 i 4, więc w pytaniach o skład załóg przepisowi odpowiada raczej „Żadna z odpowiedzi”. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL03-4",
+      "status": "draft",
+      "heading": "Warunki wydania licencji",
+      "body": [
+        "Licencja może być wydana osobie, która łącznie spełnia warunki z art. 96 ust. 1 Prawa lotniczego:",
+        "- korzysta w pełni z praw publicznych (pkt 1);",
+        "- ma pełną zdolność do czynności prawnych albo, w przypadku osoby małoletniej, uzyskała zgodę opiekunów prawnych (pkt 2);",
+        "- spełnia wymogi w zakresie wieku i wykształcenia (pkt 4); pilot turystyczny musi mieć ukończone 17 lat (art. 96 ust. 2 pkt 4);",
+        "- odpowiada wymaganiom w zakresie sprawności psychicznej i fizycznej, potwierdzonym orzeczeniem o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych (pkt 5); do PPL wymagane jest co najmniej orzeczenie lekarskie klasy 2, a do CPL, MPL i ATPL klasy 1 (MED.A.030 lit. c) ppkt 2 i 5 rozporządzenia 1178/2011);",
+        "- spełnia wymagania dotyczące ukończenia szkolenia lotniczego, praktyki lotniczej oraz posiadanej wiedzy i umiejętności (pkt 6) i uzyskała pozytywny wynik z egzaminu państwowego (pkt 7).",
+        "Licencji nie wydaje się osobie objętej środkiem zapobiegawczym albo prawomocnym zakazem prowadzenia pojazdów, w okresie obowiązywania tego środka lub zakazu (art. 96 ust. 1a). Klucz ULC nazywa orzeczenie dawnym określeniem „o braku przeciwwskazań”. Odpowiedź opisująca osobę, która nie spełnia jednego z łącznych warunków, jest błędna."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1",
+          "quote": "Licencja może być wydana osobie, która łącznie spełnia następujące warunki:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 1",
+          "quote": "1) korzysta w pełni z praw publicznych;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 2",
+          "quote": "ma pełną zdolność do czynności prawnych albo uzyskała zgodę opiekunów prawnych – w przypadku osoby małoletniej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 4",
+          "quote": "4) spełnia wymogi w zakresie wieku i wykształcenia;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 2 pkt 4",
+          "quote": "4) pilot turystyczny, bez względu na kategorię statku powietrznego, którego dotyczy licencja – ukończone 17 lat;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 5",
+          "quote": "odpowiada wymaganiom w zakresie sprawności psychicznej i fizycznej, określonym na podstawie art. 104 ust. 2, potwierdzonym orzeczeniem o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych, o którym mowa w art. 110;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(c)(2)",
+          "quote": "wynikających z licencji pilota turystycznego (PPL) lub licencji pilota wiatrakowców (GPL), pilot musi posiadać przynajmniej ważne orzeczenie lekarskie 2. klasy;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.030(c)(5)",
+          "quote": "wynikających z licencji pilota zawodowego (CPL), licencji pilota w załodze wieloosobowej (MPL) lub licencji pilota liniowego (ATPL), pilot musi posiadać ważne orzeczenie lekarskie 1. klasy."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 6",
+          "quote": "dotyczące ukończenia szkolenia lotniczego, praktyki lotniczej oraz posiadanej wiedzy i umiejętności;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 7",
+          "quote": "7) uzyskała pozytywny wynik z egzaminu państwowego, o którym mowa w art. 99 ust. 1."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1a",
+          "quote": "albo w stosunku do której prawomocnym wyrokiem sądu orzeczono zakaz prowadzenia pojazdów mechanicznych, w okresie obowiązywania tego środka lub zakazu."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0101#fb2b897a",
+        "PL010-0102#d315ac19",
+        "PL010-0102#4710fe09",
+        "PL010-0103#5c608e2d",
+        "PL010-0103#e4cd44fb",
+        "PL010-0104#d67f3d1c",
+        "PL010-0105#48d42c67",
+        "PL010-0106#d1571dcf",
+        "PL010-0106#f8178b1d",
+        "PL010-0107#49beba6b",
+        "PL010-0107#53d284de",
+        "PL010-0108#83bd2f1f",
+        "PL010-0108#f24a6257",
+        "PL010-0109#3c79d0c9",
+        "PL010-0110#2c2da77d",
+        "PL010-0110#576324c7"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL03-5",
+      "status": "draft",
+      "heading": "Małoletni i niekaralność w pytaniach o licencję",
+      "body": [
+        "Część pytań „Komu może być udzielona licencja?” opiera się na wcześniejszym brzmieniu art. 96 ust. 1 Prawa lotniczego. Według aktualnego tekstu:",
+        "- osoba małoletnia może otrzymać licencję, jeżeli uzyskała zgodę opiekunów prawnych (art. 96 ust. 1 pkt 2);",
+        "- warunek niekaralności nie obowiązuje: art. 96 ust. 1 pkt 3 jest uchylony;",
+        "- art. 96 ust. 1a wyklucza wydanie licencji tylko osobie objętej środkiem zapobiegawczym polegającym na obowiązku powstrzymania się od prowadzenia pojazdów albo prawomocnym zakazem prowadzenia pojazdów mechanicznych, w okresie jego obowiązywania;",
+        "- nadal obowiązuje warunek korzystania w pełni z praw publicznych (pkt 1).",
+        "Klucz ULC w pytaniach o wiek, prawa publiczne oraz szkolenie i egzamin państwowy traktuje odpowiedzi o osobie z ograniczoną zdolnością do czynności prawnych lub o osobie skazanej prawomocnym wyrokiem jako błędne; aktualny przepis sam w sobie nie wyklucza w tych przypadkach wydania licencji."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 2",
+          "quote": "ma pełną zdolność do czynności prawnych albo uzyskała zgodę opiekunów prawnych – w przypadku osoby małoletniej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 3",
+          "quote": "3) (uchylony)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1a",
+          "quote": "Licencja nie może być wydana osobie, w stosunku do której prokurator postanowił zastosować środek zapobiegawczy polegający na obowiązku powstrzymania się od prowadzenia wszelkiego rodzaju pojazdów mechanicznych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 1",
+          "quote": "1) korzysta w pełni z praw publicznych;"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0102#d315ac19",
+        "PL010-0103#5c608e2d",
+        "PL010-0103#e4cd44fb",
+        "PL010-0106#d1571dcf",
+        "PL010-0108#83bd2f1f"
+      ],
+      "disputeNote": "Według aktualnego art. 96 ust. 1 Prawa lotniczego licencję może otrzymać osoba małoletnia za zgodą opiekunów prawnych (pkt 2), warunek niekaralności (pkt 3) uchylono, a ust. 1a wyklucza tylko osoby objęte środkiem zapobiegawczym lub zakazem prowadzenia pojazdów. Odpowiedzi o ograniczonej zdolności i o skazaniu też mają więc oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL03-6",
+      "status": "draft",
+      "heading": "Prezes ULC i decyzje w sprawach licencji",
+      "body": [
+        "Prezes Urzędu Lotnictwa Cywilnego wydaje, zmienia, zawiesza, przywraca, cofa lub wznawia ważność licencji, świadectw kwalifikacji i uprawnień do nich wpisywanych, a także je uznaje, zawiesza uznanie, przywraca uznanie albo cofa uznanie – w drodze decyzji administracyjnej (art. 96 ust. 3 Prawa lotniczego). Wydawanie decyzji administracyjnych w sprawach określonych w ustawie należy do zadań Prezesa Urzędu (art. 21 ust. 2 pkt 2).",
+        "- Prezes Urzędu może upoważnić pracowników Urzędu do wydawania tych decyzji w jego imieniu (art. 96 ust. 4); przepis nie uzależnia upoważnienia od zgody ministra właściwego do spraw transportu.",
+        "- Świadectwa kwalifikacji wydaje Prezes Urzędu (art. 95 ust. 4), również w formie decyzji administracyjnej.",
+        "- Wniosek o wydanie, przedłużenie lub wznowienie licencji pilota oraz towarzyszących uprawnień składa się do właściwego organu (FCL.015 lit. a) rozporządzenia 1178/2011), w Polsce – do Prezesa ULC.",
+        "Prawo lotnicze nie przyznaje tych kompetencji ministrowi właściwemu do spraw transportu ani przewodniczącemu komisji egzaminacyjnej."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 3",
+          "quote": "Prezes Urzędu: 1) wydaje, zmienia, zawiesza, przywraca, cofa lub wznawia ważność, 2) uznaje, zawiesza uznanie, przywraca uznanie albo cofa uznanie – licencji, świadectw kwalifikacji lub uprawnień do nich wpisywanych w drodze decyzji administracyjnej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 21 ust. 2 pkt 2",
+          "quote": "2) wydawanie decyzji administracyjnych w sprawach określonych w ustawie"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 4",
+          "quote": "Prezes Urzędu może upoważnić pracowników Urzędu do wydawania w jego imieniu decyzji administracyjnych w sprawach, o których mowa w ust. 3."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 95 ust. 4",
+          "quote": "Świadectwa kwalifikacji wydawane są przez Prezesa Urzędu."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.015(a)",
+          "quote": "Wniosek o wydanie, przedłużenie lub wznowienie licencji pilota oraz towarzyszących uprawnień oraz certyfikatów, jak również o wszelkie zmiany do nich, należy składać do właściwego organu"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0040#bad3da1f",
+        "PL010-0076#7480541d",
+        "PL010-0077#104b9e26",
+        "PL010-0133#1ec6110b",
+        "PL010-0133#7ebd5377",
+        "PL010-0199#cc409812"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL03-7",
+      "status": "draft",
+      "heading": "Uznawanie licencji wydanych za granicą",
+      "body": [
+        "Licencja wydana lub potwierdzona przez właściwy organ państwa obcego wymaga uznania przez Prezesa Urzędu (art. 96 ust. 5 Prawa lotniczego). Art. 96 ust. 5b wymienia licencje obce, które takiego uznania nie wymagają. Za ważną uważa się więc licencję wydaną przez Prezesa ULC albo licencję wydaną przez właściwy organ obcego państwa i uznaną przez Prezesa ULC, chyba że uznanie nie jest wymagane.",
+        "Osobną zasadę zawiera art. 96 ust. 5a: licencja wydana lub potwierdzona przez właściwy organ państwa członkowskiego Unii Europejskiej, Konfederacji Szwajcarskiej lub państwa EFTA – strony umowy o Europejskim Obszarze Gospodarczym, w zakresie nieobjętym przepisami rozporządzenia 1178/2011, jest uznawana w Polsce za ważną na równi z licencją wydaną przez Prezesa Urzędu, chyba że wymagania stawiane przy jej wydaniu były łagodniejsze od stawianych w Rzeczypospolitej Polskiej.",
+        "Przepisy te nie uzależniają uznania od zgody ministra."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 5",
+          "quote": "Licencja wydana lub potwierdzona przez właściwy organ państwa obcego wymaga uznania przez Prezesa Urzędu,"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 5b",
+          "quote": "Nie wymaga uznania przez Prezesa Urzędu licencja:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 5a",
+          "quote": "Licencja wydana lub potwierdzona przez właściwy organ państwa członkowskiego Unii Europejskiej, Konfederacji Szwajcarskiej lub państwa członkowskiego Europejskiego Porozumienia o Wolnym Handlu (EFTA) – strony umowy o Europejskim Obszarze Gospodarczym"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 5a",
+          "quote": "w zakresie nieobjętym przepisami rozporządzenia nr 1178/2001/UE dla specjalności personelu lotniczego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 5a",
+          "quote": "jest uznawana w Rzeczypospolitej Polskiej za ważną na równi z licencją wydaną przez Prezesa Urzędu, chyba że wymagania stawiane przy jej wydaniu były łagodniejsze od stawianych w Rzeczypospolitej Polskiej."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0038#be7cea85",
+        "PL010-0062#3f1ad0c5",
+        "PL010-0062#f8207b2b"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL03-8",
+      "status": "draft",
+      "heading": "Od czego zależy ważność licencji",
+      "body": [
+        "Ważność licencji jest uzależniona od dwóch warunków (art. 98 ust. 2 Prawa lotniczego):",
+        "- wyniku okresowego sprawdzenia sprawności psychicznej i fizycznej członka personelu lotniczego, stwierdzonej w badaniach lotniczo-lekarskich;",
+        "- utrzymania w okresie ważności licencji wiadomości i umiejętności niemniejszych niż wymagane do uzyskania licencji lub uprawnień do niej wpisywanych.",
+        "Oba warunki obowiązują, o ile są wymagane lub o ile przepisy prawa Unii Europejskiej dotyczące kwalifikacji personelu lotniczego nie stanowią inaczej. Ważność uprawnień wpisanych do licencji zależy od wyniku okresowego sprawdzenia posiadanych wiadomości i umiejętności (art. 98 ust. 3).",
+        "Według pkt FCL.040 rozporządzenia 1178/2011 korzystanie z przywilejów wynikających z licencji zależy od ważności uprawnień w niej zawartych, w stosownych przypadkach, oraz od ważności orzeczenia lekarskiego. Przepisy nie wiążą ważności licencji ze składkami członkowskimi ani z opłatą lotniczą."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 98 ust. 2",
+          "quote": "Ważność licencji jest uzależniona od wyniku okresowego sprawdzenia sprawności psychicznej i fizycznej członka personelu lotniczego, stwierdzonej w badaniach lotniczo-lekarskich"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 98 ust. 2",
+          "quote": "utrzymania w okresie ważności licencji wiadomości i umiejętności niemniejszych niż wymagane do uzyskania licencji lub uprawnień do niej wpisywanych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 98 ust. 2",
+          "quote": "o ile są wymagane lub o ile przepisy prawa Unii Europejskiej dotyczące kwalifikacji personelu lotniczego nie stanowią inaczej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 98 ust. 3",
+          "quote": "Ważność uprawnień wpisanych do licencji, o których mowa w art. 94 ust. 7, jest uzależniona od wyniku okresowego sprawdzenia posiadanych wiadomości i umiejętności"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.040",
+          "quote": "Korzystanie z przywilejów wynikających z licencji zależy od ważności uprawnień w nich zawartych, w stosownych przypadkach, oraz od ważności orzeczenia lekarskiego, w zależności od wykorzystywanych przywilejów."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0163#e2109535",
+        "PL010-0170#7bc66964",
+        "PL010-0170#a9ef27ce",
+        "PL010-0171#017e7b5a",
+        "PL010-0171#ef7335da"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL03-9",
+      "status": "draft",
+      "heading": "Dokumenty, które pilot ma przy sobie",
+      "body": [
+        "W trakcie korzystania z przywilejów wynikających z licencji pilot musi mieć zawsze przy sobie ważną licencję i ważne orzeczenie lekarskie (FCL.045 lit. a) rozporządzenia 1178/2011), a także dokument identyfikacyjny ze zdjęciem (lit. b)). Zapis czasu lotu okazuje bez zbędnej zwłoki na żądanie uprawnionego przedstawiciela właściwego organu (lit. c)).",
+        "Rozporządzenie w sprawie licencjonowania personelu lotniczego, stosowane m.in. do PPL(A), PPL(H), SPL i BPL (§ 3 ust. 1 pkt 1), wymaga, by członek personelu lotniczego podczas czynności lotniczych miał przy sobie licencję wraz z (§ 38 ust. 2):",
+        "- orzeczeniem lotniczo-lekarskim, jeżeli jest ono wymagane;",
+        "- dokumentem tożsamości ze zdjęciem;",
+        "- zaktualizowanym osobistym dokumentem praktyki lotniczej.",
+        "Dla licencji SPL i BPL te same trzy dokumenty – ważną licencję, ważne orzeczenie lekarskie i dokument tożsamości ze zdjęciem – wymieniają pkt SFCL.045 lit. a) rozporządzenia 2018/1976 i BFCL.045 lit. a) rozporządzenia 2018/395. Odpowiedź wymieniająca tylko część tych dokumentów jest niepełna."
+      ],
+      "refs": [
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.045(a)",
+          "quote": "W trakcie korzystania z przywilejów wynikających z licencji pilot musi mieć zawsze przy sobie ważną licencję i ważne orzeczenie lekarskie."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.045(b)",
+          "quote": "Pilot musi mieć również przy sobie dokument identyfikacyjny ze zdjęciem."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.045(c)",
+          "quote": "Na żądanie uprawnionego przedstawiciela właściwego organu pilot lub uczeń-pilot bez zbędnej zwłoki musi okazać zapis swojego czasu lotu do celów kontroli."
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 3 ust. 1 pkt 1",
+          "quote": "PPL(A), CPL(A), ATPL(A), MPL, PPL(H), CPL(H), ATPL(H), SPL, PPL(AS), CPL(AS), BPL;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 38 ust. 2",
+          "quote": "Członek personelu lotniczego podczas wykonywania czynności lotniczych, do których uprawnia licencja, posiada ją przy sobie wraz z następującymi dokumentami:"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 38 ust. 2 pkt 1",
+          "quote": "orzeczeniem lotniczo-lekarskim, jeżeli jest ono wymagane;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 38 ust. 2 pkt 2",
+          "quote": "dokumentem tożsamości ze zdjęciem;"
+        },
+        {
+          "src": "PL-ROZP-LICENCJONOWANIE-2021",
+          "loc": "§ 38 ust. 2 pkt 3",
+          "quote": "zaktualizowanym osobistym dokumentem praktyki lotniczej."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.045(a)",
+          "quote": "Korzystając z przywilejów wynikających z licencji SPL, posiadacze tej licencji muszą mieć przy sobie wszystkie poniższe dokumenty:"
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "BFCL.045(a)",
+          "quote": "Korzystając z przywilejów wynikających z licencji BPL, posiadacze tej licencji muszą mieć przy sobie wszystkie poniższe dokumenty:"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.045(a)(3)",
+          "quote": "dokument tożsamości ze zdjęciem;"
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "BFCL.045(a)(3)",
+          "quote": "dokument tożsamości ze zdjęciem;"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0412#0dbffc6f",
+        "PL010-0412#fa4ff27c",
+        "PL010-1552#e0bd3e77"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL03-10",
+      "status": "draft",
+      "heading": "Kiedy powstrzymać się od czynności lotniczych",
+      "body": [
+        "Członek personelu lotniczego oraz personelu pokładowego nie może wykonywać lotów lub innych czynności lotniczych w przypadku utraty wymaganej sprawności psychicznej i fizycznej (art. 105 ust. 2 Prawa lotniczego). Według pkt MED.A.020 lit. a) rozporządzenia 1178/2011 posiadacze licencji nie korzystają z jej przywilejów, a uczniowie-piloci nie wykonują samodzielnych lotów, gdy:",
+        "- zdają sobie sprawę z obniżenia swojej sprawności fizycznej i psychicznej, mogącego spowodować, że nie będą w stanie bezpiecznie korzystać z tych przywilejów (ppkt 1);",
+        "- przyjmują lub stosują leki wydawane na receptę lub bez recepty, które mogą negatywnie wpływać na bezpieczne korzystanie z przywilejów (ppkt 2).",
+        "Osoba, której funkcja ma krytyczne znaczenie dla bezpieczeństwa lotniczego, nie może jej wykonywać pod wpływem środka psychotropowego ograniczającego sprawność organizmu (SERA.2020 rozporządzenia 923/2012), a substancjami psychotropowymi są m.in. alkohol, opioidy, pochodne konopi indyjskich i kokaina (art. 2 pkt 104). W pytaniach o alkohol, leki i dolegliwości prawidłowa jest więc odpowiedź obejmująca wszystkie te sytuacje – zarówno dla członka personelu lotniczego, jak i dla kandydata odbywającego szkolenie."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 105 ust. 2",
+          "quote": "Członek personelu lotniczego oraz personelu pokładowego nie może wykonywać lotów lub innych czynności lotniczych w przypadku utraty wymaganej sprawności psychicznej i fizycznej."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(a)",
+          "quote": "Posiadacze licencji nie mogą korzystać z przywilejów wynikających z licencji i powiązanych uprawnień lub certyfikatów, a uczniowie-piloci nie mogą wykonywać samodzielnych lotów, w przypadku gdy:"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(a)(1)",
+          "quote": "zdają sobie sprawę z obniżenia swojej sprawności fizycznej i psychicznej, mogącego spowodować, że nie będą w stanie bezpiecznie korzystać z tych przywilejów;"
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "MED.A.020(a)(2)",
+          "quote": "przyjmują lub stosują jakiekolwiek leki wydawane na receptę lub bez recepty, które mogą negatywnie wpływać na bezpieczne korzystanie z przywilejów wynikających ze stosownej licencji;"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.2020",
+          "quote": "nie może wykonywać tej funkcji, będąc pod wpływem jakiegokolwiek środka psychotropowego ograniczającego sprawność organizmu ludzkiego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 104",
+          "quote": "„substancja psychotropowa” oznacza alkohol, opioidy, pochodne konopi indyjskich, środki uspokajające i nasenne, kokainę, inne stymulatory psychiczne"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0026#0221df31",
+        "PL010-0084#1d051fd7",
+        "PL010-0085#e669bfd2",
+        "PL010-0362#d8515055",
+        "PL010-0362#b1cf7017"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL03-11",
+      "status": "draft",
+      "heading": "Polecenia służb ruchu lotniczego i instrukcja użytkowania w locie",
+      "body": [
+        "Użytkownik polskiej przestrzeni powietrznej jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego (art. 122 ust. 1 Prawa lotniczego). Na tym obowiązku opiera się klucz ULC w pytaniu, do czego członek personelu lotniczego ma obowiązek stosować się podczas czynności lotniczych: do instrukcji wykonawczych organów służb ruchu lotniczego.",
+        "Obowiązki pilota dotyczą także instrukcji użytkowania w locie. Pilot dowódca rozpoczyna lot wyłącznie wtedy, gdy upewni się, że uwzględnione zostały wszystkie ograniczenia operacyjne, w tym że ograniczenia użytkowania statku powietrznego wyszczególnione w instrukcji użytkowania w locie (AFM) nie zostaną przekroczone w żadnym momencie podczas lotu (NCO.GEN.105 lit. a) ppkt 4 (vi) rozporządzenia 965/2012).",
+        "Klucz ULC przyjmuje instrukcje wykonawcze organów służb ruchu lotniczego; aktualne przepisy wiążą obowiązki pilota również z instrukcją użytkowania w locie."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 122 ust. 1",
+          "quote": "Użytkownik polskiej przestrzeni powietrznej jest obowiązany do niezwłocznego wykonywania poleceń instytucji zapewniających służby ruchu lotniczego oraz cywilnych i wojskowych lotniskowych organów służb ruchu lotniczego"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(4)",
+          "quote": "rozpoczęcie lotu wyłącznie wtedy, gdy upewni się, że uwzględnione zostały wszystkie ograniczenia operacyjne"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(4)(vi)",
+          "quote": "ograniczenia użytkowania statku powietrznego, wyszczególnione w instrukcji użytkowania w locie statku powietrznego (AFM), nie zostaną przekroczone w żadnym momencie podczas lotu"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0028#38f25a0d"
+      ],
+      "disputeNote": "Klucz pomija instrukcję użytkowania w locie, choć pkt NCO.GEN.105 lit. a) ppkt 4 (vi) rozporządzenia 965/2012 wymaga, by pilot dowódca rozpoczynał lot tylko wtedy, gdy ograniczenia z AFM nie zostaną przekroczone. Obronna jest więc też odpowiedź o instrukcji użytkowania w locie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL03-12",
+      "status": "draft",
+      "heading": "Egzamin państwowy",
+      "body": [
+        "Warunkiem uzyskania licencji jest pozytywny wynik egzaminu państwowego składającego się z części teoretycznej lub praktycznej, złożonego przed komisją egzaminacyjną (art. 99 ust. 1 Prawa lotniczego); licencja może być wydana osobie, która taki wynik uzyskała (art. 96 ust. 1 pkt 7). Przed egzaminem praktycznym w celu wydania licencji osoba wnioskująca musi zdać wymagany egzamin z wiedzy teoretycznej (FCL.030 lit. a) rozporządzenia 1178/2011), więc do licencji potrzebne są oba egzaminy.",
+        "- Kandydat na SPL lub BPL wykazuje wiedzę teoretyczną podczas egzaminów (SFCL.135 lit. a), BFCL.135 lit. a)), a umiejętności pilota dowódcy – podczas egzaminu praktycznego (SFCL.145 lit. a), BFCL.145 lit. a)); do egzaminu praktycznego przystępuje po zdaniu egzaminów z wiedzy teoretycznej (lit. c) tych punktów).",
+        "- Egzamin podlega opłacie lotniczej (art. 99 ust. 5) – zarówno część teoretyczna, jak i praktyczna. Przepis nie uzależnia opłaty od miejsca egzaminu ani od tego, czy jest to egzamin poprawkowy."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 99 ust. 1",
+          "quote": "Warunkiem uzyskania licencji jest pozytywny wynik egzaminu państwowego składającego się z części teoretycznej lub praktycznej, złożonego przed komisją egzaminacyjną"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 96 ust. 1 pkt 7",
+          "quote": "7) uzyskała pozytywny wynik z egzaminu państwowego, o którym mowa w art. 99 ust. 1."
+        },
+        {
+          "src": "EU-1178-2011",
+          "loc": "FCL.030(a)",
+          "quote": "Od osoby wnioskującej wymaga się, żeby przed przystąpieniem do egzaminu praktycznego w celu wydania licencji, uprawnienia lub certyfikatu zdała wymagany egzamin z wiedzy teoretycznej"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.135(a)",
+          "quote": "Wnioskodawca ubiegający się o licencję SPL musi wykazać podczas egzaminów, że posiada wiedzę teoretyczną odpowiednią do przywilejów, o które się ubiega"
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "BFCL.135(a)",
+          "quote": "Wnioskodawca ubiegający się o licencję BPL musi wykazać podczas egzaminów, że posiada wiedzę teoretyczną odpowiednią do przywilejów, o które się ubiega"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.145(a)",
+          "quote": "Wnioskodawca ubiegający się o licencję SPL musi wykazać podczas egzaminu praktycznego, że potrafi – jako pilot dowódca szybowca – wykonywać stosowne procedury i manewry"
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "BFCL.145(a)",
+          "quote": "Wnioskodawca ubiegający się o licencję BPL musi wykazać podczas egzaminu praktycznego, że potrafi – jako pilot dowódca balonu – wykonywać stosowne procedury i manewry"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SFCL.145(c)",
+          "quote": "Aby przystąpić do egzaminu praktycznego poprzedzającego wydanie licencji SPL, wnioskodawca musi najpierw zdać wymagane egzaminy z wiedzy teoretycznej."
+        },
+        {
+          "src": "EU-2018-395",
+          "loc": "BFCL.145(c)",
+          "quote": "Aby przystąpić do egzaminu praktycznego poprzedzającego wydanie licencji BPL, wnioskodawca musi najpierw zdać wymagany egzamin z wiedzy teoretycznej."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 99 ust. 5",
+          "quote": "Egzamin podlega opłacie lotniczej."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0035#764b04e1",
+        "PL010-0036#92165200",
+        "PL010-1545#fa7f5f2c",
+        "PL010-0105#48d42c67"
+      ],
+      "disputeNote": null
+    }
+  ]
+}

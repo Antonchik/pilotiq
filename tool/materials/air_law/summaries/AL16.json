@@ -1,0 +1,731 @@
+{
+  "topic": "AL16",
+  "sections": [
+    {
+      "id": "AL16-1",
+      "status": "draft",
+      "heading": "Państwowa Komisja Badania Wypadków Lotniczych i cel badania",
+      "body": [
+        "Przy ministrze właściwym do spraw transportu działa niezależna, stała Państwowa Komisja Badania Wypadków Lotniczych (PKBWL), która prowadzi lub nadzoruje badania zdarzeń lotniczych (art. 17 ust. 1 Prawa lotniczego).",
+        "Celem badania jest zapobieganie wypadkom i incydentom lotniczym: komisje badają okoliczności i przyczyny zdarzeń, które już zaistniały (art. 134 ust. 1). Według art. 2 pkt 14 rozporządzenia 996/2010 badanie obejmuje gromadzenie i analizę informacji, wyciąganie wniosków, ustalenie przyczyn zdarzenia lub okoliczności sprzyjających jego zaistnieniu oraz, w stosownych przypadkach, formułowanie zaleceń dotyczących bezpieczeństwa, czyli zaleceń profilaktycznych.",
+        "- Komisje nie orzekają co do winy i odpowiedzialności (art. 134 ust. 1).",
+        "- Badanie prowadzi się niezależnie od postępowania przygotowawczego, sądowego, administracyjnego i od likwidacji szkody (art. 134 ust. 1e).",
+        "- Po otrzymaniu zgłoszenia Przewodniczący Komisji kwalifikuje zdarzenie jako wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy albo inne zdarzenie (art. 135 ust. 1); od tej kwalifikacji zależy, kto prowadzi badanie.",
+        "- O zaistniałych zdarzeniach Komisja niezwłocznie powiadamia Prezesa Urzędu Lotnictwa Cywilnego (art. 135a ust. 4)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 17 ust. 1",
+          "quote": "Przy ministrze właściwym do spraw transportu działa niezależna, stała Państwowa Komisja Badania Wypadków Lotniczych, prowadząca lub nadzorująca badania zdarzeń lotniczych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 1",
+          "quote": "W celu zapobiegania wypadkom i incydentom lotniczym komisje"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 1",
+          "quote": "prowadzą badania okoliczności i przyczyn zaistniałych wypadków i incydentów lotniczych. Komisje nie orzekają co do winy i odpowiedzialności."
+        },
+        {
+          "src": "EU-996-2010",
+          "loc": "art. 2 pkt 14",
+          "quote": "obejmujący gromadzenie i analizę informacji, wyciąganie wniosków, łącznie z ustaleniem przyczyny lub przyczyn zdarzenia lub okoliczności sprzyjających jego zaistnieniu, oraz, w stosownych przypadkach, formułowanie zaleceń dotyczących bezpieczeństwa"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 1e",
+          "quote": "niezależnie od postępowania przygotowawczego, sądowego, sądowo-administracyjnego, administracyjnego lub czynności związanych z likwidacją szkody"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 1",
+          "quote": "Przewodniczący Komisji po otrzymaniu zgłoszenia o zdarzeniu lotniczym kwalifikuje je jako: wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 4",
+          "quote": "O zaistniałych zdarzeniach lotniczych Komisja powiadamia niezwłocznie Prezesa Urzędu."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0327#ffde589b",
+        "PL099-0001#627b8b92"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL16-2",
+      "status": "draft",
+      "heading": "Wypadek a incydent lotniczy; zderzenie z ptakiem",
+      "body": [
+        "Wypadek lotniczy to zdarzenie związane z eksploatacją statku powietrznego, od chwili wejścia osoby na pokład z zamiarem wykonania lotu do opuszczenia statku przez wszystkie osoby, podczas którego (art. 134 ust. 2 Prawa lotniczego):",
+        "- ktoś doznał obrażeń ze skutkiem śmiertelnym lub poważnego obrażenia ciała;",
+        "- statek powietrzny został uszkodzony tak, że wymagany jest poważny remont lub wymiana uszkodzonego elementu (poza wyjątkami, np. uszkodzeniem samego silnika, łopat śmigła, końcówek skrzydeł, anten lub ogumienia);",
+        "- statek powietrzny zaginął lub znajduje się w miejscu, do którego dostęp jest niemożliwy.",
+        "Incydent lotniczy to zdarzenie inne niż wypadek, związane z eksploatacją statku powietrznego, które ma lub mogłoby mieć wpływ na jej bezpieczeństwo (art. 134 ust. 5; podobnie art. 2 pkt 7 rozporządzenia 996/2010). Definicja nie wymaga uszkodzenia statku.",
+        "Klucz ULC w pytaniach o zderzenie z ptakiem przyjmuje, że jest to incydent bez względu na konsekwencje i że dowódca składa meldunek pisemny. Pisemny raport o zderzeniu z ptakiem przewiduje pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012 dla zarobkowego transportu lotniczego, gdy statek doznał znaczących uszkodzeń lub podstawowy system pokładowy przestał działać prawidłowo."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 2",
+          "quote": "Przez wypadek lotniczy rozumie się zdarzenie związane z eksploatacją statku powietrznego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 2 pkt 2",
+          "quote": "statek powietrzny został uszkodzony lub nastąpiło zniszczenie jego konstrukcji, w rezultacie czego:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 2 pkt 2 lit. b",
+          "quote": "wymagane jest przeprowadzenie poważnego remontu lub wymiana uszkodzonego elementu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 2 pkt 3",
+          "quote": "statek powietrzny zaginął lub znajduje się w miejscu, do którego dostęp jest niemożliwy"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 134 ust. 5",
+          "quote": "Incydentem lotniczym jest zdarzenie inne niż wypadek lotniczy, związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na jej bezpieczeństwo."
+        },
+        {
+          "src": "EU-996-2010",
+          "loc": "art. 2 pkt 7",
+          "quote": "„incydent” oznacza zdarzenie inne niż wypadek związane z eksploatacją statku powietrznego, które ma wpływ lub mogłoby mieć wpływ na bezpieczeństwo lotów"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.GEN.MPA.105(d)(2)",
+          "quote": "Po każdym zderzeniu z ptakiem, dowódca składa właściwemu organowi po wylądowaniu pisemny raport o zderzeniu z ptakiem"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.GEN.MPA.105(d)(2)",
+          "quote": "doznał w wyniku tego zderzenia znaczących uszkodzeń albo którykolwiek z podstawowych systemów pokładowych przestał działać lub działa nieprawidłowo"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "załącznik IV",
+          "quote": "OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0011#512d95b7",
+        "PL099-0051#1b7ba0eb"
+      ],
+      "disputeNote": "Zderzenie z ptakiem, po którym wymagany jest poważny remont lub wymiana elementu (art. 134 ust. 2 pkt 2 Prawa lotniczego), jest wypadkiem, a nie incydentem. Pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012 (część CAT) i tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL16-3",
+      "status": "draft",
+      "heading": "Kto bada wypadek, a kto incydent",
+      "body": [
+        "Podział badań określa art. 135 Prawa lotniczego:",
+        "- każdy wypadek i poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do państwowego rejestru cywilnych statków powietrznych bada Komisja (ust. 2);",
+        "- inne incydenty lotnicze bada użytkownik statku powietrznego, instytucja zapewniająca służby żeglugi powietrznej albo zarządzający lotniskiem, pod nadzorem Komisji, chyba że Przewodniczący Komisji zdecydował o podjęciu badania przez Komisję (ust. 2);",
+        "- badanie wypadku lub poważnego incydentu statku o MTOM do 2250 kg Przewodniczący może przekazać innemu podmiotowi za jego zgodą, a badanie prowadzi się wtedy pod nadzorem Komisji (ust. 2a);",
+        "- jeżeli Komisja nie podejmie badania zdarzenia statku nieobjętego obowiązkiem wpisu do rejestru, raport końcowy przygotowuje pod nadzorem Komisji użytkownik (ust. 4).",
+        "Każde zgłoszenie najpierw kwalifikuje Przewodniczący Komisji (ust. 1), dlatego użytkownik przystępuje do badania incydentu po decyzji PKBWL i pod jej nadzorem. Klucz ULC w pytaniu o wypadek przyjmuje, że użytkownik nie przystępuje do jego badania; ust. 2a i ust. 4 przewidują od tego wyjątki."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 1",
+          "quote": "Przewodniczący Komisji po otrzymaniu zgłoszenia o zdarzeniu lotniczym kwalifikuje je jako: wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 2",
+          "quote": "Każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do państwowego rejestru cywilnych statków powietrznych jest przedmiotem badania przez Komisję."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 2",
+          "quote": "Inne incydenty lotnicze tych statków powietrznych są badane odpowiednio przez użytkownika statku powietrznego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 2",
+          "quote": "pod nadzorem Komisji, chyba że Przewodniczący Komisji zdecydował o podjęciu takiego badania przez Komisję."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 2a",
+          "quote": "Przewodniczący Komisji może przekazać badanie wypadku lub poważnego incydentu lotniczego statku powietrznego, którego maksymalna masa startowa (MTOM) nie przekracza 2250 kg, innemu podmiotowi za jego zgodą."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 4",
+          "quote": "W przypadku niepodjęcia badania przez Komisję raport końcowy z badania zdarzenia przygotowuje pod nadzorem Komisji użytkownik statku powietrznego."
+        }
+      ],
+      "questionKeys": [
+        "PL099-0009#b7fe727e",
+        "PL099-0010#ff343973"
+      ],
+      "disputeNote": "Według art. 135 ust. 2a i ust. 4 Prawa lotniczego badanie wypadku statku o MTOM do 2250 kg można przekazać innemu podmiotowi, a dla statku spoza rejestru raport przygotowuje użytkownik, w obu przypadkach pod nadzorem Komisji. Wtedy trafna jest też odpowiedź „Tak, ale pod nadzorem PKBWL”. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL16-4",
+      "status": "draft",
+      "heading": "Zgłaszanie zdarzeń lotniczych",
+      "body": [
+        "Zdarzenia statków powietrznych objętych rozporządzeniem 376/2014 zgłasza się w systemie obowiązkowego zgłaszania zdarzeń. Do zdarzeń objętych obowiązkiem należą m.in. kolizje, zbliżenia lub potencjalne kolizje (art. 4 ust. 1). Pilot dowódca, a gdy nie jest w stanie, inny członek załogi, zgłasza je za pośrednictwem systemu organizacji, która go zatrudnia lub korzysta z jego usług, albo alternatywnie systemu państwa członkowskiego (art. 4 ust. 6). W Polsce zgłoszenia w systemie państwowym przyjmuje Komisja (art. 135a ust. 1 Prawa lotniczego).",
+        "- Termin: zgłoszenia dokonuje się każdym dostępnym środkiem łączności niezwłocznie, nie później niż 72 godziny od zaistnienia zdarzenia (art. 135a ust. 3). Organizacja przekazuje dane właściwemu organowi także w ciągu 72 godzin od chwili, w której dowiedziała się o zdarzeniu (art. 4 ust. 8 rozporządzenia 376/2014).",
+        "- Dla statków nieobjętych rozporządzeniem 376/2014 zgłaszać Komisji muszą m.in. użytkownik lub dowódca statku powietrznego, instytucja zapewniająca służby żeglugi powietrznej i zarządzający lotniskiem (art. 135a ust. 2).",
+        "Klucz ULC w pytaniu o pisemny raport o niebezpiecznym zbliżeniu przyjmuje, że załoga składa go osobie wskazanej w instrukcji operacyjnej, czyli w systemie zgłaszania użytkownika."
+      ],
+      "refs": [
+        {
+          "src": "EU-376-2014",
+          "loc": "art. 4 ust. 1",
+          "quote": "(i) kolizje, zbliżenia lub potencjalne kolizje;"
+        },
+        {
+          "src": "EU-376-2014",
+          "loc": "art. 4 ust. 6",
+          "quote": "a) pilot dowódca lub — w przypadkach gdy pilot dowódca nie jest w stanie zgłosić zdarzenia — inny członek załogi"
+        },
+        {
+          "src": "EU-376-2014",
+          "loc": "art. 4 ust. 6",
+          "quote": "za pośrednictwem systemu ustanowionego zgodnie z ust. 2 przez organizację zatrudniającą zgłaszającego, zawierającą z nim umowy lub korzystającą z jego usług, lub — alternatywnie — za pośrednictwem systemu ustanowionego zgodnie z ust. 3 przez państwo członkowskie siedziby jego organizacji"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 1",
+          "quote": "Komisja przyjmuje zgłoszenia w ramach systemu obowiązkowego zgłaszania zdarzeń, o którym mowa w art. 4 ust. 3 rozporządzenia nr 376/2014/UE"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 3",
+          "quote": "Zgłoszenia zdarzenia lotniczego dokonuje się przy użyciu każdego dostępnego środka łączności niezwłocznie po zaistnieniu zdarzenia"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 3",
+          "quote": "72 godziny od jego zaistnienia"
+        },
+        {
+          "src": "EU-376-2014",
+          "loc": "art. 4 ust. 8",
+          "quote": "najszybciej jak to możliwe, a w każdym przypadku nie później niż 72 godziny od chwili, w której dowiedziała się o zdarzeniu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 2",
+          "quote": "w zakresie statków powietrznych nieobjętych przepisami rozporządzenia nr 376/2014/UE"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 2 pkt 1",
+          "quote": "użytkownik lub dowódca statku powietrznego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 2 pkt 4",
+          "quote": "instytucja zapewniająca służby żeglugi powietrznej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135a ust. 2 pkt 5",
+          "quote": "zarządzający lotniskiem"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0079#cfe733ba",
+        "PL099-0022#aaa2df9d",
+        "PL102-0039#4dae563b"
+      ],
+      "disputeNote": "Art. 4 ust. 6 rozporządzenia 376/2014 dopuszcza alternatywnie zgłoszenie w systemie państwa członkowskiego, a w Polsce zgłoszenia w tym systemie przyjmuje Komisja (art. 135a ust. 1 Prawa lotniczego), więc odpowiedź „PKBWL” także jest zgodna z przepisami. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL16-5",
+      "status": "draft",
+      "heading": "Zawiadomienie o wypadku, przymusowym lądowaniu i odnalezieniu statku",
+      "body": [
+        "Art. 137 ust. 4 Prawa lotniczego nakłada ten sam obowiązek na:",
+        "- uczestnika lub świadka wypadku lotniczego;",
+        "- świadka przymusowego lądowania statku powietrznego poza lotniskiem;",
+        "- osobę, która odnalazła porzucony statek powietrzny lub jego szczątki.",
+        "Każda z tych osób jest obowiązana niezwłocznie zawiadomić najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego lub poszukiwawczo-ratownicze, w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy.",
+        "W pytaniach o adresata zawiadomienia poprawna jest więc każda z tych grup, a gdy wszystkie wymienione odpowiedzi wskazują takich adresatów, poprawna jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”. Przepis nie wymienia straży miejskiej z nazwy; klucz ULC zalicza ją do służb porządku publicznego. Adresatem tego obowiązku nie jest Prezes Urzędu Lotnictwa Cywilnego, jego delegatura, minister właściwy do spraw transportu ani firma ubezpieczeniowa."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 137 ust. 4",
+          "quote": "Kto odnalazł porzucony statek powietrzny lub jego szczątki albo był uczestnikiem lub świadkiem wypadku lotniczego lub przymusowego lądowania statku powietrznego poza lotniskiem"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 137 ust. 4",
+          "quote": "jest obowiązany niezwłocznie zawiadomić o tym najbliższy organ Policji lub administracji publicznej albo inne służby bezpieczeństwa i porządku publicznego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 137 ust. 4",
+          "quote": "w szczególności jednostki ochrony przeciwpożarowej, mogące udzielić pomocy"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0249#fb6097ab",
+        "PL010-0317#a71d4a5a",
+        "PL010-0318#9bf1770f",
+        "PL010-0319#6fc250a2",
+        "PL010-0320#43dbfa97",
+        "PL010-0322#02c11389",
+        "PL010-0322#d19cfdd6",
+        "PL010-0323#32bd8779",
+        "PL010-0324#36ffb996",
+        "PL010-0325#0df5f2cf"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL16-6",
+      "status": "draft",
+      "heading": "Zabezpieczenie dowodów i zapisów rejestratorów",
+      "body": [
+        "Komisja badająca wypadek korzysta z pomocy innych podmiotów (art. 137 Prawa lotniczego):",
+        "- organy administracji publicznej, inne państwowe i samorządowe jednostki organizacyjne oraz przedsiębiorcy są obowiązani współdziałać z Komisją i udzielać jej niezbędnej pomocy (ust. 1);",
+        "- każdy dysponent środków łączności powinien niezwłocznie udostępnić je w celu przekazania wiadomości dotyczącej wypadku (ust. 2);",
+        "- dysponent środków rejestracji obrazu, który znalazł się w pobliżu wypadku, powinien w razie potrzeby udostępnić je do rejestracji statku powietrznego i miejsca wypadku (ust. 3).",
+        "Zapisy rejestratorów lotu zabezpiecza operator. W razie wypadku, poważnego incydentu lub zdarzenia zidentyfikowanego przez organ prowadzący dochodzenie przechowuje on oryginalne zapisy rejestratorów przez 60 dni lub do czasu wydania przez ten organ innego polecenia. Tak stanowią pkt CAT.GEN.MPA.195 lit. a) (zarobkowy transport lotniczy), NCC.GEN.145 lit. a) (operacje niezarobkowe skomplikowanymi statkami powietrznymi z napędem silnikowym) i SPO.GEN.145 lit. a) (operacje specjalistyczne) rozporządzenia 965/2012. Okresy 30, 45 lub 120 dni nie wynikają z tych przepisów."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 137 ust. 1",
+          "quote": "Organy administracji publicznej i inne państwowe i samorządowe jednostki organizacyjne oraz przedsiębiorcy są obowiązani do współdziałania z Komisją i udzielania jej niezbędnej pomocy."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 137 ust. 2",
+          "quote": "Każdy dysponent środków łączności powinien udostępnić je niezwłocznie w celu przekazania wiadomości dotyczącej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 137 ust. 3",
+          "quote": "Każdy dysponent środków rejestracji obrazu, który znalazł się w pobliżu wypadku, powinien udostępnić je niezwłocznie, jeśli zachodzi taka potrzeba, w celu rejestracji statku powietrznego i miejsca wypadku."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.GEN.MPA.195(a)",
+          "quote": "W razie wypadku, poważnego incydentu lub zdarzenia zidentyfikowanego przez organ prowadzący dochodzenie, operator statku powietrznego przechowuje oryginalne zapisy rejestratorów lotu przez 60 dni"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "załącznik IV",
+          "quote": "OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCC.GEN.145(a)",
+          "quote": "operator statku powietrznego przechowuje oryginalne zapisy rejestratorów lotu przez 60 dni lub do czasu wydania przez organ prowadzący dochodzenie innego polecenia"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "załącznik VI",
+          "quote": "OPERACJE NIEZAROBKOWE WYKONYWANE PRZY UŻYCIU SKOMPLIKOWANYCH STATKÓW POWIETRZNYCH Z NAPĘDEM SILNIKOWYM"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "SPO.GEN.145(a)",
+          "quote": "operator statku powietrznego przechowuje oryginalne zapisy rejestratorów lotu przez 60 dni lub do czasu wydania przez organ prowadzący dochodzenie innego polecenia"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "załącznik VIII",
+          "quote": "OPERACJE SPECJALISTYCZNE"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0090#f7c2182a"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL16-7",
+      "status": "draft",
+      "heading": "Sytuacja zagrożenia i pilności: MAYDAY i PAN PAN",
+      "body": [
+        "Pkt SERA.14095 lit. a) rozporządzenia 923/2012 rozróżnia dwie sytuacje:",
+        "- sytuacja zagrożenia: istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy; pierwsze zawiadomienie rozpoczyna się sygnałem „MAYDAY”;",
+        "- sytuacja pilności: trzeba zapewnić bezpieczeństwo statkowi powietrznemu lub osobie na pokładzie, ale natychmiastowa pomoc nie jest wymagana; sygnał „PAN PAN”.",
+        "Bezpośrednie zagrożenie życia załogi i pasażerów jest sytuacją zagrożenia, dlatego w pierwszym rzędzie nadaje się wywołanie w niebezpieczeństwie. Statek powietrzny w stanie zagrożenia może użyć wszelkich środków będących w jego dyspozycji, aby zwrócić na siebie uwagę, podać swoją pozycję i uzyskać pomoc (dodatek 1 pkt 1.1.1).",
+        "Depeszę o sytuacji zagrożenia, poprzedzoną trzykrotnym sygnałem MAYDAY, nadaje się w relacji powietrze-ziemia na używanej w danej chwili częstotliwości. Zawiera ona w miarę możliwości m.in. identyfikację statku powietrznego, rodzaj sytuacji zagrożenia, zamiar pilota dowódcy oraz aktualną pozycję, poziom i kurs (lit. b) ppkt 1). Dlatego pilot, który musi opuścić statek powietrzny w powietrzu, melduje organowi ruchu lotniczego, gdzie to nastąpi."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(a)(1)(i)",
+          "quote": "sytuacja, w której istnieje zagrożenie poważnym lub bliskim niebezpieczeństwem i konieczne jest udzielenie natychmiastowej pomocy"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(a)(1)(ii)",
+          "quote": "sytuacja, w której konieczne jest zapewnienie bezpieczeństwa statkowi powietrznemu lub innemu pojazdowi, bądź osobie znajdującej się na pokładzie albo będącej w zasięgu widzenia, lecz która nie wymaga udzielenia natychmiastowej pomocy"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(a)(2)",
+          "quote": "Na początku pierwszego zawiadomienia o sytuacji zagrożenia należy użyć radiotelefonicznego sygnału zagrożenia „MAYDAY”"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "dodatek 1 pkt 1.1.1",
+          "quote": "użycia przez statek powietrzny znajdujący się w stanie zagrożenia wszelkich środków, będących w jego dyspozycji, w celu zwrócenia na siebie uwagi, podania swojej pozycji i uzyskania pomocy"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(b)(1)",
+          "quote": "poprzedzona powtarzanym trzykrotnie w mowie radiotelefonicznym sygnałem zagrożenia MAYDAY"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(b)(1)(i)",
+          "quote": "być przekazywana w relacji powietrze-ziemia na używanej w danej chwili częstotliwości"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(b)(1)(ii)",
+          "quote": "rodzaj sytuacji zagrożenia"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(b)(1)(ii)",
+          "quote": "zamiar pilota dowódcy"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(b)(1)(ii)",
+          "quote": "aktualna pozycja, poziom oraz kurs"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0023#56573da8",
+        "PL099-0088#8a07a254",
+        "PL099-0084#56dfd853"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL16-8",
+      "status": "draft",
+      "heading": "Kolejność pierwszeństwa depesz",
+      "body": [
+        "Kategorie depesz obsługiwanych przez ruchomą służbę lotniczą i kolejność pierwszeństwa w nawiązywaniu łączności i transmisji depesz określa tabela S14-1 w pkt SERA.14005 lit. a) rozporządzenia 923/2012:",
+        "- wezwania, depesze i korespondencja w sytuacji zagrożenia – sygnał MAYDAY;",
+        "- depesze pilne, w tym depesze transportu medycznego – sygnał PAN PAN lub PAN PAN MEDICAL;",
+        "- komunikaty dotyczące znajdowania kierunku;",
+        "- depesze dotyczące bezpieczeństwa lotów;",
+        "- depesze meteorologiczne;",
+        "- depesze dotyczące regularności lotów.",
+        "Transmisja dla radionamierzania stoi w tej kolejności dopiero na trzecim miejscu, za depeszami pilnymi, więc nie ma pierwszeństwa przed wywołaniem PAN-PAN. Depesze o sytuacji zagrożenia i pilne traktuje się według pkt SERA.14095 (SERA.14005 lit. b) i c)); korespondencja w sytuacji zagrożenia i pilności odbywa się na częstotliwości, na której ją rozpoczęto, dopóki przejście na inną nie zapewni skuteczniejszej pomocy (SERA.14095 lit. a) ppkt 5)."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14005(a)",
+          "quote": "kolejność pierwszeństwa w zakresie nawiązywania łączności i transmisji depesz muszą być zgodne z tabelą S14-1"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14005",
+          "quote": "b) Depesze pilne, w tym depesze poprzedzone sygnałem transportu medycznego PAN PAN lub PAN PAN MEDICAL c) Komunikaty dotyczące znajdowania kierunku"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14005",
+          "quote": "d) Depesze dotyczące bezpieczeństwa lotów"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14005(b)",
+          "quote": "Depesze o sytuacji zagrożenia i wymianę korespondencji dotyczącej sytuacji zagrożenia należy traktować zgodnie z przepisami SERA.14095."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(a)(5)",
+          "quote": "odbywa się na częstotliwości, na której została rozpoczęta, dopóki nie okaże się, że skuteczniejszej pomocy można udzielić, przechodząc na inną częstotliwość"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0074#9b6f9c4c",
+        "PL102-0046#8f833f6c"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL16-9",
+      "status": "draft",
+      "heading": "Częstotliwość 121,5 MHz i nasłuch",
+      "body": [
+        "VHF częstotliwość w niebezpieczeństwie 121,500 MHz wykorzystuje się jedynie do celów awaryjnych (art. 4a ust. 1 rozporządzenia 923/2012), wymienionych w pkt SERA.14095 lit. d), m.in.:",
+        "- niezakłócony kanał między statkiem powietrznym w stanie zagrożenia lub w sytuacji awaryjnej a stacją naziemną;",
+        "- wspólny kanał statków powietrznych oraz służb naziemnych zaangażowanych we wspólne operacje poszukiwawczo-ratownicze;",
+        "- kanał dla awaryjnych nadajników lokalizacyjnych i łączności jednostki ratunkowej ze statkiem powietrznym w operacjach poszukiwawczo-ratowniczych;",
+        "- wspólny kanał przy przechwytywaniu cywilnego statku powietrznego.",
+        "Klucz ULC w pytaniu o przeznaczenie 121,500 MHz przyjmuje odpowiedź „lotnicza łączność radiotelefoniczna w niebezpieczeństwie”; przepis wymienia także zastosowania w operacjach poszukiwawczo-ratowniczych.",
+        "Stacje lotnicze utrzymują ciągły nasłuch na kanale VHF w niebezpieczeństwie 121,5 MHz w godzinach pracy organów dysponujących tymi stacjami (SERA.14080 lit. b)). Według AIP Polska (GEN 3.6 pkt 5) w FIR Warszawa nasłuch 121,500 MHz prowadzi się w godzinach pracy organów służb ruchu lotniczego. Częstotliwość 2182 kHz AIP wymienia tylko jako możliwą do powiadomienia o zagrożeniu, a nie jako częstotliwość nasłuchu."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 4a ust. 1",
+          "quote": "państwa członkowskie zapewniają, aby VHF częstotliwość w niebezpieczeństwie (121,500 MHz) wykorzystywano jedynie do celów awaryjnych określonych w pkt SERA.14095 lit. d) załącznika"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(d)(1)",
+          "quote": "udostępnienie niezakłóconego kanału między statkiem powietrznym znajdującym się w stanie zagrożenia lub w sytuacji awaryjnej a stacją naziemną"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(d)(3)",
+          "quote": "między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(d)(5)",
+          "quote": "udostępnienie kanału na potrzeby działania awaryjnych nadajników lokalizacyjnych oraz łączności między jednostką ratunkową a statkiem powietrznym biorącym udział w operacjach poszukiwawczo-ratowniczych"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(d)(6)",
+          "quote": "w przypadku przechwytywania cywilnego statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14080(b)",
+          "quote": "Stacje lotnicze muszą utrzymywać ciągły nasłuch na kanale VHF w niebezpieczeństwie 121,5 MHz w godzinach pracy organów dysponujących takimi stacjami."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.6 pkt 5",
+          "quote": "Nasłuch i przeszukiwanie częstotliwości radiowej 121,500 MHz prowadzi się w czasie godzin pracy organów służb ruchu lotniczego."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.6 pkt 5",
+          "quote": "Częstotliwości radiowe 121,500 MHz oraz 2182 kHz mogą być używane w FIR Warszawa do powiadomienia o zagrożeniu bezpieczeństwa statku powietrznego."
+        }
+      ],
+      "questionKeys": [
+        "PL099-0004#0d5127d8",
+        "PL102-0051#6d850997",
+        "PL099-0025#024cafbe",
+        "PL102-0048#96cde93d"
+      ],
+      "disputeNote": "Pkt SERA.14095 lit. d) ppkt 3 i 5 rozporządzenia 923/2012 przewidują użycie 121,500 MHz także do łączności ze służbami naziemnymi w operacjach poszukiwawczo-ratowniczych oraz z jednostką ratunkową, więc odpowiedzi o SAR i tratwach też mają oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL16-10",
+      "status": "draft",
+      "heading": "Łączność w akcjach poszukiwawczo-ratowniczych: 123,1 i 156,3 MHz",
+      "body": [
+        "- 123,1 MHz to częstotliwość pomocnicza do celów operacji poszukiwawczo-ratunkowych, wymieniana obok częstotliwości awaryjnej 121,5 MHz (art. 3f ust. 2 rozporządzenia wykonawczego 2017/373).",
+        "- Do zadań ARCC należy całodobowy nasłuch na 121,500 MHz i 243,00 MHz oraz wykorzystywanie 123,100 MHz jako podstawowej do łączności ze statkami powietrznymi biorącymi udział w działaniach poszukiwawczo-ratowniczych (§ 13 pkt 1 rozporządzenia w sprawie służby poszukiwania i ratownictwa lotniczego).",
+        "- 156,3 MHz to kanał 06 morskiego pasma VHF. Według dodatku 18 do Regulaminu radiokomunikacyjnego ITU (uwaga f) mogą go używać także stacje pokładowe statków powietrznych do celów operacji poszukiwawczo-ratowniczych i innej łączności związanej z bezpieczeństwem; uwaga wymienia też kanały 70 (156,525 MHz) i 16 (156,800 MHz).",
+        "Klucz ULC w pytaniu o łączność statków morskich ze statkami powietrznymi w akcjach SAR przyjmuje 156,3 MHz; pkt SERA.14095 lit. d) ppkt 3 rozporządzenia 923/2012 przewiduje do łączności ze służbami naziemnymi w takich operacjach także 121,500 MHz."
+      ],
+      "refs": [
+        {
+          "src": "EU-2017-373",
+          "loc": "art. 3f ust. 2 pkt 1",
+          "quote": "częstotliwość awaryjna (121,5 MHz)"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "art. 3f ust. 2 pkt 2",
+          "quote": "częstotliwość pomocnicza do celów operacji poszukiwawczo-ratunkowych (123,1 MHz)"
+        },
+        {
+          "src": "PL-ROZP-SAR-2015",
+          "loc": "§ 13 pkt 1",
+          "quote": "prowadzenie całodobowego nasłuchu na częstotliwości 121,500 MHz oraz na częstotliwości 243,00 MHz"
+        },
+        {
+          "src": "PL-ROZP-SAR-2015",
+          "loc": "§ 13 pkt 1",
+          "quote": "wykorzystywanie częstotliwości 123,100 MHz jako podstawowej do utrzymywania łączności ze statkami powietrznymi biorącymi udział w działaniach poszukiwawczo-ratowniczych"
+        },
+        {
+          "src": "ITU-RR-2020-AP18",
+          "loc": "Appendix 18 channel 06"
+        },
+        {
+          "src": "ITU-RR-2020-AP18",
+          "loc": "Appendix 18 note f"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14095(d)(3)",
+          "quote": "między takim statkiem powietrznym a służbami naziemnymi zaangażowanymi we wspólne operacje poszukiwawczo-ratownicze"
+        },
+        {
+          "src": "EASA-EAR-SERA",
+          "loc": "SERA.14095(d)(3)"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0005#7a23adec",
+        "PL102-0049#7f37dfe5",
+        "PL099-0012#fa91d8e5",
+        "PL102-0050#fd7739ec"
+      ],
+      "disputeNote": "Pkt SERA.14095 lit. d) ppkt 3 rozporządzenia 923/2012 przewiduje 121,500 MHz jako wspólny kanał statków powietrznych ze służbami naziemnymi (w wersji angielskiej: surface services, czyli także z jednostkami pływającymi) w operacjach poszukiwawczo-ratowniczych, więc odpowiedź 121,5 MHz ma oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL16-11",
+      "status": "draft",
+      "heading": "Świadectwo radiooperatora i nadajnik ELT",
+      "body": [
+        "Obsługiwanie urządzenia radiowego nadawczego lub nadawczo-odbiorczego używanego w służbie radiokomunikacyjnej lotniczej wymaga świadectwa operatora urządzeń radiowych albo równoważnego dokumentu wydanego przez uprawniony organ zagraniczny (art. 157 ust. 1 ustawy – Prawo komunikacji elektronicznej). W lotnictwie jest to świadectwo radiooperatora w służbie lotniczej; egzaminy przeprowadza komisja egzaminacyjna, o której mowa w art. 99 Prawa lotniczego (art. 158 ust. 7). Przepis nie uzależnia obsługi radiostacji od obywatelstwa.",
+        "Awaryjny nadajnik lokalizacyjny (ELT):",
+        "- ELT dowolnego typu musi umożliwiać jednoczesną transmisję na 121,5 MHz i 406 MHz (NCO.IDE.A.170 lit. b) rozporządzenia 965/2012);",
+        "- według AIP Polska (GEN 3.6 pkt 5) międzynarodowy system Cospas-Sarsat wykrywa i lokalizuje nadajniki sygnału niebezpieczeństwa pracujące na 406 MHz, a sygnałów na 121,500 MHz i 243 MHz nie śledzi od 1 lutego 2009 r.;",
+        "- poszukiwawczo-ratownicze statki powietrzne odnajdują nadajniki na 121,500 MHz (GEN 3.6 pkt 5).",
+        "Klucz ULC upraszcza to do stwierdzenia, że statek powietrzny z ELT ma lotniczy nadajnik ratowniczy SARSAT."
+      ],
+      "refs": [
+        {
+          "src": "PL-PKE-2024",
+          "loc": "art. 157 ust. 1",
+          "quote": "Obsługiwanie urządzenia radiowego nadawczego lub nadawczo-odbiorczego używanego w służbie radiokomunikacyjnej lotniczej, morskiej i żeglugi śródlądowej wymaga posiadania świadectwa operatora urządzeń radiowych"
+        },
+        {
+          "src": "PL-PKE-2024",
+          "loc": "art. 157 ust. 1",
+          "quote": "lub dokumentu równoważnego, wydanego przez uprawniony organ zagraniczny"
+        },
+        {
+          "src": "PL-PKE-2024",
+          "loc": "art. 158 ust. 7",
+          "quote": "Egzaminy osób ubiegających się o świadectwo operatora urządzeń radiowych w służbie radiokomunikacyjnej lotniczej przeprowadza komisja egzaminacyjna, o której mowa w art. 99 ustawy z dnia 3 lipca 2002 r. – Prawo lotnicze"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.IDE.A.170(b)",
+          "quote": "ELT dowolnego typu i PLB umożliwiają jednoczesną transmisję na częstotliwości 121,5 MHz i 406 MHz."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.6 pkt 5",
+          "quote": "Międzynarodowy system Cospas-Sarsat wykrywa i lokalizuje nadajniki sygnału niebezpieczeństwa (ELT, PLB, EPIRB) pracujące na częstotliwości 406 MHz."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.6 pkt 5",
+          "quote": "Od dnia 1 lutego 2009 roku system nie śledzi sygnałów nadawanych na częstotliwościach 121,500 MHz i 243 MHz."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.6 pkt 5",
+          "quote": "poszukiwawczo-ratownicze statki powietrzne używają częstotliwości 121,500 MHz"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0013#a7c09dcc",
+        "PL102-0045#4000913a",
+        "PL099-0021#8798162a"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL16-12",
+      "status": "draft",
+      "heading": "Wyposażenie awaryjne i apteczka pierwszej pomocy",
+      "body": [
+        "Pilot dowódca rozpoczyna lot wyłącznie wtedy, gdy upewni się, że przyrządy i wyposażenie wymagane do wykonania lotu zostały zainstalowane na pokładzie i działają (NCO.GEN.105 lit. a) ppkt 4 (iii) rozporządzenia 965/2012; dla szybowców SAO.GEN.130 lit. d) ppkt 3 rozporządzenia 2018/1976). Dlatego za kompletność i dostępność pokładowego wyposażenia awaryjnego, w tym za obecność i stan apteczki, odpowiada dowódca statku powietrznego.",
+        "- Całe wymagane wyposażenie awaryjne musi być łatwo dostępne do natychmiastowego użycia (NCO.IDE.A.100 lit. e)).",
+        "- Samoloty wyposaża się w apteczkę pierwszej pomocy (NCO.IDE.A.145 lit. a)); musi ona być łatwo dostępna do użytku i utrzymywana w stanie odpowiednim do zamierzonego użycia (lit. b)). Te same wymagania dotyczą wiropłatów (NCO.IDE.H.145).",
+        "Zestawy pierwszej pomocy umieszcza się więc tak, by były łatwo dostępne dla wszystkich członków załogi i pasażerów. Zamknięta kasetka w dyspozycji dowódcy albo miejsce dostępne tylko z kabiny załogi takiej dostępności nie zapewniają."
+      ],
+      "refs": [
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(4)",
+          "quote": "rozpoczęcie lotu wyłącznie wtedy, gdy upewni się, że uwzględnione zostały wszystkie ograniczenia operacyjne"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(4)(iii)",
+          "quote": "przyrządy i wyposażenie wymagane do wykonania lotu zostały zainstalowane na pokładzie statku powietrznego i działają"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SAO.GEN.130(d)(3)",
+          "quote": "wymagane do wykonania lotu przyrządy i wyposażenie znajdują się na pokładzie szybowca i funkcjonują"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.IDE.A.100(e)",
+          "quote": "Całe wymagane wyposażenie awaryjne musi być łatwo dostępne do natychmiastowego użycia."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.IDE.A.145(a)",
+          "quote": "Samoloty wyposaża się w apteczkę pierwszej pomocy."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.IDE.A.145(b)(1)",
+          "quote": "łatwo dostępna do użytku"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.IDE.A.145(b)(2)",
+          "quote": "utrzymywana w stanie odpowiednim do zamierzonego użycia"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.IDE.H.145(a)",
+          "quote": "Wiropłaty wyposaża się w apteczkę pierwszej pomocy."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.IDE.H.145(b)(1)",
+          "quote": "łatwo dostępna do użytku"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0093#d53f6bf6",
+        "PL102-0054#cd03302e",
+        "PL099-0099#fb312950",
+        "PL102-0055#53d70212",
+        "PL102-0053#5967a041"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL16-13",
+      "status": "draft",
+      "heading": "Oznakowanie lotniskowych pojazdów ratowniczych",
+      "body": [
+        "Oznakowanie i oświetlenie pojazdów na lotnisku opisują akceptowalne sposoby spełnienia EASA do rozporządzenia 139/2014 (AMC1 ADR.OPS.B.080(a)):",
+        "- pojazdy ratownicze, w tym ratowniczo-gaśnicze, zaleca się oznaczać przede wszystkim kolorem czerwonym lub żółtozielonym, a pojazdy obsługi – kolorem żółtym;",
+        "- jeżeli pojazd oznacza się flagami, mają one wzór szachownicy w kontrastujących kolorach: pomarańczowym i białym albo czerwonym i białym;",
+        "- na pojazdach umieszcza się światła przeszkodowe małej intensywności typu C: migające niebieskie na pojazdach ratowniczych i ochrony, migające żółte na pozostałych.",
+        "Klucz ULC – kolor zielono-żółty lub czerwony – odpowiada temu zaleceniu. Odpowiedź „wyłącznie czerwony” jest błędna, ponieważ zalecenie dopuszcza dwa kolory pojazdów ratowniczych."
+      ],
+      "refs": [
+        {
+          "src": "EASA-EAR-AERODROMES",
+          "loc": "AMC1 ADR.OPS.B.080(a)"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0033#9667a50b"
+      ],
+      "disputeNote": null
+    }
+  ]
+}
