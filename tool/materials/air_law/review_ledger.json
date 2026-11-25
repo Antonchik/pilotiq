@@ -599,6 +599,14 @@
   "textSha": "c6eaa5683b57a37b",
   "verdict": "PASS"
  },
+ "PL010-0061#44f9371c": {
+  "date": "2026-11-25",
+  "note": "ICAO utworzyła Konwencja (Doc 7300 Article 43), Konwencję sporządzono w Chicago 7.12.1944 (art. 3 ust. 2 PL). Słowa „konferencja” nie ma w źródłach, ale tekst używa go tylko w cudzysłowie jako brzmienia odpowiedzi ULC i wiąże je z miejscem sporządzenia Konwencji – brak faktu ponad źródło.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "5311dec6bc1fd8c4",
+  "verdict": "PASS"
+ },
  "PL010-0062#3f1ad0c5": {
   "date": "2026-11-24",
   "note": "Art. 96 ust. 3, 5, 5b dosłownie; zastrzeżenie „chyba że uznanie nie jest wymagane” trafnie powiązane z ust. 5b.",
@@ -733,6 +741,38 @@
   "portion": "P05",
   "round": 1,
   "textSha": "f19551ead30fad38",
+  "verdict": "PASS"
+ },
+ "PL010-0078#030bfd81": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 7 Prawa lotniczego (dosłownie); cytat i lokator zgodne z korpusem.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "890b69e85ae531c6",
+  "verdict": "PASS"
+ },
+ "PL010-0078#4405f7fb": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różnice tylko w interpunkcji i dłuższym brzmieniu dystraktora; oryginał nie odwołuje się do nich szczegółowo.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "87a609b0c7f629fa",
+  "verdict": "PASS"
+ },
+ "PL010-0079#8b970757": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 6 – poprawnie. Ostatnie zdanie uogólnia art. 11 Konwencji (Doc 7300 Article 11): dotyczy on tylko przepisów o wlocie, wylocie oraz eksploatacji i żegludze statków na terytorium państwa, a nie wszystkich przepisów, więc „Tak samo” to za dużo. Poprawka: „Podobnie art. 11 Konwencji chicagowskiej nakazuje stosować przepisy państwa dotyczące wlotu na jego terytorium, wylotu z niego oraz żeglugi powietrznej na nim do statków wszystkich umawiających się państw bez względu na ich przynależność.”",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "e4cf04973d913e94",
+  "verdict": "FIX"
+ },
+ "PL010-0079#ae1f1d86": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różnice tylko w interpunkcji klucza i dystraktora.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "5344a1a0c5f0a024",
   "verdict": "PASS"
  },
  "PL010-0080#287c81dc": {
@@ -1687,6 +1727,22 @@
   "textSha": "04875c600cb2c87b",
   "verdict": "PASS"
  },
+ "PL010-0204#34723162": {
+  "date": "2026-11-25",
+  "note": "Doc 7300 Article 44(a): „Insure the safe and orderly growth of international civil aviation throughout the world” – „bezpieczny i prawidłowy (orderly) rozwój” to wierne oddanie, zgodne z kluczem. Lit. h) („Promote safety of flight in international air navigation”) odnosi się do anchoru Article 44, bo Article 44(h) nie ma w kotwicach (OCR) – akceptowalne.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "efab2037abe274ec",
+  "verdict": "PASS"
+ },
+ "PL010-0204#598d6ff8": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: ten sam klucz i pytanie, różni się jeden dystraktor („Żadna z odpowiedzi…”); oryginał nie ma pułapki.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "c3d5cb8b56934cdb",
+  "verdict": "PASS"
+ },
  "PL010-0205#2a8e9204": {
   "date": "2026-11-24",
   "note": "Klucz zgodny z art. 2 pkt 2 rozp. 2024/2803; „publikowanie” poparte wykazem produktów AIS (GEN 3.1 pkt 3: AIP, NOTAM). Pułapka MET poprawna.",
@@ -1965,6 +2021,38 @@
   "portion": "P15",
   "round": 1,
   "textSha": "7179d95f6b5a418f",
+  "verdict": "PASS"
+ },
+ "PL010-0236#438c71a2": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 8 Prawa lotniczego, SERA.1001(a) poprawnie przywołany. Zdanie-pułapka dotyczy wariantu, którego nie ma wśród odpowiedzi („przepisy obowiązujące w granicach danego terytorium”); dystraktory to przepisy polskie, kraju rejestracji i kraju startu. Poprawka: zastąpić je zdaniem „Pułapka: art. 8 nie wskazuje dla takiego obszaru przepisów polskich ani przepisów państwa rejestracji czy startu statku – odsyła wyłącznie do przepisów międzynarodowych.” (ref art. 8 już jest).",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "58ffbf8488f6e4d9",
+  "verdict": "FIX"
+ },
+ "PL010-0236#4fcdb67c": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: różni się tylko spacją przed kropką; dystraktory te same (także po poprawce pułapki w oryginale).",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "7d714e8e95fd749b",
+  "verdict": "PASS"
+ },
+ "PL010-0237#4f155be7": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 8 Prawa lotniczego; Doc 7300 Article 12 (rules and regulations relating to the flight and maneuver of aircraft there in force) potwierdza parafrazę; pułapka zgodna z art. 8.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "6c2b6cd64aa92aa3",
+  "verdict": "PASS"
+ },
+ "PL010-0238#458e24e0": {
+  "date": "2026-11-25",
+  "note": "Art. 42 p.p.m. (prawo państwa rejestru) + art. 31 ust. 2 PL i Doc 7300 Article 17 (nationality of the State in which registered) – wniosek o państwie przynależności uzasadniony.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "cab361eb935e5d84",
   "verdict": "PASS"
  },
  "PL010-0239#aee8b1f2": {
@@ -2735,6 +2823,22 @@
   "textSha": "89fa52fc3bb51f98",
   "verdict": "PASS"
  },
+ "PL010-0349#235809fc": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 145 ust. 1 pkt 1; pułapki z pkt 2 (państwa strony Konwencji) i art. 144 poprawne, jedno zdanie.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "a21a37f3725b5fdb",
+  "verdict": "PASS"
+ },
+ "PL010-0349#98dc1994": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: dystraktor „Loty szkoleniowe” zastąpiony „Wszystkie odpowiedzi są prawidłowe”; pułapka oryginału dotyczy dystraktorów obecnych w obu wariantach.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "1354bb2567420efa",
+  "verdict": "PASS"
+ },
  "PL010-0350#1e07d083": {
   "date": "2026-11-24",
   "note": "Klucz 8 km na i powyżej 3050 m AMSL = tabela S5-1; pułapka 5 km poprawna.",
@@ -2758,6 +2862,22 @@
   "round": 1,
   "textSha": "c64c1a2377248130",
   "verdict": "PASS"
+ },
+ "PL010-0353#c5d35b88": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 142 pkt 1 i 4 – poprawnie. Ostatnie zdanie uogólnia Doc 7300 Article 3 bis(b): prawo żądania lądowania dotyczy statku lecącego bez zezwolenia lub gdy są uzasadnione podstawy, że jest używany niezgodnie z celami Konwencji. Poprawka: „…potwierdza też art. 3 bis lit. b) Konwencji chicagowskiej wobec statku lecącego bez zezwolenia lub używanego niezgodnie z celami konwencji.”",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "5767fd2ae59553e3",
+  "verdict": "FIX"
+ },
+ "PL010-0353#d0bdd70e": {
+  "date": "2026-11-25",
+  "note": "Jak w 0353#c5d35b88: ostatnie zdanie uogólnia Doc 7300 Article 3 bis(b). Poprawka: „…potwierdza też art. 3 bis lit. b) Konwencji chicagowskiej wobec statku lecącego bez zezwolenia lub używanego niezgodnie z celami konwencji.” Reszta (art. 142 pkt 1 i 4, klucz „Wszystkie”) poprawna.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "15217c4b4a4dc2f4",
+  "verdict": "FIX"
  },
  "PL010-0354#8b197628": {
   "date": "2026-11-24",
@@ -3919,6 +4039,30 @@
   "textSha": "dd6e18fb1397accf",
   "verdict": "PASS"
  },
+ "PL010-0507#7a8c7c54": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: wariant rawMixed (PL+EN) tego samego pytania i odpowiedzi.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "bb5fcefbfd9f4b3c",
+  "verdict": "PASS"
+ },
+ "PL010-0507#cb1c071c": {
+  "date": "2026-11-25",
+  "note": "Art. 4 ust. 1 PL i Doc 7300 Article 1 (complete and exclusive sovereignty) – zgodne z kluczem.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "35f23a628ce97a01",
+  "verdict": "PASS"
+ },
+ "PL010-0510#a4e13336": {
+  "date": "2026-11-25",
+  "note": "Nie sporne: pytanie „w ramach zwierzchnictwa” odpowiada art. 4 ust. 1 PL, a klucz powtarza go dosłownie; art. 121 ust. 1 opisuje zarządzanie ruchem jako sposób realizacji (służby, ASM, ATFM), ale żaden dystraktor (Prezydent, RM, Prezes ULC) nie staje się przez to poprawny. Pułapka z art. 4 ust. 2 poprawna.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "473de22a2583a266",
+  "verdict": "PASS"
+ },
  "PL010-0512#7d9a7d4c": {
   "date": "2026-11-24",
   "note": "Usunięto «obecnie»; ostatnie zdanie opiera się na art. 140a ust. 5 pkt 1 i ust. 7 bez twierdzeń o wcześniejszym stanie prawnym. 3 zdania, 643 znaki, cytaty zgodne.",
@@ -4351,6 +4495,22 @@
   "textSha": "d50af10c80d6ce84",
   "verdict": "PASS"
  },
+ "PL010-0571#387ff122": {
+  "date": "2026-11-25",
+  "note": "Klucz „Wszystkie” = art. 142 pkt 1–3, każdy pkt z osobnym refem.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "bd6bbd78648c38ba",
+  "verdict": "PASS"
+ },
+ "PL010-0571#67142ae9": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 142 pkt 1 i 2 łącznie; dystraktory „tylko…” niepełne; brak podstawy dla wyłącznie prawa państwa rejestracji.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "bdb29d2fec7002b5",
+  "verdict": "PASS"
+ },
  "PL010-0572#1432cd66": {
   "date": "2026-11-24",
   "note": "Klucz = definicja QFE w AIP GEN 2.2; ENR 1.7 pkt 1.4 dokłada „progu drogi startowej w użyciu” (słowa klucza); pułapka QNH zgodna z GEN 2.2 i odnosi się do dystraktora „odniesione do średniego poziomu morza”. Cytaty dosłowne z polskiej kolumny AIP. Pierwsze zdanie siłą rzeczy powtarza krótką definicję (nie da się jej sparafrazować bez utraty klucza) — dopuszczalne; drugie zdanie jest bliskie dosłownego brzmienia ENR 1.7 pkt 1.4 — przy następnej edycji można przeredagować, ale nie blokuje.",
@@ -4719,6 +4879,14 @@
   "textSha": "64a28c497b9552d4",
   "verdict": "DISPUTED"
  },
+ "PL010-1532#90cd052e": {
+  "date": "2026-11-25",
+  "note": "AMC = niewiążące normy przyjęte przez Agencję (art. 2 pkt 14 rozp. 1178/2011), Agencja = EASA (art. 1 ust. 1 lit. i)), ARA.GEN.120(a); pułapka z art. 3 ust. 4 PL.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "af4d4535cbb02380",
+  "verdict": "PASS"
+ },
  "PL010-1535#565cccdb": {
   "date": "2026-11-24",
   "note": "Pytanie dosłownie cytuje art. 2 pkt 32 rozp. 923/2012; pułapka (CNS, MET, AIS to inne rodzaje ANS) = art. 2 pkt 5 rozp. 2024/2803.",
@@ -4799,6 +4967,14 @@
   "textSha": "6a8f730424c6adb3",
   "verdict": "PASS"
  },
+ "PL010-1547#bde3f738": {
+  "date": "2026-11-25",
+  "note": "Klucz dosłownie z art. 3 ust. 4 pkt 4 PL. Nowa nazwa z rozp. 1178/2011 („Agencja Unii Europejskiej ds. Bezpieczeństwa Lotniczego”) nie czyni żadnego dystraktora poprawnym – brak sporu; tekst nie musi jej podawać.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "ce7dcfbde0922ae4",
+  "verdict": "PASS"
+ },
  "PL010-1550#43edacd4": {
   "date": "2026-11-24",
   "note": "Klucz = art. 95a ust. 3a; art. 21 ust. 2 pkt 8 wymienia rejestr podmiotów szkolących obok statków, lotnisk i personelu – zgodnie z korpusem.",
@@ -4845,6 +5021,30 @@
   "portion": "P16",
   "round": 1,
   "textSha": "f8f8498d9eaed924",
+  "verdict": "PASS"
+ },
+ "PL010-1556#43014812": {
+  "date": "2026-11-25",
+  "note": "Załącznik 11 = art. 121 ust. 6 pkt 2; art. 10 ust. 6 rozp. 923/2012 dosłownie podaje tytuł „załącznik 11, Służby ruchu lotniczego”; pułapka (Załącznik 2) z art. 121 ust. 6 pkt 1.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "316af67bb3435bfe",
+  "verdict": "PASS"
+ },
+ "PL010-1557#69b1e448": {
+  "date": "2026-11-25",
+  "note": "Merytorycznie poprawnie, ale lokator AIP jest błędny: cytat „Zgodnie z Załącznikiem 1 ICAO – Licencjonowanie Personelu” to uwaga 4) do tabeli minimalnych odległości od granic stref w pkt 11 ENR 5.2.1, a nie pkt 10.9 (pkt 10.9 dotyczy FBZ; kotwica pkt 10.9 błędnie obejmuje pkt 11 – błąd S1). Poprawka: w tekście „AIP Polska (ENR 5.2.1, uwaga 4 do tabeli minimalnych odległości w pkt 11)” i loc „ENR 5.2.1” (ostrzeżenie validate o węższej kotwicy zignorować do naprawy kotwic) albo przestawić zdania: najpierw art. 2 pkt 22b rozp. 1178/2011, AIP jako uzupełnienie z poprawionym opisem miejsca.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "906eb3efdf922f0e",
+  "verdict": "FIX"
+ },
+ "PL010-1558#4120c2de": {
+  "date": "2026-11-25",
+  "note": "Załącznik 2 = art. 121 ust. 6 pkt 1; tytuł „załącznik 2, Przepisy ruchu lotniczego” dosłownie w art. 10 ust. 6 rozp. 923/2012; pułapka z pkt 2.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "cb50bcd173000295",
   "verdict": "PASS"
  },
  "PL010-1560#db25d3ed": {
@@ -5015,6 +5215,14 @@
   "textSha": "77ef13ac2d2b1fe8",
   "verdict": "PASS"
  },
+ "PL099-0032#324c346b": {
+  "date": "2026-11-25",
+  "note": "Aneks 13 = art. 17 ust. 3 Prawa lotniczego; pułapki Aneks 11 (art. 121 ust. 6 pkt 2) i Aneks 12 (AIP GEN 3.6 pkt 1, polska kolumna) poparte refami.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "11c3d411aa2bed24",
+  "verdict": "PASS"
+ },
  "PL099-0033#9667a50b": {
   "date": "2026-11-25",
   "note": "Poprawione zgodnie z uwagą: „pojazdy ratownicze … zaleca się oznaczać przede wszystkim” = „emergency vehicles … should preferably” w AMC1 ADR.OPS.B.080(a)(1); pułapka „zalecenie dopuszcza dwa kolory”. 3 zdania, 379 zn.",
@@ -5149,6 +5357,14 @@
   "portion": "P27",
   "round": 1,
   "textSha": "8be99916296e83e0",
+  "verdict": "PASS"
+ },
+ "PL099-0064#6c3416b5": {
+  "date": "2026-11-25",
+  "note": "AIP GEN 3.6 pkt 6 wprost: procedury i sygnały z Załącznika 12; § 2 pkt 1 rozp. SAR 2015 potwierdza oparcie służby ASAR na Załączniku 12. Cytat z polskiej kolumny.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "9b87ae7c18411a2a",
   "verdict": "PASS"
  },
  "PL099-0066#31bcc08a": {
@@ -5477,6 +5693,14 @@
   "portion": "P30",
   "round": 1,
   "textSha": "b260c776ed747edd",
+  "verdict": "PASS"
+ },
+ "PL102-0057#0f22221e": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi, różnią się tylko kropkami na końcu.",
+  "portion": "P02",
+  "round": 1,
+  "textSha": "58e3bc60576eae0d",
   "verdict": "PASS"
  },
  "PL102-0063#774ff4ab": {

@@ -1,0 +1,142 @@
+[
+ {
+  "key": "PL010-0078#030bfd81",
+  "verdict": "PASS",
+  "note": "Klucz = art. 7 Prawa lotniczego (dosłownie); cytat i lokator zgodne z korpusem."
+ },
+ {
+  "key": "PL010-0079#8b970757",
+  "verdict": "FIX",
+  "note": "Klucz = art. 6 – poprawnie. Ostatnie zdanie uogólnia art. 11 Konwencji (Doc 7300 Article 11): dotyczy on tylko przepisów o wlocie, wylocie oraz eksploatacji i żegludze statków na terytorium państwa, a nie wszystkich przepisów, więc „Tak samo” to za dużo. Poprawka: „Podobnie art. 11 Konwencji chicagowskiej nakazuje stosować przepisy państwa dotyczące wlotu na jego terytorium, wylotu z niego oraz żeglugi powietrznej na nim do statków wszystkich umawiających się państw bez względu na ich przynależność.”"
+ },
+ {
+  "key": "PL010-0078#4405f7fb",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: różnice tylko w interpunkcji i dłuższym brzmieniu dystraktora; oryginał nie odwołuje się do nich szczegółowo."
+ },
+ {
+  "key": "PL010-0079#ae1f1d86",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: różnice tylko w interpunkcji klucza i dystraktora."
+ },
+ {
+  "key": "PL010-0236#438c71a2",
+  "verdict": "FIX",
+  "note": "Klucz = art. 8 Prawa lotniczego, SERA.1001(a) poprawnie przywołany. Zdanie-pułapka dotyczy wariantu, którego nie ma wśród odpowiedzi („przepisy obowiązujące w granicach danego terytorium”); dystraktory to przepisy polskie, kraju rejestracji i kraju startu. Poprawka: zastąpić je zdaniem „Pułapka: art. 8 nie wskazuje dla takiego obszaru przepisów polskich ani przepisów państwa rejestracji czy startu statku – odsyła wyłącznie do przepisów międzynarodowych.” (ref art. 8 już jest)."
+ },
+ {
+  "key": "PL010-0236#4fcdb67c",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: różni się tylko spacją przed kropką; dystraktory te same (także po poprawce pułapki w oryginale)."
+ },
+ {
+  "key": "PL010-0237#4f155be7",
+  "verdict": "PASS",
+  "note": "Klucz = art. 8 Prawa lotniczego; Doc 7300 Article 12 (rules and regulations relating to the flight and maneuver of aircraft there in force) potwierdza parafrazę; pułapka zgodna z art. 8."
+ },
+ {
+  "key": "PL010-0061#44f9371c",
+  "verdict": "PASS",
+  "note": "ICAO utworzyła Konwencja (Doc 7300 Article 43), Konwencję sporządzono w Chicago 7.12.1944 (art. 3 ust. 2 PL). Słowa „konferencja” nie ma w źródłach, ale tekst używa go tylko w cudzysłowie jako brzmienia odpowiedzi ULC i wiąże je z miejscem sporządzenia Konwencji – brak faktu ponad źródło."
+ },
+ {
+  "key": "PL010-0204#34723162",
+  "verdict": "PASS",
+  "note": "Doc 7300 Article 44(a): „Insure the safe and orderly growth of international civil aviation throughout the world” – „bezpieczny i prawidłowy (orderly) rozwój” to wierne oddanie, zgodne z kluczem. Lit. h) („Promote safety of flight in international air navigation”) odnosi się do anchoru Article 44, bo Article 44(h) nie ma w kotwicach (OCR) – akceptowalne."
+ },
+ {
+  "key": "PL010-0204#598d6ff8",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: ten sam klucz i pytanie, różni się jeden dystraktor („Żadna z odpowiedzi…”); oryginał nie ma pułapki."
+ },
+ {
+  "key": "PL010-1556#43014812",
+  "verdict": "PASS",
+  "note": "Załącznik 11 = art. 121 ust. 6 pkt 2; art. 10 ust. 6 rozp. 923/2012 dosłownie podaje tytuł „załącznik 11, Służby ruchu lotniczego”; pułapka (Załącznik 2) z art. 121 ust. 6 pkt 1."
+ },
+ {
+  "key": "PL010-1557#69b1e448",
+  "verdict": "FIX",
+  "note": "Merytorycznie poprawnie, ale lokator AIP jest błędny: cytat „Zgodnie z Załącznikiem 1 ICAO – Licencjonowanie Personelu” to uwaga 4) do tabeli minimalnych odległości od granic stref w pkt 11 ENR 5.2.1, a nie pkt 10.9 (pkt 10.9 dotyczy FBZ; kotwica pkt 10.9 błędnie obejmuje pkt 11 – błąd S1). Poprawka: w tekście „AIP Polska (ENR 5.2.1, uwaga 4 do tabeli minimalnych odległości w pkt 11)” i loc „ENR 5.2.1” (ostrzeżenie validate o węższej kotwicy zignorować do naprawy kotwic) albo przestawić zdania: najpierw art. 2 pkt 22b rozp. 1178/2011, AIP jako uzupełnienie z poprawionym opisem miejsca."
+ },
+ {
+  "key": "PL010-1558#4120c2de",
+  "verdict": "PASS",
+  "note": "Załącznik 2 = art. 121 ust. 6 pkt 1; tytuł „załącznik 2, Przepisy ruchu lotniczego” dosłownie w art. 10 ust. 6 rozp. 923/2012; pułapka z pkt 2."
+ },
+ {
+  "key": "PL099-0032#324c346b",
+  "verdict": "PASS",
+  "note": "Aneks 13 = art. 17 ust. 3 Prawa lotniczego; pułapki Aneks 11 (art. 121 ust. 6 pkt 2) i Aneks 12 (AIP GEN 3.6 pkt 1, polska kolumna) poparte refami."
+ },
+ {
+  "key": "PL099-0064#6c3416b5",
+  "verdict": "PASS",
+  "note": "AIP GEN 3.6 pkt 6 wprost: procedury i sygnały z Załącznika 12; § 2 pkt 1 rozp. SAR 2015 potwierdza oparcie służby ASAR na Załączniku 12. Cytat z polskiej kolumny."
+ },
+ {
+  "key": "PL102-0057#0f22221e",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: identyczne pytanie i odpowiedzi, różnią się tylko kropkami na końcu."
+ },
+ {
+  "key": "PL010-1532#90cd052e",
+  "verdict": "PASS",
+  "note": "AMC = niewiążące normy przyjęte przez Agencję (art. 2 pkt 14 rozp. 1178/2011), Agencja = EASA (art. 1 ust. 1 lit. i)), ARA.GEN.120(a); pułapka z art. 3 ust. 4 PL."
+ },
+ {
+  "key": "PL010-1547#bde3f738",
+  "verdict": "PASS",
+  "note": "Klucz dosłownie z art. 3 ust. 4 pkt 4 PL. Nowa nazwa z rozp. 1178/2011 („Agencja Unii Europejskiej ds. Bezpieczeństwa Lotniczego”) nie czyni żadnego dystraktora poprawnym – brak sporu; tekst nie musi jej podawać."
+ },
+ {
+  "key": "PL010-0507#7a8c7c54",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: wariant rawMixed (PL+EN) tego samego pytania i odpowiedzi."
+ },
+ {
+  "key": "PL010-0507#cb1c071c",
+  "verdict": "PASS",
+  "note": "Art. 4 ust. 1 PL i Doc 7300 Article 1 (complete and exclusive sovereignty) – zgodne z kluczem."
+ },
+ {
+  "key": "PL010-0510#a4e13336",
+  "verdict": "PASS",
+  "note": "Nie sporne: pytanie „w ramach zwierzchnictwa” odpowiada art. 4 ust. 1 PL, a klucz powtarza go dosłownie; art. 121 ust. 1 opisuje zarządzanie ruchem jako sposób realizacji (służby, ASM, ATFM), ale żaden dystraktor (Prezydent, RM, Prezes ULC) nie staje się przez to poprawny. Pułapka z art. 4 ust. 2 poprawna."
+ },
+ {
+  "key": "PL010-0349#235809fc",
+  "verdict": "PASS",
+  "note": "Klucz = art. 145 ust. 1 pkt 1; pułapki z pkt 2 (państwa strony Konwencji) i art. 144 poprawne, jedno zdanie."
+ },
+ {
+  "key": "PL010-0349#98dc1994",
+  "verdict": "PASS",
+  "note": "sameAs poprawny: dystraktor „Loty szkoleniowe” zastąpiony „Wszystkie odpowiedzi są prawidłowe”; pułapka oryginału dotyczy dystraktorów obecnych w obu wariantach."
+ },
+ {
+  "key": "PL010-0353#c5d35b88",
+  "verdict": "FIX",
+  "note": "Klucz = art. 142 pkt 1 i 4 – poprawnie. Ostatnie zdanie uogólnia Doc 7300 Article 3 bis(b): prawo żądania lądowania dotyczy statku lecącego bez zezwolenia lub gdy są uzasadnione podstawy, że jest używany niezgodnie z celami Konwencji. Poprawka: „…potwierdza też art. 3 bis lit. b) Konwencji chicagowskiej wobec statku lecącego bez zezwolenia lub używanego niezgodnie z celami konwencji.”"
+ },
+ {
+  "key": "PL010-0353#d0bdd70e",
+  "verdict": "FIX",
+  "note": "Jak w 0353#c5d35b88: ostatnie zdanie uogólnia Doc 7300 Article 3 bis(b). Poprawka: „…potwierdza też art. 3 bis lit. b) Konwencji chicagowskiej wobec statku lecącego bez zezwolenia lub używanego niezgodnie z celami konwencji.” Reszta (art. 142 pkt 1 i 4, klucz „Wszystkie”) poprawna."
+ },
+ {
+  "key": "PL010-0571#67142ae9",
+  "verdict": "PASS",
+  "note": "Klucz = art. 142 pkt 1 i 2 łącznie; dystraktory „tylko…” niepełne; brak podstawy dla wyłącznie prawa państwa rejestracji."
+ },
+ {
+  "key": "PL010-0571#387ff122",
+  "verdict": "PASS",
+  "note": "Klucz „Wszystkie” = art. 142 pkt 1–3, każdy pkt z osobnym refem."
+ },
+ {
+  "key": "PL010-0238#458e24e0",
+  "verdict": "PASS",
+  "note": "Art. 42 p.p.m. (prawo państwa rejestru) + art. 31 ust. 2 PL i Doc 7300 Article 17 (nationality of the State in which registered) – wniosek o państwie przynależności uzasadniony."
+ }
+]
