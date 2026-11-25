@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL02-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Prezes Urzędu Lotnictwa Cywilnego i rejestry lotnicze",
       "body": [
         "Centralnym organem administracji rządowej właściwym w sprawach lotnictwa cywilnego jest Prezes Urzędu Lotnictwa Cywilnego (art. 20 ust. 1 Prawa lotniczego). Należą do niego wszystkie sprawy związane z lotnictwem cywilnym, których ustawy lub umowy międzynarodowe nie zastrzegają dla ministra właściwego do spraw transportu lub innych organów (art. 21 ust. 1). Wśród jego zadań art. 21 ust. 2 wymienia m.in. nadzór nad eksploatacją statków powietrznych (pkt 5), sprawdzanie zdatności sprzętu lotniczego do lotów (pkt 6) i prowadzenie rejestrów (pkt 8):",
@@ -69,7 +69,7 @@
     },
     {
       "id": "AL02-2",
-      "status": "draft",
+      "status": "verified",
       "heading": "Wpis do rejestru i dopuszczenie statku do lotów",
       "body": [
         "Do wykonywania lotów w przestrzeni powietrznej dopuszcza się wyłącznie cywilne statki powietrzne, które spełniają łącznie trzy warunki (art. 31 ust. 1 Prawa lotniczego):",
@@ -128,7 +128,7 @@
     },
     {
       "id": "AL02-3",
-      "status": "draft",
+      "status": "verified",
       "heading": "Zdatność do lotu: obowiązki użytkownika i załogi",
       "body": [
         "Użytkownik, dowódca i inni członkowie załogi statku powietrznego są obowiązani przestrzegać warunków i ograniczeń ustanowionych w świadectwie zdatności do lotu i w dokumentach z nim związanych (art. 51 ust. 1 Prawa lotniczego). Obowiązek dotyczy wszystkich tych osób jednocześnie, a nie tylko jednej z nich.",
@@ -169,7 +169,7 @@
     },
     {
       "id": "AL02-4",
-      "status": "draft",
+      "status": "verified",
       "heading": "Uznawanie obcych dokumentów zdatności",
       "body": [
         "Prezes Urzędu może uznać, zgodnie z art. 12 rozporządzenia 216/2008, za ważne, na równi z odpowiednimi dokumentami wydanymi w Rzeczypospolitej Polskiej, następujące dokumenty wydane lub potwierdzone przez właściwy organ obcego państwa (art. 52 ust. 2 Prawa lotniczego):",
@@ -218,7 +218,7 @@
     },
     {
       "id": "AL02-5",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Kontrola Prezesa Urzędu i inspekcja obcych statków",
       "body": [
         "Pracownikom Urzędu oraz innym osobom upoważnionym do przeprowadzenia kontroli przysługuje m.in. prawo (art. 27 ust. 3 Prawa lotniczego):",
@@ -281,7 +281,7 @@
     },
     {
       "id": "AL02-6",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Lotnictwo ogólne i prace lotnicze",
       "body": [
         "Zgodnie z definicją w załączniku I do rozporządzenia 2017/373 lotnictwo ogólne oznacza wszelkie operacje lotnictwa cywilnego oprócz prac lotniczych lub zarobkowego transportu lotniczego. Prace lotnicze to operacje, podczas których statek powietrzny jest wykorzystywany do wykonywania usług specjalnych w takich dziedzinach, jak rolnictwo, budownictwo, fotografowanie, miernictwo, obserwacje i patrole, poszukiwanie i ratownictwo lub reklama lotnicza.",

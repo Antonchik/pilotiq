@@ -1,894 +1,894 @@
 {
- "topic": "AL14",
- "sections": [
-  {
-   "id": "AL14-1",
-   "status": "draft",
-   "heading": "Dowódca statku powietrznego i załoga",
-   "body": [
-    "Załogę statku powietrznego stanowią osoby wyznaczone przez użytkownika statku powietrznego do wykonania określonych czynności na statku w czasie lotu (art. 113 ust. 1 Prawa lotniczego). Użytkownikiem jest właściciel statku albo inna osoba wpisana jako użytkownik do rejestru statków powietrznych (art. 2 pkt 3). O przynależności do załogi decyduje więc wyznaczenie przez użytkownika, a nie samo posiadanie licencji.",
-    "- Na statku powietrznym wykonującym lot z załogą musi być wyznaczony dowódca statku powietrznego (art. 113 ust. 2), także w lotach niekomercyjnych.",
-    "- Jeżeli załogę stanowi jedna osoba, pełni ona funkcję dowódcy (art. 113 ust. 3).",
-    "- Dowódca jest obowiązany wykonywać loty zgodnie z przepisami, w szczególności zaś zapewnić bezpieczeństwo statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy (art. 114 ust. 1).",
-    "Przepisy unijne mówią to samo: pilot dowódca odpowiada za bezpieczeństwo statku powietrznego oraz członków załogi, pasażerów i ładunków na pokładzie (pkt NCO.GEN.105 lit. a) ppkt 1 rozporządzenia 965/2012), a także za użytkowanie statku zgodnie z przepisami, niezależnie od tego, czy osobiście go pilotuje (pkt SERA.2010 lit. a) rozporządzenia 923/2012). Za bezpieczeństwo lotu od startu do lądowania odpowiada więc dowódca, a nie cała załoga ani kontroler ruchu lotniczego."
-   ],
-   "refs": [
+  "topic": "AL14",
+  "sections": [
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 113 ust. 1",
-     "quote": "Załogę statku powietrznego stanowią osoby wyznaczone przez użytkownika statku powietrznego do wykonania określonych czynności na statku powietrznym w czasie lotu."
+      "id": "AL14-1",
+      "status": "draft",
+      "heading": "Dowódca statku powietrznego i załoga",
+      "body": [
+        "Załogę statku powietrznego stanowią osoby wyznaczone przez użytkownika statku powietrznego do wykonania określonych czynności na statku w czasie lotu (art. 113 ust. 1 Prawa lotniczego). Użytkownikiem jest właściciel statku albo inna osoba wpisana jako użytkownik do rejestru statków powietrznych (art. 2 pkt 3). O przynależności do załogi decyduje więc wyznaczenie przez użytkownika, a nie samo posiadanie licencji.",
+        "- Na statku powietrznym wykonującym lot z załogą musi być wyznaczony dowódca statku powietrznego (art. 113 ust. 2), także w lotach niekomercyjnych.",
+        "- Jeżeli załogę stanowi jedna osoba, pełni ona funkcję dowódcy (art. 113 ust. 3).",
+        "- Dowódca jest obowiązany wykonywać loty zgodnie z przepisami, w szczególności zaś zapewnić bezpieczeństwo statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy (art. 114 ust. 1).",
+        "Przepisy unijne mówią to samo: pilot dowódca odpowiada za bezpieczeństwo statku powietrznego oraz członków załogi, pasażerów i ładunków na pokładzie (pkt NCO.GEN.105 lit. a) ppkt 1 rozporządzenia 965/2012), a także za użytkowanie statku zgodnie z przepisami, niezależnie od tego, czy osobiście go pilotuje (pkt SERA.2010 lit. a) rozporządzenia 923/2012). Za bezpieczeństwo lotu od startu do lądowania odpowiada więc dowódca, a nie cała załoga ani kontroler ruchu lotniczego."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 113 ust. 1",
+          "quote": "Załogę statku powietrznego stanowią osoby wyznaczone przez użytkownika statku powietrznego do wykonania określonych czynności na statku powietrznym w czasie lotu."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 2 pkt 3",
+          "quote": "użytkownikiem statku powietrznego jest jego właściciel lub inna osoba wpisana jako użytkownik do rejestru statków powietrznych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 113 ust. 2",
+          "quote": "Na statku powietrznym wykonującym lot z załogą musi być wyznaczony dowódca statku powietrznego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 113 ust. 3",
+          "quote": "Jeżeli załogę statku powietrznego stanowi jedna osoba, pełni ona funkcję dowódcy."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 114 ust. 1",
+          "quote": "Dowódca jest obowiązany wykonywać loty zgodnie z przepisami, w szczególności zaś zapewnić bezpieczeństwo statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(1)",
+          "quote": "bezpieczeństwo statku powietrznego oraz wszystkich członków załogi, pasażerów i ładunków znajdujących się na jego pokładzie podczas użytkowania statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.2010(a)",
+          "quote": "Pilot dowódca statku powietrznego, niezależnie od tego, czy osobiście pilotuje statek powietrzny, czy też nie, jest odpowiedzialny za użytkowanie statku powietrznego zgodnie z przepisami niniejszego rozporządzenia"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0039#02d04295",
+        "PL010-0131#d827a7b2",
+        "PL010-0002#6b5604c8",
+        "PL010-0002#9d0e919e",
+        "PL099-0092#a74def59"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 2 pkt 3",
-     "quote": "użytkownikiem statku powietrznego jest jego właściciel lub inna osoba wpisana jako użytkownik do rejestru statków powietrznych"
+      "id": "AL14-2",
+      "status": "draft",
+      "heading": "Polecenia dowódcy i środki przymusu",
+      "body": [
+        "W celu zapewnienia bezpieczeństwa lotu oraz bezpieczeństwa i porządku na pokładzie statku powietrznego dowódca jest upoważniony do (art. 115 ust. 1 Prawa lotniczego):",
+        "- zobowiązania, w razie konieczności, innych członków załogi do wykonywania czynności nienależących do ich normalnego zakresu obowiązków (pkt 1);",
+        "- wydawania poleceń wszystkim osobom znajdującym się na pokładzie statku powietrznego (pkt 2).",
+        "Polecenia dowódcy są obowiązane wypełniać wszystkie osoby obecne na pokładzie, nie tylko członkowie załogi (ust. 2). Dowódca ma prawo decydować o zastosowaniu niezbędnych środków, łącznie ze środkami przymusu, w stosunku do osób niewykonujących jego poleceń albo zagrażających w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie (ust. 3 pkt 1).",
+        "Członkowie załogi mogą stosować wyłącznie środki przymusu odpowiadające potrzebom wynikającym z istniejącej sytuacji i niezbędne do osiągnięcia podporządkowania wymaganiom bezpieczeństwa i porządku na pokładzie oraz poleceniom i decyzjom dowódcy (ust. 4). Oba warunki muszą być spełnione łącznie.",
+        "Przepis przyznaje dowódcy oba uprawnienia z ust. 1 naraz i obejmuje wszystkie wymienione grupy osób, dlatego odpowiedzi ograniczające je słowem „tylko” są niepełne."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 1",
+          "quote": "W celu zapewnienia bezpieczeństwa lotu oraz bezpieczeństwa i porządku na pokładzie statku powietrznego dowódca jest upoważniony do:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 1 pkt 1",
+          "quote": "zobowiązania, w razie konieczności, innych członków załogi do wykonywania czynności nienależących do ich normalnego zakresu obowiązków;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 1 pkt 2",
+          "quote": "wydawania poleceń wszystkim osobom znajdującym się na pokładzie statku powietrznego."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 2",
+          "quote": "Wszystkie osoby obecne na pokładzie statku powietrznego są obowiązane wypełniać polecenia dowódcy."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 3 pkt 1",
+          "quote": "zastosowaniu niezbędnych środków, łącznie ze środkami przymusu w stosunku do osób niewykonujących jego poleceń albo zagrażających w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie statku powietrznego;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 4",
+          "quote": "Członkowie załogi statku powietrznego mogą stosować wyłącznie środki przymusu odpowiadające potrzebom wynikającym z istniejącej sytuacji i niezbędne do osiągnięcia podporządkowania wymaganiom bezpieczeństwa i porządku na pokładzie statku oraz poleceniom i decyzjom dowódcy."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0193#bc6b7ad3",
+        "PL010-0193#44defe31",
+        "PL010-0255#ddf3f027",
+        "PL010-0255#e9163d05",
+        "PL010-0256#15c5b027",
+        "PL010-0256#bcc24d06",
+        "PL010-0392#5cb2858f",
+        "PL010-0392#e9163d05",
+        "PL010-0393#3fe2bfe4",
+        "PL010-0393#bcc24d06",
+        "PL099-0082#7e61b8ba",
+        "PL102-0021#25232f08",
+        "PL010-0029#29389dba",
+        "PL010-0029#9e70f993"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 113 ust. 2",
-     "quote": "Na statku powietrznym wykonującym lot z załogą musi być wyznaczony dowódca statku powietrznego"
+      "id": "AL14-3",
+      "status": "draft",
+      "heading": "Zatrzymanie osoby i przekazanie jej organom",
+      "body": [
+        "Dowódca ma prawo decydować o zatrzymaniu osoby podejrzanej o popełnienie przestępstwa na statku powietrznym albo osoby zagrażającej w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie, do czasu przekazania jej właściwym organom (art. 115 ust. 3 pkt 2 Prawa lotniczego). Uprawnienie to istnieje obok decyzji o środkach przymusu wobec osób niewykonujących poleceń (ust. 3 pkt 1), więc przepis przyznaje dowódcy oba naraz.",
+        "Do przejęcia zatrzymanej osoby są obowiązane organy Policji i Straży Granicznej (art. 115 ust. 5). Dotyczy to każdej osoby, o której mowa w ust. 3 pkt 2:",
+        "- podejrzanej o popełnienie przestępstwa na statku powietrznym;",
+        "- zagrażającej bezpieczeństwu lotu;",
+        "- zagrażającej porządkowi na pokładzie statku powietrznego.",
+        "Przepis nie nakłada obowiązku przejęcia takiej osoby na zarządzającego lotniskiem ani na właściciela czy użytkownika statku powietrznego. Nie wskazuje też jako adresata Służby Więziennej, Straży Ochrony Lotniska ani funkcjonariuszy ABW."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 3 pkt 2",
+          "quote": "zatrzymaniu osoby podejrzanej o popełnienie przestępstwa na statku powietrznym albo osoby zagrażającej w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie statku powietrznego, do czasu przekazania jej właściwym organom."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 3 pkt 1",
+          "quote": "zastosowaniu niezbędnych środków, łącznie ze środkami przymusu w stosunku do osób niewykonujących jego poleceń albo zagrażających w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie statku powietrznego;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 115 ust. 5",
+          "quote": "Organy Policji i Straży Granicznej są obowiązane do przejęcia osoby, o której mowa w ust. 3 pkt 2."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0255#e9163d05",
+        "PL010-0256#15c5b027",
+        "PL010-0256#bcc24d06",
+        "PL010-0392#5cb2858f",
+        "PL010-0392#e9163d05",
+        "PL010-0393#3fe2bfe4",
+        "PL010-0393#bcc24d06",
+        "PL010-0121#8a45b682",
+        "PL010-0122#d294f35d",
+        "PL010-0123#3a7153c5",
+        "PL099-0042#dc422ecc",
+        "PL102-0031#1295a643"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 113 ust. 3",
-     "quote": "Jeżeli załogę statku powietrznego stanowi jedna osoba, pełni ona funkcję dowódcy."
+      "id": "AL14-4",
+      "status": "draft",
+      "heading": "Niebezpieczeństwo, uszkodzenie statku i przymusowe lądowanie",
+      "body": [
+        "Ogólny obowiązek dowódcy to zapewnienie bezpieczeństwa statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy (art. 114 ust. 1 Prawa lotniczego). Dwa kolejne ustępy rozwijają go dla sytuacji szczególnych.",
+        "Gdy statkowi powietrznemu grozi niebezpieczeństwo, dowódca jest obowiązany zastosować wszelkie niezbędne środki w celu ratowania pasażerów i załogi (art. 114 ust. 2). Przepis mówi o ratowaniu ludzi, a nie samego statku powietrznego ani przewożonej poczty.",
+        "W razie uszkodzenia statku powietrznego lub przymusowego lądowania dowódca wykonuje wszelkie czynności, jakie uzna za konieczne do zabezpieczenia interesów (art. 114 ust. 3), działając w imieniu:",
+        "- właściciela statku powietrznego;",
+        "- użytkownika statku;",
+        "- właścicieli przewożonych rzeczy.",
+        "Przepis obejmuje wszystkie trzy podmioty naraz, dlatego odpowiedź wymieniająca tylko jeden z nich jest niepełna."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 114 ust. 1",
+          "quote": "Dowódca jest obowiązany wykonywać loty zgodnie z przepisami, w szczególności zaś zapewnić bezpieczeństwo statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 114 ust. 2",
+          "quote": "Gdy statkowi powietrznemu grozi niebezpieczeństwo, dowódca jest obowiązany zastosować wszelkie niezbędne środki w celu ratowania pasażerów i załogi."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 114 ust. 3",
+          "quote": "W razie uszkodzenia statku powietrznego lub przymusowego lądowania dowódca wykonuje w imieniu właściciela i użytkownika statku oraz w imieniu właścicieli przewożonych rzeczy wszelkie czynności, jakie uzna za konieczne do zabezpieczenia ich interesów."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0225#2d52c258",
+        "PL010-0225#cdc7f9c3",
+        "PL010-0233#e0106952",
+        "PL010-0233#fddc43f6",
+        "PL010-0234#44779739",
+        "PL010-0234#bfd5bc53"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 114 ust. 1",
-     "quote": "Dowódca jest obowiązany wykonywać loty zgodnie z przepisami, w szczególności zaś zapewnić bezpieczeństwo statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy."
+      "id": "AL14-5",
+      "status": "draft",
+      "heading": "Obowiązek udzielenia pomocy",
+      "body": [
+        "Dowódca statku powietrznego jest obowiązany udzielić poszkodowanym lub znajdującym się w niebezpieczeństwie pomocy, jeżeli (art. 117 ust. 1 Prawa lotniczego):",
+        "- otrzymał sygnał o niebezpieczeństwie grożącym innemu statkowi powietrznemu lub statkowi morskiemu;",
+        "- spostrzegł statek powietrzny lub morski, który uległ wypadkowi lub znalazł się w niebezpieczeństwie;",
+        "- zauważył inną katastrofę lub klęskę żywiołową;",
+        "- zauważył osobę znajdującą się na morzu w niebezpieczeństwie utraty życia.",
+        "Pomocy udziela się w zakresie, w jakim dowódca może to uczynić bez narażenia na niebezpieczeństwo powierzonego mu statku powietrznego, pasażerów, załogi lub innych osób. Obowiązek istnieje więc zawsze, ale jest ograniczony bezpieczeństwem własnego statku i ludzi; przepis nie wymaga użycia „wszelkich środków”.",
+        "Obowiązek pomocy ustaje, gdy dowódca wie, że kto inny udziela pomocy w podobnych lub lepszych warunkach, niż on sam mógłby jej udzielić (art. 117 ust. 2). Ustanie obowiązku nie zależy od zgody Prezesa ULC ani ministra właściwego do spraw transportu."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 117 ust. 1",
+          "quote": "otrzymał sygnał o niebezpieczeństwie grożącym innemu statkowi powietrznemu lub statkowi morskiemu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 117 ust. 1",
+          "quote": "spostrzegł statek powietrzny lub morski, który uległ wypadkowi lub znalazł się w niebezpieczeństwie"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 117 ust. 1",
+          "quote": "zauważył inną katastrofę lub klęskę żywiołową"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 117 ust. 1",
+          "quote": "zauważył osobę znajdującą się na morzu w niebezpieczeństwie utraty życia"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 117 ust. 1",
+          "quote": "obowiązany jest udzielić poszkodowanym lub znajdującym się w niebezpieczeństwie pomocy w zakresie, w jakim może to uczynić bez narażenia na niebezpieczeństwo powierzonego mu statku powietrznego, pasażerów, załogi lub innych osób."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 117 ust. 2",
+          "quote": "Obowiązek pomocy ustaje, gdy dowódca wie, że kto inny udziela pomocy w podobnych lub lepszych warunkach, niż on sam mógłby jej udzielić."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0005#c72c8490",
+        "PL010-0006#cba17406",
+        "PL010-0031#b800333f",
+        "PL010-0032#9b73857a",
+        "PL010-0033#57003795",
+        "PL010-0034#99ff9ae9",
+        "PL010-0093#733abf57",
+        "PL010-0093#a029ad90",
+        "PL010-0094#62ecf2e6",
+        "PL099-0087#f368e5d5",
+        "PL102-0035#f368e5d5"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(a)(1)",
-     "quote": "bezpieczeństwo statku powietrznego oraz wszystkich członków załogi, pasażerów i ładunków znajdujących się na jego pokładzie podczas użytkowania statku powietrznego"
+      "id": "AL14-6",
+      "status": "draft",
+      "heading": "Broń i niebezpieczne przedmioty na pokładzie",
+      "body": [
+        "Zabrania się członkom załogi oraz innym osobom wnoszenia i używania broni palnej, broni gazowej oraz materiałów wybuchowych na pokład statku powietrznego (art. 116 ust. 1 Prawa lotniczego). Zakaz ma zastosowanie także do urządzeń, środków i substancji mogących stanowić zagrożenie dla bezpieczeństwa lotu lub pasażerów (ust. 2).",
+        "Zakazów nie stosuje się do (art. 116 ust. 3):",
+        "- żołnierzy i funkcjonariuszy wymienionych służb, m.in. Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Policji, Straży Granicznej i Służby Ochrony Państwa, którzy bez zamiaru odbycia lotu wykonują obowiązki służbowe na pokładzie statku pozostającego na lotnisku albo lądowisku (pkt 1);",
+        "- funkcjonariuszy Straży Granicznej pełniących wartę ochronną (pkt 2);",
+        "- żołnierzy i funkcjonariuszy tych służb, którzy podczas wykonywania obowiązków służbowych odbywają lot i odbyli szkolenie w zakresie zasad bezpieczeństwa na pokładzie (pkt 3).",
+        "Wśród wyjątków nie ma inspektorów ULC, Straży Miejskiej ani pracowników ministerstwa. Obecny przepis nie wymienia też Biura Ochrony Rządu ani Wojskowych Służb Informacyjnych; pytania, które je wskazują, opierają się na nieaktualnym brzmieniu ustawy."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 1",
+          "quote": "Zabrania się członkom załogi oraz innym osobom wnoszenia i używania broni palnej, broni gazowej oraz materiałów wybuchowych na pokład statku powietrznego"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 2",
+          "quote": "Zakaz, o którym mowa w ust. 1, ma zastosowanie także do urządzeń, środków i substancji mogących stanowić zagrożenie dla bezpieczeństwa lotu lub pasażerów."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 3",
+          "quote": "Zakazów, o których mowa w ust. 1 i 2, nie stosuje się do:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 3 pkt 1",
+          "quote": "funkcjonariuszy Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Centralnego Biura Antykorupcyjnego, Policji, Straży Granicznej, Służby Celno-Skarbowej i Służby Ochrony Państwa"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 3 pkt 1",
+          "quote": "żołnierzy i funkcjonariuszy Służby Kontrwywiadu Wojskowego, Służby Wywiadu Wojskowego, żołnierzy Żandarmerii Wojskowej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 3 pkt 1",
+          "quote": "wykonują obowiązki służbowe na pokładzie statku powietrznego pozostającego na lotnisku albo lądowisku"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 3 pkt 2",
+          "quote": "funkcjonariuszy Straży Granicznej pełniących wartę ochronną, o której mowa w art. 186a ust. 1;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 116 ust. 3 pkt 3",
+          "quote": "którzy podczas wykonywania przez nich obowiązków służbowych odbywają lot i odbyli szkolenie w zakresie zasad bezpieczeństwa na pokładzie statku powietrznego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0001#dd8ac4c9",
+        "PL010-0001#41570700",
+        "PL010-0300#4d8cd5ab",
+        "PL010-0301#5b9f62f3",
+        "PL010-1575#3502e5a3"
+      ],
+      "disputeNote": null
     },
     {
-     "src": "EU-923-2012",
-     "loc": "SERA.2010(a)",
-     "quote": "Pilot dowódca statku powietrznego, niezależnie od tego, czy osobiście pilotuje statek powietrzny, czy też nie, jest odpowiedzialny za użytkowanie statku powietrznego zgodnie z przepisami niniejszego rozporządzenia"
+      "id": "AL14-7",
+      "status": "draft",
+      "heading": "Zrzuty ze statku powietrznego",
+      "body": [
+        "Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby (art. 123 ust. 2 Prawa lotniczego):",
+        "- ochrony ludności (pkt 1);",
+        "- ochrony przeciwpożarowej (pkt 2);",
+        "- służby zdrowia (pkt 3);",
+        "- poszukiwania i ratownictwa (pkt 4);",
+        "- sportu i obsługi imprez masowych (pkt 5);",
+        "- reklamy (pkt 6);",
+        "- gospodarki rolnej i leśnej (pkt 7);",
+        "- zrzutów doświadczalnych i szkoleniowych (pkt 8).",
+        "Poza tymi celami zrzut jest zabroniony. Na liście nie ma ochrony granic ani uroczystości, dlatego np. zrzut wiązanki kwiatów podczas uroczystości jest zabroniony. Przepis nie przewiduje zgody władz lotniczych jako podstawy zrzutu w innym celu. Szczegółowe warunki dokonywania zrzutów ma określić rozporządzenie wydane na podstawie art. 123 ust. 3, z uwzględnieniem bezpieczeństwa osób i mienia."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2",
+          "quote": "Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 1",
+          "quote": "ochrony ludności;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 2",
+          "quote": "ochrony przeciwpożarowej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 3",
+          "quote": "służby zdrowia;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 4",
+          "quote": "poszukiwania i ratownictwa;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 5",
+          "quote": "sportu i obsługi imprez masowych;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 6",
+          "quote": "reklamy;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 7",
+          "quote": "gospodarki rolnej i leśnej;"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 2 pkt 8",
+          "quote": "doświadczalne i szkoleniowe."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 123 ust. 3",
+          "quote": "określi szczegółowe warunki dokonywania zrzutów, o których mowa w ust. 2, z uwzględnieniem bezpieczeństwa osób i mienia."
+        }
+      ],
+      "questionKeys": [
+        "PL099-0100#33e15656",
+        "PL102-0034#f1fb18dc",
+        "PL010-0009#082b38de",
+        "PL010-0009#c73e6ad6",
+        "PL010-0329#4cc2e01a",
+        "PL010-0329#93fd1d26",
+        "PL010-0330#4f809426",
+        "PL010-0330#16e9ecdd",
+        "PL010-0599#83afc9ca",
+        "PL010-0599#93fd1d26",
+        "PL010-0600#653a8570",
+        "PL010-0600#16e9ecdd"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-8",
+      "status": "draft",
+      "heading": "Osoby i ładunek zagrażające lotowi, kabina załogi, bezprawna ingerencja",
+      "body": [
+        "- Pilot dowódca jest uprawniony do odmowy przewozu lub do usunięcia z pokładu każdej osoby lub każdej części bagażu lub ładunku, która może stwarzać potencjalne zagrożenie dla bezpieczeństwa statku powietrznego lub osób na jego pokładzie (pkt NCO.GEN.105 lit. c) rozporządzenia 965/2012; w zarobkowym transporcie lotniczym pkt CAT.GEN.MPA.105 lit. a) ppkt 4). Uprawnienie to ma dowódca, a nie przedstawiciel przewoźnika ani zarządca lotniska.",
+        "- Ostateczną decyzję dotyczącą wstępu do kabiny załogi lotniczej podejmuje dowódca (pkt CAT.GEN.MPA.135 lit. c)). Dopilnowuje on, by wstęp nie spowodował rozproszenia uwagi załogi ani zakłócenia w wykonywaniu lotu (lit. b) ppkt 1).",
+        "Statek powietrzny, który jest przedmiotem bezprawnej ingerencji, stara się ustawić transponder na kod 7500 i zawiadomić odpowiedni organ ATS o tym fakcie i o istotnych okolicznościach (pkt SERA.11005 lit. aa) rozporządzenia 923/2012); pilot dowódca niezwłocznie składa też raport właściwemu organowi (pkt NCO.GEN.105 lit. g)). Organ ATS, który wie lub sądzi, że statek jest przedmiotem bezprawnej ingerencji, nie wspomina w łączności powietrze-ziemia o charakterze sytuacji awaryjnej, chyba że była już o nim mowa w komunikatach z tego statku i istnieje pewność, że wzmianka nie pogorszy sytuacji (pkt SERA.10005 lit. b))."
+      ],
+      "refs": [
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(c)",
+          "quote": "Pilot dowódca jest uprawniony do odmowy przewozu lub do usunięcia z pokładu statku powietrznego każdej osoby lub każdej części bagażu lub ładunku, która może stwarzać potencjalne zagrożenie dla bezpieczeństwa statku powietrznego lub osób znajdujących się na jego pokładzie."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.GEN.MPA.105(a)(4)",
+          "quote": "jest uprawniony do usunięcia z pokładu statku powietrznego każdej osoby lub każdej części ładunku, która może stwarzać potencjalne zagrożenie dla bezpieczeństwa statku powietrznego lub osób znajdujących się na jego pokładzie"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.GEN.MPA.135(c)",
+          "quote": "Ostateczną decyzję dotyczącą wstępu do kabiny załogi lotniczej podejmuje dowódca."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.GEN.MPA.135(b)(1)",
+          "quote": "udzielenie zezwolenia na wstęp do kabiny załogi lotniczej nie spowodowało rozproszenia uwagi załogi lub zakłócenia w wykonywaniu lotu"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.11005(aa)",
+          "quote": "stara się ustawić transponder na kod 7500 i zawiadomić odpowiedni organ ATS o tym fakcie, o wszystkich istotnych okolicznościach z tym związanych"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(g)",
+          "quote": "W razie aktu bezprawnej ingerencji pilot dowódca niezwłocznie składa raport właściwemu organowi i zawiadamia wyznaczony organ miejscowy."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.10005(b)",
+          "quote": "w łączności ATS powietrze-ziemia nie wspomina się o charakterze sytuacji awaryjnej, chyba że była już wcześniej o nim mowa w komunikatach z tego statku powietrznego i istnieje pewność, że taka wzmianka nie pogorszy sytuacji"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0043#f7f12979",
+        "PL099-0076#648818ba",
+        "PL099-0083#17d3126e",
+        "PL099-0086#d8733033"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-9",
+      "status": "draft",
+      "heading": "Alkohol, środki psychoaktywne i materiały niebezpieczne",
+      "body": [
+        "Osoba, której funkcja ma krytyczne znaczenie dla bezpieczeństwa lotniczego, nie może wykonywać tej funkcji pod wpływem jakiegokolwiek środka psychotropowego ograniczającego sprawność organizmu i nie może podejmować ryzyka związanego z użyciem takich środków (pkt SERA.2020 rozporządzenia 923/2012). Rozporządzenie zalicza do substancji psychotropowych także alkohol (art. 2 pkt 104). Przepis nie wyznacza okresu, po którym wolno rozpocząć lot, dlatego klucz ULC odpowiada, że pilot nie może przyjmować środków psychotropowych. Pilot dowódca nie rozpoczyna lotu, jeżeli jest niezdolny do wykonywania obowiązków m.in. z powodu działania substancji psychoaktywnej (pkt NCO.GEN.105 lit. a) ppkt 5 rozporządzenia 965/2012).",
+        "Materiały niebezpieczne transportowane są co do zasady wyłącznie przez zatwierdzonych operatorów (pkt NCO.GEN.140 lit. b)). Za dopuszczone uznaje się jednak uzasadnione ilości substancji, które zostałyby w innym przypadku zaklasyfikowane jako materiały niebezpieczne, jeżeli są wykorzystywane w celu łatwiejszego zapewnienia bezpieczeństwa lotu, a ich obecność na pokładzie zapewnia natychmiastową dostępność do celów operacyjnych (lit. f)). Na tym wyjątku opiera się klucz ULC o materiałach promieniotwórczych niezbędnych do działania istotnych systemów statku powietrznego, choć przepis nie wymienia ich wprost."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.2020",
+          "quote": "nie może wykonywać tej funkcji, będąc pod wpływem jakiegokolwiek środka psychotropowego ograniczającego sprawność organizmu ludzkiego. Żadna taka osoba nie może podejmować ryzyka związanego z użyciem tego rodzaju środków."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 104",
+          "quote": "„substancja psychotropowa” oznacza alkohol"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(5)",
+          "quote": "nierozpoczynanie lotu, jeżeli jest on niezdolny do wykonywania swoich obowiązków z takich przyczyn, jak uraz, choroba, przemęczenie czy działanie substancji psychoaktywnej"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.140(b)",
+          "quote": "Materiały niebezpieczne transportowane są wyłącznie przez operatorów zatwierdzonych"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.140(f)",
+          "quote": "Uzasadnione ilości artykułów i substancji, które zostałyby w innym przypadku zaklasyfikowane jako materiały niebezpieczne i które są wykorzystywane w celu łatwiejszego zapewnienia bezpieczeństwa lotu"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.140(f)",
+          "quote": "gdyż zapewnia ich natychmiastową dostępność do celów operacyjnych, uznaje się za dopuszczone na mocy pkt 1.2.2.1 lit. a) Instrukcji Technicznych"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0057#c60ce8c2",
+        "PL099-0038#257e330c"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-10",
+      "status": "draft",
+      "heading": "Pasy bezpieczeństwa i palenie tytoniu",
+      "body": [
+        "W zarobkowym transporcie lotniczym podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania (pkt CAT.OP.MPA.225 lit. a) ppkt 1 rozporządzenia 965/2012). We wszystkich innych fazach lotu członek załogi lotniczej pozostający na swoim stanowisku musi mieć zapięty pas (ppkt 2). W lotach niezarobkowych pilot dowódca ma zapięty pas, kiedy przebywa na swoim stanowisku (pkt NCO.GEN.105 lit. f) ppkt 1). Pilot dowódca szybowca dba, aby podczas krytycznych faz lotu lub gdy uzna to za konieczne, wszystkie osoby na pokładzie siedziały z zapiętymi pasami (pkt SAO.GEN.130 lit. i) rozporządzenia 2018/1976).",
+        "Pilot dowódca nie zezwala na palenie tytoniu na pokładzie, kiedy uznaje się to za konieczne ze względów bezpieczeństwa, oraz podczas uzupełniania paliwa (pkt NCO.OP.155 lit. a) i b)). Przepis nie uzależnia palenia od wentylacji kabiny ani liczby palących.",
+        "Klucz ULC w pytaniu o pasy pilota w trakcie lotu przyjmuje „podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne”, a w pytaniu o palenie — „Palenie tytoniu nie jest dozwolone”; aktualne przepisy wymagają pasa na stanowisku przez cały lot i nie wprowadzają bezwzględnego zakazu palenia."
+      ],
+      "refs": [
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.OP.MPA.225(a)(1)",
+          "quote": "Podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania, prawidłowo je zapinając."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.OP.MPA.225(a)(2)",
+          "quote": "We wszystkich innych fazach lotu każdy członek załogi lotniczej pozostający na swoim stanowisku w kabinie załogi lotniczej musi mieć zapięty pas bezpieczeństwa."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(f)(1)",
+          "quote": "ma prawidłowo zapięty pas bezpieczeństwa, kiedy przebywa na swoim stanowisku"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SAO.GEN.130(i)",
+          "quote": "dba, aby podczas krytycznych faz lotu lub w każdym przypadku, gdy uzna to za konieczne ze względów bezpieczeństwa, wszystkie osoby znajdujące się na pokładzie zajęły pozycję siedzącą i miały zapięty pas bezpieczeństwa"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.155",
+          "quote": "Pilot dowódca nie zezwala na palenie tytoniu na pokładzie:"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.155(a)",
+          "quote": "kiedy uznaje się to za konieczne ze względów bezpieczeństwa;"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.155(b)",
+          "quote": "podczas uzupełniania paliwa statku powietrznego."
+        }
+      ],
+      "questionKeys": [
+        "PL099-0048#41a50c8a",
+        "PL099-0091#b4d5dc8c",
+        "PL099-0098#22c8deb8",
+        "PL102-0017#22c8deb8"
+      ],
+      "disputeNote": "Pkt CAT.OP.MPA.225 lit. a) ppkt 2 i NCO.GEN.105 lit. f) ppkt 1 rozporządzenia 965/2012 wymagają zapiętego pasa na stanowisku także poza startem i lądowaniem, a pkt NCO.OP.155 lit. a) i b) nie wprowadza bezwzględnego zakazu palenia w czasie lotu. Klucz odzwierciedla wcześniejsze przepisy lub inną interpretację. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL14-11",
+      "status": "draft",
+      "heading": "Przygotowanie i rozpoczęcie lotu",
+      "body": [
+        "- Pilot dowódca odpowiada za prawidłowe wykonanie przeglądu przedlotowego (pkt ML.A.201 lit. d) rozporządzenia 1321/2014), czyli kontroli przed wylotem, która ma zagwarantować zdolność statku do wykonania zamierzonego lotu (art. 2 tego rozporządzenia). Przed wejściem do kabiny pilot sprawdza więc stan techniczny statku.",
+        "- Przed rozpoczęciem lotu pilot dowódca musi być zaznajomiony ze wszystkimi dostępnymi informacjami meteorologicznymi (pkt NCO.OP.135 lit. b) rozporządzenia 965/2012).",
+        "- Lot rozpoczyna się wyłącznie, gdy statek jest zdatny do lotu, a wymagane przyrządy i wyposażenie są zainstalowane i działają (pkt NCO.GEN.105 lit. a) ppkt 4; dla szybowców pkt SAO.GEN.130 lit. d) ppkt 3 rozporządzenia 2018/1976). Sprawdzenie np. wysokościomierza należy do dowódcy.",
+        "- Przed startem pilot dowódca upewnia się, że warunki meteorologiczne na lotnisku startu i stan drogi startowej nie wpłyną ujemnie na bezpieczeństwo startu i odlotu (pkt NCO.OP.175 lit. a)).",
+        "- W warunki oblodzenia wlatuje się tylko statkiem certyfikowanym i wyposażonym do lotów w takich warunkach (pkt NCO.OP.170 lit. a)).",
+        "- MEL opracowuje się w oparciu o MMEL i nie może on być mniej restrykcyjny niż MMEL (pkt NCO.GEN.155 lit. a) ppkt 3). Organ może zatwierdzić użytkowanie poza ograniczeniami MEL, ale w ramach MMEL (pkt ARO.OPS.205 lit. c)), więc poza MMEL zezwolić nie można."
+      ],
+      "refs": [
+        {
+          "src": "EU-1321-2014",
+          "loc": "ML.A.201(d)",
+          "quote": "Pilot dowódca statku powietrznego odpowiada za prawidłowe wykonanie przeglądu przedlotowego."
+        },
+        {
+          "src": "EU-1321-2014",
+          "loc": "art. 2",
+          "quote": "„przegląd przed lotem” oznacza kontrolę przeprowadzaną przed wylotem w celu zagwarantowania zdolności statku powietrznego do wykonania zamierzonego lotu"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.135(b)",
+          "quote": "Przed rozpoczęciem lotu pilot dowódca musi być zaznajomiony ze wszystkimi dostępnymi informacjami meteorologicznymi odpowiednimi dla zamierzonego lotu."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(4)",
+          "quote": "rozpoczęcie lotu wyłącznie wtedy, gdy upewni się, że uwzględnione zostały wszystkie ograniczenia operacyjne"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(4)(i)",
+          "quote": "statek powietrzny jest zdatny do lotu;"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(4)(iii)",
+          "quote": "przyrządy i wyposażenie wymagane do wykonania lotu zostały zainstalowane na pokładzie statku powietrznego i działają"
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SAO.GEN.130(d)(3)",
+          "quote": "wymagane do wykonania lotu przyrządy i wyposażenie znajdują się na pokładzie szybowca i funkcjonują"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.175(a)",
+          "quote": "z dostępnych informacji wynika, że warunki meteorologiczne na lotnisku startu lub w miejscu operacji lotniczej oraz stan zamierzonej do użycia drogi startowej lub FATO nie wpłyną ujemnie na bezpieczeństwo startu i odlotu"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.170(a)",
+          "quote": "Pilot dowódca przystępuje do wykonania lotu lub celowo wlatuje w obszar spodziewanych lub istniejących warunków powodujących oblodzenie, wyłącznie jeżeli statek powietrzny jest certyfikowany i wyposażony do odbywania lotów w takich warunkach"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.155(a)(3)",
+          "quote": "wykaz wyposażenia minimalnego (MEL) opracowuje się w oparciu o odpowiedni główny wykaz wyposażenia minimalnego (MMEL)"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.155(a)(3)",
+          "quote": "przy czym nie może on być mniej restrykcyjny niż MMEL."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "ARO.OPS.205(c)",
+          "quote": "zatwierdzenie do użytkowania statku powietrznego poza ograniczeniami nakładanymi przez MEL, ale w ramach ograniczeń nakładanych przez główny wykaz wyposażenia minimalnego (master minimum equipment list, MMEL)"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0003#2466e740",
+        "PL099-0062#b3518057",
+        "PL099-0094#1ce7b659",
+        "PL102-0052#3b602dba",
+        "PL099-0034#73f7420d",
+        "PL099-0047#683da903"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-12",
+      "status": "draft",
+      "heading": "Paliwo: odpowiedzialność dowódcy i sytuacja awaryjna",
+      "body": [
+        "Pilot dowódca zapewnia, że ilość paliwa i oleju przewożona na pokładzie jest wystarczająca, przy uwzględnieniu m.in. warunków meteorologicznych i przewidywanych opóźnień podczas lotu (pkt NCO.OP.125 lit. a) rozporządzenia 965/2012). Przystępuje do rozpoczęcia lotu tylko wtedy, gdy na pokładzie znajduje się wystarczająca ilość paliwa i oleju (lit. c)). Odpowiedzialności za właściwą ilość zatankowanego paliwa przepis nie przenosi na obsługę techniczną, obsługę lotniskową ani drugiego pilota.",
+        "Pilot dowódca lotu kontrolowanego:",
+        "- zgłasza służbie ATC stan „MINIMUM FUEL”, gdy obliczył, że inne opóźnienia mogą spowodować lądowanie z mniejszą niż planowana ostateczną rezerwą paliwa (pkt NCO.OP.185 lit. b));",
+        "- zgłasza sytuację awaryjną dotyczącą ilości paliwa, nadając „MAYDAY MAYDAY MAYDAY FUEL”, gdy paliwo, które według szacunków będzie dostępne po wylądowaniu na najbliższym lotnisku, jest mniejsze od planowanej ostatecznej rezerwy (lit. c)).",
+        "Gdy w locie ilość paliwa jest mniejsza od ostatecznej rezerwy, dowódca zgłasza więc sytuację awaryjną."
+      ],
+      "refs": [
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.125(a)",
+          "quote": "Pilot dowódca zapewnia, że ilość paliwa/energii i oleju przewożona na pokładzie jest wystarczająca, przy uwzględnieniu warunków meteorologicznych"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.125(c)",
+          "quote": "Pilot dowódca przystępuje do rozpoczęcia lotu, tylko wtedy, gdy na pokładzie statku powietrznego znajduje się wystarczająca ilość paliwa/energii i oleju"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.185(b)",
+          "quote": "powiadamia służbę kontroli ruchu lotniczego (ATC) o stanie „minimalnej ilości paliwa/energii”, zgłaszając sytuację „MINIMUM FUEL”"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.185(c)",
+          "quote": "zgłasza „sytuację awaryjną dotyczącą ilości paliwa/energii”, nadając komunikat „MAYDAY MAYDAY MAYDAY FUEL”, gdy ilość zużywalnego paliwa/zużywalnej energii, która według szacunków będzie dostępna po wylądowaniu"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.185(c)",
+          "quote": "jest mniejsza od planowanej ostatecznej rezerwy paliwa/energii."
+        }
+      ],
+      "questionKeys": [
+        "PL099-0017#12fa010b",
+        "PL099-0095#06179f71"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-13",
+      "status": "draft",
+      "heading": "Decyzje dowódcy w locie i odstąpienie od przepisów",
+      "body": [
+        "Pilot dowódca odpowiada za rozpoczęcie, kontynuację, zakończenie lub zmianę kursu lotu w interesie bezpieczeństwa (pkt NCO.GEN.105 lit. a) ppkt 2 rozporządzenia 965/2012). O przerwaniu zadania w powietrzu decyduje więc dowódca, a przepis nie uzależnia tej decyzji od załogi ani od porozumienia z kontrolerem ruchu lotniczego.",
+        "W sytuacji awaryjnej, wymagającej natychmiastowej decyzji i działania, pilot dowódca podejmuje wszelkie działania, jakie w danych okolicznościach uzna za konieczne, i może w interesie bezpieczeństwa odstąpić od zasad, procedur operacyjnych i metod działania (pkt NCO.GEN.105 lit. e)). Pilot szybowca może w interesie bezpieczeństwa w koniecznym zakresie odstąpić od przepisów (pkt SAO.GEN.130 lit. k) rozporządzenia 2018/1976). Taką decyzją jest m.in. wybór miejsca do lądowania awaryjnego w terenie. W celu opanowania sytuacji zagrażającej bezpieczeństwu statku można więc naruszyć przepisy lotnicze; przepis nie wymaga wcześniejszej konsultacji z załogą.",
+        "Jeżeli wymaga tego państwo, w którym doszło do zdarzenia, pilot dowódca składa raport o takim naruszeniu właściwemu organowi tego państwa, a kopię swojemu właściwemu organowi, możliwie szybko i zwykle w ciągu 10 dni (AMC1 NCO.GEN.105(e), EASA)."
+      ],
+      "refs": [
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(2)",
+          "quote": "rozpoczęcie, kontynuację, zakończenie lub zmianę kursu lotu w interesie bezpieczeństwa"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(e)",
+          "quote": "W sytuacji awaryjnej, wymagającej natychmiastowej decyzji i działania, pilot dowódca podejmuje wszelkie działania, jakie w danych okolicznościach uzna za konieczne"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(e)",
+          "quote": "W takich przypadkach może on w interesie bezpieczeństwa odstąpić od zasad, procedur operacyjnych i metod działania."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SAO.GEN.130(k)",
+          "quote": "może w interesie bezpieczeństwa w koniecznym zakresie odstąpić od przepisów, procedur operacyjnych i metod działania"
+        },
+        {
+          "src": "EASA-EAR-AIROPS",
+          "loc": "AMC1 NCO.GEN.105(e)"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0036#742ee4e6",
+        "PL099-0037#f092f413",
+        "PL099-0050#e65d8d6d",
+        "PL099-0080#28cb9106"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-14",
+      "status": "draft",
+      "heading": "Lot w symulowanych warunkach i symulowanie sytuacji awaryjnych",
+      "body": [
+        "Lot w symulowanych warunkach lotu według wskazań przyrządów wykonuje się tylko wtedy, gdy (pkt SERA.3220 rozporządzenia 923/2012):",
+        "- na statku powietrznym są zainstalowane w pełni sprawne podwójne urządzenia sterownicze (lit. a));",
+        "- jedno z miejsc przy urządzeniach sterowniczych zajmuje dodatkowy wykwalifikowany pilot, zwany pilotem bezpieczeństwa (lit. b)).",
+        "Pilot bezpieczeństwa siedzi więc przy drugim zestawie urządzeń sterowych. Powinien mieć odpowiednie pole widzenia do przodu i na obie strony statku albo łączność z kompetentnym obserwatorem, ale miejsca nie wybiera się według najlepszej widoczności.",
+        "Podczas przewożenia pasażerów lub ładunku nie symuluje się sytuacji nienormalnych lub awaryjnych wymagających zastosowania w części lub w całości procedur nienormalnych lub awaryjnych. W zarobkowym transporcie lotniczym zapewnia to operator (pkt CAT.OP.MPA.275 lit. a) rozporządzenia 965/2012), a w lotach niekomercyjnych (część NCO) sam pilot dowódca (pkt NCO.OP.180 lit. a) ppkt 1). W lotach zarobkowego przewozu takie symulacje nie są dozwolone, niezależnie od nadzoru dowódcy czy instrukcji użytkowania."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3220(a)",
+          "quote": "na statku powietrznym są zainstalowane w pełni sprawne podwójne urządzenia sterownicze"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3220(b)",
+          "quote": "jedno z miejsc przy urządzeniach sterowniczych zajmuje dodatkowy wykwalifikowany pilot (zwany w tym przepisie pilotem bezpieczeństwa)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3220(b)",
+          "quote": "Pilot bezpieczeństwa powinien mieć zapewnione odpowiednie pole widzenia do przodu i na obie strony statku powietrznego lub powinien posiadać łączność z kompetentnym obserwatorem"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.OP.MPA.275",
+          "quote": "Operator zapewnia, by podczas przewożenia pasażerów lub ładunku, nie wykonywano:"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.OP.MPA.275(a)",
+          "quote": "symulowania sytuacji nienormalnych lub awaryjnych, wymagających zastosowania w części lub w całości procedur nienormalnych lub awaryjnych"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.180(a)",
+          "quote": "Pilot dowódca, przewożąc pasażerów lub ładunek, nie przeprowadza symulacji:"
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.OP.180(a)(1)",
+          "quote": "sytuacji wymagających zastosowania procedur nienormalnych lub awaryjnych"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0066#31bcc08a",
+        "PL099-0072#8d8a3d1a"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-15",
+      "status": "draft",
+      "heading": "Meldunki w locie i dziennik techniczny",
+      "body": [
+        "Pilot dowódca niezwłocznie zgłasza odpowiedniej jednostce służb ruchu lotniczego (ATS) wszelkie napotkane niebezpieczne warunki pogodowe lub warunki lotu, które mogą mieć wpływ na bezpieczeństwo innych statków powietrznych (pkt NCO.GEN.105 lit. d) rozporządzenia 965/2012; dla szybowców pkt SAO.GEN.130 lit. p) rozporządzenia 2018/1976). Klucz ULC odnosi tę zasadę także do nieprawidłowej pracy urządzeń naziemnych i nawigacyjnych oraz niezwykłych zjawisk pogody: zgłasza się je właściwej stacji naziemnej tak szybko, jak jest to praktycznie możliwe. Meldunek telefoniczny lub pisemny dopiero po wylądowaniu nie jest zgłoszeniem niezwłocznym, a przepis nie wskazuje jako adresata władz lokalnych ani Urzędu Lotnictwa Cywilnego.",
+        "Po zakończeniu lotu lub serii lotów pilot dowódca odnotowuje dane związane z użytkowaniem oraz wszelkie znane lub podejrzewane usterki statku powietrznego w dzienniku technicznym statku powietrznego lub w dzienniku podróży (pkt NCO.GEN.105 lit. a) ppkt 8). Usterki techniczne wpisuje się więc do pokładowego dziennika technicznego; książka obsługi ani zeszyt prac obsługowych nie są w tym przepisie wymienione."
+      ],
+      "refs": [
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(d)",
+          "quote": "Pilot dowódca niezwłocznie zgłasza odpowiedniej jednostce służb ruchu lotniczego (ATS) wszelkie napotkane niebezpieczne warunki pogodowe lub warunki lotu, które mogą mieć wpływ na bezpieczeństwo innych statków powietrznych."
+        },
+        {
+          "src": "EU-2018-1976",
+          "loc": "SAO.GEN.130(p)",
+          "quote": "niezwłocznie zgłasza odpowiedniej jednostce służb ruchu lotniczego (ATS) wszelkie napotkane niebezpieczne warunki pogodowe lub warunki lotu, które mogą mieć negatywny wpływ na bezpieczeństwo innych statków powietrznych."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCO.GEN.105(a)(8)",
+          "quote": "odnotowywanie danych związanych z użytkowaniem i wszelkimi znanymi lub podejrzewanymi usterkami statku powietrznego po zakończeniu lotu bądź serii lotów w dzienniku technicznym statku powietrznego lub dzienniku podróży statku powietrznego"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0015#1aea0d31",
+        "PL099-0035#c6f65bec",
+        "PL099-0077#d3f2ca9f",
+        "PL102-0024#a4c7e8c7",
+        "PL102-0064#84d9d4b9"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL14-16",
+      "status": "draft",
+      "heading": "Obowiązki użytkownika statku i operatora",
+      "body": [
+        "Użytkownik statku powietrznego jest obowiązany zapewnić jego bezpieczną eksploatację (art. 158 ust. 1 Prawa lotniczego). Obowiązek ten wynika wprost z ustawy.",
+        "- Operator dopilnowuje, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku (pkt CAT.GEN.MPA.120 rozporządzenia 965/2012; w operacjach niezarobkowych skomplikowanymi statkami powietrznymi z napędem silnikowym pkt NCC.GEN.115). Odpowiada za to przewoźnik lub dysponent statku powietrznego, a nie dowódca ani Urząd Lotnictwa Cywilnego.",
+        "- Przewoźnik lotniczy zapewnia wprowadzenie w życie środków ochrony w odniesieniu do własnych statków powietrznych (pkt 3.0.1 załącznika do rozporządzenia wykonawczego 2015/1998). Obejmują one m.in. przeszukanie statku, ilekroć istnieje powód, by przypuszczać, że miały do niego dostęp osoby nieupoważnione (pkt 3.1.1.1), oraz zabezpieczenie drzwi zewnętrznych przed nieupoważnionym dostępem (pkt 3.2.1.1). Metody opisuje program ochrony przewoźnika lotniczego (art. 13 ust. 1 rozporządzenia 300/2008).",
+        "- Cały personel operacyjny musi mieć łatwy dostęp do tych części instrukcji operacyjnej, które dotyczą wykonywanych przez niego czynności (pkt ORO.MLR.100 lit. d)); część A instrukcji zawiera rozdział o kontroli operacyjnej i nadzorze nad operacjami (AMC3 ORO.MLR.100, EASA). Szczegółowe czynności dyspozytora w sytuacji zagrożenia opisuje więc Instrukcja Operacyjna."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 158 ust. 1",
+          "quote": "Użytkownik statku powietrznego jest obowiązany zapewnić jego bezpieczną eksploatację."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "CAT.GEN.MPA.120",
+          "quote": "Operator dopilnowuje, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "NCC.GEN.115",
+          "quote": "Operator zapewnia, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku."
+        },
+        {
+          "src": "EU-2015-1998",
+          "loc": "załącznik pkt 3.0.1",
+          "quote": "przewoźnik lotniczy zapewnia wprowadzenie w życie środków określonych w niniejszym rozdziale w odniesieniu do własnych statków powietrznych"
+        },
+        {
+          "src": "EU-2015-1998",
+          "loc": "załącznik pkt 3.1.1.1",
+          "quote": "Statek powietrzny poddany zostaje przeszukaniu zawsze, ilekroć istnieje powód, by przypuszczać, iż miały do niego dostęp osoby nieupoważnione."
+        },
+        {
+          "src": "EU-2015-1998",
+          "loc": "załącznik pkt 3.2.1.1",
+          "quote": "każde z zewnętrznych drzwi tego statku zabezpiecza się przed nieupoważnionym dostępem"
+        },
+        {
+          "src": "EU-300-2008",
+          "loc": "art. 13 ust. 1",
+          "quote": "Każdy przewoźnik lotniczy sporządza, stosuje i utrzymuje w mocy program ochrony przewoźnika lotniczego."
+        },
+        {
+          "src": "EU-965-2012",
+          "loc": "ORO.MLR.100(d)",
+          "quote": "Cały personel operacyjny musi mieć łatwy dostęp do tych części instrukcji operacyjnej, które dotyczą wykonywanych przez niego czynności."
+        },
+        {
+          "src": "EASA-EAR-AIROPS",
+          "loc": "AMC3 ORO.MLR.100"
+        }
+      ],
+      "questionKeys": [
+        "PL099-0039#b2e986e4",
+        "PL099-0040#6967dade",
+        "PL099-0073#5c465324",
+        "PL099-0096#f87a9e33",
+        "PL102-0063#774ff4ab"
+      ],
+      "disputeNote": null
     }
-   ],
-   "questionKeys": [
-    "PL010-0039#02d04295",
-    "PL010-0131#d827a7b2",
-    "PL010-0002#6b5604c8",
-    "PL010-0002#9d0e919e",
-    "PL099-0092#a74def59"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-2",
-   "status": "draft",
-   "heading": "Polecenia dowódcy i środki przymusu",
-   "body": [
-    "W celu zapewnienia bezpieczeństwa lotu oraz bezpieczeństwa i porządku na pokładzie statku powietrznego dowódca jest upoważniony do (art. 115 ust. 1 Prawa lotniczego):",
-    "- zobowiązania, w razie konieczności, innych członków załogi do wykonywania czynności nienależących do ich normalnego zakresu obowiązków (pkt 1);",
-    "- wydawania poleceń wszystkim osobom znajdującym się na pokładzie statku powietrznego (pkt 2).",
-    "Polecenia dowódcy są obowiązane wypełniać wszystkie osoby obecne na pokładzie, nie tylko członkowie załogi (ust. 2). Dowódca ma prawo decydować o zastosowaniu niezbędnych środków, łącznie ze środkami przymusu, w stosunku do osób niewykonujących jego poleceń albo zagrażających w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie (ust. 3 pkt 1).",
-    "Członkowie załogi mogą stosować wyłącznie środki przymusu odpowiadające potrzebom wynikającym z istniejącej sytuacji i niezbędne do osiągnięcia podporządkowania wymaganiom bezpieczeństwa i porządku na pokładzie oraz poleceniom i decyzjom dowódcy (ust. 4). Oba warunki muszą być spełnione łącznie.",
-    "Przepis przyznaje dowódcy oba uprawnienia z ust. 1 naraz i obejmuje wszystkie wymienione grupy osób, dlatego odpowiedzi ograniczające je słowem „tylko” są niepełne."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 1",
-     "quote": "W celu zapewnienia bezpieczeństwa lotu oraz bezpieczeństwa i porządku na pokładzie statku powietrznego dowódca jest upoważniony do:"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 1 pkt 1",
-     "quote": "zobowiązania, w razie konieczności, innych członków załogi do wykonywania czynności nienależących do ich normalnego zakresu obowiązków;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 1 pkt 2",
-     "quote": "wydawania poleceń wszystkim osobom znajdującym się na pokładzie statku powietrznego."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 2",
-     "quote": "Wszystkie osoby obecne na pokładzie statku powietrznego są obowiązane wypełniać polecenia dowódcy."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 3 pkt 1",
-     "quote": "zastosowaniu niezbędnych środków, łącznie ze środkami przymusu w stosunku do osób niewykonujących jego poleceń albo zagrażających w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie statku powietrznego;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 4",
-     "quote": "Członkowie załogi statku powietrznego mogą stosować wyłącznie środki przymusu odpowiadające potrzebom wynikającym z istniejącej sytuacji i niezbędne do osiągnięcia podporządkowania wymaganiom bezpieczeństwa i porządku na pokładzie statku oraz poleceniom i decyzjom dowódcy."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0193#bc6b7ad3",
-    "PL010-0193#44defe31",
-    "PL010-0255#ddf3f027",
-    "PL010-0255#e9163d05",
-    "PL010-0256#15c5b027",
-    "PL010-0256#bcc24d06",
-    "PL010-0392#5cb2858f",
-    "PL010-0392#e9163d05",
-    "PL010-0393#3fe2bfe4",
-    "PL010-0393#bcc24d06",
-    "PL099-0082#7e61b8ba",
-    "PL102-0021#25232f08",
-    "PL010-0029#29389dba",
-    "PL010-0029#9e70f993"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-3",
-   "status": "draft",
-   "heading": "Zatrzymanie osoby i przekazanie jej organom",
-   "body": [
-    "Dowódca ma prawo decydować o zatrzymaniu osoby podejrzanej o popełnienie przestępstwa na statku powietrznym albo osoby zagrażającej w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie, do czasu przekazania jej właściwym organom (art. 115 ust. 3 pkt 2 Prawa lotniczego). Uprawnienie to istnieje obok decyzji o środkach przymusu wobec osób niewykonujących poleceń (ust. 3 pkt 1), więc przepis przyznaje dowódcy oba naraz.",
-    "Do przejęcia zatrzymanej osoby są obowiązane organy Policji i Straży Granicznej (art. 115 ust. 5). Dotyczy to każdej osoby, o której mowa w ust. 3 pkt 2:",
-    "- podejrzanej o popełnienie przestępstwa na statku powietrznym;",
-    "- zagrażającej bezpieczeństwu lotu;",
-    "- zagrażającej porządkowi na pokładzie statku powietrznego.",
-    "Przepis nie nakłada obowiązku przejęcia takiej osoby na zarządzającego lotniskiem ani na właściciela czy użytkownika statku powietrznego. Nie wskazuje też jako adresata Służby Więziennej, Straży Ochrony Lotniska ani funkcjonariuszy ABW."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 3 pkt 2",
-     "quote": "zatrzymaniu osoby podejrzanej o popełnienie przestępstwa na statku powietrznym albo osoby zagrażającej w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie statku powietrznego, do czasu przekazania jej właściwym organom."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 3 pkt 1",
-     "quote": "zastosowaniu niezbędnych środków, łącznie ze środkami przymusu w stosunku do osób niewykonujących jego poleceń albo zagrażających w inny sposób bezpieczeństwu lotu lub porządkowi na pokładzie statku powietrznego;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 115 ust. 5",
-     "quote": "Organy Policji i Straży Granicznej są obowiązane do przejęcia osoby, o której mowa w ust. 3 pkt 2."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0255#e9163d05",
-    "PL010-0256#15c5b027",
-    "PL010-0256#bcc24d06",
-    "PL010-0392#5cb2858f",
-    "PL010-0392#e9163d05",
-    "PL010-0393#3fe2bfe4",
-    "PL010-0393#bcc24d06",
-    "PL010-0121#8a45b682",
-    "PL010-0122#d294f35d",
-    "PL010-0123#3a7153c5",
-    "PL099-0042#dc422ecc",
-    "PL102-0031#1295a643"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-4",
-   "status": "draft",
-   "heading": "Niebezpieczeństwo, uszkodzenie statku i przymusowe lądowanie",
-   "body": [
-    "Ogólny obowiązek dowódcy to zapewnienie bezpieczeństwa statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy (art. 114 ust. 1 Prawa lotniczego). Dwa kolejne ustępy rozwijają go dla sytuacji szczególnych.",
-    "Gdy statkowi powietrznemu grozi niebezpieczeństwo, dowódca jest obowiązany zastosować wszelkie niezbędne środki w celu ratowania pasażerów i załogi (art. 114 ust. 2). Przepis mówi o ratowaniu ludzi, a nie samego statku powietrznego ani przewożonej poczty.",
-    "W razie uszkodzenia statku powietrznego lub przymusowego lądowania dowódca wykonuje wszelkie czynności, jakie uzna za konieczne do zabezpieczenia interesów (art. 114 ust. 3), działając w imieniu:",
-    "- właściciela statku powietrznego;",
-    "- użytkownika statku;",
-    "- właścicieli przewożonych rzeczy.",
-    "Przepis obejmuje wszystkie trzy podmioty naraz, dlatego odpowiedź wymieniająca tylko jeden z nich jest niepełna."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 114 ust. 1",
-     "quote": "Dowódca jest obowiązany wykonywać loty zgodnie z przepisami, w szczególności zaś zapewnić bezpieczeństwo statku powietrznego oraz znajdujących się na jego pokładzie osób i rzeczy."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 114 ust. 2",
-     "quote": "Gdy statkowi powietrznemu grozi niebezpieczeństwo, dowódca jest obowiązany zastosować wszelkie niezbędne środki w celu ratowania pasażerów i załogi."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 114 ust. 3",
-     "quote": "W razie uszkodzenia statku powietrznego lub przymusowego lądowania dowódca wykonuje w imieniu właściciela i użytkownika statku oraz w imieniu właścicieli przewożonych rzeczy wszelkie czynności, jakie uzna za konieczne do zabezpieczenia ich interesów."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0225#2d52c258",
-    "PL010-0225#cdc7f9c3",
-    "PL010-0233#e0106952",
-    "PL010-0233#fddc43f6",
-    "PL010-0234#44779739",
-    "PL010-0234#bfd5bc53"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-5",
-   "status": "draft",
-   "heading": "Obowiązek udzielenia pomocy",
-   "body": [
-    "Dowódca statku powietrznego jest obowiązany udzielić poszkodowanym lub znajdującym się w niebezpieczeństwie pomocy, jeżeli (art. 117 ust. 1 Prawa lotniczego):",
-    "- otrzymał sygnał o niebezpieczeństwie grożącym innemu statkowi powietrznemu lub statkowi morskiemu;",
-    "- spostrzegł statek powietrzny lub morski, który uległ wypadkowi lub znalazł się w niebezpieczeństwie;",
-    "- zauważył inną katastrofę lub klęskę żywiołową;",
-    "- zauważył osobę znajdującą się na morzu w niebezpieczeństwie utraty życia.",
-    "Pomocy udziela się w zakresie, w jakim dowódca może to uczynić bez narażenia na niebezpieczeństwo powierzonego mu statku powietrznego, pasażerów, załogi lub innych osób. Obowiązek istnieje więc zawsze, ale jest ograniczony bezpieczeństwem własnego statku i ludzi; przepis nie wymaga użycia „wszelkich środków”.",
-    "Obowiązek pomocy ustaje, gdy dowódca wie, że kto inny udziela pomocy w podobnych lub lepszych warunkach, niż on sam mógłby jej udzielić (art. 117 ust. 2). Ustanie obowiązku nie zależy od zgody Prezesa ULC ani ministra właściwego do spraw transportu."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 117 ust. 1",
-     "quote": "otrzymał sygnał o niebezpieczeństwie grożącym innemu statkowi powietrznemu lub statkowi morskiemu"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 117 ust. 1",
-     "quote": "spostrzegł statek powietrzny lub morski, który uległ wypadkowi lub znalazł się w niebezpieczeństwie"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 117 ust. 1",
-     "quote": "zauważył inną katastrofę lub klęskę żywiołową"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 117 ust. 1",
-     "quote": "zauważył osobę znajdującą się na morzu w niebezpieczeństwie utraty życia"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 117 ust. 1",
-     "quote": "obowiązany jest udzielić poszkodowanym lub znajdującym się w niebezpieczeństwie pomocy w zakresie, w jakim może to uczynić bez narażenia na niebezpieczeństwo powierzonego mu statku powietrznego, pasażerów, załogi lub innych osób."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 117 ust. 2",
-     "quote": "Obowiązek pomocy ustaje, gdy dowódca wie, że kto inny udziela pomocy w podobnych lub lepszych warunkach, niż on sam mógłby jej udzielić."
-    }
-   ],
-   "questionKeys": [
-    "PL010-0005#c72c8490",
-    "PL010-0006#cba17406",
-    "PL010-0031#b800333f",
-    "PL010-0032#9b73857a",
-    "PL010-0033#57003795",
-    "PL010-0034#99ff9ae9",
-    "PL010-0093#733abf57",
-    "PL010-0093#a029ad90",
-    "PL010-0094#62ecf2e6",
-    "PL099-0087#f368e5d5",
-    "PL102-0035#f368e5d5"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-6",
-   "status": "draft",
-   "heading": "Broń i niebezpieczne przedmioty na pokładzie",
-   "body": [
-    "Zabrania się członkom załogi oraz innym osobom wnoszenia i używania broni palnej, broni gazowej oraz materiałów wybuchowych na pokład statku powietrznego (art. 116 ust. 1 Prawa lotniczego). Zakaz ma zastosowanie także do urządzeń, środków i substancji mogących stanowić zagrożenie dla bezpieczeństwa lotu lub pasażerów (ust. 2).",
-    "Zakazów nie stosuje się do (art. 116 ust. 3):",
-    "- żołnierzy i funkcjonariuszy wymienionych służb, m.in. Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Policji, Straży Granicznej i Służby Ochrony Państwa, którzy bez zamiaru odbycia lotu wykonują obowiązki służbowe na pokładzie statku pozostającego na lotnisku albo lądowisku (pkt 1);",
-    "- funkcjonariuszy Straży Granicznej pełniących wartę ochronną (pkt 2);",
-    "- żołnierzy i funkcjonariuszy tych służb, którzy podczas wykonywania obowiązków służbowych odbywają lot i odbyli szkolenie w zakresie zasad bezpieczeństwa na pokładzie (pkt 3).",
-    "Wśród wyjątków nie ma inspektorów ULC, Straży Miejskiej ani pracowników ministerstwa. Obecny przepis nie wymienia też Biura Ochrony Rządu ani Wojskowych Służb Informacyjnych; pytania, które je wskazują, opierają się na nieaktualnym brzmieniu ustawy."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 1",
-     "quote": "Zabrania się członkom załogi oraz innym osobom wnoszenia i używania broni palnej, broni gazowej oraz materiałów wybuchowych na pokład statku powietrznego"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 2",
-     "quote": "Zakaz, o którym mowa w ust. 1, ma zastosowanie także do urządzeń, środków i substancji mogących stanowić zagrożenie dla bezpieczeństwa lotu lub pasażerów."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 3",
-     "quote": "Zakazów, o których mowa w ust. 1 i 2, nie stosuje się do:"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 3 pkt 1",
-     "quote": "funkcjonariuszy Agencji Bezpieczeństwa Wewnętrznego, Agencji Wywiadu, Centralnego Biura Antykorupcyjnego, Policji, Straży Granicznej, Służby Celno-Skarbowej i Służby Ochrony Państwa"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 3 pkt 1",
-     "quote": "żołnierzy i funkcjonariuszy Służby Kontrwywiadu Wojskowego, Służby Wywiadu Wojskowego, żołnierzy Żandarmerii Wojskowej"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 3 pkt 1",
-     "quote": "wykonują obowiązki służbowe na pokładzie statku powietrznego pozostającego na lotnisku albo lądowisku"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 3 pkt 2",
-     "quote": "funkcjonariuszy Straży Granicznej pełniących wartę ochronną, o której mowa w art. 186a ust. 1;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 116 ust. 3 pkt 3",
-     "quote": "którzy podczas wykonywania przez nich obowiązków służbowych odbywają lot i odbyli szkolenie w zakresie zasad bezpieczeństwa na pokładzie statku powietrznego"
-    }
-   ],
-   "questionKeys": [
-    "PL010-0001#dd8ac4c9",
-    "PL010-0001#41570700",
-    "PL010-0300#4d8cd5ab",
-    "PL010-0301#5b9f62f3",
-    "PL010-1575#3502e5a3"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-7",
-   "status": "draft",
-   "heading": "Zrzuty ze statku powietrznego",
-   "body": [
-    "Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby (art. 123 ust. 2 Prawa lotniczego):",
-    "- ochrony ludności (pkt 1);",
-    "- ochrony przeciwpożarowej (pkt 2);",
-    "- służby zdrowia (pkt 3);",
-    "- poszukiwania i ratownictwa (pkt 4);",
-    "- sportu i obsługi imprez masowych (pkt 5);",
-    "- reklamy (pkt 6);",
-    "- gospodarki rolnej i leśnej (pkt 7);",
-    "- zrzutów doświadczalnych i szkoleniowych (pkt 8).",
-    "Poza tymi celami zrzut jest zabroniony. Na liście nie ma ochrony granic ani uroczystości, dlatego np. zrzut wiązanki kwiatów podczas uroczystości jest zabroniony. Przepis nie przewiduje zgody władz lotniczych jako podstawy zrzutu w innym celu. Szczegółowe warunki dokonywania zrzutów ma określić rozporządzenie wydane na podstawie art. 123 ust. 3, z uwzględnieniem bezpieczeństwa osób i mienia."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2",
-     "quote": "Zabrania się dokonywania w czasie lotów zrzutów ze statku powietrznego, z wyjątkiem zrzutów dokonywanych na potrzeby:"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 1",
-     "quote": "ochrony ludności;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 2",
-     "quote": "ochrony przeciwpożarowej;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 3",
-     "quote": "służby zdrowia;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 4",
-     "quote": "poszukiwania i ratownictwa;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 5",
-     "quote": "sportu i obsługi imprez masowych;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 6",
-     "quote": "reklamy;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 7",
-     "quote": "gospodarki rolnej i leśnej;"
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 2 pkt 8",
-     "quote": "doświadczalne i szkoleniowe."
-    },
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 123 ust. 3",
-     "quote": "określi szczegółowe warunki dokonywania zrzutów, o których mowa w ust. 2, z uwzględnieniem bezpieczeństwa osób i mienia."
-    }
-   ],
-   "questionKeys": [
-    "PL099-0100#33e15656",
-    "PL102-0034#f1fb18dc",
-    "PL010-0009#082b38de",
-    "PL010-0009#c73e6ad6",
-    "PL010-0329#4cc2e01a",
-    "PL010-0329#93fd1d26",
-    "PL010-0330#4f809426",
-    "PL010-0330#16e9ecdd",
-    "PL010-0599#83afc9ca",
-    "PL010-0599#93fd1d26",
-    "PL010-0600#653a8570",
-    "PL010-0600#16e9ecdd"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-8",
-   "status": "draft",
-   "heading": "Osoby i ładunek zagrażające lotowi, kabina załogi, bezprawna ingerencja",
-   "body": [
-    "- Pilot dowódca jest uprawniony do odmowy przewozu lub do usunięcia z pokładu każdej osoby lub każdej części bagażu lub ładunku, która może stwarzać potencjalne zagrożenie dla bezpieczeństwa statku powietrznego lub osób na jego pokładzie (pkt NCO.GEN.105 lit. c) rozporządzenia 965/2012; w zarobkowym transporcie lotniczym pkt CAT.GEN.MPA.105 lit. a) ppkt 4). Uprawnienie to ma dowódca, a nie przedstawiciel przewoźnika ani zarządca lotniska.",
-    "- Ostateczną decyzję dotyczącą wstępu do kabiny załogi lotniczej podejmuje dowódca (pkt CAT.GEN.MPA.135 lit. c)). Dopilnowuje on, by wstęp nie spowodował rozproszenia uwagi załogi ani zakłócenia w wykonywaniu lotu (lit. b) ppkt 1).",
-    "Statek powietrzny, który jest przedmiotem bezprawnej ingerencji, stara się ustawić transponder na kod 7500 i zawiadomić odpowiedni organ ATS o tym fakcie i o istotnych okolicznościach (pkt SERA.11005 lit. aa) rozporządzenia 923/2012); pilot dowódca niezwłocznie składa też raport właściwemu organowi (pkt NCO.GEN.105 lit. g)). Organ ATS, który wie lub sądzi, że statek jest przedmiotem bezprawnej ingerencji, nie wspomina w łączności powietrze-ziemia o charakterze sytuacji awaryjnej, chyba że była już o nim mowa w komunikatach z tego statku i istnieje pewność, że wzmianka nie pogorszy sytuacji (pkt SERA.10005 lit. b))."
-   ],
-   "refs": [
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(c)",
-     "quote": "Pilot dowódca jest uprawniony do odmowy przewozu lub do usunięcia z pokładu statku powietrznego każdej osoby lub każdej części bagażu lub ładunku, która może stwarzać potencjalne zagrożenie dla bezpieczeństwa statku powietrznego lub osób znajdujących się na jego pokładzie."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.GEN.MPA.105(a)(4)",
-     "quote": "jest uprawniony do usunięcia z pokładu statku powietrznego każdej osoby lub każdej części ładunku, która może stwarzać potencjalne zagrożenie dla bezpieczeństwa statku powietrznego lub osób znajdujących się na jego pokładzie"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.GEN.MPA.135(c)",
-     "quote": "Ostateczną decyzję dotyczącą wstępu do kabiny załogi lotniczej podejmuje dowódca."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.GEN.MPA.135(b)(1)",
-     "quote": "udzielenie zezwolenia na wstęp do kabiny załogi lotniczej nie spowodowało rozproszenia uwagi załogi lub zakłócenia w wykonywaniu lotu"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.11005(aa)",
-     "quote": "stara się ustawić transponder na kod 7500 i zawiadomić odpowiedni organ ATS o tym fakcie, o wszystkich istotnych okolicznościach z tym związanych"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(g)",
-     "quote": "W razie aktu bezprawnej ingerencji pilot dowódca niezwłocznie składa raport właściwemu organowi i zawiadamia wyznaczony organ miejscowy."
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.10005(b)",
-     "quote": "w łączności ATS powietrze-ziemia nie wspomina się o charakterze sytuacji awaryjnej, chyba że była już wcześniej o nim mowa w komunikatach z tego statku powietrznego i istnieje pewność, że taka wzmianka nie pogorszy sytuacji"
-    }
-   ],
-   "questionKeys": [
-    "PL099-0043#f7f12979",
-    "PL099-0076#648818ba",
-    "PL099-0083#17d3126e",
-    "PL099-0086#d8733033"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-9",
-   "status": "draft",
-   "heading": "Alkohol, środki psychoaktywne i materiały niebezpieczne",
-   "body": [
-    "Osoba, której funkcja ma krytyczne znaczenie dla bezpieczeństwa lotniczego, nie może wykonywać tej funkcji pod wpływem jakiegokolwiek środka psychotropowego ograniczającego sprawność organizmu i nie może podejmować ryzyka związanego z użyciem takich środków (pkt SERA.2020 rozporządzenia 923/2012). Rozporządzenie zalicza do substancji psychotropowych także alkohol (art. 2 pkt 104). Przepis nie wyznacza okresu, po którym wolno rozpocząć lot, dlatego klucz ULC odpowiada, że pilot nie może przyjmować środków psychotropowych. Pilot dowódca nie rozpoczyna lotu, jeżeli jest niezdolny do wykonywania obowiązków m.in. z powodu działania substancji psychoaktywnej (pkt NCO.GEN.105 lit. a) ppkt 5 rozporządzenia 965/2012).",
-    "Materiały niebezpieczne transportowane są co do zasady wyłącznie przez zatwierdzonych operatorów (pkt NCO.GEN.140 lit. b)). Za dopuszczone uznaje się jednak uzasadnione ilości substancji, które zostałyby w innym przypadku zaklasyfikowane jako materiały niebezpieczne, jeżeli są wykorzystywane w celu łatwiejszego zapewnienia bezpieczeństwa lotu, a ich obecność na pokładzie zapewnia natychmiastową dostępność do celów operacyjnych (lit. f)). Na tym wyjątku opiera się klucz ULC o materiałach promieniotwórczych niezbędnych do działania istotnych systemów statku powietrznego, choć przepis nie wymienia ich wprost."
-   ],
-   "refs": [
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.2020",
-     "quote": "nie może wykonywać tej funkcji, będąc pod wpływem jakiegokolwiek środka psychotropowego ograniczającego sprawność organizmu ludzkiego. Żadna taka osoba nie może podejmować ryzyka związanego z użyciem tego rodzaju środków."
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "art. 2 pkt 104",
-     "quote": "„substancja psychotropowa” oznacza alkohol"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(a)(5)",
-     "quote": "nierozpoczynanie lotu, jeżeli jest on niezdolny do wykonywania swoich obowiązków z takich przyczyn, jak uraz, choroba, przemęczenie czy działanie substancji psychoaktywnej"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.140(b)",
-     "quote": "Materiały niebezpieczne transportowane są wyłącznie przez operatorów zatwierdzonych"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.140(f)",
-     "quote": "Uzasadnione ilości artykułów i substancji, które zostałyby w innym przypadku zaklasyfikowane jako materiały niebezpieczne i które są wykorzystywane w celu łatwiejszego zapewnienia bezpieczeństwa lotu"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.140(f)",
-     "quote": "gdyż zapewnia ich natychmiastową dostępność do celów operacyjnych, uznaje się za dopuszczone na mocy pkt 1.2.2.1 lit. a) Instrukcji Technicznych"
-    }
-   ],
-   "questionKeys": [
-    "PL099-0057#c60ce8c2",
-    "PL099-0038#257e330c"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-10",
-   "status": "draft",
-   "heading": "Pasy bezpieczeństwa i palenie tytoniu",
-   "body": [
-    "W zarobkowym transporcie lotniczym podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania (pkt CAT.OP.MPA.225 lit. a) ppkt 1 rozporządzenia 965/2012). We wszystkich innych fazach lotu członek załogi lotniczej pozostający na swoim stanowisku musi mieć zapięty pas (ppkt 2). W lotach niezarobkowych pilot dowódca ma zapięty pas, kiedy przebywa na swoim stanowisku (pkt NCO.GEN.105 lit. f) ppkt 1). Pilot dowódca szybowca dba, aby podczas krytycznych faz lotu lub gdy uzna to za konieczne, wszystkie osoby na pokładzie siedziały z zapiętymi pasami (pkt SAO.GEN.130 lit. i) rozporządzenia 2018/1976).",
-    "Pilot dowódca nie zezwala na palenie tytoniu na pokładzie, kiedy uznaje się to za konieczne ze względów bezpieczeństwa, oraz podczas uzupełniania paliwa (pkt NCO.OP.155 lit. a) i b)). Przepis nie uzależnia palenia od wentylacji kabiny ani liczby palących.",
-    "Klucz ULC w pytaniu o pasy pilota w trakcie lotu przyjmuje „podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne”, a w pytaniu o palenie — „Palenie tytoniu nie jest dozwolone”; aktualne przepisy wymagają pasa na stanowisku przez cały lot i nie wprowadzają bezwzględnego zakazu palenia."
-   ],
-   "refs": [
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.OP.MPA.225(a)(1)",
-     "quote": "Podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania, prawidłowo je zapinając."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.OP.MPA.225(a)(2)",
-     "quote": "We wszystkich innych fazach lotu każdy członek załogi lotniczej pozostający na swoim stanowisku w kabinie załogi lotniczej musi mieć zapięty pas bezpieczeństwa."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(f)(1)",
-     "quote": "ma prawidłowo zapięty pas bezpieczeństwa, kiedy przebywa na swoim stanowisku"
-    },
-    {
-     "src": "EU-2018-1976",
-     "loc": "SAO.GEN.130(i)",
-     "quote": "dba, aby podczas krytycznych faz lotu lub w każdym przypadku, gdy uzna to za konieczne ze względów bezpieczeństwa, wszystkie osoby znajdujące się na pokładzie zajęły pozycję siedzącą i miały zapięty pas bezpieczeństwa"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.155",
-     "quote": "Pilot dowódca nie zezwala na palenie tytoniu na pokładzie:"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.155(a)",
-     "quote": "kiedy uznaje się to za konieczne ze względów bezpieczeństwa;"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.155(b)",
-     "quote": "podczas uzupełniania paliwa statku powietrznego."
-    }
-   ],
-   "questionKeys": [
-    "PL099-0048#41a50c8a",
-    "PL099-0091#b4d5dc8c",
-    "PL099-0098#22c8deb8",
-    "PL102-0017#22c8deb8"
-   ],
-   "disputeNote": "Pkt CAT.OP.MPA.225 lit. a) ppkt 2 i NCO.GEN.105 lit. f) ppkt 1 rozporządzenia 965/2012 wymagają zapiętego pasa na stanowisku także poza startem i lądowaniem, a pkt NCO.OP.155 lit. a) i b) nie wprowadza bezwzględnego zakazu palenia w czasie lotu. Klucz odzwierciedla wcześniejsze przepisy lub inną interpretację. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
-  },
-  {
-   "id": "AL14-11",
-   "status": "draft",
-   "heading": "Przygotowanie i rozpoczęcie lotu",
-   "body": [
-    "- Pilot dowódca odpowiada za prawidłowe wykonanie przeglądu przedlotowego (pkt ML.A.201 lit. d) rozporządzenia 1321/2014), czyli kontroli przed wylotem, która ma zagwarantować zdolność statku do wykonania zamierzonego lotu (art. 2 tego rozporządzenia). Przed wejściem do kabiny pilot sprawdza więc stan techniczny statku.",
-    "- Przed rozpoczęciem lotu pilot dowódca musi być zaznajomiony ze wszystkimi dostępnymi informacjami meteorologicznymi (pkt NCO.OP.135 lit. b) rozporządzenia 965/2012).",
-    "- Lot rozpoczyna się wyłącznie, gdy statek jest zdatny do lotu, a wymagane przyrządy i wyposażenie są zainstalowane i działają (pkt NCO.GEN.105 lit. a) ppkt 4; dla szybowców pkt SAO.GEN.130 lit. d) ppkt 3 rozporządzenia 2018/1976). Sprawdzenie np. wysokościomierza należy do dowódcy.",
-    "- Przed startem pilot dowódca upewnia się, że warunki meteorologiczne na lotnisku startu i stan drogi startowej nie wpłyną ujemnie na bezpieczeństwo startu i odlotu (pkt NCO.OP.175 lit. a)).",
-    "- W warunki oblodzenia wlatuje się tylko statkiem certyfikowanym i wyposażonym do lotów w takich warunkach (pkt NCO.OP.170 lit. a)).",
-    "- MEL opracowuje się w oparciu o MMEL i nie może on być mniej restrykcyjny niż MMEL (pkt NCO.GEN.155 lit. a) ppkt 3). Organ może zatwierdzić użytkowanie poza ograniczeniami MEL, ale w ramach MMEL (pkt ARO.OPS.205 lit. c)), więc poza MMEL zezwolić nie można."
-   ],
-   "refs": [
-    {
-     "src": "EU-1321-2014",
-     "loc": "ML.A.201(d)",
-     "quote": "Pilot dowódca statku powietrznego odpowiada za prawidłowe wykonanie przeglądu przedlotowego."
-    },
-    {
-     "src": "EU-1321-2014",
-     "loc": "art. 2",
-     "quote": "„przegląd przed lotem” oznacza kontrolę przeprowadzaną przed wylotem w celu zagwarantowania zdolności statku powietrznego do wykonania zamierzonego lotu"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.135(b)",
-     "quote": "Przed rozpoczęciem lotu pilot dowódca musi być zaznajomiony ze wszystkimi dostępnymi informacjami meteorologicznymi odpowiednimi dla zamierzonego lotu."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(a)(4)",
-     "quote": "rozpoczęcie lotu wyłącznie wtedy, gdy upewni się, że uwzględnione zostały wszystkie ograniczenia operacyjne"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(a)(4)(i)",
-     "quote": "statek powietrzny jest zdatny do lotu;"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(a)(4)(iii)",
-     "quote": "przyrządy i wyposażenie wymagane do wykonania lotu zostały zainstalowane na pokładzie statku powietrznego i działają"
-    },
-    {
-     "src": "EU-2018-1976",
-     "loc": "SAO.GEN.130(d)(3)",
-     "quote": "wymagane do wykonania lotu przyrządy i wyposażenie znajdują się na pokładzie szybowca i funkcjonują"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.175(a)",
-     "quote": "z dostępnych informacji wynika, że warunki meteorologiczne na lotnisku startu lub w miejscu operacji lotniczej oraz stan zamierzonej do użycia drogi startowej lub FATO nie wpłyną ujemnie na bezpieczeństwo startu i odlotu"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.170(a)",
-     "quote": "Pilot dowódca przystępuje do wykonania lotu lub celowo wlatuje w obszar spodziewanych lub istniejących warunków powodujących oblodzenie, wyłącznie jeżeli statek powietrzny jest certyfikowany i wyposażony do odbywania lotów w takich warunkach"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.155(a)(3)",
-     "quote": "wykaz wyposażenia minimalnego (MEL) opracowuje się w oparciu o odpowiedni główny wykaz wyposażenia minimalnego (MMEL)"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.155(a)(3)",
-     "quote": "przy czym nie może on być mniej restrykcyjny niż MMEL."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "ARO.OPS.205(c)",
-     "quote": "zatwierdzenie do użytkowania statku powietrznego poza ograniczeniami nakładanymi przez MEL, ale w ramach ograniczeń nakładanych przez główny wykaz wyposażenia minimalnego (master minimum equipment list, MMEL)"
-    }
-   ],
-   "questionKeys": [
-    "PL099-0003#2466e740",
-    "PL099-0062#b3518057",
-    "PL099-0094#1ce7b659",
-    "PL102-0052#3b602dba",
-    "PL099-0034#73f7420d",
-    "PL099-0047#683da903"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-12",
-   "status": "draft",
-   "heading": "Paliwo: odpowiedzialność dowódcy i sytuacja awaryjna",
-   "body": [
-    "Pilot dowódca zapewnia, że ilość paliwa i oleju przewożona na pokładzie jest wystarczająca, przy uwzględnieniu m.in. warunków meteorologicznych i przewidywanych opóźnień podczas lotu (pkt NCO.OP.125 lit. a) rozporządzenia 965/2012). Przystępuje do rozpoczęcia lotu tylko wtedy, gdy na pokładzie znajduje się wystarczająca ilość paliwa i oleju (lit. c)). Odpowiedzialności za właściwą ilość zatankowanego paliwa przepis nie przenosi na obsługę techniczną, obsługę lotniskową ani drugiego pilota.",
-    "Pilot dowódca lotu kontrolowanego:",
-    "- zgłasza służbie ATC stan „MINIMUM FUEL”, gdy obliczył, że inne opóźnienia mogą spowodować lądowanie z mniejszą niż planowana ostateczną rezerwą paliwa (pkt NCO.OP.185 lit. b));",
-    "- zgłasza sytuację awaryjną dotyczącą ilości paliwa, nadając „MAYDAY MAYDAY MAYDAY FUEL”, gdy paliwo, które według szacunków będzie dostępne po wylądowaniu na najbliższym lotnisku, jest mniejsze od planowanej ostatecznej rezerwy (lit. c)).",
-    "Gdy w locie ilość paliwa jest mniejsza od ostatecznej rezerwy, dowódca zgłasza więc sytuację awaryjną."
-   ],
-   "refs": [
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.125(a)",
-     "quote": "Pilot dowódca zapewnia, że ilość paliwa/energii i oleju przewożona na pokładzie jest wystarczająca, przy uwzględnieniu warunków meteorologicznych"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.125(c)",
-     "quote": "Pilot dowódca przystępuje do rozpoczęcia lotu, tylko wtedy, gdy na pokładzie statku powietrznego znajduje się wystarczająca ilość paliwa/energii i oleju"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.185(b)",
-     "quote": "powiadamia służbę kontroli ruchu lotniczego (ATC) o stanie „minimalnej ilości paliwa/energii”, zgłaszając sytuację „MINIMUM FUEL”"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.185(c)",
-     "quote": "zgłasza „sytuację awaryjną dotyczącą ilości paliwa/energii”, nadając komunikat „MAYDAY MAYDAY MAYDAY FUEL”, gdy ilość zużywalnego paliwa/zużywalnej energii, która według szacunków będzie dostępna po wylądowaniu"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.185(c)",
-     "quote": "jest mniejsza od planowanej ostatecznej rezerwy paliwa/energii."
-    }
-   ],
-   "questionKeys": [
-    "PL099-0017#12fa010b",
-    "PL099-0095#06179f71"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-13",
-   "status": "draft",
-   "heading": "Decyzje dowódcy w locie i odstąpienie od przepisów",
-   "body": [
-    "Pilot dowódca odpowiada za rozpoczęcie, kontynuację, zakończenie lub zmianę kursu lotu w interesie bezpieczeństwa (pkt NCO.GEN.105 lit. a) ppkt 2 rozporządzenia 965/2012). O przerwaniu zadania w powietrzu decyduje więc dowódca, a przepis nie uzależnia tej decyzji od załogi ani od porozumienia z kontrolerem ruchu lotniczego.",
-    "W sytuacji awaryjnej, wymagającej natychmiastowej decyzji i działania, pilot dowódca podejmuje wszelkie działania, jakie w danych okolicznościach uzna za konieczne, i może w interesie bezpieczeństwa odstąpić od zasad, procedur operacyjnych i metod działania (pkt NCO.GEN.105 lit. e)). Pilot szybowca może w interesie bezpieczeństwa w koniecznym zakresie odstąpić od przepisów (pkt SAO.GEN.130 lit. k) rozporządzenia 2018/1976). Taką decyzją jest m.in. wybór miejsca do lądowania awaryjnego w terenie. W celu opanowania sytuacji zagrażającej bezpieczeństwu statku można więc naruszyć przepisy lotnicze; przepis nie wymaga wcześniejszej konsultacji z załogą.",
-    "Jeżeli wymaga tego państwo, w którym doszło do zdarzenia, pilot dowódca składa raport o takim naruszeniu właściwemu organowi tego państwa, a kopię swojemu właściwemu organowi, możliwie szybko i zwykle w ciągu 10 dni (AMC1 NCO.GEN.105(e), EASA)."
-   ],
-   "refs": [
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(a)(2)",
-     "quote": "rozpoczęcie, kontynuację, zakończenie lub zmianę kursu lotu w interesie bezpieczeństwa"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(e)",
-     "quote": "W sytuacji awaryjnej, wymagającej natychmiastowej decyzji i działania, pilot dowódca podejmuje wszelkie działania, jakie w danych okolicznościach uzna za konieczne"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(e)",
-     "quote": "W takich przypadkach może on w interesie bezpieczeństwa odstąpić od zasad, procedur operacyjnych i metod działania."
-    },
-    {
-     "src": "EU-2018-1976",
-     "loc": "SAO.GEN.130(k)",
-     "quote": "może w interesie bezpieczeństwa w koniecznym zakresie odstąpić od przepisów, procedur operacyjnych i metod działania"
-    },
-    {
-     "src": "EASA-EAR-AIROPS",
-     "loc": "AMC1 NCO.GEN.105(e)"
-    }
-   ],
-   "questionKeys": [
-    "PL099-0036#742ee4e6",
-    "PL099-0037#f092f413",
-    "PL099-0050#e65d8d6d",
-    "PL099-0080#28cb9106"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-14",
-   "status": "draft",
-   "heading": "Lot w symulowanych warunkach i symulowanie sytuacji awaryjnych",
-   "body": [
-    "Lot w symulowanych warunkach lotu według wskazań przyrządów wykonuje się tylko wtedy, gdy (pkt SERA.3220 rozporządzenia 923/2012):",
-    "- na statku powietrznym są zainstalowane w pełni sprawne podwójne urządzenia sterownicze (lit. a));",
-    "- jedno z miejsc przy urządzeniach sterowniczych zajmuje dodatkowy wykwalifikowany pilot, zwany pilotem bezpieczeństwa (lit. b)).",
-    "Pilot bezpieczeństwa siedzi więc przy drugim zestawie urządzeń sterowych. Powinien mieć odpowiednie pole widzenia do przodu i na obie strony statku albo łączność z kompetentnym obserwatorem, ale miejsca nie wybiera się według najlepszej widoczności.",
-    "Podczas przewożenia pasażerów lub ładunku nie symuluje się sytuacji nienormalnych lub awaryjnych wymagających zastosowania w części lub w całości procedur nienormalnych lub awaryjnych. W zarobkowym transporcie lotniczym zapewnia to operator (pkt CAT.OP.MPA.275 lit. a) rozporządzenia 965/2012), a w lotach niekomercyjnych (część NCO) sam pilot dowódca (pkt NCO.OP.180 lit. a) ppkt 1). W lotach zarobkowego przewozu takie symulacje nie są dozwolone, niezależnie od nadzoru dowódcy czy instrukcji użytkowania."
-   ],
-   "refs": [
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.3220(a)",
-     "quote": "na statku powietrznym są zainstalowane w pełni sprawne podwójne urządzenia sterownicze"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.3220(b)",
-     "quote": "jedno z miejsc przy urządzeniach sterowniczych zajmuje dodatkowy wykwalifikowany pilot (zwany w tym przepisie pilotem bezpieczeństwa)"
-    },
-    {
-     "src": "EU-923-2012",
-     "loc": "SERA.3220(b)",
-     "quote": "Pilot bezpieczeństwa powinien mieć zapewnione odpowiednie pole widzenia do przodu i na obie strony statku powietrznego lub powinien posiadać łączność z kompetentnym obserwatorem"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.OP.MPA.275",
-     "quote": "Operator zapewnia, by podczas przewożenia pasażerów lub ładunku, nie wykonywano:"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.OP.MPA.275(a)",
-     "quote": "symulowania sytuacji nienormalnych lub awaryjnych, wymagających zastosowania w części lub w całości procedur nienormalnych lub awaryjnych"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.180(a)",
-     "quote": "Pilot dowódca, przewożąc pasażerów lub ładunek, nie przeprowadza symulacji:"
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.OP.180(a)(1)",
-     "quote": "sytuacji wymagających zastosowania procedur nienormalnych lub awaryjnych"
-    }
-   ],
-   "questionKeys": [
-    "PL099-0066#31bcc08a",
-    "PL099-0072#8d8a3d1a"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-15",
-   "status": "draft",
-   "heading": "Meldunki w locie i dziennik techniczny",
-   "body": [
-    "Pilot dowódca niezwłocznie zgłasza odpowiedniej jednostce służb ruchu lotniczego (ATS) wszelkie napotkane niebezpieczne warunki pogodowe lub warunki lotu, które mogą mieć wpływ na bezpieczeństwo innych statków powietrznych (pkt NCO.GEN.105 lit. d) rozporządzenia 965/2012; dla szybowców pkt SAO.GEN.130 lit. p) rozporządzenia 2018/1976). Klucz ULC odnosi tę zasadę także do nieprawidłowej pracy urządzeń naziemnych i nawigacyjnych oraz niezwykłych zjawisk pogody: zgłasza się je właściwej stacji naziemnej tak szybko, jak jest to praktycznie możliwe. Meldunek telefoniczny lub pisemny dopiero po wylądowaniu nie jest zgłoszeniem niezwłocznym, a przepis nie wskazuje jako adresata władz lokalnych ani Urzędu Lotnictwa Cywilnego.",
-    "Po zakończeniu lotu lub serii lotów pilot dowódca odnotowuje dane związane z użytkowaniem oraz wszelkie znane lub podejrzewane usterki statku powietrznego w dzienniku technicznym statku powietrznego lub w dzienniku podróży (pkt NCO.GEN.105 lit. a) ppkt 8). Usterki techniczne wpisuje się więc do pokładowego dziennika technicznego; książka obsługi ani zeszyt prac obsługowych nie są w tym przepisie wymienione."
-   ],
-   "refs": [
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(d)",
-     "quote": "Pilot dowódca niezwłocznie zgłasza odpowiedniej jednostce służb ruchu lotniczego (ATS) wszelkie napotkane niebezpieczne warunki pogodowe lub warunki lotu, które mogą mieć wpływ na bezpieczeństwo innych statków powietrznych."
-    },
-    {
-     "src": "EU-2018-1976",
-     "loc": "SAO.GEN.130(p)",
-     "quote": "niezwłocznie zgłasza odpowiedniej jednostce służb ruchu lotniczego (ATS) wszelkie napotkane niebezpieczne warunki pogodowe lub warunki lotu, które mogą mieć negatywny wpływ na bezpieczeństwo innych statków powietrznych."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCO.GEN.105(a)(8)",
-     "quote": "odnotowywanie danych związanych z użytkowaniem i wszelkimi znanymi lub podejrzewanymi usterkami statku powietrznego po zakończeniu lotu bądź serii lotów w dzienniku technicznym statku powietrznego lub dzienniku podróży statku powietrznego"
-    }
-   ],
-   "questionKeys": [
-    "PL099-0015#1aea0d31",
-    "PL099-0035#c6f65bec",
-    "PL099-0077#d3f2ca9f",
-    "PL102-0024#a4c7e8c7",
-    "PL102-0064#84d9d4b9"
-   ],
-   "disputeNote": null
-  },
-  {
-   "id": "AL14-16",
-   "status": "draft",
-   "heading": "Obowiązki użytkownika statku i operatora",
-   "body": [
-    "Użytkownik statku powietrznego jest obowiązany zapewnić jego bezpieczną eksploatację (art. 158 ust. 1 Prawa lotniczego). Obowiązek ten wynika wprost z ustawy.",
-    "- Operator dopilnowuje, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku (pkt CAT.GEN.MPA.120 rozporządzenia 965/2012; w operacjach niezarobkowych skomplikowanymi statkami powietrznymi z napędem silnikowym pkt NCC.GEN.115). Odpowiada za to przewoźnik lub dysponent statku powietrznego, a nie dowódca ani Urząd Lotnictwa Cywilnego.",
-    "- Przewoźnik lotniczy zapewnia wprowadzenie w życie środków ochrony w odniesieniu do własnych statków powietrznych (pkt 3.0.1 załącznika do rozporządzenia wykonawczego 2015/1998). Obejmują one m.in. przeszukanie statku, ilekroć istnieje powód, by przypuszczać, że miały do niego dostęp osoby nieupoważnione (pkt 3.1.1.1), oraz zabezpieczenie drzwi zewnętrznych przed nieupoważnionym dostępem (pkt 3.2.1.1). Metody opisuje program ochrony przewoźnika lotniczego (art. 13 ust. 1 rozporządzenia 300/2008).",
-    "- Cały personel operacyjny musi mieć łatwy dostęp do tych części instrukcji operacyjnej, które dotyczą wykonywanych przez niego czynności (pkt ORO.MLR.100 lit. d)); część A instrukcji zawiera rozdział o kontroli operacyjnej i nadzorze nad operacjami (AMC3 ORO.MLR.100, EASA). Szczegółowe czynności dyspozytora w sytuacji zagrożenia opisuje więc Instrukcja Operacyjna."
-   ],
-   "refs": [
-    {
-     "src": "PL-PRAWO-LOTNICZE",
-     "loc": "art. 158 ust. 1",
-     "quote": "Użytkownik statku powietrznego jest obowiązany zapewnić jego bezpieczną eksploatację."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "CAT.GEN.MPA.120",
-     "quote": "Operator dopilnowuje, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "NCC.GEN.115",
-     "quote": "Operator zapewnia, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku."
-    },
-    {
-     "src": "EU-2015-1998",
-     "loc": "załącznik pkt 3.0.1",
-     "quote": "przewoźnik lotniczy zapewnia wprowadzenie w życie środków określonych w niniejszym rozdziale w odniesieniu do własnych statków powietrznych"
-    },
-    {
-     "src": "EU-2015-1998",
-     "loc": "załącznik pkt 3.1.1.1",
-     "quote": "Statek powietrzny poddany zostaje przeszukaniu zawsze, ilekroć istnieje powód, by przypuszczać, iż miały do niego dostęp osoby nieupoważnione."
-    },
-    {
-     "src": "EU-2015-1998",
-     "loc": "załącznik pkt 3.2.1.1",
-     "quote": "każde z zewnętrznych drzwi tego statku zabezpiecza się przed nieupoważnionym dostępem"
-    },
-    {
-     "src": "EU-300-2008",
-     "loc": "art. 13 ust. 1",
-     "quote": "Każdy przewoźnik lotniczy sporządza, stosuje i utrzymuje w mocy program ochrony przewoźnika lotniczego."
-    },
-    {
-     "src": "EU-965-2012",
-     "loc": "ORO.MLR.100(d)",
-     "quote": "Cały personel operacyjny musi mieć łatwy dostęp do tych części instrukcji operacyjnej, które dotyczą wykonywanych przez niego czynności."
-    },
-    {
-     "src": "EASA-EAR-AIROPS",
-     "loc": "AMC3 ORO.MLR.100"
-    }
-   ],
-   "questionKeys": [
-    "PL099-0039#b2e986e4",
-    "PL099-0040#6967dade",
-    "PL099-0073#5c465324",
-    "PL099-0096#f87a9e33",
-    "PL102-0063#774ff4ab"
-   ],
-   "disputeNote": null
-  }
- ]
+  ]
 }

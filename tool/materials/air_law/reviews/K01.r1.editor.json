@@ -1,0 +1,57 @@
+[
+ {
+  "key": "AL01-1",
+  "verdict": "FIX",
+  "note": "Dwa sformułowania wykraczają poza źródło. (1) „Podstawową taką umową jest Konwencja…” – art. 3 ust. 1–2 nie określa konwencji jako „podstawowej”; zastąpić zdaniem: „Taką umową jest m.in. Konwencja o międzynarodowym lotnictwie cywilnym, sporządzona w Chicago dnia 7 grudnia 1944 r. (konwencja chicagowska).” (2) Art. 1 konwencji: umawiające się państwa „recognize”, że każde państwo ma zwierzchnictwo – konwencja go nie „przyznaje”; zamienić „art. 1 konwencji chicagowskiej przyznaje takie zwierzchnictwo każdemu państwu nad jego terytorium” na „art. 1 konwencji chicagowskiej uznaje takie zwierzchnictwo każdego państwa nad jego terytorium”. Liczba słów bez zmian (197 bez myślników list ≤ 200). Pozostałe twierdzenia (art. 3 ust. 1–2, art. 4 ust. 1–2, art. 122b ust. 1 pkt 1–2, art. 5 ust. 2 pkt 2) zgodne z korpusem i z verified objaśnieniami PL010-0507/0510; questionKeys poprawne; jako bezpłatny przegląd sekcja działa."
+ },
+ {
+  "key": "AL01-2",
+  "verdict": "PASS",
+  "note": "Art. 6, 7, 8 PL, SERA.1001(a), art. 42 PPM i art. 31 ust. 2 zgodne z korpusem; art. 12 konwencji („podobnie”) obejmuje terytorium i morze pełne. Spójne z verified PL010-0078/0079/0236/0237/0238. 174 słowa, questionKeys kompletne."
+ },
+ {
+  "key": "AL01-3",
+  "verdict": "PASS",
+  "note": "Art. 43 i 44 lit. a), h) konwencji, art. 3 ust. 2 i ust. 4 pkt 1–4 PL, art. 2 pkt 14 i art. 1 ust. 1 lit. i) oraz ARA.GEN.120(a) rozporządzenia 1178/2011 potwierdzają treść. Zgodne z verified PL010-0061/0204/1532/1547. 157 słów."
+ },
+ {
+  "key": "AL01-4",
+  "verdict": "PASS",
+  "note": "Art. 2 pkt 22b 1178/2011, art. 121 ust. 6 pkt 1–2 i art. 17 ust. 3 PL, art. 10 ust. 6 923/2012, § 2 pkt 1 rozp. SAR zgodne; cytaty GEN 3.6 pkt 1 i 6 pochodzą z kolumny polskiej (ostrzeżenie validate pl+en nieistotne), tekst AIP sparafrazowany. Zdanie „Łatwo pomylić Załącznik 2 … z Załącznikiem 11” to jedna uwaga o pułapce, poparta obiema ref – akceptowalne. Opcjonalnie (nie blokuje): dla nazwy „licencjonowanie personelu” dodać ref jak w objaśnieniu PL010-1557: {\"src\":\"AIP-PL\",\"loc\":\"ENR 5.2.1\",\"quote\":\"Zgodnie z Załącznikiem 1 ICAO – Licencjonowanie Personelu\"}. 160 słów, questionKeys kompletne."
+ },
+ {
+  "key": "AL01-5",
+  "verdict": "PASS",
+  "note": "Art. 142 pkt 1–4, art. 144, art. 145 ust. 1 pkt 1–2 PL i art. 3 bis lit. b) konwencji zgodne z korpusem; pominięcie zastrzeżeń (art. 145a, art. 145 ust. 1 pkt 4) dopuszczalne w konspekcie. Spójne z verified PL010-0349/0353/0571. 146 słów."
+ },
+ {
+  "key": "AL02-1",
+  "verdict": "PASS",
+  "note": "Art. 20 ust. 1, art. 21 ust. 1, art. 21 ust. 2 pkt 5, 6 i 8, art. 34 ust. 1, 1a, 1b, art. 95a ust. 3a – wszystko dosłownie w korpusie (nowe fakty pkt 5/6 i ust. 1a sprawdzone). Spójne z verified PL010-1544/0048#144c0eb7/1554/1550. Dobry bezpłatny przegląd. 161 słów."
+ },
+ {
+  "key": "AL02-2",
+  "verdict": "PASS",
+  "note": "Art. 31 ust. 1 pkt 1–3, ust. 2, ust. 4 (nowy fakt, zgodny dosłownie) i art. 2 pkt 3 PL potwierdzają treść. Spójne z verified PL010-0048#a54a75b1/0073/0074/0075/0484. 147 słów."
+ },
+ {
+  "key": "AL02-3",
+  "verdict": "PASS",
+  "note": "Art. 51 ust. 1–2 i art. 21 ust. 2 pkt 6 zgodne; uproszczenie „świadectwo zdatności i dokumenty z nim związane” (przepis wymienia też pozwolenie na wykonywanie lotów lub dokument równoważny) odpowiada brzmieniu pytań i nie przeczy normie. Spójne z verified PL010-0124/0253/0298. 133 słowa."
+ },
+ {
+  "key": "AL02-4",
+  "verdict": "PASS",
+  "note": "Art. 52 ust. 2–3 i art. 53 ust. 1–2 (ust. 1 – nowy fakt, zgodny z korpusem) potwierdzają treść; zdanie o certyfikatach środowiskowych powtarza interpretację z verified PL010-0494. Spójne z PL010-0494/0495/0496. 136 słów."
+ },
+ {
+  "key": "AL02-5",
+  "verdict": "DISPUTED",
+  "note": "Art. 27 ust. 3 pkt 2–4, ust. 5 pkt 1 oraz art. 155 ust. 1 i 4 zgodne z korpusem. Sporność ujęta neutralnie jednym zdaniem „Klucz ULC … przyjmuje …; aktualny art. 27 ust. 5 …”, zgodnie z disputed PL010-0376/0377/0378 (disputeNote identyczny jak w objaśnieniach, 292 znaki, art. 27 ust. 5 w refs, formuła o kluczu obecna). PL010-0367 (verified) pasuje do akapitu o art. 155. 154 słowa."
+ },
+ {
+  "key": "AL02-6",
+  "verdict": "DISPUTED",
+  "note": "Załącznik I pkt 57 i pkt 2 rozporządzenia 2017/373 – dosłownie w korpusie. Zdanie o kluczu neutralne; disputeNote (320 znaków) łączy obie noty disputed PL010-0361#917d15cf i #bdafd792 (w tym obronność „Żadna z odpowiedzi…” w jednym wariancie), pkt 57 w refs, formuła o kluczu obecna. 95 słów (≥ 80)."
+ }
+]
