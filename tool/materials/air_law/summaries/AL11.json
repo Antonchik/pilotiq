@@ -576,7 +576,7 @@
       "body": [
         "Statek powietrzny nie zbliża się do innego statku powietrznego na odległość stwarzającą niebezpieczeństwo kolizji (pkt SERA.3205 rozporządzenia 923/2012). Przepis nie podaje tej odległości w metrach ani różnicy wysokości. Pilot, który ma pozostać z dala od drogi innego statku, unika przelatywania nad nim, pod nim lub przed nim, chyba że uczyni to w bezpiecznej odległości i uwzględni skutki turbulencji w strumieniu nadążającym (SERA.3210 lit. c)).",
         "- Zbliżanie na kierunkach przeciwnych lub prawie przeciwnych: gdy grozi zderzenie, pilot dowódca każdego statku powietrznego zmienia kurs w prawo (lit. c) ppkt 1). Przepis nie rozróżnia rodzajów statków powietrznych ani klas przestrzeni, więc dotyczy także samolotu i śmigłowca w klasie G; nie przewiduje rozejścia się przez wznoszenie.",
-        "- Lądowanie: pilot dowódca, wiedząc, że inny statek powietrzny jest zmuszony do lądowania, daje mu pierwszeństwo drogi (lit. c) ppkt 4 (ii)). ICAO Doc 4444 w kolejności podejścia i lądowania stawia na pierwszym miejscu statek powietrzny, który przewiduje przymusowe lądowanie z powodu czynników wpływających na bezpieczeństwo, np. awarii silnika. Status VIP ani HUM nie jest w tych przepisach podstawą pierwszeństwa."
+        "- Lądowanie: pilot dowódca, wiedząc, że inny statek powietrzny jest zmuszony do lądowania, daje mu pierwszeństwo drogi (lit. c) ppkt 4 (ii)). ICAO Doc 4444 w kolejności podejścia i lądowania stawia na pierwszym miejscu statek powietrzny, który przewiduje, że będzie zmuszony do lądowania ze względu na czynniki wpływające na bezpieczeństwo lotu, np. awarię silnika. Status VIP ani HUM nie jest w tych punktach wymieniony jako podstawa pierwszeństwa."
       ],
       "refs": [
         {
@@ -600,12 +600,14 @@
           "quote": "Pilot dowódca statku powietrznego wiedząc, że inny statek powietrzny jest zmuszony do lądowania, daje temu statkowi pierwszeństwo drogi."
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "pkt 6.5.6.1.1"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "6.5.6.1.1 lit. a",
+          "quote": "statkowi powietrznemu, który przewiduje, że będzie zmuszony do lądowania ze względu na czynniki mające wpływ na bezpieczeństwo lotu (np. awarię silnika, mały zapas paliwa itd.)"
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "pkt 7.7.3.3"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "7.7.3.3 lit. a",
+          "quote": "statkowi powietrznemu, który przewiduje, że będzie zmuszony do lądowania ze względu na czynniki wpływające na bezpieczeństwo jego lotu (niesprawność silnika, brak paliwa itd.)"
         }
       ],
       "questionKeys": [

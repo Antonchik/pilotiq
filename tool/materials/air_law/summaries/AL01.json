@@ -6,11 +6,11 @@
       "status": "verified",
       "heading": "Źródła prawa lotniczego i zwierzchnictwo w przestrzeni powietrznej",
       "body": [
-        "Do stosunków prawnych z zakresu lotnictwa cywilnego stosuje się przepisy Prawa lotniczego, o ile wiążące Rzeczpospolitą Polską ratyfikowane umowy międzynarodowe nie stanowią inaczej (art. 3 ust. 1). Taką umową jest m.in. Konwencja o międzynarodowym lotnictwie cywilnym, sporządzona w Chicago dnia 7 grudnia 1944 r. (konwencja chicagowska). Przyjmowane przez ICAO załączniki do niej ogłasza się wraz z oświadczeniami rządowymi o ich obowiązywaniu (art. 3 ust. 2).",
+        "Do stosunków prawnych z zakresu lotnictwa cywilnego stosuje się przepisy Prawa lotniczego, o ile wiążące Rzeczpospolitą Polską ratyfikowane umowy międzynarodowe nie stanowią inaczej (art. 3 ust. 1). Taką umową jest Konwencja o międzynarodowym lotnictwie cywilnym, sporządzona w Chicago dnia 7 grudnia 1944 r. (konwencja chicagowska). Przyjmowane przez ICAO załączniki do niej ogłasza się wraz z oświadczeniami rządowymi o ich obowiązywaniu (art. 3 ust. 2).",
         "Zwierzchnictwo:",
-        "- Rzeczpospolita Polska ma całkowite i wyłączne zwierzchnictwo w swojej przestrzeni powietrznej (art. 4 ust. 1); art. 1 konwencji chicagowskiej uznaje takie zwierzchnictwo każdego państwa nad jego terytorium. Należy ono do państwa, nie do organizacji międzynarodowych.",
-        "- Funkcje wynikające ze zwierzchnictwa wykonuje, w zakresie niezwiązanym z umacnianiem obronności państwa, minister właściwy do spraw transportu; Rada Ministrów określa w rozporządzeniu warunki i sposób ich wykonywania (art. 4 ust. 1 i 2).",
-        "- Statek lecący w polskiej przestrzeni powietrznej w sposób odbiegający od ustalonej organizacji lotu i mogący zagrażać bezpieczeństwu wielu osób może zostać wezwany przez państwowy organ zarządzania ruchem lotniczym do zmiany kierunku lub wysokości lotu albo do lądowania (art. 122b ust. 1).",
+        "- Rzeczpospolita Polska ma całkowite i wyłączne zwierzchnictwo w swojej przestrzeni powietrznej (art. 4 ust. 1); tak samo art. 1 konwencji chicagowskiej (suwerenność państwa nad jego terytorium). Należy do państwa, nie do organizacji międzynarodowych.",
+        "- Funkcje te wykonuje, w zakresie niezwiązanym z umacnianiem obronności państwa, minister właściwy do spraw transportu; Rada Ministrów określa w rozporządzeniu warunki i sposób ich wykonywania (art. 4 ust. 1 i 2).",
+        "- Statek w polskiej przestrzeni powietrznej, odbiegający od ustalonej organizacji lotu i mogący zagrażać bezpieczeństwu wielu osób, może zostać wezwany przez państwowy organ zarządzania ruchem lotniczym do zmiany kierunku lub wysokości lotu albo do lądowania (art. 122b ust. 1).",
         "- Organy międzynarodowe mogą wykonywać tylko niektóre zadania służb żeglugi powietrznej, na podstawie umów międzynarodowych (art. 5 ust. 2 pkt 2)."
       ],
       "refs": [
@@ -45,8 +45,9 @@
           "quote": "Rada Ministrów określi, w drodze rozporządzenia, warunki i sposób wykonywania funkcji wynikających ze zwierzchnictwa w polskiej przestrzeni powietrznej"
         },
         {
-          "src": "ICAO-DOC-7300",
-          "loc": "Article 1"
+          "src": "PL-KONWENCJA-CHICAGO-1944",
+          "loc": "art. 1",
+          "quote": "każde Państwo posiada całkowitą i wyłączną suwerenność w przestrzeni powietrznej nad swoim terytorium"
         },
         {
           "src": "PL-PRAWO-LOTNICZE",
@@ -111,8 +112,9 @@
           "quote": "Lot i manewrowanie statku powietrznego odbywają się zgodnie z przepisami obowiązującymi w granicach danego terytorium, a na obszarze niepodlegającym zwierzchnictwu żadnego państwa – zgodnie z przepisami międzynarodowymi."
         },
         {
-          "src": "ICAO-DOC-7300",
-          "loc": "Article 12"
+          "src": "PL-KONWENCJA-CHICAGO-1944",
+          "loc": "art. 12",
+          "quote": "musiał stosować się do obowiązujących w danym miejscu reguł i przepisów, dotyczących lotu i manewrowania statków powietrznych"
         },
         {
           "src": "EU-923-2012",
@@ -147,7 +149,7 @@
       "status": "verified",
       "heading": "ICAO, EASA i inne organizacje lotnicze",
       "body": [
-        "Organizację Międzynarodowego Lotnictwa Cywilnego (ICAO) utworzyła sama konwencja chicagowska (art. 43 konwencji), sporządzona w Chicago dnia 7 grudnia 1944 r. (art. 3 ust. 2 Prawa lotniczego). Według art. 44 lit. a) konwencji celem ICAO jest zapewnienie bezpiecznego i prawidłowego rozwoju międzynarodowego lotnictwa cywilnego na całym świecie; wśród celów jest też popieranie bezpieczeństwa lotów w międzynarodowej żegludze powietrznej (art. 44 lit. h).",
+        "Organizację Międzynarodowego Lotnictwa Cywilnego (ICAO) utworzyła sama konwencja chicagowska (art. 43 konwencji), sporządzona w Chicago dnia 7 grudnia 1944 r. (art. 3 ust. 2 Prawa lotniczego). Według art. 44 lit. a) konwencji celem ICAO jest zapewnienie bezpiecznego i prawidłowego rozwoju międzynarodowego lotnictwa cywilnego na całym świecie; wśród celów jest też zwiększanie bezpieczeństwa lotów w międzynarodowej żegludze powietrznej (art. 44 lit. h).",
         "Prawo lotnicze wymienia organizacje, których wymagania międzynarodowe o charakterze specjalistycznym minister właściwy do spraw transportu może wprowadzić do stosowania w drodze rozporządzenia (art. 3 ust. 4):",
         "- Organizacja Międzynarodowego Lotnictwa Cywilnego (ICAO);",
         "- Europejska Konferencja Lotnictwa Cywilnego (ECAC), w tym Zrzeszenie Władz Lotniczych (JAA);",
@@ -157,8 +159,9 @@
       ],
       "refs": [
         {
-          "src": "ICAO-DOC-7300",
-          "loc": "Article 43"
+          "src": "PL-KONWENCJA-CHICAGO-1944",
+          "loc": "art. 43",
+          "quote": "Niniejszą Konwencją tworzy się organizację pod nazwą: Organizacja Międzynarodowego Lotnictwa Cywilnego."
         },
         {
           "src": "PL-PRAWO-LOTNICZE",
@@ -166,12 +169,14 @@
           "quote": "sporządzonej w Chicago dnia 7 grudnia 1944 r."
         },
         {
-          "src": "ICAO-DOC-7300",
-          "loc": "Article 44(a)"
+          "src": "PL-KONWENCJA-CHICAGO-1944",
+          "loc": "art. 44 lit. a",
+          "quote": "zapewnić bezpieczny i prawidłowy rozwój międzynarodowego lotnictwa cywilnego na całym świecie"
         },
         {
-          "src": "ICAO-DOC-7300",
-          "loc": "Article 44"
+          "src": "PL-KONWENCJA-CHICAGO-1944",
+          "loc": "art. 44 lit. h",
+          "quote": "zwiększać bezpieczeństwo lotów w międzynarodowej żegludze powietrznej"
         },
         {
           "src": "PL-PRAWO-LOTNICZE",
@@ -298,7 +303,7 @@
         "- zakazu przekraczania granic jakiegokolwiek państwa bez wymaganego zezwolenia;",
         "- zakazu używania statków powietrznych do działań bezprawnych;",
         "- poleceń organów państwa, w którego przestrzeni powietrznej lot się odbywa, a także poleceń jego państwowego statku powietrznego.",
-        "Obowiązki te obowiązują łącznie, więc odpowiedzi zawężone słowem „tylko” do jednego z nich są niepełne; przepis nie przewiduje też stosowania wyłącznie prawa państwa rejestracji. Prawo państwa do wezwania do lądowania statku lecącego bez zezwolenia potwierdza art. 3 bis lit. b) konwencji chicagowskiej.",
+        "Obowiązki te obowiązują łącznie, więc odpowiedzi zawężone słowem „tylko” do jednego z nich są niepełne; przepis nie przewiduje też stosowania wyłącznie prawa państwa rejestracji. Prawo państwa do żądania lądowania w wyznaczonym porcie lotniczym statku przelatującego bez zezwolenia potwierdza art. 3 bis lit. b) konwencji chicagowskiej.",
         "Zezwolenie na lot międzynarodowy:",
         "- nie jest wymagane dla międzynarodowych lotów niehandlowych polskich cywilnych statków powietrznych ani dla nieregularnych lotów niehandlowych statków państw stron konwencji chicagowskiej (art. 145 ust. 1 pkt 1 i 2);",
         "- jest wymagane dla międzynarodowych lotów handlowych obcych przewoźników z lądowaniem handlowym w Polsce (art. 144)."
@@ -330,8 +335,9 @@
           "quote": "poleceń organów państwa, w którego przestrzeni powietrznej lot się odbywa, a także poleceń otrzymanych od jego państwowego statku powietrznego."
         },
         {
-          "src": "ICAO-DOC-7300",
-          "loc": "Article 3 bis(b)"
+          "src": "PL-KONWENCJA-CHICAGO-1944",
+          "loc": "art. 3bis lit. b",
+          "quote": "jest uprawnione do żądania lądowania w jakimś wyznaczonym porcie lotniczym cywilnego statku powietrznego przelatującego nad jego terytorium bez zezwolenia"
         },
         {
           "src": "PL-PRAWO-LOTNICZE",
@@ -363,6 +369,59 @@
         "PL010-0571#387ff122"
       ],
       "disputeNote": null
+    },
+    {
+      "id": "AL01-6",
+      "status": "verified",
+      "heading": "Konwencja tokijska i bezprawne czyny na pokładzie",
+      "body": [
+        "Konwencja tokijska z 1963 r. dotyczy przestępstw i niektórych innych czynów popełnionych na pokładzie statków powietrznych. Stosuje się ją do (art. 1 ust. 1):",
+        "- przestępstw przewidzianych w prawie karnym;",
+        "- czynów, które niezależnie od tego, czy są przestępstwami, mogą narażać lub narażają na niebezpieczeństwo statek powietrzny, osoby albo mienie na pokładzie, lub naruszają porządek i dyscyplinę na pokładzie.",
+        "Konwencję stosuje się do czynów popełnionych na pokładzie statku zarejestrowanego w Umawiającym się Państwie w czasie, gdy statek znajduje się w locie bądź nad powierzchnią morza pełnego lub obszaru leżącego poza terytorium jakiegokolwiek Państwa (art. 1 ust. 2). Statek jest w locie od chwili użycia siły napędowej w celu wystartowania aż do chwili zakończenia lądowania (art. 1 ust. 3). Konwencji nie stosuje się do statków używanych w służbie wojskowej, celnej lub policyjnej (art. 1 ust. 4). Jurysdykcję wykonuje państwo rejestracji statku (art. 3 ust. 1).",
+        "Zwalczaniu bezprawnego zawładnięcia statkami powietrznymi poświęcona jest odrębna konwencja haska z 1970 r. (art. 1 lit. a)."
+      ],
+      "refs": [
+        {
+          "src": "PL-KONWENCJA-TOKIO-1963",
+          "loc": "art. 1 ust. 1 lit. a",
+          "quote": "przestępstw przewidzianych w prawie karnym"
+        },
+        {
+          "src": "PL-KONWENCJA-TOKIO-1963",
+          "loc": "art. 1 ust. 1 lit. b",
+          "quote": "czynów, które niezależnie od tego, czy są przestępstwami, mogą narażać lub narażają na niebezpieczeństwo statek powietrzny, osoby albo mienie znajdujące się na pokładzie, lub czynów, które naruszają porządek i dyscyplinę na pokładzie"
+        },
+        {
+          "src": "PL-KONWENCJA-TOKIO-1963",
+          "loc": "art. 1 ust. 2",
+          "quote": "niniejszą konwencję stosuje się do przestępstw lub czynów popełnionych przez osobę na pokładzie statku powietrznego zarejestrowanego w Umawiającym się Państwie"
+        },
+        {
+          "src": "PL-KONWENCJA-TOKIO-1963",
+          "loc": "art. 1 ust. 3",
+          "quote": "statek powietrzny jest w locie od chwili użycia siły napędowej w celu wystartowania aż do chwili zakończenia lądowania"
+        },
+        {
+          "src": "PL-KONWENCJA-TOKIO-1963",
+          "loc": "art. 1 ust. 4",
+          "quote": "Niniejszej konwencji nie stosuje się do statków powietrznych używanych w służbie wojskowej, celnej lub policyjnej."
+        },
+        {
+          "src": "PL-KONWENCJA-TOKIO-1963",
+          "loc": "art. 3 ust. 1",
+          "quote": "Państwo rejestracji statku powietrznego jest właściwe do wykonywania jurysdykcji w sprawach o przestępstwa i czyny popełnione na pokładzie."
+        },
+        {
+          "src": "PL-KONWENCJA-HAGA-1970",
+          "loc": "art. 1 lit. a",
+          "quote": "bezprawnie, przemocą lub groźbą użycia przemocy lub w każdej innej formie zastraszenia dokonuje zawładnięcia statkiem powietrznym lub przejęcia nad nim kontroli"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0111#038e337a",
+        "PL010-0111#7c58f970"
+      ]
     }
   ]
 }

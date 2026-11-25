@@ -1,26 +1,26 @@
 {
  "AL01-1": {
   "date": "2026-11-25",
-  "note": "Obie poprawki z r1 wprowadzone dosłownie („Taką umową jest m.in. Konwencja…”, „art. 1 konwencji chicagowskiej uznaje takie zwierzchnictwo…”). Skrócony nagłówek listy „Zwierzchnictwo:” jest jednoznaczny w kontekście; „Należy ono do państwa, nie do organizacji międzynarodowych.” to wniosek z art. 4 ust. 1 i Article 1, zgodny z verified PL010-0507. 195 słów bez myślników (199 z nimi) ≤ 200; refs i questionKeys bez zmian; validate 0 błędów.",
-  "portion": "K01",
+  "note": "Poprawki zastosowane, 199 tokenów (≤200), cytaty w kotwicach, refs i QK bez zmian, przegląd samodzielny.",
+  "portion": "ANXS2",
   "round": 2,
-  "textSha": "0ebc55b58b7f82eb",
+  "textSha": "2f7ff5114e8c7ead",
   "verdict": "PASS"
  },
  "AL01-2": {
   "date": "2026-11-25",
-  "note": "Art. 6, 7, 8 PL, SERA.1001(a), art. 42 PPM i art. 31 ust. 2 zgodne z korpusem; art. 12 konwencji („podobnie”) obejmuje terytorium i morze pełne. Spójne z verified PL010-0078/0079/0236/0237/0238. 174 słowa, questionKeys kompletne.",
-  "portion": "K01",
+  "note": "Art. 6, 7, 8 PL, art. 12 Konwencji, SERA.1001(a), art. 42 PPM, art. 31 ust. 2 PL – cytaty w kotwicach; zgodne z wyjaśnieniami 0079, 0237, 0238. 185 tokenów. QK w podtemacie, verified.",
+  "portion": "ANXS2",
   "round": 1,
-  "textSha": "73056c4015c35303",
+  "textSha": "9a0bdc3910fb970d",
   "verdict": "PASS"
  },
  "AL01-3": {
   "date": "2026-11-25",
-  "note": "Art. 43 i 44 lit. a), h) konwencji, art. 3 ust. 2 i ust. 4 pkt 1–4 PL, art. 2 pkt 14 i art. 1 ust. 1 lit. i) oraz ARA.GEN.120(a) rozporządzenia 1178/2011 potwierdzają treść. Zgodne z verified PL010-0061/0204/1532/1547. 157 słów.",
-  "portion": "K01",
+  "note": "Art. 43, 44 lit. a i h Konwencji, art. 3 ust. 2 i ust. 4 pkt 1–4 PL, 1178/2011 art. 2 pkt 14, art. 1 ust. 1, ARA.GEN.120(a) – wszystko w kotwicach; zgodne z 0061 i 0204. Zdanie «AMC nie wydają ICAO, ECAC ani EUROCONTROL» jest wnioskiem z definicji (przyjęte przez Agencję) – akceptowalne. 167 tokenów.",
+  "portion": "ANXS2",
   "round": 1,
-  "textSha": "659529f45c59d3ec",
+  "textSha": "4c2e804f19d1034f",
   "verdict": "PASS"
  },
  "AL01-4": {
@@ -33,10 +33,18 @@
  },
  "AL01-5": {
   "date": "2026-11-25",
-  "note": "Art. 142 pkt 1–4, art. 144, art. 145 ust. 1 pkt 1–2 PL i art. 3 bis lit. b) konwencji zgodne z korpusem; pominięcie zastrzeżeń (art. 145a, art. 145 ust. 1 pkt 4) dopuszczalne w konspekcie. Spójne z verified PL010-0349/0353/0571. 146 słów.",
-  "portion": "K01",
+  "note": "Art. 142 pkt 1–4, art. 144, art. 145 ust. 1 pkt 1–2 PL oraz art. 3bis lit. b Konwencji zgodne z kotwicami i z wyjaśnieniami 0353. 161 tokenów.",
+  "portion": "ANXS2",
   "round": 1,
-  "textSha": "a6a472804b94c4e3",
+  "textSha": "4b2bf675e83d6c71",
+  "verdict": "PASS"
+ },
+ "AL01-6": {
+  "date": "2026-11-25",
+  "note": "Konwencja tokijska art. 1 ust. 1–4 i art. 3 ust. 1 oraz haska art. 1 lit. a – parafrazy wierne tekstowi kotwic (w ust. 2 pominięte zastrzeżenie rozdziału III – bez wpływu); zgodne z wyjaśnieniem 0111. Hague: «zwalczaniu» z tytułu konwencji (jak w wyjaśnieniu). 168 tokenów. QK 0111 ×2 trafne.",
+  "portion": "ANXS2",
+  "round": 1,
+  "textSha": "77c4cdacd7e034b0",
   "verdict": "PASS"
  },
  "AL02-1": {
@@ -673,10 +681,10 @@
  },
  "AL10-3": {
   "date": "2026-11-25",
-  "note": "Art. 2 pkt 28/30/43/45/52/59 i SERA.8001(a)(b)(d) zgodne z korpusem. ICAO Doc 4444 pkt 4.5.7.1.1 (reference-only) sprawdzony: „described by specifying the name of the appropriate significant point, or aerodrome, or controlled airspace boundary” – parafraza wierna, bez cytatu. Spójne z verified 0010/0202/0073/0162#9e4077c1/0254/0513/0402. 168 słów.",
-  "portion": "K05",
-  "round": 1,
-  "textSha": "984a46136bbe45c3",
+  "note": "Dodany punkt SERA.8001(c) i ref z dosłownym cytatem w kotwicy; lista pełna (a–d), 192 tokeny.",
+  "portion": "ANXS2",
+  "round": 2,
+  "textSha": "695eb92f79170c1d",
   "verdict": "PASS"
  },
  "AL10-4": {
@@ -697,10 +705,10 @@
  },
  "AL10-6": {
   "date": "2026-11-25",
-  "note": "„jednym z takich organów” (art. 140a ust. 7) i „Zapewnianie informacji i danych lotniczych … (art. 2 pkt 2 rozporządzenia 2024/2803)” wprowadzone; ref art. 2 pkt 2 w refs. 188 słów.",
-  "portion": "K05",
+  "note": "Skrócenia zastosowane, treść nadal zgodna z kotwicami (art. 140a ust. 1 – cytat dosłowny w kotwicy), 196 tokenów.",
+  "portion": "ANXS2",
   "round": 2,
-  "textSha": "c2127fa9a542fba8",
+  "textSha": "76e65fa2edea19c6",
   "verdict": "PASS"
  },
  "AL10-7": {
@@ -721,10 +729,10 @@
  },
  "AL10-9": {
   "date": "2026-11-25",
-  "note": "Zał. I pkt 118/121 i AIS.TR.505(a)(1)(i), (a)(2) (nowa cytata – dosłowna), (a)(3) 2017/373, dodatek 6 pkt 2.2 923/2012, ENR 1.10 pkt 3.5.1, GEN 3.1 pkt 3, GEN 2.4 EPWW zgodne z korpusem; ICAO Doc 4444 def Location indicator (reference-only) – „four-letter code group” – zgodne. Spójne z verified 0559/0413/1543. 166 słów.",
-  "portion": "K05",
+  "note": "Załącznik I pkt 118 i 121, AIS.TR.505(a), AIP GEN 3.1, dodatek 6 (rubryka 13), ENR 1.10 pkt 3.5.1, definicja wskaźnika lokalizacji i GEN 2.4 EPWW – w kotwicach; spójne z 1543. 171 tokenów.",
+  "portion": "ANXS2",
   "round": 1,
-  "textSha": "be7fdd14f37e78c9",
+  "textSha": "8dc052f655c073a8",
   "verdict": "PASS"
  },
  "AL11-1": {
@@ -737,10 +745,10 @@
  },
  "AL11-10": {
   "date": "2026-11-25",
-  "note": "SERA.3205, SERA.3210 lit. c), lit. c) ppkt 1 i ppkt 4 (ii) zgodne. Doc 4444 (reference-only) sprawdzony ręcznie: pkt 6.5.6.1.1 i 7.7.3.3 lit. a) – „an aircraft which anticipates being compelled to land because of factors affecting the safe operation of the aircraft (engine failure, shortage of fuel, etc.)” jako pierwsza pozycja listy pierwszeństwa; parafraza wierna. Zgodne z verified 0611, 0612, 0554.",
-  "portion": "K06",
+  "note": "SERA.3205, 3210(c), (c)(1), (c)(4)(ii), Doc 4444 6.5.6.1.1 a) i 7.7.3.3 a) zgodne z kotwicami; fragment o VIP/HUM spójny z 0554. 184 tokeny.",
+  "portion": "ANXS2",
   "round": 1,
-  "textSha": "f0ca930ccfeb2d32",
+  "textSha": "6a2d93ff03a2e01f",
   "verdict": "PASS"
  },
  "AL11-11": {
@@ -825,10 +833,10 @@
  },
  "AL12-2": {
   "date": "2026-11-25",
-  "note": "SERA.13001 lit. a), § 11 pkt 1–2 rozporządzenia w sprawie przepisów ruchu lotniczego, SERA.13005 lit. a) i lit. b) ppkt 2 zgodne. Doc 4444 (reference-only) sprawdzony ręcznie: def „Discrete code. A four-digit SSR code with the last two digits not being “00”” i pkt 8.5.2.2.7 (kod dyskretny przy potrzebie indywidualnej identyfikacji) – parafraza wierna. Zgodne z verified 0352, 0633, 0409.",
-  "portion": "K06",
+  "note": "SERA.13001(a), 13005(a), (b)(2), § 11 rozp. oraz definicja «Kod indywidualny» i 8.5.2.2.7 – zgodne z kotwicami; akapit o kodzie indywidualnym spójny z 0409 (jawnie «w kluczu ULC kod dyskretny»). Pozostałe akapity bez zmian (poprzednio verified). 164 tokeny.",
+  "portion": "ANXS2",
   "round": 1,
-  "textSha": "1d98925055dfbae6",
+  "textSha": "8ee1d279a609b7d4",
   "verdict": "PASS"
  },
  "AL12-3": {
@@ -865,10 +873,10 @@
  },
  "AL12-7": {
   "date": "2026-11-25",
-  "note": "Źródła wyłącznie reference-only, sprawdzone ręcznie: uwaga w Appendix 1 to AMC1 SERA.14001 pkt 1.4.15 i Doc 4444 pkt 12.3.4.15 – „LONG FINAL” przy zakręcie na prostą dalej niż 7 km (4 NM) lub przy podejściu wprost 15 km (8 NM); „FINAL” w obu przypadkach 7 km (4 NM). Parafraza wierna; zdanie o jednostkach w kluczach dopuszczalne (fakt z tabeli, nie omawianie pytań po kolei). Zgodne z verified 0526–0529.",
-  "portion": "K06",
+  "note": "Trzy fragmenty tabeli 12.3.4.15 Doc 4444 PL (uwaga do frazeologii) leżą w kotwicy i dają dokładnie: 7 km (4 NM) dla «na prostej» w obu przypadkach, >7 km (4 NM) dla «na długiej prostej» po zakręcie, 15 km (8 NM) przy podejściu wprost; zgodne z EASA 1.4.15 i z 0526–0529. Locator rodzica akceptowany (artefakt lit. a). 156 tokenów.",
+  "portion": "ANXS2",
   "round": 1,
-  "textSha": "58139d3ff4adeae2",
+  "textSha": "5d21de945e5278cd",
   "verdict": "PASS"
  },
  "AL13-1": {
@@ -965,6 +973,14 @@
   "portion": "K08",
   "round": 1,
   "textSha": "2cf57e8bcefac74b",
+  "verdict": "PASS"
+ },
+ "AL14-17": {
+  "date": "2026-11-25",
+  "note": "Zmiana «wnioskującego Państwa» zgodna z 4.7.5 (statki wnioskującego Państwa); cytaty w kotwicach, 131 tokenów.",
+  "portion": "ANXS2",
+  "round": 2,
+  "textSha": "dc17e8708c661a65",
   "verdict": "PASS"
  },
  "AL14-2": {
@@ -1769,10 +1785,10 @@
  },
  "PL010-0061#44f9371c": {
   "date": "2026-11-25",
-  "note": "ICAO utworzyła Konwencja (Doc 7300 Article 43), Konwencję sporządzono w Chicago 7.12.1944 (art. 3 ust. 2 PL). Słowa „konferencja” nie ma w źródłach, ale tekst używa go tylko w cudzysłowie jako brzmienia odpowiedzi ULC i wiąże je z miejscem sporządzenia Konwencji – brak faktu ponad źródło.",
-  "portion": "P02",
+  "note": "Art. 43 Konwencji («Niniejszą Konwencją tworzy się organizację…») + art. 3 ust. 2 PL (konwencja sporządzona w Chicago 7.12.1944) – oba cytaty dosłowne w kotwicach. Słowo «konferencja» z klucza nie występuje w źródle, ale wniosek «Chicago» jest uprawniony.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "5311dec6bc1fd8c4",
+  "textSha": "64676c98f1d1d3da",
   "verdict": "PASS"
  },
  "PL010-0062#3f1ad0c5": {
@@ -1929,16 +1945,16 @@
  },
  "PL010-0079#8b970757": {
   "date": "2026-11-25",
-  "note": "Poprawka wprowadzona: art. 11 Konwencji zawężony do przepisów o wlocie, wylocie i żegludze powietrznej – zgodnie z Doc 7300 Article 11.",
-  "portion": "P02",
-  "round": 2,
-  "textSha": "2a6d5b6165f15dd6",
+  "note": "Art. 6 PL: «wszystkie statki powietrzne oraz osoby i rzeczy na tych statkach podlegają prawu polskiemu, chyba że prawo to stanowi inaczej» – dosłowny cytat w kotwicy art. 6. Art. 11 Konwencji chicagowskiej (stosowanie przepisów państwa do statków wszystkich Umawiających się Państw bez względu na przynależność państwową) potwierdza, cytat w kotwicy. Pułapka (rejestracja/start/pasażerowie) wynika z «wszystkie». Klucz zgodny.",
+  "portion": "ANX2",
+  "round": 1,
+  "textSha": "fc9a9fe59a081672",
   "verdict": "PASS"
  },
  "PL010-0079#ae1f1d86": {
   "date": "2026-11-25",
-  "note": "sameAs poprawny: różnice tylko w interpunkcji klucza i dystraktora.",
-  "portion": "P02",
+  "note": "sameAs: to samo pytanie i odpowiedzi, różni się tylko przecinkiem w poprawnej odpowiedzi («chyba, że»). OK.",
+  "portion": "ANX2",
   "round": 1,
   "textSha": "5344a1a0c5f0a024",
   "verdict": "PASS"
@@ -2277,6 +2293,22 @@
   "portion": "P05",
   "round": 1,
   "textSha": "53773c95714b13a6",
+  "verdict": "PASS"
+ },
+ "PL010-0111#038e337a": {
+  "date": "2026-11-25",
+  "note": "Art. 1 ust. 1 lit. a/b Konwencji tokijskiej zgodnie z korpusem; parafraza lit. b wierna. Podział na lit. a i lit. b jako dwa refs – precyzyjne locatory, cytaty dosłowne. Pułapka (odpowiedź 3, ściganie sprawców uprowadzenia) wskazuje Konwencję haską; art. 1 lit. a Haga cytuje definicję przestępstwa, a słowo «zwalczaniu» pochodzi z tytułu konwencji (jest w korpusie, ale nie w zacytowanej kotwicy) – dopuszczalne. Sformułowanie bez opisu tytułu można zostawić.",
+  "portion": "ANX2",
+  "round": 1,
+  "textSha": "d8545e3103cf1199",
+  "verdict": "PASS"
+ },
+ "PL010-0111#7c58f970": {
+  "date": "2026-11-25",
+  "note": "sameAs: pytanie różni się tylko spacją przed «r.» («1963r.»), odpowiedzi identyczne; oryginał jest draft w tej samej porcji.",
+  "portion": "ANX2",
+  "round": 1,
+  "textSha": "3aea1075d413c0a8",
   "verdict": "PASS"
  },
  "PL010-0112#12b21234": {
@@ -3129,16 +3161,16 @@
  },
  "PL010-0204#34723162": {
   "date": "2026-11-25",
-  "note": "Doc 7300 Article 44(a): „Insure the safe and orderly growth of international civil aviation throughout the world” – „bezpieczny i prawidłowy (orderly) rozwój” to wierne oddanie, zgodne z kluczem. Lit. h) („Promote safety of flight in international air navigation”) odnosi się do anchoru Article 44, bo Article 44(h) nie ma w kotwicach (OCR) – akceptowalne.",
-  "portion": "P02",
+  "note": "Art. 44 lit. a Konwencji: «zapewnić bezpieczny i prawidłowy rozwój międzynarodowego lotnictwa cywilnego na całym świecie» – dosłownie; lit. h («zwiększać bezpieczeństwo lotów…») także w kotwicy. Locatory precyzyjne. Klucz zgodny.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "efab2037abe274ec",
+  "textSha": "cd1131ee1c5ea418",
   "verdict": "PASS"
  },
  "PL010-0204#598d6ff8": {
   "date": "2026-11-25",
-  "note": "sameAs poprawny: ten sam klucz i pytanie, różni się jeden dystraktor („Żadna z odpowiedzi…”); oryginał nie ma pułapki.",
-  "portion": "P02",
+  "note": "sameAs: to samo pytanie i poprawna odpowiedź; różni się tylko ostatnia błędna opcja («Żadna z odpowiedzi…»), a oryginał nie ma pułapki odwołującej się do opcji. OK.",
+  "portion": "ANX2",
   "round": 1,
   "textSha": "c3d5cb8b56934cdb",
   "verdict": "PASS"
@@ -3457,18 +3489,18 @@
  },
  "PL010-0237#4f155be7": {
   "date": "2026-11-25",
-  "note": "Klucz = art. 8 Prawa lotniczego; Doc 7300 Article 12 (rules and regulations relating to the flight and maneuver of aircraft there in force) potwierdza parafrazę; pułapka zgodna z art. 8.",
-  "portion": "P02",
+  "note": "Art. 8 PL cytowany w całości (ok. 230 zn.), art. 12 Konwencji chicagowskiej – cytat dosłowny w kotwicy. Pułapka (przepisy międzynarodowe tylko poza zwierzchnictwem państw) wprost z art. 8. Klucz zgodny.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "6c2b6cd64aa92aa3",
+  "textSha": "30bb4b3cbd3566d4",
   "verdict": "PASS"
  },
  "PL010-0238#458e24e0": {
   "date": "2026-11-25",
-  "note": "Art. 42 p.p.m. (prawo państwa rejestru) + art. 31 ust. 2 PL i Doc 7300 Article 17 (nationality of the State in which registered) – wniosek o państwie przynależności uzasadniony.",
-  "portion": "P02",
+  "note": "Art. 42 ustawy – Prawo prywatne międzynarodowe (rzeczowe prawa na statku powietrznym → państwo wpisu do rejestru), art. 31 ust. 2 PL i art. 17 Konwencji (wpis → przynależność państwowa) – cytaty dosłowne w kotwicach; wniosek «państwo przynależności» uprawniony. Klucz zgodny.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "cab361eb935e5d84",
+  "textSha": "56d12973535e3ac0",
   "verdict": "PASS"
  },
  "PL010-0239#aee8b1f2": {
@@ -4361,18 +4393,18 @@
  },
  "PL010-0353#c5d35b88": {
   "date": "2026-11-25",
-  "note": "Art. 3 bis lit. b) z warunkami (lot bez zezwolenia / użycie niezgodne z celami konwencji) – zgodne z Doc 7300.",
-  "portion": "P02",
-  "round": 2,
-  "textSha": "afa2f87fd8427d5b",
+  "note": "Art. 142 PL: pkt 1 i pkt 4 (łącznie obejmuje polecenia organów oraz polecenia państwowego statku powietrznego) – cytaty dosłowne, locatory pkt 1 i pkt 4 precyzyjne; art. 3bis lit. b Konwencji (żądanie lądowania w wyznaczonym porcie) cytat w kotwicy. Pułapka «tylko» zasadna: odpowiedzi 2–4 wymieniają po jednym obowiązku. Klucz zgodny.",
+  "portion": "ANX2",
+  "round": 1,
+  "textSha": "5872efd10e2457b9",
   "verdict": "PASS"
  },
  "PL010-0353#d0bdd70e": {
   "date": "2026-11-25",
-  "note": "Jak 0353#c5d35b88: zastrzeżenie do art. 3 bis lit. b) dodane, reszta bez zmian i poprawna.",
-  "portion": "P02",
-  "round": 2,
-  "textSha": "83993627cb7b7d49",
+  "note": "Jak wyżej; dla klucza «Wszystkie odpowiedzi są prawidłowe» tekst wyjaśnia, że trzy obowiązki wynikają z art. 142 pkt 1 i 4 łącznie. Odrębna treść (nie sameAs) słuszna – inny zestaw odpowiedzi.",
+  "portion": "ANX2",
+  "round": 1,
+  "textSha": "908930dd27401383",
   "verdict": "PASS"
  },
  "PL010-0354#8b197628": {
@@ -4761,10 +4793,10 @@
  },
  "PL010-0402#7dbf50d2": {
   "date": "2026-11-25",
-  "note": "Definicja z art. 2 pkt 52 rozporządzenia 923/2012; sposób określenia granicy (znaczący punkt, lotnisko lub granica przestrzeni kontrolowanej) sprawdzony w ICAO Doc 4444 pkt 4.5.7.1.1 (EN) – parafraza wierna, bez cytatu (reference-only), zgodnie z praktyką P18/P20/P22.",
-  "portion": "P19",
-  "round": 1,
-  "textSha": "8ab32991d7f214c9",
+  "note": "Dopisane «klucz ULC używa określenia „punkt meldowania”» jawnie wskazuje rozbieżność terminu z pkt 4.5.7.1.1 Doc 4444 PL («znaczący punkt nawigacyjny»); cytaty bez zmian i dosłowne, tekst 3 zdania, <700 zn. Odpowiedź z klucza jest teraz rozpoznawalna.",
+  "portion": "ANX2",
+  "round": 2,
+  "textSha": "ff59cf38044ae0da",
   "verdict": "PASS"
  },
  "PL010-0403#22537431": {
@@ -4832,11 +4864,11 @@
   "verdict": "PASS"
  },
  "PL010-0409#8db45283": {
-  "date": "2026-11-24",
-  "note": "Klucz = definicja „Discrete code” w rozdz. 1 Doc 4444 („last two digits not being 00”); 8.5.2.2.7 potwierdza przydział kodu dyskretnego przy potrzebie indywidualnej identyfikacji. Brak definicji w polskich aktach korpusu (szukano „dyskretn”), więc Doc 4444 (reference-only, bez quote) jest właściwy. Pułapka trafia w dystraktory 3–4.",
-  "portion": "P22",
+  "date": "2026-11-25",
+  "note": "Definicja «Kod indywidualny (Discrete code). Czterocyfrowy kod SSR, z dwoma końcowymi cyframi różnymi od „00”» – dosłownie; 8.5.2.2.7 – cytat w kotwicy. Wątpliwość 3: «dwie ostatnie cyfry nie są zerami» w kluczu należy rozumieć jako «nie są obie zerami» (nie kończy się na 00); tekst to wyjaśnia przez «kody kończące się na „00” nim nie są». Brak podstaw do DISPUTED (jedyna sensowna odpowiedź). Opcjonalnie: dopisać do tekstu słowa klucza «dwie ostatnie cyfry», niewymagane.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "5294323bf0c53869",
+  "textSha": "e0c1aed4b95db0f0",
   "verdict": "PASS"
  },
  "PL010-0410#3e3178d4": {
@@ -5849,18 +5881,18 @@
  },
  "PL010-0507#7a8c7c54": {
   "date": "2026-11-25",
-  "note": "sameAs poprawny: wariant rawMixed (PL+EN) tego samego pytania i odpowiedzi.",
-  "portion": "P02",
+  "note": "sameAs: wariant rawMixed (PL+EN w komórce) tego samego pytania i odpowiedzi. OK.",
+  "portion": "ANX2",
   "round": 1,
   "textSha": "bb5fcefbfd9f4b3c",
   "verdict": "PASS"
  },
  "PL010-0507#cb1c071c": {
   "date": "2026-11-25",
-  "note": "Art. 4 ust. 1 PL i Doc 7300 Article 1 (complete and exclusive sovereignty) – zgodne z kluczem.",
-  "portion": "P02",
+  "note": "Art. 4 ust. 1 PL: «Rzeczpospolita Polska ma całkowite i wyłączne zwierzchnictwo w swojej przestrzeni powietrznej» + art. 1 Konwencji (suwerenność) – cytaty dosłowne. Pułapka (ICAO, EUROCONTROL, ECAC) uzasadniona.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "35f23a628ce97a01",
+  "textSha": "a64751ba33979fb8",
   "verdict": "PASS"
  },
  "PL010-0508#97331b20": {
@@ -6008,35 +6040,35 @@
   "verdict": "PASS"
  },
  "PL010-0526#f455eacb": {
-  "date": "2026-11-24",
-  "note": "Uwaga do 1.4.15 w Appendix 1 to AMC1 SERA.14001 i Doc 4444 12.3.4.15: LONG FINAL przy podejściu wprost 15 km (8 NM); FINAL 7 km (4 NM) — sprawdzone w korpusie EN. Bez quote (easa/reference-only) — poprawnie.",
-  "portion": "P22",
+  "date": "2026-11-25",
+  "note": "Uwaga do 12.3.4.15 PL: «podejściu wprost z trasy jest 15 km (8 NM) od punktu przyziemienia» – cytat dosłowny (kolumna lewa tabeli jest ciągła mimo zepsutej kolejności), zgodny z EASA Appendix 1 to AMC1 SERA.14001 (1.4.15, sprawdzone w korpusie). Wątpliwość 1: cytat leży w kotwicy «12.3.4.15 lit. a» (artefakt ekstrakcji – Uwaga należy do całego 12.3.4.15, nie do lit. a), więc locator rodzica jest merytorycznie poprawny; ostrzeżenie validate akceptowalne. Klucz 15 km zgodny.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "bc1c473a7f79499f",
+  "textSha": "dd65b7bca46a273e",
   "verdict": "PASS"
  },
  "PL010-0527#bedfbcb0": {
-  "date": "2026-11-24",
-  "note": "Ta sama uwaga: LONG FINAL po zakręcie na prostą w odległości > 7 km (4 NM) — zgodne z korpusem; pułapka 15 km = podejście wprost.",
-  "portion": "P22",
+  "date": "2026-11-25",
+  "note": "Uwaga: «LONG FINAL» przy zakręcie do podejścia końcowego w odległości większej niż 7 km (4 NM) – cytat «odległości większej niż 7 km» dosłowny; EASA zgodne. Klucz 7 km. Locator jak przy 0526.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "ca545f527d9106c9",
+  "textSha": "935537de28f59a11",
   "verdict": "PASS"
  },
  "PL010-0528#a3ecc301": {
-  "date": "2026-11-24",
-  "note": "„In both cases a report FINAL is required at 7 km (4 NM)” — zgodne; pułapka poprawna.",
-  "portion": "P22",
+  "date": "2026-11-25",
+  "note": "«W obu przypadkach wymagany jest meldunek NA PROSTEJ, gdy statek powietrzny znajdzie się 7 km (4 NM) od punktu przyziemienia» – tekst słusznie uogólnia na krąg i podejście wprost. Klucz 7 km zgodny. Locator jak przy 0526.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "3c33e226152355a1",
+  "textSha": "d57f471ff326d2ea",
   "verdict": "PASS"
  },
  "PL010-0529#cc717cc5": {
-  "date": "2026-11-24",
-  "note": "FINAL przy podejściu wprost też 7 km (4 NM) — klucz 4 NM zgodny z uwagą; pułapka poprawna.",
-  "portion": "P22",
+  "date": "2026-11-25",
+  "note": "Jak 0528: meldunek «NA PROSTEJ» 7 km (4 NM) również przy podejściu wprost; klucz «4 NM» zgodny. Locator jak przy 0526.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "0cbe87be7d4a8436",
+  "textSha": "9db1f585deb06dcc",
   "verdict": "PASS"
  },
  "PL010-0530#8e378916": {
@@ -6264,11 +6296,11 @@
   "verdict": "PASS"
  },
  "PL010-0554#a05beff0": {
-  "date": "2026-11-24",
-  "note": "Klucz „uszkodzony zespół napędowy” = ICAO Doc 4444 pkt 6.5.6.1.1 a) i 7.7.3.3 a) („engine failure”), SERA.3210(c)(4)(ii). Nie sporne: „uszkodzone podwozie” nie zmusza do lądowania, a SERA.11001(c) daje pierwszeństwo statkowi w sytuacji awaryjnej tylko „w takim stopniu, w jakim konieczność taka wynika z okoliczności”. Pułapka VIP/HUM zgodna z listą a)–c) Doc 4444 (bez cytatów – icao, allowQuote false).",
-  "portion": "P20",
+  "date": "2026-11-25",
+  "note": "SERA.3210(c)(4)(ii) (cytat dosłowny) + Doc 4444 PL 6.5.6.1.1 lit. a i 7.7.3.3 lit. a (awaria silnika = klucz «uszkodzony zespół napędowy»). Pułapka: ani VIP, ani HUM nie występuje w 6.5.6.1.1 / 7.7.3.3 (lit. b–d: sanitarne, SAR, decyzja władzy) – sprawdzone; HUM jest tylko w STS planu lotu. Klucz zgodny.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "33944f74d8cfe7e3",
+  "textSha": "c774171ba70902cc",
   "verdict": "PASS"
  },
  "PL010-0559#88221b13": {
@@ -6488,17 +6520,17 @@
   "verdict": "PASS"
  },
  "PL010-0582#d097ef09": {
-  "date": "2026-11-24",
-  "note": "Treść zgodna z ICAO Doc 4444 pkt 15.3.10 (EN, sprawdzone w korpusie): decyzję o wznowieniu normalnych operacji podejmują użytkownicy/ich przedstawiciele i dowódcy. W polskich aktach korpusu brak odpowiednika (szukano w 923/2012, 2017/373, rozp. przepisy ruchu 2020, AIP). Ref bez quote jak dla reference-only; precedens P22 0409 (verified tylko na Doc 4444). Tekst pomija lit. b) (ETA ACC), ale tak samo jak pytanie.",
-  "portion": "P18",
+  "date": "2026-11-25",
+  "note": "Pkt 15.3.10 Doc 4444 PL (wyd. 16): zdanie końcowe «Za podjęcie decyzji… odpowiedzialni są użytkownicy statków powietrznych lub ich wyznaczeni przedstawiciele oraz dowódcy statków powietrznych» = klucz. Cytaty dosłowne. Uwagi do wątpliwości 4–5: (a) tekst jest sformułowany wiernie, pułapka «ATC podejmuje normalną kontrolę na życzenie, decyzji nie podejmuje» wynika z tekstu; (b) loc «15.3.10 lit. c» to artefakt kotwic (kotwica lit. c obejmuje akapit końcowy po c)), dwa refs są dopuszczalne; tekst pomija pozycję b) (czas obliczony przez organ kontroli obszaru), pytanie też – bez wpływu na klucz.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "c6cfc9c732107b6d",
+  "textSha": "16e90f6d6609b331",
   "verdict": "PASS"
  },
  "PL010-0582#d664ade5": {
-  "date": "2026-11-24",
-  "note": "sameAs poprawny: różnica tylko „a/”→„a)” i rozwinięcie „pow.”; odpowiedzi identyczne.",
-  "portion": "P18",
+  "date": "2026-11-25",
+  "note": "sameAs: to samo pytanie (różnice tylko w interpunkcji/skrótach «pow.»), te same odpowiedzi.",
+  "portion": "ANX2",
   "round": 1,
   "textSha": "43fc304ec52c085f",
   "verdict": "PASS"
@@ -6944,11 +6976,11 @@
   "verdict": "PASS"
  },
  "PL010-1543#cacf0d8c": {
-  "date": "2026-11-24",
-  "note": "Czteroliterowy wskaźnik: ENR 1.10 pkt 3.5.1, dodatek 6 pkt 2.2 (rubryka 13 – sprawdzone w tekście kotwicy; węższej kotwicy brak), Doc 4444 def. Location indicator, przykład EPWW (GEN 2.4).",
-  "portion": "P18",
+  "date": "2026-11-25",
+  "note": "AIP ENR 1.10 pkt 3.5.1 («przyjęty przez ICAO czteroliterowy wskaźnik lokalizacji lotniska odlotu»), dodatek 6 rozp. 923/2012 (rubryka 13 – cytat dosłowny w kotwicy), definicja w Doc 4444 PL («Czteroliterowa grupa kodowa…»), AIP GEN 2.4 EPWW – wszystko w kotwicach, 4 litery = klucz. Dodatek 6 nie ma podkotwicy rubryki 13, więc locator ogólny jest najdokładniejszym możliwym.",
+  "portion": "ANX2",
   "round": 1,
-  "textSha": "20f3a4f57fccb56b",
+  "textSha": "f05ce39464fe5639",
   "verdict": "PASS"
  },
  "PL010-1544#e9b43d62": {
@@ -7517,6 +7549,14 @@
   "portion": "P30",
   "round": 1,
   "textSha": "796d837b5dc75627",
+  "verdict": "PASS"
+ },
+ "PL099-0085#5638d9d7": {
+  "date": "2026-11-25",
+  "note": "Zał. 17 pkt 4.7.8 (PL): «Każde Umawiające się Państwo zapewni, że dowódca statku powietrznego zostaje poinformowany o liczbie uzbrojonych osób oraz zajmowanych przez nie miejscach…» – cytat dosłowny; 4.7.7 (umieszczenie wart ochronnych ustalone z zainteresowanymi Państwami, ścisła tajemnica) – dosłowny. Wątpliwość 6: sformułowanie «każde Umawiające się Państwo zapewnia…» wiernie oddaje normę, zobowiązującą państwo – OK dla klucza «Dowódca statku powietrznego». Zdanie o pułapce jest dość złożone (tajemnica dotyczy umieszczenia funkcjonariuszy, nie informacji dla dowódcy), ale nie zawiera faktów spoza źródła.",
+  "portion": "ANX2",
+  "round": 1,
+  "textSha": "f5232b87fee989e4",
   "verdict": "PASS"
  },
  "PL099-0086#d8733033": {

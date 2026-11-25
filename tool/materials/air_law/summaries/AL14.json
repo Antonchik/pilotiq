@@ -889,6 +889,42 @@
         "PL102-0063#774ff4ab"
       ],
       "disputeNote": null
+    },
+    {
+      "id": "AL14-17",
+      "status": "verified",
+      "heading": "Uzbrojone osoby na pokładzie i informowanie dowódcy",
+      "body": [
+        "Załącznik 17 do Konwencji chicagowskiej wskazuje dowódcę statku powietrznego jako adresata informacji o uzbrojonych osobach na pokładzie. Każde Umawiające się Państwo zapewnia, że dowódca zostaje poinformowany o liczbie uzbrojonych osób oraz zajmowanych przez nie miejscach na pokładzie statku powietrznego (pkt 4.7.8).",
+        "- Przewóz broni na pokładzie przez funkcjonariuszy organów ścigania i inne upoważnione osoby w ramach obowiązków służbowych wymaga specjalnego pozwolenia zgodnie z ustawodawstwem zainteresowanych Państw (pkt 4.7.4).",
+        "- Podróż uzbrojonego personelu, włącznie z funkcjonariuszami wart ochronnych, na pokładach statków powietrznych wnioskującego Państwa jest możliwa jedynie wtedy, gdy uprzednio wyrażą na to zgodę wszystkie zainteresowane Państwa (pkt 4.7.5).",
+        "- Umieszczenie funkcjonariuszy wart ochronnych na pokładzie jest ustalane z zainteresowanymi Państwami i objęte ścisłą tajemnicą (pkt 4.7.7); przepis nie przewiduje informowania wszystkich obecnych na pokładzie."
+      ],
+      "refs": [
+        {
+          "src": "ICAO-ZAL-17",
+          "loc": "4.7.8",
+          "quote": "dowódca statku powietrznego zostaje poinformowany o liczbie uzbrojonych osób oraz zajmowanych przez nie miejscach na pokładzie statku powietrznego"
+        },
+        {
+          "src": "ICAO-ZAL-17",
+          "loc": "4.7.7",
+          "quote": "jest ustalone z zainteresowanymi Państwami i objęte ścisłą tajemnicą"
+        },
+        {
+          "src": "ICAO-ZAL-17",
+          "loc": "4.7.4",
+          "quote": "przewóz broni na pokładzie statku powietrznego przez funkcjonariuszy organów ścigania i inne upoważnione osoby w ramach wykonywanych przez nie obowiązków służbowych, wymagał będzie specjalnego pozwolenia"
+        },
+        {
+          "src": "ICAO-ZAL-17",
+          "loc": "4.7.5",
+          "quote": "Podróż taka jest możliwa jedynie wtedy, gdy uprzednio wyrażą na to zgodę wszystkie zainteresowane Państwa."
+        }
+      ],
+      "questionKeys": [
+        "PL099-0085#5638d9d7"
+      ]
     }
   ]
 }

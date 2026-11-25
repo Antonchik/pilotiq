@@ -156,9 +156,10 @@
         "Służba kontroli ruchu lotniczego jest zapewniana w celu zapobiegania kolizjom między statkami powietrznymi, także na polu manewrowym, oraz usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego (art. 2 pkt 30 rozporządzenia 923/2012). Zgodnie z pkt SERA.8001 zapewnia się ją:",
         "- wszystkim lotom IFR w przestrzeni klas A, B, C, D i E;",
         "- wszystkim lotom VFR w przestrzeni klas B, C i D;",
+        "- wszystkim lotom specjalnym VFR;",
         "- całemu ruchowi lotniskowemu na lotniskach kontrolowanych.",
         "Klasy F i G nie są w tym punkcie wymienione. Organem zapewniającym służbę kontroli ruchu lotniczego lotom kontrolowanym w podległych mu obszarach kontrolowanych jest ośrodek kontroli obszaru (ACC) (art. 2 pkt 43); RNAV to metoda nawigacji, a nie organ.",
-        "Zezwolenie kontroli ruchu lotniczego to upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego (art. 2 pkt 28), a lot kontrolowany to każdy lot, na który wymaga się takiego zezwolenia (pkt 59). Granica zezwolenia jest punktem, do którego udzielono zezwolenia (pkt 52); określa się ją nazwą znaczącego punktu, lotniska lub granicy przestrzeni kontrolowanej (ICAO Doc 4444, pkt 4.5.7.1.1)."
+        "Zezwolenie kontroli ruchu lotniczego to upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego (art. 2 pkt 28), a lot kontrolowany to każdy lot, na który wymaga się takiego zezwolenia (pkt 59). Granica zezwolenia jest punktem, do którego udzielono zezwolenia (pkt 52); określa się ją nazwą znaczącego punktu nawigacyjnego lub lotniska albo granicy przestrzeni powietrznej kontrolowanej (ICAO Doc 4444, pkt 4.5.7.1.1); klucz ULC używa określenia „punkt meldowania”."
       ],
       "refs": [
         {
@@ -175,6 +176,11 @@
           "src": "EU-923-2012",
           "loc": "SERA.8001(b)",
           "quote": "wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8001(c)",
+          "quote": "wszystkim lotom specjalnym VFR"
         },
         {
           "src": "EU-923-2012",
@@ -207,8 +213,9 @@
           "quote": "„granica zezwolenia” oznacza punkt, do którego statkowi powietrznemu zostało udzielone zezwolenie kontroli ruchu lotniczego"
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "pkt 4.5.7.1.1"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "4.5.7.1.1",
+          "quote": "Granica ważności zezwolenia jest określana przez podanie nazwy odpowiedniego znaczącego punktu nawigacyjnego lub lotniska albo granicy przestrzeni powietrznej kontrolowanej."
         }
       ],
       "questionKeys": [
@@ -383,10 +390,10 @@
       "status": "verified",
       "heading": "Służba alarmowa oraz poszukiwanie i ratownictwo",
       "body": [
-        "Służba alarmowa to służba ustanowiona w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz współdziałania z nimi w razie potrzeby (art. 2 pkt 37 rozporządzenia 923/2012). Do zakresu działania służby poszukiwania i ratownictwa lotniczego (ASAR) należy poszukiwanie i ratowanie statków powietrznych w niebezpieczeństwie oraz udzielanie pomocy załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych (art. 140a ust. 1 Prawa lotniczego).",
+        "Służba alarmowa to służba ustanowiona w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz współdziałania z nimi w razie potrzeby (art. 2 pkt 37 rozporządzenia 923/2012). Do zakresu działania służby ASAR należy poszukiwanie i ratowanie statków powietrznych w niebezpieczeństwie oraz pomoc załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych (art. 140a ust. 1 Prawa lotniczego).",
         "- Rolę punktów alarmowych pełnią organy instytucji zapewniających służby ruchu lotniczego, które przekazują informacje o zagrożeniu do cywilno-wojskowego ośrodka koordynacji poszukiwania i ratownictwa lotniczego (art. 140a ust. 7); jednym z takich organów jest ośrodek kontroli obszaru, w Polsce ACC Warszawa (AIP Polska, GEN 2.4).",
-        "- Gdy statek powietrzny nie zgłosi się w ciągu 30 minut po najpóźniejszym z czasów: przewidywanym czasie przylotu lub ostatnio potwierdzonym spodziewanym czasie podejścia, informacje o nim przekazuje się użytkownikom i dowódcom zainteresowanych statków powietrznych. O wznowieniu normalnych operacji albo innym działaniu decydują dowódcy statków powietrznych oraz użytkownicy lub ich wyznaczeni przedstawiciele (ICAO Doc 4444, pkt 15.3.10).",
-        "Zapewnianie informacji i danych lotniczych należy do służby informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803), a nie do ASAR."
+        "- Gdy statek powietrzny nie zgłosi się w ciągu 30 minut po najpóźniejszym z czasów: przewidywanym czasie przylotu lub ostatnio potwierdzonym spodziewanym czasie podejścia, informacje o nim przekazuje się użytkownikom i dowódcom zainteresowanych statków powietrznych. Za decyzję o dalszym kontynuowaniu lotów albo innym działaniu odpowiedzialni są użytkownicy statków powietrznych lub ich przedstawiciele oraz dowódcy; normalną kontrolę podejmuje się na ich życzenie (ICAO Doc 4444, pkt 15.3.10).",
+        "Informacje i dane lotnicze zapewnia służba informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803), nie ASAR."
       ],
       "refs": [
         {
@@ -420,8 +427,14 @@
           "quote": "WARSZAWA FIR/ACC EPWW"
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "pkt 15.3.10"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "15.3.10",
+          "quote": "Jeżeli statek powietrzny nie zgłosił się w ciągu 30 minut po:"
+        },
+        {
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "15.3.10 lit. c",
+          "quote": "Za podjęcie decyzji w sprawie dalszego, normalnego kontynuowania lotów lub też za podjęcie innego działania, odpowiedzialni są użytkownicy statków powietrznych lub ich wyznaczeni przedstawiciele oraz dowódcy statków powietrznych."
         },
         {
           "src": "EU-2024-2803",
@@ -632,8 +645,9 @@
           "quote": "przyjęty przez ICAO czteroliterowy wskaźnik lokalizacji lotniska"
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "def Location indicator"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "definicja Wskaźnik lokalizacji",
+          "quote": "Czteroliterowa grupa kodowa sformułowana zgodnie z przepisami ICAO"
         },
         {
           "src": "AIP-PL",

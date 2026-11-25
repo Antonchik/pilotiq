@@ -1,0 +1,122 @@
+[
+ {
+  "key": "PL010-0079#8b970757",
+  "verdict": "PASS",
+  "note": "Art. 6 PL: «wszystkie statki powietrzne oraz osoby i rzeczy na tych statkach podlegają prawu polskiemu, chyba że prawo to stanowi inaczej» – dosłowny cytat w kotwicy art. 6. Art. 11 Konwencji chicagowskiej (stosowanie przepisów państwa do statków wszystkich Umawiających się Państw bez względu na przynależność państwową) potwierdza, cytat w kotwicy. Pułapka (rejestracja/start/pasażerowie) wynika z «wszystkie». Klucz zgodny."
+ },
+ {
+  "key": "PL010-0079#ae1f1d86",
+  "verdict": "PASS",
+  "note": "sameAs: to samo pytanie i odpowiedzi, różni się tylko przecinkiem w poprawnej odpowiedzi («chyba, że»). OK."
+ },
+ {
+  "key": "PL010-0111#038e337a",
+  "verdict": "PASS",
+  "note": "Art. 1 ust. 1 lit. a/b Konwencji tokijskiej zgodnie z korpusem; parafraza lit. b wierna. Podział na lit. a i lit. b jako dwa refs – precyzyjne locatory, cytaty dosłowne. Pułapka (odpowiedź 3, ściganie sprawców uprowadzenia) wskazuje Konwencję haską; art. 1 lit. a Haga cytuje definicję przestępstwa, a słowo «zwalczaniu» pochodzi z tytułu konwencji (jest w korpusie, ale nie w zacytowanej kotwicy) – dopuszczalne. Sformułowanie bez opisu tytułu można zostawić."
+ },
+ {
+  "key": "PL010-0111#7c58f970",
+  "verdict": "PASS",
+  "note": "sameAs: pytanie różni się tylko spacją przed «r.» («1963r.»), odpowiedzi identyczne; oryginał jest draft w tej samej porcji."
+ },
+ {
+  "key": "PL010-0237#4f155be7",
+  "verdict": "PASS",
+  "note": "Art. 8 PL cytowany w całości (ok. 230 zn.), art. 12 Konwencji chicagowskiej – cytat dosłowny w kotwicy. Pułapka (przepisy międzynarodowe tylko poza zwierzchnictwem państw) wprost z art. 8. Klucz zgodny."
+ },
+ {
+  "key": "PL010-0061#44f9371c",
+  "verdict": "PASS",
+  "note": "Art. 43 Konwencji («Niniejszą Konwencją tworzy się organizację…») + art. 3 ust. 2 PL (konwencja sporządzona w Chicago 7.12.1944) – oba cytaty dosłowne w kotwicach. Słowo «konferencja» z klucza nie występuje w źródle, ale wniosek «Chicago» jest uprawniony."
+ },
+ {
+  "key": "PL010-0204#34723162",
+  "verdict": "PASS",
+  "note": "Art. 44 lit. a Konwencji: «zapewnić bezpieczny i prawidłowy rozwój międzynarodowego lotnictwa cywilnego na całym świecie» – dosłownie; lit. h («zwiększać bezpieczeństwo lotów…») także w kotwicy. Locatory precyzyjne. Klucz zgodny."
+ },
+ {
+  "key": "PL010-0204#598d6ff8",
+  "verdict": "PASS",
+  "note": "sameAs: to samo pytanie i poprawna odpowiedź; różni się tylko ostatnia błędna opcja («Żadna z odpowiedzi…»), a oryginał nie ma pułapki odwołującej się do opcji. OK."
+ },
+ {
+  "key": "PL010-0507#cb1c071c",
+  "verdict": "PASS",
+  "note": "Art. 4 ust. 1 PL: «Rzeczpospolita Polska ma całkowite i wyłączne zwierzchnictwo w swojej przestrzeni powietrznej» + art. 1 Konwencji (suwerenność) – cytaty dosłowne. Pułapka (ICAO, EUROCONTROL, ECAC) uzasadniona."
+ },
+ {
+  "key": "PL010-0507#7a8c7c54",
+  "verdict": "PASS",
+  "note": "sameAs: wariant rawMixed (PL+EN w komórce) tego samego pytania i odpowiedzi. OK."
+ },
+ {
+  "key": "PL010-0353#c5d35b88",
+  "verdict": "PASS",
+  "note": "Art. 142 PL: pkt 1 i pkt 4 (łącznie obejmuje polecenia organów oraz polecenia państwowego statku powietrznego) – cytaty dosłowne, locatory pkt 1 i pkt 4 precyzyjne; art. 3bis lit. b Konwencji (żądanie lądowania w wyznaczonym porcie) cytat w kotwicy. Pułapka «tylko» zasadna: odpowiedzi 2–4 wymieniają po jednym obowiązku. Klucz zgodny."
+ },
+ {
+  "key": "PL010-0353#d0bdd70e",
+  "verdict": "PASS",
+  "note": "Jak wyżej; dla klucza «Wszystkie odpowiedzi są prawidłowe» tekst wyjaśnia, że trzy obowiązki wynikają z art. 142 pkt 1 i 4 łącznie. Odrębna treść (nie sameAs) słuszna – inny zestaw odpowiedzi."
+ },
+ {
+  "key": "PL010-0238#458e24e0",
+  "verdict": "PASS",
+  "note": "Art. 42 ustawy – Prawo prywatne międzynarodowe (rzeczowe prawa na statku powietrznym → państwo wpisu do rejestru), art. 31 ust. 2 PL i art. 17 Konwencji (wpis → przynależność państwowa) – cytaty dosłowne w kotwicach; wniosek «państwo przynależności» uprawniony. Klucz zgodny."
+ },
+ {
+  "key": "PL010-0582#d097ef09",
+  "verdict": "PASS",
+  "note": "Pkt 15.3.10 Doc 4444 PL (wyd. 16): zdanie końcowe «Za podjęcie decyzji… odpowiedzialni są użytkownicy statków powietrznych lub ich wyznaczeni przedstawiciele oraz dowódcy statków powietrznych» = klucz. Cytaty dosłowne. Uwagi do wątpliwości 4–5: (a) tekst jest sformułowany wiernie, pułapka «ATC podejmuje normalną kontrolę na życzenie, decyzji nie podejmuje» wynika z tekstu; (b) loc «15.3.10 lit. c» to artefakt kotwic (kotwica lit. c obejmuje akapit końcowy po c)), dwa refs są dopuszczalne; tekst pomija pozycję b) (czas obliczony przez organ kontroli obszaru), pytanie też – bez wpływu na klucz."
+ },
+ {
+  "key": "PL010-0582#d664ade5",
+  "verdict": "PASS",
+  "note": "sameAs: to samo pytanie (różnice tylko w interpunkcji/skrótach «pow.»), te same odpowiedzi."
+ },
+ {
+  "key": "PL010-1543#cacf0d8c",
+  "verdict": "PASS",
+  "note": "AIP ENR 1.10 pkt 3.5.1 («przyjęty przez ICAO czteroliterowy wskaźnik lokalizacji lotniska odlotu»), dodatek 6 rozp. 923/2012 (rubryka 13 – cytat dosłowny w kotwicy), definicja w Doc 4444 PL («Czteroliterowa grupa kodowa…»), AIP GEN 2.4 EPWW – wszystko w kotwicach, 4 litery = klucz. Dodatek 6 nie ma podkotwicy rubryki 13, więc locator ogólny jest najdokładniejszym możliwym."
+ },
+ {
+  "key": "PL010-0402#7dbf50d2",
+  "verdict": "FIX",
+  "note": "Art. 2 pkt 52 rozp. 923/2012 i pkt 4.5.7.1.1 Doc 4444 PL cytaty poprawne, ale klucz mówi o «punkcie meldowania», a Doc 4444 PL w 4.5.7.1.1 – o «znaczącym punkcie nawigacyjnym» (oba terminy mają w Doc 4444 PL osobne definicje: «Punkt meldowania», «Znaczący punkt nawigacyjny»). Tekst pisze «co oddaje odpowiedź z klucza», nie wskazując rozbieżności terminu, i nigdy nie wymienia «punktu meldowania» – odpowiedź z klucza nie jest rozpoznawalna (STYLE 1.2). Fix: w zdaniu 2 dodać, że klucz używa pojęcia «punkt meldowania» (zdefiniowanego w Doc 4444 odrębnie jako miejsce geograficzne, w odniesieniu do którego podaje się pozycję), a pkt 4.5.7.1.1 mówi o znaczącym punkcie nawigacyjnym; ewentualnie dodać cytat definicji «Punkt meldowania» (ICAO-DOC-4444-PL, loc «definicja Punkt meldowania»). Nie DISPUTED: odpowiedź jest jedyną sensowną, a punkt meldowania jest szczególnym rodzajem miejsca nawigacyjnego; ≤700 zn. zachować."
+ },
+ {
+  "key": "PL010-0554#a05beff0",
+  "verdict": "PASS",
+  "note": "SERA.3210(c)(4)(ii) (cytat dosłowny) + Doc 4444 PL 6.5.6.1.1 lit. a i 7.7.3.3 lit. a (awaria silnika = klucz «uszkodzony zespół napędowy»). Pułapka: ani VIP, ani HUM nie występuje w 6.5.6.1.1 / 7.7.3.3 (lit. b–d: sanitarne, SAR, decyzja władzy) – sprawdzone; HUM jest tylko w STS planu lotu. Klucz zgodny."
+ },
+ {
+  "key": "PL010-0409#8db45283",
+  "verdict": "PASS",
+  "note": "Definicja «Kod indywidualny (Discrete code). Czterocyfrowy kod SSR, z dwoma końcowymi cyframi różnymi od „00”» – dosłownie; 8.5.2.2.7 – cytat w kotwicy. Wątpliwość 3: «dwie ostatnie cyfry nie są zerami» w kluczu należy rozumieć jako «nie są obie zerami» (nie kończy się na 00); tekst to wyjaśnia przez «kody kończące się na „00” nim nie są». Brak podstaw do DISPUTED (jedyna sensowna odpowiedź). Opcjonalnie: dopisać do tekstu słowa klucza «dwie ostatnie cyfry», niewymagane."
+ },
+ {
+  "key": "PL010-0526#f455eacb",
+  "verdict": "PASS",
+  "note": "Uwaga do 12.3.4.15 PL: «podejściu wprost z trasy jest 15 km (8 NM) od punktu przyziemienia» – cytat dosłowny (kolumna lewa tabeli jest ciągła mimo zepsutej kolejności), zgodny z EASA Appendix 1 to AMC1 SERA.14001 (1.4.15, sprawdzone w korpusie). Wątpliwość 1: cytat leży w kotwicy «12.3.4.15 lit. a» (artefakt ekstrakcji – Uwaga należy do całego 12.3.4.15, nie do lit. a), więc locator rodzica jest merytorycznie poprawny; ostrzeżenie validate akceptowalne. Klucz 15 km zgodny."
+ },
+ {
+  "key": "PL010-0527#bedfbcb0",
+  "verdict": "PASS",
+  "note": "Uwaga: «LONG FINAL» przy zakręcie do podejścia końcowego w odległości większej niż 7 km (4 NM) – cytat «odległości większej niż 7 km» dosłowny; EASA zgodne. Klucz 7 km. Locator jak przy 0526."
+ },
+ {
+  "key": "PL010-0528#a3ecc301",
+  "verdict": "PASS",
+  "note": "«W obu przypadkach wymagany jest meldunek NA PROSTEJ, gdy statek powietrzny znajdzie się 7 km (4 NM) od punktu przyziemienia» – tekst słusznie uogólnia na krąg i podejście wprost. Klucz 7 km zgodny. Locator jak przy 0526."
+ },
+ {
+  "key": "PL010-0529#cc717cc5",
+  "verdict": "PASS",
+  "note": "Jak 0528: meldunek «NA PROSTEJ» 7 km (4 NM) również przy podejściu wprost; klucz «4 NM» zgodny. Locator jak przy 0526."
+ },
+ {
+  "key": "PL099-0085#5638d9d7",
+  "verdict": "PASS",
+  "note": "Zał. 17 pkt 4.7.8 (PL): «Każde Umawiające się Państwo zapewni, że dowódca statku powietrznego zostaje poinformowany o liczbie uzbrojonych osób oraz zajmowanych przez nie miejscach…» – cytat dosłowny; 4.7.7 (umieszczenie wart ochronnych ustalone z zainteresowanymi Państwami, ścisła tajemnica) – dosłowny. Wątpliwość 6: sformułowanie «każde Umawiające się Państwo zapewnia…» wiernie oddaje normę, zobowiązującą państwo – OK dla klucza «Dowódca statku powietrznego». Zdanie o pułapce jest dość złożone (tajemnica dotyczy umieszczenia funkcjonariuszy, nie informacji dla dowódcy), ale nie zawiera faktów spoza źródła."
+ }
+]

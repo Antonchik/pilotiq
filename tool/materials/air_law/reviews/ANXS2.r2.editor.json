@@ -1,0 +1,22 @@
+[
+ {
+  "key": "AL01-1",
+  "verdict": "PASS",
+  "note": "Poprawki zastosowane, 199 tokenów (≤200), cytaty w kotwicach, refs i QK bez zmian, przegląd samodzielny."
+ },
+ {
+  "key": "AL10-3",
+  "verdict": "PASS",
+  "note": "Dodany punkt SERA.8001(c) i ref z dosłownym cytatem w kotwicy; lista pełna (a–d), 192 tokeny."
+ },
+ {
+  "key": "AL10-6",
+  "verdict": "PASS",
+  "note": "Skrócenia zastosowane, treść nadal zgodna z kotwicami (art. 140a ust. 1 – cytat dosłowny w kotwicy), 196 tokenów."
+ },
+ {
+  "key": "AL14-17",
+  "verdict": "PASS",
+  "note": "Zmiana «wnioskującego Państwa» zgodna z 4.7.5 (statki wnioskującego Państwa); cytaty w kotwicach, 131 tokenów."
+ }
+]

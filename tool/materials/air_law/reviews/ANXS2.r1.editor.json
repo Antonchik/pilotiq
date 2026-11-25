@@ -1,0 +1,62 @@
+[
+ {
+  "key": "AL01-1",
+  "verdict": "FIX",
+  "note": "Merytorycznie OK (art. 3, 4, 5 ust. 2, 122b PL, art. 1 Konwencji – wszystkie cytaty w kotwicach), ale 207 tokenów (z nagłówkiem i myślnikami) > 200. Zamienić w ramach body: (pkt 1 listy) „…(art. 4 ust. 1); tak samo art. 1 konwencji chicagowskiej (suwerenność państwa nad jego terytorium). Należy do państwa, nie do organizacji międzynarodowych.” oraz (pkt 3 listy) „- Statek w polskiej przestrzeni powietrznej, odbiegający od ustalonej organizacji lotu i mogący zagrażać bezpieczeństwu wielu osób, może zostać wezwany przez państwowy organ zarządzania ruchem lotniczym do zmiany kierunku lub wysokości lotu albo do lądowania (art. 122b ust. 1).” Wynik: 199 tokenów, refs i questionKeys bez zmian, samodzielny przegląd zachowany."
+ },
+ {
+  "key": "AL01-2",
+  "verdict": "PASS",
+  "note": "Art. 6, 7, 8 PL, art. 12 Konwencji, SERA.1001(a), art. 42 PPM, art. 31 ust. 2 PL – cytaty w kotwicach; zgodne z wyjaśnieniami 0079, 0237, 0238. 185 tokenów. QK w podtemacie, verified."
+ },
+ {
+  "key": "AL01-3",
+  "verdict": "PASS",
+  "note": "Art. 43, 44 lit. a i h Konwencji, art. 3 ust. 2 i ust. 4 pkt 1–4 PL, 1178/2011 art. 2 pkt 14, art. 1 ust. 1, ARA.GEN.120(a) – wszystko w kotwicach; zgodne z 0061 i 0204. Zdanie «AMC nie wydają ICAO, ECAC ani EUROCONTROL» jest wnioskiem z definicji (przyjęte przez Agencję) – akceptowalne. 167 tokenów."
+ },
+ {
+  "key": "AL01-5",
+  "verdict": "PASS",
+  "note": "Art. 142 pkt 1–4, art. 144, art. 145 ust. 1 pkt 1–2 PL oraz art. 3bis lit. b Konwencji zgodne z kotwicami i z wyjaśnieniami 0353. 161 tokenów."
+ },
+ {
+  "key": "AL01-6",
+  "verdict": "PASS",
+  "note": "Konwencja tokijska art. 1 ust. 1–4 i art. 3 ust. 1 oraz haska art. 1 lit. a – parafrazy wierne tekstowi kotwic (w ust. 2 pominięte zastrzeżenie rozdziału III – bez wpływu); zgodne z wyjaśnieniem 0111. Hague: «zwalczaniu» z tytułu konwencji (jak w wyjaśnieniu). 168 tokenów. QK 0111 ×2 trafne."
+ },
+ {
+  "key": "AL10-3",
+  "verdict": "FIX",
+  "note": "Cytaty i definicje (art. 2 pkt 28, 30, 43, 45, 52, 59; SERA.8001; Doc 4444 4.5.7.1.1) zgodne z kotwicami, spójne z 0402 r2. Błąd: lista po «Zgodnie z pkt SERA.8001 zapewnia się ją:» pomija lit. c) «wszystkim lotom specjalnym VFR», a przedstawiona jest jak pełna. Fix: po punkcie o VFR dodać „- wszystkim lotom specjalnym VFR;” i ref {EU-923-2012, SERA.8001(c), quote „wszystkim lotom specjalnym VFR”}. Wynik 192 tokeny."
+ },
+ {
+  "key": "AL10-6",
+  "verdict": "FIX",
+  "note": "Treść zgodna z kotwicami (art. 2 pkt 37, art. 140a ust. 1 i 7, 15.3.10 Doc 4444 PL, GEN 2.4, 2024/2803) i z wyjaśnieniem 0582; dwa refs 15.3.10 i 15.3.10 lit. c akceptowane (artefakt kotwic, jak w 0582). Problem: 205 tokenów > 200. Fix w body[0]: „…(art. 2 pkt 37 rozporządzenia 923/2012). Do zakresu działania służby ASAR należy poszukiwanie i ratowanie statków powietrznych w niebezpieczeństwie oraz pomoc załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych (art. 140a ust. 1 Prawa lotniczego).” oraz ostatni akapit: „Informacje i dane lotnicze zapewnia służba informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803), nie ASAR.” Wynik 196 tokenów."
+ },
+ {
+  "key": "AL10-9",
+  "verdict": "PASS",
+  "note": "Załącznik I pkt 118 i 121, AIS.TR.505(a), AIP GEN 3.1, dodatek 6 (rubryka 13), ENR 1.10 pkt 3.5.1, definicja wskaźnika lokalizacji i GEN 2.4 EPWW – w kotwicach; spójne z 1543. 171 tokenów."
+ },
+ {
+  "key": "AL11-10",
+  "verdict": "PASS",
+  "note": "SERA.3205, 3210(c), (c)(1), (c)(4)(ii), Doc 4444 6.5.6.1.1 a) i 7.7.3.3 a) zgodne z kotwicami; fragment o VIP/HUM spójny z 0554. 184 tokeny."
+ },
+ {
+  "key": "AL12-2",
+  "verdict": "PASS",
+  "note": "SERA.13001(a), 13005(a), (b)(2), § 11 rozp. oraz definicja «Kod indywidualny» i 8.5.2.2.7 – zgodne z kotwicami; akapit o kodzie indywidualnym spójny z 0409 (jawnie «w kluczu ULC kod dyskretny»). Pozostałe akapity bez zmian (poprzednio verified). 164 tokeny."
+ },
+ {
+  "key": "AL12-7",
+  "verdict": "PASS",
+  "note": "Trzy fragmenty tabeli 12.3.4.15 Doc 4444 PL (uwaga do frazeologii) leżą w kotwicy i dają dokładnie: 7 km (4 NM) dla «na prostej» w obu przypadkach, >7 km (4 NM) dla «na długiej prostej» po zakręcie, 15 km (8 NM) przy podejściu wprost; zgodne z EASA 1.4.15 i z 0526–0529. Locator rodzica akceptowany (artefakt lit. a). 156 tokenów."
+ },
+ {
+  "key": "AL14-17",
+  "verdict": "PASS",
+  "note": "Zał. 17 pkt 4.7.4, 4.7.5, 4.7.7, 4.7.8 – cytaty dosłowne w kotwicach; spójne z 0085. Uwaga drobna (bez FIX): w 4.7.5 chodzi o statki «wnioskującego Państwa». 131 tokenów, QK w podtemacie AL14."
+ }
+]

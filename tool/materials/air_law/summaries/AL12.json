@@ -91,7 +91,7 @@
         "- kod 7000 w lotach VFR, także w FIR Warszawa po wejściu w przestrzeń objętą radarem wtórnym;",
         "- kod 2000 w lotach IFR; pkt SERA.13005 lit. b) ppkt 2 również przewiduje w takim przypadku kod 2000 lub inny kod określony przez właściwy organ.",
         "Kody 7700, 7600 i 7500 służą do wskazania szczególnej sytuacji awaryjnej (SERA.13005 lit. a)).",
-        "Kod dyskretny, czyli indywidualny, to według ICAO Doc 4444 (PANS-ATM) czterocyfrowy kod SSR, którego dwie ostatnie cyfry nie są „00”. Przydziela się go, gdy potrzebna jest indywidualna identyfikacja statku powietrznego. Nie każda czterocyfrowa kombinacja jest więc kodem dyskretnym."
+        "Kod indywidualny (ang. discrete code, w kluczu ULC kod dyskretny) to według ICAO Doc 4444 (PANS-ATM) czterocyfrowy kod SSR z dwoma końcowymi cyframi różnymi od „00”. Przydziela się go, gdy potrzebna jest indywidualna identyfikacja statku powietrznego. Nie każda czterocyfrowa kombinacja jest więc kodem indywidualnym."
       ],
       "refs": [
         {
@@ -125,12 +125,14 @@
           "quote": "W celu wskazania szczególnej sytuacji awaryjnej pilot statku powietrznego wyposażonego w SSR"
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "def Discrete code"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "definicja Kod indywidualny",
+          "quote": "Czterocyfrowy kod SSR, z dwoma końcowymi cyframi różnymi od „00”."
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "pkt 8.5.2.2.7"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "8.5.2.2.7",
+          "quote": "W przypadku potrzeby indywidualnej identyfikacji statku powietrznego, każdemu statkowi powietrznemu przydziela się indywidualny kod"
         }
       ],
       "questionKeys": [
@@ -451,8 +453,19 @@
           "loc": "Appendix 1 to AMC1 SERA.14001"
         },
         {
-          "src": "ICAO-DOC-4444",
-          "loc": "pkt 12.3.4.15"
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "12.3.4.15",
+          "quote": "podejściu wprost z trasy jest 15 km (8 NM) od punktu"
+        },
+        {
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "12.3.4.15",
+          "quote": "odległości większej niż 7 km"
+        },
+        {
+          "src": "ICAO-DOC-4444-PL",
+          "loc": "12.3.4.15",
+          "quote": "statek powietrzny znajdzie się 7 km (4 NM) od punktu"
         }
       ],
       "questionKeys": [
