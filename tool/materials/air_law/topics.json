@@ -720,7 +720,7 @@
    "PL-PRAWO-LOTNICZE",
    "EASA-EAR-SERA"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0056#00b19b3f",
@@ -853,7 +853,7 @@
    "AIP-PL",
    "EASA-EAR-SERA"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0161#199151b9",

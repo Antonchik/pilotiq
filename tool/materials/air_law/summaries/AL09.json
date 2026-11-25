@@ -110,7 +110,7 @@
     },
     {
       "id": "AL09-2",
-      "status": "draft",
+      "status": "verified",
       "heading": "Obszar kontrolowany, TMA i CTR",
       "body": [
         "Skróty według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, definicje według rozporządzeń 923/2012 (art. 2) i 2017/373 (załącznik I):",
@@ -351,7 +351,7 @@
     },
     {
       "id": "AL09-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Skróty ATM, AMC, AUP i strefa ADIZ",
       "body": [
         "Skróty z § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, które tak samo rozwija wykaz skrótów AIP Polska (GEN 2.2):",
@@ -449,7 +449,7 @@
     },
     {
       "id": "AL09-6",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Elastyczne elementy przestrzeni: TSA, TRA, TFR, MRT, CBA",
       "body": [
         "Według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej (TSA, TRA i MRT tak samo rozwija AIP Polska, GEN 2.2):",
@@ -655,7 +655,7 @@
     },
     {
       "id": "AL09-9",
-      "status": "draft",
+      "status": "verified",
       "heading": "Port lotniczy i zarządzający lotniskiem",
       "body": [
         "Prawo lotnicze (art. 2) definiuje:",

@@ -224,7 +224,7 @@
     },
     {
       "id": "AL10-4",
-      "status": "draft",
+      "status": "verified",
       "heading": "Separacja w klasach przestrzeni powietrznej",
       "body": [
         "Pkt SERA.6001 lit. a) rozporządzenia 923/2012 określa separację i służby w poszczególnych klasach:",
@@ -380,7 +380,7 @@
     },
     {
       "id": "AL10-6",
-      "status": "draft",
+      "status": "verified",
       "heading": "Służba alarmowa oraz poszukiwanie i ratownictwo",
       "body": [
         "Służba alarmowa to służba ustanowiona w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz współdziałania z nimi w razie potrzeby (art. 2 pkt 37 rozporządzenia 923/2012). Do zakresu działania służby poszukiwania i ratownictwa lotniczego (ASAR) należy poszukiwanie i ratowanie statków powietrznych w niebezpieczeństwie oraz udzielanie pomocy załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych (art. 140a ust. 1 Prawa lotniczego).",
@@ -502,7 +502,7 @@
     },
     {
       "id": "AL10-8",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Służba informacji lotniczej a służba informacji powietrznej",
       "body": [
         "Nazwy są podobne, ale oznaczają dwie różne służby:",
@@ -698,7 +698,7 @@
     },
     {
       "id": "AL10-11",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Terminy przedstawienia planu lotu przed odlotem",
       "body": [
         "Pkt SERA.4001 lit. d) rozporządzenia 923/2012 wymaga złożenia planu lotu z przelotem nad granicami międzynarodowymi lub lotu ze służbą kontroli ruchu lotniczego albo doradczą co najmniej 60 minut przed odlotem, o ile właściwy organ nie określi krótszego okresu dla krajowych lotów VFR. AIP Polska (ENR 1.10 pkt 4.8) podaje terminy liczone od EOBT, czyli przewidywanego czasu odblokowania:",

@@ -1,0 +1,42 @@
+[
+ {
+  "key": "AL09-2",
+  "verdict": "PASS",
+  "note": "Poprawka wprowadzona: zdanie o klasach C/D w FIR Warszawa (AIP ENR 1.4: przypis ****, klasa A/B/E w refs, cytaty z kolumny PL), wstęp skrócony, MCTR i ref § 2 pkt 29 usunięte, fakt o CTR zachowany w definicji. Spójne z verified 0080/0057. 195 słów (wszystkie tokeny)."
+ },
+ {
+  "key": "AL09-5",
+  "verdict": "PASS",
+  "note": "Interpunkcja poprawiona („(pkt 8).”). Treść bez zmian, zgodna z korpusem. 181 słów."
+ },
+ {
+  "key": "AL09-6",
+  "verdict": "DISPUTED",
+  "note": "Poprawka wprowadzona: „(TSA, TRA i MRT tak samo rozwija AIP Polska, GEN 2.2)” + ref GEN 2.2 MRT (cytat dosłowny). disputeNote zgodny z disputed P16 0191#c2291227, punkty w refs. 194 słowa."
+ },
+ {
+  "key": "AL09-9",
+  "verdict": "PASS",
+  "note": "Dodano „m.in.” przy art. 59 ust. 6 – lista już nie zamknięta. 120 słów."
+ },
+ {
+  "key": "AL10-4",
+  "verdict": "PASS",
+  "note": "Wstęp „określa separację i służby w poszczególnych klasach:” i podmiot „służba informacji powietrznej” w ostatnim zdaniu wprowadzone; zgodne z SERA.6001(a)(6)–(7), art. 2 pkt 27/77 i verified 0354/0577. 185 słów."
+ },
+ {
+  "key": "AL10-6",
+  "verdict": "PASS",
+  "note": "„jednym z takich organów” (art. 140a ust. 7) i „Zapewnianie informacji i danych lotniczych … (art. 2 pkt 2 rozporządzenia 2024/2803)” wprowadzone; ref art. 2 pkt 2 w refs. 188 słów."
+ },
+ {
+  "key": "AL10-8",
+  "verdict": "DISPUTED",
+  "note": "Zdanie „AIS zapewnia więc i publikuje informacje lotnicze, co klucz ULC nazywa ich zbieraniem i publikowaniem.” wprowadzone – zgodne z art. 2 pkt 2 i GEN 3.1 pkt 3. disputeNote zgodny z disputed P18 0011#5b67ea6c, punkty w refs. 162 słowa."
+ },
+ {
+  "key": "AL10-11",
+  "verdict": "DISPUTED",
+  "note": "Punkty listy połączone zgodnie z poprawką (ENR 1.10 pkt 4.8 lit. d)–f)); 194 słowa licząc wszystkie tokeny. disputeNote zgodny z disputed P19 0472#5403c78a (pkt 4.8 w refs)."
+ }
+]
