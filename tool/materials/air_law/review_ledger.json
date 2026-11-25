@@ -1,11 +1,11 @@
 {
  "AL01-1": {
   "date": "2026-11-25",
-  "note": "Dwa sformułowania wykraczają poza źródło. (1) „Podstawową taką umową jest Konwencja…” – art. 3 ust. 1–2 nie określa konwencji jako „podstawowej”; zastąpić zdaniem: „Taką umową jest m.in. Konwencja o międzynarodowym lotnictwie cywilnym, sporządzona w Chicago dnia 7 grudnia 1944 r. (konwencja chicagowska).” (2) Art. 1 konwencji: umawiające się państwa „recognize”, że każde państwo ma zwierzchnictwo – konwencja go nie „przyznaje”; zamienić „art. 1 konwencji chicagowskiej przyznaje takie zwierzchnictwo każdemu państwu nad jego terytorium” na „art. 1 konwencji chicagowskiej uznaje takie zwierzchnictwo każdego państwa nad jego terytorium”. Liczba słów bez zmian (197 bez myślników list ≤ 200). Pozostałe twierdzenia (art. 3 ust. 1–2, art. 4 ust. 1–2, art. 122b ust. 1 pkt 1–2, art. 5 ust. 2 pkt 2) zgodne z korpusem i z verified objaśnieniami PL010-0507/0510; questionKeys poprawne; jako bezpłatny przegląd sekcja działa.",
+  "note": "Obie poprawki z r1 wprowadzone dosłownie („Taką umową jest m.in. Konwencja…”, „art. 1 konwencji chicagowskiej uznaje takie zwierzchnictwo…”). Skrócony nagłówek listy „Zwierzchnictwo:” jest jednoznaczny w kontekście; „Należy ono do państwa, nie do organizacji międzynarodowych.” to wniosek z art. 4 ust. 1 i Article 1, zgodny z verified PL010-0507. 195 słów bez myślników (199 z nimi) ≤ 200; refs i questionKeys bez zmian; validate 0 błędów.",
   "portion": "K01",
-  "round": 1,
-  "textSha": "46670319b78b9d57",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "0ebc55b58b7f82eb",
+  "verdict": "PASS"
  },
  "AL01-2": {
   "date": "2026-11-25",

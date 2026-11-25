@@ -45,7 +45,7 @@
    "EU-923-2012",
    "EU-1178-2011"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0061#44f9371c",
