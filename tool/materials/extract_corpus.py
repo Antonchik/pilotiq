@@ -600,6 +600,7 @@ _RULE_RE = re.compile(r"^(%s)\.?(?:\s+(\S.*))?$" % _RULE_ID)   # "SERA.7001. Prz
 # "AMC1 SERA.5005(f) Title" and the multi-rule form "AMC1 FCL.210; FCL.215 Title"
 _AMC_FULL_RE = re.compile(r"^((?:AMC|GM|CS)\d*)\s+(%s(?:\s*;\s*%s)*)(?=\s|$)" % (_ID_PAREN, _ID_PAREN))
 _ART_EU_RE = re.compile(r"^(?:Article|Artykuł)\s+(\d+[a-z]?)$")
+_PAREN_DEF_RE = re.compile(r"^\((\d{1,3})([a-z]?)\)\s+(?=[‘'’])")
 _ANNEX_DEFS_RE = re.compile(r"^ANNEX ([IVX]+) — DEFINITIONS$")
 _ART_EAR_RE = re.compile(r"^Article (\d+[a-z]?) \S")
 _GM_ART_RE = re.compile(r"^((?:AMC|GM)\d*) (?:to )?Article (\d+[a-z]?(?:\(\d+[a-z]?\))?)(?=\s)")
@@ -1065,6 +1066,10 @@ def rule_anchors(text, kind, extras=()):
                     para[level] = sp
                     continue
         if art is not None:
+            if kind == "easa":
+                mpd = _PAREN_DEF_RE.match(line)
+                if mpd:     # "(4a) ‘[aerodrome] traffic density’ means ..." (Regulation 139/2014 Article 2 / Annex I)
+                    line = "%s%s. %s" % (mpd.group(1), mpd.group(2), line[mpd.end():])
             if kind == "eu_reg" or art_extra:
                 mn = _PARA_NUM_RE.match(line)
                 md = _DEF_RE.match(line)
