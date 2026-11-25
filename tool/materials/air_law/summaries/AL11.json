@@ -226,6 +226,422 @@
         "PL010-0525#0fd8d734"
       ],
       "disputeNote": null
+    },
+    {
+      "id": "AL11-5",
+      "status": "draft",
+      "heading": "Minima VMC: widzialność i odległość od chmur",
+      "body": [
+        "Minima widzialności w locie i odległości od chmur dla lotów VFR podaje tabela S5-1 w pkt SERA.5001 rozporządzenia 923/2012. Decyduje wysokość lotu, a klasa przestrzeni tylko na małych wysokościach:",
+        "- na poziomie 3050 m (10 000 ft) AMSL i powyżej, we wszystkich klasach: widzialność w locie 8 km, odległość od chmur 1500 m w poziomie i 300 m (1 000 ft) w pionie;",
+        "- poniżej 3050 m AMSL, ale powyżej 900 m (3 000 ft) AMSL lub 300 m (1 000 ft) nad terenem (wyższa z tych wartości), we wszystkich klasach: widzialność 5 km, od chmur 1500 m w poziomie i 300 m w pionie;",
+        "- na i poniżej 900 m AMSL lub 300 m nad terenem: w klasach B–E tak samo 5 km oraz 1500 m i 300 m od chmur, a w klasach F i G widzialność 5 km, lot z dala od chmur i z widocznością powierzchni ziemi.",
+        "Gdy wysokość przejściowa jest mniejsza niż 3050 m AMSL, zamiast tej granicy stosuje się FL 100. Granicę 300 m liczy się od terenu: lot na 1350 m AMSL nad terenem o wzniesieniu 300 m odbywa się 1050 m nad nim, więc obowiązują wartości z drugiego punktu."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "Na poziomie 3 050 m (10 000 ft) AMSL i powyżej A B C D E F G 8 km Pozioma – 1 500 m Pionowa – 300 m (1 000 ft)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "Poniżej 3 050 m (10 000 ft) AMSL i powyżej 900 m (3 000 ft) AMSL lub powyżej 300 m (1 000 ft) nad terenem – w zależności od tego, która z tych wartości jest większa A B C D E F G 5 km Pozioma – 1 500 m Pionowa – 300 m (1 000 ft)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "Na i poniżej 900 m (3 000 ft) AMSL lub 300 m (1 000 ft) nad terenem – w zależności od tego, która z tych wartości jest większa A B C D E 5 km Pozioma – 1 500 m Pionowa – 300 m (1 000 ft)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "F G 5 km Z dala od chmur i z widocznością powierzchni ziemi"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "Gdy względna wysokość przejściowa jest mniejsza niż 3 050 m (10 000 ft) AMSL, zamiast tych wartości należy używać FL 100."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0144#8920eace",
+        "PL010-0146#8418c2c3",
+        "PL010-0147#bd2debc1",
+        "PL010-0148#8bc50331",
+        "PL010-0150#9448007a",
+        "PL010-0151#d4863966",
+        "PL010-0152#cdf8bd49",
+        "PL010-0350#1e07d083",
+        "PL010-0355#3433e35e",
+        "PL010-0520#010a0ea1",
+        "PL010-0522#5f4bec9a",
+        "PL010-0597#77740433",
+        "PL010-0598#43478e3d"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL11-6",
+      "status": "draft",
+      "heading": "Zmniejszona widzialność w klasie G w dzień",
+      "body": [
+        "W przestrzeni klasy G na i poniżej 900 m (3 000 ft) AMSL lub 300 m (1 000 ft) nad terenem (wyższa z tych wartości) tabela S5-1 wymaga widzialności w locie 5 km. W dzień widzialność może być zmniejszona do nie mniej niż 1500 m (pkt SERA.5001 lit. a) rozporządzenia 923/2012; w Polsce § 7 pkt 1 rozporządzenia w sprawie przepisów ruchu lotniczego), jeżeli lot odbywa się:",
+        "- z prędkością przyrządową (IAS) 140 kt lub mniejszą, dającą wystarczającą możliwość dostrzeżenia innego ruchu lub przeszkód w celu uniknięcia kolizji, lub",
+        "- w warunkach, w których prawdopodobieństwo spotkania innego ruchu jest zazwyczaj małe, np. w strefach o małej intensywności ruchu i podczas prac lotniczych na małych wysokościach.",
+        "Widzialność mniejszą niż 1500 m, ale nie mniejszą niż 800 m, można dopuścić tylko dla śmigłowców (SERA.5001 lit. b)). Powyżej 900 m AMSL lub 300 m nad terenem obowiązuje 5 km bez obniżenia.",
+        "Klucz ULC w pytaniach o to, kiedy taki lot „może być wykonany”, przyjmuje zmniejszenie widzialności do 1500 m; według tabeli S5-1 dozwolony jest też lot przy widzialności większej niż 5 km."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001(a)",
+          "quote": "przy zmniejszeniu widzialności w locie do nie mniej niż 1 500 m"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001(a)(1)",
+          "quote": "z prędkością przyrządową (IAS) 140 węzłów (kts) lub mniejszą, dającą wystarczającą możliwość dostrzeżenia pozostałego ruchu lub wszelkich przeszkód w celu uniknięcia kolizji"
+        },
+        {
+          "src": "PL-ROZP-PRZEPISY-RUCHU-2020",
+          "loc": "§ 7",
+          "quote": "w dzień w klasie przestrzeni powietrznej G"
+        },
+        {
+          "src": "PL-ROZP-PRZEPISY-RUCHU-2020",
+          "loc": "§ 7",
+          "quote": "na i poniżej wysokości 900 m (3000 ft) nad poziomem morza albo 300 m (1000 ft) nad poziomem terenu – w zależności od tego, która z tych wartości jest większa, przy widzialności w locie poniżej 5 km, wykonuje się"
+        },
+        {
+          "src": "PL-ROZP-PRZEPISY-RUCHU-2020",
+          "loc": "§ 7 pkt 1",
+          "quote": "przy widzialności w locie nie mniejszej niż 1500 m"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001(b)",
+          "quote": "można zezwolić na loty śmigłowców przy widzialności w locie mniejszej niż 1 500 m, ale nie mniejszej niż 800 m"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "F G 5 km Z dala od chmur i z widocznością powierzchni ziemi"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001(a)(2)",
+          "quote": "w warunkach, w których prawdopodobieństwo spotkania innego ruchu będzie zazwyczaj małe, np. w strefach o małej intensywności ruchu oraz w czasie wykonywania prac lotniczych na małych wysokościach"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0143#070f66d2",
+        "PL010-0519#295670a5"
+      ],
+      "disputeNote": "Według tabeli S5-1 w pkt SERA.5001 rozporządzenia 923/2012 minimalna widzialność w locie VFR w klasie G na i poniżej 900 m AMSL lub 300 m nad terenem wynosi 5 km, więc odpowiedź „przy widzialności większej niż 5 km” również jest zgodna z przepisem. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL11-7",
+      "status": "draft",
+      "heading": "Ograniczenia prędkości w lotach VFR",
+      "body": [
+        "W lotach VFR na wysokości bezwzględnej poniżej 3050 m (10 000 ft) AMSL obowiązuje ograniczenie prędkości przyrządowej (IAS) do 250 kt. Pkt SERA.6001 lit. a) ppkt 3–7 rozporządzenia 923/2012 przewiduje je w klasach C, D, E, F i G, a AIP Polska (ENR 1.4) podaje to samo ograniczenie m.in. dla klas C i G.",
+        "- Limit dotyczy prędkości przyrządowej (IAS), a nie rzeczywistej (TAS), i nie zależy od wzniesienia terenu: lot na 1350 m AMSL odbywa się poniżej 3050 m AMSL, więc obowiązuje 250 kt IAS.",
+        "- Gdy bezwzględna wysokość przejściowa jest mniejsza niż 3050 m AMSL, zamiast 10 000 ft stosuje się FL 100 (przypis do tabeli w AIP ENR 1.4).",
+        "- Na i powyżej FL 100 limit 250 kt IAS nie obowiązuje. Lotów VFR nie wykonuje się jednak z prędkościami okołodźwiękowymi ani naddźwiękowymi (SERA.5005 lit. d) ppkt 1, AIP ENR 1.2 pkt 8); klucz ULC oddaje ten zakaz jako „prędkość poddźwiękowa”."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(3)",
+          "quote": "W przypadku lotów VFR zastosowanie ma ograniczenie prędkości przyrządowej (IAS) do 250 kts na wysokości bezwzględnej (AMSL) poniżej 3 050 m (10 000 ft)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(4)",
+          "quote": "przypadku wszystkich lotów na wysokości bezwzględnej (AMSL) poniżej 3 050 m (10 000 ft) zastosowanie ma ograniczenie prędkości przyrządowej (IAS) do 250 kts"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(5)",
+          "quote": "przypadku wszystkich lotów na wysokości bezwzględnej (AMSL) poniżej 3 050 m (10 000 ft) zastosowanie ma ograniczenie prędkości przyrządowej (IAS) do 250 kts"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(6)",
+          "quote": "przypadku wszystkich lotów na wysokości bezwzględnej (AMSL) poniżej 3 050 m (10 000 ft) zastosowanie ma ograniczenie prędkości przyrządowej (IAS) do 250 kts"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(7)",
+          "quote": "przypadku wszystkich lotów na wysokości bezwzględnej (AMSL) poniżej 3 050 m (10 000 ft) zastosowanie ma ograniczenie prędkości przyrządowej (IAS) do 250 kts"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa C",
+          "quote": "VFR VFR od IFR 1) Służba kontroli Prędkość Tak Tak Tak ruchu lotniczego w przyrządowa (IAS) celu zapewnienia 250 kt poniżej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa G",
+          "quote": "VFR Brak Służba informacji Prędkość Nie** Nie** Nie powietrznej na przyrządowa (IAS) żądanie 250 kt poniżej 3050 m (10 000 ft) AMSL"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(d)(1)",
+          "quote": "z prędkościami okołodźwiękowymi lub naddźwiękowymi"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 8",
+          "quote": "z prędkościami okołodźwiękowymi lub naddźwiękowymi"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 przypis *",
+          "quote": "Gdy bezwzględna wysokość przejściowa jest mniejsza niż 3050 m (10 000 ft) AMSL, należy stosować FL100 zamiast 10 000 ft."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0596#120b851e",
+        "PL010-0521#52863112"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL11-8",
+      "status": "draft",
+      "heading": "Start i lądowanie w strefie kontrolowanej, lot specjalny VFR",
+      "body": [
+        "Bez zezwolenia organu kontroli ruchu lotniczego w lotach VFR nie startuje się ani nie ląduje na lotnisku znajdującym się w strefie kontrolowanej, ani nie wchodzi się do strefy ruchu lotniskowego lub w krąg nadlotniskowy, gdy (pkt SERA.5005 lit. b) rozporządzenia 923/2012; AIP Polska, ENR 1.2 pkt 6):",
+        "- pułap chmur jest niższy niż 450 m (1 500 ft) lub",
+        "- widzialność przy ziemi jest mniejsza niż 5 km.",
+        "W strefie kontrolowanej może być też dozwolony lot specjalny VFR, pod warunkiem uzyskania zezwolenia ATC (SERA.5010). Pilot wykonuje go:",
+        "- z dala od chmur i z widzialnością terenu;",
+        "- przy widzialności w locie nie mniejszej niż 1500 m (1,5 km), a w przypadku śmigłowców nie mniejszej niż 800 m.",
+        "W FIR Warszawa loty specjalne VFR wykonuje się wyłącznie w ciągu dnia (AIP ENR 1.2 pkt 14). Minimum 5 km widzialności dotyczy zwykłego lotu VFR (tabela S5-1), a nie lotu specjalnego VFR."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(b)",
+          "quote": "w lotach VFR nie startuje się ani nie ląduje na lotnisku znajdującym się w strefie kontrolowanej, ani nie wchodzi się do strefy ruchu lotniskowego lub w krąg nadlotniskowy"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(b)(1)",
+          "quote": "pułap chmur jest niższy niż 450 m (1 500 ft)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(b)(2)",
+          "quote": "widzialność przy ziemi jest mniejsza niż 5 km."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 6",
+          "quote": "pułap chmur jest niższy niż 450 m (1500 ft)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 6",
+          "quote": "widzialność przy ziemi jest mniejsza niż 5 km"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5010",
+          "quote": "Wykonywanie lotów specjalnych VFR w strefie kontrolowanej może być dozwolone pod warunkiem uzyskania zezwolenia ATC."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5010(b)(1)",
+          "quote": "z dala od chmur i z widzialnością terenu"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5010(b)(2)",
+          "quote": "widzialność w locie jest nie mniejsza niż 1 500 m, a w przypadku śmigłowców – nie mniejsza niż 800 m"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 14",
+          "quote": "loty specjalne VFR można wykonywać wyłącznie w ciągu dnia"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "Poniżej 3 050 m (10 000 ft) AMSL i powyżej 900 m (3 000 ft) AMSL lub powyżej 300 m (1 000 ft) nad terenem – w zależności od tego, która z tych wartości jest większa A B C D E F G 5 km Pozioma – 1 500 m Pionowa – 300 m (1 000 ft)"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0514#2e030923",
+        "PL010-0515#091b6d5e",
+        "PL010-0514#5de0da8e"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL11-9",
+      "status": "draft",
+      "heading": "Loty VFR w nocy: pułap, widzialność i kontakt z ziemią",
+      "body": [
+        "Loty VFR w nocy wykonuje się według pkt SERA.5005 lit. c) rozporządzenia 923/2012; AIP Polska (ENR 1.2 pkt 7) podaje te same wymagania dla FIR Warszawa. Warunki meteorologiczne określa ppkt 3:",
+        "- stosuje się minima widzialności VMC i odległości od chmur z tabeli S5-1;",
+        "- pułap chmur nie może wynosić mniej niż 450 m (1 500 ft);",
+        "- przepisy o ograniczonej widzialności w locie z tabeli S5-1 lit. a) i b) nie mają zastosowania, więc w nocy widzialności nie zmniejsza się do 1500 m;",
+        "- w klasach B–G na i poniżej 900 m (3 000 ft) AMSL lub 300 m (1 000 ft) nad terenem pilot stale utrzymuje kontakt wzrokowy z ziemią.",
+        "Wartość 300 m (1 000 ft) to w nocy minimalna wysokość nad najwyższą przeszkodą w promieniu 8 km, a nie minimalny pułap chmur. Przepisy nie wiążą też lotu nocnego z wysokością pod podstawą chmur.",
+        "Klucz ULC w pytaniu o warunki lotu nocnego przyjmuje „z dala od chmur i z widocznością terenu lub świateł w terenie”; tabela S5-1 dopuszcza lot z dala od chmur tylko w klasach F i G na małych wysokościach, a o światłach w terenie przepisy nie wspominają."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(3)",
+          "quote": "stosowane są wartości minimalne widzialności VMC i odległości od chmur określone w tabeli S5-1, z następującymi wyjątkami"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(3)(i)",
+          "quote": "pułap chmur nie może wynosić mniej niż 450 m (1 500 ft)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 7",
+          "quote": "pułap chmur nie może wynosić mniej niż 450 m (1500 ft)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(3)(ii)",
+          "quote": "przepisy dotyczące ograniczonej widzialności w locie, określone w tabeli S5-1 lit. a) i b), nie mają zastosowania"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(3)(iii)",
+          "quote": "pilot stale utrzymuje kontakt wzrokowy z ziemią"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.2 pkt 7",
+          "quote": "pilot stale utrzymuje kontakt wzrokowy z\nziemią"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5005(c)(5)(ii)",
+          "quote": "na poziomie co najmniej 300 m (1 000 ft) nad najwyższą przeszkodą znajdującą się w promieniu 8 km od przypuszczalnej pozycji statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "F G 5 km Z dala od chmur i z widocznością powierzchni ziemi"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5001",
+          "quote": "Na i poniżej 900 m (3 000 ft) AMSL lub 300 m (1 000 ft) nad terenem – w zależności od tego, która z tych wartości jest większa A B C D E 5 km Pozioma – 1 500 m Pionowa – 300 m (1 000 ft)"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0153#d39df1ba",
+        "PL010-0524#ae7ee2fc"
+      ],
+      "disputeNote": "Według pkt SERA.5005 lit. c) ppkt 3 rozporządzenia 923/2012 w nocy stosuje się tabelę S5-1: lot „z dala od chmur” dopuszcza ona tylko w klasach F i G na i poniżej 900 m AMSL lub 300 m nad terenem, a w klasach C i D wymaga 1500 m w poziomie i 300 m w pionie od chmur. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL11-10",
+      "status": "draft",
+      "heading": "Unikanie kolizji i pierwszeństwo drogi",
+      "body": [
+        "Statek powietrzny nie zbliża się do innego statku powietrznego na odległość stwarzającą niebezpieczeństwo kolizji (pkt SERA.3205 rozporządzenia 923/2012). Przepis nie podaje tej odległości w metrach ani różnicy wysokości. Pilot, który ma pozostać z dala od drogi innego statku, unika przelatywania nad nim, pod nim lub przed nim, chyba że uczyni to w bezpiecznej odległości i uwzględni skutki turbulencji w strumieniu nadążającym (SERA.3210 lit. c)).",
+        "- Zbliżanie na kierunkach przeciwnych lub prawie przeciwnych: gdy grozi zderzenie, pilot dowódca każdego statku powietrznego zmienia kurs w prawo (lit. c) ppkt 1). Przepis nie rozróżnia rodzajów statków powietrznych ani klas przestrzeni, więc dotyczy także samolotu i śmigłowca w klasie G; nie przewiduje rozejścia się przez wznoszenie.",
+        "- Lądowanie: pilot dowódca, wiedząc, że inny statek powietrzny jest zmuszony do lądowania, daje mu pierwszeństwo drogi (lit. c) ppkt 4 (ii)). ICAO Doc 4444 w kolejności podejścia i lądowania stawia na pierwszym miejscu statek powietrzny, który przewiduje przymusowe lądowanie z powodu czynników wpływających na bezpieczeństwo, np. awarii silnika. Status VIP ani HUM nie jest w tych przepisach podstawą pierwszeństwa."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3205",
+          "quote": "Statek powietrzny nie zbliża się do innego statku powietrznego na odległość stwarzającą niebezpieczeństwo kolizji."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3210(c)",
+          "quote": "unika przelatywania nad nim, pod nim lub przed nim, chyba że uczyni to w bezpiecznej odległości i uwzględni skutki turbulencji w strumieniu nadążającym"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3210(c)(1)",
+          "quote": "Gdy dwa statki powietrzne zbliżają się do siebie na kierunkach przeciwnych lub prawie przeciwnych i grozi to niebezpieczeństwem zderzenia, pilot dowódca każdego z nich zmienia swój kurs w prawo."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3210(c)(4)(ii)",
+          "quote": "Pilot dowódca statku powietrznego wiedząc, że inny statek powietrzny jest zmuszony do lądowania, daje temu statkowi pierwszeństwo drogi."
+        },
+        {
+          "src": "ICAO-DOC-4444",
+          "loc": "pkt 6.5.6.1.1"
+        },
+        {
+          "src": "ICAO-DOC-4444",
+          "loc": "pkt 7.7.3.3"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0611#3f7716b4",
+        "PL010-0612#d3095446",
+        "PL010-0612#f44d35e2",
+        "PL010-0554#a05beff0"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL11-11",
+      "status": "draft",
+      "heading": "Separacja lotów VFR w przestrzeni klasy C",
+      "body": [
+        "W przestrzeni klasy C wszystkie loty wykonuje się z zapewnieniem służby kontroli ruchu lotniczego, ale separacja nie obejmuje wszystkich par lotów (pkt SERA.6001 lit. a) ppkt 3 i SERA.8005 lit. b) rozporządzenia 923/2012):",
+        "- loty IFR są odseparowane od innych lotów IFR i od lotów VFR;",
+        "- loty VFR są odseparowane tylko od lotów IFR, a w odniesieniu do innych lotów VFR otrzymują na żądanie informacje o ruchu i rady dla zapobieżenia kolizji;",
+        "- ATC separuje też loty IFR od lotów specjalnych VFR oraz loty specjalne VFR od siebie, chyba że właściwy organ ustali inaczej (lit. b) ppkt 4 i 5).",
+        "Za bezpieczną odległość od innych lotów VFR odpowiada więc sam dowódca statku powietrznego. Żaden przepis rozporządzenia nie zwalnia go z odpowiedzialności za działanie, które najlepiej zapobiegnie kolizji (SERA.3201).",
+        "Klucz ULC w pytaniu o separację w strefie kontrolowanej klasy C przyjmuje loty VFR; pkt SERA.8005 lit. b) nie przewiduje też separacji lotów specjalnych VFR od zwykłych lotów VFR, więc i ta odpowiedź jest zgodna z przepisem."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(3)",
+          "quote": "Loty VFR są odseparowane od lotów IFR, a statki powietrzne je wykonujące otrzymują na żądanie informacje o ruchu dotyczące innych lotów VFR oraz rady dla zapobieżenia kolizji."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8005(b)(2)",
+          "quote": "między lotami IFR w przestrzeni powietrznej klas C, D i E"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8005(b)(3)",
+          "quote": "między lotami IFR a lotami VFR w przestrzeni powietrznej klasy C"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8005(b)(4)",
+          "quote": "między lotami IFR a lotami specjalnymi VFR"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8005(b)(5)",
+          "quote": "między lotami specjalnymi VFR, chyba że właściwy organ ustali inaczej"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3201",
+          "quote": "nie zwalnia pilota dowódcy statku powietrznego z odpowiedzialności za podjęcie działania"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0627#cd987965"
+      ],
+      "disputeNote": "Pkt SERA.8005 lit. b) rozporządzenia 923/2012 przewiduje separację lotów specjalnych VFR od lotów IFR i od innych lotów specjalnych VFR, ale nie od zwykłych lotów VFR, więc odpowiedź „VFR - specjalny” również jest zgodna z przepisem. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     }
   ]
 }

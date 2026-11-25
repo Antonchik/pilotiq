@@ -1,0 +1,1149 @@
+{
+  "topic": "AL10",
+  "sections": [
+    {
+      "id": "AL10-1",
+      "status": "draft",
+      "heading": "Zarządzanie ruchem lotniczym i rodzaje służb",
+      "body": [
+        "Zgodnie z art. 121 ust. 1 Prawa lotniczego zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez trzy elementy:",
+        "- zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej;",
+        "- zarządzanie przestrzenią powietrzną;",
+        "- zarządzanie przepływem ruchu lotniczego.",
+        "Służby żeglugi powietrznej (ANS) to według art. 2 pkt 5 rozporządzenia 2024/2803 służby ruchu lotniczego oraz odrębne od nich służby łączności, nawigacji i dozorowania (CNS), służby meteorologiczne (MET) i służby informacji lotniczej (AIS). Statkom powietrznym zapewnia się ponadto służbę poszukiwania i ratownictwa (art. 121 ust. 2).",
+        "Służby ruchu lotniczego (ATS) obejmują służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego i służbę kontroli ruchu lotniczego: kontroli obszaru, zbliżania (APP) lub lotniska (TWR) (art. 2 pkt 32 rozporządzenia 923/2012). „Oprócz służb ruchu lotniczego” zapewnia się więc CNS, MET, AIS i służbę poszukiwania i ratownictwa, a nie służbę alarmową, informacji powietrznej czy kontroli. Z tego samego powodu kontroler ruchu lotniczego nie jest zobowiązany do zapewniania służby informacji lotniczej."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 1",
+          "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 1 pkt 1",
+          "quote": "zapewnianie odpowiednich do charakteru, natężenia i warunków ruchu lotniczego służb żeglugi powietrznej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 1 pkt 2",
+          "quote": "zarządzanie przestrzenią powietrzną"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 1 pkt 3",
+          "quote": "zarządzanie przepływem ruchu lotniczego"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 5",
+          "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 5",
+          "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 2",
+          "quote": "Statkom powietrznym wykonującym loty w przestrzeni powietrznej zapewnia się ponadto służbę poszukiwania i ratownictwa."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 32",
+          "quote": "„służby ruchu lotniczego (ATS)” oznaczają wyrażenie ogólne obejmujące odpowiednio służbę informacji powietrznej, służbę alarmową, służbę doradczą ruchu lotniczego, służbę kontroli ruchu lotniczego (służba kontroli obszaru, służba kontroli zbliżania lub służba kontroli lotniska)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 APP",
+          "quote": "Ośrodek kontroli zbliżania lub kontrola zbliżania lub służba kontroli zbliżania"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 TWR",
+          "quote": "Wieża kontroli lotniska lub kontrola lotniska"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0195#db2ebae9",
+        "PL010-0195#a6abe391",
+        "PL010-1535#565cccdb",
+        "PL010-0315#3fcbf66c",
+        "PL010-0315#fb55f51a",
+        "PL010-0316#9c65f807",
+        "PL010-0316#6a5d1875",
+        "PL010-0540#5934ec18",
+        "PL010-0540#fb55f51a",
+        "PL010-0541#35aa945e",
+        "PL010-0541#6a5d1875",
+        "PL010-1536#75077542",
+        "PL010-1537#ba0589be",
+        "PL010-1538#85a78927",
+        "PL010-0493#e6036b4c",
+        "PL010-0493#bf781a0c"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-2",
+      "status": "draft",
+      "heading": "Zarządzanie przestrzenią powietrzną i przepływem ruchu",
+      "body": [
+        "Rozporządzenie 2024/2803 (art. 2) definiuje dwie funkcje, które art. 121 ust. 1 Prawa lotniczego wymienia obok służb żeglugi powietrznej:",
+        "- zarządzanie przepływem ruchu lotniczego (ATFM) – funkcja zwiększania bezpiecznego, uporządkowanego i szybkiego przepływu ruchu lotniczego przez maksymalne wykorzystanie możliwości ATC oraz kompatybilność natężenia ruchu z przepustowością (pkt 8); klucz ULC opisuje je jako optymalizację natężenia ruchu lotniczego;",
+        "- zarządzanie przestrzenią powietrzną – funkcja planowania i monitorowania, której celem jest optymalizacja wykorzystania dostępnej przestrzeni powietrznej przez dynamiczny podział czasu jej użytkowania oraz, doraźnie, segregację przestrzeni między kategoriami użytkowników (pkt 12); klucz ULC opisuje je jako przydział odpowiednich elementów przestrzeni poszczególnym użytkownikom.",
+        "Zapewnianie służby alarmowej, kontroli ruchu lotniczego i informacji powietrznej to zadania służb ruchu lotniczego (pkt 10), a nie żadnej z tych funkcji. W wykazie skrótów AIP Polska (GEN 2.2) RNAV to nawigacja obszarowa, ALERFA – faza alarmu, a ATIS – służba automatycznej informacji lotniskowej.",
+        "Klucz ULC w dwóch wariantach pytania o zarządzanie przestrzenią powietrzną przyjmuje „optymalizację natężenia ruchu lotniczego” albo „żadna z odpowiedzi”; aktualna definicja z art. 2 pkt 12 najbliżej odpowiada przydziałowi elementów przestrzeni użytkownikom."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 1",
+          "quote": "Zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez:"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 8",
+          "quote": "funkcję ustanowioną w celu zwiększenia bezpiecznego, uporządkowanego i szybkiego przepływu ruchu lotniczego na całej trajektorii poprzez zapewnienie maksymalnego wykorzystania możliwości ATC oraz kompatybilności natężenia ruchu z przepustowością"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 12",
+          "quote": "„zarządzanie przestrzenią powietrzną” oznacza funkcję planowania i monitorowania z zasadniczym celem optymalizacji wykorzystania dostępnej przestrzeni powietrznej poprzez dynamiczny podział czasu jej użytkowania"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 12",
+          "quote": "segregację przestrzeni powietrznej pomiędzy różnymi kategoriami użytkowników przestrzeni powietrznej"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 10",
+          "quote": "„służby ruchu lotniczego” oznaczają różne służby informacji powietrznej, służby alarmowe i służby doradcze ruchu lotniczego, a także służby ATC"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 RNAV",
+          "quote": "Nawigacja obszarowa"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 ALERFA",
+          "quote": "Faza alarmu"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 ATIS",
+          "quote": "Służba automatycznej informacji lotniskowej"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0159#65e698cb",
+        "PL010-0160#5273b40d",
+        "PL010-0160#cb0c5906",
+        "PL010-0161#199151b9",
+        "PL010-0161#352f1e5b",
+        "PL010-0162#b1693ba4"
+      ],
+      "disputeNote": "Według art. 2 pkt 12 rozporządzenia 2024/2803 zarządzanie przestrzenią powietrzną polega na optymalizacji jej wykorzystania przez podział czasu użytkowania i segregację między kategoriami użytkowników, a kompatybilność natężenia ruchu z przepustowością należy do ATFM (art. 2 pkt 8); w innym wariancie ULC uznaje za poprawny przydział elementów przestrzeni. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL10-3",
+      "status": "draft",
+      "heading": "Służba kontroli ruchu lotniczego i zezwolenie ATC",
+      "body": [
+        "Służba kontroli ruchu lotniczego jest zapewniana w celu zapobiegania kolizjom między statkami powietrznymi, także na polu manewrowym, oraz usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego (art. 2 pkt 30 rozporządzenia 923/2012). Zgodnie z pkt SERA.8001 zapewnia się ją:",
+        "- wszystkim lotom IFR w przestrzeni klas A, B, C, D i E;",
+        "- wszystkim lotom VFR w przestrzeni klas B, C i D;",
+        "- całemu ruchowi lotniskowemu na lotniskach kontrolowanych.",
+        "Klasy F i G nie są w tym punkcie wymienione. Organem zapewniającym służbę kontroli ruchu lotniczego lotom kontrolowanym w podległych mu obszarach kontrolowanych jest ośrodek kontroli obszaru (ACC) (art. 2 pkt 43); RNAV to metoda nawigacji, a nie organ.",
+        "Zezwolenie kontroli ruchu lotniczego to upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego (art. 2 pkt 28), a lot kontrolowany to każdy lot, na który wymaga się takiego zezwolenia (pkt 59). Granica zezwolenia jest punktem, do którego udzielono zezwolenia (pkt 52); określa się ją nazwą znaczącego punktu, lotniska lub granicy przestrzeni kontrolowanej (ICAO Doc 4444, pkt 4.5.7.1.1)."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 30",
+          "quote": "„służba kontroli ruchu lotniczego” oznacza służbę zapewnianą w celu: a) zapobiegania kolizjom: 1) między statkami powietrznymi; i 2) statków powietrznych na polu manewrowym z innymi statkami powietrznymi i z przeszkodami; oraz b) usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8001(a)",
+          "quote": "wszystkim lotom IFR w przestrzeni powietrznej klas A, B, C, D i E"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8001(b)",
+          "quote": "wszystkim lotom VFR w przestrzeni powietrznej klas B, C i D"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8001(d)",
+          "quote": "całemu ruchowi lotniskowemu na lotniskach kontrolowanych"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 43",
+          "quote": "„ośrodek kontroli obszaru (ACC)” oznacza organ ustanowiony do zapewnienia służby kontroli ruchu lotniczego w odniesieniu do lotów kontrolowanych w podległych mu obszarach kontrolowanych"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 45",
+          "quote": "„nawigacja obszarowa (RNAV)” oznacza metodę nawigacji"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 28",
+          "quote": "„zezwolenie kontroli ruchu lotniczego (ATC)” oznacza upoważnienie statku powietrznego do postępowania zgodnie z warunkami określonymi przez organ kontroli ruchu lotniczego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 59",
+          "quote": "„lot kontrolowany” oznacza każdy lot, na który wymaga się zezwolenia kontroli ruchu lotniczego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 52",
+          "quote": "„granica zezwolenia” oznacza punkt, do którego statkowi powietrznemu zostało udzielone zezwolenie kontroli ruchu lotniczego"
+        },
+        {
+          "src": "ICAO-DOC-4444",
+          "loc": "pkt 4.5.7.1.1"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0010#09662156",
+        "PL010-0202#fe437907",
+        "PL010-0073#14c977ae",
+        "PL010-0162#9e4077c1",
+        "PL010-0254#51f916d9",
+        "PL010-0513#89556111",
+        "PL010-0402#7dbf50d2"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-4",
+      "status": "draft",
+      "heading": "Separacja w klasach przestrzeni powietrznej",
+      "body": [
+        "Pkt SERA.6001 lit. a) rozporządzenia 923/2012 określa, które loty kontrola ruchu lotniczego separuje:",
+        "- klasa A – tylko loty IFR, wszystkie z zapewnieniem służby kontroli ruchu lotniczego i w separacji, czyli IFR od IFR;",
+        "- klasa C – IFR od IFR i od VFR oraz VFR od IFR; loty VFR między sobą nie są separowane, otrzymują na żądanie informacje o ruchu innych lotów VFR i rady dla zapobieżenia kolizji;",
+        "- klasa D – IFR od IFR; loty IFR otrzymują na żądanie informacje o ruchu VFR i rady dla zapobieżenia kolizji;",
+        "- klasa E – IFR od IFR; informacje o ruchu wszystkim lotom, o ile jest to możliwe;",
+        "- klasa F – lotom IFR zapewnia się służbę doradczą ruchu lotniczego, która w miarę możliwości separuje loty IFR, a wszystkim lotom na żądanie służbę informacji powietrznej;",
+        "- klasa G – loty IFR i VFR otrzymują na żądanie tylko służbę informacji powietrznej, a dodatek 4 nie przewiduje separacji.",
+        "Służba informacji powietrznej udziela wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów (art. 2 pkt 77), więc ani w klasie F, ani w klasie G nie ma obowiązku separowania statków powietrznych."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(1)",
+          "quote": "Klasa A. Dozwolone są wyłącznie loty IFR. Wszystkie loty wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i w separacji."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(3)",
+          "quote": "loty IFR są odseparowane od innych lotów IFR i lotów VFR. Loty VFR są odseparowane od lotów IFR, a statki powietrzne je wykonujące otrzymują na żądanie informacje o ruchu dotyczące innych lotów VFR oraz rady dla zapobieżenia kolizji"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(4)",
+          "quote": "Loty IFR są odseparowane od innych lotów IFR, a statki powietrzne wykonujące te loty otrzymują na żądanie informacje o ruchu dotyczące lotów VFR oraz rady dla zapobieżenia kolizji."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(5)",
+          "quote": "Loty IFR wykonywane są z zapewnieniem służby kontroli ruchu lotniczego i są odseparowane od innych lotów IFR. O ile jest to możliwe, w przypadku wszystkich lotów zapewnia się informacje o ruchu."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(6)",
+          "quote": "Wszystkim uczestniczącym statkom powietrznym wykonującym loty IFR zapewnia się służbę doradczą ruchu lotniczego, a w przypadku wszystkich lotów na żądanie zapewnia się służbę informacji powietrznej."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 27",
+          "quote": "„służba doradcza ruchu lotniczego” oznacza służbę zapewnianą w przestrzeni powietrznej ze służbą doradczą w celu zapewnienia, w miarę możliwości, separacji między statkami powietrznymi wykonującymi operacje według planów lotu na podstawie wskazań instrumentów (IFR)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(7)",
+          "quote": "Klasa G. Dozwolone są loty IFR i VFR, a w ich przypadku na żądanie zapewnia się służbę informacji powietrznej."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "dodatek 4",
+          "quote": "G IFR Brak Służba informacji powietrznej na żądanie"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 77",
+          "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0578#9380dc7a",
+        "PL010-0579#4a72fd69",
+        "PL010-0580#f462b315",
+        "PL010-0581#0810270b",
+        "PL010-0354#8b197628",
+        "PL010-0577#1bf31f48"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-5",
+      "status": "draft",
+      "heading": "Służba informacji powietrznej, FIS i AFIS",
+      "body": [
+        "Służba informacji powietrznej to służba ustanowiona w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów (art. 2 pkt 77 rozporządzenia 923/2012). Odpowiednie organy służb ruchu lotniczego zapewniają ją wszystkim statkom powietrznym, których te informacje mogą dotyczyć, a którym zapewniona jest służba kontroli ruchu lotniczego albo o których organy te zostały w inny sposób zawiadomione (pkt SERA.9001 lit. a)). Obejmuje m.in. informacje SIGMET i AIRMET (pkt SERA.9005 lit. a) ppkt 1).",
+        "Według AIP Polska (GEN 3.3) w FIR Warszawa:",
+        "- w przestrzeni kontrolowanej zapewnia się służbę informacji powietrznej, służbę alarmową i służbę kontroli ruchu lotniczego, m.in. przez ACC Warszawa;",
+        "- w przestrzeni niekontrolowanej służbę informacji powietrznej i służbę alarmową zapewnia właściwy organ FIS;",
+        "- lotniskową służbę informacji powietrznej (AFIS), czyli służbę informacji powietrznej dla ruchu lotniskowego (załącznik I pkt 6 rozporządzenia 2017/373), zapewnia organ AFIS, np. AFIS EPBY i AFIS EPSY.",
+        "Informator AFIS zapewnia więc służbę informacji powietrznej, a nie kontroli ruchu lotniczego ani informacji lotniczej."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 77",
+          "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.9001(a)",
+          "quote": "Odpowiednie organy służb ruchu lotniczego zapewniają służbę informacji powietrznej wszystkim statkom powietrznym, których te informacje mogą dotyczyć, oraz:"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.9001(a)(1)",
+          "quote": "którym zapewniona jest służba kontroli ruchu lotniczego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.9001(a)(2)",
+          "quote": "o których odpowiednie organy służb ruchu lotniczego zostały w inny sposób zawiadomione"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.9005(a)(1)",
+          "quote": "informacje SIGMET i AIRMET"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.3 pkt 3",
+          "quote": "Służba informacji powietrznej, służba alarmowa i służba kontroli ruchu lotniczego w przestrzeni powietrznej kontrolowanej są zapewniane przez:"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.3 pkt 3",
+          "quote": "ACC WARSZAWA w wyznaczonej przestrzeni odpowiedzialności"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.3 pkt 3",
+          "quote": "Służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej są zapewniane przez właściwy organ FIS w wyznaczonych przestrzeniach odpowiedzialności"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.3 pkt 3",
+          "quote": "lotniskowa służba informacji powietrznej i służba alarmowa w przestrzeni niekontrolowanej zapewniana jest przez organ lotniskowej służby informacji powietrznej"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 6",
+          "quote": "„lotniskowa służba informacji powietrznej (ang. aerodrome flight information service, AFIS)” oznacza służbę informacji powietrznej dla ruchu lotniskowego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.3 pkt 1.4",
+          "quote": "Organ lotniskowej służby informacji powietrznej AFIS EPBY"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.3 pkt 1.5",
+          "quote": "Organ lotniskowej służby informacji powietrznej AFIS EPSY"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0201#8c96ce33",
+        "PL010-0186#13b1565d",
+        "PL010-0074#7ef3cadc",
+        "PL010-0071#b3ef6324",
+        "PL010-0072#6f4ce5e6",
+        "PL010-0224#41c9ad34",
+        "PL010-0410#3e3178d4"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-6",
+      "status": "draft",
+      "heading": "Służba alarmowa oraz poszukiwanie i ratownictwo",
+      "body": [
+        "Służba alarmowa to służba ustanowiona w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz współdziałania z nimi w razie potrzeby (art. 2 pkt 37 rozporządzenia 923/2012). Do zakresu działania służby poszukiwania i ratownictwa lotniczego (ASAR) należy poszukiwanie i ratowanie statków powietrznych w niebezpieczeństwie oraz udzielanie pomocy załogom, pasażerom i innym osobom poszkodowanym w wyniku zdarzeń lotniczych (art. 140a ust. 1 Prawa lotniczego).",
+        "- Rolę punktów alarmowych pełnią organy instytucji zapewniających służby ruchu lotniczego, które przekazują informacje o zagrożeniu do cywilno-wojskowego ośrodka koordynacji poszukiwania i ratownictwa lotniczego (art. 140a ust. 7); takim organem jest ośrodek kontroli obszaru, w Polsce ACC Warszawa (AIP Polska, GEN 2.4).",
+        "- Gdy statek powietrzny nie zgłosi się w ciągu 30 minut po najpóźniejszym z czasów: przewidywanym czasie przylotu lub ostatnio potwierdzonym spodziewanym czasie podejścia, informacje o nim przekazuje się użytkownikom i dowódcom zainteresowanych statków powietrznych. O wznowieniu normalnych operacji albo innym działaniu decydują dowódcy statków powietrznych oraz użytkownicy lub ich wyznaczeni przedstawiciele (ICAO Doc 4444, pkt 15.3.10).",
+        "Zbieranie i publikowanie informacji lotniczych należy do służby informacji lotniczej, a nie do ASAR."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 37",
+          "quote": "„służba alarmowa” oznacza służbę ustanowioną w celu zawiadamiania właściwych organizacji o statkach powietrznych potrzebujących pomocy w zakresie poszukiwania i ratownictwa oraz w celu współdziałania z nimi w razie potrzeby"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 140a ust. 1",
+          "quote": "Poszukiwanie i ratowanie statków powietrznych znajdujących się w niebezpieczeństwie, udzielanie pomocy załogom i pasażerom statków powietrznych oraz innym osobom poszkodowanym w wyniku zdarzeń lotniczych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 140a ust. 7",
+          "quote": "Rolę punktów alarmowych, o których mowa w ust. 5 pkt 3, pełnią organy instytucji zapewniających służby ruchu lotniczego w ramach wykonywania służby alarmowej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 140a ust. 7",
+          "quote": "przekazując je do cywilno-wojskowego ośrodka koordynacji poszukiwania i ratownictwa lotniczego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 43",
+          "quote": "„ośrodek kontroli obszaru (ACC)” oznacza organ ustanowiony do zapewnienia służby kontroli ruchu lotniczego w odniesieniu do lotów kontrolowanych w podległych mu obszarach kontrolowanych"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.4 EPWW",
+          "quote": "WARSZAWA FIR/ACC EPWW"
+        },
+        {
+          "src": "ICAO-DOC-4444",
+          "loc": "pkt 15.3.10"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 2",
+          "quote": "„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0200#ec47b328",
+        "PL010-0209#a0b284f3",
+        "PL010-0209#a91a2945",
+        "PL010-0210#a51038e6",
+        "PL010-0210#3c241477",
+        "PL010-0512#7d9a7d4c",
+        "PL010-0582#d097ef09",
+        "PL010-0582#d664ade5"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-7",
+      "status": "draft",
+      "heading": "Służba meteorologiczna",
+      "body": [
+        "Służby meteorologiczne (MET) to urządzenia i usługi, które zapewniają prognozy meteorologiczne, ostrzeżenia, wskazówki oraz obserwacje na potrzeby żeglugi powietrznej (art. 2 pkt 44 rozporządzenia 2024/2803). Instytucja zapewniająca służby meteorologiczne dostarcza informację meteorologiczną niezbędną do pełnienia ich funkcji m.in. operatorom, członkom załogi lotniczej, organom służb ruchu lotniczego, organom służb poszukiwania i ratownictwa, operatorom lotnisk oraz innym podmiotom w sektorze lotnictwa (pkt MET.OR.100 lit. a) załącznika V do rozporządzenia 2017/373).",
+        "Meteorologiczne biuro nadzoru wydaje SIGMET (pkt MET.OR.250 lit. a)), czyli informację o określonych zjawiskach pogody i innych zjawiskach atmosferycznych występujących lub mogących wystąpić na określonej trasie, które mogą mieć wpływ na bezpieczeństwo operacji statków powietrznych (załącznik I pkt 93). Jeden wariant klucza ULC opisuje cel służby meteorologicznej właśnie słowami tej definicji.",
+        "Do innych służb i funkcji należą: pomoc statkom powietrznym w niebezpieczeństwie (służba poszukiwania i ratownictwa, art. 140a ust. 1 Prawa lotniczego), zapewnianie informacji i danych lotniczych (AIS, art. 2 pkt 2 rozporządzenia 2024/2803) oraz kompatybilność natężenia ruchu z przepustowością (ATFM, art. 2 pkt 8)."
+      ],
+      "refs": [
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 44",
+          "quote": "„służby meteorologiczne” lub „MET” oznaczają urządzenia i usługi, które zapewniają prognozy meteorologiczne, ostrzeżenia, wskazówki oraz obserwacje na potrzeby żeglugi powietrznej"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "MET.OR.100(a)",
+          "quote": "Instytucja zapewniająca służby meteorologiczne dostarcza operatorom, członkom załogi lotniczej, organom służb ruchu lotniczego, organom służb poszukiwania i ratownictwa, operatorom lotnisk"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "MET.OR.100(a)",
+          "quote": "oraz innym instytucjom zapewniającym służby oraz podmiotom w sektorze lotnictwa informację meteorologiczną niezbędną do pełnienia przez nich swoich funkcji"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "MET.OR.250(a)",
+          "quote": "wydaje SIGMET"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 93",
+          "quote": "„SIGMET” oznacza informację wydaną przez meteorologiczne biuro nadzoru, dotyczącą określonych zjawisk pogody oraz innych zjawisk atmosferycznych występujących lub mogących wystąpić na określonej trasie, które mogą mieć wpływ na bezpieczeństwo operacji statków powietrznych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 140a ust. 1",
+          "quote": "Poszukiwanie i ratowanie statków powietrznych znajdujących się w niebezpieczeństwie, udzielanie pomocy załogom i pasażerom statków powietrznych oraz innym osobom poszkodowanym w wyniku zdarzeń lotniczych"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 2",
+          "quote": "„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 8",
+          "quote": "funkcję ustanowioną w celu zwiększenia bezpiecznego, uporządkowanego i szybkiego przepływu ruchu lotniczego na całej trajektorii poprzez zapewnienie maksymalnego wykorzystania możliwości ATC oraz kompatybilności natężenia ruchu z przepustowością"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0207#2b82bbde",
+        "PL010-0206#25c480d8",
+        "PL010-0208#7adf52a1",
+        "PL010-0208#324484b3"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-8",
+      "status": "draft",
+      "heading": "Służba informacji lotniczej a służba informacji powietrznej",
+      "body": [
+        "Nazwy są podobne, ale oznaczają dwie różne służby:",
+        "- służba informacji lotniczej (AIS) – służba utworzona w określonym obszarze, odpowiedzialna za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej (art. 2 pkt 2 rozporządzenia 2024/2803); należy do służb żeglugi powietrznej, ale nie do służb ruchu lotniczego (art. 2 pkt 5);",
+        "- służba informacji powietrznej – służba ruchu lotniczego udzielająca wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów (art. 2 pkt 77 rozporządzenia 923/2012), zapewniana przez organy służb ruchu lotniczego (pkt SERA.9001 lit. a)).",
+        "W Polsce służbę informacji lotniczej zapewnia Polska Agencja Żeglugi Powietrznej (AIP Polska, GEN 3.1); jej produktami są m.in. Zbiór Informacji Lotniczych (AIP) ze zmianami i suplementami oraz depesze NOTAM. Celem AIS jest więc zbieranie i publikowanie informacji lotniczych.",
+        "Klucz ULC w pytaniu „W jakim celu ustanowiono służbę informacji lotniczej?” przyjmuje udzielanie wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów; aktualny przepis tak definiuje służbę informacji powietrznej."
+      ],
+      "refs": [
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 2",
+          "quote": "„służba informacji lotniczej” lub „AIS” oznacza służbę utworzoną w określonym obszarze, odpowiedzialną za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 5",
+          "quote": "„służby żeglugi powietrznej” lub „ANS” oznaczają służby ruchu lotniczego; służby łączności, nawigacji i dozorowania (CNS)"
+        },
+        {
+          "src": "EU-2024-2803",
+          "loc": "art. 2 pkt 5",
+          "quote": "służby meteorologiczne (MET); służby informacji lotniczej (AIS)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 77",
+          "quote": "„służba informacji powietrznej” oznacza służbę ustanowioną w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.9001(a)",
+          "quote": "Odpowiednie organy służb ruchu lotniczego zapewniają służbę informacji powietrznej wszystkim statkom powietrznym, których te informacje mogą dotyczyć, oraz:"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.1 pkt 1",
+          "quote": "Służba informacji lotniczej (AIS) w Polsce zapewniana jest przez Polską Agencję Żeglugi Powietrznej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.1 pkt 3",
+          "quote": "Produktami informacji lotniczej są:"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.1 pkt 3",
+          "quote": "Zbiór Informacji Lotniczych (AIP), włącznie ze Zmianami i Suplementami do AIP"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.1 pkt 3",
+          "quote": "depesze NOTAM"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0205#2a8e9204",
+        "PL010-0185#9a53bc4b",
+        "PL010-0011#5b67ea6c",
+        "PL010-0011#a5e2619c"
+      ],
+      "disputeNote": "Według art. 2 pkt 2 rozporządzenia 2024/2803 służba informacji lotniczej (AIS) odpowiada za zapewnienie informacji i danych lotniczych niezbędnych dla bezpieczeństwa, regularności i skuteczności żeglugi powietrznej, a brzmienie odpowiedzi z klucza to definicja służby informacji powietrznej (art. 2 pkt 77 rozporządzenia 923/2012). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL10-9",
+      "status": "draft",
+      "heading": "AIP, AIRAC i wskaźnik lokalizacji",
+      "body": [
+        "Zbiór informacji lotniczych (AIP) to publikacja wydawana przez organ państwowy lub wraz z nim, zawierająca informacje lotnicze o charakterze trwałym, istotne dla żeglugi powietrznej (załącznik I pkt 118 rozporządzenia 2017/373). W Polsce jest jednym z produktów informacji lotniczej AIS Polska (AIP Polska, GEN 3.1). Dokumentacja JEPPESEN, podręcznik pilota czy instrukcja wykonywania lotów nie są taką publikacją.",
+        "AIRAC to system wczesnego powiadamiania o okolicznościach wymuszających zasadnicze zmiany w działaniach operacyjnych, działający w oparciu o wspólne daty wejścia w życie (załącznik I pkt 121). Rozpowszechnia się nim informacje operacyjnie ważne, m.in. granice, przepisy i procedury FIR i obszarów kontrolowanych, pozycje, częstotliwości i znaki wywoławcze pomocy radionawigacyjnych oraz procedury ATS (pkt AIS.TR.505 lit. a)); przepis nie dzieli ich według tomów AIP.",
+        "Wskaźnik lokalizacji ICAO jest czteroliterowy: w planie lotu lotnisko odlotu oznacza się czteroliterowym wskaźnikiem z dokumentu ICAO 7910 (dodatek 6 do rozporządzenia 923/2012, AIP Polska ENR 1.10 pkt 3.5.1), a ICAO Doc 4444 definiuje wskaźnik lokalizacji jako czteroliterową grupę kodową. Przykładem jest EPWW – FIR/ACC Warszawa (GEN 2.4)."
+      ],
+      "refs": [
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 118",
+          "quote": "„zbiór informacji lotniczych (ang. aeronautical information publication, AIP)” oznacza publikację wydawaną przez organ państwowy lub wraz z nim, zawierającą informacje lotnicze o charakterze trwałym, które mają istotne znaczenie dla żeglugi powietrznej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.1 pkt 3",
+          "quote": "AIS Polska zapewnia produkty informacji lotniczej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.1 pkt 3",
+          "quote": "Zbiór Informacji Lotniczych (AIP), włącznie ze Zmianami i Suplementami do AIP"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 121",
+          "quote": "oznacza system wczesnego powiadamiania o okolicznościach wymuszających zasadnicze zmiany w działaniach operacyjnych, działający w oparciu o wspólne daty wejścia w życie"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "AIS.TR.505(a)",
+          "quote": "Za pomocą systemu AIRAC rozpowszechnia się informacje dotyczące następujących elementów:"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "AIS.TR.505(a)(1)",
+          "quote": "poziomych i pionowych granic, przepisów i procedur odnoszących się do:"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "AIS.TR.505(a)(1)(i)",
+          "quote": "rejonów informacji powietrznej (FIR)"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "AIS.TR.505(a)(2)",
+          "quote": "pozycji, częstotliwości, znaków wywoławczych, identyfikatorów, znanych nieprawidłowości i okresowych przeglądów pomocy radionawigacyjnych"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "AIS.TR.505(a)(3)",
+          "quote": "procedur oczekiwania i podejścia, procedur przylotu i odlotu, procedur przeciwhałasowych i wszelkich innych stosowanych procedur ATS"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "dodatek 6 pkt 2.2",
+          "quote": "WPISAĆ czteroliterowy wskaźnik lokalizacji lotniska odlotu ICAO, jak określono w dokumencie 7910, Wskaźniki lokalizacji"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.5.1",
+          "quote": "przyjęty przez ICAO czteroliterowy wskaźnik lokalizacji lotniska"
+        },
+        {
+          "src": "ICAO-DOC-4444",
+          "loc": "def Location indicator"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.4 EPWW",
+          "quote": "WARSZAWA FIR/ACC EPWW"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0559#88221b13",
+        "PL010-0413#e23e22cd",
+        "PL010-1543#cacf0d8c"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-10",
+      "status": "draft",
+      "heading": "Instytucja zapewniająca służby żeglugi powietrznej",
+      "body": [
+        "Instytucję zapewniającą służby żeglugi powietrznej wyznacza w drodze decyzji administracyjnej minister właściwy do spraw transportu (art. 127 ust. 2 Prawa lotniczego), a jej certyfikacji dokonuje Prezes Urzędu Lotnictwa Cywilnego jako organ realizujący zadania państwowej władzy nadzorującej (art. 127 ust. 4). Podstawą działania instytucji jest więc certyfikat Prezesa ULC; przepis nie mówi o certyfikacie EASA ani o licencji EASA lub EUROCONTROL.",
+        "- Służby żeglugi powietrznej są zapewniane odpłatnie (opłaty nawigacyjne), a opłaty te obejmują opłaty trasowe oraz terminalowe (art. 130 ust. 1 i 1a); przepis nie różnicuje odpłatności dla podmiotów polskich i zagranicznych.",
+        "- Zintegrowany Pakiet Informacji Lotniczych publikuje instytucja zapewniająca służby ruchu lotniczego (art. 121 ust. 3), a nie minister ani Prezes ULC; służbę informacji lotniczej zapewnia w Polsce Polska Agencja Żeglugi Powietrznej (AIP Polska, GEN 3.1)."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 127 ust. 2",
+          "quote": "Wyznaczenia, o którym mowa w ust. 1, dokonuje, w drodze decyzji administracyjnej, minister właściwy do spraw transportu"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 127 ust. 4",
+          "quote": "Certyfikacji instytucji zapewniającej służby żeglugi powietrznej dokonuje Prezes Urzędu jako organ realizujący zadania państwowej władzy nadzorującej"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 130 ust. 1",
+          "quote": "Służby żeglugi powietrznej są zapewniane odpłatnie (opłaty nawigacyjne)."
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 130 ust. 1a",
+          "quote": "Opłaty nawigacyjne obejmują opłaty trasowe oraz opłaty terminalowe"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 121 ust. 3",
+          "quote": "Zintegrowany Pakiet Informacji Lotniczych publikuje instytucja zapewniająca służby ruchu lotniczego."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 3.1 pkt 1",
+          "quote": "Służba informacji lotniczej (AIS) w Polsce zapewniana jest przez Polską Agencję Żeglugi Powietrznej"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0382#d98de423",
+        "PL010-0381#50505fda",
+        "PL010-0075#6c447917"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-11",
+      "status": "draft",
+      "heading": "Terminy przedstawienia planu lotu przed odlotem",
+      "body": [
+        "Pkt SERA.4001 lit. d) rozporządzenia 923/2012 wymaga złożenia planu lotu z przelotem nad granicami międzynarodowymi lub lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego albo służba doradcza, co najmniej 60 minut przed odlotem, o ile właściwy organ nie określi krótszego okresu dla krajowych lotów VFR. AIP Polska (ENR 1.10 pkt 4.8) podaje terminy liczone od EOBT, czyli przewidywanego czasu odblokowania:",
+        "- lot VFR w całości lub w części w przestrzeni kontrolowanej albo z planowanym wlotem w nią – co najmniej 1 godzina;",
+        "- lot VFR z przekroczeniem granicy FIR Warszawa – co najmniej 1 godzina;",
+        "- lot VFR w całości w przestrzeni niekontrolowanej – co najmniej 30 minut (plan jest wymagany m.in. dla lotów, którym ma być zapewniona służba informacji powietrznej i służba alarmowa, pkt 4.5);",
+        "- lot IFR niepodlegający regulacjom ATFM – co najmniej 1 godzina, a podlegający regulacjom ATFM w strefie IFPZ – co najmniej 3 godziny.",
+        "Lot VFR do CTR lub TMA klasy C wymaga planu lotu i zezwolenia ATC (pkt SERA.6001 lit. a) ppkt 3, SERA.4001 lit. b) ppkt 1); samo pozostawanie w VMC nie wystarcza.",
+        "Klucz ULC w pytaniu „Kiedy najpóźniej przed EOBT należy złożyć plan lotu?” przyjmuje 60 minut; aktualne AIP dopuszcza 30 minut dla lotu VFR w całości w przestrzeni niekontrolowanej."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)",
+          "quote": "plan lotu każdego lotu, podczas którego planowany jest przelot nad granicami międzynarodowymi"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)",
+          "quote": "plan lotu, podczas którego ma być zapewniona służba kontroli ruchu lotniczego lub służba doradcza ruchu lotniczego, jest składany w następujący sposób:"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)",
+          "quote": "O ile właściwy organ nie określi krótszego okresu czasu dla krajowych lotów VFR"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)(3)",
+          "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.8",
+          "quote": "w przypadku przedstawiania planów lotów na loty według przepisów VFR, zaplanowane w całości lub w części w przestrzeni powietrznej kontrolowanej – co najmniej 1 godzinę przed EOBT"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.8",
+          "quote": "w przypadku przedstawiania planów lotów na loty według przepisów VFR, podczas których planowany jest wlot w przestrzeń kontrolowaną – co najmniej 1 godzinę przed EOBT"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.8",
+          "quote": "w przypadku przedstawiania planów lotów na loty planowane według przepisów VFR, podczas których nastąpi przekroczenie granicy FIR Warszawa – co najmniej 1 godzinę przed EOBT"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.8",
+          "quote": "w przypadku przedstawiania planów lotów na loty według przepisów VFR, zaplanowane w całości w przestrzeni powietrznej niekontrolowanej – co najmniej 30 minut przed EOBT"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.5",
+          "quote": "dla których ma być zapewniona służba informacji powietrznej i służba alarmowa"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.8",
+          "quote": "w przypadku przedstawiania planów lotów na loty niepodlegające regulacjom ATFM, planowane do wykonania w całości lub w części według przepisów IFR/GAT – co najmniej 1 godzinę przed EOBT"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.8",
+          "quote": "w przypadku lotów podlegających regulacjom ATFM, planowanych do wykonania w całości lub w części według przepisów IFR/GAT i których trasa planowana jest w całości lub w części w strefie IFPZ – co najmniej 3 godziny przed EOBT"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(3)",
+          "quote": "W przypadku wszystkich lotów obowiązuje zezwolenie ATC."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(b)(1)",
+          "quote": "służbie kontroli ruchu lotniczego przed rozpoczęciem każdego lotu lub jego części"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 4.5",
+          "quote": "w całości lub w części wykonywanych w przestrzeni powietrznej kontrolowanej"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0429#d3694b1a",
+        "PL010-0434#52a1b469",
+        "PL010-0435#75ca6812",
+        "PL010-0437#71f4638b",
+        "PL010-0589#c67cd8d3",
+        "PL010-0472#5403c78a",
+        "PL010-0472#96ac0085"
+      ],
+      "disputeNote": "AIP Polska (ENR 1.10 pkt 4.8 lit. c)) pozwala przedstawić plan lotu na lot VFR zaplanowany w całości w przestrzeni niekontrolowanej co najmniej 30 minut przed EOBT, więc dla takiego lotu poprawna byłaby też odpowiedź 30 minut. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL10-12",
+      "status": "draft",
+      "heading": "Plan lotu przekazywany w locie (AFIL)",
+      "body": [
+        "Plan lotu przedstawiony podczas lotu AIP Polska oznacza skrótem AFIL (ENR 1.10 pkt 1.4.2; w wykazie skrótów GEN 2.2: plan lotu zgłoszony z powietrza). Pkt SERA.4001 lit. c) ppkt 2 rozporządzenia 923/2012 przewiduje przekazanie go podczas lotu odpowiedniemu organowi służb ruchu lotniczego lub radiostacji kontroli powietrze-ziemia.",
+        "Termin liczy się od przewidywanego przybycia statku powietrznego do zamierzonego punktu, a nie od czasu odblokowania ani startu: organ ATS ma otrzymać plan co najmniej 10 minut przed przybyciem statku powietrznego (pkt SERA.4001 lit. d) ppkt 4):",
+        "- do zamierzonego punktu wejścia do obszaru kontrolowanego lub obszaru ze służbą doradczą (ppkt 4 (i));",
+        "- do zamierzonego punktu przecięcia drogi lotniczej lub trasy ze służbą doradczą (ppkt 4 (ii)).",
+        "Wyprzedzenie 60 minut dotyczy planu lotu składanego przed odlotem (ppkt 3), a od przewidywanego czasu odblokowania liczy się terminy planu składanego przed lotem (ppkt 1)."
+      ],
+      "refs": [
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 1.4.2",
+          "quote": "Plan lotu przedstawiony podczas lotu (AFIL)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 AFIL",
+          "quote": "Plan lotu zgłoszony z powietrza"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(c)(2)",
+          "quote": "jest przekazywany podczas lotu odpowiedniemu organowi służb ruchu lotniczego lub radiostacji kontroli powietrze-ziemia"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)(4)",
+          "quote": "jeżeli jest składany podczas lotu, to w czasie, który umożliwi jego odbiór przez odpowiedni organ ATS co najmniej 10 minut przed przewidywanym przybyciem statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)(4)(i)",
+          "quote": "do zamierzonego punktu wejścia do obszaru kontrolowanego lub obszaru ze służbą doradczą"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)(4)(ii)",
+          "quote": "do zamierzonego punktu przecięcia drogi lotniczej lub trasy ze służbą doradczą"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)(3)",
+          "quote": "z wyprzedzeniem co najmniej 60 minut przed odlotem w przypadku wszystkich innych lotów nieobjętych pkt 2"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4001(d)(1)",
+          "quote": "nie wcześniej niż 120 godzin przed przewidywanym czasem odblokowania"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0431#29600c46",
+        "PL010-0430#219a77cc",
+        "PL010-0433#8860ac9b",
+        "PL010-0432#e26650a3",
+        "PL010-0358#15582d37",
+        "PL010-0358#4f8005ef"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-13",
+      "status": "draft",
+      "heading": "Bieżący plan lotu, zmiany EOBT i meldunek o przylocie",
+      "body": [
+        "Bieżący plan lotu (CPL) to plan lotu z ewentualnymi zmianami wynikającymi z kolejnych zezwoleń (art. 2 pkt 64 rozporządzenia 923/2012); FPL to plan lotu, a SPL – uzupełnienie planu lotu (AIP Polska, GEN 2.2). Zmiany w planie lotu przekazuje się depeszami DLA lub CHG (ENR 1.10 pkt 5.1.2):",
+        "- dla lotów podlegających regulacjom ATFM zgłasza się każdą zmianę EOBT większą niż 15 minut, a dla lotów niepodlegających tym regulacjom – większą niż 30 minut (pkt 5.1.3);",
+        "- przy opóźnieniu przekraczającym EOBT o 30 minut dla lotu kontrolowanego albo o 1 godzinę dla lotu niekontrolowanego plan należy poprawić albo przedstawić nowy, anulując poprzedni (pkt 6.1).",
+        "Meldunek o przylocie nadawany przez pilota dowódcę statku powietrznego zawiera znak rozpoznawczy statku powietrznego, lotnisko odlotu lub miejsce operacji lotniczej, lotnisko docelowe (tylko przy zmianie miejsca lądowania), lotnisko przylotu i czas przylotu (pkt SERA.4020 lit. e)).",
+        "Klucz ULC w pytaniu o ważność planu lotu od EOBT przyjmuje 30 minut; AIP nie mówi wprost o „ważności” planu, a dla lotu niekontrolowanego podaje 1 godzinę."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 64",
+          "quote": "„bieżący plan lotu (CPL)” oznacza plan lotu z ewentualnymi zmianami wynikającymi z kolejnych zezwoleń"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 FPL",
+          "quote": "FPL Plan lotu"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 SPL",
+          "quote": "Uzupełnienie planu lotu"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 5.1.2",
+          "quote": "Zmiany w planie lotu mogą być dokonywane depeszami DLA lub CHG."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 5.1.3.1",
+          "quote": "Dla lotów podlegających regulacjom ATFM należy zgłaszać wszelkie zmiany EOBT większe niż 15 minut."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 5.1.3.2",
+          "quote": "Dla lotów niepodlegających regulacjom ATFM należy zgłaszać wszelkie zmiany EOBT większe niż 30 minut."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 6.1",
+          "quote": "w przypadku opóźnienia przewyższającego przewidywany czas odblokowania o 30 minut dla lotu kontrolowanego lub opóźnienia wynoszącego 1 godzinę dla lotu niekontrolowanego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 6.1",
+          "quote": "plan ten powinien być poprawiony lub należy przedstawić nowy plan lotu, anulując poprzedni"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4020(e)",
+          "quote": "Meldunki o przylocie nadawane przez pilota dowódcę statku powietrznego zawierają następujące elementy informacji:"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4020(e)(1)",
+          "quote": "znak rozpoznawczy statku powietrznego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4020(e)(2)",
+          "quote": "lotnisko odlotu lub miejsce operacji lotniczej"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4020(e)(3)",
+          "quote": "lotnisko docelowe lub miejsce operacji lotniczej (tylko w przypadku zmiany miejsca lądowania)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4020(e)(4)",
+          "quote": "lotnisko przylotu lub miejsce operacji lotniczej"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.4020(e)(5)",
+          "quote": "czas przylotu."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0359#c42a4ecb",
+        "PL010-0473#c96c1aeb",
+        "PL010-0411#3d5f9a58",
+        "PL010-1553#6b517e18"
+      ],
+      "disputeNote": "Ta sama uwaga AIP Polska (ENR 1.10 pkt 6.1) dla lotu niekontrolowanego podaje opóźnienie 1 godziny, więc odpowiedź 60 minut też odpowiada AIP; AIP nie mówi przy tym wprost o „ważności” planu lotu. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL10-14",
+      "status": "draft",
+      "heading": "Oznaczenia w planie lotu",
+      "body": [
+        "AIP Polska (ENR 1.10) określa litery stosowane w planie lotu. W polu 8 pierwsza litera określa przepisy wykonywania lotu, a druga rodzaj lotu (pkt 3.2):",
+        "- przepisy (pkt 3.2.1): I – cały lot według IFR, V – cały lot według VFR, Y – najpierw IFR, potem zmiana przepisów, Z – najpierw VFR, potem zmiana przepisów;",
+        "- rodzaj lotu (pkt 3.2.2): S – lot rozkładowy lotnictwa komunikacyjnego, N – lot nierozkładowy lotnictwa komunikacyjnego, G – lot lotnictwa ogólnego, M – lot wojskowy, X – lot innego rodzaju (szczegóły w polu 18 po oznaczniku RMK/).",
+        "Prędkość przelotową podaje się literą i cyframi (pkt 3.6.4.1): N – węzły (np. N0485), K – kilometry na godzinę, M – liczba Macha. Poziom przelotu (pkt 3.6.4.2): F – poziom lotu w setkach stóp, A – wysokość bezwzględna w setkach stóp (np. A030), M – wysokość bezwzględna w dziesiątkach metrów, S – standardowy poziom metryczny w dziesiątkach metrów.",
+        "Litery O, W i R nie występują w wykazie oznaczeń rodzaju lotu."
+      ],
+      "refs": [
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2",
+          "quote": "Pierwsza z nich określa przepisy wykonywania lotu, zaś druga rodzaj lotu."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.1",
+          "quote": "I – jeżeli planuje się wykonanie całego lotu zgodnie z IFR"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.1",
+          "quote": "V – jeżeli planuje się wykonanie całego lotu zgodnie z VFR"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.1",
+          "quote": "Y – jeżeli lot najpierw będzie wykonywany zgodnie z IFR, po czym nastąpi zmiana lub zmiany przepisów wykonywania lotu"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.1",
+          "quote": "Z – jeżeli lot najpierw będzie wykonywany zgodnie z VFR, po czym nastąpi zmiana lub zmiany przepisów wykonywania lotu"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.2",
+          "quote": "Należy podać jedną z następujących liter w celu oznaczenia rodzaju lotu:"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.2",
+          "quote": "S – lot rozkładowy lotnictwa komunikacyjnego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.2",
+          "quote": "N – lot nierozkładowy lotnictwa komunikacyjnego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.2",
+          "quote": "G – lot lotnictwa ogólnego"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.2",
+          "quote": "M – lot wojskowy"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.2",
+          "quote": "X – lot innego rodzaju niż podane wyżej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.2.2",
+          "quote": "W przypadku użycia oznaczenia rodzaju lotu X należy w polu 18 planu lotu po oznaczniku RMK/ umieścić dalsze szczegóły dotyczące lotu"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.6.4.1",
+          "quote": "N – a następnie cztery cyfry celem określenia prędkości powietrznej w węzłach (np. N0485)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.6.4.1",
+          "quote": "K – a następnie cztery cyfry celem określenia prędkości powietrznej w kilometrach na godzinę (km/h)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.6.4.1",
+          "quote": "M – a następnie trzy cyfry celem określenia prędkości powietrznej za pomocą rzeczywistej liczby Macha"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.6.4.2",
+          "quote": "F – a następnie trzy cyfry celem określenia poziomu lotu w setkach stóp (np. F330)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.6.4.2",
+          "quote": "A – a następnie trzy cyfry celem określenia wysokości bezwzględnej w setkach stóp (np. A030)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.6.4.2",
+          "quote": "M – a następnie cztery cyfry celem wyrażenia wysokości bezwzględnej w dziesiątkach metrów (np. M0040)"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.10 pkt 3.6.4.2",
+          "quote": "S – a następnie cztery cyfry celem określenia standardowego poziomu metrycznego w dziesiątkach metrów (np. S1130)"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0545#dbc84777",
+        "PL010-0550#6af10690",
+        "PL010-0552#f1b6bbd1",
+        "PL010-0553#6cea4450",
+        "PL010-0546#3ae0eeb4",
+        "PL010-0547#dd0d55be",
+        "PL010-0548#b1448ffd",
+        "PL010-0549#05cb8f55",
+        "PL010-0414#4a61008b",
+        "PL010-0414#fd9708dd",
+        "PL010-0610#e69c3be2"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL10-15",
+      "status": "draft",
+      "heading": "Nieumyślne odchylenie od bieżącego planu lotu",
+      "body": [
+        "Pkt SERA.8020 lit. b) rozporządzenia 923/2012 określa działania przy nieumyślnym odchyleniu lotu kontrolowanego od bieżącego planu lotu:",
+        "- odchylenie od linii drogi – natychmiast zmienia się kurs, aby jak najprędzej wejść ponownie na linię drogi (ppkt 1);",
+        "- odchylenie prędkości rzeczywistej na poziomie przelotu o co najmniej plus/minus 0,02 Macha lub 19 km/h (10 kt) od bieżącego planu lotu – informuje się o tym odpowiedni organ służb ruchu lotniczego (ppkt 3);",
+        "- zmiana przewidywanego czasu przelotu nad następnym obowiązkowym punktem meldowania, granicą FIR lub lotniskiem docelowym o więcej niż 2 minuty albo o odstęp określony przez właściwy organ – załoga jak najszybciej powiadamia odpowiedni organ służb ruchu lotniczego (ppkt 4).",
+        "Przepis nie przewiduje kontynuowania lotu przez trzy lub siedem minut ani samodzielnego dostosowywania prędkości czy trasy. Różnica większa niż trzy minuty przekracza próg 2 minut, więc wymaga niezwłocznego podania poprawionego czasu.",
+        "Klucz ULC w pytaniu o prędkość podaje próg plus/minus 5% prędkości z planu lotu; aktualny ppkt 3 posługuje się progiem 0,02 Macha lub 19 km/h (10 kt), a działanie z klucza – zawiadomienie organu – jest zgodne z przepisem."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8020(b)",
+          "quote": "W przypadku gdy nastąpi nieumyślne odchylenie lotu kontrolowanego od bieżącego planu lotu, podejmuje się następujące działania:"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8020(b)(1)",
+          "quote": "w przypadku odchylenia od linii drogi: jeżeli statek powietrzny zboczy z linii drogi, natychmiast zmienia się kurs, aby jak najprędzej wejść ponownie na linię drogi"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8020(b)(3)",
+          "quote": "jeżeli liczba Macha/prędkość rzeczywista na poziomie przelotu różni się o co najmniej plus/minus 0,02 Macha lub co najmniej plus/minus 19 km/h (10 kt) prędkości rzeczywistej od bieżącego planu lotu, informuje się o tym odpowiedni organ służb ruchu lotniczego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8020(b)(4)",
+          "quote": "jeżeli przewidywany czas przelotu nad następnym obowiązkowym punktem meldowania, granicą rejonu informacji powietrznej lub lotniskiem docelowym"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.8020(b)(4)",
+          "quote": "różni się o więcej niż 2 minuty od czasu, który został wcześniej podany służbom ruchu lotniczego, lub różni się o odstęp czasu określony przez właściwy organ, załoga lotnicza powiadamia jak najszybciej odpowiedni organ służb ruchu lotniczego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0397#c3c4ff37",
+        "PL010-0398#4a7bfa3f",
+        "PL010-0399#f1407309"
+      ],
+      "disputeNote": "Według aktualnego pkt SERA.8020 lit. b) ppkt 3 rozporządzenia 923/2012 progiem odchylenia jest co najmniej plus/minus 0,02 Macha lub 19 km/h (10 kt) prędkości rzeczywistej, a nie 5%, jak podaje pytanie. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL10-16",
+      "status": "draft",
+      "heading": "Czas UTC i lotniska zapasowe",
+      "body": [
+        "W ruchu lotniczym stosowany jest uniwersalny czas koordynowany (UTC), wyrażany w godzinach i minutach oraz w miarę potrzeby w sekundach, w 24-godzinnej dobie rozpoczynającej się od północy (pkt SERA.3401 lit. a) rozporządzenia 923/2012). Przepis nie rozróżnia ruchu kontrolowanego i niekontrolowanego ani nie przewiduje stosowania czasu lokalnego (LMT).",
+        "Lotniska zapasowe dzieli się na lotniska zapasowe po starcie, na trasie i dla lotniska docelowego (art. 2 pkt 38 rozporządzenia 923/2012). Według materiału wyjaśniającego EASA do tej definicji (GM1 Article 2(38)) lotnisko, z którego lot się rozpoczyna, może być również lotniskiem zapasowym na trasie lub lotniskiem zapasowym dla lotniska docelowego tego lotu. Przepisy nie uzależniają tego od warunków meteorologicznych wystarczających do startu ani od warunków VMC."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.3401(a)",
+          "quote": "Stosowany jest uniwersalny czas koordynowany (UTC) wyrażany w godzinach i minutach oraz, w miarę potrzeby, w sekundach, 24-godzinnej doby rozpoczynającej się od północy."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 38",
+          "quote": "Lotniska zapasowe dzieli się na:"
+        },
+        {
+          "src": "EASA-EAR-SERA",
+          "loc": "GM1 Article 2(38)"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0065#adc07f82",
+        "PL010-0365#4d65e6d8"
+      ],
+      "disputeNote": null
+    }
+  ]
+}

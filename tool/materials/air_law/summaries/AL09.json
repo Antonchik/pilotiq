@@ -1,0 +1,691 @@
+{
+  "topic": "AL09",
+  "sections": [
+    {
+      "id": "AL09-1",
+      "status": "draft",
+      "heading": "Podział polskiej przestrzeni powietrznej",
+      "body": [
+        "Rozporządzenie Ministra Infrastruktury w sprawie struktury polskiej przestrzeni powietrznej dzieli polską przestrzeń powietrzną dostępną dla żeglugi powietrznej na przestrzeń kontrolowaną i przestrzeń niekontrolowaną (§ 1 pkt 1), a klasy przestrzeni nadaje się odpowiednio dla każdej z nich (§ 8 ust. 1).",
+        "- Przestrzeń kontrolowana (§ 4 ust. 1), w której wszystkim statkom powietrznym zapewnia się służbę ATC: CTA (obszar kontrolowany) obejmujący TMA i MTMA, drogi lotnicze (AWY), CDR oraz przestrzeń od FL 095 do FL 660, następnie CTR i MCTR, a także TRA i CBA, jeżeli nadano im klasę przestrzeni kontrolowanej.",
+        "- Przestrzeń niekontrolowana (§ 5 ust. 1): m.in. ATZ nad cywilnym lotniskiem niekontrolowanym, MATZ nad wojskowym lotniskiem niekontrolowanym oraz TSA, TRA, TFR, MRT i CBA z klasą przestrzeni niekontrolowanej albo niesklasyfikowane.",
+        "Strefy kontrolowane lotnisk (CTR) są odrębnym elementem przestrzeni kontrolowanej, a nie częścią obszaru kontrolowanego. W FIR Warszawa AIP Polska (ENR 1.4) oznacza klasy A, B, E i F jako niestosowane, więc występują tam przestrzenie klas C, D i G oraz przestrzeń niesklasyfikowana; jeden wariant klucza ULC wymienia tylko klasy C i G oraz przestrzeń niesklasyfikowaną. Sam rejon informacji powietrznej (FIR) to przestrzeń o określonych wymiarach, w której zapewnia się służbę informacji powietrznej i służbę alarmową (art. 2 pkt 76 rozporządzenia 923/2012)."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 1 pkt 1",
+          "quote": "strukturę polskiej przestrzeni powietrznej dostępnej dla żeglugi powietrznej z podziałem na przestrzeń kontrolowaną\ni przestrzeń niekontrolowaną"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 8 ust. 1",
+          "quote": "Przestrzeń powietrzną klasyfikuje się odpowiednio dla przestrzeni kontrolowanej i niekontrolowanej"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 4 ust. 1",
+          "quote": "W skład przestrzeni powietrznej kontrolowanej stanowiącej część przestrzeni, w której wszystkim statkom powietrznym zapewnia się służbę ATC"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 4 ust. 1 pkt 1",
+          "quote": "CTA obejmujący:\na) TMA oraz MTMA – ustanawiane zwykle u zbiegu tras ATS w pobliżu jednego lotniska lub kilku lotnisk,\nb) AWY,\nc) CDR,\nd) przestrzeń powietrzną rozciągającą się od FL 095/9500 ft AMSL do FL 660, z wyjątkiem rejonów i stref"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 4 ust. 1 pkt 2",
+          "quote": "CTR oraz MCTR – zabezpieczające manewr podejścia do lądowania, startu i nabrania wysokości"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 4 ust. 1 pkt 3",
+          "quote": "TRA oraz CBA – dla których określono klasę przestrzeni powietrznej właściwą dla przestrzeni kontrolowanej"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 5 ust. 1",
+          "quote": "W skład przestrzeni powietrznej niekontrolowanej wchodzi:"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 5 ust. 1 pkt 2",
+          "quote": "ATZ stanowiąca przestrzeń powietrzną nad cywilnym lotniskiem niekontrolowanym i przylegającym terenem niezbędnym do wykonania procedur startów i lądowań oraz zadań szkoleniowych"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 5 ust. 1 pkt 3",
+          "quote": "MATZ stanowiąca przestrzeń powietrzną nad wojskowym lotniskiem niekontrolowanym i przylegającym terenem\nniezbędnym do wykonania procedur startów i lądowań oraz zadań szkoleniowych"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 5 ust. 1 pkt 4",
+          "quote": "TSA, TRA, TFR, MRT oraz CBA – dla których określono klasę przestrzeni powietrznej właściwą dla przestrzeni\nniekontrolowanej lub nie zostały one sklasyfikowane"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 przypis ****",
+          "quote": "**** - Klasa nie stosowana w FIR Warszawa."
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa A",
+          "quote": "A**** Tylko IFR"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa B",
+          "quote": "B**** IFR Wszystkim"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa E",
+          "quote": "E**** IFR IFR od IFR"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa F",
+          "quote": "F**** IFR IFR od IFR, o ile"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 1.4 klasa D",
+          "quote": "D IFR IFR od IFR Służba kontroli"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 76",
+          "quote": "„rejon informacji powietrznej” oznacza przestrzeń powietrzną o określonych wymiarach, w której zapewniona jest służba informacji powietrznej i służba alarmowa"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0180#f8dbdb51",
+        "PL010-0071#d13b854e",
+        "PL010-0235#2eb25b85",
+        "PL010-0194#49cd0b71",
+        "PL010-0194#61f73ddd",
+        "PL010-0182#8e5a0b6c"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL09-2",
+      "status": "draft",
+      "heading": "Obszar kontrolowany, TMA i CTR",
+      "body": [
+        "Skróty i definicje według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej oraz art. 2 rozporządzenia 923/2012:",
+        "- CTA (Control Area) – obszar kontrolowany, czyli kontrolowana przestrzeń powietrzna rozciągająca się w górę od określonej granicy nad ziemią;",
+        "- TMA (Terminal Control Area) – rejon kontrolowany lotniska, obszar kontrolowany ustanawiany zazwyczaj u zbiegu dróg lotniczych w pobliżu jednego lub kilku dużych lotnisk;",
+        "- CTR (Control Zone) – strefa kontrolowana lotniska, rozciągająca się od powierzchni ziemi do określonej górnej granicy; MCTR to strefa kontrolowana lotniska wojskowego.",
+        "Dolna granica CTR leży więc na powierzchni terenu. Dolną granicę obszaru kontrolowanego, a więc także TMA i drogi lotniczej (obszaru kontrolowanego w postaci korytarza), ustala się co najmniej 200 m (700 ft) nad ziemią lub wodą, chyba że właściwy organ postanowi inaczej (załącznik XI do rozporządzenia 2017/373).",
+        "W klasie C wszystkie loty są wykonywane z zapewnieniem służby kontroli ruchu lotniczego i z ciągłą łącznością foniczną powietrze-ziemia, a w klasach C i D każdy lot wymaga zezwolenia ATC (SERA.6001 lit. a) ppkt 3 i 4). Bez zezwolenia lot VFR omija więc czynne lotnisko kontrolowane poza granicą jego CTR lub TMA."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 17",
+          "quote": "CTA – (Control Area) obszar kontrolowany"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 56",
+          "quote": "„obszar kontrolowany” oznacza kontrolowaną przestrzeń powietrzną rozciągającą się w górę od określonej granicy nad ziemią"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 43",
+          "quote": "TMA – (Terminal Control Area) rejon kontrolowany lotniska"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 239",
+          "quote": "„rejon kontrolowany lotniska (ang. terminal control area, TMA)” oznacza obszar kontrolowany ustanowiony zazwyczaj u zbiegu dróg lotniczych w pobliżu jednego dużego lotniska lub kilku dużych lotnisk"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 18",
+          "quote": "CTR – (Control Zone) strefę kontrolowaną lotniska"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 61",
+          "quote": "„strefa kontrolowana lotniska” oznacza kontrolowaną przestrzeń powietrzną rozciągającą się od powierzchni ziemi do określonej górnej granicy"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 29",
+          "quote": "MCTR – (Military CTR) strefę kontrolowaną lotniska wojskowego"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik XI",
+          "quote": "Dolną granicę obszaru kontrolowanego ustala się na wysokości względnej nie mniejszej niż 200 m (700 ft) nad powierzchnią ziemi lub wody, chyba że właściwy organ postanowi inaczej."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 36",
+          "quote": "„droga lotnicza” oznacza obszar kontrolowany lub jego część ustanowioną w postaci korytarza"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(3)",
+          "quote": "Klasa C. Dozwolone są loty IFR i VFR. Wszystkie loty wykonywane są z zapewnieniem służby kontroli ruchu lotniczego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(3)",
+          "quote": "W przypadku wszystkich lotów wymagana jest ciągła łączność foniczna powietrze-ziemia."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(3)",
+          "quote": "W przypadku wszystkich lotów obowiązuje zezwolenie ATC."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.6001(a)(4)",
+          "quote": "W przypadku wszystkich lotów obowiązuje zezwolenie ATC."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0022#2dd815c4",
+        "PL010-0023#7e3e196d",
+        "PL010-0023#d0543952",
+        "PL010-0190#5ff32bdb",
+        "PL010-0190#6d621c95",
+        "PL010-0056#00b19b3f",
+        "PL010-0056#3d580d89",
+        "PL010-0057#3039404c",
+        "PL010-0057#5e31e759",
+        "PL010-0058#0f272edc",
+        "PL010-0058#968171df",
+        "PL010-0080#287c81dc",
+        "PL010-0028#e0967f76"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL09-3",
+      "status": "draft",
+      "heading": "ATZ i MATZ",
+      "body": [
+        "ATZ (Aerodrome Traffic Zone) to strefa ruchu lotniskowego, czyli przestrzeń powietrzna o określonych wymiarach ustanowiona wokół lotniska dla ochrony ruchu lotniskowego (§ 2 pkt 12 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, art. 2 pkt 11 rozporządzenia 923/2012). MATZ (Military ATZ) to strefa ruchu lotniskowego lotniska wojskowego (§ 2 pkt 27).",
+        "Obie strefy należą do przestrzeni niekontrolowanej (§ 5 ust. 1):",
+        "- ATZ obejmuje przestrzeń nad cywilnym lotniskiem niekontrolowanym i przylegającym terenem niezbędnym do procedur startów i lądowań oraz zadań szkoleniowych (pkt 2);",
+        "- MATZ obejmuje taką przestrzeń nad wojskowym lotniskiem niekontrolowanym (pkt 3); korzysta się z niej w sposób i na warunkach określonych przez SSRL SZ RP (§ 16 ust. 4).",
+        "Korzystanie z ATZ i MATZ jest możliwe po uzgodnieniu z podmiotem uprawnionym danej strefy (§ 16 ust. 5). Bez takiego uzgodnienia lot VFR omija czynne lotnisko niekontrolowane lub wojskowe poza granicą jego ATZ albo MATZ; przepisy nie podają odległości omijania w kilometrach.",
+        "Klucz ULC w pytaniu o skład przestrzeni niekontrolowanej przyjmuje ATZ; aktualny § 5 ust. 1 pkt 3 zalicza do niej także MATZ, która również jest wśród odpowiedzi."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 12",
+          "quote": "ATZ – (Aerodrome Traffic Zone) strefę ruchu lotniskowego"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 11",
+          "quote": "„strefa ruchu lotniskowego” oznacza przestrzeń powietrzną o określonych wymiarach, ustanowioną wokół lotniska dla ochrony ruchu lotniskowego"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 27",
+          "quote": "MATZ – (Military ATZ) strefę ruchu lotniskowego lotniska wojskowego"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 5 ust. 1",
+          "quote": "W skład przestrzeni powietrznej niekontrolowanej wchodzi:"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 5 ust. 1 pkt 2",
+          "quote": "ATZ stanowiąca przestrzeń powietrzną nad cywilnym lotniskiem niekontrolowanym i przylegającym terenem niezbędnym do wykonania procedur startów i lądowań oraz zadań szkoleniowych"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 5 ust. 1 pkt 3",
+          "quote": "MATZ stanowiąca przestrzeń powietrzną nad wojskowym lotniskiem niekontrolowanym i przylegającym terenem\nniezbędnym do wykonania procedur startów i lądowań oraz zadań szkoleniowych"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 16 ust. 4",
+          "quote": "Korzystanie z MATZ odbywa się w sposób i na warunkach określonych przez SSRL SZ RP."
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 16 ust. 5",
+          "quote": "Korzystanie z ATZ oraz MATZ jest możliwe po uzgodnieniu z podmiotem uprawnionym odpowiednio ATZ albo\nMATZ."
+        }
+      ],
+      "questionKeys": [
+        "PL010-0018#5e11c975",
+        "PL010-0157#1d2cf7d4",
+        "PL010-0081#be12eaee",
+        "PL010-0082#3ed1178e",
+        "PL010-0072#0906fe25"
+      ],
+      "disputeNote": "Według aktualnego § 5 ust. 1 pkt 3 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej do przestrzeni niekontrolowanej należy także MATZ nad wojskowym lotniskiem niekontrolowanym, więc odpowiedź «MATZ» również jest zgodna z przepisem. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL09-4",
+      "status": "draft",
+      "heading": "Strefy zakazane, ograniczone, niebezpieczne i ADIZ",
+      "body": [
+        "Rozporządzenie 923/2012 (art. 2) definiuje trzy rodzaje stref:",
+        "- strefa zakazana (P) – nad obszarami lądowymi lub wodami terytorialnymi państwa, loty są w niej zabronione (pkt 103); wyjątki są wąskie, np. loty na hasła GARDA lub ALFA SCRAMBLE albo za zgodą zarządzającego obiektem chronionym strefą P (§ 6 ust. 1 rozporządzenia w sprawie zakazów lub ograniczeń lotów);",
+        "- strefa ograniczona (R) – także nad lądem lub wodami terytorialnymi, loty są w niej ograniczone zgodnie z określonymi warunkami (pkt 111), które dla każdej strefy podaje załącznik nr 3 do rozporządzenia w sprawie zakazów lub ograniczeń lotów (§ 3 ust. 1 pkt 5);",
+        "- strefa niebezpieczna (D) – w danym czasie mogą się w niej odbywać działania niebezpieczne dla lotów (pkt 65); zakaz lotów obowiązuje w terminach aktywności opublikowanych w AUP i UUP (§ 3 ust. 1 pkt 4).",
+        "Nad wodami otwartymi Morza Bałtyckiego wydziela się strefy D (§ 11 ust. 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej). ADIZ to strefa identyfikacji obrony powietrznej (§ 2 pkt 1); strefy ADIZ ciągną się wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą na szerokość 15 km w głąb terytorium Polski (załącznik nr 4 do rozporządzenia w sprawie zakazów lub ograniczeń lotów).",
+        "Klucz ULC w pytaniach o loty w strefach D i R przyjmuje zezwolenie organu służb ruchu lotniczego; aktualne przepisy uzależniają lot w aktywnej strefie D od zgody organu kierującego działaniami niebezpiecznymi (§ 7 ust. 1 pkt 3), a w strefie R od zlecenia albo zgody zarządzającego obiektem lub rejonem chronionym (§ 8 ust. 1 pkt 5)."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 103",
+          "quote": "„strefa zakazana” oznacza przestrzeń powietrzną o określonych wymiarach nad obszarami lądowymi lub wodami terytorialnymi państwa, w której loty statków powietrznych są zabronione"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 3",
+          "quote": "zakazy wykonywania lotów w strefach P, określone w załączniku nr 1 do rozporządzenia"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 6 ust. 1 pkt 1",
+          "quote": "wykonywanych na hasła GARDA lub ALFA SCRAMBLE"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 6 ust. 1 pkt 3",
+          "quote": "wykonywanych na zlecenie albo za zgodą zarządzającego obiektem chronionym strefą P"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 111",
+          "quote": "„strefa ograniczona” oznacza przestrzeń powietrzną o określonych wymiarach nad obszarami lądowymi lub wodami terytorialnymi państwa, w której loty statków powietrznych są ograniczone zgodnie z pewnymi określonymi warunkami"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 5",
+          "quote": "zakazy wykonywania lotów w strefach R, określone w załączniku nr 3 do rozporządzenia"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 65",
+          "quote": "„strefa niebezpieczna” oznacza przestrzeń powietrzną o określonych wymiarach, w której w danym czasie mogą odbywać się działania niebezpieczne dla lotów statków powietrznych"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 3 ust. 1 pkt 4",
+          "quote": "zakazy wykonywania lotów w strefach D, w terminach aktywności tych stref opublikowanych w AUP i UUP"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 7 ust. 1 pkt 3",
+          "quote": "wykonywanych na zlecenie albo za zgodą właściwego organu kierującego działaniami niebezpiecznymi w strefie D"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "§ 8 ust. 1 pkt 5",
+          "quote": "wykonywanych na zlecenie albo za zgodą zarządzającego obiektem lub rejonem chronionym strefą R"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 11 ust. 2",
+          "quote": "Nad wodami otwartymi Morza Bałtyckiego w FIR Warszawa, w przypadkach określonych w § 9 ust. 1, wydziela\nsię D."
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 1",
+          "quote": "ADIZ – (Air Defense Identification Zone) strefę identyfikacji obrony powietrznej"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "15 km w głąb terytorium\nRzeczypospolitej Polskiej"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "1 ADIZ ROSJA Kaliningradzkim Federacji"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "z Białorusią o szerokości"
+        },
+        {
+          "src": "PL-ROZP-ZAKAZY-LOTOW",
+          "loc": "załącznik 4",
+          "quote": "z Ukrainą o szerokości"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0156#f7e821a5",
+        "PL010-0154#be6d0021",
+        "PL010-0155#340a4ccd",
+        "PL010-0613#99941d67",
+        "PL010-0014#4615bb7c",
+        "PL010-0591#1d24f33b"
+      ],
+      "disputeNote": "Według § 3 ust. 1 pkt 4 i § 7 ust. 1 pkt 3 rozporządzenia w sprawie zakazów lub ograniczeń lotów poza aktywnością strefy D lot nie wymaga zezwolenia wojskowych służb ruchu lotniczego, a w czasie aktywności wystarcza zgoda organu kierującego działaniami niebezpiecznymi; wyjątek w strefie R wymaga zgody zarządzającego obiektem lub rejonem (§ 8 ust. 1 pkt 5). Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL09-5",
+      "status": "draft",
+      "heading": "ATM, AMC i AUP",
+      "body": [
+        "Skróty z § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, które tak samo rozwija wykaz skrótów AIP Polska (GEN 2.2):",
+        "- ATM (Air Traffic Management) – zarządzanie ruchem lotniczym: ogół działań polegających na zapewnianiu służb ruchu lotniczego, zarządzaniu przepływem ruchu lotniczego i przestrzenią powietrzną (pkt 10);",
+        "- AMC Polska (Airspace Management Cell) – komórka zarządzania przestrzenią powietrzną, cywilno-wojskowa komórka odpowiedzialna za zarządzanie i alokację elastycznych elementów struktury przestrzeni (pkt 4); klucz ULC nazywa ją ośrodkiem zarządzania przestrzenią powietrzną;",
+        "- AUP (Airspace Use Plan) – plan użytkowania przestrzeni powietrznej o statusie NOTAM, wydawany przez AMC Polska (pkt 13).",
+        "Nie należy ich mylić z ATFM (Air Traffic Flow Management), czyli zarządzaniem przepływem ruchu lotniczego (pkt 8), ani z MRT, czyli trasą lotnictwa wojskowego (pkt 30)."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 10",
+          "quote": "ATM – (Air Traffic Management) zarządzanie ruchem lotniczym – ogół działań polegających na zapewnianiu służb\nruchu lotniczego, zarządzaniu przepływem ruchu lotniczego i przestrzenią powietrzną"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 ATM",
+          "quote": "ATM Zarządzanie ruchem lotniczym"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 4",
+          "quote": "AMC Polska – (Airspace Management Cell) komórkę zarządzania przestrzenią powietrzną będącą cywilno-wojskową\nkomórką odpowiedzialną za zarządzanie i alokację elastycznych elementów struktury przestrzeni powietrznej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 AMC",
+          "quote": "Komórka zarządzania przestrzenią powietrzną"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 13",
+          "quote": "AUP – (Airspace Use Plan) plan użytkowania przestrzeni powietrznej o statusie NOTAM wydawany przez AMC\nPolska"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 AUP",
+          "quote": "Plan użytkowania przestrzeni powietrznej"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 8",
+          "quote": "ATFM – (Air Traffic Flow Management) zarządzanie przepływem ruchu lotniczego"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 30",
+          "quote": "MRT – (Military Route) trasę lotnictwa wojskowego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0017#d4610fa4",
+        "PL010-0015#5c15787a",
+        "PL010-0019#f858f276"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL09-6",
+      "status": "draft",
+      "heading": "Elastyczne elementy przestrzeni: TSA, TRA, TFR, MRT, CBA",
+      "body": [
+        "Według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej (te same rozwinięcia podaje AIP Polska, GEN 2.2):",
+        "- TSA (Temporary Segregated Area) – strefa czasowo wydzielona; w danym czasie może z niej korzystać wyłącznie jeden podmiot uprawniony (pkt 46, § 18 ust. 1);",
+        "- TRA (Temporary Reserved Area) – strefa czasowo rezerwowana (pkt 45); podejmowanie działań w TRA wymaga rezerwacji w AMC Polska (AIP Polska, ENR 5.2.1);",
+        "- TFR (TSA or TRA Feeding Route) – trasa lotnicza umożliwiająca lot do TSA albo TRA i przelot między tymi strefami; inne loty nie mogą być w niej wykonywane (pkt 42, § 9 ust. 7);",
+        "- MRT (Military Route) – trasa lotnictwa wojskowego w postaci korytarza o określonych granicach pionowych i poziomych (pkt 30, § 10 ust. 1);",
+        "- CBA (Cross Border Area) – rejon lotów po obu stronach granicy państwa, czasowo wydzielony lub rezerwowany ze względu na szczególne wymogi operacyjne (pkt 15).",
+        "Korzystanie z TSA, TRA, CBA, MRT i TFR wymaga uprzedniego uzyskania rezerwacji (§ 16 ust. 3).",
+        "Klucz ULC w jednym wariancie pytania „TRA jest to:” przyjmuje „strefa czasowo wydzielona”; aktualny § 2 pkt 45 nazywa TRA strefą czasowo rezerwowaną, a strefą czasowo wydzieloną jest TSA."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 46",
+          "quote": "TSA – (Temporary Segregated Area) strefę czasowo wydzieloną"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 TSA",
+          "quote": "Strefa czasowo wydzielona"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 18 ust. 1",
+          "quote": "Korzystanie z TSA lub segmentu tej strefy jest możliwe wyłącznie przez jeden podmiot uprawniony"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 45",
+          "quote": "TRA – (Temporary Reserved Area) strefę czasowo rezerwowaną"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 TRA",
+          "quote": "TRA Strefa czasowo rezerwowana"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "ENR 5.2.1 TRA",
+          "quote": "STREFA CZASOWO REZERWOWANA (TRA) – przestrzeń powietrzna\no określonych granicach poziomych i pionowych, w której podejmowanie\ndziałań wymaga rezerwacji w AMC Polska."
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 42",
+          "quote": "TFR – (TSA or TRA Feeding Route) trasę lotniczą umożliwiającą lot do TSA albo TRA oraz przelot między tymi\nstrefami"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 9 ust. 7",
+          "quote": "W TFR nie mogą być wykonywane loty inne niż wymienione w ust. 6."
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 30",
+          "quote": "MRT – (Military Route) trasę lotnictwa wojskowego"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 10 ust. 1",
+          "quote": "MRT obejmuje część przestrzeni powietrznej wydzielonej przez Instytucję w postaci korytarza o określonych\ngranicach pionowych i poziomych"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 15",
+          "quote": "CBA – (Cross Border Area) rejon lotów po obu stronach granicy państwa będący rejonem czasowo wydzielonym lub\nrezerwowanym, ustanowiony ze względu na szczególne wymogi operacyjne"
+        },
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 16 ust. 3",
+          "quote": "Korzystanie z TSA, TRA, CBA, MRT oraz TFR wymaga uprzedniego uzyskania rezerwacji"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0192#ff128909",
+        "PL010-0191#0e246aa0",
+        "PL010-0191#c2291227",
+        "PL010-0189#1a79bbc4",
+        "PL010-0158#5a68b862",
+        "PL010-0021#c98a9ca1"
+      ],
+      "disputeNote": "Według § 2 pkt 45 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej i wykazu skrótów AIP Polska (GEN 2.2 TRA) TRA to strefa czasowo rezerwowana, więc poprawna jest odpowiedź „Strefa czasowo rezerwowana”; strefa czasowo wydzielona to TSA (§ 2 pkt 46). Klucz odzwierciedla inną interpretację. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL09-7",
+      "status": "draft",
+      "heading": "Części lotniska i zasadniczy ruch lokalny",
+      "body": [
+        "Rozporządzenie 923/2012 (art. 2) rozróżnia:",
+        "- pole ruchu naziemnego – część lotniska przeznaczona do startów, lądowań i kołowania statków powietrznych, składająca się z pola manewrowego i płyt (pkt 96);",
+        "- pole manewrowe – część lotniska do startów, lądowań i kołowania, z wyłączeniem płyt (pkt 94);",
+        "- pole wzlotów – część pola ruchu naziemnego przeznaczona do startów i lądowań (pkt 92);",
+        "- płyta – określony obszar wydzielony dla postoju statków powietrznych, na którym odbywa się wsiadanie i wysiadanie pasażerów, załadowanie i wyładowanie poczty lub towaru, zaopatrywanie w paliwo, parkowanie lub obsługa (pkt 42); AIP Polska (GEN 2.2) nazywa ją płytą postojową (APN).",
+        "Płyta przeddworcowa wchodzi więc w skład pola ruchu naziemnego, a nie pola manewrowego ani pola wzlotów. Zasadniczy ruch lokalny to każdy statek powietrzny, pojazd lub osoba na polu manewrowym i w jego pobliżu albo ruch w strefie podejścia i wznoszenia lub podejścia końcowego, które mogą stanowić zagrożenie dla statku powietrznego wykonującego dany manewr (załącznik I pkt 177 rozporządzenia 2017/373); klucz ULC używa szyku „lokalny ruch zasadniczy”.",
+        "Klucz ULC w pytaniu „Płyta postojowa na lotnisku to:” przyjmuje pełną definicję płyty; aktualny art. 2 pkt 96 pozwala uznać płytę także za część pola ruchu naziemnego, co jest jedną z odpowiedzi."
+      ],
+      "refs": [
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 96",
+          "quote": "„pole ruchu naziemnego” oznacza część lotniska przeznaczoną do startów, lądowań i do kołowania statków powietrznych, składającą się z pola manewrowego i płyt(-y)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 94",
+          "quote": "„pole manewrowe” oznacza część lotniska, wyłączając płyty, przeznaczoną do startów, lądowań i kołowania statków powietrznych"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 92",
+          "quote": "„pole wzlotów” oznacza część pola ruchu naziemnego przeznaczoną do startów i lądowań statków powietrznych"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "art. 2 pkt 42",
+          "quote": "„płyta” oznacza określony obszar wydzielony dla postoju statków powietrznych, na którym odbywa się wsiadanie lub wysiadanie pasażerów, załadowanie lub wyładowanie poczty lub towaru, zaopatrywanie w paliwo, parkowanie lub obsługa tych statków"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 APN",
+          "quote": "APN Płyta postojowa"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 177",
+          "quote": "„zasadniczy ruch lokalny (ang. essential local traffic)” oznacza każdy statek powietrzny, pojazd lub osobę na polu manewrowym i w pobliżu tego pola, bądź też ruch odbywający się w strefie podejścia i wznoszenia lub w strefie podejścia końcowego, które mogą stanowić zagrożenie dla statku powietrznego"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0178#240b0c3f",
+        "PL010-0178#8dfe4066",
+        "PL010-0348#4ca4ba4c"
+      ],
+      "disputeNote": "Według art. 2 pkt 96 rozporządzenia 923/2012 pole ruchu naziemnego składa się z pola manewrowego i płyt, więc odpowiedź „Część pola ruchu naziemnego” także jest zgodna z przepisem. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+    },
+    {
+      "id": "AL09-8",
+      "status": "draft",
+      "heading": "Punkt odniesienia, wzniesienie lotniska i RVR",
+      "body": [
+        "ARP (Aerodrome Reference Point) to punkt odniesienia lotniska (§ 2 pkt 6 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej; tak samo AIP Polska, GEN 2.2). Według materiałów EASA (GM1 ADR.OPS.A.005) wyznacza się go w pobliżu geometrycznego środka lotniska.",
+        "Wzniesienie (elewacja) lotniska to wzniesienie najwyższego punktu pola wzlotów (załącznik I pkt 5 rozporządzenia 2017/373), a wzniesienie oznacza pionową odległość punktu mierzoną od średniego poziomu morza (pkt 46). Liczy się więc najwyższy punkt pola wzlotów, a nie średnie wzniesienie lotniska, najwyższy punkt całego lotniska ani próg drogi startowej.",
+        "RVR (runway visual range) to zasięg widzialności wzdłuż drogi startowej: zakres odległości, w którym pilot statku powietrznego znajdującego się na osi drogi startowej może zobaczyć oznakowanie poziome jej nawierzchni albo jej światła krawędziowe lub światła osi (załącznik I pkt 87). W wykazie skrótów AIP Polska VFR to przepisy wykonywania lotów z widocznością, a FPL – plan lotu."
+      ],
+      "refs": [
+        {
+          "src": "PL-ROZP-STRUKTURA-2019",
+          "loc": "§ 2 pkt 6",
+          "quote": "ARP – (Aerodrome Reference Point) punkt odniesienia lotniska"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 ARP 2",
+          "quote": "ARP Punkt odniesienia lotniska"
+        },
+        {
+          "src": "EASA-EAR-AERODROMES",
+          "loc": "GM1 ADR.OPS.A.005"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 5",
+          "quote": "„wzniesienie lotniska” oznacza wzniesienie najwyższego punktu pola wzlotów"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 46",
+          "quote": "„wzniesienie” oznacza pionową odległość punktu lub poziomu, na powierzchni Ziemi lub związanego z tą powierzchnią, mierzoną od średniego poziomu morza"
+        },
+        {
+          "src": "EU-2017-373",
+          "loc": "załącznik I pkt 87",
+          "quote": "„zasięg widzialności wzdłuż drogi startowej (ang. runway visual range, RVR)” oznacza zakres odległości, w którym pilot statku powietrznego znajdującego się na osi drogi startowej może zobaczyć oznakowanie poziome nawierzchni drogi startowej lub jej światła krawędziowe lub światła jej osi centralnej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 RVR",
+          "quote": "Zasięg widzialności wzdłuż drogi startowej"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 VFR",
+          "quote": "Przepisy wykonywania lotów z widocznością"
+        },
+        {
+          "src": "AIP-PL",
+          "loc": "GEN 2.2 FPL",
+          "quote": "FPL Plan lotu"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0016#4e382304",
+        "PL010-0059#43fc6b3b",
+        "PL010-0059#570369b0",
+        "PL010-1555#a1f71978"
+      ],
+      "disputeNote": null
+    },
+    {
+      "id": "AL09-9",
+      "status": "draft",
+      "heading": "Port lotniczy i zarządzający lotniskiem",
+      "body": [
+        "Prawo lotnicze (art. 2) definiuje:",
+        "- zarządzającego lotniskiem – podmiot wpisany jako zarządzający do rejestru lotnisk cywilnych (pkt 7); do rejestru wpisuje się jako zarządzającego zakładającego lotnisko albo, na jego wniosek, inny podmiot (art. 59 ust. 6);",
+        "- port lotniczy – lotnisko użytku publicznego wykorzystywane do lotów handlowych (pkt 17);",
+        "- lot handlowy – lot związany z lądowaniem handlowym (pkt 9), czyli lądowaniem w celu zabrania lub pozostawienia pasażerów, bagażu, towarów lub poczty przewożonych odpłatnie (pkt 8).",
+        "O tym, kto jest zarządzającym, decyduje wpis do rejestru, a nie pobieranie opłat za start i lądowanie ani sprawowanie nadzoru nad lotniskiem. Samo posiadanie zarządzającego nie wyróżnia portu lotniczego, bo zarządzającego ma każde lotnisko wpisane do rejestru; port lotniczy wyróżniają użytek publiczny i loty handlowe."
+      ],
+      "refs": [
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 2 pkt 7",
+          "quote": "zarządzającym lotniskiem jest podmiot, który został wpisany jako zarządzający do rejestru lotnisk cywilnych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 59 ust. 6",
+          "quote": "Do rejestru lotnisk wpisuje się jako zarządzającego lotniskiem:"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 59 ust. 6 pkt 1",
+          "quote": "zakładającego lotnisko"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 59 ust. 6 pkt 2",
+          "quote": "inny podmiot – na wniosek zakładającego lotnisko"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 2 pkt 17",
+          "quote": "portem lotniczym jest lotnisko użytku publicznego wykorzystywane do lotów handlowych"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 2 pkt 9",
+          "quote": "lotem handlowym jest lot związany z lądowaniem handlowym"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 2 pkt 8",
+          "quote": "lądowaniem handlowym jest lądowanie w celu zabrania lub pozostawienia pasażerów, bagażu, towarów lub poczty,\nprzewożonych odpłatnie"
+        }
+      ],
+      "questionKeys": [
+        "PL010-0360#49e69e38",
+        "PL010-0485#f7d15ad0",
+        "PL010-0485#fe044557"
+      ],
+      "disputeNote": null
+    }
+  ]
+}
