@@ -1087,7 +1087,7 @@ class ReviewSrc2R1Test(unittest.TestCase):
         text = ("ZAŁĄCZNIK\nSERA.7001. Przepisy ogólne\na) Pierwszy punkt dotyczy celów służb ruchu lotniczego;\nb) drugi punkt dotyczy zapobiegania kolizjom.\n"
                 "SERA.8015 Zezwolenia kontroli ruchu lotniczego\na) Pierwszy punkt zezwoleń;\nb) drugi punkt zezwoleń;\nc) trzeci punkt zezwoleń;\nd) czwarty punkt zezwoleń;\ne) Potwierdzenie przez powtórzenie zezwoleń i instrukcji:\n1) zezwolenia ATC:\n(i) zezwolenia na lot;\n"
                 "ea) Zmiany zezwolenia dotyczące trasy lub poziomu lotu\neb) Zezwolenie dotyczące ustawienia wysokościomierza\n"
-                "(i) zniżanie do poziomu pośredniego;\nec) Zezwolenia warunkowe wydawane przez kontrolera\nf) Dalszy punkt tego przepisu w tekście\n"
+                "1) zniżanie:\n(i) zniżanie do poziomu pośredniego;\nec) Zezwolenia warunkowe wydawane przez kontrolera\nf) Dalszy punkt tego przepisu w tekście\n"
                 "SERA.11001 Przepisy ogólne\nc) W sytuacji awaryjnej organy ATS udzielają pomocy i dają pierwszeństwo.\nd) Późniejsze działania ATC muszą się opierać na zamiarach pilota.\n"
                 "SERA.11005 Bezprawna ingerencja\naa) Statek powietrzny stara się ustawić transponder na kod 7500.\nab) Pilot dowódca podejmuje starania o jak najszybsze lądowanie.\nb) Organy ATS niezwłocznie spełniają żądania statku powietrznego.\n")
         a = ec.eureg_anchors(text, ())

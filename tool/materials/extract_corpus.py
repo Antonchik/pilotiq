@@ -1862,7 +1862,7 @@ def owner_anchors(text, cfg):
             if defs_on:
                 md = _ICAO_DEF_RE.match(line)
                 prev = rows[ri - 1][1].rstrip() if ri else ""
-                if md and prev and prev[-1] not in ".:;?)”\"*" and not prev.isupper() and not prev.startswith("=="):
+                if md and len(prev.split()) >= 5 and prev[-1] not in ".:;?)”\"*" and not prev.isupper() and not prev.startswith("=="):
                     md = None     # second line of a wrapped sentence ("... published by the International⏎Telecommunication Union (ITU).")
                 if md and not line.startswith("Note"):
                     for sp in spans:

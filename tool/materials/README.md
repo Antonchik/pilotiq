@@ -59,19 +59,24 @@
 никогда**. `outdated` попадает отдельным списком: `"outdated": {"<ключ>": {"note": "<basisNote>"}}` (schema остаётся 1: поле необязательное и добавлено, старый
 разбор его игнорирует) и ссылками в `links`; приложение показывает пометку «Pytanie opiera się na nieaktualnych przepisach. Jeśli pojawi się na egzaminie,
 liczy się odpowiedź z klucza ULC.» **всем** (без пэйвола). Для приложения нужна правка: прочитать `outdated`, при наличии ключа вопроса показать пометку
-вместо/над объяснением (текста объяснения нет), `note` можно показывать в Premium. Ключи `outdated` не входят в `topics[].order` (не занимают места в бесплатном образце).
+вместо/над объяснением (текста объяснения нет); видна всем именно пометка, `note` (причина) — по решению владельца (в Premium или всем); `note` не должен начинаться со служебного префикса вида `old-licence:` (`validate` это отвергает). Ключи `outdated` не входят в `topics[].order` (не занимают места в бесплатном образце).
 
 TODO (решение владельца позже, отдельным шагом): путь публикации записей, одобренных экспертом-человеком (свой вердикт `EXPERT`
 с указанием кто и когда; показ без `refs` с пометкой «wyjaśnienie bez podstawy w przepisach, sprawdzone przez …»). Сейчас такого пути нет намеренно.
 
 Локаторы `loc` по виду источника (`kind` в `sources.json`):
-- `statute`: `art. N[ ust. N][ pkt N]`; `convention`: `art. N[ ust. N]` или `załącznik N`;
-- `eu_reg`: `art. N[ ust. N]` или пункт приложения `SERA.5005`, `FCL.205.A`, `NCO.GEN.105`, `MED.A.030` с подпунктами `(a)(1)`;
-- `aip`: `GEN 1.2`, `ENR 1.2 pkt 2.1`; `easa`: пункт как у `eu_reg`, возможно с префиксом `AMC`/`GM`.
+- `statute`: `art. N[ ust. N][ pkt N[ lit. a]]`, для rozporządzeń `§ N[ ust. N][ pkt N[ lit. a]]` (`lit.`: буква `a)`, вставки `ea)`/`eb)`); приложения `załącznik N[ tabela T][ część R][ pkt L]`;
+  `convention`: `art. N[ ust. N]` или `załącznik N`;
+- `eu_reg`: `art. N[ ust. N][ pkt N]` или пункт приложения `SERA.5005`, `FCL.205.A`, `NCO.GEN.105`, `MED.A.030` с подпунктами `(a)(1)(i)`, в том числе двухбуквенными `(ea)`, `(aa)`;
+  приложения `załącznik [R][ dodatek N][ sekcja R(a)(1)][ pkt L]` (`załącznik XI dodatek 1 sekcja I(a)(2)`; главы и подпункты приложений без ID правил `załącznik pkt 6.8.7.10`, определения `załącznik I pkt 57`);
+- `aip`: `GEN 1.2`, `ENR 1.2 pkt 2.1`, `GEN 2.2 CBA` (сокращение; второе значение того же сокращения `GEN 2.2 CTA 2`), `GEN 2.4 EPWW`, `ENR 5.2.1 TSA`, `ENR 1.4 klasa C`, `ENR 1.4 przypis **` (сноска таблицы);
+- `easa`: как `eu_reg`, с префиксом `AMC`/`GM`/`CS`; `AMC1 SFCL.145 SECTION 2A` (секции программы экзамена; вторая таблица того же AMC: `AMC1 SFCL.145 (2) SECTION 5`, цифра = номер абзаца `(2)` перед таблицей);
+  `Article N(M)`, `Annex I(12)` (определения регламента), `Appendix N[ pkt L]`, `Appendix N to AMC1 …`;
+- `icao`: `Article 3 bis(a)`, `Chapter 5`, `pkt 5.4.2.1`, `def Aerodrome control service` (подопределения `def Risk of collision` — самостоятельные якоря, родитель обрезан до них), `Appendix N`; `itu`: `Appendix 18 channel 06`, `Appendix 18 note f`.
 
 Номера статей: `67`, `67fa`, `156zd`, `87[1]`, `87[1a]` (надстрочный индекс в квадратных скобках, как в `anchors/PL-PRAWO-LOTNICZE.json`).
 Источник со `status: "unavailable"` в `sources.json` процитировать нельзя: ссылка на него — ошибка `validate`, запись в ассет не идёт.
-У источников с `allowQuote: false` (`aip`, `easa`) `quote` не хранится (ошибка, если указан); проверяется только существование якоря.
+У источников с `allowQuote: false` (`easa`, `icao`, `itu`; значение по умолчанию для `aip`, `easa`, `icao`, `itu` — `false`, `aip` с `allowQuote: true` задан явно для AIP-PL) `quote` не хранится (ошибка, если указан); проверяется только существование якоря.
 `legalStateAsOf` в ассете — самая ранняя дата `legalState` (если нет — `fetched`) среди использованных источников.
 
 Проверка `quote`: sha256 корпуса `corpus/<id>.txt` должен совпадать с `textSha` в `anchors/<id>.json` (иначе смещения якорей указывают на чужой текст, ошибка).
@@ -79,7 +84,7 @@ TODO (решение владельца позже, отдельным шаго�
 `validate` выдаёт предупреждение «укажите его вместо …»: ссылайтесь на самый точный пункт.
 `build` берёт в ассет запись, только если статус, хеш и вердикт журнала согласованы (`verified` ↔ `PASS`, `disputed` ↔ `DISPUTED`);
 ручная смена статуса на `verified` после `FIX` запись в ассет не пускает.
-**Reference-only источники (EASA, AIP):** машинно проверяется только существование якоря, смысл по тексту корпуса обязан сверить editor
+**Reference-only источники (EASA, ICAO, ITU; AIP-PL — с цитатами):** машинно проверяется только существование якоря, смысл по тексту корпуса обязан сверить editor
 (цитат там нет). `legalStateAsOf` = `legalState` источника, иначе `fetched`.
 
 Дополнительные формы: statute `załącznik N[ tabela T][ część R][ pkt L]`; eu_reg `art. N[ ust. K][ pkt M]`, `załącznik [R]`, `dodatek N`, `załącznik R dodatek N`, любое из них с `pkt L`, правила `21.A.3A`, `M.A.201`, `ORA.AeMC.215`; easa `Article N(M)`, `GMn Article N(M)`, `Appendix N[ pkt L]`.
@@ -125,7 +130,7 @@ python3 tool/materials/materials.py validate
 
 ## Правило про `quote`
 Дословные цитаты хранятся только здесь, в `src/` и `summaries/`, для машинной проверки по корпусу. В ассет `build` их не кладёт
-(в `refs` ассета только `src` и `loc`). Источники `aip` и `easa` — только ссылки и собственный пересказ.
+(в `refs` ассета только `src` и `loc`). Источники `easa`, `icao`, `itu` — только ссылки и собственный пересказ.
 
 ## Тесты
 `python3 -m unittest discover -s tool/materials/tests -p 'test_materials*.py'`

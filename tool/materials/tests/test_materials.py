@@ -446,6 +446,29 @@ class UnverifiedBasisTest(Base):
         self.put_src("P01", [self.entry(refs=[{"src": "UNAV", "loc": "SERA.5005"}])])
         self.assertTrue(any("недоступен" in e for e in self.validate(no_corpus=True).errors))
 
+    def test_internal_category_prefix_is_rejected(self):
+        self.put_src("P01", [self.entry(basisNote="old-licence: obowiązek został zniesiony")])
+        self.assertTrue(any("служебного префикса" in e for e in self.errors()), self.errors())
+        self.put_src("P01", [self.entry(text="no-source: " + self.NO_SOURCE_TEXT)])
+        self.assertTrue(any("служебного префикса" in e for e in self.errors()), self.errors())
+        self.put_src("P01", [self.entry(basisNote="Obowiązek zniesiony: zob. nowe przepisy")])
+        self.assertEqual(self.errors(), [])
+
+    def test_quote_of_basis_entry_needs_a_corpus_to_be_checked(self):
+        self.put_src("P01", [self.entry(refs=[{"src": "LAW", "loc": "art. 1", "quote": "Statek powietrzny to teleport"}])])
+        store_none = m.AnchorStore.anchor_text
+        try:
+            m.AnchorStore.anchor_text = lambda self_, src, loc: None
+            self.assertTrue(any("нет корпуса/якоря" in e for e in self.validate().errors))
+        finally:
+            m.AnchorStore.anchor_text = store_none
+
+    def test_quote_default_is_denied_for_aip_easa_icao_itu(self):
+        for kind in ("aip", "easa", "icao", "itu"):
+            self.assertFalse(m.src_quotable({"kind": kind}), kind)
+        for kind in ("statute", "eu_reg", "convention"):
+            self.assertTrue(m.src_quotable({"kind": kind}), kind)
+
     def test_same_as_cannot_be_combined_with_basis(self):
         other = self.key_of("PL010-1001")
         self.put_src("P01", [self.entry(sameAs=other)])
