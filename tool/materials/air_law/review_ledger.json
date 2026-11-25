@@ -865,11 +865,11 @@
  },
  "PL010-0092#1e5b9b2b": {
   "date": "2026-11-25",
-  "note": "Merytorycznie zgodne z § 12 ust. 1 i § 11 ust. 2 pkt 2 LIC. Zdanie 2 («czyli w decyzji o zawieszeniu») opiera się na tym, że zawieszenie następuje w drodze decyzji administracyjnej — tego nie ma w § 11/§ 12, a refs nie zawierają podstawy. Dodać ref PL-PRAWO-LOTNICZE loc 'art. 96 ust. 3' z cytatem całego ustępu (254 zn., mieści się w limicie i nie wywoła ostrzeżenia o węższym pkt): «Prezes Urzędu: 1) wydaje, zmienia, zawiesza, przywraca, cofa lub wznawia ważność, 2) uznaje, zawiesza uznanie, przywraca uznanie albo cofa uznanie – licencji, świadectw kwalifikacji lub uprawnień do nich wpisywanych w drodze decyzji administracyjnej.» (uwaga: końcówka «w drodze decyzji administracyjnej» leży w anchorze art. 96 ust. 3 pkt 2 — artefakt parsera, nie cytować jej pod pkt 2). Tekst bez zmian.",
+  "note": "Dodano ref art. 96 ust. 3 PL z pełnym cytatem ustępu («…w drodze decyzji administracyjnej») — podstawa sformułowania «w decyzji o zawieszeniu» jest teraz w refs; tekst bez zmian, zgodny z § 12 ust. 1 i § 11 ust. 2 pkt 2 LIC; validate bez ostrzeżeń.",
   "portion": "LIC",
-  "round": 1,
-  "textSha": "0af58d331fb631df",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "2341c0a9300d4c18",
+  "verdict": "PASS"
  },
  "PL010-0092#fd5d1346": {
   "date": "2026-11-25",
@@ -2257,11 +2257,11 @@
  },
  "PL010-0260#d6a0a88b": {
   "date": "2026-11-25",
-  "note": "Zdanie 1 pomija warunek z § 12 ust. 2 LIC: dokumenty potwierdzające spełnienie wymagań dołącza się, «jeżeli zostały określone zgodnie z § 11 ust. 2 pkt 2» — w obecnej formie tekst twierdzi, że zawsze, i jest niespójny z 0259#f63da24b. Dopisać warunek (np. «…oraz – jeżeli je określono przy zawieszeniu (§ 11 ust. 2 pkt 2) – dokumenty potwierdzające…»). Klucz nadal zgodny z normą (dosłownie § 12 ust. 2), disputeNote niepotrzebny.",
+  "note": "Warunek z § 12 ust. 2 LIC («jeżeli zostały określone zgodnie z § 11 ust. 2 pkt 2») oddany w tekście i w pełnym cytacie, dodano ref § 11 ust. 2 pkt 2; spójne z 0259. Nieblokujące: sformułowanie «określono w decyzji o zawieszeniu» opiera się na art. 96 ust. 3 PL (decyzja administracyjna) — można dodać ten ref jak w 0092#1e5b9b2b. 3 zdania, ≤700 zn., validate bez ostrzeżeń.",
   "portion": "LIC",
-  "round": 1,
-  "textSha": "b2884837867c7fcb",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "cd1e01fadacf1c39",
+  "verdict": "PASS"
  },
  "PL010-0261#5c533218": {
   "date": "2026-11-24",

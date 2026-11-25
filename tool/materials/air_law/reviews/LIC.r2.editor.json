@@ -1,0 +1,4 @@
+[
+{"key":"PL010-0092#1e5b9b2b","verdict":"PASS","note":"Dodano ref art. 96 ust. 3 PL z pełnym cytatem ustępu («…w drodze decyzji administracyjnej») — podstawa sformułowania «w decyzji o zawieszeniu» jest teraz w refs; tekst bez zmian, zgodny z § 12 ust. 1 i § 11 ust. 2 pkt 2 LIC; validate bez ostrzeżeń."},
+{"key":"PL010-0260#d6a0a88b","verdict":"PASS","note":"Warunek z § 12 ust. 2 LIC («jeżeli zostały określone zgodnie z § 11 ust. 2 pkt 2») oddany w tekście i w pełnym cytacie, dodano ref § 11 ust. 2 pkt 2; spójne z 0259. Nieblokujące: sformułowanie «określono w decyzji o zawieszeniu» opiera się na art. 96 ust. 3 PL (decyzja administracyjna) — można dodać ten ref jak w 0092#1e5b9b2b. 3 zdania, ≤700 zn., validate bez ostrzeżeń."}
+]
