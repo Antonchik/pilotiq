@@ -4248,11 +4248,11 @@
   "verdict": "PASS"
  },
  "PL010-0327#ffde589b": {
-  "date": "2026-11-24",
-  "note": "Klucz = art. 17 ust. 1 PL (cytat i lokator dokładne); dystraktory poprawnie odrzucone. Treść identyczna z wzorcem STYLE §6.",
-  "portion": "P29",
+  "date": "2026-11-25",
+  "note": "Pkt 3.2 Zał. 13: «Państwo ustanawia organ badający wypadki, który jest niezależny od państwowych władz lotniczych i innych podmiotów…» – cytat dosłowny w kotwicy 3.2, bez «†». Dopisek nie jest sprzeczny z art. 17 ust. 1 PL (PKBWL przy ministrze właściwym do spraw transportu – niezależność dotyczy władz lotniczych, nie ministra, a tekst tego nie twierdzi). Klucz wyjaśniony, 485 zn., 3 zdania.",
+  "portion": "ANX3",
   "round": 1,
-  "textSha": "83e94c432ce9538f",
+  "textSha": "4be35da28933bc85",
   "verdict": "PASS"
  },
  "PL010-0328#4f2e637e": {
@@ -7152,11 +7152,11 @@
   "verdict": "PASS"
  },
  "PL099-0001#627b8b92": {
-  "date": "2026-11-24",
-  "note": "Klucz = art. 134 ust. 1 PL (badanie okoliczności i przyczyn, cel zapobiegawczy) + art. 2 pkt 14 rozp. 996/2010 (zalecenia dotyczące bezpieczeństwa); pułapka o winie poparta zdaniem „Komisje nie orzekają co do winy i odpowiedzialności”. Utożsamienie zaleceń dotyczących bezpieczeństwa z „profilaktycznymi” z klucza – dopuszczalne.",
-  "portion": "P29",
+  "date": "2026-11-25",
+  "note": "Pkt 3.1 Zał. 13 (Dz. Urz. ULC 2024 poz. 51): «Jedynym celem badania… jest zapobieganie… Działalność ta nie ma na celu orzekania o winie lub odpowiedzialności» – cytat dosłowny, w kotwicy 3.1, bez «†». Zgodne z art. 134 ust. 1 PL («Komisje nie orzekają co do winy i odpowiedzialności») i art. 2 pkt 14 rozp. 996/2010. Klucz (przyczyny, okoliczności, zalecenia profilaktyczne, bez winnych) wyjaśniony. 616 zn.",
+  "portion": "ANX3",
   "round": 1,
-  "textSha": "ac538fe8950442ca",
+  "textSha": "e8272a08a51ce451",
   "verdict": "PASS"
  },
  "PL099-0003#2466e740": {
