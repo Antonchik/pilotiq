@@ -1073,19 +1073,19 @@
  },
  "PL010-0112#12b21234": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Komisja Egzaminacyjna») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 5 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji po zawieszeniu licencji z powodu uzasadnionego przypuszczenia braku wymaganej wiedzy lub umiejętności, np. w wyniku badania incydentu lotniczego, dokonuje komisja egzaminacyjna w formie egzaminu teoretycznego lub praktycznego. Są to części egzaminu państwowego (§ 2 pkt 5 i 6 tego rozporządzenia), składanego przed komisją egzaminacyjną (art. 99 ust. 1 Prawa lotniczego). Prezes ULC powołuje członków komisji (art. 99 ust. 2), ale sprawdzenia dokonuje komisja.»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "9a02f2a1251e96f9",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "5a760ac60829163f",
+  "verdict": "PASS"
  },
  "PL010-0112#2321b2d3": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Prezes ULC») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 5 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji po zawieszeniu licencji z powodu uzasadnionego przypuszczenia braku wymaganej wiedzy lub umiejętności, np. w wyniku badania incydentu lotniczego, dokonuje się w formie egzaminu teoretycznego lub praktycznego, a egzaminy państwowe przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 26a ust. 1 pkt 5 Prawa lotniczego). Egzaminatorami są członkowie komisji egzaminacyjnej powołani i upoważnieni przez Prezesa (art. 99 ust. 2 Prawa lotniczego, § 2 pkt 4 i 5 rozporządzenia w sprawie egzaminów państwowych).» Klucz nie jest sporny: Komisji nie ma wśród odpowiedzi, a art. 26a ust. 1 pkt 5 PL mówi o «przeprowadzanych przez Prezesa Urzędu egzaminach»; pozostałe odpowiedzi (ministrowie, EASA) bez oparcia.",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "58f26df575588706",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "78320cdbcb8f54c4",
+  "verdict": "PASS"
  },
  "PL010-0113#12b21234": {
   "date": "2026-11-25",
@@ -1105,19 +1105,19 @@
  },
  "PL010-0113#a35f2f7b": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Prezes ULC») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 5 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji po zawieszeniu licencji z powodu uzasadnionego przypuszczenia braku wymaganej wiedzy lub umiejętności, np. w wyniku badania wypadku lotniczego, dokonuje się w formie egzaminu teoretycznego lub praktycznego, a egzaminy państwowe przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 26a ust. 1 pkt 5 Prawa lotniczego). Egzaminatorami są członkowie komisji egzaminacyjnej powołani i upoważnieni przez Prezesa (art. 99 ust. 2 Prawa lotniczego, § 2 pkt 4 i 5 rozporządzenia w sprawie egzaminów państwowych).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "34500a75930c5db6",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "ce3328c2d6e44cb1",
+  "verdict": "PASS"
  },
  "PL010-0114#0eae3bbb": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Prezes ULC») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 5 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji po zawieszeniu licencji z powodu uzasadnionego przypuszczenia braku wymaganej wiedzy lub umiejętności, np. w wyniku wykonywania czynności nadzoru lotniczego, dokonuje się w formie egzaminu teoretycznego lub praktycznego, a egzaminy państwowe przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 26a ust. 1 pkt 5 Prawa lotniczego). Egzaminatorami są członkowie komisji egzaminacyjnej powołani i upoważnieni przez Prezesa (art. 99 ust. 2 Prawa lotniczego, § 2 pkt 4 i 5 rozporządzenia w sprawie egzaminów państwowych).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "adf12167d2129d92",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "c8624a213d25fd6d",
+  "verdict": "PASS"
  },
  "PL010-0114#12b21234": {
   "date": "2026-11-25",
@@ -1153,51 +1153,51 @@
  },
  "PL010-0116#65a3f975": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Lotnicza Komisja Egzaminacyjna») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 2 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji przed wydaniem uprawnienia dokonuje komisja egzaminacyjna w formie egzaminu teoretycznego lub praktycznego. Egzamin praktyczny to część egzaminu państwowego przeprowadzana m.in. w celu wydania, przedłużenia albo wznowienia uprawnień, a egzaminatorem jest członek komisji egzaminacyjnej (§ 2 pkt 4 i 7 rozporządzenia w sprawie egzaminów państwowych). Obecny przepis mówi o komisji egzaminacyjnej, a Prezes ULC powołuje jej członków (art. 99 ust. 2 Prawa lotniczego).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "df987d1532113c20",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "639f29e22f50b06c",
+  "verdict": "PASS"
  },
  "PL010-0116#e13918bd": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Prezes ULC») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 2 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji przed wydaniem uprawnienia dokonuje się w formie egzaminu teoretycznego lub praktycznego, a egzaminy państwowe przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 26a ust. 1 pkt 5 Prawa lotniczego). Egzaminatorami są członkowie komisji egzaminacyjnej powołani i upoważnieni przez Prezesa (art. 99 ust. 2 Prawa lotniczego, § 2 pkt 4 i 7 rozporządzenia w sprawie egzaminów państwowych).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "77c6cebf8bb97d2f",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "8a2cd82dba129b09",
+  "verdict": "PASS"
  },
  "PL010-0117#811ddf60": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Prezes ULC») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 3 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji w celu przedłużenia ważności uprawnienia dokonuje się w formie egzaminu teoretycznego lub praktycznego, a egzaminy państwowe przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 26a ust. 1 pkt 5 Prawa lotniczego). Egzaminatorami są członkowie komisji egzaminacyjnej powołani i upoważnieni przez Prezesa (art. 99 ust. 2 Prawa lotniczego, § 2 pkt 4 i 7 rozporządzenia w sprawie egzaminów państwowych).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "826c67c5cd3ad25b",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "433a211a9d06f868",
+  "verdict": "PASS"
  },
  "PL010-0117#d1eefb72": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Lotnicza Komisja Egzaminacyjna») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 3 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji w celu przedłużenia ważności uprawnienia dokonuje komisja egzaminacyjna w formie egzaminu teoretycznego lub praktycznego. Egzamin praktyczny to część egzaminu państwowego przeprowadzana m.in. w celu wydania, przedłużenia albo wznowienia uprawnień, a egzaminatorem jest członek komisji egzaminacyjnej (§ 2 pkt 4 i 7 rozporządzenia w sprawie egzaminów państwowych). Obecny przepis mówi o komisji egzaminacyjnej, a Prezes ULC powołuje jej członków (art. 99 ust. 2 Prawa lotniczego).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "b5a572c5ec7564cb",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "c30001e3984d85a4",
+  "verdict": "PASS"
  },
  "PL010-0118#9470cfc0": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Lotnicza Komisja Egzaminacyjna») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 3 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji w celu wznowienia ważności uprawnienia dokonuje komisja egzaminacyjna w formie egzaminu teoretycznego lub praktycznego. Egzamin praktyczny to część egzaminu państwowego przeprowadzana m.in. w celu wydania, przedłużenia albo wznowienia uprawnień, a egzaminatorem jest członek komisji egzaminacyjnej (§ 2 pkt 4 i 7 rozporządzenia w sprawie egzaminów państwowych). Obecny przepis mówi o komisji egzaminacyjnej, a Prezes ULC powołuje jej członków (art. 99 ust. 2 Prawa lotniczego).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "346872ea9fc19e04",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "af8c7943f88779bd",
+  "verdict": "PASS"
  },
  "PL010-0118#a9aa22f8": {
   "date": "2026-11-25",
-  "note": "STYLE §1 pkt 2: pierwsze zdanie nie odpowiada na pytanie «Kto…» – opisuje tylko formę sprawdzenia (egzamin teoretyczny/praktyczny), a odpowiedź z klucza («Prezes ULC») pojawia się dopiero w zdaniu 2 (tak samo FIX-owano w P06/P05). Merytorycznie zgodne z korpusem (§ 32 ust. 1, § 34 ust. 2 LIC – mające zastosowanie do licencji Part-FCL na mocy § 31; art. 99 ust. 1–2 PL; § 2 pkt 4/5/7 EGZ); refs, loc i cytaty bez zmian. Nowy tekst: «Zgodnie z § 32 ust. 1 pkt 3 i § 34 ust. 2 rozporządzenia w sprawie licencjonowania personelu lotniczego sprawdzenia kwalifikacji w celu wznowienia ważności uprawnienia dokonuje się w formie egzaminu teoretycznego lub praktycznego, a egzaminy państwowe przeprowadza Prezes Urzędu Lotnictwa Cywilnego (art. 26a ust. 1 pkt 5 Prawa lotniczego). Egzaminatorami są członkowie komisji egzaminacyjnej powołani i upoważnieni przez Prezesa (art. 99 ust. 2 Prawa lotniczego, § 2 pkt 4 i 7 rozporządzenia w sprawie egzaminów państwowych).»",
+  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
   "portion": "P07",
-  "round": 1,
-  "textSha": "a82990c1a5db1709",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "876b409b4cd2998d",
+  "verdict": "PASS"
  },
  "PL010-0119#0814319b": {
   "date": "2026-11-24",
@@ -3045,6 +3045,14 @@
   "portion": "P06",
   "round": 2,
   "textSha": "1b0169ffb1b3d7a3",
+  "verdict": "PASS"
+ },
+ "PL010-0345#f3fbf88f": {
+  "date": "2026-11-25",
+  "note": "Runda 2 (dawne outdated → draft): § 9 ust. 2 LIC (kopie dokumentów potwierdzających spełnienie wymagań niezbędnych do wydania licencji) + art. 96 ust. 1 pkt 5 (sprawność, orzeczenie) i pkt 6 PL (szkolenie lotnicze, praktyka lotnicza) potwierdzają klucz «wszystkie trzy rodzaje dokumentów»; odpowiedzi «Tylko…» wykluczone przez «łącznie spełnia». Zdanie 3 poprawnie: art. 98 ust. 2 w anchorze obejmuje też utrzymanie wiadomości i umiejętności; brak osobnej procedury po utracie ważności zgodny z LIC/SWK/EGZ. basis/basisNote usunięte, cytaty dosłowne, loc najwęższe, 3 zdania, 662 zn.",
+  "portion": "P07",
+  "round": 2,
+  "textSha": "dd9880bd2b11d33e",
   "verdict": "PASS"
  },
  "PL010-0346#3694eff7": {
