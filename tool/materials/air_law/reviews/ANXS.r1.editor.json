@@ -1,0 +1,12 @@
+[
+ {
+  "key": "AL16-14",
+  "verdict": "FIX",
+  "note": "Treść dodatku do Załącznika 12 sprawdzona z korpusem i z obrazem PDF s. 26 (APP-2): pkt 1.1 lit. a–c, pkt 1.2 (za rufą – pomoc niepotrzebna), tabela 2.1 poz. 2 X „Potrzebna pomoc medyczna”, poz. 3 N „Nie lub Odmowa”, pkt 3.1 lit. a/b i 3.2 – zgodne. AIP GEN 3.6 pkt 6 sparafrazowane poprawnie (cytat z polskiej kolumny). disputeNote (371 znaków) identyczny z zaakceptowanymi PL099-0058/0059 – poprawny, punkty 5.6.3/5.6.4 w refs; questionKeys = 0070, 0071, 0061 (sameAs), 0058, 0059 – zgodne z ANX.r1; 173 słowa; cytaty spoza tekstów datowanych („od 26 listopada 2026”). Do poprawy jedno zdanie: „Sygnał wizualny statek powietrzny stosuje, gdy nie może nawiązać łączności radiowej (pkt 5.6.5).” uogólnia pkt 5.6.5, który dotyczy tylko kierowania jednostki nawodnej; w tym samym rozdziale pkt 5.6.4 podaje inny warunek dla potwierdzenia znaku na ziemi (sygnał wizualny, gdy nie można zrzucić urządzenia łączności lub informacji), więc zdanie przeczy końcowemu zdaniu sekcji. Zastąpić tekstem: „Gdy statek powietrzny ma skierować jednostkę nawodną na miejsce niebezpieczeństwa, a łączność radiowa nie może być nawiązana, stosuje odpowiedni sygnał wizualny (pkt 5.6.5).” (ok. 182 słowa). Opcjonalnie w punkcie o jednostce nawodnej: „z przechylaniem ze skrzydła na skrzydło (albo zmianą obrotów silnika lub skoku śmigła)” – lit. b) podaje trzy warianty."
+ },
+ {
+  "key": "AL09-10",
+  "verdict": "PASS",
+  "note": "Zał. 11 pkt 2.11.5.2: „Boczne granice strefy kontrolowanej lotniska sięgają co najmniej 9,3 km (5 NM) od środka danego lotniska…” – zgodne; Zał. 11 nie ma tekstów przyszłej redakcji. Rozp. 2017/373 zał. XI dodatek 1 sekcja I lit. c) ppkt 1 – granice obejmują tory lotów IFR, bez odległości – zgodne. Treść zgodna z verified PL010-1559#af2fad09, jedyny klucz w questionKeys; 115 słów. Zdanie-pułapka o 7,4 / 11,1 / 45 km jest dopuszczalne: przepis podaje jedną wartość minimalną (9,3 km), więc inne wartości z odpowiedzi nie są tym minimum – to bezpośrednie odczytanie normy, a nie fakt spoza źródła."
+ }
+]
