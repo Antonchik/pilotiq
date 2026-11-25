@@ -279,6 +279,14 @@
   "textSha": "ee0d5b0dac7158e8",
   "verdict": "PASS"
  },
+ "PL010-0029#9e70f993": {
+  "date": "2026-11-25",
+  "note": "Art. 115 ust. 4 Prawa lotniczego zawiera wszystkie trzy elementy odpowiedzi; spójne z P25/P26 (art. 115).",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "6c64af241ed27535",
+  "verdict": "PASS"
+ },
  "PL010-0030#a42ae0d0": {
   "date": "2026-11-24",
   "note": "Art. 105 ust. 2 dosłownie; brak wyjątków w przepisie — poprawnie.",
@@ -4551,6 +4559,14 @@
   "textSha": "ac538fe8950442ca",
   "verdict": "PASS"
  },
+ "PL099-0003#2466e740": {
+  "date": "2026-11-25",
+  "note": "ML.A.201(d) – pilot dowódca odpowiada za przegląd przedlotowy; definicja „przegląd przed lotem” w art. 2 lit. j) 1321/2014 (lokator art. 2 – najwęższy dostępny). Part-ML dla statków PPL właściwa; tekst nie twierdzi niczego ponad przepis. NCO.OP.135(b) poprawnie jako element przygotowania lotu.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "8bf39acd0b45d034",
+  "verdict": "PASS"
+ },
  "PL099-0004#0d5127d8": {
   "date": "2026-11-24",
   "note": "Poprawione: disputeNote (312 zn.) z SERA.14095(d)(3) (służby naziemne w operacjach poszukiwawczo-ratowniczych) i (d)(5) (jednostka ratunkowa – w EAR SERA survival craft) – oba w refs, cytaty zgodne z korpusem. Klucz nadal oparty na art. 4a ust. 1 i (d)(1). Sporność przechodzi na sameAs PL102-0051#6d850997.",
@@ -4583,6 +4599,22 @@
   "textSha": "e970a96287d01dfd",
   "verdict": "DISPUTED"
  },
+ "PL099-0015#1aea0d31": {
+  "date": "2026-11-25",
+  "note": "Brak przepisu wprost o urządzeniach naziemnych; tekst uczciwie przedstawia klucz jako zastosowanie zasady NCO.GEN.105(d) („Klucz stosuje tę zasadę…”), nie przypisując przepisowi treści, której nie ma. Dopuszczalne; w korpusie brak bliższej normy (SERA.12005 dotyczy meteorologii).",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "88326bd32e965ad7",
+  "verdict": "PASS"
+ },
+ "PL099-0017#12fa010b": {
+  "date": "2026-11-25",
+  "note": "NCO.OP.185(c) MAYDAY FUEL przy szacowanym paliwie po wylądowaniu poniżej ostatecznej rezerwy; wniosek dla paliwa już poniżej rezerwy logiczny; pułapka z lit. b) (MINIMUM FUEL) poprawna. Tekst zachowuje zastrzeżenie „lotu kontrolowanego”.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "24253cf9667443c4",
+  "verdict": "PASS"
+ },
  "PL099-0022#aaa2df9d": {
   "date": "2026-11-24",
   "note": "Sporne słusznie: art. 4 ust. 6 lit. a rozp. 376/2014 – pilot dowódca zgłasza przez system organizacji (ust. 2) „lub — alternatywnie —” przez system państwa członkowskiego (ust. 3); art. 135a ust. 1 PL: system z art. 4 ust. 3 obsługuje Komisja. Klucz nadal poprawny, ale „PKBWL” też zgodne z przepisami (dla pilota GA bez organizacji to jedyna droga). Zbliżenia = art. 4 ust. 1 lit. c ppkt (i). disputeNote poprawny, wszystkie punkty w refs.",
@@ -4605,6 +4637,62 @@
   "portion": "P29",
   "round": 1,
   "textSha": "77ef13ac2d2b1fe8",
+  "verdict": "PASS"
+ },
+ "PL099-0034#73f7420d": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.155(a)(3) (MEL nie mniej restrykcyjny niż MMEL) i ARO.OPS.205(c) (zatwierdzenie poza MEL tylko w granicach MMEL) zgodne z korpusem; wniosek „nie można zezwolić” poprawny.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "214f10c946abc533",
+  "verdict": "PASS"
+ },
+ "PL099-0035#c6f65bec": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(d) – niezwłoczne zgłoszenie jednostce ATS; klucz i pułapka zgodne z przepisem.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "5e2e4035c83b2766",
+  "verdict": "PASS"
+ },
+ "PL099-0036#742ee4e6": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(a)(2) – rozpoczęcie, kontynuacja, zakończenie lub zmiana kursu lotu należy do pilota dowódcy.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "51080776b01fc4b8",
+  "verdict": "PASS"
+ },
+ "PL099-0037#f092f413": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(e) i (a)(2) zgodne z korpusem; przypisanie wyboru miejsca lądowania awaryjnego dowódcy jest rozsądnym zastosowaniem lit. e).",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "903f210498882bf8",
+  "verdict": "PASS"
+ },
+ "PL099-0038#257e330c": {
+  "date": "2026-11-25",
+  "note": "Lit. f) NCO.GEN.140 mówi o substancjach „wykorzystywanych w celu łatwiejszego zapewnienia bezpieczeństwa lotu”, których obecność zapewnia natychmiastową dostępność do celów operacyjnych, a nie o substancjach „niezbędnych do działania istotnych systemów”; zdanie „Klucz ULC odpowiada temu wyjątkowi” przesadza dopasowanie, a przepis nie wymienia materiałów promieniotwórczych (odsyła do pkt 1.2.2.1 lit. a) Instrukcji Technicznych, spoza korpusu). Proponowany tekst (689 znaków): „Pkt NCO.GEN.140 lit. f) rozporządzenia 965/2012 uznaje za dopuszczone uzasadnione ilości substancji, które zostałyby w innym przypadku zaklasyfikowane jako materiały niebezpieczne, jeżeli służą łatwiejszemu zapewnieniu bezpieczeństwa lotu, a ich obecność zapewnia natychmiastową dostępność do celów operacyjnych. Na tym wyjątku opiera się klucz ULC (substancje niezbędne do działania istotnych systemów statku powietrznego), choć przepis nie wymienia materiałów promieniotwórczych i odsyła do Instrukcji Technicznych, których treści nie sprawdzono. Bezwzględnego zakazu nie ma: materiały niebezpieczne przewozi się zgodnie z lit. a), co do zasady przez zatwierdzonych operatorów (lit. b)).” Drugi cytat lit. f) można wydłużyć o „na mocy pkt 1.2.2.1 lit. a) Instrukcji Technicznych”. Refs bez zmian.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "1985bf82dfcbcf14",
+  "verdict": "FIX"
+ },
+ "PL099-0039#b2e986e4": {
+  "date": "2026-11-25",
+  "note": "Art. 158 ust. 1 Prawa lotniczego dosłownie.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "0cb85475b41e41b5",
+  "verdict": "PASS"
+ },
+ "PL099-0040#6967dade": {
+  "date": "2026-11-25",
+  "note": "Pkt 3.0.1, 3.1.1.1, 3.2.1.1 załącznika do 2015/1998 i art. 13 ust. 1 rozporządzenia 300/2008 zgodne z korpusem; tekst nie przypisuje przepisom sformułowania o „ukryciu osób lub ładunku”, wskazuje przewoźnika lotniczego jako podmiot odpowiedzialny za środki ochrony własnych statków powietrznych. Nieobowiązkowo writer może dopisać, że przepis nie używa sformułowania z pytania.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "dd8c72fa91d78c15",
   "verdict": "PASS"
  },
  "PL099-0041#53193328": {
@@ -4631,6 +4719,14 @@
   "textSha": "182afeb623277d65",
   "verdict": "PASS"
  },
+ "PL099-0047#683da903": {
+  "date": "2026-11-25",
+  "note": "NCO.OP.170(a) dosłownie odpowiada kluczowi; pułapka z NCO.OP.165 poprawna.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "1b84a2e0b0ff7ac6",
+  "verdict": "PASS"
+ },
  "PL099-0048#41a50c8a": {
   "date": "2026-11-24",
   "note": "Sprawdzone: NCO.OP.155 (jedyny przepis dla samolotów/śmigłowców poza CAT/NCC w korpusie) – „Pilot dowódca nie zezwala na palenie tytoniu na pokładzie: a) kiedy uznaje się to za konieczne ze względów bezpieczeństwa; oraz b) podczas uzupełniania paliwa” – brak bezwzględnego zakazu, więc klucz „Palenie tytoniu nie jest dozwolone” wykracza poza normę; żadnej zmiany redakcji korpus nie wykazuje → disputed, nie outdated. Bezwzględne zakazy są tylko dla szybowców (SAO.OP.130) i balonów (BOP.BAS.135), a pytanie jest z banków PPL(A)/PPL(H). Tekst objaśnia, na czym opiera się klucz; disputeNote (340 znaków) wskazuje lit. a) i b), które są w refs, ostrożna formuła „wcześniejsze przepisy lub bardziej rygorystyczna interpretacja”, zawiera formułę o kluczu ULC.",
@@ -4639,6 +4735,14 @@
   "textSha": "1c3669674ba8af3c",
   "verdict": "DISPUTED"
  },
+ "PL099-0050#e65d8d6d": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(e) + AMC1 NCO.GEN.105(e) (EASA): raport do organu państwa zdarzenia, kopia do własnego organu, „as soon as possible and normally within 10 days” – oddane wiernie, refs easa bez quote.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "847d6bd4cbb2f0b1",
+  "verdict": "PASS"
+ },
  "PL099-0051#1b7ba0eb": {
   "date": "2026-11-24",
   "note": "Poprawione: tekst wskazuje część CAT (ref załącznik IV „OPERACJE ZAROBKOWEGO TRANSPORTU LOTNICZEGO”), disputeNote (351 zn.) trafnie podaje, że część NCO nie przewiduje raportu o zderzeniu z ptakiem (w 965/2012 tylko CAT.GEN.MPA.105(d)), a w CAT raport tylko przy znaczących uszkodzeniach/awarii systemu; punkty w refs.",
@@ -4646,6 +4750,46 @@
   "round": 2,
   "textSha": "6b98ca0f4ca2b819",
   "verdict": "DISPUTED"
+ },
+ "PL099-0057#c60ce8c2": {
+  "date": "2026-11-25",
+  "note": "SERA.2020 zgodny z korpusem: zakaz wykonywania funkcji pod wpływem środka psychotropowego i podejmowania ryzyka jego użycia; pułapka (brak okresu 6/12/24 h) poparta NCO.GEN.105(a)(5). Cytaty dosłowne.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "d1c012ab558705f4",
+  "verdict": "PASS"
+ },
+ "PL099-0062#b3518057": {
+  "date": "2026-11-25",
+  "note": "NCO.OP.175(a) dosłownie odpowiada kluczowi („nie wpłyną ujemnie na bezpieczeństwo startu i odlotu”).",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "8be99916296e83e0",
+  "verdict": "PASS"
+ },
+ "PL099-0066#31bcc08a": {
+  "date": "2026-11-25",
+  "note": "SERA.3220(a)/(b) – podwójne urządzenia sterownicze i pilot bezpieczeństwa przy jednym z nich; pułapka o polu widzenia trafna.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "bcc7ac2a0a56f52e",
+  "verdict": "PASS"
+ },
+ "PL099-0072#8d8a3d1a": {
+  "date": "2026-11-25",
+  "note": "Pytanie dotyczy wprost zarobkowego przewozu, więc CAT.OP.MPA.275(a) jest właściwą normą; NCO.OP.180(a)(1) poprawnie dodany jako odpowiednik dla lotów niekomercyjnych.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "0486795b22599a17",
+  "verdict": "PASS"
+ },
+ "PL099-0073#5c465324": {
+  "date": "2026-11-25",
+  "note": "ORO.MLR.100(d) dosłownie; AMC3 ORO.MLR.100 (EASA) zawiera w części A rozdz. 2 „Operational control and supervision” – zgodne.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "8b116282e86f1614",
+  "verdict": "PASS"
  },
  "PL099-0074#9b6f9c4c": {
   "date": "2026-11-24",
@@ -4663,12 +4807,28 @@
   "textSha": "d28e7397b1277c2e",
   "verdict": "PASS"
  },
+ "PL099-0077#d3f2ca9f": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(a)(8) – usterki w dzienniku technicznym lub dzienniku podróży; klucz zgodny.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "5c9bfc9bd4f973c2",
+  "verdict": "PASS"
+ },
  "PL099-0079#cfe733ba": {
   "date": "2026-11-24",
   "note": "Poprawione: 72 h oparte na art. 135a ust. 3 PL (dotyczy każdego zgłoszenia Komisji), krąg podmiotów z ust. 2 z zastrzeżeniem „statków nieobjętych rozporządzeniem 376/2014”, poparty cytatem; art. 4 ust. 8 rozp. 376/2014 poprawnie odniesiony do właściwego organu. 2 zdania, 539 zn.",
   "portion": "P29",
   "round": 2,
   "textSha": "08cd9b5427dd7461",
+  "verdict": "PASS"
+ },
+ "PL099-0080#28cb9106": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(e) i SAO.GEN.130(k) – odstąpienie od zasad/przepisów w interesie bezpieczeństwa; brak wymogu konsultacji z załogą.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "88cd341b999e9cc9",
   "verdict": "PASS"
  },
  "PL099-0082#7e61b8ba": {
@@ -4711,6 +4871,14 @@
   "textSha": "021c35a960128f29",
   "verdict": "PASS"
  },
+ "PL099-0091#b4d5dc8c": {
+  "date": "2026-11-25",
+  "note": "Spór zasadny i disputeNote poprawny (NCO.GEN.105(f)(1) – pas zapięty podczas lotu na stanowisku, (f)(2) – pilot pozostaje za sterami przez cały czas; CAT.OP.MPA.225(a)(2) – pozostałe fazy lotu; zmiany redakcji brak → DISPUTED, nie outdated). Jedyna poprawka: tekst musi powiedzieć, że CAT.OP.MPA.225 to przepis dla zarobkowego transportu lotniczego (pytanie z banku PPL). Pierwsze zdanie: „Klucz ULC odpowiada pkt CAT.OP.MPA.225 lit. a) ppkt 1 rozporządzenia 965/2012, który dotyczy operacji zarobkowego transportu lotniczego (część CAT): podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania.” (całość 470 znaków). disputeNote bez zmian; po poprawce – DISPUTED.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "a2e90b28e23ca115",
+  "verdict": "FIX"
+ },
  "PL099-0092#a74def59": {
   "date": "2026-11-24",
   "note": "Poprawione: pułapka oddaje SERA.2010 lit. a) wiernie (użytkowanie zgodnie z przepisami, niezależnie od tego, czy osobiście pilotuje). Skrócone zdanie 2 zgodne z NCO.GEN.105(a)(1) (pominięcie „wszystkich” i „podczas użytkowania” nie zmienia sensu). 3 zdania, 697 znaków, validate bez uwag.",
@@ -4718,6 +4886,38 @@
   "round": 2,
   "textSha": "5607e656bd2ae6a2",
   "verdict": "PASS"
+ },
+ "PL099-0094#1ce7b659": {
+  "date": "2026-11-25",
+  "note": "NCO.GEN.105(a)(4)(i) i (iii) – dowódca upewnia się przed lotem o zdatności i działaniu wymaganych przyrządów; przypisanie sprawdzenia wysokościomierza dowódcy uzasadnione.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "2c20efa5a8e54e91",
+  "verdict": "PASS"
+ },
+ "PL099-0095#06179f71": {
+  "date": "2026-11-25",
+  "note": "NCO.OP.125(a) i (c) – odpowiedzialność pilota dowódcy za ilość paliwa i oleju; cytaty dosłowne.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "f92d36a159f1c1ce",
+  "verdict": "PASS"
+ },
+ "PL099-0096#f87a9e33": {
+  "date": "2026-11-25",
+  "note": "CAT.GEN.MPA.120 i NCC.GEN.115 są przepisami dla operatorów zarobkowego transportu lotniczego i operacji NCC; w części NCO (PPL) odpowiednika brak – tekst musi to powiedzieć. Pierwsze zdanie: „Zgodnie z pkt CAT.GEN.MPA.120 rozporządzenia 965/2012 (operacje zarobkowego transportu lotniczego) operator dopilnowuje, by wszyscy członkowie załogi mogli porozumiewać się we wspólnym języku; tak samo stanowi pkt NCC.GEN.115 dla operacji niezarobkowych wykonywanych przy użyciu skomplikowanych statków powietrznych z napędem silnikowym.” (całość 474 znaki). Refs bez zmian.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "0be29ca242bc3cc2",
+  "verdict": "FIX"
+ },
+ "PL099-0098#22c8deb8": {
+  "date": "2026-11-25",
+  "note": "Klucz = CAT.OP.MPA.225(a)(1) dosłownie, ale tekst nie mówi, że to przepis części CAT (zarobkowy transport lotniczy), a pytanie jest z banku PPL(A)/PPL(H). Pierwsze zdanie zastąpić: „Zgodnie z pkt CAT.OP.MPA.225 lit. a) ppkt 1 rozporządzenia 965/2012, który dotyczy operacji zarobkowego transportu lotniczego (część CAT), podczas startu i lądowania oraz zawsze, kiedy dowódca uzna to za konieczne ze względów bezpieczeństwa, każdy członek załogi zabezpiecza się za pomocą wszystkich przewidzianych pasów bezpieczeństwa i systemów mocowania.” (całość ok. 480 znaków). Brak opcji „przez cały czas lotu”, więc spór jak w 0091 nie zachodzi.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "218baa2ad0ffb901",
+  "verdict": "FIX"
  },
  "PL099-0100#33e15656": {
   "date": "2026-11-24",
@@ -4727,12 +4927,28 @@
   "textSha": "9c215dc85832e3ca",
   "verdict": "PASS"
  },
+ "PL102-0017#22c8deb8": {
+  "date": "2026-11-25",
+  "note": "SAO.GEN.130(i) i definicja „krytyczne fazy lotu” z załącznika I zgodne z korpusem; klucz trafnie wyprowadzony. SAO.GEN.130(j)(1) (pas pilota przez cały lot) nie tworzy sporu, bo takiej odpowiedzi w pytaniu nie ma. Osobny wpis (Part-SAO) zamiast sameAs zasadny.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "fcf81c324aedefa1",
+  "verdict": "PASS"
+ },
  "PL102-0021#25232f08": {
   "date": "2026-11-24",
   "note": "sameAs poprawny: pytanie i odpowiedzi identyczne z PL099-0082#7e61b8ba (różnica tylko „..” w odpowiedzi A).",
   "portion": "P25",
   "round": 1,
   "textSha": "48cf8c0c7404b85d",
+  "verdict": "PASS"
+ },
+ "PL102-0024#a4c7e8c7": {
+  "date": "2026-11-25",
+  "note": "Jak 0015, na podstawie SAO.GEN.130(p); konstrukcja „Klucz stosuje tę zasadę…” uczciwa.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "adf8b3b9b73d45f9",
   "verdict": "PASS"
  },
  "PL102-0031#1295a643": {
@@ -4789,6 +5005,30 @@
   "portion": "P29",
   "round": 1,
   "textSha": "2935482cdbe160b1",
+  "verdict": "PASS"
+ },
+ "PL102-0052#3b602dba": {
+  "date": "2026-11-25",
+  "note": "SAO.GEN.130(d)(3) i (e) zgodne z korpusem; wersja szybowcowa analogiczna do 0094.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "67b56b2006c335c0",
+  "verdict": "PASS"
+ },
+ "PL102-0063#774ff4ab": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: pytanie i odpowiedzi identyczne z PL099-0096#f87a9e33 (różnią się wielkość liter i kropki). Po poprawce 0096 sameAs nadal pasuje.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "f168ca706cadfbdc",
+  "verdict": "PASS"
+ },
+ "PL102-0064#84d9d4b9": {
+  "date": "2026-11-25",
+  "note": "SAO.GEN.130(p) dosłownie; analogicznie do 0035.",
+  "portion": "P27",
+  "round": 1,
+  "textSha": "494bc5f6665db06d",
   "verdict": "PASS"
  }
 }
