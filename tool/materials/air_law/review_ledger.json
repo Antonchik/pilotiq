@@ -87,6 +87,126 @@
   "textSha": "26de49a2bdc66e3d",
   "verdict": "DISPUTED"
  },
+ "AL07-1": {
+  "date": "2026-11-25",
+  "note": "Wiek 16 lat = SFCL.120 i art. 96 ust. 2 pkt 1; 14 lat i nadzór FI(S) = SFCL.125(a)/(b); ATO/DTO = SFCL.130(a); pułapki 17/21 lat = art. 96 ust. 2 pkt 4 i 6; 18 lat = SFCL.115(a)(3)(i). Zestawienie «jednej licencji» z SFCL.001 i dwóch specjalności z art. 94 ust. 6 pkt 1 nie jest sprzeczne: SFCL.001 dotyczy tylko SPL na poziomie UE, art. 94 ust. 6 wymienia krajowe specjalności (pilot szybowcowy rekreacyjny, pilot szybowcowy), a pilota szybowcowego zawodowego nie ma w żadnym z aktów. Brzmienie zgodne z verified PL010-0258. Działa jako bezpłatny przegląd; 166 słów; questionKeys poprawne.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "ff59aa784eab18b3",
+  "verdict": "PASS"
+ },
+ "AL07-2": {
+  "date": "2026-11-25",
+  "note": "Treść poparta SFCL.130(a)(1)–(2)(iii), BFCL.130, FCL.210(a), art. 2 pkt 16 i 24 oraz art. 10a ust. 1 rozp. 1178/2011, art. 21 ust. 2 pkt 5a i zał. 6. Nieprecyzyjne jest zdanie o zaliczeniu z SFCL.130(b): «uzyskuje zaliczenie 10 % czasu lotu jako pilot dowódca, najwyżej siedem godzin, ale najwyżej 10 startów i lądowań». Przepis mówi o 10 % «całkowitego czasu lotu w charakterze pilota dowódcy tego rodzaju statku powietrznego», a «ale» sugeruje, że limit startów ogranicza limit godzin. Zastąpić to zdanie tekstem: «Pilotowi z licencją na inną kategorię statków powietrznych (z wyjątkiem balonów) zalicza się 10 % całkowitego czasu lotu w charakterze pilota dowódcy na tych statkach powietrznych, maksymalnie siedem godzin; zaliczenie startów i lądowań nie może przekroczyć 10 (pkt SFCL.130 lit. b)).» Refs bez zmian (SFCL.130(b), SFCL.130(b)(2)); po zmianie 197 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "e2f5f845b8ed81f0",
+  "verdict": "FIX"
+ },
+ "AL07-3": {
+  "date": "2026-11-25",
+  "note": "Lista przedmiotów zgodna dosłownie z SFCL.135(a)(1)–(2); nazwy z klucza ULC przypisane tak samo jak w verified PL010-0279/0280/0281; brak aerodynamiki jako osobnego przedmiotu zgodny z PL010-0285; SFCL.145(c) poprawny. 135 słów; 10 kluczy poprawnych.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "e65b0d63a7288c9e",
+  "verdict": "PASS"
+ },
+ "AL07-4": {
+  "date": "2026-11-25",
+  "note": "SFCL.145(a), (b), (d)(1) zgodne. Opis sekcji zgodny z AMC1 SFCL.145(d)(1) w EAR: SECTION 1 (pre-flight inspection, documentation, flight planning, mass and balance, pre-take-off checks), 2A winch/car, 2B aerotow z «correct release from tow», 2C SELF-LAUNCH (tylko szybowce z napędem; «start z własnym napędem» to poprawne omówienie), uwaga, że co najmniej jedna metoda startu jest wykonywana w pełnym zakresie, SECTION 3 i 4. «(2) SECTION 5» (abnormal and emergency procedures) należy do części (d)(2), czyli egzaminu na TMG, więc stwierdzenie «tylko w egzaminie na TMG» jest poprawne. Refs EASA bez quote zgodnie z STYLE. Lotów nocnych ani symulowanego pożaru nie ma w żadnej sekcji. Zgodne z verified PL010-0267…0277. 197 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "9d587b138fb19ee2",
+  "verdict": "PASS"
+ },
+ "AL07-5": {
+  "date": "2026-11-25",
+  "note": "SFCL.115(a)(1), (a)(3)(i)–(ii), art. 96 ust. 2 pkt 1 (18 lat przy zawodowym wykonywaniu czynności) i SFCL.160(a)(1)(i)–(ii), (a)(2) zgodne z korpusem i z verified PL010-0263/0326/0258. 160 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "82cd2cb2887820ad",
+  "verdict": "PASS"
+ },
+ "AL07-6": {
+  "date": "2026-11-25",
+  "note": "SFCL.015(b), SFCL.130(a), art. 96 ust. 1 pkt 5 i 6 oraz § 12 ust. 1–2 i § 11 ust. 2 pkt 2 rozporządzenia w sprawie licencjonowania zgodne z korpusem i z verified PL010-0261/0259/0260. 148 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "eec6c8fc0d8b458d",
+  "verdict": "PASS"
+ },
+ "AL07-7": {
+  "date": "2026-11-25",
+  "note": "MED.A.030(c)(1): SPL wymaga przynajmniej orzeczenia na potrzeby LAPL; (c)(2): PPL wymaga klasy 2; (c)(4): SPL w części operacji zarobkowych wymaga klasy 2; (c)(5): CPL/MPL/ATPL wymagają klasy 1. Klucz ULC «2 klasy» dla PPL i SPL jest więc ścisły tylko dla PPL. Zdanie «Klucz ULC … przyjmuje …; aktualny przepis …» jest neutralne, disputeNote poprawny (punkty (c)(1) i (c)(4) są w refs, ma formułę o kluczu) i zgodny z disputed PL010-0262. 115 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "d751a9a8c7c4ebc3",
+  "verdict": "DISPUTED"
+ },
+ "AL07-8": {
+  "date": "2026-11-25",
+  "note": "ORA.ATO.135(a) (cytat dosłowny), AMC1 ORA.ATO.135 (ED Decision 2025/002/R): (b)(2) podwójne sterownice lub centralny drążek, z wyjątkiem balonów i statków jednomiejscowych; (c)(1) symulacja IMC; (c)(4) autorotacja dla śmigłowców; AMC1 ORA.ATO.140(a)(2)–(3) wskaźnik wiatru i oświetlenie drogi startowej jako wymagania dla lotniska; SAO.OP.130 zgodny. Wszystko zgodne z verified PL010-0332/0333/1546. Uwaga redakcyjna, nieblokująca: sekcja łączy dwa niezwiązane tematy (flota ATO i zakaz palenia), wbrew zasadzie «jeden temat na sekcję»; nagłówek mówi to jednak wprost, a każda z części osobno miałaby mniej niż 80 słów. 145 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "bd20cdb298424dbc",
+  "verdict": "PASS"
+ },
+ "AL08-1": {
+  "date": "2026-11-25",
+  "note": "Art. 105 ust. 1, 1a (pkt 2 i 5), ust. 4, art. 94 ust. 2 pkt 1 i art. 106 ust. 1 zgodne z korpusem i z verified PL010-0020/0250/0096/0097/1551/0252. Ostatnie zdanie o okresach ważności (MED.A.045) wykracza poza temat sekcji («kogo dotyczą i kto przeprowadza») i jest niepełne: pomija zasadę 42 lat oraz okresy 24 i 12 miesięcy. Bezpłatny przegląd podaje też bez zastrzeżenia «60 miesięcy do 40 lat», podczas gdy klucz ULC w disputed PL010-0173 (sekcja AL08-3) przyjmuje 24 miesiące. Usunąć zdanie «Okres ważności orzeczenia zależy od klasy i wieku: orzeczenie klasy 2 jest ważne 60 miesięcy, dopóki posiadacz nie osiągnie 40 lat, a orzeczenie klasy 1 – 12 miesięcy (pkt MED.A.045 lit. a) rozporządzenia 1178/2011).» oraz refs MED.A.045(a)(3)(i) i MED.A.045(a)(1). Ostatni akapit kończy się wtedy na «(art. 106 ust. 1).»; po zmianie 149 słów. questionKeys bez zmian.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "bf4c2de1534bb049",
+  "verdict": "FIX"
+ },
+ "AL08-2": {
+  "date": "2026-11-25",
+  "note": "Art. 106 ust. 1 pkt 1–2, art. 24 ust. 1, art. 106 ust. 3, art. 109 ust. 4, 5 i 8, art. 108 ust. 13 i art. 107 ust. 1 pkt 4 zgodne z korpusem i z verified PL010-0129/0130/0304/0306. 141 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "9832626762fa7af4",
+  "verdict": "PASS"
+ },
+ "AL08-3": {
+  "date": "2026-11-25",
+  "note": "Okresy z MED.A.045(a)(1), (2)(i)–(ii) i (3)(i)–(iii) zgodne z korpusem, w tym zasada 42 lat. Sporny jest klucz PL010-0173 (24 miesiące dla osoby «poniżej 50 roku życia», gdy wśród odpowiedzi jest 60 miesięcy, poprawne dla osób przed 40 rokiem życia). Zdanie «Klucz ULC … przyjmuje …; aktualny przepis …» jest neutralne i obejmuje też verified PL010-0174 (bez opcji 60 miesięcy), co nie jest sprzeczne. disputeNote poprawny (MED.A.045(a)(3)(i) jest w refs, ma formułę o kluczu) i zgodny z P13. 142 słowa.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "ac9570e855305047",
+  "verdict": "DISPUTED"
+ },
+ "AL08-4": {
+  "date": "2026-11-25",
+  "note": "Art. 105 ust. 2–3, MED.A.020(a)(1)–(2) i (b)(1), (2), (7) zgodne z korpusem i z verified PL010-0030/0049/0251/0026/0084/0085. Nadmierne uogólnienie: MED.A.020(c)(1), na który powołuje się sekcja, dotyczy tylko posiadaczy orzeczeń klasy 1 i 2. Dla posiadaczy orzeczenia na potrzeby LAPL (np. pilotów SPL) lit. c) ppkt 2 dopuszcza także lekarza medycyny ogólnej. Zastąpić punkt «- centrum medycyny lotniczej lub lekarz orzecznik ocenia wtedy jego sprawność i decyduje, czy może wznowić korzystanie z przywilejów (lit. c) ppkt 1).» tekstem: «- posiadacz orzeczenia klasy 1 lub 2 zasięga wtedy porady centrum medycyny lotniczej lub lekarza orzecznika, który ocenia jego sprawność i decyduje, czy może wznowić korzystanie z przywilejów (lit. c) ppkt 1).» Dodać ref {\"src\":\"EU-1178-2011\",\"loc\":\"MED.A.020(c)(1)\",\"quote\":\"posiadacze orzeczeń lekarskich 1. i 2. klasy zasięgają porady lotniczo-lekarskiej centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej\"} (cytat sprawdzony w korpusie). Po zmianie 197 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "25baba820815a897",
+  "verdict": "FIX"
+ },
+ "AL08-5": {
+  "date": "2026-11-25",
+  "note": "MED.B.070(g)(3), (5) i (6) oraz MED.A.020(b)(7) zgodne z korpusem. Sporny jest klucz PL010-0083#63e1284c («musi używać niebarwionych soczewek kontaktowych»), bo przepis dopuszcza okulary lub szkła kontaktowe, a wymóg niebarwienia dotyczy soczewek tylko wtedy, gdy są stosowane. Zdanie o kluczu jest neutralne, disputeNote poprawny (ppkt 3 i 6 są w refs) i zgodny z P13; verified PL010-0083#64897989 (zapasowe okulary) jest spójny. 139 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "4dc5bb65dcad28db",
+  "verdict": "DISPUTED"
+ },
+ "AL08-6": {
+  "date": "2026-11-25",
+  "note": "Art. 106 ust. 3 (oba zdania: 14 dni i KPA), art. 24 ust. 1, art. 107 ust. 1 pkt 1, art. 106 ust. 4 oraz ust. 1 pkt 1 i ust. 2 (uchylony) zgodne z korpusem, bez przyszłej redakcji. Sporny jest klucz PL010-0050#5482a1de i 0051#88d53fc0: «a w szczególnych przypadkach do Prezesa ULC», podczas gdy art. 106 ust. 4 daje Prezesowi prawo złożenia odwołania, a nie jego rozpatrzenia. Ujęcie jest neutralne i zgodne z P14. Pominięcie art. 106 ust. 5 (dodatkowe badania zlecane przez Naczelnego Lekarza) nie jest błędem, bo żadne pytanie sekcji go nie dotyczy. 169 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "8da8649ada621b35",
+  "verdict": "DISPUTED"
+ },
+ "AL08-7": {
+  "date": "2026-11-25",
+  "note": "MED.A.030(c)(2), MED.A.030(e) (audiometria tonalna według wytycznych klasy 1 przy uprawnieniu IR) i FCL.600 zgodne z korpusem. Klucze PL010-0374/0375 (warunek medyczny w dawnej terminologii) zostały wyjaśnione przez lit. e), a obronność krótkiej odpowiedzi «Tak» wynika z FCL.600. Ujęcie neutralne, disputeNote poprawny (FCL.600, MED.A.030(c)(2) i (e) są w refs) i zgodny z disputed P14. Mimo gaps.noSource źródło w korpusie jest. 149 słów.",
+  "portion": "K04",
+  "round": 1,
+  "textSha": "5a3e703db5beebc8",
+  "verdict": "DISPUTED"
+ },
  "AL11-1": {
   "date": "2026-11-24",
   "note": "Treść zgodna z SERA.3105, SERA.5005(f)(1)(2) i ENR 1.2 pkt 9; 151 słów. Drobna uwaga do ewentualnej przyszłej redakcji: SERA.5005(f) nie jest przepisem wyłącznie „dziennym” (patrz FIX AL11-4), nagłówek „w dzień” jest akceptowalny jako kontrast z sekcją nocną.",

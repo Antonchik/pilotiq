@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL07-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Licencja pilota szybowcowego SPL – podstawowe wymagania",
       "body": [
         "Część SFCL rozporządzenia 2018/1976 ustanawia wymagania dotyczące wydawania jednej licencji szybowcowej – licencji pilota szybowcowego (SPL) (pkt SFCL.001). Prawo lotnicze wymienia dla szybowców licencje pilota szybowcowego rekreacyjnego i pilota szybowcowego (art. 94 ust. 6 pkt 1); licencji pilota szybowcowego zawodowego nie ma.",
@@ -190,7 +190,7 @@
     },
     {
       "id": "AL07-3",
-      "status": "draft",
+      "status": "verified",
       "heading": "Egzamin teoretyczny na licencję SPL",
       "body": [
         "Kandydat na licencję SPL wykazuje podczas egzaminów wiedzę teoretyczną z przedmiotów wymienionych w pkt SFCL.135 lit. a) rozporządzenia 2018/1976:",
@@ -237,7 +237,7 @@
     },
     {
       "id": "AL07-4",
-      "status": "draft",
+      "status": "verified",
       "heading": "Egzamin praktyczny na licencję SPL",
       "body": [
         "Podczas egzaminu praktycznego kandydat wykazuje, że potrafi jako pilot dowódca szybowca wykonywać stosowne procedury i manewry (pkt SFCL.145 lit. a) rozporządzenia 2018/1976). Egzamin zdaje się na szybowcu albo na motoszybowcu turystycznym (TMG), zależnie od przywilejów (lit. b)), i dzieli się na sekcje odpowiadające fazom lotu (lit. d) ppkt 1).",
@@ -314,7 +314,7 @@
     },
     {
       "id": "AL07-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Przywileje licencji SPL i bieżąca praktyka",
       "body": [
         "Posiadacz licencji SPL wykonuje czynności pilota dowódcy na szybowcach bez wynagrodzenia w operacjach niezarobkowych (pkt SFCL.115 lit. a) ppkt 1 rozporządzenia 2018/1976). W innych operacjach może latać tylko wtedy, gdy (ppkt 3):",
@@ -394,7 +394,7 @@
     },
     {
       "id": "AL07-6",
-      "status": "draft",
+      "status": "verified",
       "heading": "Wniosek o licencję i przywrócenie zawieszonej licencji",
       "body": [
         "Do wniosku o wydanie licencji SPL dołącza się dowód spełnienia wymagań części SFCL rozporządzenia 2018/1976 oraz części MED rozporządzenia 1178/2011 (pkt SFCL.015 lit. b)). Są to więc dokumenty potwierdzające:",
@@ -459,7 +459,7 @@
     },
     {
       "id": "AL07-7",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Orzeczenie lekarskie a licencja SPL",
       "body": [
         "Klasę orzeczenia lekarskiego potrzebną do korzystania z przywilejów poszczególnych licencji określa pkt MED.A.030 lit. c) rozporządzenia 1178/2011 (część MED):",
@@ -498,7 +498,7 @@
     },
     {
       "id": "AL07-8",
-      "status": "draft",
+      "status": "verified",
       "heading": "Szkolny statek powietrzny i palenie tytoniu na pokładzie",
       "body": [
         "Zatwierdzona organizacja szkolenia musi korzystać z floty szkolnych statków powietrznych lub FSTD wyposażonych odpowiednio do prowadzonych kursów (pkt ORA.ATO.135 lit. a) rozporządzenia 1178/2011). AMC1 ORA.ATO.135 (EASA) rozwija to wymaganie:",

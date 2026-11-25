@@ -85,7 +85,7 @@
     },
     {
       "id": "AL08-2",
-      "status": "draft",
+      "status": "verified",
       "heading": "Centra medycyny lotniczej, lekarze orzecznicy i ich listy",
       "body": [
         "Badania lotniczo-lekarskie przeprowadzają i orzeczenia o zdolności lub niezdolności do wykonywania lotów i innych czynności lotniczych wydają (art. 106 ust. 1 Prawa lotniczego):",
@@ -162,7 +162,7 @@
     },
     {
       "id": "AL08-3",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Okres ważności orzeczeń lekarskich klasy 1 i 2",
       "body": [
         "Okresy ważności orzeczeń lekarskich określa pkt MED.A.045 lit. a) rozporządzenia 1178/2011 (część MED).",
@@ -296,7 +296,7 @@
     },
     {
       "id": "AL08-5",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Ograniczenie dotyczące szkieł korekcyjnych",
       "body": [
         "Gdy orzeczenie lekarskie zawiera ograniczenie dotyczące szkieł korekcyjnych, podczas korzystania z przywilejów licencji obowiązują wymagania pkt MED.B.070 lit. g) rozporządzenia 1178/2011:",
@@ -342,7 +342,7 @@
     },
     {
       "id": "AL08-6",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Odwołanie od orzeczenia lotniczo-lekarskiego",
       "body": [
         "Od orzeczenia lotniczo-lekarskiego wydanego przez centrum medycyny lotniczej lub lekarza orzecznika medycyny lotniczej osobie zainteresowanej przysługuje odwołanie do Naczelnego Lekarza, czyli Naczelnego Lekarza Lotnictwa Cywilnego (art. 106 ust. 3 i art. 24 ust. 1 Prawa lotniczego).",
@@ -404,7 +404,7 @@
     },
     {
       "id": "AL08-7",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Orzeczenie lekarskie pilota PPL z uprawnieniem IR",
       "body": [
         "Posiadacz licencji pilota turystycznego (PPL) musi mieć przynajmniej ważne orzeczenie lekarskie klasy 2 (pkt MED.A.030 lit. c) ppkt 2 rozporządzenia 1178/2011). Jeżeli licencję PPL uzupełnia się o uprawnienie do wykonywania lotów według wskazań przyrządów (IR), posiadacz przechodzi badanie słuchu metodą audiometrii tonalnej zgodnie z częstotliwością i wytycznymi określonymi dla posiadaczy orzeczenia klasy 1 (lit. e)). Loty IFR mogą wykonywać posiadacze licencji PPL, CPL, MPL i ATPL z uprawnieniem IR odpowiednim dla danej kategorii statku powietrznego (pkt FCL.600).",
