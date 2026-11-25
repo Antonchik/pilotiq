@@ -110,7 +110,7 @@
     },
     {
       "id": "AL03-3",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Specjalności z licencją i ze świadectwem kwalifikacji",
       "body": [
         "Art. 94 ust. 6 Prawa lotniczego wymienia specjalności personelu lotniczego, dla których wymagane są licencje:",
@@ -205,7 +205,7 @@
     },
     {
       "id": "AL03-4",
-      "status": "draft",
+      "status": "verified",
       "heading": "Warunki wydania licencji",
       "body": [
         "Licencja może być wydana osobie, która łącznie spełnia warunki z art. 96 ust. 1 Prawa lotniczego:",
@@ -300,7 +300,7 @@
     },
     {
       "id": "AL03-5",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Małoletni i niekaralność w pytaniach o licencję",
       "body": [
         "Część pytań „Komu może być udzielona licencja?” opiera się na wcześniejszym brzmieniu art. 96 ust. 1 Prawa lotniczego. Według aktualnego tekstu:",

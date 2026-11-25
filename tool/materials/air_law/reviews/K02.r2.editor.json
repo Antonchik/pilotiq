@@ -1,0 +1,32 @@
+[
+ {
+  "key": "AL03-3",
+  "verdict": "DISPUTED",
+  "note": "FIX z rundy 1 wykonany: disputeNote nie twierdzi już, że przepisowi odpowiada „Żadna z odpowiedzi” (której nie ma w spornych 0491#85063041 i 0492#ee529e21). Nowy disputeNote (323 znaki) zgodny z art. 94 ust. 6 pkt 1, 4 i 5; wszystkie te punkty są w refs, formuła o kluczu jest. 192 słowa."
+ },
+ {
+  "key": "AL03-4",
+  "verdict": "PASS",
+  "note": "FIX z rundy 1 wykonany: art. 96 ust. 1a opisany precyzyjnie (środek zapobiegawczy dot. pojazdów mechanicznych i prawomocny sądowy zakaz prowadzenia pojazdów mechanicznych, w okresie ich obowiązywania); cytaty obu części ust. 1a są w refs, zgodne z korpusem. Usunięto zdanie sugerujące, że odpowiedzi sporne są błędne według przepisu. Pozostawienie pięciu kluczy disputed w questionKeys jest dopuszczalne: sekcja odpowiada na ich część zgodną z kluczem (wiek, prawa publiczne, szkolenie i egzamin), nie przeczy sporności, a spór opisuje AL03-5 z disputeNote (te same klucze). 195 słów."
+ },
+ {
+  "key": "AL03-5",
+  "verdict": "DISPUTED",
+  "note": "FIX z rundy 1 wykonany: ostatnie zdanie mówi teraz tylko o małoletnim za zgodą opiekunów prawnych (art. 96 ust. 1 pkt 2) i o skazaniu (pkt 3 uchylony), bez nadmiernego uogólnienia na osoby z ograniczoną zdolnością. Zdanie o kluczu neutralne; disputeNote zgodny z disputed P04/P05, punkty w refs, formuła o kluczu jest. 142 słowa."
+ },
+ {
+  "key": "AL04-3",
+  "verdict": "PASS",
+  "note": "FIX z rundy 1 wykonany: sekcja zaczyna od § 11 ust. 1 pkt 1 rozp. w sprawie licencjonowania (PPL, SPL, BPL, LAPL → FCL.070 i ARA.FCL.250), a art. 100 ust. 1 przypisuje licencjom z § 3 ust. 1 pkt 2 i 3 (§ 11 ust. 1 pkt 2) – zgodne z korpusem; nowe refs (§ 11 ust. 1 pkt 1–2, § 3 ust. 1 pkt 1 i 3, § 3 ust. 2) dosłowne. Gramatyka „Ani…, ani…” poprawiona. Wszystkie klucze sekcji (0211–0216, 1563, 1564) nadal mają oparcie w tekście. 181 słów."
+ },
+ {
+  "key": "AL04-5",
+  "verdict": "PASS",
+  "note": "FIX z rundy 1 wykonany: dodano § 11 ust. 3 rozp. w sprawie licencjonowania (przekazanie dokumentu za pokwitowaniem Prezesowi Urzędu, chyba że licencja została już uprzednio zatrzymana) z dosłownym cytatem; związek z art. 100 ust. 3 opisany poprawnie. Spójne z verified PL010-0176/0177/0232. 161 słów."
+ },
+ {
+  "key": "AL04-8",
+  "verdict": "PASS",
+  "note": "FIX z rundy 1 wykonany: usunięto nieudokumentowane „dawniej”; zdanie o kluczu precyzuje, że przy obecności komisji wśród odpowiedzi klucz wskazuje komisję, a „Prezes ULC” jest błędny, w wariantach bez komisji – Prezesa ULC; zgodne ze wszystkimi verified kluczami 0112–0118. Reszta (§ 31, § 32 ust. 1 pkt 2, 3, 5, § 34 ust. 2, art. 99 ust. 1–2, art. 26a ust. 1 pkt 5) bez zmian i zgodna z korpusem. 181 słów."
+ }
+]

@@ -1,0 +1,5 @@
+[
+ {"key":"AL13-2","verdict":"PASS","note":"Poprawka z r1 wprowadzona dosłownie (ostatni akapit): forma «w drodze rozporządzenia» dla art. 119 ust. 5 jest w tekście kotwicy i odpowiada kluczowi PL010-0310; zdanie o nazwach w odpowiedziach ULC neutralne, zgodne z verified 0127. Pozostałe akapity, refs i questionKeys bez zmian; 200 słów (≤ 200); validate 0 błędów."},
+ {"key":"AL13-3","verdict":"DISPUTED","note":"Obie poprawki z r1 wprowadzone dosłownie: «Lot nad parkiem jest więc dozwolony na wysokości podanej przez te instytucje» – zgodne z art. 124 ust. 1 i verified PL099-0008, nie powtarza już błędnej odpowiedzi; usunięty powtórzony «nad poziomem terenu» (wyjaśnia go akapit o GND). disputeNote bez zmian (PL010-0244#e370aaec: § 3 ust. 1 pkt 2 lit. a – 1000 m dla samolotów z silnikami innymi niż tłokowe vs klucz 500 m; lit. a w refs; formuła «Na egzaminie ULC zaliczana jest odpowiedź z klucza»). refs i questionKeys bez zmian; 199 słów."},
+ {"key":"AL13-4","verdict":"PASS","note":"Poprawka z r1 wprowadzona dosłownie: «używają innych nazw organów niż obecny przepis» – neutralnie, jak verified 0041/0128. Reszta, refs i questionKeys bez zmian; 176 słów."}
+]

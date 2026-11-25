@@ -201,7 +201,7 @@
    "EU-1178-2011",
    "EASA-EAR-AIRCREW"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0163#934fec54"
@@ -291,7 +291,7 @@
    "PL-PRAWO-LOTNICZE",
    "EU-1178-2011"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0616#d506bc53",
@@ -1135,7 +1135,7 @@
    "PL-PRAWO-LOTNICZE",
    "AIP-PL"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0183#95a36de6",
@@ -1334,7 +1334,7 @@
   "sources": [
    "PL-PRAWO-LOTNICZE"
   ],
-  "complete": false,
+  "complete": true,
   "gaps": {
    "noSource": [
     "PL010-0454#cfe42ec0",
