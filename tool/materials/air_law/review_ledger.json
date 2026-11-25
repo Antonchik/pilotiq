@@ -399,6 +399,14 @@
   "textSha": "f287e1fc7e4ae3c1",
   "verdict": "PASS"
  },
+ "PL010-0038#c3aac04e": {
+  "date": "2026-11-25",
+  "note": "Klucz = art. 2 pkt 20 rozp. 1178/2011 (FSTD = szkoleniowe urządzenie symulacji lotu; FFS/FTD/FNPT/BITD dla samolotów – lit. a), pułapka ATO = art. 2 pkt 16. Cytaty dosłowne. 3 zdania, 350 zn.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "ef0ff49f6280a459",
+  "verdict": "PASS"
+ },
  "PL010-0039#02d04295": {
   "date": "2026-11-24",
   "note": "Klucz „Tak, zawsze” = art. 113 ust. 2 (każdy lot z załogą, nie tylko komercyjny); pułapka (wyznaczenie, nie najwyższe kwalifikacje) i jednoosobowa załoga z art. 113 ust. 3 zgodne z korpusem.",
@@ -2911,6 +2919,22 @@
   "textSha": "38af81aa9dcf79cb",
   "verdict": "PASS"
  },
+ "PL010-0313#4bd1c864": {
+  "date": "2026-11-25",
+  "note": "Klucz «wymagane znaki rozpoznawcze» = § 23 LIC + art. 31 ust. 1 pkt 2 PL; pułapka (dystraktor «nie wpisanych do rejestru») = art. 31 ust. 1 pkt 1. § 23 nie jest ograniczony do licencji krajowych, więc obejmuje też SPL/BPL z listy licencji. 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "46d7b273457a8bb7",
+  "verdict": "PASS"
+ },
+ "PL010-0313#ca811a9f": {
+  "date": "2026-11-25",
+  "note": "«Wszystkie odpowiedzi są poprawne»: znaki rozpoznawcze (art. 31 ust. 1 pkt 2), rejestr (pkt 1) i państwowe statki powietrzne (§ 23 LIC – «polskich państwowych statkach powietrznych»). Cytaty dosłowne. 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "a8738cea0bff736f",
+  "verdict": "PASS"
+ },
  "PL010-0315#3fcbf66c": {
   "date": "2026-11-24",
   "note": "Klucz AIS: art. 121 ust. 1 pkt 1 PL (służby żeglugi powietrznej) + art. 2 pkt 5 rozp. 2024/2803 (ANS = ATS; CNS; MET; AIS). Konstrukcja poprawna: dawne wyliczenie «oprócz służb ruchu lotniczego» zastąpione pojęciem ANS, treść klucza nadal zgodna z aktualnym stanem — nie outdated. Pułapka (ATS, APP, ACC to ATS) = art. 2 pkt 32 rozp. 923/2012.",
@@ -4543,6 +4567,30 @@
   "textSha": "35f23a628ce97a01",
   "verdict": "PASS"
  },
+ "PL010-0508#97331b20": {
+  "date": "2026-11-25",
+  "note": "Klucz «Ośrodek szkolenia lotniczego» = § 25 ust. 3 LIC («stwierdza ośrodek szkolenia lotniczego przed rozpoczęciem szkolenia oraz w trakcie jego trwania»). Tekst poprawnie zastrzega, że § 25 ust. 3 odsyła do ust. 1 i 2, czyli tylko do licencji z § 3 ust. 1 pkt 2 i 3 (krajowych), a dla PPL(A)/PPL(H) właściwy jest ORA.ATO.145 lit. a) (ATO dopilnowuje warunków z części MED i FCL) – oba wskazują organizację szkolącą, więc klucz nie jest sporny; «Prezes ULC», minister i «Każda odpowiedź» bez oparcia. Nie cytuje § 24 (przyszła redakcja). 3 zdania, 554 zn.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "aba9a4fc46a61e98",
+  "verdict": "PASS"
+ },
+ "PL010-0508#99d09efc": {
+  "date": "2026-11-25",
+  "note": "sameAs poprawny: to samo pytanie i klucz jak 0508#97331b20 (spacja przed kropką), jeden dystraktor różny («EASA» zamiast «Każda odpowiedź jest prawidłowa»); oryginał nie ma zdania o pułapce, więc objaśnienie pasuje bez zmian (praktyka P02).",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "3bf6bfe906a3e583",
+  "verdict": "PASS"
+ },
+ "PL010-0509#0cd7d758": {
+  "date": "2026-11-25",
+  "note": "Klucz «Zatwierdzona organizacja szkolenia lotniczego» = ORA.ATO.145 lit. a) 1178/2011 (szkolenie praktyczne do PPL(A)/PPL(H) w ATO). Odniesienie do § 25 ust. 3 LIC słusznie ograniczone do licencji krajowych. Cytaty i lokatory zgodne z korpusem; 2 zdania, 521 zn.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "874b0b6645190cb4",
+  "verdict": "PASS"
+ },
  "PL010-0510#a4e13336": {
   "date": "2026-11-25",
   "note": "Nie sporne: pytanie „w ramach zwierzchnictwa” odpowiada art. 4 ust. 1 PL, a klucz powtarza go dosłownie; art. 121 ust. 1 opisuje zarządzanie ruchem jako sposób realizacji (służby, ASM, ATFM), ale żaden dystraktor (Prezydent, RM, Prezes ULC) nie staje się przez to poprawny. Pułapka z art. 4 ust. 2 poprawna.",
@@ -4719,6 +4767,22 @@
   "textSha": "90fbeba8c1e81776",
   "verdict": "PASS"
  },
+ "PL010-0532#3e0d829a": {
+  "date": "2026-11-25",
+  "note": "Klucz = ORA.ATO.135 lit. a) zd. 1 («musi korzystać z odpowiedniej floty szkolnych statków powietrznych lub FSTD wyposażonych odpowiednio do prowadzonych kursów szkoleniowych»); zd. 2 i lit. b) pkt 1 zgodne z tekstem; z tego wynika też, że FSTD nie są jedyną możliwością (dystraktor 4), a flota musi spełniać wymogi 2018/1139 (dystraktory INS / bez rejestru). 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "c65fa5ce05a89a5d",
+  "verdict": "PASS"
+ },
+ "PL010-0532#69cd8cb0": {
+  "date": "2026-11-25",
+  "note": "«Wszystkie»: rejestr, znaki, zdatność = art. 31 ust. 1 pkt 1–3 PL przez § 23 LIC. Cytaty dosłowne (pkt 3 bez zastrzeżenia art. 50 ust. 1 – dopuszczalne skrócenie). 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "87bef1cdda9d6b05",
+  "verdict": "PASS"
+ },
  "PL010-0534#085740df": {
   "date": "2026-11-24",
   "note": "FCL.210.A(d): „z wyjątkiem balonów” – klucz „nie ma takiej możliwości” zgodny; „w ten sposób” trafnie zawęża wniosek.",
@@ -4821,6 +4885,22 @@
   "portion": "P13",
   "round": 1,
   "textSha": "672752d172af300f",
+  "verdict": "PASS"
+ },
+ "PL010-0544#9b9eecb5": {
+  "date": "2026-11-25",
+  "note": "Klucz = § 26 ust. 1 LIC – poprawnie, ale element klucza «szkoląca do licencji personelu lotniczego» oparty na § 1 pkt 4 lit. e, który mówi tylko «prowadzenia szkolenia lotniczego» – słowa «do licencji» tam nie ma. Właściwa podstawa: § 27 LIC (certyfikat z art. 160 ust. 3 pkt 2) + art. 160 ust. 3 pkt 2 PL («szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień»). Pułapka uogólnia art. 95a ust. 1: wyłączone jest szkolenie informatorów FIS/AFIS (te objęte certyfikacją z art. 160 ust. 3 pkt 2). Nowy tekst (3 zdania, 649 zn.): «Zgodnie z § 26 ust. 1 rozporządzenia w sprawie licencjonowania personelu lotniczego szkolenie lotnicze prowadzi się w ośrodku szkolenia lotniczego będącym samodzielną organizacją lotniczą albo jednostką organizacyjną innego podmiotu. Ośrodek prowadzi szkolenie w zakresie certyfikatu wydanego na podstawie art. 160 ust. 3 pkt 2 Prawa lotniczego (§ 27), a certyfikacji podlega szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego. Pułapka: szkolenie do świadectw kwalifikacji, z wyjątkiem informatorów służby informacji powietrznej, podlega wpisowi do rejestru podmiotów szkolących (art. 95a ust. 1 Prawa lotniczego).» refs: zostaw § 26 ust. 1 i dwa cytaty art. 95a ust. 1; usuń § 1 pkt 4 i § 1 pkt 4 lit. e; dodaj PL-ROZP-LICENCJONOWANIE-2021 § 27 «Ośrodek szkolenia lotniczego prowadzi szkolenie lotnicze w zakresie objętym posiadanym certyfikatem wydanym na podstawie art. 160 ust. 3 pkt 2 ustawy.», PL-PRAWO-LOTNICZE art. 160 ust. 3 pkt 2 «szkolenie personelu lotniczego w celu uzyskania licencji członka personelu lotniczego oraz wpisywanych do niej uprawnień» oraz art. 95a ust. 1 «z wyjątkiem prowadzenia szkolenia lotniczego w celu uzyskania świadectwa kwalifikacji informatora służby informacji powietrznej».",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "915827eec6bdccfd",
+  "verdict": "FIX"
+ },
+ "PL010-0544#f8c1a9ab": {
+  "date": "2026-11-25",
+  "note": "Klucz = § 26 ust. 1 LIC (oba cytaty dosłowne). Dystraktory «działalność niezarobkowa dla członków» / «działalność statutowa» to cechy organizacji nie będącej ośrodkiem z rozp. 2003 (§ 9 ust. 5) – obecnie bez oparcia, więc «Wszystkie» niepoprawne; klucz nie jest sporny. 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "507ee8de84da8a95",
   "verdict": "PASS"
  },
  "PL010-0545#dbc84777": {
@@ -5189,6 +5269,54 @@
   "portion": "P16",
   "round": 1,
   "textSha": "d4d26ea895e4a21d",
+  "verdict": "PASS"
+ },
+ "PL010-0592#71915062": {
+  "date": "2026-11-25",
+  "note": "Klucz = § 28 ust. 1 pkt 1 LIC; lit. a, c, d zacytowane dosłownie. § 26–28 nie są ograniczone do licencji krajowych (w odróżnieniu od § 25 ust. 1–2 i § 33; § 26 ust. 3 wyłącza wprost tylko szkolenie pilotów doświadczalnych z Part-FCL, a § 29 ust. 1 obejmuje «licencji, o których mowa w § 3»), więc dotyczą też szkolenia do PPL(A)/PPL(H). 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "f3d2353a2279b16e",
+  "verdict": "PASS"
+ },
+ "PL010-0592#fcefc237": {
+  "date": "2026-11-25",
+  "note": "Przesłanka pytania («organizacja prowadząca szkolenie niezarobkowo») pochodzi z rozp. 2003 (§ 9 ust. 5, § 11 ust. 1), ale wszystkie trzy odpowiedzi szczegółowe odpowiadają obecnemu § 28 ust. 1 pkt 1–3 LIC, który obejmuje każde szkolenie lotnicze, więc klucz «Wszystkie» pozostaje poprawny według obecnej normy – nie outdated, nie sporny. Zdanie 3 trafnie wyjaśnia brak wyodrębnienia szkolenia niezarobkowego (§ 26 ust. 1). Drobna różnica: dystraktor zawiera «oraz kierowania nimi» (brzmienie 2003), czego nie ma w § 28 ust. 1 pkt 2 – nie zmienia sensu; tekst parafrazuje obecny przepis bez tego elementu. 3 zdania, 575 zn.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "f67e1178bea2544b",
+  "verdict": "PASS"
+ },
+ "PL010-0593#8ea37ad6": {
+  "date": "2026-11-25",
+  "note": "Klucz = § 28 ust. 1 pkt 4 LIC («statków powietrznych albo szkoleniowych urządzeń symulacji lotu»). Pułapka negatywna «a nie na podstawie zezwolenia ministra» wynika z § 27 (zakres certyfikatu z art. 160 ust. 3 pkt 2) – akceptowalne jak w Wzorze 1 STYLE; opcjonalnie można dodać art. 161 ust. 1 PL («Certyfikację przeprowadza … Prezes Urzędu»). 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "cbf68a971e177e33",
+  "verdict": "PASS"
+ },
+ "PL010-0594#9e00d9eb": {
+  "date": "2026-11-25",
+  "note": "Klucz = ORA.ATO.140 (cytat dosłowny); zd. 2 wiernie oddaje dalszą część przepisu. 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "69d4cd58944e5dcf",
+  "verdict": "PASS"
+ },
+ "PL010-0594#f5addded": {
+  "date": "2026-11-25",
+  "note": "Klucz «Wszystkie» = § 28 ust. 1 pkt 1–3 LIC (instrukcje zatwierdzone przez Prezesa Urzędu, kadra dydaktyczna, baza dydaktyczna); cytaty dosłowne. «oraz kierowania nimi» w odp. 2 to brzmienie 2003 – bez wpływu na klucz. 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "c7fe8ed0e713fe6f",
+  "verdict": "PASS"
+ },
+ "PL010-0595#aef1984f": {
+  "date": "2026-11-25",
+  "note": "Klucz «instrukcja szkolenia i instrukcja operacyjna» = § 28 ust. 1 pkt 1 lit. a i b LIC (cytaty dosłowne; zastrzeżenie lit. b o szkoleniu podczas operacji statków powietrznych oddane). Dla ATO zgodny jest też ORA.ATO.230 lit. a) i b) – opcjonalne uzupełnienie, nie wymagane. 2 zdania.",
+  "portion": "P11",
+  "round": 1,
+  "textSha": "4c69d133f3051d2c",
   "verdict": "PASS"
  },
  "PL010-0596#120b851e": {
