@@ -419,8 +419,10 @@
         "- widzialność przy ziemi jest mniejsza niż 5 km.",
         "W strefie kontrolowanej może być też dozwolony lot specjalny VFR, pod warunkiem uzyskania zezwolenia ATC (SERA.5010). Pilot wykonuje go:",
         "- z dala od chmur i z widzialnością terenu;",
-        "- przy widzialności w locie nie mniejszej niż 1500 m (1,5 km), a w przypadku śmigłowców nie mniejszej niż 800 m.",
-        "W FIR Warszawa loty specjalne VFR wykonuje się wyłącznie w ciągu dnia (AIP ENR 1.2 pkt 14). Minimum 5 km widzialności dotyczy zwykłego lotu VFR (tabela S5-1), a nie lotu specjalnego VFR."
+        "- przy widzialności w locie nie mniejszej niż 1500 m (1,5 km), a w przypadku śmigłowców nie mniejszej niż 800 m;",
+        "- z prędkością przyrządową (IAS) 140 kt lub mniejszą (lit. b) ppkt 3).",
+        "ATC nie udziela specjalnego zezwolenia VFR na start, lądowanie ani wejście w krąg nadlotniskowy, gdy widzialność przy ziemi jest mniejsza niż 1500 m (dla śmigłowców 800 m) lub pułap chmur jest niższy niż 180 m (600 ft) (lit. c)).",
+        "W FIR Warszawa loty specjalne VFR wykonuje się wyłącznie w ciągu dnia (AIP ENR 1.2 pkt 14). Minimum 5 km dotyczy zwykłego lotu VFR (tabela S5-1)."
       ],
       "refs": [
         {
@@ -472,6 +474,26 @@
           "src": "EU-923-2012",
           "loc": "SERA.5001",
           "quote": "Poniżej 3 050 m (10 000 ft) AMSL i powyżej 900 m (3 000 ft) AMSL lub powyżej 300 m (1 000 ft) nad terenem – w zależności od tego, która z tych wartości jest większa A B C D E F G 5 km Pozioma – 1 500 m Pionowa – 300 m (1 000 ft)"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5010(b)(3)",
+          "quote": "lot jest wykonywany z prędkością przyrządową (IAS) 140 kts lub mniejszą"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5010(c)",
+          "quote": "organ kontroli ruchu lotniczego nie udziela statkowi powietrznemu specjalnego zezwolenia w lotach VFR na start ani na lądowanie"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5010(c)(1)",
+          "quote": "widzialność przy ziemi jest mniejsza niż 1 500 m, a w przypadku śmigłowców – mniejsza niż 800 m"
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.5010(c)(2)",
+          "quote": "pułap chmur jest niższy niż 180 m (600 ft)."
         }
       ],
       "questionKeys": [

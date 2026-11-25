@@ -6,13 +6,13 @@
       "status": "draft",
       "heading": "Sygnały świetlne z lotniska",
       "body": [
-        "Tabela AP1-1 w pkt 3.1.1 dodatku 1 do rozporządzenia 923/2012 podaje sygnały świetlne kierowane z kontroli lotniska do statku powietrznego. W pytaniach ULC stosuje się je, gdy nie ma łączności radiowej: statek bez łączności, awaria radiostacji, zablokowana częstotliwość. Pilot dowódca, który zauważył lub odebrał sygnał, podejmuje działania wynikające z jego znaczenia (SERA.3301 lit. a)). Ten sam sygnał znaczy co innego w locie i na ziemi:",
+        "Tabela AP1-1 w pkt 3.1.1 dodatku 1 do rozporządzenia 923/2012 podaje sygnały świetlne kierowane z kontroli lotniska do statku powietrznego. Przy awarii łączności radiowej statek powietrzny w ruchu lotniskowym na lotnisku kontrolowanym śledzi instrukcje wydawane za pomocą sygnałów wzrokowych (SERA.14083 lit. c) ppkt 1). Pilot dowódca, który zauważył lub odebrał sygnał, podejmuje działania wynikające z jego znaczenia (SERA.3301 lit. a)). Ten sam sygnał znaczy co innego w locie i na ziemi:",
         "- ciągłe zielone: w locie – zezwala się lądować; na ziemi – zezwala się startować;",
         "- seria błysków zielonych: w locie – wracać do lądowania; na ziemi – zezwala się kołować;",
         "- ciągłe czerwone: w locie – dać pierwszeństwo drogi innym statkom powietrznym i kontynuować krążenie; na ziemi – zatrzymać się;",
         "- seria błysków czerwonych: w locie – lotnisko nie jest bezpieczne, nie lądować; na ziemi – kołować poza polem wzlotów będącym w użyciu;",
         "- seria błysków białych: w locie – lądować na tym lotnisku i kołować do płyty postojowej; na ziemi – wracać do punktu wyjściowego na lotnisku.",
-        "Łatwo pomylić światło ciągłe z serią błysków tego samego koloru: ciągłe zielone zezwala na lądowanie lub start, a błyski zielone każą wracać do lądowania albo zezwalają na kołowanie."
+        "Światło ciągłe i seria błysków tego samego koloru znaczą co innego: ciągłe zielone zezwala na lądowanie lub start, a błyski zielone każą wracać do lądowania albo zezwalają na kołowanie."
       ],
       "refs": [
         {
@@ -49,6 +49,11 @@
           "src": "EU-923-2012",
           "loc": "SERA.3301(a)",
           "quote": "Pilot dowódca statku powietrznego po zauważeniu lub odebraniu jakiegokolwiek sygnału podanego w dodatku 1 podejmuje takie działania, jakie mogą być konieczne w związku ze znaczeniem danego sygnału podanym w tym dodatku."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14083(c)(1)",
+          "quote": "statek powietrzny uczestniczący w ruchu lotniskowym na lotnisku kontrolowanym śledzi sytuację pod kątem instrukcji, jakie mogą być wydawane za pomocą sygnałów wzrokowych"
         }
       ],
       "questionKeys": [
@@ -366,7 +371,7 @@
         "- Poziom przejściowy (art. 2 pkt 135) to najniższy poziom lotu, jaki można wykorzystać powyżej wysokości bezwzględnej przejściowej.",
         "- Warstwa przejściowa (załącznik I pkt 247 rozporządzenia 2017/373) to przestrzeń między wysokością bezwzględną przejściową a poziomem przejściowym. Przekraczając ją, pozycję wyraża się jako poziom lotu przy wznoszeniu i jako wysokość bezwzględną przy zniżaniu (SERA.8015).",
         "W FIR Warszawa wysokość przejściowa wynosi 6500 ft, a w całym FIR obowiązuje jeden poziom przejściowy, ustalany na FL080 albo FL090 zależnie od rozkładu ciśnienia (AIP Polska, ENR 1.7 pkt 2.6.1, 3.1 i 3.1.1). Warstwa przejściowa ma więc grubość większą od zera, zmienną wraz z ciśnieniem. Przecinając 6500 ft we wznoszeniu, przestawia się wysokościomierz z QNH na ciśnienie standard 1013,2 hPa (pkt 2.6.5).",
-        "Klucz ULC w pytaniu o definicję wysokości przejściowej przyjmuje „wysokość względna lub bezwzględna”; art. 2 pkt 134 mówi tylko o wysokościach bezwzględnych (wysokość nad poziomem lotniska stosuje się przy podejściu z QFE, SERA.8015 lit. eb) ppkt 5), a odpowiedź o przestawieniu wysokościomierza z QNH na STD również odpowiada AIP."
+        "Klucz ULC w pytaniu o definicję wysokości przejściowej oddaje art. 2 pkt 134, a wysokość względną dopuszcza pkt SERA.8015 lit. eb) ppkt 5 przy podejściu z QFE. Według AIP (ENR 1.7 pkt 2.6.5) wysokość przejściową opisuje też odpowiedź o przestawieniu wysokościomierza z QNH na STD."
       ],
       "refs": [
         {
