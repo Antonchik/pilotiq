@@ -1760,19 +1760,19 @@
   "verdict": "PASS"
  },
  "PL010-0062#3f1ad0c5": {
-  "date": "2026-11-24",
-  "note": "Art. 96 ust. 3, 5, 5b dosłownie; zastrzeżenie „chyba że uznanie nie jest wymagane” trafnie powiązane z ust. 5b.",
-  "portion": "P05",
+  "date": "2026-11-25",
+  "note": "Art. 94 ust. 5 (klucz niemal dosłownie, z zastrzeżeniem o braku wymogu uznania), art. 94 ust. 2 pkt 1, art. 96 ust. 3, ust. 5 i ust. 5b zgodne z korpusem. 2 zdania, 455 znaków.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "b08adc3df61b49d7",
+  "textSha": "7916ff6e29e25c23",
   "verdict": "PASS"
  },
  "PL010-0062#f8207b2b": {
-  "date": "2026-11-24",
-  "note": "Jak 0062#3f1ad0c5; klucz bez zastrzeżenia nadal poprawny (licencja uznana jest ważna), wzmianka o ust. 5b uzupełnia. Osobny zapis zamiast sameAs – inny klucz, słusznie.",
-  "portion": "P05",
+  "date": "2026-11-25",
+  "note": "Jak 0062#3f1ad0c5; klucz bez zastrzeżenia o uznaniu pozostaje poprawny, a tekst uczciwie dodaje wyjątek z art. 96 ust. 5b („dodatkowo”). 457 znaków.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "3de8f48e77608f7d",
+  "textSha": "d6112f466605ec22",
   "verdict": "PASS"
  },
  "PL010-0064#5e3fc3f8": {
@@ -2168,12 +2168,12 @@
   "verdict": "DISPUTED"
  },
  "PL010-0103#e4cd44fb": {
-  "date": "2026-11-24",
-  "note": "Osobny zapis zamiast sameAs; disputeNote obejmuje oba dystraktory: art. 96 ust. 1 pkt 2 (małoletni) oraz uchylony pkt 3 i zakres art. 96 ust. 1a (środek zapobiegawczy lub wyrokowy zakaz prowadzenia pojazdów – zgodne z pełnym tekstem ust. 1a). Wszystkie punkty w refs.",
-  "portion": "P04",
-  "round": 2,
-  "textSha": "0855fd3d56190dfc",
-  "verdict": "DISPUTED"
+  "date": "2026-11-25",
+  "note": "Tekst i refs zgodne z art. 96 ust. 1, pkt 1–3 i ust. 1a. Błąd w disputeNote: „Odpowiedzi o ograniczonej zdolności i o skazaniu mają oparcie w przepisie” jest za mocne – pkt 2 dopuszcza wyjątek od pełnej zdolności tylko dla małoletniego za zgodą opiekunów prawnych; pełnoletniej osoby z ograniczoną zdolnością przepis nie obejmuje. Ponadto „środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych” pomija środek dotyczący pojazdów w ruchu powietrznym z ust. 1a. Zastąpić disputeNote tekstem (398 znaków): „Art. 96 ust. 1 Prawa lotniczego dopuszcza licencję małoletniego za zgodą opiekunów prawnych (pkt 2) i nie wymaga niekaralności (pkt 3 uchylony), a ust. 1a wyklucza tylko objętych środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów. Odpowiedzi o skazaniu i o ograniczonej zdolności małoletniego mają oparcie w przepisie. Na egzaminie ULC zaliczana jest odpowiedź z klucza.” Wszystkie punkty są już w refs. Po poprawce – DISPUTED.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "19cc5bd9041f4a1f",
+  "verdict": "FIX"
  },
  "PL010-0104#d67f3d1c": {
   "date": "2026-11-24",
@@ -2192,12 +2192,12 @@
   "verdict": "PASS"
  },
  "PL010-0106#d1571dcf": {
-  "date": "2026-11-24",
-  "note": "disputeNote dodany: pkt 3 uchylony, art. 96 ust. 1a wyklucza tylko osoby objęte środkiem zapobiegawczym lub zakazem prowadzenia pojazdów – zgodne z korpusem; refs pkt 3 i ust. 1a dodane. Pułapka (pkt 1, prawa publiczne) poprawna.",
-  "portion": "P04",
-  "round": 2,
-  "textSha": "c307aeb24c77a1da",
-  "verdict": "DISPUTED"
+  "date": "2026-11-25",
+  "note": "Tekst identyczny z verified 0106#f8178b1d, klucz (pkt 4) poprawny; DISPUTED uzasadniony (pkt 3 uchylony, skazanie samo nie wyklucza licencji). Nieprecyzyjne w disputeNote: „wyklucza tylko osoby objęte środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych” – art. 96 ust. 1a obejmuje też środek polegający na powstrzymaniu się od prowadzenia pojazdów w ruchu powietrznym, więc przy „tylko” zdanie jest węższe niż przepis. Zamienić fragment „objęte środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych lub prawomocnym zakazem ich prowadzenia” na „objęte środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów” (wynik 316 znaków; spójne z PL010-0108 i AL03-5). Po poprawce – DISPUTED.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "fc6d11a6e312b292",
+  "verdict": "FIX"
  },
  "PL010-0106#f8178b1d": {
   "date": "2026-11-24",
@@ -2224,12 +2224,12 @@
   "verdict": "PASS"
  },
  "PL010-0108#83bd2f1f": {
-  "date": "2026-11-24",
-  "note": "Sporne jak P04 0106#d1571dcf: klucz = art. 96 ust. 1 pkt 6 i 7 (cytaty dosłowne), ale dystraktor „skazana prawomocnym wyrokiem” po uchyleniu art. 96 ust. 1 pkt 3 ma oparcie w przepisie; art. 96 ust. 1a (pełny tekst) wyklucza tylko środek zapobiegawczy lub wyrokowy zakaz prowadzenia pojazdów. Klucz nadal poprawny → disputed, nie outdated. disputeNote poprawny, pkt 3 i ust. 1a w refs. Pułapka pkt 1 i 5 zgodna z korpusem.",
-  "portion": "P05",
+  "date": "2026-11-25",
+  "note": "Tekst identyczny z verified 0108#f24a6257, pkt 1, 5, 6, 7 zgodne z korpusem; DISPUTED uzasadniony. Ta sama poprawka co w PL010-0106#d1571dcf: zamienić w disputeNote fragment „objęte środkiem zapobiegawczym dotyczącym prowadzenia pojazdów mechanicznych lub prawomocnym zakazem ich prowadzenia” na „objęte środkiem zapobiegawczym lub prawomocnym zakazem dotyczącym prowadzenia pojazdów” (wynik 348 znaków), bo art. 96 ust. 1a obejmuje też środek dotyczący pojazdów w ruchu powietrznym. Po poprawce – DISPUTED.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "a43e241b71e775f6",
-  "verdict": "DISPUTED"
+  "textSha": "513b9232097eeed6",
+  "verdict": "FIX"
  },
  "PL010-0108#f24a6257": {
   "date": "2026-11-24",
@@ -2265,11 +2265,11 @@
  },
  "PL010-0112#12b21234": {
   "date": "2026-11-25",
-  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
-  "portion": "P07",
-  "round": 2,
-  "textSha": "5a760ac60829163f",
-  "verdict": "PASS"
+  "note": "§ 32 ust. 1 pkt 5, § 34 ust. 2, § 2 pkt 5–6 rozp. w sprawie licencjonowania, art. 99 ust. 1–2 PL zgodne z korpusem; klucz (komisja) poprawny. Wątpliwość writera (3): mimo że pytanie oddziela decyzję Prezesa od sprawdzenia, odpowiedź „Prezes ULC” ma oparcie w art. 26a ust. 1 pkt 5 („przeprowadzane przez Prezesa Urzędu egzaminy”) i § 2 pkt 4–5 rozp. w sprawie egzaminów państwowych (egzaminator – członek komisji upoważniony przez Prezesa), a verified wariant 0112#2321b2d3 (ten sam numer) ma ją w kluczu z wyjaśnieniem, że egzaminy państwowe przeprowadza Prezes – status verified bez disputeNote byłby z nim sprzeczny. disputeNote neutralny, punkty w refs, formuła o kluczu jest, 388 znaków. Uwaga dla orkiestratora: PL010-0113#12b21234 i PL010-0114#12b21234 są sameAs tego zapisu i mają status verified – sprawdzić, czy build przenosi disputeNote/status.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "d77d4e69082bf06a",
+  "verdict": "DISPUTED"
  },
  "PL010-0112#2321b2d3": {
   "date": "2026-11-25",
@@ -2329,11 +2329,11 @@
  },
  "PL010-0115#249116a6": {
   "date": "2026-11-25",
-  "note": "Pierwsze zdanie odpowiada (art. 99 ust. 1 PL: egzamin państwowy «złożony przed komisją egzaminacyjną»); § 32 ust. 1 pkt 2 i § 34 ust. 2 LIC trafne. Dawna nazwa «Lotnicza Komisja Egzaminacyjna» z klucza – zdanie 3 poprawnie sygnalizuje, że obecny przepis mówi o «komisji egzaminacyjnej»; to różnica nazwy, nie sprzeczność – disputeNote zbędny. Drobiazg nieblokujący: cytat art. 99 ust. 1 urywa zastrzeżenie «chyba że przepisy prawa Unii Europejskiej … stanowią inaczej»; tekst nie twierdzi niczego sprzecznego (EGZ § 2 pkt 7 i § 4 ust. 1 obejmują egzaminy z uwzględnieniem prawa UE).",
-  "portion": "P07",
+  "note": "§ 32 ust. 1 pkt 2 i § 34 ust. 2 zgodne. Ключ (komisja) zgodny z art. 99 ust. 1 PL i § 34 ust. 2 rozp. w sprawie licencjonowania (stosowanym do Part-FCL przez § 31). Status DISPUTED uzasadniony: w wariancie bez komisji ten sam numer pytania ma klucz „Prezes ULC” (verified, z wyjaśnieniem „egzaminy państwowe przeprowadza Prezes Urzędu”, art. 26a ust. 1 pkt 5), a egzaminatorem jest członek komisji upoważniony przez Prezesa (§ 2 pkt 4–5 rozp. w sprawie egzaminów państwowych) – oba punkty sprawdzone w korpusie i są w refs. disputeNote neutralny, ma formułę o kluczu, 388 znaków. Wariant bez komisji: 0115#56d1d694.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "729dafc7204d0276",
-  "verdict": "PASS"
+  "textSha": "59097a0b9da8fe96",
+  "verdict": "DISPUTED"
  },
  "PL010-0115#56d1d694": {
   "date": "2026-11-25",
@@ -2345,11 +2345,11 @@
  },
  "PL010-0116#65a3f975": {
   "date": "2026-11-25",
-  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
-  "portion": "P07",
-  "round": 2,
-  "textSha": "639f29e22f50b06c",
-  "verdict": "PASS"
+  "note": "§ 32 ust. 1 pkt 2, § 34 ust. 2, § 2 pkt 4 i 7 rozp. w sprawie egzaminów zgodne. Ключ (komisja) zgodny z art. 99 ust. 1 PL i § 34 ust. 2 rozp. w sprawie licencjonowania (stosowanym do Part-FCL przez § 31). Status DISPUTED uzasadniony: w wariancie bez komisji ten sam numer pytania ma klucz „Prezes ULC” (verified, z wyjaśnieniem „egzaminy państwowe przeprowadza Prezes Urzędu”, art. 26a ust. 1 pkt 5), a egzaminatorem jest członek komisji upoważniony przez Prezesa (§ 2 pkt 4–5 rozp. w sprawie egzaminów państwowych) – oba punkty sprawdzone w korpusie i są w refs. disputeNote neutralny, ma formułę o kluczu, 388 znaków. Wariant bez komisji: 0116#e13918bd.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "dec8c8b9d5af47b6",
+  "verdict": "DISPUTED"
  },
  "PL010-0116#e13918bd": {
   "date": "2026-11-25",
@@ -2369,19 +2369,19 @@
  },
  "PL010-0117#d1eefb72": {
   "date": "2026-11-25",
-  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
-  "portion": "P07",
-  "round": 2,
-  "textSha": "c30001e3984d85a4",
-  "verdict": "PASS"
+  "note": "§ 32 ust. 1 pkt 3 („przedłużenia albo wznowienia”), § 34 ust. 2, § 2 pkt 4 i 7 rozp. w sprawie egzaminów zgodne. Ключ (komisja) zgodny z art. 99 ust. 1 PL i § 34 ust. 2 rozp. w sprawie licencjonowania (stosowanym do Part-FCL przez § 31). Status DISPUTED uzasadniony: w wariancie bez komisji ten sam numer pytania ma klucz „Prezes ULC” (verified, z wyjaśnieniem „egzaminy państwowe przeprowadza Prezes Urzędu”, art. 26a ust. 1 pkt 5), a egzaminatorem jest członek komisji upoważniony przez Prezesa (§ 2 pkt 4–5 rozp. w sprawie egzaminów państwowych) – oba punkty sprawdzone w korpusie i są w refs. disputeNote neutralny, ma formułę o kluczu, 388 znaków. Wariant bez komisji: 0117#811ddf60.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "1c4d2f05f9f4c7de",
+  "verdict": "DISPUTED"
  },
  "PL010-0118#9470cfc0": {
   "date": "2026-11-25",
-  "note": "Runda 2: tekst identyczny z zaproponowanym w r1 (pierwsze zdanie odpowiada na «Kto…»), refs bez zmian; cytaty i loc ponownie sprawdzone po korpusie – OK; 2–3 zdania, ≤645 zn.",
-  "portion": "P07",
-  "round": 2,
-  "textSha": "af8c7943f88779bd",
-  "verdict": "PASS"
+  "note": "Jak 0117 (wznowienie, § 32 ust. 1 pkt 3). Ключ (komisja) zgodny z art. 99 ust. 1 PL i § 34 ust. 2 rozp. w sprawie licencjonowania (stosowanym do Part-FCL przez § 31). Status DISPUTED uzasadniony: w wariancie bez komisji ten sam numer pytania ma klucz „Prezes ULC” (verified, z wyjaśnieniem „egzaminy państwowe przeprowadza Prezes Urzędu”, art. 26a ust. 1 pkt 5), a egzaminatorem jest członek komisji upoważniony przez Prezesa (§ 2 pkt 4–5 rozp. w sprawie egzaminów państwowych) – oba punkty sprawdzone w korpusie i są w refs. disputeNote neutralny, ma formułę o kluczu, 388 znaków. Wariant bez komisji: 0118#a9aa22f8.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "b929b0c153626ee5",
+  "verdict": "DISPUTED"
  },
  "PL010-0118#a9aa22f8": {
   "date": "2026-11-25",
@@ -2848,19 +2848,19 @@
   "verdict": "PASS"
  },
  "PL010-0176#1a6471ac": {
-  "date": "2026-11-24",
-  "note": "Klucz (brzmienie z dawnego § 21 ust. 3 rozp. z 2003 r.) ma obecne oparcie w FCL.070(b)/SFCL.070(b)/BFCL.070(b) – niezwłoczny zwrot licencji właściwemu organowi; organ = Prezes Urzędu (art. 96 ust. 3 pkt 1); zastrzeżenie o zatrzymaniu – art. 100 ust. 3. Nie jest outdated. Opcja «Nie używać licencji» była i jest trywialnie prawdziwa, ale nie zmieniła się – bez sporu.",
-  "portion": "P06",
+  "date": "2026-11-25",
+  "note": "§ 11 ust. 3 rozp. w sprawie licencjonowania – źródło klucza niemal dosłownie, przytoczony wiernie i bez nadinterpretacji (tekst nie twierdzi, że § 11 ust. 3 dotyczy PPL; dla PPL/SPL/BPL obowiązek zwrotu daje FCL.070(b), SFCL.070(b), BFCL.070(b)). Art. 96 ust. 3 pkt 1 zgodny. Uwaga nieblokująca: ref art. 100 ust. 3 nie jest użyty w tekście (zbędny, ale nieszkodliwy). 675 znaków.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "6708b1ce5a88cd8b",
+  "textSha": "38d7c52861161bc1",
   "verdict": "PASS"
  },
  "PL010-0177#13ff03fc": {
-  "date": "2026-11-24",
-  "note": "Jak 0176: FCL.070(b), SFCL.070(b), BFCL.070(b) obejmują zawieszenie licencji; art. 96 ust. 3, art. 100 ust. 3. Cytaty zgodne.",
-  "portion": "P06",
+  "date": "2026-11-25",
+  "note": "Jak 0176 (wariant „zawieszona”); § 11 ust. 3 („zawieszone i zatrzymane”) przytoczony dosłownie, FCL.070(b)/SFCL.070(b)/BFCL.070(b) obejmują zawieszenie, art. 96 ust. 3 pkt 1 („zawiesza”) zgodny. Ref art. 100 ust. 3 zbędny (nieblokujące). 681 znaków.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "b42f9838692f4c18",
+  "textSha": "fbe8368527b8bafc",
   "verdict": "PASS"
  },
  "PL010-0178#240b0c3f": {
@@ -3200,11 +3200,11 @@
   "verdict": "PASS"
  },
  "PL010-0211#b2fb296c": {
-  "date": "2026-11-24",
-  "note": "Klucz = art. 100 ust. 1 pkt 3; pułapka zgodna (zamknięty katalog ust. 1).",
-  "portion": "P06",
+  "date": "2026-11-25",
+  "note": "§ 11 ust. 1 pkt 1 i 2, § 3 ust. 1 pkt 1–3, FCL.070(a), ARA.FCL.250(a)(3) i art. 100 ust. 1 pkt 3 zgodne z korpusem; podział zakresów zgodny z K02 (PPL/SPL/BPL → FCL.070 + ARA.FCL.250, art. 100 → § 3 ust. 1 pkt 2–3). Zrównanie „przestał spełniać stosowne wymagania” z utratą kwalifikacji – przedstawione jako odpowiedniość, dopuszczalne. 3 zdania, 673 znaki.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "724a84ffe1f6a586",
+  "textSha": "f7a1789a29d7939d",
   "verdict": "PASS"
  },
  "PL010-0212#0ab26e7f": {
@@ -3232,19 +3232,19 @@
   "verdict": "PASS"
  },
  "PL010-0215#5ab6c893": {
-  "date": "2026-11-24",
-  "note": "Klucz = art. 100 ust. 1 pkt 5 i ARA.FCL.250(a)(4). Cytaty zgodne.",
-  "portion": "P06",
+  "date": "2026-11-25",
+  "note": "ARA.FCL.250(a)(4) (alkohol lub narkotyki), § 11 ust. 1 pkt 1–2, § 3 ust. 1 pkt 1–3 i art. 100 ust. 1 pkt 5 zgodne z korpusem; pułapka poprawna („wymienionych w tych przepisach”, lista ARA jest otwarta – sformułowanie to uwzględnia). 657 znaków.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "7efa79373801fecc",
+  "textSha": "de207d8c6d97765a",
   "verdict": "PASS"
  },
  "PL010-0216#f40419d1": {
-  "date": "2026-11-24",
-  "note": "Klucz «narkotyków» wprost w ARA.FCL.250(a)(4); art. 100 ust. 1 pkt 5 «środków odurzających». Poprawne.",
-  "portion": "P06",
+  "date": "2026-11-25",
+  "note": "Jak 0215 (wariant „narkotyki”); ARA.FCL.250(a)(4) wymienia narkotyki wprost, art. 100 ust. 1 pkt 5 – środki odurzające. 657 znaków.",
+  "portion": "XF",
   "round": 1,
-  "textSha": "418b21c5deffe1eb",
+  "textSha": "de207d8c6d97765a",
   "verdict": "PASS"
  },
  "PL010-0217#0313bb42": {
@@ -3360,20 +3360,20 @@
   "verdict": "PASS"
  },
  "PL010-0230#3b2952f0": {
-  "date": "2026-11-24",
-  "note": "Poprawka wprowadzona: art. 100 ust. 3 + ust. 1 pkt 5, dodany art. 100 ust. 4 z cytatem i neutralne zdanie, że obecny art. 100 nie wymienia PKBWL. 3 zdania, 570 znaków, cytaty zgodne.",
-  "portion": "P06",
-  "round": 2,
-  "textSha": "4b70329683e30c60",
-  "verdict": "PASS"
+  "date": "2026-11-25",
+  "note": "Treść poprawna: ARA.FCL.250(a)(4), § 11 ust. 1 pkt 1, art. 100 ust. 1 pkt 5 i ust. 4 zgodne z korpusem; art. 100 ust. 4 opisany neutralnie („przepis nie wymienia wprost badania PKBWL”), bez twierdzenia o jego zakresie dla Part-FCL – wątpliwość writera (1) rozstrzygam: dopuszczalne. Brak refs dla twierdzenia „a dla licencji z § 3 ust. 1 pkt 2 i 3 tego rozporządzenia według art. 100 ust. 1 pkt 5” – ten podział wynika z § 11 ust. 1 pkt 2, którego nie ma w refs (jest tylko § 3 ust. 1 pkt 1 i 3). Dodać refs (tekst bez zmian, 696 znaków): {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 11 ust. 1 pkt 2\",\"quote\":\"następuje w przypadkach określonych w art. 100 ustawy\"} oraz {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 3 ust. 1 pkt 2\",\"quote\":\"FNL, FEL, FDL, MML;\"}. Uwaga nieblokująca: art. 100 ust. 4 ma dodatkowe przesłanki (uzasadniona obawa zagrożenia bezpieczeństwa lotów, organ nie zatrzymał dokumentu), pominięte z braku miejsca – dopuszczalne przy „może”.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "10448441accb4eba",
+  "verdict": "FIX"
  },
  "PL010-0231#c0b53fe6": {
-  "date": "2026-11-24",
-  "note": "Jak 0230; narkotyki wprost w ARA.FCL.250(a)(4), środki odurzające w art. 100 ust. 1 pkt 5; dodany art. 100 ust. 4. 3 zdania, 536 znaków.",
-  "portion": "P06",
-  "round": 2,
-  "textSha": "4e2ba7705dc11089",
-  "verdict": "PASS"
+  "date": "2026-11-25",
+  "note": "Jak PL010-0230#3b2952f0 (wariant „narkotyki”, treść poprawna, 698 znaków): dodać brakujące refs dla podziału zakresów (tekst bez zmian): {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 11 ust. 1 pkt 2\",\"quote\":\"następuje w przypadkach określonych w art. 100 ustawy\"} oraz {\"src\":\"PL-ROZP-LICENCJONOWANIE-2021\",\"loc\":\"§ 3 ust. 1 pkt 2\",\"quote\":\"FNL, FEL, FDL, MML;\"}.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "9a15c5cd1cb56c08",
+  "verdict": "FIX"
  },
  "PL010-0232#7fcbbfdb": {
   "date": "2026-11-24",
@@ -4737,10 +4737,10 @@
  },
  "PL010-0401#48893e1a": {
   "date": "2026-11-25",
-  "note": "Teraz draft: art. 160 ust. 3 pkt 2 (certyfikacja szkolenia do licencji), art. 94 ust. 6 pkt 4 (kontroler ruchu lotniczego — licencja), zał. 6 pkt 6a PL (cytat dosłowny, loc «załącznik 6» — brak węższego anchora) potwierdzają istotę klucza: certyfikowana organizacja szkoląca personel ATS. Nie sporne: pozostałe odpowiedzi bez oparcia. Nieblokujące: «dawnym skrótem CAPTO» to wniosek spoza korpusu (CAPTO w nim nie występuje); ostrożniej «Skrót CAPTO nie występuje w obecnych przepisach, które posługują się skrótem ATCO TO». 3 zdania, 567 zn.",
-  "portion": "P10",
-  "round": 2,
-  "textSha": "56f8b4519b75aa5c",
+  "note": "Art. 160 ust. 3 pkt 2, art. 94 ust. 6 pkt 4 i pkt 6a objaśnień załącznika nr 6 (certyfikat ATCO TO) zgodne z korpusem. Wątpliwość (6): loc „załącznik 6” jest poprawny – objaśnienia terminów stoją przed tabelą 1 i nie mają własnych podkotwic, więc to najwęższy dostępny punkt, a tekst podaje „pkt 6a”. Skrótu CAPTO nie ma w żadnym pliku korpusu. Uwaga nieblokująca: „w obecnych przepisach” można zawęzić do „w Prawie lotniczym”. 571 znaków.",
+  "portion": "XF",
+  "round": 1,
+  "textSha": "2cfdcc4660e12258",
   "verdict": "PASS"
  },
  "PL010-0402#7dbf50d2": {
