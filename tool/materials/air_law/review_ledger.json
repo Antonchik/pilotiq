@@ -1377,11 +1377,11 @@
  },
  "PL010-0188#ad4d889e": {
   "date": "2026-11-25",
-  "note": "Art. 119 ust. 1: ograniczenie «wyłącznie na podstawie wyraźnego upoważnienia Prawa lotniczego», a inne ustawy i umowy/uchwały międzynarodowe są tym, co należy «zachować», nie odrębną podstawą. Zdanie «Każda z trzech odpowiedzi odpowiada jednemu z elementów tego przepisu» przemilcza to. Proponuję: zdanie 2 → «Klucz ULC traktuje wszystkie elementy tego przepisu – upoważnienie Prawa lotniczego, przepisy innych ustaw, umowy międzynarodowe i uchwały organizacji międzynarodowych – łącznie, dlatego prawidłowa jest odpowiedź „Wszystkie odpowiedzi są prawidłowe”.» oraz disputeNote: «Według art. 119 ust. 1 Prawa lotniczego podstawą ograniczenia swobody lotów jest wyłącznie wyraźne upoważnienie Prawa lotniczego, a przepisy innych ustaw oraz wiążące Rzeczpospolitą Polską umowy międzynarodowe i uchwały organizacji międzynarodowych należy przy tym zachować. Na egzaminie ULC zaliczana jest odpowiedź z klucza.» (ref art. 119 ust. 1 już jest).",
+  "note": "Tekst teraz rzetelnie oddaje art. 119 ust. 1: podstawą jest wyłącznie upoważnienie Prawa lotniczego, inne ustawy i umowy/uchwały międzynarodowe należy zachować; klucz wyjaśniony jako łączne ujęcie elementów przepisu. Bez disputeNote — decyzja orkiestratora.",
   "portion": "P23",
-  "round": 1,
-  "textSha": "a76438601116b619",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "d2e7d92b27dc26c3",
+  "verdict": "PASS"
  },
  "PL010-0188#d12c7188": {
   "date": "2026-11-25",
@@ -1769,43 +1769,51 @@
  },
  "PL010-0243#808177a8": {
   "date": "2026-11-25",
-  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc cytatów «mniejszej niż 1000 m … w inne silniki» i «… 500 m … tłokowych» na '§ 3 ust. 1 pkt 2 lit. a' (wstęp «zakaz wykonywania lotów nad obszarami miast…» zostaje przy '§ 3 ust. 1 pkt 2'). Treść poprawna: 1000 m dla samolotów z innymi silnikami; strefy R w § 3 ust. 1 pkt 5 (załącznik nr 3 to parki narodowe i inne strefy, nie miasta).",
+  "note": "Loc przeniesione na § 3 ust. 1 pkt 2 lit. a; cytaty zgodne z kotwicą; treść bez zmian i poprawna.",
   "portion": "P23",
-  "round": 1,
-  "textSha": "0da3913831b642b1",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "501807d2a3159bda",
+  "verdict": "PASS"
  },
  "PL010-0244#5810ba89": {
   "date": "2026-11-25",
-  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc obu cytatów (500 m dla śmigłowców i samolotów tłokowych; 1000 m dla innych silników) na '§ 3 ust. 1 pkt 2 lit. a'. Treść poprawna.",
+  "note": "Loc przeniesione na lit. a; cytaty zgodne; treść poprawna.",
   "portion": "P23",
-  "round": 1,
-  "textSha": "eeb2150786dfac0d",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "44185290209b6e9b",
+  "verdict": "PASS"
+ },
+ "PL010-0244#e370aaec": {
+  "date": "2026-11-25",
+  "note": "Klucz 500 m = § 3 ust. 1 pkt 2 lit. a tylko dla śmigłowców i samolotów tłokowych; dla samolotu z silnikiem innym niż tłokowy lit. a daje 1000 m. Tekst wyjaśnia podstawę klucza (śmigłowiec z pytania) i odnotowuje nieobowiązujące rozp. 2003, bez twierdzeń o jego treści. disputeNote poprawny, punkt lit. a w refs, zawiera formułę o odpowiedzi z klucza.",
+  "portion": "P23",
+  "round": 2,
+  "textSha": "5d1e3a5c84fc0e58",
+  "verdict": "DISPUTED"
  },
  "PL010-0245#4ae2e2e4": {
   "date": "2026-11-25",
-  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc: cytat 1000 m → '§ 3 ust. 1 pkt 2 lit. b', cytat 1500 m → '§ 3 ust. 1 pkt 2 lit. c'. Treść poprawna.",
+  "note": "Loc lit. b / lit. c; cytaty zgodne; treść poprawna.",
   "portion": "P23",
-  "round": 1,
-  "textSha": "e9e8e470110999ee",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "40f0853b31484b6d",
+  "verdict": "PASS"
  },
  "PL010-0246#22a37308": {
   "date": "2026-11-25",
-  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). (1) loc cytatu 500 m → '§ 3 ust. 1 pkt 2 lit. a'. (2) Odpowiedź z klucza «AMSL GND» zawiera AMSL, a § 2 pkt 5: «AMSL – (Above Mean Sea Level) nad średnim poziomem morza»; tekst to pomija. Zdanie 2 → «Odpowiedź z klucza wskazuje skrót GND, który według § 2 pkt 10 oznacza poziom terenu; AMSL (§ 2 pkt 5) to średni poziom morza, od którego przepis tych wysokości nie liczy.» + ref {src PL-ROZP-ZAKAZY-LOTOW, loc '§ 2 pkt 5', quote 'AMSL – (Above Mean Sea Level) nad średnim poziomem morza'}. Nie sporne: pozostałe odpowiedzi (przeszkody) sprzeczne z przepisem.",
+  "note": "Loc lit. a; dodane zdanie o AMSL poparte § 2 pkt 5 («nad średnim poziomem morza»), ref dodany; 3 zdania, forma zgodna ze STYLE.",
   "portion": "P23",
-  "round": 1,
-  "textSha": "eceb327bb034c4aa",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "3423991b40ded1c7",
+  "verdict": "PASS"
  },
  "PL010-0247#54dc8471": {
   "date": "2026-11-25",
-  "note": "Kotwice PL-ROZP-ZAKAZY-LOTOW mają już lit. a–d w § 3 ust. 1 pkt 2 (validate: 'quote целиком лежит в более точном пункте'). Zmień loc: cytat 1500 m → '§ 3 ust. 1 pkt 2 lit. c', cytat Warszawa 2000 m → '§ 3 ust. 1 pkt 2 lit. d'. Treść poprawna.",
+  "note": "Loc lit. c / lit. d; cytaty zgodne; treść poprawna.",
   "portion": "P23",
-  "round": 1,
-  "textSha": "312e08d019d7330f",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "ec54f0982e6db938",
+  "verdict": "PASS"
  },
  "PL010-0249#fb6097ab": {
   "date": "2026-11-24",

@@ -1,0 +1,37 @@
+[
+ {
+  "key": "PL010-0188#ad4d889e",
+  "verdict": "PASS",
+  "note": "Tekst teraz rzetelnie oddaje art. 119 ust. 1: podstawą jest wyłącznie upoważnienie Prawa lotniczego, inne ustawy i umowy/uchwały międzynarodowe należy zachować; klucz wyjaśniony jako łączne ujęcie elementów przepisu. Bez disputeNote — decyzja orkiestratora."
+ },
+ {
+  "key": "PL010-0243#808177a8",
+  "verdict": "PASS",
+  "note": "Loc przeniesione na § 3 ust. 1 pkt 2 lit. a; cytaty zgodne z kotwicą; treść bez zmian i poprawna."
+ },
+ {
+  "key": "PL010-0244#5810ba89",
+  "verdict": "PASS",
+  "note": "Loc przeniesione na lit. a; cytaty zgodne; treść poprawna."
+ },
+ {
+  "key": "PL010-0244#e370aaec",
+  "verdict": "DISPUTED",
+  "note": "Klucz 500 m = § 3 ust. 1 pkt 2 lit. a tylko dla śmigłowców i samolotów tłokowych; dla samolotu z silnikiem innym niż tłokowy lit. a daje 1000 m. Tekst wyjaśnia podstawę klucza (śmigłowiec z pytania) i odnotowuje nieobowiązujące rozp. 2003, bez twierdzeń o jego treści. disputeNote poprawny, punkt lit. a w refs, zawiera formułę o odpowiedzi z klucza."
+ },
+ {
+  "key": "PL010-0245#4ae2e2e4",
+  "verdict": "PASS",
+  "note": "Loc lit. b / lit. c; cytaty zgodne; treść poprawna."
+ },
+ {
+  "key": "PL010-0246#22a37308",
+  "verdict": "PASS",
+  "note": "Loc lit. a; dodane zdanie o AMSL poparte § 2 pkt 5 («nad średnim poziomem morza»), ref dodany; 3 zdania, forma zgodna ze STYLE."
+ },
+ {
+  "key": "PL010-0247#54dc8471",
+  "verdict": "PASS",
+  "note": "Loc lit. c / lit. d; cytaty zgodne; treść poprawna."
+ }
+]
