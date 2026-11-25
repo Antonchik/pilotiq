@@ -10,7 +10,7 @@
         "Celem badania jest zapobieganie wypadkom i incydentom lotniczym: komisje badają okoliczności i przyczyny zdarzeń, które już zaistniały (art. 134 ust. 1). Według art. 2 pkt 14 rozporządzenia 996/2010 badanie obejmuje gromadzenie i analizę informacji, wyciąganie wniosków, ustalenie przyczyn zdarzenia lub okoliczności sprzyjających jego zaistnieniu oraz, w stosownych przypadkach, formułowanie zaleceń dotyczących bezpieczeństwa, czyli zaleceń profilaktycznych.",
         "- Komisje nie orzekają co do winy i odpowiedzialności (art. 134 ust. 1).",
         "- Badanie prowadzi się niezależnie od postępowania przygotowawczego, sądowego, administracyjnego i od likwidacji szkody (art. 134 ust. 1e).",
-        "- Po otrzymaniu zgłoszenia Przewodniczący Komisji kwalifikuje zdarzenie jako wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy albo inne zdarzenie (art. 135 ust. 1); od tej kwalifikacji zależy, kto prowadzi badanie.",
+        "- Po otrzymaniu zgłoszenia Przewodniczący Komisji kwalifikuje zdarzenie jako wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy albo inne zdarzenie (art. 135 ust. 1); od tej kwalifikacji zależy, kto prowadzi badanie (art. 135 ust. 2).",
         "- O zaistniałych zdarzeniach Komisja niezwłocznie powiadamia Prezesa Urzędu Lotnictwa Cywilnego (art. 135a ust. 4)."
       ],
       "refs": [
@@ -43,6 +43,11 @@
           "src": "PL-PRAWO-LOTNICZE",
           "loc": "art. 135 ust. 1",
           "quote": "Przewodniczący Komisji po otrzymaniu zgłoszenia o zdarzeniu lotniczym kwalifikuje je jako: wypadek lotniczy, poważny incydent lotniczy, incydent lotniczy"
+        },
+        {
+          "src": "PL-PRAWO-LOTNICZE",
+          "loc": "art. 135 ust. 2",
+          "quote": "Każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do państwowego rejestru cywilnych statków powietrznych jest przedmiotem badania przez Komisję."
         },
         {
           "src": "PL-PRAWO-LOTNICZE",
@@ -119,7 +124,7 @@
         "PL099-0011#512d95b7",
         "PL099-0051#1b7ba0eb"
       ],
-      "disputeNote": "Zderzenie z ptakiem, po którym wymagany jest poważny remont lub wymiana elementu (art. 134 ust. 2 pkt 2 Prawa lotniczego), jest wypadkiem, a nie incydentem. Pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2 rozporządzenia 965/2012 (część CAT) i tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
+      "disputeNote": "Zderzenie z ptakiem, po którym wymagany jest poważny remont lub wymiana elementu (art. 134 ust. 2 pkt 2 Prawa lotniczego), jest wypadkiem, a nie incydentem. W rozporządzeniu 965/2012 pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2 (część CAT) i tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Na egzaminie ULC zaliczana jest odpowiedź z klucza."
     },
     {
       "id": "AL16-3",
@@ -450,6 +455,11 @@
           "src": "EU-923-2012",
           "loc": "SERA.14005(b)",
           "quote": "Depesze o sytuacji zagrożenia i wymianę korespondencji dotyczącej sytuacji zagrożenia należy traktować zgodnie z przepisami SERA.14095."
+        },
+        {
+          "src": "EU-923-2012",
+          "loc": "SERA.14005(c)",
+          "quote": "Depesze pilne i wymianę korespondencji dotyczącej sytuacji pilności, w tym depesze poprzedzone sygnałem transportu medycznego, należy traktować zgodnie z przepisami SERA.14095."
         },
         {
           "src": "EU-923-2012",

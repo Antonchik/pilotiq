@@ -158,7 +158,7 @@
         },
         {
           "src": "EU-2017-373",
-          "loc": "załącznik XI",
+          "loc": "załącznik XI dodatek 1 sekcja I(b)(2)",
           "quote": "Dolną granicę obszaru kontrolowanego ustala się na wysokości względnej nie mniejszej niż 200 m (700 ft) nad powierzchnią ziemi lub wody, chyba że właściwy organ postanowi inaczej."
         },
         {
@@ -272,11 +272,11 @@
       "status": "draft",
       "heading": "Strefy zakazane, ograniczone, niebezpieczne i ADIZ",
       "body": [
-        "Rodzaje stref definiuje art. 2 rozporządzenia 923/2012, a szczegóły zakazów podaje rozporządzenie Ministra Infrastruktury w sprawie zakazów lub ograniczeń lotów (dalej: rozporządzenie o zakazach):",
-        "- strefa zakazana (P) – nad lądem lub wodami terytorialnymi państwa, loty są w niej zabronione (pkt 103); wyjątki są wąskie, np. lot za zgodą zarządzającego obiektem chronionym strefą P (§ 6 ust. 1 pkt 3 rozporządzenia o zakazach);",
+        "Strefy definiuje art. 2 rozporządzenia 923/2012, a zakazy określa rozporządzenie Ministra Infrastruktury w sprawie zakazów lub ograniczeń lotów (rozporządzenie o zakazach):",
+        "- strefa zakazana (P) – nad lądem lub wodami terytorialnymi państwa, loty są w niej zabronione (pkt 103), a zakazy w strefach P wprowadza § 3 ust. 1 pkt 3 rozporządzenia o zakazach;",
         "- strefa ograniczona (R) – loty są w niej ograniczone zgodnie z określonymi warunkami (pkt 111), podanymi dla każdej strefy w załączniku nr 3 do rozporządzenia o zakazach (§ 3 ust. 1 pkt 5);",
         "- strefa niebezpieczna (D) – mogą się w niej odbywać działania niebezpieczne dla lotów (pkt 65); zakaz obowiązuje w terminach aktywności opublikowanych w AUP i UUP (§ 3 ust. 1 pkt 4).",
-        "Nad wodami otwartymi Morza Bałtyckiego wydziela się strefy D (§ 11 ust. 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej). ADIZ to strefa identyfikacji obrony powietrznej (§ 2 pkt 1 tego rozporządzenia); strefy ADIZ wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą mają szerokość 15 km w głąb terytorium Polski (załącznik nr 4 do rozporządzenia o zakazach).",
+        "Nad wodami otwartymi Morza Bałtyckiego wydziela się strefy D (§ 11 ust. 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej). ADIZ to strefa identyfikacji obrony powietrznej (§ 2 pkt 1 tego rozporządzenia); strefy ADIZ wzdłuż granicy z Obwodem Kaliningradzkim, Białorusią i Ukrainą sięgają 15 km w głąb terytorium Polski (załącznik nr 4 do rozporządzenia o zakazach).",
         "Klucz ULC w pytaniach o strefy D i R przyjmuje zezwolenie organu służb ruchu lotniczego; aktualne przepisy wymagają w aktywnej strefie D zgody organu kierującego działaniami niebezpiecznymi (§ 7 ust. 1 pkt 3), a w strefie R zgody zarządzającego obiektem lub rejonem chronionym (§ 8 ust. 1 pkt 5)."
       ],
       "refs": [
@@ -289,11 +289,6 @@
           "src": "PL-ROZP-ZAKAZY-LOTOW",
           "loc": "§ 3 ust. 1 pkt 3",
           "quote": "zakazy wykonywania lotów w strefach P, określone w załączniku nr 1 do rozporządzenia"
-        },
-        {
-          "src": "PL-ROZP-ZAKAZY-LOTOW",
-          "loc": "§ 6 ust. 1 pkt 3",
-          "quote": "wykonywanych na zlecenie albo za zgodą zarządzającego obiektem chronionym strefą P"
         },
         {
           "src": "EU-923-2012",
