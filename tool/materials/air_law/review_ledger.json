@@ -1593,11 +1593,11 @@
  },
  "PL010-0191#c2291227": {
   "date": "2026-11-25",
-  "note": "Spór słuszny (klucz «strefa czasowo wydzielona» sprzeczny z § 2 pkt 45 i GEN 2.2 TRA; disputeNote 360 zn. poprawny), ale zdanie 2 ma tezy bez oparcia w refs: (1) «elastycznymi elementami struktury przestrzeni» – cytat § 9 ust. 1 tego nie mówi, a akt nigdzie wprost nie zalicza TSA/TRA do elastycznych elementów; (2) «działania w każdej z nich wymagają rezerwacji» – w refs jest tylko ENR 5.2.1 TSA, brak TRA. Poprawka: «Obie strefy ustanawia się dla tych samych celów (§ 9 ust. 1), a korzystanie z każdej z nich wymaga uprzedniego uzyskania rezerwacji (§ 16 ust. 3).» + ref PL-ROZP-STRUKTURA-2019 «§ 16 ust. 3», quote „Korzystanie z TSA, TRA, CBA, MRT oraz TFR wymaga uprzedniego uzyskania rezerwacji”; ref ENR 5.2.1 TSA można usunąć. Po poprawce – DISPUTED.",
+  "note": "Poprawione: zdanie 2 opiera się na § 9 ust. 1 i § 16 ust. 3 („Korzystanie z TSA, TRA, CBA, MRT oraz TFR wymaga uprzedniego uzyskania rezerwacji” – cytat zgodny z korpusem); teza o elastycznych elementach usunięta. Spór słuszny: klucz «strefa czasowo wydzielona» sprzeczny z § 2 pkt 45 i GEN 2.2 TRA; disputeNote 360 zn., punkty w refs. 3 zdania, 474 zn. Ref AIP ENR 5.2.1 TSA nie jest już potrzebny (tekst się do niego nie odwołuje) – nieszkodliwy, można usunąć przy okazji, nie wymaga rundy.",
   "portion": "P16",
-  "round": 1,
-  "textSha": "dabfdfe423a414be",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "e850e7b5b2c44546",
+  "verdict": "DISPUTED"
  },
  "PL010-0192#ff128909": {
   "date": "2026-11-25",
