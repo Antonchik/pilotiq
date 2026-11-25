@@ -845,7 +845,7 @@ class RegulationPartsTest(unittest.TestCase):
 
     def test_annex_points_of_eu_regulation_without_rule_ids(self):
         text = ("Artykuł 1\nPrzedmiot\n1. Ustęp.\nZAŁĄCZNIK\n1. OCHRONA PORTU LOTNICZEGO\n1.0. PRZEPISY OGÓLNE\n"
-                "3. Kontrola dostępu do stref\n3.1. Zasady ogólne dotyczące kontroli osób.\n3.1.1. Pierwszy punkt szczegółowy.\n")
+                "3. KONTROLA DOSTĘPU\n3.1. Zasady ogólne dotyczące kontroli osób.\n3.1.1. Pierwszy punkt szczegółowy.\n")
         a = ec.eureg_anchors(text, ("annexpoints",))
         for key in ("art. 1", "załącznik", "załącznik pkt 1", "załącznik pkt 1.0", "załącznik pkt 3.1", "załącznik pkt 3.1.1"):
             self.assertIn(key, a, key)
@@ -984,6 +984,167 @@ class OwnerDocumentsTest(unittest.TestCase):
         self.assertNotIn("APPENDIX 25", text)      # only the requested pages
         self.assertNotIn("AP18-1", text)
         self.assertIn("search and rescue", text[slice(*a["Appendix 18 note f"])])
+
+
+class ReviewSrc2R1Test(unittest.TestCase):
+    """M-SRC2-r1: wrapped cross-references, annex numbering, SECTION series, lit., two-letter points, closing sentences."""
+
+    def test_aip_wrapped_cross_reference_is_not_a_point(self):
+        text = ("ENR 1.10 PLANOWANIE LOTOW\n3 SKLADANIE PLANU\n3.11. Pole wyboru w prawym dolnym rogu formularza opublikowanego w AIP Polska ENR\n"
+                "1.10 oraz dopisac adres e-mail.\n3.12. Nastepny punkt.\n4 DYSTRYBUCJA\n4.4. Plan mozna przeslac (patrz: ENR\n"
+                "1.11 ADRESOWANIE KOMUNIKATOW) oraz:\ne.faksem;\n")
+        sections = [("ENR 1.10", 0, len(text), {}, [])]
+        a, _ = ec.aip_sections_anchors(text, sections)
+        self.assertNotIn("ENR 1.10 pkt 1.10", a)
+        self.assertNotIn("ENR 1.10 pkt 1.11", a)
+        self.assertIn("faksem", text[slice(*a["ENR 1.10 pkt 4.4"])])
+        self.assertIn("oraz dopisac", text[slice(*a["ENR 1.10 pkt 3.11"])])
+
+    def test_aip_heading_numbers_must_run_in_order(self):
+        text = "GEN 3.1 X\n1 PIERWSZY\ntekst\n2 DRUGI\ntekst\n15 ICAO.\ndalej tekst\n3 TRZECI\ntekst\n"
+        a, _ = ec.aip_sections_anchors(text, [("GEN 3.1", 0, len(text), {}, [])])
+        self.assertNotIn("GEN 3.1 pkt 15", a)
+        self.assertIn("dalej tekst", text[slice(*a["GEN 3.1 pkt 2"])])
+        self.assertIn("GEN 3.1 pkt 3", a)
+
+    def test_aip_abbreviation_with_two_meanings_and_class_footnotes(self):
+        text = "GEN 2.2 SKROTY\nCTA¤ Obliczony czas przybycia\nCTA Obszar kontrolowany\nCTAM Wznies sie\n"
+        a, _ = ec.aip_sections_anchors(text, [("GEN 2.2", 0, len(text), {"entries": "abbreviations"}, [])])
+        self.assertEqual("CTA Obliczony czas przybycia\n", text[slice(*a["GEN 2.2 CTA"])].replace("¤", ""))
+        self.assertIn("Obszar kontrolowany", text[slice(*a["GEN 2.2 CTA 2"])])
+        t2 = "ENR 1.4 KLASY\nF IFR a\nG IFR Brak sluzby\nVFR Brak\n* - Gdy wysokosc jest mniejsza niz 3050 m.\n**** - Klasa nie stosowana w FIR Warszawa.\n"
+        a2, _ = ec.aip_sections_anchors(t2, [("ENR 1.4", 0, len(t2), {"classes": True}, [])])
+        self.assertIn("klasa G", " ".join(a2))
+        self.assertNotIn("nie stosowana", t2[slice(*a2["ENR 1.4 klasa G"])])
+        self.assertIn("nie stosowana", t2[slice(*a2["ENR 1.4 przypis ****"])])
+        import materials as m
+        for loc in ("GEN 2.2 CTA 2", "ENR 1.4 przypis **"):
+            self.assertTrue(m.loc_valid("aip", loc), loc)
+            self.assertEqual(["GEN 2.2" if loc.startswith("GEN") else "ENR 1.4"], m.loc_parents(loc))
+
+    def test_second_exam_section_series_gets_its_own_keys(self):
+        text = ("AMC1 SFCL.145 Skill test\nED Decision 2020/004/R\n(d) CONTENT OF THE SKILL TEST\n"
+                "(1) The skill test contents for the issue of an SPL in a sailplane:\n"
+                "SECTION 1: PRE-FLIGHT\na Pre-flight inspection of the sailplane\nSECTION 4: CIRCUIT\na Circuit and landing\n"
+                "(2) The skill test contents for the issue of an SPL in a TMG:\n"
+                "SECTION 1: PRE-FLIGHT\na Pre-flight inspection of the TMG\nSECTION 5: ABNORMAL\na Engine failure\n"
+                "SERA.4001 Submission of a flight plan\nRegulation (EU) 2023/1\n(a) A flight plan shall be submitted before departure.\n")
+        a = ec.rule_anchors(text, "easa")
+        self.assertIn("sailplane", text[slice(*a["AMC1 SFCL.145 SECTION 1"])])
+        sec4 = text[slice(*a["AMC1 SFCL.145 SECTION 4"])]
+        self.assertIn("Circuit", sec4)
+        self.assertNotIn("TMG", sec4)             # the introduction of the second table is not part of SECTION 4
+        self.assertNotIn("AMC1 SFCL.145 SECTION 5", a)
+        self.assertIn("Engine failure", text[slice(*a["AMC1 SFCL.145 (2) SECTION 5"])])
+        self.assertIn("TMG", text[slice(*a["AMC1 SFCL.145 (2) SECTION 1"])])
+        import materials as m
+        self.assertTrue(m.loc_valid("easa", "AMC1 SFCL.145 (2) SECTION 5"))
+        self.assertEqual(["AMC1 SFCL.145"], m.loc_parents("AMC1 SFCL.145 (2) SECTION 5"))
+
+    def test_annexpoints_chapters_need_an_uppercase_heading(self):
+        text = ("Artykuł 1\nPrzedmiot\n1. Ustęp.\nZAŁĄCZNIK\n1. OCHRONA PORTU\n1.1. Wymagania\n"
+                "1. Przy projektowaniu uwzględnia się wymogi.\n2. W porcie ustanawia się następujące obszary:\n"
+                "1.2. Kontrola dostępu\n2. STREFY WYDZIELONE\nTekst strefy.\n"
+                "3. OCHRONA STATKU\n3.1. Przeszukanie\n3.1.1. Przeszukanie przed lotem.\n"
+                "DODATEK 3-A\n8.1. Czy dostęp jest kontrolowany? TAK lub NIE\n8.2. Ocena\n"
+                "ZAŁĄCZNIK\n4. PASAŻEROWIE\n4.1. Kontrola\n"
+                "5. BAGAŻ\n5.1. Rejestrowany\n6.5 ZATWIERDZENI PRZEWOŹNICY\n")
+        a = ec.eureg_anchors(text, ("annexpoints",))
+        self.assertEqual("załącznik", [k for k in a if k.startswith("załącznik")][0])
+        for key in ("załącznik pkt 1", "załącznik pkt 1.1", "załącznik pkt 1.2", "załącznik pkt 2", "załącznik pkt 3", "załącznik pkt 3.1",
+                    "załącznik pkt 3.1.1", "załącznik pkt 4", "załącznik pkt 4.1", "załącznik pkt 5"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("załącznik pkt 8.1", a)                                  # a questionnaire item of the appendix
+        self.assertIn("W porcie ustanawia", text[slice(*a["załącznik pkt 1.1"])])   # paragraph "2." stays inside 1.1
+        self.assertNotIn("STREFY", text[slice(*a["załącznik pkt 1.1"])])
+        self.assertIn("Tekst strefy", text[slice(*a["załącznik pkt 2"])])
+        self.assertNotIn("DODATEK", text[slice(*a["załącznik pkt 3.1.1"])])
+        self.assertIn("załącznik pkt 5.1", a)
+
+    def test_chapter_heading_between_articles_is_not_part_of_the_article(self):
+        text = "Artykuł 1\nPrzedmiot\n1. Ustęp pierwszy.\nROZDZIAŁ II\nZASADY WSPÓLNE\nArtykuł 2\nDefinicje\n1. Ustęp.\n"
+        a = ec.eureg_anchors(text)
+        self.assertNotIn("ROZDZIAŁ", text[slice(*a["art. 1"])])
+        self.assertNotIn("ROZDZIAŁ", text[slice(*a["art. 1 ust. 1"])])
+
+    def test_appendix_sekcja_with_points(self):
+        text = ("ZAŁĄCZNIK XI\nWymagania\nDodatek 1\nWYMAGANIA\nSEKCJA I\nSpecyfikacje\na) REJONY\nTekst rejonów:\n"
+                "1) cały układ;\n2) cała przestrzeń.\nb) OBSZARY\n3) nie dotyczy\n1) Obszary wyznacza się tak.\n"
+                "SEKCJA II\na) Trasy ATS\nZAŁĄCZNIK XII\nCoś\n")
+        a = ec.eureg_anchors(text)
+        for key in ("załącznik XI dodatek 1", "załącznik XI dodatek 1 sekcja I", "załącznik XI dodatek 1 sekcja I(a)",
+                    "załącznik XI dodatek 1 sekcja I(a)(2)", "załącznik XI dodatek 1 sekcja I(b)", "załącznik XI dodatek 1 sekcja II",
+                    "załącznik XI dodatek 1 sekcja II(a)"):
+            self.assertIn(key, a, key)
+        self.assertIn("cała przestrzeń", text[slice(*a["załącznik XI dodatek 1"])])
+        self.assertNotIn("Cos", text[slice(*a["załącznik XI dodatek 1 sekcja II(a)"])])
+        import materials as m
+        self.assertTrue(m.loc_valid("eu_reg", "załącznik XI dodatek 1 sekcja I(a)(2)"))
+        self.assertEqual(["załącznik XI dodatek 1 sekcja I(a)", "załącznik XI dodatek 1 sekcja I", "załącznik XI dodatek 1", "załącznik XI"],
+                         m.loc_parents("załącznik XI dodatek 1 sekcja I(a)(2)"))
+
+    def test_rule_heading_with_full_stop_two_letter_points_and_first_letter_c(self):
+        text = ("SERA.7001. Przepisy ogólne\na) Pierwszy punkt;\nb) drugi punkt.\n"
+                "SERA.8015 Zezwolenia\ne) Potwierdzenie przez powtórzenie:\n(i) zezwolenia ATC;\nea) Zmiany zezwolenia\neb) Zezwolenie dotyczące\n"
+                "(i) zniżanie;\nec) Zezwolenia warunkowe\nf) Dalszy punkt\n"
+                "SERA.11001 Przepisy ogólne\nc) W sytuacji awaryjnej organy ATS udzielają pomocy.\nd) Późniejsze działania.\n"
+                "SERA.11005 Bezprawna ingerencja\naa) Statek stara się ustawić transponder.\nab) Pilot dowódca podejmuje starania.\nb) Organy ATS spełniają żądania.\n")
+        a = ec.eureg_anchors(text, ())
+        for key in ("SERA.7001", "SERA.7001(a)", "SERA.8015(e)", "SERA.8015(e)(i)", "SERA.8015(ea)", "SERA.8015(eb)", "SERA.8015(eb)(i)",
+                    "SERA.8015(ec)", "SERA.8015(f)", "SERA.11001(c)", "SERA.11001(d)", "SERA.11005(aa)", "SERA.11005(ab)", "SERA.11005(b)"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("Zmiany zezwolenia", text[slice(*a["SERA.8015(e)"])])
+        import materials as m
+        self.assertTrue(m.loc_valid("eu_reg", "SERA.8015(ea)"))
+
+    def test_table_rows_are_not_points_and_closing_sentence_belongs_to_the_parent(self):
+        text = ("SERA.14005 Kategorie\na) Kategorie zgodne z tabelą S14-1.\nTabela S14-1\nKategoria depesz\n"
+                "a) Wezwanie w sytuacji zagrożenia\nMAYDAY\nb) Depesze pilne\nPAN PAN\nc) Komunikaty\n—\n"
+                "b) Depesze o sytuacji zagrożenia należy traktować zgodnie z przepisami.\nc) Depesze pilne należy traktować inaczej.\n"
+                "FCL.025 Egzaminy\n1) Wynik ważny przez okres:\n(i) 24 miesięcy;\n(ii) 36 miesięcy; lub\n(iii) bez ograniczeń czasowych.\n"
+                "Okresy podane w ppkt (i) i (ii) liczy się od dnia egzaminu.\n2) Wynik ATPL pozostaje ważny.\n")
+        a = ec.eureg_anchors(text, ())
+        self.assertIn("Wezwanie", text[slice(*a["SERA.14005(a)"])])
+        self.assertIn("Depesze o sytuacji", text[slice(*a["SERA.14005(b)"])])
+        self.assertNotIn("Wezwanie", text[slice(*a["SERA.14005(b)"])])
+        self.assertNotIn("PAN PAN", text[slice(*a["SERA.14005(b)"])])
+        self.assertIn("Okresy podane", text[slice(*a["FCL.025(1)"])])
+        self.assertNotIn("Okresy podane", text[slice(*a["FCL.025(1)(iii)"])])
+
+    def test_statute_lit_sanction_tail_and_annex_heading_with_footnote(self):
+        text = ("Art. 210. 1. Kto:\n1) pierwsze;\n2) drugie, w tym:\na) litera a;\nb) litera b;\nea) nie jest literą;\n"
+                "3) trzecie\n– podlega karze grzywny.\n2. Ust drugi.\nZałącznik nr 2\nZałącznik nr 2\nWiersz\n"
+                "Załącznik nr 35)\nZałącznik nr 2\nDane\n")
+        a = ec.statute_anchors(text)
+        for key in ("art. 210 ust. 1 pkt 2 lit. a", "art. 210 ust. 1 pkt 2 lit. b", "załącznik 2", "załącznik 3"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("art. 210 ust. 1 pkt 2 lit. ea", a)
+        self.assertNotIn("podlega", text[slice(*a["art. 210 ust. 1 pkt 3"])])
+        self.assertIn("Dane", text[slice(*a["załącznik 3"])])
+        import materials as m
+        self.assertTrue(m.loc_valid("statute", "art. 5 ust. 1 pkt 2 lit. ea"))
+        self.assertEqual(["art. 5 ust. 1 pkt 2", "art. 5 ust. 1", "art. 5"], m.loc_parents("art. 5 ust. 1 pkt 2 lit. b"))
+
+    def test_icao_definition_line_after_a_wrapped_sentence_is_not_a_definition(self):
+        text = ("== Chapter 1 ==\nDEFINITIONS\nAircraft. Any machine that can derive support.\n"
+                "Note 2.-- References to the Radio Regulations published by the International\nTelecommunication Union (ITU). Amended often.\n"
+                "Pressure-altitude. An atmospheric pressure.*\nPrimary radar. A radar system.\n")
+        a = ec.owner_anchors(text, {"profile": "icao4444"})
+        self.assertNotIn("def Telecommunication Union (ITU)", a)
+        self.assertIn("def Primary radar", a)
+        self.assertIn("def Aircraft", a)
+
+    def test_easa_annex_definitions_and_article_paragraph_definitions(self):
+        text = ("Article 2 Definitions\nRegulation (EU) No 139/2014\n(1) 'aerodrome’ means a defined area;\n(2) 'aeroplane’ means an aircraft;\n"
+                "ANNEX I — DEFINITIONS\nRegulation (EU) 2024/1400\n(1) ‘Acceptable Means of Compliance (AMC)’ means standards;\n"
+                "(4) ‘aerodrome equipment’ means equipment;\n(4a) ‘[aerodrome] traffic density’ means movements;\n(5) ‘aeronautical data’ means a representation;\n"
+                "ANNEX II — AUTHORITY REQUIREMENTS\nADR.AR.A.001 Scope\n(a) This Annex applies.\n")
+        a = ec.rule_anchors(text, "easa", ("article",))
+        for key in ("Article 2", "Article 2(1)", "Article 2(2)", "Annex I", "Annex I(1)", "Annex I(4)", "Annex I(4a)", "Annex I(5)", "ADR.AR.A.001"):
+            self.assertIn(key, a, key)
+        self.assertNotIn("ADR.AR.A.001", text[slice(*a["Annex I(5)"])])
+        import materials as m
+        self.assertTrue(m.loc_valid("easa", "Annex I(4a)"))
 
 
 class RealSourcesJsonTest(unittest.TestCase):
