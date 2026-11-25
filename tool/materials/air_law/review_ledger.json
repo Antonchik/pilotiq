@@ -3368,12 +3368,12 @@
   "verdict": "PASS"
  },
  "PL010-0502#bc260424": {
-  "date": "2026-11-24",
-  "note": "Klucz = art. 207 ust. 4 (sformułowanie klucza to skrót ust. 4, nie sporne: pozostałe odpowiedzi błędne wg ust. 3 i 7). Ale zdanie 2 «Taka osoba jest eksploatującą statek w rozumieniu art. 207 ust. 2» pomija warunek ust. 2 «w czasie spowodowania szkody». Poprawka: «Jeżeli używała statku w czasie spowodowania szkody, jest osobą eksploatującą (art. 207 ust. 2) i ponosi odpowiedzialność za szkody (art. 207 ust. 1).» Reszta (pułapka z ust. 7) poprawna.",
+  "date": "2026-11-25",
+  "note": "Poprawka r1 wprowadzona: warunek art. 207 ust. 2 «w czasie spowodowania szkody» przywrócony; klucz = art. 207 ust. 4, odpowiedzialność z ust. 1, pułapka z ust. 7. Cytaty i lokatory zgodne z korpusem, 3 zdania.",
   "portion": "P28",
-  "round": 1,
-  "textSha": "10d97b237d63e426",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "42523c780515ea05",
+  "verdict": "PASS"
  },
  "PL010-0502#cc4a1d31": {
   "date": "2026-11-24",
