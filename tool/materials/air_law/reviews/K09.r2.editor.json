@@ -1,0 +1,17 @@
+[
+ {
+  "key": "AL16-1",
+  "verdict": "PASS",
+  "note": "FIX z rundy 1 wykonany: w body dopisano „(art. 135 ust. 2)”, w refs jest art. 135 ust. 2 z dosłownym cytatem („Każdy wypadek lub poważny incydent lotniczy … jest przedmiotem badania przez Komisję.”) zgodnym z korpusem. Reszta bez zmian i zgodna z art. 17 ust. 1, art. 134 ust. 1 i 1e, art. 135 ust. 1, art. 135a ust. 4 Prawa lotniczego i art. 2 pkt 14 rozporządzenia 996/2010; 163 słowa; validate bez błędów."
+ },
+ {
+  "key": "AL16-2",
+  "verdict": "DISPUTED",
+  "note": "FIX z rundy 1 wykonany: disputeNote zawęża „tylko” do rozporządzenia 965/2012 („W rozporządzeniu 965/2012 pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2 (część CAT)…”), co potwierdza korpus: to jedyne miejsce o raporcie o zderzeniu z ptakiem. 384 znaki; zawiera „Na egzaminie ULC zaliczana jest odpowiedź z klucza”; punkty z disputeNote (art. 134 ust. 2 pkt 2, CAT.GEN.MPA.105(d)(2)) są w refs. Body bez zmian, zgodne z korpusem i z disputed PL099-0011 i PL099-0051."
+ },
+ {
+  "key": "AL16-8",
+  "verdict": "PASS",
+  "note": "FIX z rundy 1 wykonany: dodano ref SERA.14005(c) z cytatem dosłownym z korpusu („Depesze pilne i wymianę korespondencji dotyczącej sytuacji pilności … zgodnie z przepisami SERA.14095.”). Teraz każdy lokator z body („SERA.14005 lit. b) i c)”) jest w refs. Body bez zmian (135 słów), zgodne z tabelą S14-1 i z verified PL099-0074."
+ }
+]

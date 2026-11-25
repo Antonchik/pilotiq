@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL16-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Państwowa Komisja Badania Wypadków Lotniczych i cel badania",
       "body": [
         "Przy ministrze właściwym do spraw transportu działa niezależna, stała Państwowa Komisja Badania Wypadków Lotniczych (PKBWL), która prowadzi lub nadzoruje badania zdarzeń lotniczych (art. 17 ust. 1 Prawa lotniczego).",
@@ -63,7 +63,7 @@
     },
     {
       "id": "AL16-2",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Wypadek a incydent lotniczy; zderzenie z ptakiem",
       "body": [
         "Wypadek lotniczy to zdarzenie związane z eksploatacją statku powietrznego, od chwili wejścia osoby na pokład z zamiarem wykonania lotu do opuszczenia statku przez wszystkie osoby, podczas którego (art. 134 ust. 2 Prawa lotniczego):",
@@ -423,7 +423,7 @@
     },
     {
       "id": "AL16-8",
-      "status": "draft",
+      "status": "verified",
       "heading": "Kolejność pierwszeństwa depesz",
       "body": [
         "Kategorie depesz obsługiwanych przez ruchomą służbę lotniczą i kolejność pierwszeństwa w nawiązywaniu łączności i transmisji depesz określa tabela S14-1 w pkt SERA.14005 lit. a) rozporządzenia 923/2012:",

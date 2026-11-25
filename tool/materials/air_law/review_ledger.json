@@ -369,11 +369,11 @@
  },
  "AL16-1": {
   "date": "2026-11-25",
-  "note": "Treść zgodna z art. 17 ust. 1, art. 134 ust. 1 i 1e, art. 135 ust. 1, art. 135a ust. 4 Prawa lotniczego i art. 2 pkt 14 rozporządzenia 996/2010; zgodna z verified PL010-0327 i PL099-0001; 159 słów, działa jako bezpłatny przegląd. Jedna luka: zdanie „od tej kwalifikacji zależy, kto prowadzi badanie” nie wynika z cytowanego art. 135 ust. 1, tylko z art. 135 ust. 2 (Komisja bada wypadki i poważne incydenty, inne incydenty – użytkownik itd.), którego nie ma w refs. Poprawka: w body zmienić „(art. 135 ust. 1); od tej kwalifikacji zależy, kto prowadzi badanie.” na „(art. 135 ust. 1); od tej kwalifikacji zależy, kto prowadzi badanie (art. 135 ust. 2).” i dodać ref {\"src\":\"PL-PRAWO-LOTNICZE\",\"loc\":\"art. 135 ust. 2\",\"quote\":\"Każdy wypadek lub poważny incydent lotniczy statku powietrznego objętego obowiązkiem wpisu do państwowego rejestru cywilnych statków powietrznych jest przedmiotem badania przez Komisję.\"}. Kontekst z art. 134 ust. 1e i 135a ust. 4 sprawdzony z korpusem – poprawny (parafraza ust. 1e pomija „sądowo-administracyjnego”, dopuszczalne).",
+  "note": "FIX z rundy 1 wykonany: w body dopisano „(art. 135 ust. 2)”, w refs jest art. 135 ust. 2 z dosłownym cytatem („Każdy wypadek lub poważny incydent lotniczy … jest przedmiotem badania przez Komisję.”) zgodnym z korpusem. Reszta bez zmian i zgodna z art. 17 ust. 1, art. 134 ust. 1 i 1e, art. 135 ust. 1, art. 135a ust. 4 Prawa lotniczego i art. 2 pkt 14 rozporządzenia 996/2010; 163 słowa; validate bez błędów.",
   "portion": "K09",
-  "round": 1,
-  "textSha": "968cf793bfb6fd5a",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "00f771ad12b0b533",
+  "verdict": "PASS"
  },
  "AL16-10": {
   "date": "2026-11-25",
@@ -409,11 +409,11 @@
  },
  "AL16-2": {
   "date": "2026-11-25",
-  "note": "Definicje (art. 134 ust. 2 pkt 1–3, ust. 5 PL; art. 2 pkt 7 996/2010) i CAT.GEN.MPA.105(d)(2) zgodne z korpusem; body i disputeNote nie przeczą disputed PL099-0011 i PL099-0051. Pominięcie wyłączenia z art. 2 pkt 1 lit. b) 996/2010 (niewielkie uszkodzenia spowodowane przez grad lub zderzenie z ptakiem nie czynią zdarzenia wypadkiem) jest dopuszczalne: dotyczy tylko drobnych uszkodzeń i nie przeczy zdaniu, że uszkodzenie wymagające poważnego remontu oznacza wypadek. Do poprawy: zdanie disputeNote „Pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2” jest zbyt szerokie (system zgłaszania z art. 4 rozporządzenia 376/2014 i art. 135a Prawa lotniczego też może obejmować zderzenie z ptakiem); „tylko” potwierdza korpus wyłącznie dla rozporządzenia 965/2012 (jedyne miejsce o raporcie o zderzeniu z ptakiem). Nowy disputeNote (384 znaki): „Zderzenie z ptakiem, po którym wymagany jest poważny remont lub wymiana elementu (art. 134 ust. 2 pkt 2 Prawa lotniczego), jest wypadkiem, a nie incydentem. W rozporządzeniu 965/2012 pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2 (część CAT) i tylko przy znaczących uszkodzeniach lub awarii podstawowego systemu. Na egzaminie ULC zaliczana jest odpowiedź z klucza.”",
+  "note": "FIX z rundy 1 wykonany: disputeNote zawęża „tylko” do rozporządzenia 965/2012 („W rozporządzeniu 965/2012 pisemny raport przewiduje tylko pkt CAT.GEN.MPA.105 lit. d) ppkt 2 (część CAT)…”), co potwierdza korpus: to jedyne miejsce o raporcie o zderzeniu z ptakiem. 384 znaki; zawiera „Na egzaminie ULC zaliczana jest odpowiedź z klucza”; punkty z disputeNote (art. 134 ust. 2 pkt 2, CAT.GEN.MPA.105(d)(2)) są w refs. Body bez zmian, zgodne z korpusem i z disputed PL099-0011 i PL099-0051.",
   "portion": "K09",
-  "round": 1,
+  "round": 2,
   "textSha": "87e7b349184ad458",
-  "verdict": "FIX"
+  "verdict": "DISPUTED"
  },
  "AL16-3": {
   "date": "2026-11-25",
@@ -457,11 +457,11 @@
  },
  "AL16-8": {
   "date": "2026-11-25",
-  "note": "Tabela S14-1 w SERA.14005(a) oddana poprawnie; „trzecie miejsce” dla komunikatów dotyczących znajdowania kierunku wynika wprost z kolejności a) MAYDAY, b) PAN PAN, c) znajdowanie kierunku; zgodne z verified PL099-0074 (PL102-0046 sameAs). SERA.14095(a)(5) zgodne. Luka: body powołuje „SERA.14005 lit. b) i c)”, a w refs jest tylko lit. b). Poprawka: dodać ref {\"src\":\"EU-923-2012\",\"loc\":\"SERA.14005(c)\",\"quote\":\"Depesze pilne i wymianę korespondencji dotyczącej sytuacji pilności, w tym depesze poprzedzone sygnałem transportu medycznego, należy traktować zgodnie z przepisami SERA.14095.\"}. Treść body bez zmian (135 słów).",
+  "note": "FIX z rundy 1 wykonany: dodano ref SERA.14005(c) z cytatem dosłownym z korpusu („Depesze pilne i wymianę korespondencji dotyczącej sytuacji pilności … zgodnie z przepisami SERA.14095.”). Teraz każdy lokator z body („SERA.14005 lit. b) i c)”) jest w refs. Body bez zmian (135 słów), zgodne z tabelą S14-1 i z verified PL099-0074.",
   "portion": "K09",
-  "round": 1,
-  "textSha": "9227f4966c928185",
-  "verdict": "FIX"
+  "round": 2,
+  "textSha": "2933ff3b6241c3e9",
+  "verdict": "PASS"
  },
  "AL16-9": {
   "date": "2026-11-25",
