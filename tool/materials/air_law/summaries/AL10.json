@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL10-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Zarządzanie ruchem lotniczym i rodzaje służb",
       "body": [
         "Zgodnie z art. 121 ust. 1 Prawa lotniczego zarządzanie ruchem lotniczym w polskiej przestrzeni powietrznej jest realizowane przez trzy elementy:",
@@ -87,7 +87,7 @@
     },
     {
       "id": "AL10-2",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Zarządzanie przestrzenią powietrzną i przepływem ruchu",
       "body": [
         "Rozporządzenie 2024/2803 (art. 2) definiuje dwie funkcje, które art. 121 ust. 1 Prawa lotniczego wymienia obok służb żeglugi powietrznej:",
@@ -150,7 +150,7 @@
     },
     {
       "id": "AL10-3",
-      "status": "draft",
+      "status": "verified",
       "heading": "Służba kontroli ruchu lotniczego i zezwolenie ATC",
       "body": [
         "Służba kontroli ruchu lotniczego jest zapewniana w celu zapobiegania kolizjom między statkami powietrznymi, także na polu manewrowym, oraz usprawniania i utrzymywania uporządkowanego przepływu ruchu lotniczego (art. 2 pkt 30 rozporządzenia 923/2012). Zgodnie z pkt SERA.8001 zapewnia się ją:",
@@ -295,7 +295,7 @@
     },
     {
       "id": "AL10-5",
-      "status": "draft",
+      "status": "verified",
       "heading": "Służba informacji powietrznej, FIS i AFIS",
       "body": [
         "Służba informacji powietrznej to służba ustanowiona w celu udzielania wskazówek i informacji użytecznych dla bezpiecznego i sprawnego wykonywania lotów (art. 2 pkt 77 rozporządzenia 923/2012). Odpowiednie organy służb ruchu lotniczego zapewniają ją wszystkim statkom powietrznym, których te informacje mogą dotyczyć, a którym zapewniona jest służba kontroli ruchu lotniczego albo o których organy te zostały w inny sposób zawiadomione (pkt SERA.9001 lit. a)). Obejmuje m.in. informacje SIGMET i AIRMET (pkt SERA.9005 lit. a) ppkt 1).",
@@ -443,7 +443,7 @@
     },
     {
       "id": "AL10-7",
-      "status": "draft",
+      "status": "verified",
       "heading": "Służba meteorologiczna",
       "body": [
         "Służby meteorologiczne (MET) to urządzenia i usługi, które zapewniają prognozy meteorologiczne, ostrzeżenia, wskazówki oraz obserwacje na potrzeby żeglugi powietrznej (art. 2 pkt 44 rozporządzenia 2024/2803). Instytucja zapewniająca służby meteorologiczne dostarcza informację meteorologiczną niezbędną do pełnienia ich funkcji m.in. operatorom, członkom załogi lotniczej, organom służb ruchu lotniczego, organom służb poszukiwania i ratownictwa, operatorom lotnisk oraz innym podmiotom w sektorze lotnictwa (pkt MET.OR.100 lit. a) załącznika V do rozporządzenia 2017/373).",
@@ -568,7 +568,7 @@
     },
     {
       "id": "AL10-9",
-      "status": "draft",
+      "status": "verified",
       "heading": "AIP, AIRAC i wskaźnik lokalizacji",
       "body": [
         "Zbiór informacji lotniczych (AIP) to publikacja wydawana przez organ państwowy lub wraz z nim, zawierająca informacje lotnicze o charakterze trwałym, istotne dla żeglugi powietrznej (załącznik I pkt 118 rozporządzenia 2017/373). W Polsce jest jednym z produktów informacji lotniczej AIS Polska (AIP Polska, GEN 3.1). Dokumentacja JEPPESEN, podręcznik pilota czy instrukcja wykonywania lotów nie są taką publikacją.",
@@ -650,7 +650,7 @@
     },
     {
       "id": "AL10-10",
-      "status": "draft",
+      "status": "verified",
       "heading": "Instytucja zapewniająca służby żeglugi powietrznej",
       "body": [
         "Instytucję zapewniającą służby żeglugi powietrznej wyznacza w drodze decyzji administracyjnej minister właściwy do spraw transportu (art. 127 ust. 2 Prawa lotniczego), a jej certyfikacji dokonuje Prezes Urzędu Lotnictwa Cywilnego jako organ realizujący zadania państwowej władzy nadzorującej (art. 127 ust. 4). Podstawą działania instytucji jest więc certyfikat Prezesa ULC; przepis nie mówi o certyfikacie EASA ani o licencji EASA lub EUROCONTROL.",
@@ -794,7 +794,7 @@
     },
     {
       "id": "AL10-12",
-      "status": "draft",
+      "status": "verified",
       "heading": "Plan lotu przekazywany w locie (AFIL)",
       "body": [
         "Plan lotu przedstawiony podczas lotu AIP Polska oznacza skrótem AFIL (ENR 1.10 pkt 1.4.2; w wykazie skrótów GEN 2.2: plan lotu zgłoszony z powietrza). Pkt SERA.4001 lit. c) ppkt 2 rozporządzenia 923/2012 przewiduje przekazanie go podczas lotu odpowiedniemu organowi służb ruchu lotniczego lub radiostacji kontroli powietrze-ziemia.",
@@ -857,7 +857,7 @@
     },
     {
       "id": "AL10-13",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Bieżący plan lotu, zmiany EOBT i meldunek o przylocie",
       "body": [
         "Bieżący plan lotu (CPL) to plan lotu z ewentualnymi zmianami wynikającymi z kolejnych zezwoleń (art. 2 pkt 64 rozporządzenia 923/2012); FPL to plan lotu, a SPL – uzupełnienie planu lotu (AIP Polska, GEN 2.2). Zmiany w planie lotu przekazuje się depeszami DLA lub CHG (ENR 1.10 pkt 5.1.2):",
@@ -948,7 +948,7 @@
     },
     {
       "id": "AL10-14",
-      "status": "draft",
+      "status": "verified",
       "heading": "Oznaczenia w planie lotu",
       "body": [
         "AIP Polska (ENR 1.10) określa litery stosowane w planie lotu. W polu 8 pierwsza litera określa przepisy wykonywania lotu, a druga rodzaj lotu (pkt 3.2):",
@@ -1071,7 +1071,7 @@
     },
     {
       "id": "AL10-15",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Nieumyślne odchylenie od bieżącego planu lotu",
       "body": [
         "Pkt SERA.8020 lit. b) rozporządzenia 923/2012 określa działania przy nieumyślnym odchyleniu lotu kontrolowanego od bieżącego planu lotu:",
@@ -1117,7 +1117,7 @@
     },
     {
       "id": "AL10-16",
-      "status": "draft",
+      "status": "verified",
       "heading": "Czas UTC i lotniska zapasowe",
       "body": [
         "W ruchu lotniczym stosowany jest uniwersalny czas koordynowany (UTC), wyrażany w godzinach i minutach oraz w miarę potrzeby w sekundach, w 24-godzinnej dobie rozpoczynającej się od północy (pkt SERA.3401 lit. a) rozporządzenia 923/2012). Przepis nie rozróżnia ruchu kontrolowanego i niekontrolowanego ani nie przewiduje stosowania czasu lokalnego (LMT).",

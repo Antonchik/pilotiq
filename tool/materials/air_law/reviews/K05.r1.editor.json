@@ -1,0 +1,127 @@
+[
+ {
+  "key": "AL09-1",
+  "verdict": "PASS",
+  "note": "§ 1 pkt 1, § 4 ust. 1 pkt 1–3, § 5 ust. 1 pkt 2–4, § 8 ust. 1 rozp. o strukturze, AIP ENR 1.4 (klasy A, B, E, F – przypis ****) i art. 2 pkt 76 923/2012 zgodne z korpusem. Spójne z verified P15 0180/0071/0235/0182; zdanie o wariancie 0194#61f73ddd (klucz bez klasy D) powtarza neutralnie verified objaśnienie – klucz jest niepełny, ale nie sprzeczny, więc disputeNote zbędny. 197 słów (193 bez myślników) ≤ 200. Działa jako bezpłatny przegląd."
+ },
+ {
+  "key": "AL09-2",
+  "verdict": "FIX",
+  "note": "Luka w rozumowaniu: z „w klasach C i D każdy lot wymaga zezwolenia ATC” nie wynika omijanie CTR/TMA bez informacji, że CTR i TMA mają w FIR Warszawa klasę C lub D (verified 0080 opiera się właśnie na ENR 1.4). Zastąpić ostatnie zdanie: „W FIR Warszawa klasy A, B i E nie są stosowane (AIP Polska, ENR 1.4), więc CTR i TMA mają klasę C lub D i bez zezwolenia lot VFR omija czynne lotnisko kontrolowane poza granicą jego CTR lub TMA.” i dodać refs AIP-PL „ENR 1.4 przypis ****” (quote „**** - Klasa nie stosowana w FIR Warszawa.”), „ENR 1.4 klasa A” („A**** Tylko IFR”), „ENR 1.4 klasa B” („B**** IFR Wszystkim”), „ENR 1.4 klasa E” („E**** IFR IFR od IFR”). Żeby zmieścić się w 200 słowach: wstęp → „Skróty według § 2 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, definicje według rozporządzeń 923/2012 (art. 2) i 2017/373 (załącznik I):”; punkt CTR → „- CTR (Control Zone) – strefa kontrolowana lotniska, rozciągająca się od powierzchni ziemi (terenu) do określonej górnej granicy.” (usunąć „MCTR to strefa kontrolowana lotniska wojskowego” i ref § 2 pkt 29) oraz usunąć zdanie „Dolna granica CTR leży więc na powierzchni terenu.” – wynik 195 słów. Reszta (§ 2 pkt 17/18/43, art. 2 pkt 36/56/61, zał. I pkt 239, zał. XI dodatek 1 sekcja I(b)(2) – nowa cytata dosłowna, SERA.6001(a)(3)/(4)) zgodna z korpusem i z verified 0022/0023/0190/0056/0057/0058/0028."
+ },
+ {
+  "key": "AL09-3",
+  "verdict": "DISPUTED",
+  "note": "§ 2 pkt 12 i 27, art. 2 pkt 11 923/2012, § 5 ust. 1 pkt 2–3, § 16 ust. 4–5 zgodne z korpusem. disputeNote identyczny z disputed P15 0072#0906fe25 (MATZ w § 5 ust. 1 pkt 3), punkt w refs, formuła o kluczu obecna, 302 znaki. Spójne z verified 0018/0157/0081/0082. 179 słów."
+ },
+ {
+  "key": "AL09-4",
+  "verdict": "DISPUTED",
+  "note": "Art. 2 pkt 65/103/111 923/2012, § 3 ust. 1 pkt 3–5, § 7 ust. 1 pkt 3, § 8 ust. 1 pkt 5 rozp. o zakazach, § 11 ust. 2 rozp. o strukturze – zgodne z korpusem. Łączony disputeNote (385 znaków) wiernie streszcza disputeNote P16 0154 i 0155 (pominięcie odwołań do ENR 5.1 dopuszczalne), wszystkie punkty w refs, neutralny. Wniosek dla 0613 (D, nie P/R nad wodami otwartymi) zgodny z verified P16 0613 (§ 11 ust. 2 + definicje „nad obszarami lądowymi lub wodami terytorialnymi”). 199 słów (190 bez myślników) – na granicy, ale ≤ 200."
+ },
+ {
+  "key": "AL09-5",
+  "verdict": "FIX",
+  "note": "Błąd interpunkcyjny: zdanie „Nie należy ich mylić z ATFM (Air Traffic Flow Management), czyli zarządzaniem przepływem ruchu lotniczego (pkt 8),” kończy się przecinkiem przed nowym akapitem o ADIZ – zamienić końcowe „(pkt 8),” na „(pkt 8).”. Treść poza tym zgodna: § 2 pkt 1/4/8/10/13, § 7 pkt 1, § 3 ust. 1 pkt 6 i załącznik 4 rozp. o zakazach (15 km, Kaliningrad/Białoruś/Ukraina), GEN 2.2 ATM/AMC/AUP/ADIZ; spójne z verified P16 0017/0015/0019/0014/0591. Połączenie skrótów ATM/AMC/AUP z ADIZ akceptowalne (wszystkie z § 2 rozp. o strukturze), nie trzeba dzielić."
+ },
+ {
+  "key": "AL09-6",
+  "verdict": "FIX",
+  "note": "Nadmierne uogólnienie: „(te same rozwinięcia podaje AIP Polska, GEN 2.2)” – w korpusie GEN 2.2 nie ma TFR w ogóle, a CBA rozwija inaczej („Strefa lotów po obydwu stronach granicy”; verified 0021 mówi „podobnie”). Zamienić na „(TSA, TRA i MRT tak samo rozwija AIP Polska, GEN 2.2)” i dodać ref {\"src\":\"AIP-PL\",\"loc\":\"GEN 2.2 MRT\",\"quote\":\"Trasa lotnictwa wojskowego\"} (194 słowa). Reszta zgodna: § 2 pkt 15/30/42/45/46, § 9 ust. 7, § 10 ust. 1, § 16 ust. 3, § 18 ust. 1, ENR 5.2.1 TRA. Zdanie o spornym wariancie i disputeNote identyczne z disputed P16 0191#c2291227 (§ 2 pkt 45/46, GEN 2.2 TRA w refs) – po poprawce sekcja do DISPUTED."
+ },
+ {
+  "key": "AL09-7",
+  "verdict": "DISPUTED",
+  "note": "Art. 2 pkt 42/92/94/96 923/2012, GEN 2.2 APN, zał. I pkt 177 2017/373 zgodne z korpusem. disputeNote identyczny z disputed P16 0178#8dfe4066 (art. 2 pkt 96 w refs), 232 znaki. Spójne z verified 0178#240b0c3f i 0348. 195 słów (191 bez myślników)."
+ },
+ {
+  "key": "AL09-8",
+  "verdict": "PASS",
+  "note": "§ 2 pkt 6, GEN 2.2 ARP 2/RVR/VFR/FPL, zał. I pkt 5/46/87 2017/373 zgodne z korpusem; GM1 ADR.OPS.A.005 (reference-only) sprawdzony w tekście EAR: „located near the initial or planned geometric centre of the aerodrome” – parafraza poprawna. Spójne z verified 0016/0059/1555. 143 słowa."
+ },
+ {
+  "key": "AL09-9",
+  "verdict": "FIX",
+  "note": "Art. 59 ust. 6 wymienia trzy kategorie (pkt 3: podmiot, któremu przekazano zarządzanie zgodnie z art. 70), a tekst „do rejestru wpisuje się jako zarządzającego zakładającego lotnisko albo, na jego wniosek, inny podmiot” brzmi jak lista zamknięta (verified 0485 pisze „np.”). Zamienić na: „do rejestru wpisuje się jako zarządzającego m.in. zakładającego lotnisko albo, na jego wniosek, inny podmiot (art. 59 ust. 6)”. Reszta (art. 2 pkt 7/8/9/17) zgodna, spójna z verified 0360/0485. 120 słów."
+ },
+ {
+  "key": "AL10-1",
+  "verdict": "PASS",
+  "note": "Art. 121 ust. 1 pkt 1–3 i ust. 2 PL, art. 2 pkt 5 2024/2803, art. 2 pkt 32 923/2012, GEN 2.2 APP/TWR zgodne z korpusem. Wnioski („oprócz ATS” = CNS, MET, AIS, SAR; kontroler nie zapewnia AIS) spójne z verified P17/P18 0195/1535/0315/0316/0541/1536/1537/1538/0493. Dobry bezpłatny przegląd. 155 słów."
+ },
+ {
+  "key": "AL10-2",
+  "verdict": "DISPUTED",
+  "note": "Art. 121 ust. 1 PL, art. 2 pkt 8/10/12 2024/2803, GEN 2.2 RNAV/ALERFA/ATIS zgodne z korpusem. Nowy łączony disputeNote dla 0161#352f1e5b i 0162 (397 znaków ≤ 400) zgodny z disputeNote obu wpisów P18: art. 2 pkt 12 vs pkt 8, wzmianka o innym wariancie ULC, formuła o kluczu; oba punkty w refs. Sformułowanie neutralne. Spójne z verified 0159/0160/0161#199151b9. 174 słowa."
+ },
+ {
+  "key": "AL10-3",
+  "verdict": "PASS",
+  "note": "Art. 2 pkt 28/30/43/45/52/59 i SERA.8001(a)(b)(d) zgodne z korpusem. ICAO Doc 4444 pkt 4.5.7.1.1 (reference-only) sprawdzony: „described by specifying the name of the appropriate significant point, or aerodrome, or controlled airspace boundary” – parafraza wierna, bez cytatu. Spójne z verified 0010/0202/0073/0162#9e4077c1/0254/0513/0402. 168 słów."
+ },
+ {
+  "key": "AL10-4",
+  "verdict": "FIX",
+  "note": "Ostatnie zdanie „…więc ani w klasie F, ani w klasie G nie ma obowiązku separowania statków powietrznych” jest za szerokie: w klasie F służba doradcza ruchu lotniczego zapewnia separację IFR „w miarę możliwości” (art. 2 pkt 27, sekcja sama to podaje); klucze 0354/0577 dotyczą służby informacji powietrznej. Zamienić na „…więc służba informacji powietrznej ani w klasie F, ani w klasie G nie ma obowiązku separowania statków powietrznych.”. Wstęp „określa, które loty kontrola ruchu lotniczego separuje:” nie pasuje do punktów F i G (tam nie ma ATC) – zamienić na „określa separację i służby w poszczególnych klasach:”. Po zmianach 185 słów. Cytaty SERA.6001(a)(1)/(3)–(7), art. 2 pkt 27/77, dodatek 4 zgodne; spójne z verified 0578–0581/0354/0577."
+ },
+ {
+  "key": "AL10-5",
+  "verdict": "PASS",
+  "note": "Art. 2 pkt 77, SERA.9001(a)(1)(2), SERA.9005(a)(1), zał. I pkt 6 2017/373, AIP GEN 3.3 pkt 3, 1.4, 1.5 zgodne z korpusem (AIP sparafrazowany). Spójne z verified 0201/0186/0074/0071#b3ef6324/0072#6f4ce5e6/0224#41c9ad34/0410. 156 słów."
+ },
+ {
+  "key": "AL10-6",
+  "verdict": "FIX",
+  "note": "Dwie nieścisłości. (1) „Zbieranie i publikowanie informacji lotniczych należy do służby informacji lotniczej” – art. 2 pkt 2 2024/2803 mówi o „zapewnieniu informacji i danych lotniczych”, „zbierania” nie ma w źródle; zamienić na „Zapewnianie informacji i danych lotniczych należy do służby informacji lotniczej (art. 2 pkt 2 rozporządzenia 2024/2803), a nie do ASAR.” (2) art. 140a ust. 7 obejmuje wszystkie organy instytucji ATS – „takim organem jest ośrodek kontroli obszaru” zamienić na „jednym z takich organów jest ośrodek kontroli obszaru”. Po zmianach 188 słów. Reszta zgodna: art. 2 pkt 37/43, art. 140a ust. 1 i 7, GEN 2.4 EPWW; ICAO Doc 4444 pkt 15.3.10 (reference-only) sprawdzony – 30 minut, najpóźniejszy z czasów ETA/EAT, decyzja „aircraft operators … and pilots-in-command”; spójne z verified 0200/0209/0210/0512/0582."
+ },
+ {
+  "key": "AL10-7",
+  "verdict": "PASS",
+  "note": "Art. 2 pkt 2/8/44 2024/2803, MET.OR.100(a), MET.OR.250(a), zał. I pkt 93 2017/373, art. 140a ust. 1 PL zgodne z korpusem. Spójne z verified 0207/0206/0208 (oba warianty). 163 słowa."
+ },
+ {
+  "key": "AL10-8",
+  "verdict": "FIX",
+  "note": "Zdanie „Celem AIS jest więc zbieranie i publikowanie informacji lotniczych.” wykracza poza źródło: art. 2 pkt 2 mówi o zapewnieniu informacji i danych, GEN 3.1 pkt 3 o produktach (publikacja); „zbierania” nie ma (verified 0205 pisze tylko „AIS publikuje informacje lotnicze”). Zamienić na: „AIS zapewnia więc i publikuje informacje lotnicze, co klucz ULC nazywa ich zbieraniem i publikowaniem.” (162 słowa). Reszta zgodna: art. 2 pkt 2/5 2024/2803, art. 2 pkt 77 i SERA.9001(a), GEN 3.1 pkt 1 i 3. Zdanie o spornym kluczu i disputeNote identyczne z disputed P18 0011#5b67ea6c (punkty w refs, 383 znaki) – po poprawce do DISPUTED."
+ },
+ {
+  "key": "AL10-9",
+  "verdict": "PASS",
+  "note": "Zał. I pkt 118/121 i AIS.TR.505(a)(1)(i), (a)(2) (nowa cytata – dosłowna), (a)(3) 2017/373, dodatek 6 pkt 2.2 923/2012, ENR 1.10 pkt 3.5.1, GEN 3.1 pkt 3, GEN 2.4 EPWW zgodne z korpusem; ICAO Doc 4444 def Location indicator (reference-only) – „four-letter code group” – zgodne. Spójne z verified 0559/0413/1543. 166 słów."
+ },
+ {
+  "key": "AL10-10",
+  "verdict": "PASS",
+  "note": "Art. 127 ust. 2 i 4, art. 130 ust. 1 i 1a, art. 121 ust. 3 PL, GEN 3.1 pkt 1 zgodne z korpusem. Spójne z verified 0382/0381/0075. 125 słów."
+ },
+ {
+  "key": "AL10-11",
+  "verdict": "FIX",
+  "note": "Długość: 201 słów licząc myślniki w treści punktów (196 bez nich) – limit 200 przekroczony lub na granicy. Połączyć dwa pierwsze punkty listy w jeden: „- lot VFR w całości lub w części w przestrzeni kontrolowanej, z planowanym wlotem w nią albo z przekroczeniem granicy FIR Warszawa – co najmniej 1 godzina;” (usunąć osobny punkt „- lot VFR z przekroczeniem granicy FIR Warszawa – co najmniej 1 godzina;”) – 194 słowa. Treść zgodna: SERA.4001(b)(1), (d), (d)(3), SERA.6001(a)(3), ENR 1.10 pkt 4.5 i 4.8 lit. a)–f). Zdanie o spornym kluczu i disputeNote identyczne z disputed P19 0472#5403c78a (ENR 1.10 pkt 4.8 w refs, 278 znaków); spójne z verified 0429/0434/0435/0437/0589. Po skróceniu – DISPUTED."
+ },
+ {
+  "key": "AL10-12",
+  "verdict": "PASS",
+  "note": "ENR 1.10 pkt 1.4.2, GEN 2.2 AFIL, SERA.4001(c)(2), (d)(1), (d)(3), (d)(4)(i)(ii) zgodne z korpusem. Spójne z verified 0431/0430/0433/0432/0358. 137 słów. (Opcjonalnie, nie blokuje: szyk pierwszego zdania – „AIP Polska oznacza plan lotu przedstawiony podczas lotu skrótem AFIL…”.)"
+ },
+ {
+  "key": "AL10-13",
+  "verdict": "DISPUTED",
+  "note": "Art. 2 pkt 64, SERA.4020(e)(1)–(5), GEN 2.2 FPL/SPL, ENR 1.10 pkt 5.1.2, 5.1.3.1, 5.1.3.2, 6.1 (uwaga 2) zgodne z korpusem. disputeNote identyczny z disputed P19 0411#3d5f9a58 (pkt 6.1 w refs, 248 znaków), zdanie o kluczu neutralne. Spójne z verified 0359/0473/1553. 165 słów."
+ },
+ {
+  "key": "AL10-14",
+  "verdict": "PASS",
+  "note": "ENR 1.10 pkt 3.2, 3.2.1, 3.2.2, 3.6.4.1 i 3.6.4.2 zgodne z korpusem (polska kolumna, sparafrazowane); nowa litera F (pkt 3.6.4.2, „poziomu lotu w setkach stóp (np. F330)”) – cytat dosłowny, fakt poprawny. Spójne z verified 0545–0553/0414/0610. 161 słów."
+ },
+ {
+  "key": "AL10-15",
+  "verdict": "DISPUTED",
+  "note": "SERA.8020(b), (b)(1), (b)(3), (b)(4) zgodne z korpusem. disputeNote identyczny z disputed P19 0399 (ppkt 3 w refs, 254 znaki). Próg 2 minut to aktualne brzmienie ppkt 4 i zgadza się z verified 0398 (różnica > 3 min przekracza próg); outdated 0395 (klucz 3 min) słusznie nie jest w questionKeys i nie jest z sekcją sprzeczny – jego pomijanie zgodne z regułą outdated. 177 słów."
+ },
+ {
+  "key": "AL10-16",
+  "verdict": "PASS",
+  "note": "SERA.3401(a) i art. 2 pkt 38 923/2012 zgodne z korpusem; GM1 Article 2(38) (reference-only) sprawdzony: „The aerodrome from which a flight departs may also be an en-route or a destination alternate aerodrome” – parafraza wierna. Spójne z verified 0065/0365. Połączenie UTC i lotnisk zapasowych w jednej krótkiej sekcji (113 słów) akceptowalne – dwa pozostałe, niezależne klucze."
+ }
+]

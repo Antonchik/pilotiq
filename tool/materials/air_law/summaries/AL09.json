@@ -3,7 +3,7 @@
   "sections": [
     {
       "id": "AL09-1",
-      "status": "draft",
+      "status": "verified",
       "heading": "Podział polskiej przestrzeni powietrznej",
       "body": [
         "Rozporządzenie Ministra Infrastruktury w sprawie struktury polskiej przestrzeni powietrznej dzieli polską przestrzeń powietrzną dostępną dla żeglugi powietrznej na przestrzeń kontrolowaną i przestrzeń niekontrolowaną (§ 1 pkt 1), a klasy przestrzeni nadaje się odpowiednio dla każdej z nich (§ 8 ust. 1).",
@@ -206,7 +206,7 @@
     },
     {
       "id": "AL09-3",
-      "status": "draft",
+      "status": "disputed",
       "heading": "ATZ i MATZ",
       "body": [
         "ATZ (Aerodrome Traffic Zone) to strefa ruchu lotniskowego, czyli przestrzeń powietrzna o określonych wymiarach ustanowiona wokół lotniska dla ochrony ruchu lotniskowego (§ 2 pkt 12 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej, art. 2 pkt 11 rozporządzenia 923/2012). MATZ (Military ATZ) to strefa ruchu lotniskowego lotniska wojskowego (§ 2 pkt 27).",
@@ -269,7 +269,7 @@
     },
     {
       "id": "AL09-4",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Strefy zakazane, ograniczone i niebezpieczne",
       "body": [
         "Strefy definiuje art. 2 rozporządzenia 923/2012, a zakazy określa rozporządzenie Ministra Infrastruktury w sprawie zakazów lub ograniczeń lotów (rozporządzenie o zakazach):",
@@ -520,7 +520,7 @@
     },
     {
       "id": "AL09-7",
-      "status": "draft",
+      "status": "disputed",
       "heading": "Części lotniska i zasadniczy ruch lokalny",
       "body": [
         "Rozporządzenie 923/2012 (art. 2) rozróżnia:",
@@ -572,7 +572,7 @@
     },
     {
       "id": "AL09-8",
-      "status": "draft",
+      "status": "verified",
       "heading": "Punkt odniesienia, wzniesienie lotniska i RVR",
       "body": [
         "ARP (Aerodrome Reference Point) to punkt odniesienia lotniska (§ 2 pkt 6 rozporządzenia w sprawie struktury polskiej przestrzeni powietrznej; tak samo AIP Polska, GEN 2.2). Według materiałów EASA (GM1 ADR.OPS.A.005) wyznacza się go w pobliżu geometrycznego środka lotniska.",
