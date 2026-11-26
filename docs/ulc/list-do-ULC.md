@@ -14,6 +14,8 @@ nazywam się [imię i nazwisko] i pracuję nad aplikacją mobilną Pilotiq, któ
 
 Chciałbym, aby kursantom i uczniom było wygodniej się uczyć, dlatego planuję wykorzystać w niej publicznie dostępne „Przykładowe pytania egzaminacyjne” ze strony ULC, w oryginalnym brzmieniu, z podaniem źródła i daty publikacji. Czy mogę prosić o informację, czy ULC nie ma zastrzeżeń do takiego wykorzystania? Jeśli są jakieś warunki, na przykład dotyczące sposobu wskazania źródła, będę wdzięczny za ich podanie.
 
+Zwracam uwagę, że punkt 19 regulaminu egzaminów w systemie komputerowym odnosi się do pytań wykorzystywanych podczas egzaminu, a nie do plików przykładowych. Proszę o potwierdzenie, że publikowane przykładowe pytania można wykorzystywać w aplikacji do nauki.
+
 Przy okazji porządkowania pytań z prawa lotniczego zauważyłem, że wśród przykładów są pytania oparte na przepisach, które zostały uchylone lub zmienione. Na przykład pytanie PL010-0244 powołuje się na rozporządzenie MI z 9.10.2003 r. w sprawie ograniczeń lotów, które już nie obowiązuje. Czy takie pytania będą aktualizowane w plikach przykładowych? A jeśli nie, czy w aplikacji powinienem je jakoś oznaczać?
 
 Chętnie też podzielę się bezpłatnie wynikami swojej analizy. W załączniku przesyłam zestawienie 982 wariantów pytań z prawa lotniczego, z podaniem aktów prawnych i przepisów, od których zależą, oraz z oznaczeniem miejsc, które mogą wymagać sprawdzenia: 82 warianty, w których klucz odpowiedzi budzi wątpliwość względem aktualnego przepisu, oraz 107 wariantów opartych na przepisach uchylonych lub zmienionych. Być może ułatwi to Państwu sprawdzanie aktualności pytań po zmianach przepisów. Mogą Państwo korzystać z niego dowolnie.
