@@ -330,9 +330,9 @@ def build(out_path, date):
         ("", None),
         ("Jak powstała analiza", "h"),
         (
-            "Treść każdej odpowiedzi porównano z tekstem aktów prawnych (arkusz „Akty prawne”). Analiza została przygotowana "
-            "z pomocą narzędzi AI i niezależnej kontroli; nie została jeszcze zweryfikowana przez eksperta (instruktora). "
-            "Nie jest opinią prawną ani stanowiskiem ULC. Status oznacza ocenę autora zestawienia i wymaga potwierdzenia.",
+            "Treść każdej odpowiedzi porównano z tekstem aktów prawnych (arkusz „Akty prawne”). Zestawienie ma charakter "
+            "pomocniczy: statusy są oceną autora i wymagają potwierdzenia przez ekspertów merytorycznych. "
+            "Nie jest to opinia prawna ani stanowisko ULC.",
             None,
         ),
         ("", None),
@@ -375,8 +375,6 @@ def build(out_path, date):
         r += 1
     r += 1
     ws0.cell(row=r, column=1, value=f"Data zestawienia: {date}").font = Font(name=FONT, size=10)
-    r += 1
-    ws0.cell(row=r, column=1, value="Kontakt: [imię i nazwisko, adres e-mail]").font = Font(name=FONT, size=10)
     ws0.column_dimensions["A"].width = 120
     ws0.column_dimensions["B"].width = 12
 
